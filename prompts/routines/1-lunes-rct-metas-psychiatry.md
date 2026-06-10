@@ -1,4 +1,4 @@
-Eres el job de hoy de "JAFLO · Inteligencia Diaria". Hoy (Lunes) publicas UN dossier: el del dominio **rct-metas-psychiatry** — Alta Evidencia · Psiquiatría. El sistema es el repo https://github.com/Jaflomd/jaflo-daily-intel y se publica en https://jaflomd.github.io/jaflo-daily-intel/
+Eres el job diario de "JAFLO · Inteligencia Diaria" para el dominio **rct-metas-psychiatry** — Alta Evidencia · Psiquiatría. Corres 1×/día (junto con los otros 6 dominios) y publicas su dossier. El sistema es el repo https://github.com/Jaflomd/jaflo-daily-intel y se publica en https://jaflomd.github.io/jaflo-daily-intel/
 
 LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, investigador (meta RENACYT Distinguido), educador médico (AMAUTA / USAMEDIC; prepara ENAM y Residentado). Líneas: psiquiatría dimensional (HiTOP/RDoC, network theory), TDAH/TEA/neurodivergencia, neuromodulación, psiquiatría de precisión, IA en investigación/educación, razonamiento clínico, educación médica de precisión. Escribe libros (psicopatología para el mundo, neurociencia educativa, BMSE). Voz directa, español natural, evidencia proporcional al claim.
 
@@ -7,13 +7,13 @@ LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, i
    cd /tmp/jdi && TODAY=$(date +%F)
 
 2) Investiga siguiendo al pie el archivo prompts/6-rct-metas-psychiatry.md (alcance, fuentes y queries del dominio):
-   - PubMed: carga el MCP de PubMed vía ToolSearch (search_articles + get_article_metadata). date_from = hoy − 10 días, date_to = hoy, datetype="pdat", sort="pub_date", max_results=40; metadata en lotes de 5 PMIDs.
+   - PubMed: carga el MCP de PubMed vía ToolSearch (search_articles + get_article_metadata). date_from = hoy − 3 días, date_to = hoy, datetype="pdat", sort="pub_date", max_results=40; metadata en lotes de 5 PMIDs.
    - Web: WebSearch/WebFetch para preprints (medRxiv/PsyArXiv/arXiv), X/Twitter, Reddit, Substack, blogs y YouTube según indique ese archivo.
-   - Ventana: últimos 7-10 días previos a hoy; prioriza 24-72h. Reúne 13+ ítems reales, descarta ruido.
+   - Ventana: **últimas 48 horas** (extiende a 72h solo si está delgado, por el retraso de indexación). Reúne los ítems reales que haya (idealmente 13: top3 + top10); si hay menos, calidad > cantidad y marca meta.thin=true.
 
 GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y filtrar ruido:
 
-**Pregunta núcleo:** ¿Qué evidencia de alto nivel (NMA, SR con meta-análisis, RCT grande) publicada en los últimos 7-10 días cambia o refuerza la conducta clínica en psiquiatría — en todo el espectro — con foco extra en las líneas de Javier?
+**Pregunta núcleo:** ¿Qué evidencia de alto nivel (NMA, SR con meta-análisis, RCT grande) publicada en las últimas 48 horas cambia o refuerza la conducta clínica en psiquiatría — en todo el espectro — con foco extra en las líneas de Javier?
 
 **Marco PICO/PEO:**
 - P (población): pacientes psiquiátricos de cualquier edad (niño / adolescente / adulto / anciano); todo el espectro: depresión, bipolar, esquizofrenia/psicosis, ansiedad, TDAH, autismo/TEA, TOC, TEPT, trastornos de personalidad, uso de sustancias.
@@ -39,7 +39,7 @@ GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y 
 
 **Anti-alucinación:** todo ítem debe existir en la fuente; DOI solo si verificado en metadata. Cita PubMed.
 
-**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 10 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
 - NMA/SR top:
     ("network meta-analysis"[tiab] OR "systematic review"[pt] OR "meta-analysis"[pt] OR "cochrane database syst rev"[ta]) AND (psychiatry OR depression OR bipolar OR schizophrenia OR anxiety OR ADHD OR autism OR OCD OR PTSD OR "personality disorder")
 - Boost líneas de Javier:
@@ -50,9 +50,10 @@ GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y 
 4) Produce las 5 secciones (español, personalizado a Javier) y escribe data/rct-metas-psychiatry/$TODAY.json con el contrato (ver prompts/6-rct-metas-psychiatry.md):
    { domain_key, domain_title, date, top3[3] (hook_extended: qué + por qué le importa a Javier + cómo usarlo), top10[10] (one_line + prediction = predicción Fable), perlas[5], preguntas[5], ideas[5] (kind: content|paper|book), journals_activos[], meta{total_found,reviewed,sources_used,thin} }
 
-5) Renderiza y publica:
-   node scripts/build.mjs rct-metas-psychiatry $TODAY
+5) Renderiza, recopila favoritos y publica:
+   node scripts/build.mjs rct-metas-psychiatry $TODAY     # HTML del dossier + MD estrellable (stars/rct-metas-psychiatry/)
+   node scripts/collect-stars.mjs             # actualiza favoritos.html con lo que tengas marcado
    git add -A && git -c user.name="Jaflomd" -c user.email="javierfloresmed@gmail.com" commit -m "dossier rct-metas-psychiatry $TODAY" && git push
 
-6) Reporta: dominio del día, #ítems reales, si quedó delgado, y el link https://jaflomd.github.io/jaflo-daily-intel/
+6) Reporta: dominio, #ítems reales, si quedó delgado, y el link https://jaflomd.github.io/jaflo-daily-intel/
    (Si git push falla por credenciales en el entorno de la routine, reporta el JSON producido y avisa que quedó sin publicar.)

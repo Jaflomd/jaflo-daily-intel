@@ -19,6 +19,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const DATA = path.join(ROOT, 'data')
 const DOSSIERS = path.join(ROOT, 'dossiers')
+const STARS = path.join(ROOT, 'stars')
 
 // ---- catálogo de dominios (orden y metadatos canónicos) -------------------
 // weekday: día en que corre cada agente (JS getDay → 0=domingo … 6=sábado).
@@ -318,6 +319,55 @@ h1 .ic{font-size:24px;}
 </html>`
 }
 
+// ---- stars markdown (estrellable: editas [x] en GitHub) --------------------
+export function renderStarsMD(data) {
+  const meta = DOMAINS[data.domain_key] || { title: data.domain_title, icon: '◆' }
+  const date = data.date
+  const dk = data.domain_key
+  const clean = (s = '') => String(s).replace(/\s+/g, ' ').trim()
+  const line = (it, id) => {
+    const ln = linkFor(it)
+    const src = [it.source, it.type].filter(Boolean).join(' · ')
+    const linkmd = ln ? ` — [${clean(ln.label)}](${ln.href})` : ''
+    return `- [ ] **${clean(it.title)}** — _${clean(src)}_${linkmd} <!--star:${dk}|${date}|${id}-->`
+  }
+  const top3 = (data.top3 || []).map((it, i) => `${line(it, 't3-' + (i + 1))}\n  > ${clean(it.hook_extended)}`).join('\n')
+  const top10 = (data.top10 || []).map((it, i) => {
+    const pred = it.prediction ? `\n  > 🔮 ${clean(it.prediction)}` : ''
+    return `${line(it, 't10-' + (i + 1))}\n  > ${clean(it.one_line)}${pred}`
+  }).join('\n')
+  const perlas = (data.perlas || []).map(p => `- ${clean(p)}`).join('\n')
+  const preguntas = (data.preguntas || []).map(q => `- ${clean(q)}`).join('\n')
+  const ideas = (data.ideas || []).map(x => `- (${x.kind}) ${clean(x.idea)}`).join('\n')
+  const m = data.meta || {}
+  return `# ⭐ ${meta.icon || ''} ${meta.title} — ${date}
+
+> Marca con \`[x]\` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/${dk}/${date}.html
+
+## 🏆 Top 3
+${top3 || '_(sin ítems)_'}
+
+## 📡 Radar (10)
+${top10 || '_(sin ítems)_'}
+
+---
+
+## 💎 Perlas del día
+${perlas || '_(—)_'}
+
+## ❓ Preguntas del día
+${preguntas || '_(—)_'}
+
+## 💡 Ideas del día
+${ideas || '_(—)_'}
+
+---
+_Fuentes: ${(m.sources_used || ['PubMed', 'Web']).join(' · ')}. Atribución a PubMed por sus términos de uso._
+`
+}
+
 // ---- build operations ------------------------------------------------------
 function readJSON(p) { return JSON.parse(fs.readFileSync(p, 'utf8')) }
 
@@ -333,7 +383,24 @@ function buildOne(domain, date) {
   fs.mkdirSync(outDir, { recursive: true })
   fs.writeFileSync(path.join(outDir, `${date}.html`), html)
   console.log(`✓ dossiers/${domain}/${date}.html`)
+  // MD estrellable (preserva checkboxes ya marcados si el archivo existe)
+  const starDir = path.join(STARS, domain)
+  fs.mkdirSync(starDir, { recursive: true })
+  const starPath = path.join(starDir, `${date}_${domain}.md`)
+  let md = renderStarsMD(data)
+  if (fs.existsSync(starPath)) md = mergeStars(fs.readFileSync(starPath, 'utf8'), md)
+  fs.writeFileSync(starPath, md)
+  console.log(`✓ stars/${domain}/${date}_${domain}.md`)
   return true
+}
+
+// Conserva los [x] ya marcados (por id de estrella) al regenerar el MD.
+function mergeStars(oldMd, newMd) {
+  const checked = new Set()
+  for (const m of oldMd.matchAll(/- \[x\][^\n]*<!--star:([^>]+)-->/g)) checked.add(m[1])
+  if (!checked.size) return newMd
+  return newMd.replace(/- \[ \]([^\n]*<!--star:([^>]+)-->)/g, (full, rest, id) =>
+    checked.has(id) ? `- [x]${rest}` : full)
 }
 
 function rebuildManifest() {
@@ -355,6 +422,7 @@ function rebuildManifest() {
         date,
         week: isoWeek(date),
         file: `dossiers/${domain}/${date}.html`,
+        md: `stars/${domain}/${date}_${domain}.md`,
         counts: {
           top3: (data.top3 || []).length,
           top10: (data.top10 || []).length,

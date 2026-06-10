@@ -1,0 +1,100 @@
+#!/usr/bin/env node
+// Recolecta los ítems estrellados ([x]) en stars/**/*.md y genera:
+//   favoritos.json  — lista estructurada
+//   favoritos.html  — galería de favoritos (misma estética que la galería)
+// Correr: node scripts/collect-stars.mjs
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { DOMAINS } from './build.mjs'
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const STARS = path.join(ROOT, 'stars')
+
+const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+const fechaCorta = (s) => { const [y, m, d] = s.split('-').map(Number); return `${d} ${MESES[m - 1]} ${y}` }
+
+// Parsing por partes (robusto a DOIs con paréntesis, p. ej. S2215-0366(26)00089-1).
+// Formato: - [x] **Título** — _fuente_ — [label](href) <!--star:domain|date|id-->
+function parseStarred(line) {
+  const idm = line.match(/<!--star:([^|]+)\|([^|]+)\|([^>]+)-->/)
+  if (!idm) return null
+  const tm = line.match(/\*\*(.+?)\*\*/)
+  const sm = line.match(/\*\*.+?\*\*\s+—\s+_([^_]*)_/)
+  const hm = line.match(/\]\((https?:\/\/.+?)\)\s*<!--star:/) // href justo antes del marcador
+  return {
+    title: tm ? tm[1].trim() : '',
+    source: sm ? sm[1].trim() : '',
+    href: hm ? hm[1] : '',
+    domain: idm[1].trim(), date: idm[2].trim(), id: idm[3].trim(),
+  }
+}
+
+function collect() {
+  const items = []
+  if (!fs.existsSync(STARS)) return items
+  for (const domain of fs.readdirSync(STARS)) {
+    const dir = path.join(STARS, domain)
+    if (!fs.statSync(dir).isDirectory()) continue
+    for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.md'))) {
+      const txt = fs.readFileSync(path.join(dir, f), 'utf8')
+      for (const raw of txt.split('\n')) {
+        if (!raw.startsWith('- [x]')) continue
+        const it = parseStarred(raw)
+        if (it && it.title) items.push(it)
+      }
+    }
+  }
+  items.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.domain.localeCompare(b.domain)))
+  return items
+}
+
+function html(items) {
+  const byDomain = {}
+  for (const it of items) (byDomain[it.domain] = byDomain[it.domain] || []).push(it)
+  const groups = Object.keys(DOMAINS).filter(k => byDomain[k]).map(k => {
+    const m = DOMAINS[k]
+    const rows = byDomain[k].map(it => `
+      <div class="fav" style="--c:${m.color}">
+        <div class="fav-meta">${esc(it.source)} · ${fechaCorta(it.date)}</div>
+        <div class="fav-title">${esc(it.title)}</div>
+        ${it.href ? `<a class="fav-link" href="${esc(it.href)}" target="_blank" rel="noopener">↗ abrir</a>` : ''}
+      </div>`).join('')
+    return `<section class="grp"><div class="grp-head"><span class="dot" style="background:${m.color}"></span><h2>${m.icon} ${esc(m.title)}</h2><span class="n">${byDomain[k].length}</span></div><div class="favs">${rows}</div></section>`
+  }).join('')
+  const empty = `<div class="empty">Aún no hay favoritos.<br>Abre cualquier <code>stars/&lt;dominio&gt;/&lt;fecha&gt;.md</code> en GitHub, marca <code>[x]</code> los que te interesen y commitea. Aparecen aquí.</div>`
+  return `<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>⭐ Favoritos — JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{--bg:#0B0D11;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;--gold:#EF9F27;}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:inherit;text-decoration:none}
+.header{background:linear-gradient(135deg,#0B0D11,#1a1510);border-bottom:1px solid rgba(239,159,39,.25);padding:34px 48px}
+.back{font-size:12px;color:var(--muted);display:inline-block;margin-bottom:12px}.back:hover{color:var(--gold)}
+h1{font-size:30px;font-weight:800;color:#fff}h1 span{color:var(--gold)}
+.sub{font-size:13px;color:var(--muted);margin-top:7px}
+.wrap{max-width:1080px;margin:0 auto;padding:30px 48px 70px}
+.grp{margin-bottom:30px}.grp-head{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.06)}
+.grp-head h2{font-size:15px;font-weight:700;color:#fff}.dot{width:9px;height:9px;border-radius:50%}.grp-head .n{margin-left:auto;font-size:11px;color:var(--dim);background:var(--bg2);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px}
+.favs{display:flex;flex-direction:column;gap:9px}
+.fav{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-left:3px solid var(--c);border-radius:9px;padding:13px 16px}
+.fav-meta{font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--dim);margin-bottom:5px}
+.fav-title{font-size:13.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:7px}
+.fav-link{font-size:11px;font-weight:600;color:var(--c)}.fav-link:hover{text-decoration:underline}
+.empty{text-align:center;color:var(--muted);padding:70px 20px;font-size:14px;line-height:1.8}.empty code{background:var(--bg3);padding:2px 7px;border-radius:5px;color:var(--gold);font-size:12px}
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:18px 48px;max-width:1080px;margin:0 auto;font-size:10.5px;color:var(--dim)}
+@media(max-width:760px){.header,.wrap,.footer{padding-left:20px;padding-right:20px}}
+</style></head><body>
+<div class="header"><a class="back" href="index.html">← Galería</a><h1>⭐ <span>Favoritos</span></h1><div class="sub">Papers y unidades que estrellaste · ${items.length} en total</div></div>
+<div class="wrap">${items.length ? groups : empty}</div>
+<div class="footer">JAFLO · Inteligencia Diaria — favoritos recopilados de los MD estrellados. Atribución PubMed por sus términos de uso.</div>
+</body></html>`
+}
+
+const items = collect()
+fs.writeFileSync(path.join(ROOT, 'favoritos.json'), JSON.stringify({ generated: new Date().toISOString().slice(0, 19) + 'Z', count: items.length, items }, null, 2))
+fs.writeFileSync(path.join(ROOT, 'favoritos.html'), html(items))
+console.log(`✓ favoritos: ${items.length} ítems estrellados → favoritos.html + favoritos.json`)

@@ -1,0 +1,42 @@
+name: Rebuild favoritos + manifest
+
+# Cuando marcas [x] en un stars/**/*.md (o llega un dossier nuevo), regenera
+# favoritos.html y manifest.json y los commitea. [skip ci] evita el loop.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'stars/**'
+      - 'data/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rebuild
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Regenerar manifest + favoritos
+        run: |
+          node scripts/build.mjs --manifest
+          node scripts/collect-stars.mjs
+      - name: Commit si hay cambios
+        run: |
+          git config user.name "jaflo-bot"
+          git config user.email "actions@github.com"
+          if [ -n "$(git status --porcelain manifest.json favoritos.html favoritos.json)" ]; then
+            git add manifest.json favoritos.html favoritos.json
+            git commit -m "rebuild favoritos + manifest [skip ci]"
+            git push
+          else
+            echo "sin cambios"
+          fi

@@ -3,7 +3,7 @@
 // (gen-prompts) y en los prompts de routine (gen-routines). Editar aquí afina la búsqueda.
 
 export const DEEPSEARCH = {
-  'rct-metas-psychiatry': `**Pregunta núcleo:** ¿Qué evidencia de alto nivel (NMA, SR con meta-análisis, RCT grande) publicada en los últimos 7-10 días cambia o refuerza la conducta clínica en psiquiatría — en todo el espectro — con foco extra en las líneas de Javier?
+  'rct-metas-psychiatry': `**Pregunta núcleo:** ¿Qué evidencia de alto nivel (NMA, SR con meta-análisis, RCT grande) publicada en las últimas 48 horas cambia o refuerza la conducta clínica en psiquiatría — en todo el espectro — con foco extra en las líneas de Javier?
 
 **Marco PICO/PEO:**
 - P (población): pacientes psiquiátricos de cualquier edad (niño / adolescente / adulto / anciano); todo el espectro: depresión, bipolar, esquizofrenia/psicosis, ansiedad, TDAH, autismo/TEA, TOC, TEPT, trastornos de personalidad, uso de sustancias.
@@ -29,13 +29,13 @@ export const DEEPSEARCH = {
 
 **Anti-alucinación:** todo ítem debe existir en la fuente; DOI solo si verificado en metadata. Cita PubMed.
 
-**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 10 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
 - NMA/SR top:
     ("network meta-analysis"[tiab] OR "systematic review"[pt] OR "meta-analysis"[pt] OR "cochrane database syst rev"[ta]) AND (psychiatry OR depression OR bipolar OR schizophrenia OR anxiety OR ADHD OR autism OR OCD OR PTSD OR "personality disorder")
 - Boost líneas de Javier:
     (ADHD OR autism OR "autism spectrum" OR neurodevelopment OR "transcranial magnetic stimulation" OR tDCS OR ECT OR "deep brain stimulation" OR "precision psychiatry" OR biomarker) AND ("randomized controlled trial"[pt] OR "meta-analysis"[pt] OR "systematic review"[pt])`,
 
-  'dimensional-psych': `**Pregunta núcleo:** ¿Qué evidencia y conversación de los últimos 7-10 días avanza la psicopatología dimensional (estructura, validación, traducción clínica) o reencuadra el campo — con foco en lo clínicamente traducible y en las líneas de Javier?
+  'dimensional-psych': `**Pregunta núcleo:** ¿Qué evidencia y conversación de las últimas 48 horas avanza la psicopatología dimensional (estructura, validación, traducción clínica) o reencuadra el campo — con foco en lo clínicamente traducible y en las líneas de Javier?
 
 **Marco PEO:**
 - P (población/contexto): muestras clínicas y comunitarias, cualquier edad; estructura latente de la psicopatología.
@@ -55,10 +55,10 @@ export const DEEPSEARCH = {
 
 **Anti-alucinación:** todo ítem real y verificable; DOI/URL solo si confirmado. Cita PubMed cuando uses PubMed.
 
-**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 10 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
 - Estructura/validación dimensional:
     ("HiTOP" OR "hierarchical taxonomy" OR "RDoC" OR "research domain criteria" OR "dimensional psychopathology" OR "transdiagnostic" OR "p factor" OR "general psychopathology factor" OR "bifactor") AND (validity OR structure OR "network analysis" OR longitudinal OR latent)
 - Traducción clínica + líneas de Javier:
     ("dimensional" OR "transdiagnostic" OR "HiTOP" OR "RDoC") AND (ADHD OR autism OR neurodevelopment OR "clinical utility" OR staging OR specifier OR treatment)
-- Web/preprint/social (recall amplio): PsyArXiv y medRxiv ("dimensional psychopathology" / HiTOP / RDoC / "psychopathology network"); X reciente ("HiTOP" OR "RDoC" OR "dimensional psychopathology" OR "psychopathology network"); Reddit r/psychiatry, r/clinicalpsychology, r/cogsci de los últimos 7-10 días.`,
+- Web/preprint/social (recall amplio): PsyArXiv y medRxiv ("dimensional psychopathology" / HiTOP / RDoC / "psychopathology network"); X reciente ("HiTOP" OR "RDoC" OR "dimensional psychopathology" OR "psychopathology network"); Reddit r/psychiatry, r/clinicalpsychology, r/cogsci de las últimas 48 horas.`,
 }
