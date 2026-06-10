@@ -11,6 +11,29 @@ LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, i
    - Web: WebSearch/WebFetch para preprints (medRxiv/PsyArXiv/arXiv), X/Twitter, Reddit, Substack, blogs y YouTube según indique ese archivo.
    - Ventana: **últimas 48 horas** (extiende a 72h solo si está delgado). Prioriza lo de las **últimas 24h**. Si un ítem ya salió ayer en este dominio, inclúyelo solo si sigue siendo claramente top (no repitas relleno). Reúne los ítems reales que haya (idealmente 13: top3 + top10); si hay menos, calidad > cantidad y marca meta.thin=true.
 
+GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y filtrar ruido:
+
+**Pregunta núcleo:** ¿Qué de las últimas 48 horas conecta evidencia de aprendizaje/neurociencia con la práctica educativa real — sin neuromitos?
+
+**Marco PEO:**
+- P: aprendices y docentes (educación médica y superior).
+- E: educación basada en evidencia, neuroeducación, neurociencia educativa, simulación, CBME, aprendizaje activo, carga cognitiva, práctica de recuperación, espaciado.
+- O: aprendizaje y retención reales, transferencia, diseño instruccional informado.
+
+**Prioridad del top 3:** evidencia empírica con TRADUCCIÓN al aula/clínica (no neurobabble). Revisiones sólidas que sinteticen principios accionables. [SUPUESTO: criterios elegidos por Luci sin grill].
+
+**BOOST:** neurociencia educativa aplicable (alimenta el libro de neurociencia educativa de Javier); retrieval practice, espaciado, carga cognitiva, feedback; simulación.
+
+**Exclusiones (anti-neuromito):** afirmaciones "brain-based" sin respaldo, estilos de aprendizaje, "hemisferio dominante", neuroimagen sobre-interpretada; opinión sin dato; divulgación 101.
+
+**Señales de calidad:** diseño controlado, tamaño de efecto, replicación, distancia mecanismo→aula declarada con honestidad.
+
+**Anti-alucinación:** ítems reales; DOI solo si verificado. Cita PubMed.
+
+**Queries afinadas (PubMed, date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- ("evidence-based education" OR "medical education" OR "health professions education" OR neuroeducation OR "educational neuroscience" OR simulation OR "competency-based medical education" OR "cognitive load" OR "retrieval practice")
+- Web: YouTube/Substack/blogs (p. ej. The Learning Scientists), X de las últimas 48 horas; prioriza evidencia sobre opinión.
+
 3) REGLA DURA ANTI-FABRICACIÓN: cada ítem REAL y hallado en búsquedas. DOI solo si verificado en metadata (si no, ""). Si el dominio está delgado esta semana → solo lo real + meta.thin=true. Nunca rellenar con papers inventados. Cita PubMed cuando uses PubMed.
 
 4) Produce las 5 secciones (español, personalizado a Javier) y escribe data/neuroscience-educ/$TODAY.json (**sobrescribe** si ya existe) con el contrato (ver prompts/2-neuroscience-educ.md):

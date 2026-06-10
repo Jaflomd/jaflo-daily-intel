@@ -11,6 +11,32 @@ LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, i
    - Web: WebSearch/WebFetch para preprints (medRxiv/PsyArXiv/arXiv), X/Twitter, Reddit, Substack, blogs y YouTube según indique ese archivo.
    - Ventana: **últimas 48 horas** (extiende a 72h solo si está delgado). Prioriza lo de las **últimas 24h**. Si un ítem ya salió ayer en este dominio, inclúyelo solo si sigue siendo claramente top (no repitas relleno). Reúne los ítems reales que haya (idealmente 13: top3 + top10); si hay menos, calidad > cantidad y marca meta.thin=true.
 
+GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y filtrar ruido:
+
+**Pregunta núcleo:** ¿Qué de las últimas 48 horas hace la psiquiatría más personalizada/estratificada O la educación más adaptativa, con evidencia real (no hype de IA)?
+
+**Marco PICO/PEO:**
+- P: pacientes psiquiátricos (estratificación, predicción de respuesta) y aprendices de profesiones de la salud (personalización del aprendizaje).
+- I/E: biomarcadores, multi-ómica, fenotipado digital, farmacogenómica, psiquiatría computacional; y aprendizaje adaptativo, learning analytics, feedback de precisión, IA tutora.
+- O: validez predictiva real (AUC/calibración en muestra externa), utilidad clínica/educativa, reproducibilidad.
+
+**Prioridad del top 3:** la PSIQUIATRÍA de precisión manda (línea clínica + libro + pilar precision-psychiatry), PERO garantiza al menos 1 ítem de EDUCACIÓN de precisión en el top 3 (pilar amauta-education) y varios en el radar. Que ninguno desaparezca. [SUPUESTO: balance elegido por Luci sin grill].
+
+**BOOST (translacional/usable):** herramientas/repos que Javier pueda usar o citar; validación clínica/educativa real; fenotipado digital y predicción de respuesta aplicables; intersección con TDAH/TEA y RDoC/HiTOP.
+
+**Exclusiones (anti-hype IA):** IA genérica sin datos clínicos/educativos; demos, marketing, benchmarks sin uso real; modelos sin validación externa; preclínico/animal. Solo entra lo que tenga validación O aporte metodológico genuino.
+
+**Señales de calidad:** validación externa/temporal, calibración, tamaño muestral, código/datos abiertos, TRIPOD/PROBAST si es modelo predictivo.
+
+**Anti-alucinación:** ítems reales; DOI/URL solo si verificado. Cita PubMed.
+
+**Queries afinadas (PubMed, date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- Psiquiatría de precisión:
+    ("precision psychiatry" OR "personalized psychiatry" OR "stratified psychiatry" OR "computational psychiatry" OR "digital phenotyping" OR pharmacogenomics OR biomarker OR "treatment response prediction") AND (psychiatry OR "mental health")
+- Educación de precisión:
+    ("precision education" OR "personalized learning" OR "adaptive learning" OR "learning analytics" OR "precision feedback" OR "AI-assisted learning") AND ("medical education" OR "health professions education")
+- Web/preprint: medRxiv, PsyArXiv, arXiv (cs.LG, q-bio), GitHub trending (precision-medicine, computational-psychiatry, adaptive-learning), X/Reddit de las últimas 48 horas.
+
 3) REGLA DURA ANTI-FABRICACIÓN: cada ítem REAL y hallado en búsquedas. DOI solo si verificado en metadata (si no, ""). Si el dominio está delgado esta semana → solo lo real + meta.thin=true. Nunca rellenar con papers inventados. Cita PubMed cuando uses PubMed.
 
 4) Produce las 5 secciones (español, personalizado a Javier) y escribe data/precision-psych/$TODAY.json (**sobrescribe** si ya existe) con el contrato (ver prompts/1-precision-psych.md):

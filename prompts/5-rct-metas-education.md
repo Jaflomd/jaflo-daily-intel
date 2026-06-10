@@ -21,6 +21,34 @@ Revisa **las últimas 48 horas** (extiende a 72h solo si está delgado, por el r
 1. **PubMed** (fuente principal, `sort=pub_date`, `max_results=30`): `(("medical education" OR "health professions education" OR "higher education" OR "undergraduate" OR "postgraduate" OR "residency training") AND ("randomized controlled trial"[pt] OR "controlled clinical trial"[pt] OR "meta-analysis"[pt] OR "systematic review"[pt] OR "network meta-analysis"[tiab] OR "scoping review"[tiab]))`
 2. Trae metadata de los top 25 PMIDs en lotes de 5; identifica los 13 más relevantes a educación médica/superior.
 
+## Guía de búsqueda profunda (deep-search)
+
+**Pregunta núcleo:** ¿Qué evidencia de alto nivel (NMA, SR/meta, RCT grande) de las últimas 48 horas cambia cómo enseñamos en profesiones de la salud / educación superior?
+
+**Marco PICO/PEO:**
+- P: estudiantes/residentes/docentes de profesiones de la salud y educación superior.
+- I: aprendizaje activo, flipped, PBL/TBL, simulación, feedback, evaluación, tecnología/IA educativa, desarrollo docente, CBME.
+- C: enseñanza usual o comparación de métodos.
+- O: aprendizaje real (Kirkpatrick 2-4: conocimiento/habilidad/comportamiento), no solo satisfacción.
+
+**Jerarquía de inclusión (descendente):**
+1. NMA y SR con meta-análisis (Cochrane, BEME, journals top de HPE).
+2. RCTs grandes/multicéntricos o de alto impacto.
+3. Scoping/SR sin meta solo si aportan síntesis accionable.
+[SUPUESTO: jerarquía elegida por Luci sin grill, espejo del lunes].
+
+**BOOST (líneas AMAUTA):** simulación, feedback, evaluación, IA en educación, competency-based; lo replicable en cursos/bancos de Javier (USAMEDIC/ENAM/Residentado).
+
+**Exclusiones:** estudios de una sola institución sin control; outcomes solo de satisfacción (Kirkpatrick 1); opinión/editorial; "innovaciones" sin evaluación.
+
+**Señales de calidad:** GRADE/certeza, PRISMA, registro, tamaño de efecto, nivel Kirkpatrick/Miller alcanzado.
+
+**Anti-alucinación:** ítems reales; DOI solo si verificado. Cita PubMed.
+
+**Queries afinadas (PubMed, date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- (("medical education" OR "health professions education" OR "higher education" OR residency OR undergraduate) AND ("randomized controlled trial"[pt] OR "meta-analysis"[pt] OR "systematic review"[pt] OR "network meta-analysis"[tiab] OR "scoping review"[tiab]))
+- Boost: (simulation OR feedback OR assessment OR "competency-based" OR "artificial intelligence" OR "flipped classroom") AND ("medical education" OR "health professions education")
+
 Reúne los ítems reales de la ventana de 48h (idealmente 13: top3 + top10). Si hay menos, prioriza calidad sobre cantidad y marca `meta.thin=true` — nunca rellenes. Selecciona los **más impactantes/novedosos/accionables** para Javier.
 
 **Regla dura anti-fabricación:** cada ítem debe ser REAL y haber aparecido en tus búsquedas. DOI solo si lo confirmaste en metadata; si no, `doi:""`. Si la semana está delgada en este dominio, devuelve solo los hallazgos reales y marca `meta.thin=true`; jamás rellenes con papers inventados. Cita PubMed cuando uses PubMed (atribución + DOIs por sus términos de uso).

@@ -11,6 +11,28 @@ LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, i
    - Web: WebSearch/WebFetch para preprints (medRxiv/PsyArXiv/arXiv), X/Twitter, Reddit, Substack, blogs y YouTube según indique ese archivo.
    - Ventana: **últimas 48 horas** (extiende a 72h solo si está delgado). Prioriza lo de las **últimas 24h**. Si un ítem ya salió ayer en este dominio, inclúyelo solo si sigue siendo claramente top (no repitas relleno). Reúne los ítems reales que haya (idealmente 13: top3 + top10); si hay menos, calidad > cantidad y marca meta.thin=true.
 
+GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y filtrar ruido:
+
+**Pregunta núcleo:** ¿Qué de las últimas 48 horas ofrece un modelo mental o framework con MECANISMO aplicable a decidir, pensar o comunicar mejor — no consejo genérico?
+
+**Marco:**
+- Tema: modelos mentales, filosofía práctica, estoicismo, toma de decisiones, metacognición, systems thinking, second-order thinking, humildad epistémica, debiasing, comunicación de liderazgo, soft/social skills.
+- Fuente PRINCIPAL: web (Substack, blogs como Farnam Street, X con min_faves:10, Reddit r/mentalmodels, r/LessWrong, r/philosophy, YouTube). PubMed solo para los papers peer-reviewed.
+
+**Prioridad del top 3:** papers peer-reviewed o ensayos con framework ESTRUCTURAL y mecanismo. Lo conceptual-aplicable manda sobre lo anecdótico. [SUPUESTO: criterios elegidos por Luci sin grill].
+
+**BOOST:** frameworks aplicables a decisión, metacognición, comunicación y liderazgo (Competency Lab de Javier: razonamiento, comunicación, self-care); ideas que sirvan de contenido o capítulo.
+
+**Exclusiones:** hustle culture, citas motivacionales, hacks de productividad, autoayuda sin estructura, threads de "10 lecciones" sin mecanismo.
+
+**Señales de calidad:** mecanismo explícito (por qué funciona), límites declarados, ejemplos concretos, base en evidencia o filosofía rigurosa.
+
+**Anti-alucinación:** ítems reales y verificables; DOI/URL solo si confirmado. Cita PubMed cuando uses PubMed.
+
+**Queries afinadas:**
+- PubMed (date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date): ("decision making" OR metacognition OR "cognitive bias" OR reasoning OR epistemic OR "dual process")
+- Web (últimas 48 horas): Substack/Farnam Street/blogs; X ("mental models" OR "second order thinking" OR "epistemic humility" OR stoicism min_faves:10); Reddit r/mentalmodels, r/LessWrong, r/philosophy; YouTube transcripts.
+
 3) REGLA DURA ANTI-FABRICACIÓN: cada ítem REAL y hallado en búsquedas. DOI solo si verificado en metadata (si no, ""). Si el dominio está delgado esta semana → solo lo real + meta.thin=true. Nunca rellenar con papers inventados. Cita PubMed cuando uses PubMed.
 
 4) Produce las 5 secciones (español, personalizado a Javier) y escribe data/philosophy/$TODAY.json (**sobrescribe** si ya existe) con el contrato (ver prompts/7-philosophy.md):

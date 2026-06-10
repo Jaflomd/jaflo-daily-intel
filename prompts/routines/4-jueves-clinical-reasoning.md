@@ -11,6 +11,29 @@ LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, i
    - Web: WebSearch/WebFetch para preprints (medRxiv/PsyArXiv/arXiv), X/Twitter, Reddit, Substack, blogs y YouTube según indique ese archivo.
    - Ventana: **últimas 48 horas** (extiende a 72h solo si está delgado). Prioriza lo de las **últimas 24h**. Si un ítem ya salió ayer en este dominio, inclúyelo solo si sigue siendo claramente top (no repitas relleno). Reúne los ítems reales que haya (idealmente 13: top3 + top10); si hay menos, calidad > cantidad y marca meta.thin=true.
 
+GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y filtrar ruido:
+
+**Pregunta núcleo:** ¿Qué de las últimas 48 horas mejora cómo razonamos clínicamente o reduce el error diagnóstico — con mecanismo o dato, no opinión?
+
+**Marco PEO:**
+- P: clínicos y aprendices en decisiones diagnósticas/terapéuticas.
+- E: razonamiento clínico, dual-process (Sistema 1/2), error diagnóstico, sesgo cognitivo, cierre prematuro, debiasing, impacto de la IA en el razonamiento.
+- O: precisión diagnóstica, calibración, reducción de error, transferencia a la práctica/enseñanza.
+
+**Prioridad del top 3:** estudios empíricos (experimentos, RCTs educativos, estudios de error) sobre debiasing, dual-process e impacto de IA en el razonamiento. Revisiones sólidas si sintetizan mecanismo. [SUPUESTO: criterios elegidos por Luci sin grill].
+
+**BOOST:** impacto de la IA en el razonamiento clínico (pilar ai-enhancement + tema caliente) y lo ENSEÑABLE (illness scripts, estrategias de debiasing) para el Competency Lab / AMAUTA.
+
+**Exclusiones:** listas de sesgos sin intervención ni dato; opinión/editorial sin evidencia; "tips" genéricos; case reports anecdóticos.
+
+**Señales de calidad:** diseño experimental, tamaño de efecto, calibración, medición de error real (no autorreporte), transferencia.
+
+**Anti-alucinación:** ítems reales; DOI solo si verificado. Cita PubMed.
+
+**Queries afinadas (PubMed, date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- ("clinical reasoning" OR "diagnostic reasoning" OR "clinical decision-making" OR "diagnostic error" OR "cognitive bias" OR "dual process" OR debiasing) AND (education OR training OR accuracy OR intervention OR "artificial intelligence")
+- Web: medRxiv, blogs/Substack (p. ej. ImproveDx), X, Reddit (r/medicine, r/medicaleducation, r/residency) de las últimas 48 horas; foco en IA y razonamiento.
+
 3) REGLA DURA ANTI-FABRICACIÓN: cada ítem REAL y hallado en búsquedas. DOI solo si verificado en metadata (si no, ""). Si el dominio está delgado esta semana → solo lo real + meta.thin=true. Nunca rellenar con papers inventados. Cita PubMed cuando uses PubMed.
 
 4) Produce las 5 secciones (español, personalizado a Javier) y escribe data/clinical-reasoning/$TODAY.json (**sobrescribe** si ya existe) con el contrato (ver prompts/4-clinical-reasoning.md):

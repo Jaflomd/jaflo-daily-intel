@@ -21,6 +21,29 @@ Revisa **las últimas 48 horas** (extiende a 72h solo si está delgado, por el r
 1. **PubMed**: `("clinical reasoning" OR "diagnostic reasoning" OR "therapeutic reasoning" OR "clinical decision-making" OR "diagnostic error" OR "cognitive bias")`
 2. **Web**: medRxiv, PsyArXiv, ERIC, Reddit (r/medicine, r/medicaleducation, r/residency), X/Twitter (`("clinical reasoning" OR "diagnostic reasoning" OR "diagnostic error") within_time:7d min_faves:3`), Substack, blogs académicos — últimos 7 días.
 
+## Guía de búsqueda profunda (deep-search)
+
+**Pregunta núcleo:** ¿Qué de las últimas 48 horas mejora cómo razonamos clínicamente o reduce el error diagnóstico — con mecanismo o dato, no opinión?
+
+**Marco PEO:**
+- P: clínicos y aprendices en decisiones diagnósticas/terapéuticas.
+- E: razonamiento clínico, dual-process (Sistema 1/2), error diagnóstico, sesgo cognitivo, cierre prematuro, debiasing, impacto de la IA en el razonamiento.
+- O: precisión diagnóstica, calibración, reducción de error, transferencia a la práctica/enseñanza.
+
+**Prioridad del top 3:** estudios empíricos (experimentos, RCTs educativos, estudios de error) sobre debiasing, dual-process e impacto de IA en el razonamiento. Revisiones sólidas si sintetizan mecanismo. [SUPUESTO: criterios elegidos por Luci sin grill].
+
+**BOOST:** impacto de la IA en el razonamiento clínico (pilar ai-enhancement + tema caliente) y lo ENSEÑABLE (illness scripts, estrategias de debiasing) para el Competency Lab / AMAUTA.
+
+**Exclusiones:** listas de sesgos sin intervención ni dato; opinión/editorial sin evidencia; "tips" genéricos; case reports anecdóticos.
+
+**Señales de calidad:** diseño experimental, tamaño de efecto, calibración, medición de error real (no autorreporte), transferencia.
+
+**Anti-alucinación:** ítems reales; DOI solo si verificado. Cita PubMed.
+
+**Queries afinadas (PubMed, date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- ("clinical reasoning" OR "diagnostic reasoning" OR "clinical decision-making" OR "diagnostic error" OR "cognitive bias" OR "dual process" OR debiasing) AND (education OR training OR accuracy OR intervention OR "artificial intelligence")
+- Web: medRxiv, blogs/Substack (p. ej. ImproveDx), X, Reddit (r/medicine, r/medicaleducation, r/residency) de las últimas 48 horas; foco en IA y razonamiento.
+
 Reúne los ítems reales de la ventana de 48h (idealmente 13: top3 + top10). Si hay menos, prioriza calidad sobre cantidad y marca `meta.thin=true` — nunca rellenes. Selecciona los **más impactantes/novedosos/accionables** para Javier.
 
 **Regla dura anti-fabricación:** cada ítem debe ser REAL y haber aparecido en tus búsquedas. DOI solo si lo confirmaste en metadata; si no, `doi:""`. Si la semana está delgada en este dominio, devuelve solo los hallazgos reales y marca `meta.thin=true`; jamás rellenes con papers inventados. Cita PubMed cuando uses PubMed (atribución + DOIs por sus términos de uso).

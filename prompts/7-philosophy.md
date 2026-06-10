@@ -22,6 +22,28 @@ Revisa **las últimas 48 horas** (extiende a 72h solo si está delgado, por el r
 2. **PubMed** (solo para los papers peer-reviewed): `("decision making" OR "metacognition" OR "cognitive bias" OR "reasoning" OR "epistemic")`
 3. **Filtra** hustle culture, hacks de productividad y motivación vacía. Exige insight a nivel de **mecanismo**, no consejo genérico. Para `top3` prefiere artículos peer-reviewed o ensayos con framework estructural.
 
+## Guía de búsqueda profunda (deep-search)
+
+**Pregunta núcleo:** ¿Qué de las últimas 48 horas ofrece un modelo mental o framework con MECANISMO aplicable a decidir, pensar o comunicar mejor — no consejo genérico?
+
+**Marco:**
+- Tema: modelos mentales, filosofía práctica, estoicismo, toma de decisiones, metacognición, systems thinking, second-order thinking, humildad epistémica, debiasing, comunicación de liderazgo, soft/social skills.
+- Fuente PRINCIPAL: web (Substack, blogs como Farnam Street, X con min_faves:10, Reddit r/mentalmodels, r/LessWrong, r/philosophy, YouTube). PubMed solo para los papers peer-reviewed.
+
+**Prioridad del top 3:** papers peer-reviewed o ensayos con framework ESTRUCTURAL y mecanismo. Lo conceptual-aplicable manda sobre lo anecdótico. [SUPUESTO: criterios elegidos por Luci sin grill].
+
+**BOOST:** frameworks aplicables a decisión, metacognición, comunicación y liderazgo (Competency Lab de Javier: razonamiento, comunicación, self-care); ideas que sirvan de contenido o capítulo.
+
+**Exclusiones:** hustle culture, citas motivacionales, hacks de productividad, autoayuda sin estructura, threads de "10 lecciones" sin mecanismo.
+
+**Señales de calidad:** mecanismo explícito (por qué funciona), límites declarados, ejemplos concretos, base en evidencia o filosofía rigurosa.
+
+**Anti-alucinación:** ítems reales y verificables; DOI/URL solo si confirmado. Cita PubMed cuando uses PubMed.
+
+**Queries afinadas:**
+- PubMed (date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date): ("decision making" OR metacognition OR "cognitive bias" OR reasoning OR epistemic OR "dual process")
+- Web (últimas 48 horas): Substack/Farnam Street/blogs; X ("mental models" OR "second order thinking" OR "epistemic humility" OR stoicism min_faves:10); Reddit r/mentalmodels, r/LessWrong, r/philosophy; YouTube transcripts.
+
 Reúne los ítems reales de la ventana de 48h (idealmente 13: top3 + top10). Si hay menos, prioriza calidad sobre cantidad y marca `meta.thin=true` — nunca rellenes. Selecciona los **más impactantes/novedosos/accionables** para Javier.
 
 **Regla dura anti-fabricación:** cada ítem debe ser REAL y haber aparecido en tus búsquedas. DOI solo si lo confirmaste en metadata; si no, `doi:""`. Si la semana está delgada en este dominio, devuelve solo los hallazgos reales y marca `meta.thin=true`; jamás rellenes con papers inventados. Cita PubMed cuando uses PubMed (atribución + DOIs por sus términos de uso).

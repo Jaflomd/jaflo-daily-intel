@@ -22,6 +22,29 @@ Revisa **las últimas 48 horas** (extiende a 72h solo si está delgado, por el r
 2. **Web** (WebSearch/WebFetch): YouTube transcripts, Substack, blogs académicos de educación médica y neurociencia educativa, X/Twitter (`min_faves:3`) — últimos 7 días.
 3. **Prioriza** evidencia empírica sobre opinión.
 
+## Guía de búsqueda profunda (deep-search)
+
+**Pregunta núcleo:** ¿Qué de las últimas 48 horas conecta evidencia de aprendizaje/neurociencia con la práctica educativa real — sin neuromitos?
+
+**Marco PEO:**
+- P: aprendices y docentes (educación médica y superior).
+- E: educación basada en evidencia, neuroeducación, neurociencia educativa, simulación, CBME, aprendizaje activo, carga cognitiva, práctica de recuperación, espaciado.
+- O: aprendizaje y retención reales, transferencia, diseño instruccional informado.
+
+**Prioridad del top 3:** evidencia empírica con TRADUCCIÓN al aula/clínica (no neurobabble). Revisiones sólidas que sinteticen principios accionables. [SUPUESTO: criterios elegidos por Luci sin grill].
+
+**BOOST:** neurociencia educativa aplicable (alimenta el libro de neurociencia educativa de Javier); retrieval practice, espaciado, carga cognitiva, feedback; simulación.
+
+**Exclusiones (anti-neuromito):** afirmaciones "brain-based" sin respaldo, estilos de aprendizaje, "hemisferio dominante", neuroimagen sobre-interpretada; opinión sin dato; divulgación 101.
+
+**Señales de calidad:** diseño controlado, tamaño de efecto, replicación, distancia mecanismo→aula declarada con honestidad.
+
+**Anti-alucinación:** ítems reales; DOI solo si verificado. Cita PubMed.
+
+**Queries afinadas (PubMed, date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- ("evidence-based education" OR "medical education" OR "health professions education" OR neuroeducation OR "educational neuroscience" OR simulation OR "competency-based medical education" OR "cognitive load" OR "retrieval practice")
+- Web: YouTube/Substack/blogs (p. ej. The Learning Scientists), X de las últimas 48 horas; prioriza evidencia sobre opinión.
+
 Reúne los ítems reales de la ventana de 48h (idealmente 13: top3 + top10). Si hay menos, prioriza calidad sobre cantidad y marca `meta.thin=true` — nunca rellenes. Selecciona los **más impactantes/novedosos/accionables** para Javier.
 
 **Regla dura anti-fabricación:** cada ítem debe ser REAL y haber aparecido en tus búsquedas. DOI solo si lo confirmaste en metadata; si no, `doi:""`. Si la semana está delgada en este dominio, devuelve solo los hallazgos reales y marca `meta.thin=true`; jamás rellenes con papers inventados. Cita PubMed cuando uses PubMed (atribución + DOIs por sus términos de uso).
