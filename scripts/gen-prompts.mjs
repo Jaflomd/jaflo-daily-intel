@@ -107,7 +107,7 @@ ${d.scope}
 
 ## Ventana temporal
 
-Revisa **las últimas 48 horas** (extiende a 72h solo si está delgado, por el retraso de indexación de PubMed). En \`search_articles\` usa \`date_from\` = hoy − 3 días, \`date_to\` = hoy, \`datetype="pdat"\`, \`sort="pub_date"\`. En web, filtra a publicaciones de las últimas 48 horas.
+Revisa **las últimas 48 horas** (extiende a 72h solo si está delgado, por el retraso de indexación de PubMed). Prioriza lo de las **últimas 24h** y evita repetir lo del dossier de ayer salvo que siga siendo claramente top. En \`search_articles\` usa \`date_from\` = hoy − 3 días, \`date_to\` = hoy, \`datetype="pdat"\`, \`sort="pub_date"\`. Si el MCP de PubMed no carga en el entorno, cae a WebSearch sobre \`site:pubmed.ncbi.nlm.nih.gov\` y Europe PMC. En web, filtra a publicaciones de las últimas 48 horas.
 
 ## Fuentes y queries (ejecuta de verdad — no inventes)
 
