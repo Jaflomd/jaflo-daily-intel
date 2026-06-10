@@ -7,23 +7,36 @@ curados y **personalizados**, renderizados como HTML bonito y navegables por **d
 
 🔗 **Galería en vivo:** GitHub Pages (ver *Settings → Pages*).
 
-## Rotación semanal — 1 dominio por día
+## 7 dominios, cada día (ventana 48 h)
 
-Cada día de la semana corre **un solo agente/dominio**, que revisa prioritariamente los
-**últimos 7-10 días previos**. Así cada día produce un dossier enfocado en vez de saturar.
+Los **7 dominios corren cada día** (7 routines, cron diario), cada uno barriendo las
+**últimas 48 horas**. Cada corrida publica un dossier HTML en la galería + un MD estrellable.
 
-| Día | Dominio | Color | Fuente principal |
+| # | Dominio | Color | Fuente principal |
 |---|---|---|---|
-| **Lunes** | Alta Evidencia · Psiquiatría (RCT/meta/NMA) | `#EF9F27` | PubMed |
-| **Martes** | Psicopatología Dimensional (HiTOP/RDoC) | `#5DCAA5` | PubMed + PsyArXiv/X/Reddit |
-| **Miércoles** | Psiquiatría & Educación de Precisión | `#1D9E75` | PubMed + medRxiv/PsyArXiv/arXiv/GitHub/X |
-| **Jueves** | Razonamiento Clínico | `#378ADD` | PubMed + Reddit/X/Substack |
-| **Viernes** | Alta Evidencia · Educación (RCT/meta) | `#D85A30` | PubMed |
-| **Sábado** | Educación Médica & Neuroeducación | `#D4537E` | PubMed + YouTube/Substack/blogs |
-| **Domingo** | Modelos Mentales & Filosofía | `#639922` | Web (Substack/X/Reddit/YouTube) + PubMed |
+| 01 | Psiquiatría & Educación de Precisión | `#1D9E75` | PubMed + medRxiv/PsyArXiv/arXiv/GitHub/X |
+| 02 | Educación Médica & Neuroeducación | `#D4537E` | PubMed + YouTube/Substack/blogs |
+| 03 | Psicopatología Dimensional (HiTOP/RDoC) | `#5DCAA5` | PubMed + PsyArXiv/X/Reddit |
+| 04 | Razonamiento Clínico | `#378ADD` | PubMed + Reddit/X/Substack |
+| 05 | Alta Evidencia · Educación (RCT/meta) | `#D85A30` | PubMed |
+| 06 | Alta Evidencia · Psiquiatría (RCT/meta/NMA) | `#EF9F27` | PubMed |
+| 07 | Modelos Mentales & Filosofía | `#639922` | Web (Substack/X/Reddit/YouTube) + PubMed |
 
-El mapeo día→dominio vive en `scripts/build.mjs` (objeto `DOMAINS`, campo `weekday`).
-`node scripts/today-domain.mjs --info` dice qué toca hoy.
+Prompts listos para subir como routines en `prompts/routines/` (cron sugerido `0 5 * * *` c/u).
+Algunos llevan una **guía de búsqueda profunda** (deep-search) afinada — ver `scripts/deepsearch.mjs`.
+
+## Favoritos (estrellas) ⭐
+
+Cada dossier genera un MD en `stars/<dominio>/<fecha>_<dominio>.md` con cada paper/unidad
+como checkbox. Para **estrellar**: abre el MD en GitHub, marca `- [x]`, commitea. Un GitHub
+Action (o `node scripts/collect-stars.mjs`) recopila todo lo marcado en **`favoritos.html`**.
+Regenerar un dossier **preserva** lo que ya estrellaste.
+
+## Espejo en Drive
+
+Las routines corren en la nube y no ven tu Drive. Para tener los MD en tus carpetas
+`0-input/reading-schedule/0N-<dominio>/`, corre **local** en tu Mac:
+`node scripts/sync-to-drive.mjs` (hace `git pull` y copia los MD nuevos).
 
 ## Estructura de cada dossier (5 secciones)
 
@@ -36,9 +49,11 @@ El mapeo día→dominio vive en `scripts/build.mjs` (objeto `DOMAINS`, campo `we
 ## Cómo funciona
 
 ```
-prompts/<n>-<dominio>.md   →  agente investiga (PubMed + web)  →  data/<dominio>/<fecha>.json
-                              node scripts/build.mjs           →  dossiers/<dominio>/<fecha>.html + manifest.json
-                              git push                         →  GitHub Pages publica  →  index.html (galería)
+prompts/routines/*.md  →  agente investiga (PubMed + web, 48 h)  →  data/<dominio>/<fecha>.json
+                          node scripts/build.mjs                  →  dossiers/.../<fecha>.html        (galería)
+                                                                  +  stars/.../<fecha>_<dominio>.md    (estrellable)
+                          node scripts/collect-stars.mjs          →  favoritos.html  (lo que marcaste [x])
+                          git push  →  GitHub Pages  →  index.html (galería navegable)
 ```
 
 - **`prompts/`** — los 7 prompts agénticos, autocontenidos. Fuente: `scripts/gen-prompts.mjs`.
