@@ -5,6 +5,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { DOMAINS as CAT } from './build.mjs'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'prompts')
 
@@ -86,12 +87,15 @@ const DOMAINS = [
 ]
 
 function prompt(d) {
+  const day = (CAT[d.key] && CAT[d.key].day) || ''
+  const sources = d.sources.replace(/\s*AND "last 7 days"\[dp\]/g, '')
   return `# Prompt ${d.n}/7 — ${d.title}
 
 > Dominio \`${d.key}\` · color \`${d.color}\` · sistema **JAFLO · Inteligencia Diaria**
-> Cadencia: diaria. Ventana de búsqueda: últimos 7 días (rolling). Salida: dossier HTML en la galería de GitHub.
+> Cadencia: **corre los ${day}** (rotación: 1 dominio por día de la semana).
+> Ventana de búsqueda: **últimos 7-10 días previos**, priorizando lo más reciente. Salida: dossier HTML en la galería de GitHub.
 
-Eres un agente de inteligencia investigativa. Hoy es \`<YYYY-MM-DD>\`. Construye el **dossier diario** del dominio **${d.title}** y publícalo en la galería.
+Eres un agente de inteligencia investigativa. Hoy es \`<YYYY-MM-DD>\` (${day}). Construye el **dossier del día** del dominio **${d.title}** y publícalo en la galería.
 
 ${PROFILE}
 
@@ -99,11 +103,15 @@ ${PROFILE}
 
 ${d.scope}
 
+## Ventana temporal
+
+Revisa **prioritariamente los últimos 7-10 días previos a hoy**. En \`search_articles\` usa \`date_from\` = hoy − 10 días, \`date_to\` = hoy, \`datetype="pdat"\`, \`sort="pub_date"\`. Prioriza lo de las últimas 24-72h; usa el resto de la ventana para completar. En web, filtra a publicaciones de los últimos 7-10 días.
+
 ## Fuentes y queries (ejecuta de verdad — no inventes)
 
-${d.sources}
+${sources}
 
-**Ventana:** prioriza lo más reciente (24-72h); si está delgado, completa con los 7 días. Reúne **13+ ítems reales**, descarta ruido, y selecciona los **3 más impactantes/novedosos/accionables** para Javier (\`top3\`) + **10 sólidos** (\`top10\`).
+Reúne **13+ ítems reales**, descarta ruido, y selecciona los **3 más impactantes/novedosos/accionables** para Javier (\`top3\`) + **10 sólidos** (\`top10\`).
 
 ${RULE}
 

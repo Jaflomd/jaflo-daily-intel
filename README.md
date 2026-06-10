@@ -7,17 +7,23 @@ curados y **personalizados**, renderizados como HTML bonito y navegables por **d
 
 🔗 **Galería en vivo:** GitHub Pages (ver *Settings → Pages*).
 
-## Los 7 dominios
+## Rotación semanal — 1 dominio por día
 
-| # | Dominio | Color | Fuente principal |
+Cada día de la semana corre **un solo agente/dominio**, que revisa prioritariamente los
+**últimos 7-10 días previos**. Así cada día produce un dossier enfocado en vez de saturar.
+
+| Día | Dominio | Color | Fuente principal |
 |---|---|---|---|
-| 1 | Psiquiatría & Educación de Precisión | `#1D9E75` | PubMed + medRxiv/PsyArXiv/arXiv/GitHub/X |
-| 2 | Educación Médica & Neuroeducación | `#D4537E` | PubMed + YouTube/Substack/blogs |
-| 3 | Psicopatología Dimensional (HiTOP/RDoC) | `#5DCAA5` | PubMed + PsyArXiv/X/Reddit |
-| 4 | Razonamiento Clínico | `#378ADD` | PubMed + Reddit/X/Substack |
-| 5 | Alta Evidencia · Educación (RCT/meta) | `#D85A30` | PubMed |
-| 6 | Alta Evidencia · Psiquiatría (RCT/meta/NMA) | `#EF9F27` | PubMed |
-| 7 | Modelos Mentales & Filosofía | `#639922` | Web (Substack/X/Reddit/YouTube) + PubMed |
+| **Lunes** | Alta Evidencia · Psiquiatría (RCT/meta/NMA) | `#EF9F27` | PubMed |
+| **Martes** | Psicopatología Dimensional (HiTOP/RDoC) | `#5DCAA5` | PubMed + PsyArXiv/X/Reddit |
+| **Miércoles** | Psiquiatría & Educación de Precisión | `#1D9E75` | PubMed + medRxiv/PsyArXiv/arXiv/GitHub/X |
+| **Jueves** | Razonamiento Clínico | `#378ADD` | PubMed + Reddit/X/Substack |
+| **Viernes** | Alta Evidencia · Educación (RCT/meta) | `#D85A30` | PubMed |
+| **Sábado** | Educación Médica & Neuroeducación | `#D4537E` | PubMed + YouTube/Substack/blogs |
+| **Domingo** | Modelos Mentales & Filosofía | `#639922` | Web (Substack/X/Reddit/YouTube) + PubMed |
+
+El mapeo día→dominio vive en `scripts/build.mjs` (objeto `DOMAINS`, campo `weekday`).
+`node scripts/today-domain.mjs --info` dice qué toca hoy.
 
 ## Estructura de cada dossier (5 secciones)
 
@@ -43,18 +49,25 @@ prompts/<n>-<dominio>.md   →  agente investiga (PubMed + web)  →  data/<domi
 
 ## Correr el día de hoy
 
+El **job diario** corre el prompt `prompts/0-DAILY-rotation.md`: detecta el dominio que toca
+hoy y lo ejecuta. Manual:
+
 ```bash
 cd ~/Developer/jaflo-daily-intel
+DOMAIN=$(node scripts/today-domain.mjs)        # dominio de hoy según la rotación
 
-# 1) un agente corre cada prompt y deja data/<dominio>/<fecha>.json
-#    (o usa el prompt maestro prompts/0-MASTER-run-all.md para los 7 de una)
+# 1) un agente sigue prompts/<n>-<DOMAIN>.md (PubMed + web, ventana 7-10 días)
+#    y deja data/<DOMAIN>/<fecha>.json
 
-# 2) renderiza todo lo de hoy + manifest
-node scripts/build.mjs --date $(date +%F)
+# 2) renderiza + manifest
+node scripts/build.mjs "$DOMAIN" $(date +%F)
 
 # 3) publica
-git add -A && git commit -m "dossiers $(date +%F)" && git push
+git add -A && git commit -m "dossier $DOMAIN $(date +%F)" && git push
 ```
+
+Para sembrar la galería o recuperar varios días de una, usa `prompts/0-MASTER-run-all.md`
+(corre los 7 dominios) y luego `node scripts/build.mjs --date <fecha>`.
 
 Comandos útiles de `build.mjs`:
 

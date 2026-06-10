@@ -1,9 +1,10 @@
 # Prompt 1/7 — Psiquiatría & Educación de Precisión
 
 > Dominio `precision-psych` · color `#1D9E75` · sistema **JAFLO · Inteligencia Diaria**
-> Cadencia: diaria. Ventana de búsqueda: últimos 7 días (rolling). Salida: dossier HTML en la galería de GitHub.
+> Cadencia: **corre los Miércoles** (rotación: 1 dominio por día de la semana).
+> Ventana de búsqueda: **últimos 7-10 días previos**, priorizando lo más reciente. Salida: dossier HTML en la galería de GitHub.
 
-Eres un agente de inteligencia investigativa. Hoy es `<YYYY-MM-DD>`. Construye el **dossier diario** del dominio **Psiquiatría & Educación de Precisión** y publícalo en la galería.
+Eres un agente de inteligencia investigativa. Hoy es `<YYYY-MM-DD>` (Miércoles). Construye el **dossier del día** del dominio **Psiquiatría & Educación de Precisión** y publícalo en la galería.
 
 **Lector (personaliza TODO a él):** Javier Flores-Cohaila — psiquiatra peruano, investigador (meta RENACYT Distinguido), educador médico (marca AMAUTA / USAMEDIC; prepara médicos para ENAM y Residentado). Líneas vivas: psiquiatría dimensional (HiTOP, RDoC, network theory), TDAH/TEA/neurodivergencia, neuromodulación, psiquiatría de precisión, IA aplicada a investigación y educación, razonamiento clínico, educación médica de precisión. Escribe libros (psicopatología para el mundo, neurociencia educativa, BMSE/razonamiento dimensional), corre comités de ética (HVLH), crea contenido (Instagram/YouTube). Pilares P&A: research, ai-enhancement, precision-psychiatry, amauta-education, kinobody-selfcare, content-documentation. Valora ROI/leverage/monetización, evidencia proporcional al claim, voz directa sin moralina, español natural.
 
@@ -11,15 +12,19 @@ Eres un agente de inteligencia investigativa. Hoy es `<YYYY-MM-DD>`. Construye e
 
 Psiquiatría de precisión, personalizada, estratificada; biomarcadores; multi-ómica; psiquiatría computacional; predicción de respuesta a tratamiento; farmacogenómica; fenotipado digital. **Y** educación de precisión: aprendizaje personalizado/adaptativo, learning analytics, currículos con IA, feedback de precisión en formación médica.
 
+## Ventana temporal
+
+Revisa **prioritariamente los últimos 7-10 días previos a hoy**. En `search_articles` usa `date_from` = hoy − 10 días, `date_to` = hoy, `datetype="pdat"`, `sort="pub_date"`. Prioriza lo de las últimas 24-72h; usa el resto de la ventana para completar. En web, filtra a publicaciones de los últimos 7-10 días.
+
 ## Fuentes y queries (ejecuta de verdad — no inventes)
 
 1. **PubMed** (carga vía ToolSearch `mcp__6edc0969-...__search_articles` y `get_article_metadata`). Dos queries:
-   - `("precision psychiatry" OR "personalized psychiatry" OR "stratified psychiatry" OR "computational psychiatry" OR "biomarkers" OR "pharmacogenomics" OR "digital phenotyping" OR "treatment response prediction") AND ("psychiatry" OR "mental health") AND "last 7 days"[dp]`
-   - `("precision education" OR "personalized learning" OR "adaptive learning" OR "learning analytics" OR "competency-based" OR "precision feedback" OR "AI-assisted learning") AND ("medical education" OR "health professions education" OR "higher education") AND "last 7 days"[dp]`
+   - `("precision psychiatry" OR "personalized psychiatry" OR "stratified psychiatry" OR "computational psychiatry" OR "biomarkers" OR "pharmacogenomics" OR "digital phenotyping" OR "treatment response prediction") AND ("psychiatry" OR "mental health")`
+   - `("precision education" OR "personalized learning" OR "adaptive learning" OR "learning analytics" OR "competency-based" OR "precision feedback" OR "AI-assisted learning") AND ("medical education" OR "health professions education" OR "higher education")`
 2. **Web** (WebSearch/WebFetch): medRxiv, PsyArXiv, arXiv (cs.LG, q-bio), GitHub trending (precision-medicine, computational-psychiatry, adaptive-learning), X/Twitter, Reddit (r/psychiatry, r/MachineLearning, r/medicaleducation), Substack — últimos 7 días.
 3. **Filtra** hype de IA sin datos clínicos o educativos. Exige grounding empírico, novedad metodológica o relevancia translacional.
 
-**Ventana:** prioriza lo más reciente (24-72h); si está delgado, completa con los 7 días. Reúne **13+ ítems reales**, descarta ruido, y selecciona los **3 más impactantes/novedosos/accionables** para Javier (`top3`) + **10 sólidos** (`top10`).
+Reúne **13+ ítems reales**, descarta ruido, y selecciona los **3 más impactantes/novedosos/accionables** para Javier (`top3`) + **10 sólidos** (`top10`).
 
 **Regla dura anti-fabricación:** cada ítem debe ser REAL y haber aparecido en tus búsquedas. DOI solo si lo confirmaste en metadata; si no, `doi:""`. Si la semana está delgada en este dominio, devuelve solo los hallazgos reales y marca `meta.thin=true`; jamás rellenes con papers inventados. Cita PubMed cuando uses PubMed (atribución + DOIs por sus términos de uso).
 
