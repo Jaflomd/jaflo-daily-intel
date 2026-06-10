@@ -22,6 +22,35 @@ Revisa **prioritariamente los últimos 7-10 días previos a hoy**. En `search_ar
 2. **Web**: PsyArXiv, medRxiv, X/Twitter (`("HiTOP" OR "RDoC" OR "dimensional psychopathology" OR "psychopathology network") within_time:7d min_faves:2`), Reddit (r/psychiatry, r/clinicalpsychology, r/cogsci), blogs académicos — últimos 7 días.
 3. **Variedad de formato bienvenida**: papers, preprints, blogs, hilos, editoriales, podcasts.
 
+## Guía de búsqueda profunda (deep-search)
+
+**Pregunta núcleo:** ¿Qué evidencia y conversación de los últimos 7-10 días avanza la psicopatología dimensional (estructura, validación, traducción clínica) o reencuadra el campo — con foco en lo clínicamente traducible y en las líneas de Javier?
+
+**Marco PEO:**
+- P (población/contexto): muestras clínicas y comunitarias, cualquier edad; estructura latente de la psicopatología.
+- E (exposición/fenómeno): modelos dimensionales — HiTOP, RDoC, network psychopathology, transdiagnóstico, factor p / bifactor, computational psychiatry, staging, specifiers.
+- O (outcomes): validez estructural e incremental, predicción longitudinal, utilidad clínica (¿se usa en consulta?), implicaciones para clasificación.
+
+**Prioridad del top 3 (descendente):**
+1. Empírico sólido: validación de estructura, network analysis con muestra, longitudinal, genético/biomarcador que apoye la dimensionalidad.
+2. Papers de posición/conceptuales que REENCUADREN el campo (figuras clave: Kotov, Krueger, Conway, Caspi/Moffitt, Hyman, Cuthbert/RDoC, Borsboom/network) — suben si alimentan el libro de Javier.
+3. Aplicaciones clínicas (specifiers, staging, HiTOP en consulta).
+
+**BOOST en la selección:** lo clínicamente traducible (uso real en consulta) y la intersección dimensional × TDAH/TEA/neurodivergencia.
+
+**Recall amplio (decisión de Javier — él filtra al leer):** INCLUYE PsyArXiv/medRxiv y hilos/blogs/posts de X y Reddit (r/psychiatry, r/clinicalpsychology, r/cogsci) y de figuras del campo, aunque la señal sea preliminar. No descartes por ser preprint o social; tráelo si es relevante al marco dimensional. Etiqueta el tipo (paper/preprint/thread/blog) para que Javier juzgue.
+
+**Señal mínima (evita basura pura):** que aporte mecanismo, dato o reencuadre — no opinión repetida ni divulgación 101. Excluye: crítica genérica al DSM sin propuesta, autoayuda, contenido motivacional.
+
+**Anti-alucinación:** todo ítem real y verificable; DOI/URL solo si confirmado. Cita PubMed cuando uses PubMed.
+
+**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 10 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- Estructura/validación dimensional:
+    ("HiTOP" OR "hierarchical taxonomy" OR "RDoC" OR "research domain criteria" OR "dimensional psychopathology" OR "transdiagnostic" OR "p factor" OR "general psychopathology factor" OR "bifactor") AND (validity OR structure OR "network analysis" OR longitudinal OR latent)
+- Traducción clínica + líneas de Javier:
+    ("dimensional" OR "transdiagnostic" OR "HiTOP" OR "RDoC") AND (ADHD OR autism OR neurodevelopment OR "clinical utility" OR staging OR specifier OR treatment)
+- Web/preprint/social (recall amplio): PsyArXiv y medRxiv ("dimensional psychopathology" / HiTOP / RDoC / "psychopathology network"); X reciente ("HiTOP" OR "RDoC" OR "dimensional psychopathology" OR "psychopathology network"); Reddit r/psychiatry, r/clinicalpsychology, r/cogsci de los últimos 7-10 días.
+
 Reúne **13+ ítems reales**, descarta ruido, y selecciona los **3 más impactantes/novedosos/accionables** para Javier (`top3`) + **10 sólidos** (`top10`).
 
 **Regla dura anti-fabricación:** cada ítem debe ser REAL y haber aparecido en tus búsquedas. DOI solo si lo confirmaste en metadata; si no, `doi:""`. Si la semana está delgada en este dominio, devuelve solo los hallazgos reales y marca `meta.thin=true`; jamás rellenes con papers inventados. Cita PubMed cuando uses PubMed (atribución + DOIs por sus términos de uso).
