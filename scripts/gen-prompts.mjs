@@ -6,6 +6,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { DOMAINS as CAT } from './build.mjs'
+import { DEEPSEARCH } from './deepsearch.mjs'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'prompts')
 
@@ -89,6 +90,7 @@ const DOMAINS = [
 function prompt(d) {
   const day = (CAT[d.key] && CAT[d.key].day) || ''
   const sources = d.sources.replace(/\s*AND "last 7 days"\[dp\]/g, '')
+  const deepBlock = DEEPSEARCH[d.key] ? `\n## Guía de búsqueda profunda (deep-search)\n\n${DEEPSEARCH[d.key]}\n` : ''
   return `# Prompt ${d.n}/7 — ${d.title}
 
 > Dominio \`${d.key}\` · color \`${d.color}\` · sistema **JAFLO · Inteligencia Diaria**
@@ -110,7 +112,7 @@ Revisa **prioritariamente los últimos 7-10 días previos a hoy**. En \`search_a
 ## Fuentes y queries (ejecuta de verdad — no inventes)
 
 ${sources}
-
+${deepBlock}
 Reúne **13+ ítems reales**, descarta ruido, y selecciona los **3 más impactantes/novedosos/accionables** para Javier (\`top3\`) + **10 sólidos** (\`top10\`).
 
 ${RULE}

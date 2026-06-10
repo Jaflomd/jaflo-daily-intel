@@ -5,6 +5,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { DEEPSEARCH } from './deepsearch.mjs'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'prompts', 'routines')
 
@@ -23,6 +24,9 @@ const WEEK = [
 ]
 
 function routine(w) {
+  const deepBlock = DEEPSEARCH[w.key]
+    ? `\nGUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y filtrar ruido:\n\n${DEEPSEARCH[w.key]}\n`
+    : ''
   return `Eres el job de hoy de "JAFLO · Inteligencia Diaria". Hoy (${w.day}) publicas UN dossier: el del dominio **${w.key}** — ${w.title}. El sistema es el repo ${REPO} y se publica en ${PAGES}
 
 LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, investigador (meta RENACYT Distinguido), educador médico (AMAUTA / USAMEDIC; prepara ENAM y Residentado). Líneas: psiquiatría dimensional (HiTOP/RDoC, network theory), TDAH/TEA/neurodivergencia, neuromodulación, psiquiatría de precisión, IA en investigación/educación, razonamiento clínico, educación médica de precisión. Escribe libros (psicopatología para el mundo, neurociencia educativa, BMSE). Voz directa, español natural, evidencia proporcional al claim.
@@ -35,7 +39,7 @@ LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, i
    - PubMed: carga el MCP de PubMed vía ToolSearch (search_articles + get_article_metadata). date_from = hoy − 10 días, date_to = hoy, datetype="pdat", sort="pub_date", max_results=40; metadata en lotes de 5 PMIDs.
    - Web: WebSearch/WebFetch para preprints (medRxiv/PsyArXiv/arXiv), X/Twitter, Reddit, Substack, blogs y YouTube según indique ese archivo.
    - Ventana: últimos 7-10 días previos a hoy; prioriza 24-72h. Reúne 13+ ítems reales, descarta ruido.
-
+${deepBlock}
 3) REGLA DURA ANTI-FABRICACIÓN: cada ítem REAL y hallado en búsquedas. DOI solo si verificado en metadata (si no, ""). Si el dominio está delgado esta semana → solo lo real + meta.thin=true. Nunca rellenar con papers inventados. Cita PubMed cuando uses PubMed.
 
 4) Produce las 5 secciones (español, personalizado a Javier) y escribe data/${w.key}/$TODAY.json con el contrato (ver prompts/${w.n}-${w.key}.md):
