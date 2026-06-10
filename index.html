@@ -43,7 +43,12 @@ h1 span{background:linear-gradient(90deg,var(--gold),#5DCAA5);-webkit-background
 /* gallery */
 .gallery{max-width:1180px;margin:0 auto;padding:28px 48px 70px;}
 .group{margin-bottom:34px;}
-.group-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06);}
+.group-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer;user-select:none;transition:border-color .15s;}
+.group-head:hover{border-color:rgba(255,255,255,.16);}
+.group-chevron{font-size:10px;color:var(--muted);transition:transform .2s;align-self:center;}
+.group.collapsed .group-chevron{transform:rotate(-90deg);}
+.group.collapsed .cards{display:none;}
+.group.collapsed .group-head{margin-bottom:0;opacity:.78;}
 .group-title{font-size:15px;font-weight:700;color:#fff;text-transform:capitalize;}
 .group-meta{font-size:11px;color:var(--dim);letter-spacing:.04em;}
 .group-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg2);border:1px solid rgba(255,255,255,.05);padding:2px 10px;border-radius:100px;}
@@ -154,6 +159,10 @@ function boot(){
     b.classList.add('active'); render();
   });
   document.getElementById('search').oninput=(e)=>{STATE.q=e.target.value.toLowerCase().trim();render();};
+  // desplegar/colapsar grupos (delegado: sobrevive a los re-render)
+  document.getElementById('gallery').addEventListener('click',(e)=>{
+    const h=e.target.closest('.group-head'); if(h) h.parentElement.classList.toggle('collapsed');
+  });
   // stats
   const all=d.dossiers;
   document.getElementById('stat-dossiers').textContent=all.length;
@@ -193,20 +202,20 @@ function render(){
   if(STATE.view==='day'){
     items.forEach(x=>{(groups[x.date]=groups[x.date]||[]).push(x);});
     const keys=Object.keys(groups).sort().reverse();
-    g.innerHTML=keys.map(k=>groupBlock(fechaLarga(k),groups[k][0].week,groups[k])).join('');
+    g.innerHTML=keys.map((k,i)=>groupBlock(fechaLarga(k),groups[k][0].week,groups[k],i===0)).join('');
   }else if(STATE.view==='week'){
     items.forEach(x=>{(groups[x.week]=groups[x.week]||[]).push(x);});
     const keys=Object.keys(groups).sort().reverse();
-    g.innerHTML=keys.map(k=>groupBlock('Semana '+k.split('-W')[1],weekRange(k)+' · '+k.split('-W')[0],groups[k])).join('');
+    g.innerHTML=keys.map((k,i)=>groupBlock('Semana '+k.split('-W')[1],weekRange(k)+' · '+k.split('-W')[0],groups[k],i===0)).join('');
   }else{
     items.forEach(x=>{(groups[x.domain]=groups[x.domain]||[]).push(x);});
     const order=Object.keys(d.domains).filter(k=>groups[k]);
-    g.innerHTML=order.map(k=>groupBlock(d.domains[k].title,groups[k].length+' dossiers',groups[k])).join('');
+    g.innerHTML=order.map((k,i)=>groupBlock(d.domains[k].title,groups[k].length+' dossiers',groups[k],i===0)).join('');
   }
 }
-function groupBlock(title,meta,arr){
-  return `<div class="group">
-    <div class="group-head"><div class="group-title">${title}</div><div class="group-meta">${meta}</div><div class="group-count">${arr.length}</div></div>
+function groupBlock(title,meta,arr,open){
+  return `<div class="group${open?'':' collapsed'}">
+    <div class="group-head"><span class="group-chevron">▾</span><div class="group-title">${title}</div><div class="group-meta">${meta}</div><div class="group-count">${arr.length}</div></div>
     <div class="cards">${arr.map(card).join('')}</div>
   </div>`;
 }
