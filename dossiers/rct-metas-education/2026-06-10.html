@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">10 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">18</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Investigative Medicine, 2026-06-05 · scoping review</div>
+        <h3 class="r3-title">Effect of the Use of Artificial Intelligence Tools on Clinical Education and Clinical Decision-Making of Medical Students During Clinical Rotations: A Scoping Review</h3>
+        <p class="r3-hook">Esta revision de alcance analizo 26 estudios (2015-2025) y encuentra que la IA tiene un efecto predominantemente positivo sobre el desempeno diagnostico y el razonamiento clinico de estudiantes de medicina en rotaciones, particularmente en resolucion de casos e interpretacion de imagenes, acercando a los novatos al nivel de medicos con mas experiencia. Siete estudios reportaron efecto neutro, advirtiendo que respuestas incorrectas o ambiguas de la IA pueden generar confusion en lugar de aprendizaje. El hallazgo clave es que la IA no sustituye la experiencia clinica sino que la comprime temporalmente: el estudiante con menos exposicion gana mas. Para Javier, esto es directamente accionable en AMAUTA/USAMEDIC: integrar IA como tutor de casos clinicos dentro del simulador ya no es una apuesta futurista sino una intervencion respaldada por evidencia emergente. El pendiente estructural que la revision senala, regulacion curricular y entrenamiento etico del uso de IA, conecta perfectamente con el pilar de comite de etica y el libro de razonamiento clinico que Javier esta desarrollando.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/10815589261460883" target="_blank" rel="noopener">↗ doi.org/10.1177/10815589261460883</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of General Internal Medicine, 2026-06-08 · scoping review</div>
+        <h3 class="r3-title">Resident Physicians&#39; Work-Related Emotional Experiences: A Scoping Review of Qualitative Research</h3>
+        <p class="r3-hook">Esta revision sintetizo 56 estudios cualitativos de residentes de EEUU y Canada (1952-2023) y su conclusion mas contraintuitiva es que el burnout es una etiqueta insuficiente: los problemas emocionales del residente emergen de la tension dialectica entre una identidad en construccion y las demandas del sistema, no solo del volumen de trabajo. Los tres temas centrales son Identidad y Desarrollo, Dinamicas Interpersonales y Dinamicas Estructurales; el &#39;bautismo de fuego&#39; prolongado es el contexto que da forma a todas las experiencias. Para Javier, este marco resuena directamente con la linea de psiquiatria de precision y la psicopatologia dimensional: el modelo de red (network theory) podria aplicarse para mapear como los factores identitarios, interpersonales y estructurales se retroalimentan en el residente vulnerable. Tambien es materia prima para content en Instagram orientado a residentes y para un capitulo sobre desarrollo profesional en el libro de psicopatologia o neurociencia educativa.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11606-026-10470-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10470-y</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Perspectives on Medical Education, 2026-06-05 · scoping review</div>
+        <h3 class="r3-title">A Scoping Review of the Conceptualization, Operationalization, and Institutional Recognition of the Scholarship of Teaching and Learning in Health Professions Education</h3>
+        <p class="r3-hook">Esta revision mapeo 130 articulos sobre el Scholarship of Teaching and Learning (SoTL) en salud en EEUU y hallo que el SoTL no es reconocido uniformemente en los comites de promocion y tenure: muchas instituciones confunden ensenanza reflexiva con investigacion educativa genuina, diluye el impacto de quienes hacen investigacion educativa rigurosa. El marco de &#39;Logicas Institucionales&#39; que proponen los autores explica por que el mismo output educativo es valorado diferente segun la alineacion entre la logica de investigacion y la logica de ensenanza de la institucion. Para Javier, este paper es directamente estrategico: su meta RENACYT Distinguido exige evidencia de impacto en investigacion, y la distincion clara SoTL vs investigacion educativa basica le permite posicionar sus publicaciones de AMAUTA y USAMEDIC como investigacion rigurosa con DOI y difusion peer-reviewed, no como simple material docente. La estrategia de alineacion que proponen los autores es un playbook directo para Javier en su institucion.</p>
+        <a class="r3-link" href="https://doi.org/10.5334/pme.2740" target="_blank" rel="noopener">↗ doi.org/10.5334/pme.2740</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 2026-06-03 · systematic review</div>
+          <div class="r10-title">How does culinary medicine training impact the diet-related knowledge, skills and attitudes of undergraduate medical students in Germany? A systematic review</div>
+          <div class="r10-line">9 estudios de 6 sedes alemanas muestran que modulos electivos de medicina culinaria mejoran consistentemente conocimientos, actitudes y competencias de consejeria nutricional en estudiantes de medicina, con calidad metodologica moderada; relevante para Javier como modelo de intervencion curricular basada en evidencia para AMAUTA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La medicina culinaria se consolidara como subespecialidad de educacion medica con cursos estandarizados en los proximos 3 anos; Javier podria anticiparse con un modulo de estilo de vida dentro de USAMEDIC antes de que se vuelva obligatorio en curriculas latinoamericanas.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09580-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09580-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 2026-06-08 · scoping review</div>
+          <div class="r10-title">A competency-based curriculum for geriatric dentistry in undergraduate and postgraduate education: a scoping review</div>
+          <div class="r10-line">Scoping review con 42 estudios propone un marco de 6 competencias nucleares, 34 subcompetencias y 72 competencias habilitadoras para educacion geriatrica dental; el modelo es directamente exportable para disenhar curriculas por competencias en psiquiatria de precision y neuropsiquiatria del envejecimiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los marcos de competencias por dominio clinico seran el nuevo estandar para acreditacion en Latinoamerica en 2027-2028; construir el equivalente en psiquiatria dimensional para el contexto peruano posicionaria a Javier como referente curricular regional.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09625-6" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09625-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Medical Ethics, 2026-06-08 · scoping review</div>
+          <div class="r10-title">Legal and ethical responsibility for AI-assisted diagnostic and referral errors: a scoping review with implications for Saudi healthcare</div>
+          <div class="r10-line">Revision de 77 fuentes identifica cuatro modelos de responsabilidad legal para errores diagnosticos asistidos por IA y describe el fenomeno &#39;liability sink&#39; donde el clinico absorbe culpa desproporcionada pese a no controlar el algoritmo; esencial para el Comite de Etica HVLH y para anticipar marcos regulatorios peruanos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>A medida que la IA diagnostica ingresa a hospitales latinoamericanos, los comites de etica como el HVLH tendran que emitir guias locales; Javier puede liderar ese proceso usando este paper como referencia fundacional.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12910-026-01509-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12910-026-01509-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychology, 2026-06-06 · meta-analysis</div>
+          <div class="r10-title">The effect of exercise interventions on enhancing psychological resilience: a systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-analisis de 10 estudios (RCTs y cuasi-experimentales) muestra que el ejercicio mejora la resiliencia psicologica con SMD=0.49, siendo las intervenciones largas (mas de 8 semanas) significativamente mas efectivas que las cortas; dato accionable para el pilar kinobody-selfcare de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El ejercicio como intervencion de resiliencia psicologica se vera integrado en protocolos de bienestar para medicos residentes; Javier puede usarlo como argumento para incorporar contenido de autocuidado basado en evidencia en sus programas AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40359-026-04940-5" target="_blank" rel="noopener">↗ doi.org/10.1186/s40359-026-04940-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Geriatrics, 2026-06-08 · network meta-analysis</div>
+          <div class="r10-title">Optimal type and dose of exercise for improving executive functions in older adults: a systematic review and Bayesian model-based network meta-analysis of RCTs</div>
+          <div class="r10-line">NMA Bayesiana de 38 RCTs determina que el ejercicio aerobico es el optimo para funcion ejecutiva en adultos mayores cognitivamente sanos (dosis optima: 1134 MET-min/semana para memoria de trabajo), mientras en deterioro cognitivo todos los tipos benefician la memoria de trabajo; conecta neurociencia educativa con kinobody.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La prescripcion personalizada de ejercicio para funcion cognitiva sera el proximo estandar de atencion en neuropsiquiatria de precision; Javier puede integrar este dato en su libro de neurociencia educativa como evidencia de que el movimiento es modulador del aprendizaje.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12877-026-07746-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12877-026-07746-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Medical Informatics, 2026-06-04 · scoping review</div>
+          <div class="r10-title">Mobile health (mHealth) applications for community health workers in low- and middle-income countries: A scoping review</div>
+          <div class="r10-line">30 estudios muestran que 29 de 30 apps mHealth para agentes de salud en paises de bajos ingresos carecen de interoperabilidad con sistemas nacionales, creando &#39;islas digitales&#39;; el hallazgo tiene implicancias directas para el diseno de herramientas digitales educativas en Peru.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Peru enfrentara el mismo problema de fragmentacion digital si escala herramientas educativas sin arquitectura de interoperabilidad; el aprendizaje de este scoping review puede evitar que AMAUTA repita el patron.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ijmedinf.2026.106531" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ijmedinf.2026.106531</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Computers, Informatics, Nursing, 2026-06-04 · paper</div>
+          <div class="r10-title">Construction and Evaluation of a Game for Wound Prevention, Assessment, and Treatment</div>
+          <div class="r10-line">Desarrollo y validacion de un serious game en 3 niveles para estudiantes de enfermeria muestra alta aceptabilidad y mejora autopercibida en conocimiento y pensamiento critico (medianas de 5.0 en todas las dimensiones de jugabilidad); modelo metodologico directo para gamificacion en USAMEDIC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los serious games validados con Content Validity Ratio se volveran el estandar exigido para publicar en educacion en salud; Javier puede seguir exactamente este modelo para desarrollar y publicar el simulador USAMEDIC como articulo en revista indexada.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/CIN.0000000000001574" target="_blank" rel="noopener">↗ doi.org/10.1097/CIN.0000000000001574</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the American Association of Nurse Practitioners, 2026-06-10 · scoping review</div>
+          <div class="r10-title">Comparing prescribing practices of nurse practitioners and physicians in the United States: A scoping review</div>
+          <div class="r10-line">Scoping review de 17 estudios encuentra que la prescripcion de NPs es generalmente comparable a la de medicos, con NPs prescribiendo mas psicotropicos y medicamentos de enfermedades cronicas; dato relevante para entender roles profesionales en atencion de salud mental y diseno curricular interprofesional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El debate sobre prescripcion por no-medicos llegara a Peru en la proxima decada; Javier puede posicionarse como voz informada sobre la evidencia internacional antes de que el debate sea politico.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/JXX.0000000000001309" target="_blank" rel="noopener">↗ doi.org/10.1097/JXX.0000000000001309</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Geriatric Oncology, 2026-06-05 · scoping review</div>
+          <div class="r10-title">Educational needs of pharmacists to optimize medication usage in older adults with cancer: A scoping review by SIOG</div>
+          <div class="r10-line">Scoping review con 9 estudios documenta que la educacion de pregrado y posgrado de farmaceuticos no incluye formacion especifica para optimizar medicacion en adultos mayores con cancer; ejemplo de brecha educativa identificada con metodologia rigurosa, util como modelo para mapear brechas en psiquiatria.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las revisiones de necesidades educativas por especialidad se convertiran en insumo obligatorio para reformas curriculares acreditadas; Javier puede liderar un ejercicio equivalente para psiquiatria de precision en Peru.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jgo.2026.103026" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jgo.2026.103026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Sports Medicine, 2026-06-04 · meta-analysis</div>
+          <div class="r10-title">Burnout Syndrome in Sport-Related Jobs: A Meta-analysis of Recent Evidence</div>
+          <div class="r10-line">Meta-analisis de 113 estudios con 35059 participantes (atletas, entrenadores, arbitros) muestra tendencia decreciente del burnout global en el tiempo y mayor prevalencia en paises desarrollados; las herramientas psicometricas actuales capturan mal el fenomeno como experiencia laboral, paralelo directo con los debates de burnout medico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El burnout medico sera reenmarcado como fenomeno laboral-identitario (como sugiere el scoping review de residentes), y las herramientas de medicion existentes quedaran obsoletas; oportunidad para que Javier proponga medidas dimensionales desde la perspectiva HiTOP.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s40279-026-02463-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s40279-026-02463-y</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La IA en rotaciones clinicas beneficia desproporcionadamente a los estudiantes con menos experiencia: comprime la curva de aprendizaje sin elevar el techo de los expertos. El riesgo no es que reemplace al medico, sino que confunda al novato cuando da respuestas incorrectas sin senialar su incertidumbre.</li><li>El burnout en residencia es una etiqueta que oculta el fenomeno real: la colision entre una identidad en construccion y un sistema que exige performance antes de que esa identidad este consolidada. Intervenciones logisticas o psicologicas solas no son suficientes; hay que abordar el desafio existencial del &#39;devenir medico&#39;.</li><li>El Scholarship of Teaching and Learning solo tiene impacto en carreras academicas cuando la institucion alinea su logica de investigacion con su logica de ensenanza. Sin esa alineacion, publicar sobre educacion cuenta menos que publicar sobre biologia molecular, independientemente de la calidad del trabajo.</li><li>El ejercicio aerobico a dosis de 1134 MET-min/semana (equivalente a caminar rapido ~3-4 horas semanales) es la mejor intervencion no farmacologica conocida para memoria de trabajo e inhibicion en adultos mayores sanos. No hay umbral minimo identificado: cualquier cantidad de actividad aerobica ya confiere beneficio cognitivo.</li><li>29 de 30 apps mHealth para trabajadores de salud en paises de bajos ingresos son &#39;islas digitales&#39; sin interoperabilidad: funcionan perfectamente en piloto y fallan en escala. El problema no es la tecnologia sino la arquitectura: diseno centrado en el donor, no en el sistema de salud nacional.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la IA acerca el desempeno diagnostico de estudiantes novatos al de medicos expertos durante rotaciones, ¿que competencias clinicas seguiran siendo diferenciales del experto humano que la IA no puede transferir?</li><li>¿Es el &#39;burnout&#39; del residente de psiquiatria cualitativamente diferente al de otras especialidades por la exposicion continua al sufrimiento mental ajeno, o comparte el mismo patron dialectico identidad-sistema que este scoping review describe para medicina general?</li><li>¿Como deberia un comite de etica como el HVLH evaluar la responsabilidad de un medico que usa IA diagnostica cuando esta falla, si el algoritmo es opaco y el clinico no tiene acceso real al proceso de decision?</li><li>¿El modelo de &#39;aprendiz experto&#39; (escalera Uso→Mapa→Reglas→Excepciones→Sistemas→Creacion) es compatible con la integracion curricular de IA, o la IA cortocircuita etapas de la escalera que son necesarias para la expertise real?</li><li>Si el SoTL en educacion de profesiones de salud no es reconocido uniformemente en promocion y tenure, ¿que estrategia especifica deberia seguir un investigador-educador latinoamericano para que sus publicaciones educativas cuenten para RENACYT al mismo nivel que sus publicaciones clinicas?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG: &#39;La IA en rotaciones clinicas: lo que dice la evidencia en 2026&#39; — 5 slides con el dato central de la scoping review (acorta brecha novato-experto), el riesgo (confunde cuando da respuestas incorrectas), y como prepararse (prompt critico, no prompt dependiente). CTA: comparte con un residente.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capitulo para el libro de neurociencia educativa: &#39;El cuerpo como plataforma de aprendizaje&#39; — integrar el NMA bayesiano de ejercicio y funcion ejecutiva + el meta-analisis de resiliencia psicologica para argumentar que kinobody no es autocuidado de lujo sino prerequisito neurologico del aprendizaje experto.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de metodologia educativa: &#39;Validacion de un simulador clinico dimensional para USAMEDIC siguiendo el modelo de serious game con Content Validity Ratio&#39; — replicar el disenho del Wound Game (scoping review → disenho → validacion de contenido → evaluacion de jugabilidad) aplicado al simulador de razonamiento psiquiatrico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video YouTube: &#39;Por que el burnout del residente no es lo que crees — y que hacer al respecto&#39; — usar el scoping review de experiencias emocionales para reencuadrar el burnout como fenomeno identitario-estructural, con aplicacion practica para residentes de psiquiatria en Peru.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de revision: &#39;Scholarship of Teaching and Learning en educacion medica latinoamericana: brechas de reconocimiento institucional y estrategias para investigadores-educadores que buscan RENACYT&#39; — adaptar el marco de logicas institucionales del scoping review al contexto de universidades peruanas y CONCYTEC.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BMC Medical Education</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag highlight">Perspectives on Medical Education</span><span class="tag ">Journal of Investigative Medicine</span><span class="tag ">BMC Psychology</span><span class="tag ">BMC Geriatrics</span><span class="tag ">International Journal of Medical Informatics</span><span class="tag ">Computers Informatics Nursing</span><span class="tag ">BMC Medical Ethics</span><span class="tag ">Journal of Geriatric Oncology</span><span class="tag ">Sports Medicine</span><span class="tag ">Journal of the American Association of Nurse Practitioners</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed via mcp__6edc0969 · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de junio de 2026.</div>
+</div>
+</body>
+</html>

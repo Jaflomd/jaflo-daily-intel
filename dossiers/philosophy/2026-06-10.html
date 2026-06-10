@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">10 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">15</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">PNAS, 2026 · paper</div>
+        <h3 class="r3-title">Biased and inattentive responding contribute to apparent metacognitive biases in mental health</h3>
+        <p class="r3-hook">Mazor et al. (PNAS 2026) demuestran que gran parte de las asociaciones reportadas entre rasgos transdiagnosticos (ansiedad-depresion, compulsividad) y sesgos metacognitivos podrian ser un artefacto metodologico: el sesgo de respuesta positiva/negativa en escalas de autoinforme se generaliza a las calificaciones de confianza, produciendo correlaciones espurias. En otras palabras, el campo ha estado midiendo el estilo de llenado de cuestionarios, no la metacognicion real. Para Javier esto es critico en dos frentes simultaneos: en su linea de psiquiatria dimensional (HiTOP/RDoC), donde la metacognicion es un candidato de dominio transdiagnostico, y en su rol de evaluador de evidencia en el Comite de Etica, donde debe ponderar si un instrumento mide lo que dice medir. Accionable de inmediato: cualquier paper que use confianza o metacognicion como outcome en poblacion clinica necesita control de inattentive responding; este resultado obliga a revisar la solidez metodologica de la literatura metacognitiva transdiagnostica antes de citar esos hallazgos como seguros.</p>
+        <a class="r3-link" href="https://doi.org/10.1073/pnas.2520832123" target="_blank" rel="noopener">↗ doi.org/10.1073/pnas.2520832123</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Acta Psychiatrica Scandinavica, Vol. 153, 2026 — McInnis &amp; DePaulo · editorial</div>
+        <h3 class="r3-title">Clinical Judgment and the Architecture of Reasoning in Psychiatry</h3>
+        <p class="r3-hook">McInnis y DePaulo argumentan en Acta Psychiatrica Scandinavica que el desplazamiento del juicio clinico por clasificaciones basadas en checklists es un empobrecimiento metodologico y moral: la experiencia subjetiva, la fenomenologia, el significado y los valores no pueden reducirse a criterios estandarizados sin perder informacion diagnostica irreemplazable. Este argumento es el corazon filosofico del libro de psicopatologia que Javier esta escribiendo: el razonamiento clinico dimensional (BMSE) necesita exactamente esa arquitectura de juicio que los checklists del DSM suprimen. El editorial ademas posiciona a la psiquiatria como disciplina donde la inteligencia clinica es irreemplazable, argumento directo para el pilar AMAUTA: entrenar medicos en razonamiento, no en memorizacion de criterios. Uso inmediato: citar en el prologo del libro BMSE como referencia de autoridad que valida el proyecto entero.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/acps.70047" target="_blank" rel="noopener">↗ doi.org/10.1111/acps.70047</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Cognitive Neurodynamics, Vol. 20, No. 1, p. 115, June 8 2026 — Valles-Capetillo et al. · paper · 2026-06-08</div>
+        <h3 class="r3-title">Social communication and brain network properties: cognitive predictors and modulation by autistic traits</h3>
+        <p class="r3-hook">Usando metricas de teoria de grafos sobre redes neurales de comunicacion social, Valles-Capetillo et al. demuestran que la competencia comunicativa emerge de interacciones dinamicas entre sistemas linguisticos, ejecutivos e inferenciales, y que los rasgos autistas moderan como las habilidades cognitivas se mapean sobre la eficiencia neural, incluso en poblacion neurotiipica. Este es un hallazgo directo para la linea de psiquiatria dimensional de Javier: valida que la comunicacion social es un dominio dimensional y continuo (no categorico), con variabilidad individual que se explica mejor desde modelos de red que desde categorias diagnosticas. Para el libro de neurociencia educativa y el trabajo con TEA/TDAH, este marco de red ofrece un lenguaje empirico para lo que intuitivamente se enseña como &#39;espectro&#39;. Accionable: usarlo como evidencia de que los modelos mentales de red (network theory) no son solo metafora sino arquitectura neural real en comunicacion social.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11571-026-10481-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s11571-026-10481-9</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Psychiatry, Vol. 17, March 2 2026 — Akinlade · paper · 2026-03-02</div>
+          <div class="r10-title">Scaling injustice: epistemic harm in DID and what clinical records will teach AI</div>
+          <div class="r10-line">Los registros clinicos que perpetuan el escepticismo hacia pacientes con TID estan entrenando AI, escalando la injusticia epistemica exponencialmente — alerta directa para el Comite de Etica y el pilar de precision psiquiatrica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este tipo de analisis se volvera obligatorio en cualquier protocolo de aprobacion etica de AI clinica; Javier puede liderar ese estandar en Peru desde el Comite HVLH.</div>
+          <a class="r10-link" href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1741240/full" target="_blank" rel="noopener">↗ www.frontiersin.org/journals/psychiatry/arti…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Psychiatry, Public Mental Health, March 18 2026 — Quenum · paper · 2026-03-18</div>
+          <div class="r10-title">Whose voice is heard? Mental health professionals&#39; involvement, epistemic injustice, and the ethics of psychiatric advance directives</div>
+          <div class="r10-line">Las directivas psiquiatricas anticipadas pueden reproducir el paternalismo si el profesional domina su elaboracion, ya que la &#39;injusticia epistemica testimonial&#39; descredita sistematicamente a las mujeres y poblaciones marginadas — relevante para el Comite de Etica HVLH.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El concepto de &#39;herramienta preservadora de voz&#39; en directivas anticipadas se convertira en estandar en protocolos de etica psiquiatrica iberoamericanos en los proximos 3 años.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fpsyt.2026.1772856" target="_blank" rel="noopener">↗ doi.org/10.3389/fpsyt.2026.1772856</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Psychiatry, May 8 2026 — Pisl, Starcevic, Horacek et al. · paper · 2026-05-08</div>
+          <div class="r10-title">Beyond awareness: mental health promotion requires epistemic diversity, not pathologization</div>
+          <div class="r10-line">Las campañas de salud mental que solo promueven marcos biomedicos pueden reducir la resiliencia al generar expectativas negativas autoprofeticas — argumento para que AMAUTA y el contenido de Javier integren marcos plurales, no solo clinicos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La tension entre promocion de salud mental y riesgo de patologizacion se volvera el debate central del campo en 2027-2028; quien la navigate con evidencia tendra liderazgo discursivo.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fpsyt.2026.1775419" target="_blank" rel="noopener">↗ doi.org/10.3389/fpsyt.2026.1775419</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advances in Health Sciences Education, September 2025 · paper · 2025-09</div>
+          <div class="r10-title">Towards a praxis of metacognitive reflection in medical education: a framework of inquiry, adaptive action, and pattern logic</div>
+          <div class="r10-line">Propone un marco practico para cultivar metacognicion en educacion medica via ciclos iterativos de indagacion, accion adaptativa y logica de patrones — scaffold directo para el metodo pedagogico AMAUTA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este framework se convertira en referencia para programas de residentado que quieran certificar competencia metacognitiva, un nicho donde Javier puede posicionarse como lider formativo.</div>
+          <a class="r10-link" href="https://link.springer.com/article/10.1007/s10459-025-10469-w" target="_blank" rel="noopener">↗ link.springer.com/article/10.1007/s10459-025…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Quantum Formalism, Substack, January 4 2026 · blog · 2026-01-04</div>
+          <div class="r10-title">From Agentic Outputs to Verifiable Competence (2026 Prediction Part II)</div>
+          <div class="r10-line">El argumento central: cuando los outputs de alta calidad ya no son proxy confiable de comprension humana (porque los genera AI), los examenes y credenciales miden &#39;acceso a herramientas&#39;, no conocimiento internalizado — cuestionamiento directo al modelo evaluativo del ENAM y residentado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los sistemas de certificacion medica en Latinoamerica enfrentaran esta crisis en 3-5 años; quien proponga alternativas de evaluacion dinamica primero tendra ventaja institucional.</div>
+          <a class="r10-link" href="https://quantumformalism.substack.com/p/our-2026-prediction-part-ii-from" target="_blank" rel="noopener">↗ quantumformalism.substack.com/p/our-2026-pre…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Substack (Dr. Charles Russo), September 12 2025 · blog · 2025-09-12</div>
+          <div class="r10-title">Epistemic Humility as a Catalyst for Metacognitive Accuracy and Bias Reduction in Critical Thinking</div>
+          <div class="r10-line">La humildad epistemica — tratar las propias suposiciones como contestables — actua como mecanismo que mejora la precision metacognitiva y reduce sesgos cognitivos en pensamiento critico, base para el razonamiento clinico que Javier enseña.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La humildad epistemica se codificara como competencia medica graduable en curriculos avanzados, creando demanda de instrumentos de medicion que aun no existen.</div>
+          <a class="r10-link" href="https://drcharlesmrusso.substack.com/p/epistemic-humility-as-a-catalyst" target="_blank" rel="noopener">↗ drcharlesmrusso.substack.com/p/epistemic-hum…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Maximilian Seeth, blog omseeth.github.io, 2026 · blog</div>
+          <div class="r10-title">Hot Research Topics in AI and ML in 2026 and Their Philosophical Connections</div>
+          <div class="r10-line">El razonamiento contrafactual — imaginar mundos alternativos para tomar decisiones morales — emerge como la forma de cognicion mas compleja que los modelos de AI aun no dominan, y su estudio requiere filosofia, no solo ML.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El razonamiento contrafactual se incorporara como dominio evaluable en competencia clinica de alta complejidad, especialmente en psiquiatria forense y etica.</div>
+          <a class="r10-link" href="https://omseeth.github.io/blog/2026/philosophy_2026/" target="_blank" rel="noopener">↗ omseeth.github.io/blog/2026/philosophy_2026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Farnam Street (Shane Parrish), June 7 2026 · blog · 2026-06-07</div>
+          <div class="r10-title">Brain Food No. 684: A Thousand Compromises</div>
+          <div class="r10-line">Sin un objetivo claro se acumula &#39;muerte por mil compromisos&#39;: el insight de Munger de que solo puedes sostener una opinion cuando puedes articular el argumento contrario mejor que su proponente es prescripcion directa contra el sesgo de confirmacion clinico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;iron prescription&#39; de Munger aplicado a educacion medica se convertira en tecnica de debriefing: obligar a los estudiantes a defender el diagnostico alternativo antes de confirmar el propio.</div>
+          <a class="r10-link" href="https://fs.blog/brain-food/june-7-2026/" target="_blank" rel="noopener">↗ fs.blog/brain-food/june-7-2026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Farnam Street / fs.blog, 2026 · blog</div>
+          <div class="r10-title">Second-Order Thinking: The Consequences You Don&#39;t See Coming</div>
+          <div class="r10-line">El pensamiento de segundo orden — preguntar &#39;y despues que&#39; de forma iterativa — es la diferencia entre decisiones que resuelven el problema inmediato y las que crean problemas nuevos, mecanismo central del error sistematico en medicina.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El pensamiento de segundo orden se adoptara como marco para enseñar las consecuencias de intervenciones psiquiatrias en sistemas familiares y comunitarios.</div>
+          <a class="r10-link" href="https://fs.blog/second-order-thinking/" target="_blank" rel="noopener">↗ fs.blog/second-order-thinking</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Psychiatry, 2026 · paper</div>
+          <div class="r10-title">Metacognitive beliefs about biased thinking condition the role of anxiety sensitivity in the somatic symptom-health anxiety pathway</div>
+          <div class="r10-line">Las creencias metacognitivas sobre el propio sesgo (creer que uno piensa sesgadamente) median la relacion entre sensibilidad a la ansiedad y el camino hacia hipocondria — mecanismo nuevo para entender por que algunos pacientes quedan atrapados en bucles de salud ansiosa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las intervenciones metacognitivas dirigidas a las creencias sobre el sesgo propio (no solo al sesgo en si) abriran una nueva generacion de TCC transdiagnostica que Javier puede integrar en su contenido clinico.</div>
+          <a class="r10-link" href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2026.1766275/full" target="_blank" rel="noopener">↗ www.frontiersin.org/journals/psychiatry/arti…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El hallazgo de Mazor en PNAS 2026 es contraintuitivo y potencialmente devastador: gran parte de la literatura que vincula rasgos transdiagnosticos con sesgos metacognitivos podria estar midiendo el estilo de llenado de cuestionarios, no metacognicion real — antes de citar ese corpus como evidencia solida, hay que verificar si los estudios controlaron inattentive responding.</li><li>McInnis y DePaulo en Acta Psychiatrica 2026 señalan algo que los curriculos de residentado ignoran sistematicamente: la arquitectura del razonamiento clinico psiquiatrico no es reductible a checklists, y su desplazamiento es tanto un error epistemico como moral — el juicio clinico es informacion diagnostica, no ruido.</li><li>La injusticia hermeneutica en TID (Akinlade, Frontiers 2026) tiene consecuencia recursiva: los registros clinicos sesgados entrenan AI, y la AI reproducira y escalara ese sesgo con apariencia de objetividad cientifica, haciendo el error mas dificil de reconocer y revertir que el sesgo humano original.</li><li>Pisl et al. (Frontiers 2026) muestran que los scores de alfabetizacion en salud mental no correlacionan con bienestar real — las campañas de awareness que solo medicalizan la experiencia pueden reducir la resiliencia al generar expectativas negativas autoprofeticas en poblaciones sanas.</li><li>El &#39;iron prescription&#39; de Munger (reportado por Farnam Street, junio 2026) es accionable directamente en educacion medica: un estudiante solo puede sostener un diagnostico cuando puede articular el diagnostico diferencial con mas fuerza que quien lo defiende — esto no se enseña en ningun curriculo formal de residentado.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si los sesgos metacognitivos transdiagnosticos reportados en la literatura son en gran parte artefactos de respuesta (Mazor, PNAS 2026), que queda de la base empirica para intervenciones metacognitivas en TCC transdiagnostica, y como deberia redesignarse la investigacion?</li><li>Cuando los registros clinicos biasados hacia el escepticismo (ej. TID, TLP) se usan para entrenar AI diagnostica, que mecanismos de auditoria epistemica son necesarios antes de implementar esos modelos en psiquiatria de precision?</li><li>Si el juicio clinico es arquitectura de razonamiento irreemplazable (McInnis, Acta Psychiatrica 2026), como se diseña un instrumento evaluativo para residentado que capture esa inteligencia sin reducirla a checklists del DSM-5-TR?</li><li>La humildad epistemica mejora la precision metacognitiva (Russo, 2025), pero como se diferencia operacionalmente de la duda patologica o el sindrome del impostor en medicos en formacion?</li><li>Si el pensamiento de segundo orden revela que las campañas de awareness pueden patologizar poblaciones sanas (Pisl, 2026), cual es el diseño de contenido de salud mental que maximiza resiliencia sin inducir expectativas negativas autoprofeticas?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capitulo &#39;Arquitectura del Razonamiento Clinico&#39; para el libro BMSE: usar el editorial de McInnis (Acta Psychiatrica 2026) como anclaje, integrar la critica a los checklists y proponer el juicio clinico dimensional como alternativa epistemologicamente superior — posicionar el libro como respuesta directa a ese debate.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper: &#39;Metacognitive bias measurement in Latin American psychiatric research: a methodological audit&#39; — replicar el analisis de Mazor (PNAS 2026) en estudios publicados en revistas iberoamericanas para determinar si el problema de inattentive responding afecta la literatura regional.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carousel IG: &#39;Por que tu diagnostico favorito puede ser un sesgo&#39; — explicar el sesgo de anclaje en psiquiatria usando el iron prescription de Munger: antes de confirmar, articula el diagnostico diferencial con mas fuerza que quien lo propone. Mecanismo concreto, sin moralina.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido YouTube: &#39;Epistemic injustice en psiquiatria: como los registros clinicos biasados entrenan AI&#39; — episodio de divulgacion critica que conecte el hallazgo de Akinlade (Frontiers 2026) con el uso de AI en diagnostico en Peru, posicionando a Javier como voz critica en ese debate local.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de educacion medica: &#39;Teaching second-order clinical reasoning in psychiatry residency: a framework based on metacognitive reflection and epistemic humility&#39; — proponer un curriculo de razonamiento clinico para residentado que integre los tres marcos hallados esta semana (Advances Health Sciences 2025, Russo 2025, McInnis 2026).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Frontiers in Psychiatry</span><span class="tag ">PNAS (Proceedings of the National Academy of Sciences)</span><span class="tag ">Acta Psychiatrica Scandinavica</span><span class="tag ">Cognitive Neurodynamics</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag highlight">Farnam Street Brain Food (newsletter)</span><span class="tag ">Quantum Formalism (Substack)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (mcp__6edc0969 search_articles + get_article_metadata) · WebSearch (multiple queries) · WebFetch: frontiersin.org/fpsyt.2026.1741240 · WebFetch: frontiersin.org/fpsyt.2026.1772856 · WebFetch: frontiersin.org/fpsyt.2026.1775419 · WebFetch: quantumformalism.substack.com · WebFetch: fs.blog/brain-food/june-7-2026 · WebFetch: omseeth.github.io/blog/2026/philosophy_2026. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de junio de 2026.</div>
+</div>
+</body>
+</html>

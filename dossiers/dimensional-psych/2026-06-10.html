@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-06-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">10 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">21</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Neuroscience &amp; Biobehavioral Reviews, 2026-06-07 · review</div>
+        <h3 class="r3-title">From Psychache to Neuroplasticity: A Unified Rescue-Repair Model of Ketamine&#39;s Anti-Suicidal Action</h3>
+        <p class="r3-hook">Domany y Solomon proponen un modelo integrado de dos fases para la accion antisuicida de la ketamina, anclado explicitamente en RDoC: una fase de &#39;rescate agudo&#39; (glutamato, habenula lateral, redes por defecto/salience, opioide-mu) y una de &#39;reparacion estructural&#39; (adenosina, neuroplasticidad, sinaptogenesis). El paper es relevante para Javier porque trata la suicidalidad como constructo RDoC separable de la depresion, con dos fenotipos candidatos y tres predicciones empiricamente verificables, exactamente el tipo de razonamiento dimensional que sostiene su libro de psicopatologia y su linea de neuromodulacion-precision psychiatry. La estratificacion fenotipica que propone (biotipos de suicidalidad) es tambien argumento directo para el comite de etica HVLH y para disenar protocolos de ketamine/esketamina con criterios dimensionales en vez de solo DSM. Como accion concreta: el marco &#39;Rescue-Repair&#39; puede ser el schema conceptual del capitulo de neuromodulacion del pMSE, y el paper es citable en cualquier propuesta de investigacion sobre TMS/esketamina en suicidalidad.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106804" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106804</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Social Cognitive and Affective Neuroscience, 2026-06-03 · paper</div>
+        <h3 class="r3-title">Fear, anxiety, and the extended amygdala — Absence of evidence for strict functional segregation</h3>
+        <p class="r3-hook">Un mega-analisis con 295 adultos (paradigma de anticipacion de amenaza + fMRI) refuta directamente la doble disociacion Ce/BST que postula RDoC para distinguir miedo de ansiedad: el nucleo central de la amigdala responde a amenaza temporalmente incierta y el BST a amenaza cierta, lo opuesto a lo predicho, y los tamanos de efecto entre ambas regiones son estadisticamente indistinguibles. Este hallazgo es critico para Javier porque el eje miedo-ansiedad es uno de los espectros mas usados en la ensenanza clinica HiTOP/RDoC, y este paper obliga a revisar como se presenta la neurobiologia del constructo &#39;fear vs. anxiety&#39; en clase y en el libro de psicopatologia: el nivel de certeza temporal de la amenaza no hace la disociacion que el modelo supone. La implicacion practica es que los tratamientos transdiagnosticos centrados en el arousal de amenaza (exposicion, TMS sobre CPF) tienen base mas solida que los que asumen especificidad de subregion amigdalina. Es argumento excelente para el contenido de IG/YouTube sobre &#39;por que el cerebro ansioso y el cerebro con miedo se parecen mas de lo que pensabamos&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/scan/nsag040" target="_blank" rel="noopener">↗ doi.org/10.1093/scan/nsag040</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">European Neuropsychopharmacology, 2026-06-09 · paper</div>
+        <h3 class="r3-title">Childhood maltreatment is linked to transdiagnostic age- and sex-specific cortical thinning and reduced amygdalar volume in young adults</h3>
+        <p class="r3-hook">En una muestra transdiagnostica de 251 adultos jovenes con sindromes afectivos o de ansiedad emergentes, el estudio identifica dos firmas neurales del maltrato infantil: el abuso fisico asociado a adelgazamiento cortical extendido (dependiente de edad) y el abuso emocional femenino a volumenes reducidos de nucleos amigdalinos izquierdos (32% de varianza compartida), prediciendo peor funcionamiento a 1 y 2 anos. Para Javier, este paper es material directo para el capitulo de psicopatologia del neurodesarrollo: demuestra que el fenotipo transdiagnostico visible en jovenes tiene sustrato neurobiologico sexo- y tipo-de-trauma especifico, exactamente el nivel de precision que distingue la psiquiatria dimensional de la categorial. Conecta con su pilar de precision-psychiatry porque muestra que biomarcadores de neuroimagen podrian estratificar quienes necesitan intervencion temprana antes de que el trastorno se consolide, y con el comite de etica HVLH en terminos de urgencia del tamizaje de trauma en adolescentes. El uso de SVM para identificar el fenotipo tambien es gancho para contenido sobre IA aplicada a psiquiatria de precision.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.euroneuro.2026.112900" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.112900</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Psychiatry and Clinical Neuroscience, 2026-06-05 · paper</div>
+          <div class="r10-title">Anomalous self-experiences in biotypes of psychosis</div>
+          <div class="r10-line">Los biotipos de psicosis (clasificacion transdiagnostica por perfil cognitivo-anatomico) predicen diferencias significativas en experiencias anómalas del self, confirmando que la heterogeneidad de la psicosis no es diagnostica sino dimensional; relevante para el capitulo de espectro psicotico del libro de psicopatologia de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los biotipos transdiagnosticos de psicosis desplazaran progresivamente al diagnostico DSM en investigacion de marcadores biologicos; en 2-3 anos habra propuestas para usarlos como criterio de estratificacion en ensayos de neuromodulacion.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02257-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02257-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 2026-06-08 · paper</div>
+          <div class="r10-title">Allostatic load as a moderating factor between child maltreatment exposure and mental health challenges in children and adolescents</div>
+          <div class="r10-line">Un indice de carga alostática de 3 biomarcadores (cortisol diurno + PCR + WHtR) predice la severidad de perfil transdiagnostico de sintomas en niños con historia de maltrato, ofreciendo una medida biologica simple para estratificar riesgo en clinica; util para Javier en el argumento de precision-psychiatry y psiquiatria de la infancia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los indices biológicos simples (3-5 biomarcadores) para fenotipado transdiagnostico de riesgo en infancia ganaran terreno en guias clinicas latinoamericanas dado su bajo costo y replicabilidad en contextos de recursos limitados como Peru.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122108" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122108</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature Medicine, 2026-06-04 · rct</div>
+          <div class="r10-title">A socially assistive robot to support mental wellbeing in LGBTQ+ young people at risk of self-harm: a randomized controlled trial</div>
+          <div class="r10-line">Un RCT en Nature Medicine muestra que un robot socioasistencial (Purrble) redujo dificultades de regulacion emocional y sintomas ansiosos/depresivos en jovenes LGBTQ+ con riesgo de autolesion, siendo la regulacion emocional el target transdiagnostico primario; abre el argumento de tecnologia como vector de intervencion dimensional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La regulacion emocional como target transdiagnostico mediado por tecnologia se consolidara como linea de investigacion e intervencion en poblaciones de alto riesgo; es previsible una expansion hacia dispositivos mas accesibles y protocolos hibridos digitales-presenciales.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41591-026-04422-6" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04422-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Psychiatry and Clinical Neuroscience, 2026-06-09 · paper</div>
+          <div class="r10-title">Affective forecasting in people with autistic traits, social anhedonia, and subthreshold depression: a multi-method study</div>
+          <div class="r10-line">Comparando rasgos autistas, anhedonia social y depresion subumbral, el estudio muestra que el sesgo en la prediccion de emociones futuras es transdiagnostico pero con perfiles distintos: los rasgos autistas reducen el detalle de simulacion mental, la anhedonia social reduce el placer anticipatorio; dato accionable para el capitulo de espectro neurodivergenecia en el libro de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El affective forecasting emergera como dominio RDoC relevante para fenotipado transdiagnostico en TEA/TDAH/depresion en la proxima revision del marco; su medicion ecologica (EMA) sera la metodologia de eleccion.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02281-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02281-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychology, 2026-06-05 · paper</div>
+          <div class="r10-title">The Effect of Intolerance of Uncertainty on Indecisiveness in Anxiety and Obsessive-Compulsive Disorders</div>
+          <div class="r10-line">Experimento preregistrado que prueba causalmente que la intolerancia a la incertidumbre genera indecision en poblacion clinica con ansiedad/TOC, confirmando su rol transdiagnostico mas alla de estudios correlacionales; util para Javier como ejemplo de diseno experimental riguroso en psicologia transdiagnostica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La intolerancia a la incertidumbre se consolidara como mecanismo transdiagnostico prioritario para intervencion cognitiva en espectros de ansiedad y OCD; se esperan protocolos de TCC especificamente dirigidos a IU como variable de resultado primaria.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jclp.70160" target="_blank" rel="noopener">↗ doi.org/10.1002/jclp.70160</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychology, 2026-06-05 · paper</div>
+          <div class="r10-title">Psychometric Evaluation of the Norwegian DERS in a Multi-Site Sample of Patients With Personality Disorders — bifactor analysis</div>
+          <div class="r10-line">En mas de 2000 pacientes con trastornos de personalidad, el analisis bifactor del DERS no apoya un factor general dominante de desregulacion emocional, cuestionando el uso rutinario del puntaje total; dato metodologico critico para Javier al ensenar psicometria transdiagnostica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El debate sobre la validez del factor general en instrumentos transdiagnosticos (p-factor, DERS total) se intensificara; surgiran mas replicas que cuestionan la equivalencia de puntajes totales vs. subescalas en muestras clinicas diversas.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jclp.70165" target="_blank" rel="noopener">↗ doi.org/10.1002/jclp.70165</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Personality Assessment, 2026-06-08 · paper</div>
+          <div class="r10-title">Transdiagnostic Assessment of Psychopathology: Psychometric Evaluation of the German DMRS-SR-30 and Relationship with Personality Functioning</div>
+          <div class="r10-line">El DMRS-SR-30 en muestra alemana muestra que los mecanismos de defensa maduros correlacionan negativamente con el deterioro en funcionamiento de personalidad (LPFS) en poblacion general y clinica, validando mecanismos de defensa como marcadores transdiagnosticos del nivel de funcionamiento; conexion directa con la ensenanza de psicopatologia dimensional y el BMSE.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las escalas de mecanismos de defensa seran integradas progresivamente en modelos dimensionales de personalidad como el AMPD/HiTOP; su uso en evaluacion transdiagnostica rapida es el proximo paso logico.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/00223891.2026.2663908" target="_blank" rel="noopener">↗ doi.org/10.1080/00223891.2026.2663908</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Medicine, 2026-06-03 · paper</div>
+          <div class="r10-title">Mapping shared and specific cortical after-effects of repetitive TMS on brain function</div>
+          <div class="r10-line">Meta-analisis de nueve protocolos rTMS identifica un patron espacial compartido transdiagnostico (jerarquia sensory-association) y la corteza parietal como target transdiagnostico relevante para depresion y Parkinson; conecta directamente con el pilar de neuromodulacion y precision-psychiatry de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La corteza parietal emergera como target de TMS transdiagnostico con evidencia creciente para trastornos del espectro internalizing; en 2-3 anos habra ensayos dirigidos especificamente a este hub compartido.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12916-026-04978-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12916-026-04978-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Adolescence, 2026-06-03 · paper</div>
+          <div class="r10-title">Positive Affect as a Transdiagnostic Target for Reducing Adolescent Depression and Suicide Risk</div>
+          <div class="r10-line">Piloto RCT en 52 adolescentes hospitalizados por suicidio muestra que el aumento de afecto positivo (via mindfulness, savoring, gratitud) predice reduccion de depresion e ideacion suicida; el afecto positivo como dominio RDoC de activacion positiva aparece aqui como target terapeutico accionable.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El deficit de afecto positivo (anhedonia, baja activacion positiva) sera reconocido oficialmente como target primario en guias de suicidio adolescente; las intervenciones breves de PA enhancement escalarandesde piloto a protocolos estandar.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jad.70189" target="_blank" rel="noopener">↗ doi.org/10.1002/jad.70189</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Review of Psychiatry, 2026-06-10 · review</div>
+          <div class="r10-title">Persistent suicidality: a concept analysis using Rodgers&#39; evolutionary approach</div>
+          <div class="r10-line">Analisis conceptual evolutivo de 45 fuentes establece la suicidalidad persistente como fenomeno transdiagnostico ego-sintonico con funcion regulatoria, separandola del marco de crisis aguda; argumento directo para el capitulo de suicidalidad dimensional en el libro de psicopatologia de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La suicidalidad persistente se convertira en constructo clinico formal con criterios propios en proximas revisiones nosologicas, generando instrumentos de medicion dimensional especificos separados de los de crisis aguda.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/09540261.2026.2682189" target="_blank" rel="noopener">↗ doi.org/10.1080/09540261.2026.2682189</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La ketamina reduce la ideacion suicida por vias separables de su accion antidepresiva — lo que significa que tratar la depresion no es suficiente para tratar la suicidalidad, y que los fenotipos RDoC de suicidalidad necesitan protocolos propios.</li><li>El nucleo central de la amigdala y el BST responden de forma estadisticamente identica ante amenaza cierta e incierta: la doble disociacion que RDoC usa para separar &#39;miedo&#39; de &#39;ansiedad&#39; no tiene soporte en mega-analisis con 295 adultos, lo que obliga a revisar como se ensena esa distincion.</li><li>Un indice biologico de solo 3 biomarcadores (cortisol + PCR + circunferencia de cintura/altura) predice severidad transdiagnostica en ninos maltratados mejor que el diagnostico categorico — la precision psiquiatrica en infancia puede ser mas simple y accesible de lo que se cree.</li><li>La suicidalidad persistente funciona como herramienta de regulacion psicologica para el paciente (ego-sintonica), no como crisis: los protocolos de riesgo agudo son iatrogenos cuando se aplican a este fenotipo dimensional.</li><li>El factor general (g) de desregulacion emocional en el DERS no domina la varianza en pacientes con trastornos de personalidad — el puntaje total del instrumento puede estar midiendo algo distinto en cada subescala, lo que es un problema metodologico de fondo para la investigacion transdiagnostica.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la ketamina actua sobre suicidalidad por mecanismos separables de la depresion (habenula lateral, opioide-mu, sinaptogenesis), como deberia disenar un protocolo de esketamina en el HVLH que estratifique fenotipos RDoC de suicidalidad en vez de solo diagnostico DSM?</li><li>Si la distincion miedo/ansiedad en el eje de amenaza de RDoC no tiene soporte neurobiologico robusto en la amigdala extendida, que consecuencias tiene esto para el mapa de especificidad de tratamientos del espectro de ansiedad en el libro de psicopatologia?</li><li>El afecto positivo (activacion positiva en RDoC) predice reduccion de suicidio adolescente independientemente del diagnostico: deberia ser un dominio de tamizaje rutinario en urgencias de salud mental en Peru junto al PHQ-9 y el Columbia?</li><li>Los biotipos transdiagnosticos de psicosis (cognitivo-anatomicos) predicen experiencias anomalas del self mejor que el diagnostico: es viable implementar biotipos como criterio de estratificacion en investigacion peruana con los recursos disponibles?</li><li>Si los mecanismos de defensa maduros correlacionan con el nivel de funcionamiento de personalidad (LPFS) de forma transdiagnostica, deberia el BMSE incluir una seccion de evaluacion de defensas como marcador de severidad dimensional?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carousel de IG: &#39;El cerebro del miedo y el cerebro de la ansiedad son casi lo mismo — y esto cambia como los tratamos&#39; (basado en el mega-analisis amigdala 2026; visual de amigdala + BST con barras de efecto identicas)</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capitulo del libro psicopatologia: &#39;Suicidalidad como dimension, no como crisis — el modelo Rescue-Repair de ketamina como ventana a la neurobiologia RDoC del deseo de morir&#39;</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper original: &#39;Validacion del indice de carga alostática de 3 biomarcadores para fenotipado transdiagnostico en poblacion infanto-juvenil peruana expuesta a adversidad&#39; — replica del diseno de Marqués-Feixa et al. 2026 en contexto latinoamericano</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video YouTube: &#39;Por que tratar la depresion no cura la suicidalidad: lo que la ketamina nos ensena sobre el cerebro suicida&#39; (RDoC, fenotipos, datos 2026 — formato de divulgacion de precision psychiatry para audiencia medica peruana)</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capitulo del libro o articulo de revision: &#39;Regulacion emocional como target transdiagnostico universal: desde el robot Purrble hasta la TMS — que dice la evidencia 2026 sobre intervenir el proceso, no el diagnostico&#39;</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Social Cognitive and Affective Neuroscience</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Journal of Affective Disorders</span><span class="tag highlight">Nature Medicine</span><span class="tag ">BMC Medicine</span><span class="tag ">Journal of Clinical Psychology</span><span class="tag ">Journal of Personality Assessment</span><span class="tag ">Brain Structure &amp; Function</span><span class="tag ">International Review of Psychiatry</span><span class="tag ">Journal of Adolescence</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (mcp search_articles + get_article_metadata) · WebSearch (HiTOP 2026, RDoC June 2026, p-factor bifactor, network psychopathology, psyarxiv HiTOP). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de junio de 2026.</div>
+</div>
+</body>
+</html>

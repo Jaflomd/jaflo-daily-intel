@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JAFLO · Inteligencia Diaria — Galería</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0B0D11;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --gold:#EF9F27;--radius:14px;--radius-sm:9px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+.header{background:linear-gradient(135deg,#0B0D11 0%,#15131f 45%,#1a1510 100%);border-bottom:1px solid rgba(239,159,39,.25);padding:38px 48px 30px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-90px;right:-50px;width:340px;height:340px;background:radial-gradient(circle,rgba(239,159,39,.10) 0%,transparent 70%);border-radius:50%;}
+.header::after{content:'';position:absolute;bottom:-120px;left:10%;width:300px;height:300px;background:radial-gradient(circle,rgba(93,202,165,.07) 0%,transparent 70%);border-radius:50%;}
+.h-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;}
+.brand-badge{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(239,159,39,.12);border:1px solid rgba(239,159,39,.3);padding:4px 13px;border-radius:100px;display:inline-block;margin-bottom:14px;}
+h1{font-size:34px;font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.01em;}
+h1 span{background:linear-gradient(90deg,var(--gold),#5DCAA5);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.tagline{font-size:13.5px;color:var(--muted);margin-top:9px;max-width:620px;line-height:1.5;}
+.h-stats{display:flex;gap:22px;margin-top:18px;flex-wrap:wrap;}
+.h-stat b{font-size:21px;font-weight:700;color:#fff;}
+.h-stat small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:1px;}
+/* controls */
+.controls{max-width:1180px;margin:0 auto;padding:26px 48px 0;display:flex;flex-direction:column;gap:16px;}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;}
+.chip{font-size:11.5px;font-weight:600;color:var(--muted);background:var(--bg2);border:1px solid rgba(255,255,255,.07);padding:6px 13px;border-radius:100px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px;}
+.chip:hover{color:var(--text);border-color:rgba(255,255,255,.18);}
+.chip .dot{width:8px;height:8px;border-radius:50%;}
+.chip.active{color:#fff;border-color:transparent;}
+.view-toggle{display:flex;background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:100px;padding:3px;gap:2px;margin-left:auto;}
+.view-toggle button{font-size:11.5px;font-weight:600;color:var(--muted);background:none;border:none;padding:6px 15px;border-radius:100px;cursor:pointer;transition:all .15s;}
+.view-toggle button.active{background:var(--bg3);color:#fff;}
+.search{background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:100px;padding:8px 16px;color:var(--text);font-family:inherit;font-size:12.5px;width:240px;outline:none;}
+.search:focus{border-color:rgba(239,159,39,.4);}
+.search::placeholder{color:var(--dim);}
+/* gallery */
+.gallery{max-width:1180px;margin:0 auto;padding:28px 48px 70px;}
+.group{margin-bottom:34px;}
+.group-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06);}
+.group-title{font-size:15px;font-weight:700;color:#fff;text-transform:capitalize;}
+.group-meta{font-size:11px;color:var(--dim);letter-spacing:.04em;}
+.group-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg2);border:1px solid rgba(255,255,255,.05);padding:2px 10px;border-radius:100px;}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;}
+.card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px 18px 16px;cursor:pointer;transition:transform .18s,border-color .18s,box-shadow .18s;position:relative;overflow:hidden;display:block;}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c);}
+.card:hover{transform:translateY(-3px);border-color:var(--c);box-shadow:0 10px 30px -12px var(--c);}
+.card-ic{font-size:18px;margin-bottom:9px;display:block;}
+.card-domain{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--c);margin-bottom:6px;}
+.card-title{font-size:14.5px;font-weight:700;color:#fff;line-height:1.3;margin-bottom:11px;}
+.card-date{font-size:11px;color:var(--muted);margin-bottom:13px;}
+.card-counts{display:flex;gap:7px;flex-wrap:wrap;}
+.cc{font-size:10px;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 8px;border-radius:6px;}
+.cc b{color:var(--text);font-weight:700;}
+.thin-badge{position:absolute;top:14px;right:14px;font-size:9px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:2px 7px;border-radius:100px;}
+.empty{text-align:center;color:var(--muted);padding:80px 20px;font-size:14px;line-height:1.7;}
+.empty code{background:var(--bg3);padding:2px 8px;border-radius:6px;color:var(--gold);font-size:12.5px;}
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:22px 48px;max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.footer b{color:var(--gold);font-weight:700;font-size:12px;letter-spacing:.04em;}
+.footer small{color:var(--dim);font-size:10.5px;}
+@media(max-width:760px){.header,.controls,.gallery,.footer{padding-left:20px;padding-right:20px;}.view-toggle{margin-left:0;}.search{width:100%;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="h-inner">
+    <div class="brand-badge">◆ Dossier diario · automatizado</div>
+    <h1>JAFLO · <span>Inteligencia Diaria</span></h1>
+    <div class="tagline">Siete dominios barridos cada día: psiquiatría de precisión, psicopatología dimensional, alta evidencia, razonamiento clínico, educación médica y modelos mentales. Curado y personalizado — top 3 extenso, 10 en radar, 5 perlas, 5 preguntas, 5 ideas.</div>
+    <div class="h-stats">
+      <div class="h-stat"><b id="stat-dossiers">—</b><small>dossiers</small></div>
+      <div class="h-stat"><b id="stat-days">—</b><small>días</small></div>
+      <div class="h-stat"><b id="stat-domains">7</b><small>dominios</small></div>
+      <div class="h-stat"><b id="stat-latest">—</b><small>último</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="row">
+    <div class="chips" id="domain-chips"></div>
+  </div>
+  <div class="row">
+    <div class="view-toggle" id="view-toggle">
+      <button data-view="day" class="active">Por día</button>
+      <button data-view="week">Por semana</button>
+      <button data-view="domain">Por dominio</button>
+    </div>
+    <input class="search" id="search" placeholder="Buscar dominio o fecha…" />
+  </div>
+</div>
+
+<div class="gallery" id="gallery"></div>
+
+<div class="footer">
+  <b>JAFLO Intelligence</b>
+  <small id="foot-note">Cargando manifest…</small>
+</div>
+
+<script>
+const MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const DIAS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+function fechaLarga(s){const[y,m,d]=s.split('-').map(Number);const dt=new Date(Date.UTC(y,m-1,d));return `${DIAS[dt.getUTCDay()]} ${d} de ${MESES[m-1]}, ${y}`;}
+function weekRange(week){ // "2026-W24" -> "9–15 jun"
+  const [y,w]=week.split('-W').map(Number);
+  const simple=new Date(Date.UTC(y,0,1+(w-1)*7));
+  const dow=simple.getUTCDay();
+  const monday=new Date(simple); monday.setUTCDate(simple.getUTCDate()-((dow+6)%7));
+  const sunday=new Date(monday); sunday.setUTCDate(monday.getUTCDate()+6);
+  const f=(dt)=>`${dt.getUTCDate()} ${MESES[dt.getUTCMonth()].slice(0,3)}`;
+  return `${f(monday)} – ${f(sunday)}`;
+}
+
+let STATE={ data:null, domain:'all', view:'day', q:'' };
+
+async function load(){
+  try{
+    const res=await fetch('manifest.json?t='+Date.now());
+    if(!res.ok) throw new Error('no manifest');
+    STATE.data=await res.json();
+    boot();
+  }catch(e){
+    document.getElementById('gallery').innerHTML=
+      '<div class="empty">Aún no hay <code>manifest.json</code>.<br>Corre <code>node scripts/build.mjs --all</code> y publica.</div>';
+    document.getElementById('foot-note').textContent='Sin manifest — galería vacía.';
+  }
+}
+
+function boot(){
+  const d=STATE.data;
+  const doms=d.domains;
+  // chips
+  const chips=document.getElementById('domain-chips');
+  let html=`<div class="chip active" data-dom="all" style="--c:#EF9F27"><span class="dot" style="background:linear-gradient(90deg,#EF9F27,#5DCAA5)"></span>Todos</div>`;
+  for(const k in doms){html+=`<div class="chip" data-dom="${k}" style="--c:${doms[k].color}"><span class="dot" style="background:${doms[k].color}"></span>${doms[k].title}</div>`;}
+  chips.innerHTML=html;
+  chips.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{
+    STATE.domain=c.dataset.dom;
+    chips.querySelectorAll('.chip').forEach(x=>{x.classList.remove('active');x.style.color='';x.style.background='';x.style.borderColor='';});
+    c.classList.add('active');
+    if(c.dataset.dom!=='all'){c.style.background=doms[c.dataset.dom].color+'22';c.style.borderColor=doms[c.dataset.dom].color;c.style.color='#fff';}
+    render();
+  });
+  document.getElementById('view-toggle').querySelectorAll('button').forEach(b=>b.onclick=()=>{
+    STATE.view=b.dataset.view;
+    document.getElementById('view-toggle').querySelectorAll('button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); render();
+  });
+  document.getElementById('search').oninput=(e)=>{STATE.q=e.target.value.toLowerCase().trim();render();};
+  // stats
+  const all=d.dossiers;
+  document.getElementById('stat-dossiers').textContent=all.length;
+  document.getElementById('stat-days').textContent=new Set(all.map(x=>x.date)).size;
+  document.getElementById('stat-latest').textContent=all.length?all[0].date.slice(5):'—';
+  document.getElementById('foot-note').textContent=`${all.length} dossiers · manifest ${d.generated} · atribución PubMed por sus términos de uso`;
+  render();
+}
+
+function card(x){
+  const c=x.counts||{};
+  return `<a class="card" href="${x.file}" style="--c:${x.color}">
+    ${x.thin?'<span class="thin-badge">delgado</span>':''}
+    <span class="card-ic">${x.icon||'◆'}</span>
+    <div class="card-domain">${x.title}</div>
+    <div class="card-title">${fechaLargaShort(x.date)}</div>
+    <div class="card-date">${x.week}</div>
+    <div class="card-counts">
+      <span class="cc"><b>${c.top3||0}</b> top</span>
+      <span class="cc"><b>${c.top10||0}</b> radar</span>
+      <span class="cc"><b>${c.perlas||0}</b> perlas</span>
+      <span class="cc"><b>${c.preguntas||0}</b> preg</span>
+      <span class="cc"><b>${c.ideas||0}</b> ideas</span>
+    </div>
+  </a>`;
+}
+function fechaLargaShort(s){const[y,m,d]=s.split('-').map(Number);return `${d} ${MESES[m-1]}`;}
+
+function render(){
+  const d=STATE.data; let items=d.dossiers.slice();
+  if(STATE.domain!=='all') items=items.filter(x=>x.domain===STATE.domain);
+  if(STATE.q) items=items.filter(x=>(x.title+' '+x.date+' '+x.week+' '+fechaLarga(x.date)).toLowerCase().includes(STATE.q));
+  const g=document.getElementById('gallery');
+  if(!items.length){g.innerHTML='<div class="empty">Sin resultados para este filtro.</div>';return;}
+
+  let groups={};
+  if(STATE.view==='day'){
+    items.forEach(x=>{(groups[x.date]=groups[x.date]||[]).push(x);});
+    const keys=Object.keys(groups).sort().reverse();
+    g.innerHTML=keys.map(k=>groupBlock(fechaLarga(k),groups[k][0].week,groups[k])).join('');
+  }else if(STATE.view==='week'){
+    items.forEach(x=>{(groups[x.week]=groups[x.week]||[]).push(x);});
+    const keys=Object.keys(groups).sort().reverse();
+    g.innerHTML=keys.map(k=>groupBlock('Semana '+k.split('-W')[1],weekRange(k)+' · '+k.split('-W')[0],groups[k])).join('');
+  }else{
+    items.forEach(x=>{(groups[x.domain]=groups[x.domain]||[]).push(x);});
+    const order=Object.keys(d.domains).filter(k=>groups[k]);
+    g.innerHTML=order.map(k=>groupBlock(d.domains[k].title,groups[k].length+' dossiers',groups[k])).join('');
+  }
+}
+function groupBlock(title,meta,arr){
+  return `<div class="group">
+    <div class="group-head"><div class="group-title">${title}</div><div class="group-meta">${meta}</div><div class="group-count">${arr.length}</div></div>
+    <div class="cards">${arr.map(card).join('')}</div>
+  </div>`;
+}
+load();
+</script>
+</body>
+</html>

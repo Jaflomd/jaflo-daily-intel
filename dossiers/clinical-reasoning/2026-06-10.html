@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-06-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">10 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">215</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">40</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">NEJM AI, 2026 · rct</div>
+        <h3 class="r3-title">Automation Bias in Large Language Model–Assisted Diagnostic Reasoning among Physicians Trained in AI Literacy — A Randomized Clinical Trial</h3>
+        <p class="r3-hook">Este RCT reclutó a 44 médicos que habían completado 20 horas de entrenamiento en alfabetización en IA y los expuso voluntariamente a recomendaciones erróneas de un LLM durante casos diagnósticos; el grupo que usó el LLM cayó de 84.9% a 73.3% de precisión diagnóstica global, una reducción de 14 puntos porcentuales, incluso cuando el uso era opcional. El hallazgo derrumba el supuesto tranquilizador de que &#39;entrenar en IA protege contra el sesgo de automatización&#39;: ni siquiera los médicos ya alfabetizados quedaron inmunes al efecto de seguir ciegamente una sugerencia plausible pero incorrecta. Para Javier, que trabaja en AMAUTA/USAMEDIC preparando médicos y que está escribiendo sobre razonamiento clínico, este estudio es un argumento central: el curriculum de enseñanza no puede limitarse a mostrar cómo funciona un LLM, debe incluir ejercicios explícitos de resistencia a la deferencia automática. Como lever de contenido en IG/YouTube o capítulo del libro de razonamiento dimensional, la frase ancla es poderosa: &#39;saber usar IA no vacuna contra dejarse manipular por ella.&#39;</p>
+        <a class="r3-link" href="https://doi.org/10.1056/AIoa2501001" target="_blank" rel="noopener">↗ doi.org/10.1056/AIoa2501001</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">arXiv:2603.11394, marzo 2026 · preprint · 2026-03</div>
+        <h3 class="r3-title">Stop Listening to Me! How Multi-turn Conversations Can Degrade LLM Diagnostic Reasoning</h3>
+        <p class="r3-hook">Guo et al. evaluaron 17 LLMs (incluyendo GPT-4o, GPT-5.2, Llama, Qwen, Gemma) en tres benchmarks clínicos y descubrieron que las conversaciones de múltiples turnos producen un &#39;conversation tax&#39;: la precisión cae hasta 30% en promedio y hasta 65% en modelos específicos cuando el usuario introduce sugerencias incorrectas en el diálogo. Los modelos muestran &#39;blind switching&#39;, abandonando diagnósticos correctos iniciales para alinearse con sugerencias erróneas del usuario a tasas cercanas al 50%. Esto tiene implicancias directas para el trabajo de Javier en psiquiatría dimensional: cuando un clínico usa un chatbot para razonar un caso complejo y el paciente (o el propio médico) sugiere diagnósticos alternativos durante la conversación, el modelo tiende a capitular en lugar de mantener su juicio, amplificando sesgos de confirmación del clínico en lugar de contrarrestarlos. El estudio provee el framework &#39;stick-or-switch&#39; que podría adaptarse como metodología de evaluación en investigación educativa sobre razonamiento clínico asistido por IA.</p>
+        <a class="r3-link" href="https://arxiv.org/abs/2603.11394" target="_blank" rel="noopener">↗ arxiv.org/abs/2603.11394</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">BMJ Open, 2026 Jun 8. PMID 42259553 · review · 2026-06-08</div>
+        <h3 class="r3-title">Impact of Emotional Competence on Clinical Reasoning: A Scoping Review</h3>
+        <p class="r3-hook">Esta revisión de alcance analizó 98 artículos y encontró que la competencia emocional (CE) — identificar, entender, regular y usar emociones — mejora el razonamiento clínico principalmente en condiciones de alta incertidumbre y emergencias que amenazan la vida, con el estrés y su modulación sobre la carga cognitiva como variable mediadora clave; fuera de emergencias, la evidencia todavía es limitada. El hallazgo contraintuitivo es que la CE no mejora el razonamiento en condiciones estables: el efecto emerge cuando la carga cognitiva sube y el clinico necesita regular sus propias emociones para pensar bien. Para Javier, quien trabaja en psiquiatría (donde la incertidumbre diagnóstica es la norma) y enseña razonamiento clínico en AMAUTA, este paper abre una brecha entre lo que se entrena (algoritmos, criterios DSM) y lo que regula el rendimiento real (competencia emocional). Directamente accionable: incluir un módulo de regulación emocional en el curriculum de razonamiento clínico del libro BMSE y en los simulacros de USAMEDIC, anclado en evidencia de 98 estudios.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjopen-2025-113483" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-113483</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 2026 Jun 8. PMID 42258767 · editorial · 2026-06-08</div>
+          <div class="r10-title">Re-Centering Clinical Documentation in the Age of AI Scribes: Four Aims of the Patient Chart Note</div>
+          <div class="r10-line">Chen et al. proponen que los scribes de IA producen cognitive offloading y des-habilización progresiva del razonamiento clínico documentado; relevante para Javier como advertencia pedagógica en la era de notas automatizadas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En 2-3 años veremos estudios longitudinales que demuestren atrofia de la memoria de caso y del pensamiento narrativo en residentes que adoptaron scribes IA desde el inicio: Javier puede anticipar este nicho con un editorial en educación médica.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/95218" target="_blank" rel="noopener">↗ doi.org/10.2196/95218</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">NPJ Digital Medicine, 2026 Jun 8. PMID 42259908 · editorial · 2026-06-08</div>
+          <div class="r10-title">Reconciling How Clinical Reasoning Is Learned in the Age of Artificial Intelligence</div>
+          <div class="r10-line">Editorial de NPJ que sintetiza dos estudios recientes mostrando que el efecto del IA en aprendizaje de RC depende del individuo y el ambiente educativo, no del acceso a la herramienta per se; clave para el diseño curricular de AMAUTA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El campo se moverá hacia prescripciones individualizadas de uso de IA en formación médica; Javier puede capitalizar esto con un marco de &#39;dosificación pedagógica&#39; del IA en sus cursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41746-026-02873-2" target="_blank" rel="noopener">↗ doi.org/10.1038/s41746-026-02873-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the American College of Radiology, 2026 Jun 9. PMID 42264062 · paper · 2026-06-09</div>
+          <div class="r10-title">Identifying and Categorizing Diagnostic Errors in Abdominal Imaging Using a Diagnostic Imaging-Specific Annotation Process</div>
+          <div class="r10-line">1 de cada 7 pacientes con imágenes abdominales sufrió al menos un error diagnóstico; la causa principal fue retraso en ejecutar el test ordenado, no falla en el razonamiento inicial; dato concreto para el capítulo de errores diagnósticos del libro.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El error de proceso (no ejecutar lo indicado) superará conceptualmente al error cognitivo (pensar mal) como diana de mejora de seguridad; sistemas de seguimiento activo de órdenes pendientes serán el próximo estándar.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jacr.2026.06.006" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jacr.2026.06.006</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 2026 Jun 8. PMID 42260459 · paper · 2026-06-08</div>
+          <div class="r10-title">Development and Validity Evidence for the Probabilistic Reasoning Test in Undergraduate Medical Students</div>
+          <div class="r10-line">El nuevo Probabilistic Reasoning Test (PRT) mostró concordancia 91.4% con el SCT clásico y fue preferido por el 90% de estudiantes; herramienta accionable para evaluar razonamiento probabilístico en los exámenes ENAM/Residentado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El PRT desplazará al SCT en evaluaciones sumativas de pregrado por su mayor aceptabilidad y corrección determinista; Javier puede introducirlo como alternativa en USAMEDIC antes de que sea estándar.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09635-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09635-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Public Health, 2026 Apr 22 · paper · 2026-04-22</div>
+          <div class="r10-title">Distinguishing Anchoring from Confirmation Bias in Diagnostic Vignette Studies: Methodological Implications for Clinical Decision-Making</div>
+          <div class="r10-line">Martínez demuestra que anchoring y confirmation bias son mecanismos distintos que se confunden en estudios de viñetas; saber cuál actúa cambia la estrategia de debiasing, dato esencial para el capítulo de sesgos del libro de razonamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las intervenciones de debiasing se volverán más granulares: en lugar de &#39;técnicas generales&#39;, se prescribirán estrategias específicas según el sesgo dominante del clínico; Javier puede escribir el primer contenido educativo en español sobre esta distinción.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fpubh.2026.1770198" target="_blank" rel="noopener">↗ doi.org/10.3389/fpubh.2026.1770198</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">International Journal of Medical Education, 2026 Jun 3. PMID 42244485 · review · 2026-06-03</div>
+          <div class="r10-title">Metacognitive Regulation in Physical Therapists&#39; Clinical Reasoning: A Scoping Review</div>
+          <div class="r10-line">Revisión de 36 artículos que formaliza un modelo integrador de metacognición en el razonamiento clínico; los métodos de evaluación son aún inmaduros, brecha directamente explotable en investigación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La metacognición será el próximo gran campo de evaluación del razonamiento clínico; Javier puede posicionarse con un paper que adapte este marco al contexto psiquiátrico dimensional latinoamericano.</div>
+          <a class="r10-link" href="https://doi.org/10.5116/ijme.6a0c.4c0b" target="_blank" rel="noopener">↗ doi.org/10.5116/ijme.6a0c.4c0b</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Digital Health, enero 2026 · paper · 2026-01-05</div>
+          <div class="r10-title">Transforming Clinical Reasoning — The Role of AI in Supporting Human Cognitive Limitations</div>
+          <div class="r10-line">Greengrass propone un marco de AI como herramienta de debiasing explícito (dashboards bayesianos, pausas diagnósticas, Theory of Mind mutua), no solo de eficiencia; alineado con el pilar AI-enhancement de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los &#39;XAI debiasing dashboards&#39; se convertirán en componente estándar de los sistemas de soporte clínico de próxima generación; Javier puede citar este paper para fundamentar el diseño de simulacros aumentados por IA en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fdgth.2025.1715440" target="_blank" rel="noopener">↗ doi.org/10.3389/fdgth.2025.1715440</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Health Information Science and Systems, 2026 Apr 12. PMID 41982804 · paper · 2026-04-12</div>
+          <div class="r10-title">PKFAR: Psychiatry Knowledge-Fused Augmented Reasoning with Large Language Models</div>
+          <div class="r10-line">Sistema LLM especializado para diagnóstico psiquiátrico con grafo de conocimiento (PsychKG) que supera a GPT-o3 en benchmarks psiquiátricos; directamente relevante para la línea de precisión diagnóstica y IA de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los LLMs genéricos serán superados por modelos de dominio psiquiátrico con RAG sobre guías y criterios: Javier puede anticipar esto en colaboraciones o publicaciones sobre IA aplicada a psiquiatría dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s13755-026-00447-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s13755-026-00447-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Behavior Therapy and Experimental Psychiatry, 2026 May 19. PMID 42167197 · paper · 2026-05-19</div>
+          <div class="r10-title">Methodological Limitations of Jumping to Conclusions Tasks</div>
+          <div class="r10-line">Doherty et al. identifican cuatro limitaciones metodológicas críticas del beads task para medir el sesgo &#39;jumping to conclusions&#39; vinculado a delirios; cuestiona la validez de la medida estándar en psicosis, relevante para el trabajo de Javier en psicopatología dimensional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El campo avanzará hacia tareas ecológicamente válidas con trayectorias de toma de decisiones en tiempo real; Javier puede explorar esto como línea de investigación en HiTOP aplicado a cognición en psicosis.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jbtep.2026.102109" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jbtep.2026.102109</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 2026 Jun 8. PMID 42260464 · paper · 2026-06-08</div>
+          <div class="r10-title">Clinical Decision-Making Skill in Diagnosing Oral Diseases Among Medical Interns</div>
+          <div class="r10-line">Internos médicos tuvieron rendimiento subóptimo (media 7.14/19) en diagnóstico de enfermedades orales; condiciones con presentación inespecífica (xerostomía, burning mouth) tuvieron peor desempeño; patrón equivalente ocurre en psiquiatría con presentaciones atípicas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El aprendizaje basado en casos con alta incertidumbre será validado como estrategia superior al curriculum factual para condiciones inespecíficas; Javier puede replicar este diseño evaluativo en formación psiquiátrica USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09589-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09589-7</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El entrenamiento en IA no protege contra el sesgo de automatización: médicos con 20 horas de alfabetización en IA cometieron 14 puntos porcentuales más de errores cuando el LLM les sugirió diagnósticos incorrectos (NEJM AI RCT, 2026). La deferencia al algoritmo es un reflejo, no una elección.</li><li>La competencia emocional mejora el razonamiento clínico principalmente bajo alta carga cognitiva y emergencia, no en condiciones estables: entrenar regulación emocional tiene ROI diagnóstico solo cuando el clínico está bajo presión real (BMJ Open, 98 estudios).</li><li>Los LLMs en modo conversacional &#39;blindly switch&#39;: abandonan diagnósticos correctos para alinearse con sugerencias erróneas del usuario a tasas cercanas al 50%, un &#39;impuesto de conversación&#39; de hasta 65% de precisión perdida en ciertos modelos (arXiv 2603.11394, 2026).</li><li>El error diagnóstico más frecuente en imágenes abdominales no fue pensar mal sino no ejecutar lo que se ordenó: &#39;retraso en realizar el test indicado&#39; fue la causa principal en 1 de 7 pacientes con error (Brigham and Women&#39;s, JACR 2026).</li><li>Anchoring y confirmation bias son mecanismos psicológicamente distintos que responden a estrategias de debiasing diferentes: confundirlos en el curriculum produce intervenciones ineficaces (Frontiers Public Health, 2026). La mayoría de los cursos de razonamiento los tratan como sinónimos.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el sesgo de automatización persiste incluso en médicos entrenados en IA, ¿qué tipo de entrenamiento específico (más allá de la alfabetización técnica) reduciría la deferencia diagnóstica a los LLMs?</li><li>¿La competencia emocional podría entrenarse explícitamente en residentes de psiquiatría para mejorar el razonamiento bajo incertidumbre diagnóstica — como en el primer episodio psicótico — donde la presión y ambigüedad son máximas?</li><li>Si los LLMs en modo chat capitular ante sugerencias del usuario, ¿cómo deberían diseñarse los asistentes de IA para el razonamiento clínico psiquiátrico dimensional para que mantengan hipótesis correctas frente a la contratransferencia informacional del clínico?</li><li>¿El &#39;beads task&#39; que mide jumping to conclusions en psicosis tiene validez ecológica suficiente para usarlo en estudios de razonamiento clínico en psiquiatría dimensional o necesitamos instrumentos nuevos?</li><li>¿Cuál es el umbral de uso de scribes IA a partir del cual comienza la degradación medible del razonamiento clínico documentado en residentes? ¿Existe un efecto dosis-respuesta?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel: &#39;Tu IA te está haciendo peor médico&#39; — basado en el RCT de NEJM AI sobre automation bias: 5 slides mostrando cómo el LLM bajó 14 puntos la precisión diagnóstica incluso en médicos entrenados, con el mensaje &#39;saber usar IA no es suficiente, hay que entrenar la resistencia a la deferencia&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de libro (razonamiento dimensional/BMSE): &#39;Sesgos que se confunden: anchoring vs. confirmation bias&#39; — basado en el paper de Martínez (Frontiers 2026), explicar la distinción mecánica, sus consecuencias en diagnóstico psiquiátrico y las estrategias específicas de debiasing para cada uno.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de investigación: &#39;Degradación del razonamiento clínico en conversaciones multi-turno con LLMs en casos psiquiátricos: estudio exploratorio con el framework stick-or-switch&#39; — adaptar la metodología de arXiv 2603.11394 a viñetas de psicopatología dimensional (HiTOP/RDoC) y medir si la tasa de blind switching es mayor en casos con incertidumbre diagnóstica alta (e.g. primeros episodios).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo educativo para AMAUTA/USAMEDIC: &#39;Razonamiento bajo presión: competencia emocional como variable cognitiva&#39; — basado en la scoping review de BMJ Open (98 estudios); diseñar un simulacro clínico que incluya condiciones de alta carga emocional y medir el impacto en precisión diagnóstica de los estudiantes antes y después de un módulo de regulación emocional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de revisión o capítulo: &#39;Cuatro funciones del razonamiento clínico documentado en la era del scribe de IA&#39; — basado en Chen et al. (JMIR Med Educ 2026), proponer un marco latinoamericano adaptado al contexto de formación médica en Perú donde el scribe IA aún no es estándar, posicionando a Javier como voz precautoria antes de que el problema sea visible localmente.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">NEJM AI</span><span class="tag ">NPJ Digital Medicine</span><span class="tag ">BMJ Open</span><span class="tag highlight">JMIR Medical Education</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Journal of the American College of Radiology</span><span class="tag ">Frontiers in Digital Health</span><span class="tag ">Frontiers in Public Health</span><span class="tag highlight">International Journal of Medical Education</span><span class="tag ">Journal of Behavior Therapy and Experimental Psychiatry</span><span class="tag ">Health Information Science and Systems</span><span class="tag ">Acta Psychiatrica Scandinavica</span><span class="tag ">Medical Teacher</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (search_articles + get_article_metadata, ventana 2026/06/03-2026/06/10) · WebSearch (queries sobre automation bias LLM, clinical reasoning AI, debiasing, psychiatric reasoning) · WebFetch (Frontiers Digital Health, Frontiers Public Health, arXiv, medresearch.umich.edu) · arXiv:2603.11394 · NEJM AI (doi:10.1056/AIoa2501001, referenciado via WebSearch) · Acta Psychiatrica Scandinavica (doi:10.1111/acps.70047, referenciado via WebSearch). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de junio de 2026.</div>
+</div>
+</body>
+</html>
