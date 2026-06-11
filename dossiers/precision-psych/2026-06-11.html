@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-06-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">11 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">40</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">BMJ (review) · 8 jun 2026 · review · 2026-06-08</div>
+        <h3 class="r3-title">Advances in the management of ADHD in children and adolescents</h3>
+        <p class="r3-hook">Review del BMJ (evidencia 2019-2025) que consolida un modelo dimensional y pleiotrópico del TDAH: heterogeneidad, fluctuación del desarrollo y comorbilidad como la regla, no la excepción. El hallazgo incómodo para el hype de precisión: neuroimagen y tests biológicos tienen utilidad diagnóstica limitada, el cognitive training no generaliza fuera de la tarea entrenada y el neurofeedback es mayormente efecto inespecífico — lo que sí mueve la aguja es titulación, diseño de formulación y farmacogenética hacia prescripción personalizada. Para ti toca tres capas a la vez: tu línea TDAH/neurodivergencia, tu marco dimensional (HiTOP/RDoC) y el pilar precision-psychiatry, y desmonta de paso el cuento de que un biomarcador &#39;va a diagnosticar&#39; el TDAH. Úsalo como columna vertebral de un capítulo del libro de psicopatología (TDAH como dimensión, no categoría) y como guion de contenido que separa precisión real (dosis/genética) de precisión-marketing (escáneres). Es además munición de autoridad: un review BMJ es citable y defendible frente a ENAM/Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmj-2024-082507" target="_blank" rel="noopener">↗ doi.org/10.1136/bmj-2024-082507</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Schizophrenia Research · 10 jun 2026 · paper · 2026-06-10</div>
+        <h3 class="r3-title">Predicting transition to psychiatric disorders in clinical high-risk for psychosis subjects using machine learning and facial features</h3>
+        <p class="r3-hook">Psiquiatría computacional aplicada: extrajeron dinámica facial (landmarks y Action Units con OpenFace 2.0) de videos clínicos basales en 50 sujetos de alto riesgo y predijeron transición a cualquier trastorno psiquiátrico a ~23 meses (F1 72%, sensibilidad 66%, especificidad 76%, balanced accuracy 71%, MCC 0.41), con la señal concentrada en componentes PCA de orden alto que reflejan variación motora sutil. Es fenotipado digital de bajísimo costo (un video) y, clave para ti, es transdiagnóstico: no predice psicosis, predice &#39;transición a psicopatología&#39; — exactamente la lógica HiTOP/RDoC de que lo motor fino antecede al síndrome. Encaja con tu línea de psiquiatría dimensional + razonamiento clínico y con los pilares precision-psychiatry y ai-enhancement. Llévalo al libro BMSE como caso de &#39;el signo dimensional precede al diagnóstico categórico&#39;, y como prueba de concepto de un marcador desplegable en Perú sin resonancia. Sé honesto al citarlo: n=50, leave-one-out, sin validación externa — es hipótesis fuerte, no herramienta lista.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.schres.2026.06.001" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.06.001</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Survey of Ophthalmology (scoping review) · 10 jun 2026 · review · 2026-06-10</div>
+        <h3 class="r3-title">AI and medical retina training: a scoping review of educational opportunities, emerging risks, and curricular responses</h3>
+        <p class="r3-hook">Scoping review PRISMA-ScR que mapea, en un campo donde la IA ya iguala o supera al residente de primer año, las dos caras de integrar IA en la formación: oportunidades reales (asignación personalizada de casos, datasets sintéticos, feedback visual explicable, scaffolding del conocimiento) y riesgos documentados (deskilling, &#39;never-skilling&#39;, automation bias y ruptura de la validez de la evaluación). El concepto de never-skilling — el aprendiz que nunca construye la habilidad porque la IA la hizo desde el día 1 — es oro para ti: es precisamente el aprendiz atrapado en &#39;Uso&#39; que nunca sube a &#39;Mapa/Reglas&#39; de El Aprendiz Experto, tu ground truth educativo. Mueve los pilares amauta-education y content-documentation y alimenta el libro de neurociencia educativa. Úsalo ya: ancla una serie diferenciada para USAMEDIC/AMAUTA que reframea el debate (&#39;el riesgo no es perder la habilidad, es no adquirirla nunca&#39;) y un marco curricular para meter IA en la prep ENAM sin producir never-skilling. Es un paper de oftalmología, pero el argumento es transferible a toda la educación médica.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.survophthal.2026.06.007" target="_blank" rel="noopener">↗ doi.org/10.1016/j.survophthal.2026.06.007</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry · 9 jun 2026 · paper · 2026-06-09</div>
+          <div class="r10-title">Graph Neural Networks and sequential architectures for autism detection from eye-tracking biomarkers: a multi-site study</div>
+          <div class="r10-line">Detección de TEA con eye-tracking en cohorte multi-sitio (Francia+Italia, n=84): LSTM AUC 0.859 y GNN-atención con especificidad 93.2%, generalizando entre paradigmas y poblaciones — biomarcador objetivo y escalable para tu línea TEA/neurodivergencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El cuello de botella deja de ser el algoritmo y pasa a ser la cohorte: el equipo que arme un set eye-tracking pediátrico latinoamericano validado externamente se queda con el screening de TEA de bajos recursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08256-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08256-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 8 jun 2026 · paper · 2026-06-08</div>
+          <div class="r10-title">Identifying neuroimaging biomarkers of adolescent MDD from cortical hemodynamic responses using machine learning</div>
+          <div class="r10-line">fNIRS prefrontal (VFT+memoria de trabajo) + Random Forest distingue depresión adolescente con AUC 0.93 (0.96 con mayor duración) — biomarcador de bajo costo y portátil, pero entrenado en internados, mejor para apoyar diagnóstico que para screening temprano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>fNIRS será el &#39;EEG accesible&#39; de la psiquiatría de precisión en LatAm; su techo no es la física sino la validez incremental sobre escalas, que casi nadie reporta todavía.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122105" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122105</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JAMA Psychiatry (review) · 10 jun 2026 · review · 2026-06-10</div>
+          <div class="r10-title">The 25-year evolution of lithium as a disease-modifying agent in dementia: a narrative review</div>
+          <div class="r10-line">Litio de baja dosis (~0.3 mM, muy por debajo de la dosis psiquiátrica) muestra efectos neurotróficos/neuroprotectores y cambios favorables de tau en MCI — apuesta de precisión-dosificación barata y relevante para países de ingresos bajos y medios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El litio orotato de baja dosis se vuelve el caso testigo de &#39;reposicionamiento de precisión por dosis, no por molécula&#39;; espera un ensayo pragmático grande antes de 2028.</div>
+          <a class="r10-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1296" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1296</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Neuropsychopharmacology · 9 jun 2026 · paper · 2026-06-09</div>
+          <div class="r10-title">Neuroimaging predictors of cognitive benefits after VR-based cognitive remediation in mood or schizophrenia spectrum disorders</div>
+          <div class="r10-line">La hipoactivación dorsal-prefrontal basal predice mayor ganancia cognitiva tras remediación cognitiva en RV, transdiagnóstico entre trastornos del ánimo y del espectro esquizofrénico — biomarcador que selecciona quién responde, no solo quién está enfermo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El próximo salto de la psiquiatría de precisión no es diagnosticar mejor sino predecir respuesta: los marcadores &#39;predictivos de tratamiento&#39; como este desplazarán a los puramente diagnósticos en los papers de alto impacto.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.euroneuro.2026.112899" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.112899</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 9 jun 2026 · paper · 2026-06-09</div>
+          <div class="r10-title">Discriminating bipolar depression from MDD using functional and microstructural signatures of the inferior fronto-occipital fasciculus</div>
+          <div class="r10-line">Firma multimodal del fascículo fronto-occipital inferior (ALFF opuesto entre BD y MDD) + KNN distingue depresión bipolar de unipolar con 86% — ataca el error diagnóstico más caro de tu práctica y de la prep ENAM.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La diferenciación bipolar/unipolar por neuroimagen+ML será el primer biomarcador psiquiátrico con utilidad clínica defendible; el que lo replique con validación externa publica en tier-1.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122113" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122113</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry · 8 jun 2026 · paper · 2026-06-08</div>
+          <div class="r10-title">Machine learning model to identify gut microbiome-derived metabolites as potential biomarkers of autism spectrum disorder (pilot)</div>
+          <div class="r10-line">Random Forest sobre metabolitos teóricos del microbioma intestinal clasifica TEA con 85% y 40% de concordancia con estudios in vivo — eje cerebro-intestino entrando a la medicina de precisión, aún en fase teórica/piloto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El microbioma como biomarcador de TEA es prometedor pero confundido por dieta y comorbilidad GI; sin muestreo estratificado y validación empírica seguirá siendo señal, no herramienta.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08178-8" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08178-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 8 jun 2026 · paper · 2026-06-08</div>
+          <div class="r10-title">Allostatic load as a moderating factor between child maltreatment and mental health challenges (EPI_Young_Stress Project)</div>
+          <div class="r10-line">Un índice de carga alostática de solo 3 biomarcadores (cortisol diurno, PCR, razón cintura-talla) predice severidad psicopatológica transdiagnóstica en jóvenes maltratados — operacionaliza la &#39;vulnerabilidad biológica&#39; con datos baratos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los índices parsimoniosos de carga alostática (3-5 marcadores) sustituirán a los paneles ómicos caros en estratificación transdiagnóstica RDoC; la simplicidad es la que escala a la clínica peruana.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122108" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122108</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 8 jun 2026 · paper · 2026-06-08</div>
+          <div class="r10-title">AI integration in Spanish undergraduate medical education: national cross-sectional census</div>
+          <div class="r10-line">Censo de las 52 facultades de medicina de España: solo 30.8% integra IA en el currículo, casi todo electivo y de bajo peso (1.17% de créditos), con brechas regionales enormes — taxonomía reproducible para benchmarking internacional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esta metodología es replicable tal cual para Perú/LatAm: el primero que publique el censo regional define el estándar y se posiciona como autoridad en educación médica de precisión — vector de paper + reputación directo para ti.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/88511" target="_blank" rel="noopener">↗ doi.org/10.2196/88511</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">npj Digital Medicine · 10 jun 2026 · paper · 2026-06-10</div>
+          <div class="r10-title">Development and application of an intelligent assessment system for medical clinical skill training</div>
+          <div class="r10-line">Sistema de evaluación de destrezas clínicas con contrastive learning: 94% de exactitud (96.4% con tolerancia de 1 punto) y feedback inmediato y objetivo — feedback de precisión automatizado, el santo grial de la formación basada en competencias.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La evaluación automática y objetiva de destrezas es el verdadero &#39;precision feedback&#39;; cuando se conecte a simuladores barará el cuello de botella de los evaluadores humanos en cursos masivos como USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41746-026-02877-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41746-026-02877-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 9 jun 2026 · paper · 2026-06-09</div>
+          <div class="r10-title">Integrative profiling of glymphatic dysfunction in adolescent subthreshold depression</div>
+          <div class="r10-line">Adolescentes con depresión subumbral ya muestran un perfil glinfático multivariado alterado (BOLD-CSF, ALPS izquierdo) que escala con severidad PHQ-9 — biomarcador en el espectro subclínico, justo la zona dimensional HiTOP que te interesa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La función glinfática (limpieza por sueño) se consolidará como eje dimensional transdiagnóstico ligado al sueño/circadiano, no como marcador categórico — el puente entre tu interés en sueño y el internalizing de HiTOP.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122110" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122110</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El review BMJ de TDAH es un baño de realidad para el hype: neuroimagen y tests biológicos aportan poco al diagnóstico y el cognitive training no generaliza — la &#39;precisión&#39; que sí paga en neurodivergencia es farmacogenética + titulación, no escáneres.</li><li>El riesgo real de la IA en la formación no es el deskilling (experto que pierde habilidad) sino el never-skilling: el residente que nunca la adquiere porque la IA la hizo desde el día 1. En tu lenguaje de El Aprendiz Experto: queda atrapado en &#39;Uso&#39;, sin construir &#39;Mapa&#39; ni &#39;Reglas&#39;.</li><li>La señal que predice transición a psicopatología en alto riesgo no vive en el síntoma grueso sino en micro-variación motora facial (componentes PCA de orden alto) — evidencia concreta de que lo dimensional/RDoC precede a lo categórico, y se mide con un video.</li><li>Litio orotato a ~0.3 mM —un tercio de la dosis psiquiátrica— muestra efectos neuroprotectores: un caso testigo de que la precisión a veces es ajustar la dosis de una molécula vieja y barata, no inventar una nueva. Especialmente relevante para Perú.</li><li>La disfunción glinfática aparece ya en depresión subumbral adolescente y es compartida entre MDD y bipolar: la limpieza cerebral por sueño se comporta como eje dimensional (escala con PHQ-9), no como marcador que prende/apaga — conecta tu interés en sueño con el internalizing de HiTOP.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Un marcador de micro-movimiento facial (OpenFace) suma validez incremental sobre las escalas clínicas para estratificar riesgo transdiagnóstico en jóvenes peruanos, o solo replica lo que el clínico ya intuye?</li><li>Si los tests biológicos aportan poco al diagnóstico del TDAH pero la farmacogenética sí guía la prescripción, ¿dónde está exactamente el ROI de la &#39;precisión&#39; en neurodivergencia — y qué le vendemos al residente como precisión que no lo es?</li><li>¿Cómo medimos el never-skilling en un residente que aprende con tutor de IA desde el día 1, antes de que el déficit de razonamiento clínico sea irreversible?</li><li>¿Es el índice glinfático (ALPS) un eje dimensional HiTOP-compatible del cluster internalizing/sueño, o un epifenómeno de la heterogeneidad del sueño que se nos cuela como biomarcador?</li><li>¿Vale la pena replicar el censo español de IA en el currículo médico para Perú/LatAm — y qué revelaría sobre la brecha entre la oferta tipo AMAUTA y las universidades públicas?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/serie IG-YT: &#39;El verdadero riesgo de la IA en tu formación no es el deskilling, es el never-skilling&#39; — reframe del scoping review de Survey of Ophthalmology anclado en la escalera Uso→Mapa→Reglas de El Aprendiz Experto. Diferenciador frente al ruido de &#39;IA buena/mala&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de educación de precisión: replicar el censo nacional de integración de IA en el currículo médico (metodología JMIR Med Educ) aplicado a Perú/LatAm. Taxonomía lista, dato inexistente en la región, vector directo de reputación RENACYT.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro BMSE/razonamiento dimensional: usar el caso CHR-facial (Schizophrenia Research) para ilustrar que el signo dimensional motor (RDoC) precede al diagnóstico categórico — &#39;leer la transición antes del síndrome&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/clase corta: &#39;TDAH no es categórico&#39; — el modelo dimensional-pleiotrópico del review BMJ 2026, contrastando precisión real (titulación/farmacogenética) vs. precisión-marketing (biomarcadores que no diagnostican).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-estudio de bajo costo: validez incremental de fNIRS prefrontal sobre escalas para depresión adolescente en contexto de recursos limitados (Perú), reportando explícitamente la métrica que casi nadie reporta: ¿añade sobre el PHQ-9?</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">BMJ</span><span class="tag highlight">JAMA Psychiatry</span><span class="tag ">Schizophrenia Research</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">BMC Psychiatry</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">npj Digital Medicine</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Survey of Ophthalmology</span><span class="tag ">International Psychogeriatrics</span><span class="tag ">Journal of Continuing Education in the Health Professions</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP mcp_6edc0969) — atribución requerida + DOIs · BMJ · JAMA Psychiatry · Schizophrenia Research · Journal of Affective Disorders · BMC Psychiatry · European Neuropsychopharmacology · Molecular Psychiatry · Brain Behavior and Immunity · npj Digital Medicine · JMIR Medical Education · Survey of Ophthalmology · WebSearch (preprints/contexto). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de junio de 2026.</div>
+</div>
+</body>
+</html>
