@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">11 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Gut and Liver · 10 jun 2026 · Kim, Kim &amp; Kim (vía PubMed, PMID 42270325) · paper · 2026-06-10</div>
+        <h3 class="r3-title">Data-Informed Intuition in Hepatology: Integrating Evidence, Context, and Clinical Reasoning</h3>
+        <p class="r3-hook">Kim et al. (Gut and Liver, según PubMed) proponen la &#39;intuición informada por datos&#39; (DII) como puente entre la medicina basada en evidencia y el juicio experiencial, estructurada en 8 ejes explícitos: tiempo, tasa, magnitud, patrón, contexto, causalidad, integración e incertidumbre. El mecanismo es lo valioso: tratan la intuición no como &#39;corazonada&#39; opaca sino como una habilidad entrenable que se calibra con feedback continuo —actualización bayesiana del reconocimiento de patrones con etiquetado explícito de la incertidumbre—, no como un don. Para Javier es plantilla casi 1:1 del manual BMSE de razonamiento clínico dimensional y de lo que pMSE intenta operacionalizar: el eje &#39;incertidumbre&#39; resuelve además el problema pedagógico de cómo graduar el &#39;no sé&#39; en residentado. Úsalo como columna vertebral de un capítulo o de una clase AMAUTA: convierte &#39;intuición&#39; (palabra que el residente teme) en un constructo con ejes evaluables, y conéctalo con el pilar ai-enhancement mostrando dónde el modelo de IA aporta justamente el feedback de calibración que el eje de causalidad exige.</p>
+        <a class="r3-link" href="https://doi.org/10.5009/gnl260075" target="_blank" rel="noopener">↗ doi.org/10.5009/gnl260075</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">The Knowledge Project (Farnam Street) · 9 jun 2026 · Shane Parrish · podcast · 2026-06-09</div>
+        <h3 class="r3-title">Mental Models That Change How You Think — Bill Gurley</h3>
+        <p class="r3-hook">Gurley (Benchmark, board del Santa Fe Institute) recorre los modelos a los que más vuelve: systems thinking como causalidad no-lineal multivariable (mover una variable cascada por todo el sistema de formas que el pensamiento lineal no ve), efectos de segundo y tercer orden, y el escribir-para-pensar al estilo Bezos como mecanismo que fuerza la coherencia lógica antes de ejecutar. El mecanismo le importa a Javier en dos frentes: la teoría de redes en psicopatología (HiTOP/RDoC) ES un sistema no-lineal multivariable —los síntomas no son indicadores pasivos de una latente, son nodos que se activan entre sí—, así que el lenguaje de Gurley legitima por qué el modelo de red predice cascadas (comorbilidad, iatrogenia) que el categórico no ve. El segundo frente es ai-enhancement: evaluar una herramienta de IA clínica exige pensar el efecto de segundo y tercer orden (qué hace el clínico cuando confía o desconfía del output), no sólo la métrica de primer orden. Acción concreta: roba el &#39;escribir-para-pensar&#39; como ritual de diseño de estudios y de capítulos —si no puedes escribir el argumento sin huecos, no lo entiendes—, y usa los efectos de orden N como checklist al revisar protocolos en el Comité.</p>
+        <a class="r3-link" href="https://fs.blog/knowledge-project-podcast/bill-gurley/" target="_blank" rel="noopener">↗ fs.blog/knowledge-project-podcast/bill-gurley</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Surgical and Radiologic Anatomy · 9 jun 2026 · narrative review (vía PubMed / CrossRef) · review · 2026-06-09</div>
+        <h3 class="r3-title">The role of metacognitive skills in anatomy education: a narrative review</h3>
+        <p class="r3-hook">Esta revisión narrativa (Surgical and Radiologic Anatomy, según PubMed) separa dos cosas que el residentado confunde: el conocimiento metacognitivo (saber qué sabes) sube relativamente rápido, pero la conducta autorregulatoria (monitorear y ajustar la estrategia en tiempo real) sólo se desarrolla con andamiaje sostenido —retrieval practice y peer teaching embebidos de forma continua, no talleres aislados—. Para Javier es munición directa para AMAUTA y para el libro de neurociencia educativa: la distinción saber-qué vs saber-cómo es exactamente la escalera del Aprendiz Experto (Uso→Mapa→Reglas→Excepciones→Sistemas), y el hallazgo de que lo aislado no funciona valida el diseño test-first/simulador-dicta por encima del modelo de &#39;clase magistral suelta&#39;. El dato accionable: la autorregulación predijo tanto rendimiento como adaptabilidad clínica a largo plazo, así que es un outcome defendible para certificar competencia metacognitiva en un programa. Úsalo como cita ancla del capítulo de metacognición y como justificación pedagógica de por qué USAMEDIC la embebe en cada sesión en vez de venderla como módulo aparte.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00276-026-03919-6" target="_blank" rel="noopener">↗ doi.org/10.1007/s00276-026-03919-6</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">8</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">EconTalk · 8 jun 2026 · Russ Roberts × Luke Burgis · podcast · 2026-06-08</div>
+          <div class="r10-title">The Self, the Crowd, and Social Contagion (with Luke Burgis)</div>
+          <div class="r10-line">Burgis lleva la teoría mimética de Girard al terreno práctico: deseamos lo que otros desean, y el verdadero riesgo de la pertenencia no es no encontrar tribu sino la presión de conformidad que te hace querer cosas que no son tuyas — modelo crudo para deseo, identidad y procesos sociales (RDoC Social Processes).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El deseo mimético se volverá lente de moda para fenómenos sociales transdiagnósticos (contagio de síntomas, redes); Javier puede ser de los primeros en castellano en cruzar Girard con HiTOP/RDoC en contenido y aula.</div>
+          <a class="r10-link" href="https://www.econtalk.org/the-self-the-crowd-and-social-contagion-with-luke-burgis/" target="_blank" rel="noopener">↗ www.econtalk.org/the-self-the-crowd-and-soci…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Hidden Brain (NPR) · 8 jun 2026 · Eric Oliver, Scott Barry Kaufman · podcast · 2026-06-08</div>
+          <div class="r10-title">Who Are You, Really?</div>
+          <div class="r10-line">El yo no es una entidad unificada sino un repertorio de conductas dependiente del contexto: la fragmentación entre roles es normativa, no patológica, y el bienestar viene de aceptar la multiplicidad en vez de forzar coherencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este encuadre dimensional del self alimenta la discusión HiTOP sobre funcionamiento de la personalidad; gancho divulgativo perfecto para despatologizar la &#39;incoherencia&#39; que tus pacientes —y tú, entre clínico, educador y creador— viven como defecto.</div>
+          <a class="r10-link" href="https://www.hiddenbrain.org/podcast/who-are-you-really/" target="_blank" rel="noopener">↗ www.hiddenbrain.org/podcast/who-are-you-really</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Intrinsic Perspective (Substack) · 5 jun 2026 · Erik Hoel · blog · 2026-06-05</div>
+          <div class="r10-title">Don&#39;t dethrone consciousness! (LLMs aren&#39;t conscious — and thinking they are is culturally dangerous)</div>
+          <div class="r10-line">Hoel argumenta que atribuir consciencia a los LLM actuales es un error con costo cultural: difumina la línea entre simular comprensión y tenerla — higiene epistémica directa para quien usa IA en investigación y educación sin antropomorfizarla.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;no destronar la consciencia&#39; será munición para tu postura crítica de IA: distingue en tu contenido entre output competente y comprensión interna, justo el eje que el ENAM debería evaluar en la era de los modelos.</div>
+          <a class="r10-link" href="https://www.theintrinsicperspective.com/p/dont-dethrone-consciousness" target="_blank" rel="noopener">↗ www.theintrinsicperspective.com/p/dont-dethr…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature · 10 jun 2026 · Zhao, Shan, Liu et al. (vía PubMed) · paper · 2026-06-10</div>
+          <div class="r10-title">A thalamus-brainstem attractor network drives history-biased decisions</div>
+          <div class="r10-line">Mecanismo de circuito para un sesgo cognitivo real: una red atractora tálamo-tronco codifica la historia sensorial y sesga la decisión siguiente — el &#39;history bias&#39; no es ruido, es un atractor con sustrato neural identificable (modelo en pez cebra).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La idea de que los sesgos de decisión son estados atractores (no errores aleatorios) migrará a la psiquiatría computacional dimensional; encaja con tu interés en network theory — piensa la rigidez cognitiva como un pozo atractor difícil de abandonar.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41586-026-10623-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s41586-026-10623-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">NeuroImage · 10 jun 2026 (vía PubMed) · paper · 2026-06-10</div>
+          <div class="r10-title">A Complexity-Science Framework for Studying Flow: Using Media to Probe Brain–Phenomenology Dynamics</div>
+          <div class="r10-line">Propone la ciencia de la complejidad como lente para el flow: inmersión, aburrimiento y frustración emergen de dinámicas cerebrales distribuidas (no de regiones aisladas) — un modelo de sistemas para la fenomenología de la atención.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El flow como dinámica de red (no como &#39;estado&#39;) dará herramientas para medir engagement en educación médica; crúzalo con tu trabajo de neurociencia educativa para diseñar tareas que empujen al canal de flow.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroimage.2026.122050" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroimage.2026.122050</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">The Knowledge Project (Farnam Street) · 2 jun 2026 · semana previa · podcast · 2026-06-02</div>
+          <div class="r10-title">Proven, Better, New: Mark Pincus on the Rules of Innovation</div>
+          <div class="r10-line">Framework &#39;Proven, Better, New&#39;: clasifica toda idea de producto en patrón establecido, mejora de uno, o genuinamente nuevo — y lo &#39;nuevo&#39; exige testear variantes en paralelo (máquina de fallar rápido), porque el intento único siempre falla.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Aplica el filtro Proven/Better/New al diseño de productos educativos (simuladores USAMEDIC, plantillas HTML, pMSE): sabe qué features son patrón pedagógico probado vs apuesta nueva, y reserva el &#39;fallar-rápido&#39; sólo para lo nuevo.</div>
+          <a class="r10-link" href="https://fs.blog/knowledge-project-podcast/mark-pincus/" target="_blank" rel="noopener">↗ fs.blog/knowledge-project-podcast/mark-pincus</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">What Is Stoicism? (Substack) · 10 jun 2026 · Allan John · podcast · 2026-06-10</div>
+          <div class="r10-title">Live Like a Philosopher — Four Stoic Reminders for Daily Practice</div>
+          <div class="r10-line">Cuatro recordatorios estoicos leídos vía Hadot sobre Marco Aurelio (unidad, el bien moral, el parentesco humano, el momento presente) como práctica vivida más que doctrina — filosofía para regular, no para citar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Material ligero para tu Foundation/kinobody-selfcare: el valor no es teórico sino de ritual diario; conviene más como ancla de regulación personal que como contenido a publicar.</div>
+          <a class="r10-link" href="https://whatisstoicism.substack.com/p/live-like-a-philosopher-000" target="_blank" rel="noopener">↗ whatisstoicism.substack.com/p/live-like-a-ph…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Experimental History (Substack) · 9 jun 2026 · Adam Mastroianni · blog · 2026-06-09</div>
+          <div class="r10-title">Stop Eating Lady Gaga&#39;s Oreos</div>
+          <div class="r10-line">Modelo del &#39;Great Switcheroo&#39;: dejamos de envidiar a los ricos (ya no nos creemos &#39;millonarios temporalmente avergonzados&#39;) y exoneramos a las celebridades porque ahora nos creemos &#39;celebridades temporalmente desconocidas&#39; — un cambio de identidad aspiracional que reescribe el juicio moral sobre el consumo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El reframing aspiracional es palanca de contenido: explica por qué la audiencia médica idolatra al &#39;KOL influencer&#39;; nómbralo para que tus residentes vean el sesgo de identidad antes de copiar la métrica de vanidad.</div>
+          <a class="r10-link" href="https://www.experimental-history.com/p/stop-eating-lady-gagas-oreos" target="_blank" rel="noopener">↗ www.experimental-history.com/p/stop-eating-l…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La intuición clínica no es lo opuesto de la evidencia: el paper de DII (Gut and Liver, vía PubMed) la define como habilidad entrenable con 8 ejes y etiquetado explícito de incertidumbre. Accionable hoy: deja de decirle al residente &#39;usa tu criterio&#39; y dale los ejes —tiempo, tasa, magnitud, patrón, contexto, causalidad, integración, incertidumbre— como rúbrica.</li><li>Saber-qué sube rápido; saber-regularte no. La revisión de metacognición (Surg Radiol Anat) muestra que los talleres aislados casi no mueven la autorregulación —sólo el andamiaje continuo (retrieval + peer teaching) lo hace—. El módulo de &#39;aprender a aprender&#39; de una sola sesión es teatro: tiene que estar embebido en cada clase.</li><li>El test de si entiendes algo es si puedes escribirlo sin huecos (Bezos/Gurley en The Knowledge Project). Aplicado a tu Comité de Ética y a tus papers: si el argumento no sobrevive a ser escrito en prosa lineal, el problema no es la redacción, es que el razonamiento tiene un hueco que la conversación tapaba.</li><li>Un sesgo de decisión puede ser un estado atractor con sustrato de circuito (Nature, vía PubMed; modelo en pez cebra), no un error aleatorio. Implicación dimensional: la rigidez cognitiva/perseveración no es &#39;falta de esfuerzo&#39; sino un pozo atractor del que cuesta salir — reencuadra cómo le hablas al paciente y cómo modelas la rigidez en network theory.</li><li>El deseo es mimético: queremos lo que otros quieren (Burgis en EconTalk). En medicina académica esto explica las modas de &#39;todos al mismo journal/tema&#39;; nombrar el modelo te da inmunidad parcial — pregúntate si quieres X o si lo quieres porque tu tribu lo desea.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la &#39;intuición&#39; es operacionalizable en 8 ejes (DII), ¿cuál de esos ejes —contexto, causalidad, incertidumbre— es el peor enseñado en el residentado peruano, y cómo lo evaluarías en pMSE sin reducirlo a checklist?</li><li>¿La autorregulación metacognitiva (que predice adaptabilidad clínica) se puede certificar como competencia graduable en ENAM/residentado, o medirla la destruye? ¿Qué instrumento la capturaría sin convertirla en performance?</li><li>Si la teoría de redes en psicopatología es un sistema no-lineal multivariable (Gurley), ¿qué intervención de segundo o tercer orden estamos ignorando al tratar síntomas como nodos aislados en lugar de modelar la cascada?</li><li>Si los sesgos de decisión son estados atractores con sustrato neural (Nature), ¿cómo cambia el debriefing clínico: sacas al alumno del atractor con datos, o necesitas una perturbación mayor (perspectiva, tiempo, par)?</li><li>Si el deseo es mimético (Burgis) y el self es contextual (Hidden Brain), ¿cuánto de la &#39;vocación&#39; y de las líneas de investigación que elegimos es deseo propio y cuánto contagio de la tribu académica?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE &#39;La intuición tiene ejes&#39;: adoptar el andamiaje DII de 8 ejes (Gut and Liver) como columna del razonamiento clínico dimensional, traduciendo cada eje a un movimiento enseñable y conectando el eje &#39;incertidumbre&#39; con la graduación del &#39;no sé&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel: &#39;Tu intuición clínica no es magia, son 8 preguntas&#39; — desglosar DII (tiempo, tasa, magnitud, patrón, contexto, causalidad, integración, incertidumbre) sobre un caso real; mecanismo concreto, cero moralina.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de educación médica: protocolo que compare metacognición embebida continua (retrieval + peer teaching) vs taller aislado en una cohorte ENAM/USAMEDIC, midiendo autorregulación y adaptabilidad — replicando la tesis de la revisión de Surg Radiol Anat en contexto peruano.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Episodio/hilo: &#39;El deseo mimético en la carrera médica&#39; — cruzar Burgis/Girard con la elección de líneas de investigación y el culto al KOL; herramienta de humildad epistémica para residentes que aún no eligen tema por convicción.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección para el libro de neurociencia educativa: &#39;Sesgos como atractores&#39; — usar el hallazgo de Nature (red atractora tálamo-tronco e history bias) para reencuadrar rigidez y perseveración como estados de sistema, no fallos de voluntad, con implicancias para el debriefing.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Gut and Liver</span><span class="tag ">Surgical and Radiologic Anatomy</span><span class="tag highlight">Nature</span><span class="tag ">NeuroImage</span><span class="tag highlight">The Knowledge Project / Farnam Street</span><span class="tag ">EconTalk</span><span class="tag ">Hidden Brain (NPR)</span><span class="tag ">The Intrinsic Perspective (Substack)</span><span class="tag ">Experimental History (Substack)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (mcp search_articles + get_article_metadata) · WebSearch (múltiples queries: Substack, blogs, podcasts, Reddit) · WebFetch: fs.blog/knowledge-project-podcast/bill-gurley · WebFetch: doi.org/10.5009/gnl260075 (Gut and Liver) · WebFetch: econtalk.org (Burgis) · WebFetch: hiddenbrain.org/podcast/who-are-you-really · WebFetch: theintrinsicperspective.com (Hoel) · WebFetch: experimental-history.com (Mastroianni) · Workflow de discovery+verificación adversarial (20 subagentes). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de junio de 2026.</div>
+</div>
+</body>
+</html>
