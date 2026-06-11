@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">11 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">48</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">38</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JAMA Psychiatry · 10 jun 2026 · paper · 2026-06-10</div>
+        <h3 class="r3-title">Changes in Genetic Contributions to ASD and ADHD by Year of Diagnosis</h3>
+        <p class="r3-hook">En la cohorte iPSYCH2015 (Dinamarca, 17.071 diagnosticados con TEA y 20.111 con TDAH entre 1994 y 2016) el riesgo poligénico para TDAH y TEA CAYÓ en quienes recibieron el diagnóstico más recientemente (β ≈ −0,06 a −0,07 SD por década, también para bipolar y esquizofrenia); al contrastar con escenarios simulados, los autores concluyen que el motor del alza de incidencia es la ampliación de criterios diagnósticos, no nuevos factores de riesgo ambiental. Para ti es munición de genética dura para &#39;Psicopatología para el mundo&#39; y tu línea dimensional: confirma lo que HiTOP/RDoC vienen diciendo —que TDAH/TEA son extremos de espectros continuos cuyo umbral es una decisión, no una frontera natural—, que es justo lo que tu app HiTOP por paciente materializa al medir el rasgo en vez de etiquetar la categoría. Úsalo como pieza de apertura del capítulo de neurodivergencia y como carrusel/clase AMAUTA: &#39;¿Por qué parece que todos tienen TDAH ahora?&#39;, respondido con evidencia y no con pánico moral. Es el tipo de hallazgo que te posiciona como la voz que explica la epidemiología sin caer ni en el negacionismo ni en la alarma.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1450" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1450</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Lancet Psychiatry · 8 jun 2026 · meta-analysis · 2026-06-08</div>
+        <h3 class="r3-title">Comparative effectiveness and safety of pharmacological treatments for rapid tranquilisation in emergency settings: a systematic review and individual participant data network meta-analysis</h3>
+        <p class="r3-hook">NMA de datos de participante individual (18 ensayos, 3.411 pacientes; grupo de Siafis y Leucht en Múnich): para agitación psicomotora, las combinaciones antipsicótico+benzodiacepina logran sedación a 15–30 min muy por encima del haloperidol en monoterapia (OR 12,9 en agitación moderada; 4,9 en severa), mientras que el haloperidol solo queda entre los menos eficaces y carga el mayor riesgo de efectos extrapiramidales; las BZD agregan riesgo de hipotensión. La confianza es muy baja por imprecisión y heterogeneidad, así que la lección metodológica pesa tanto como la clínica. Para ti es oro doble: contenido de razonamiento clínico de alto rendimiento para ENAM/Residentado —la tranquilización rápida es pregunta clásica y aquí tienes el ranking con números— y un caso de estudio para tu libro/clases sobre cómo leer un IPD-NMA y por qué &#39;evidencia de muy baja certeza&#39; no equivale a &#39;no sirve&#39;. Móntalo como pregunta-caso en USAMEDIC: paciente agitado en urgencias, elige y justifica con el SUCRA.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S2215-0366(26)00097-0" target="_blank" rel="noopener">↗ doi.org/10.1016/S2215-0366(26)00097-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">American Journal of Psychiatry · 10 jun 2026 · meta-analysis · 2026-06-10</div>
+        <h3 class="r3-title">Gray Matter Iron and Neuromelanin in Psychosis: A Systematic Review and Meta-Analysis of MRI Studies</h3>
+        <p class="r3-hook">Meta-análisis de 27 estudios de MRI (879 pacientes con psicosis vs 813 controles, grupo de Howes y McCutcheon en King&#39;s): la psicosis muestra hierro subcortical más bajo (R2* g −0,40 a −0,27; QSM en sustancia negra g −0,61) pero neuromelanina nigral más alta (g 0,39), aunque parte de esa señal de neuromelanina correlaciona con la dosis de antipsicótico. Para tu línea de psiquiatría de precisión y biomarcadores es candidato concreto a marcador de imagen estratificador: la NM-MRI es barata, sin contraste y potencialmente un dial para anticipar el estado dopaminérgico —el tipo de &#39;medida del mecanismo, no del síndrome&#39; que defiendes con RDoC—. Es material para una nota del Garden enlazada a tu clúster RDoC/dopamina y para un capítulo del libro sobre cómo los biomarcadores de circuito empiezan a cumplir la promesa dimensional. Ojo con el confound de dosis: úsalo también como ejemplo didáctico de &#39;confounding by indication&#39; en tus clases de lectura crítica.</p>
+        <a class="r3-link" href="https://doi.org/10.1176/appi.ajp.20251257" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.ajp.20251257</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JAMA Psychiatry · 10 jun 2026 · review · 2026-06-10</div>
+          <div class="r10-title">The 25-Year Evolution of Lithium as a Disease-Modifying Agent in Dementia: A Narrative Review</div>
+          <div class="r10-line">Revisión en JAMA Psychiatry sintetiza 25 años de litio como agente modificador de enfermedad en deterioro cognitivo/Alzheimer: dosis bajas (~0,3 mM) de orotato de litio con efecto neurotrófico (Bcl-2, BDNF, GSK-3β) y menor riesgo renal/tiroideo, accionable para entornos de recursos limitados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el litio de baja dosis se reposiciona como apuesta de prevención costo-efectiva en Latinoamérica; espera un RCT pragmático en MCI en 2–3 años —vale la pena vigilarlo para un protocolo HVLH o una nota de precisión—.</div>
+          <a class="r10-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1296" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1296</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">American Journal of Psychiatry · 10 jun 2026 · paper · 2026-06-10</div>
+          <div class="r10-title">Social Media Use Trajectories and Substance Use Experimentation: A Prospective Cohort Study</div>
+          <div class="r10-line">Cohorte ABCD (n=7.166, AJP): las trayectorias de inicio temprano y rápido aumento de uso de redes sociales predicen experimentación con cannabis (aOR 16,9), alcohol y nicotina en la adolescencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: dato perfecto para tu contenido de neurodivergencia/adolescencia; el debate migrará de &#39;pantallas malas&#39; a &#39;trayectorias de uso&#39;, y quien explique la diferencia gana la conversación.</div>
+          <a class="r10-link" href="https://doi.org/10.1176/appi.ajp.20251292" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.ajp.20251292</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 9 jun 2026 · paper · 2026-06-09</div>
+          <div class="r10-title">Anxiety influences the addictive feature of non-suicidal self-injury behavior via somatic symptom in adolescents with major depressive disorder</div>
+          <div class="r10-line">En 363 adolescentes con TDM y autolesión, redes bayesianas trazan la vía ansiedad→síntoma somático→rasgo adictivo de la autolesión, y un ensayo de iTBS acelerada (n=58) sobre DLPFC izquierda anula esa mediación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: convergencia network theory + neuromodulación que valida tu tesis dimensional; el target terapéutico será la vía, no el síntoma —ensáyalo como figura en el libro BMSE—.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03648-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03648-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 5 jun 2026 · paper · 2026-06-05</div>
+          <div class="r10-title">Hierarchical neural variability reveals adaptive and maladaptive mechanisms of non-suicidal self-injury</div>
+          <div class="r10-line">rs-fMRI en 210 pacientes muestra que la variabilidad neural jerárquica (conectividad vs topología) distingue autolesión y predice mejoría a 3 meses, con efectos adaptativos y maladaptativos opuestos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la &#39;variabilidad&#39; como biomarcador de pronóstico desplaza a las métricas estáticas; encaja en tu narrativa RDoC de precisión —candidato a perla recurrente—.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03671-8" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03671-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Eur Arch Psychiatry Clin Neurosci · 9 jun 2026 · meta-analysis · 2026-06-09</div>
+          <div class="r10-title">Efficacy of different exercise interventions on cognitive function in adults with major depressive disorder and subthreshold depression: a systematic review with pairwise and network meta-analyses</div>
+          <div class="r10-line">NMA de 26 estudios: el ejercicio mejora la cognición en depresión mayor y subumbral, con el ejercicio mente-cuerpo rankeado primero para cognición global (SUCRA 72,2%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el &#39;ejercicio como cognición&#39; es contenido kinobody-selfcare con respaldo NMA; conviértelo en carrusel que une tu pilar de autocuidado con evidencia dura.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02284-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02284-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry · 6 jun 2026 · review · 2026-06-06</div>
+          <div class="r10-title">Therapeutic interventions for adolescent suicidal behavior and self-harm: an umbrella review for developing clinical practice guidelines in South Korea</div>
+          <div class="r10-line">Paraguas (6 revisiones, 178 estudios) con GRADE: evidencia de alta certeza para fluoxetina+TCC sobre fluoxetina sola en adolescentes con depresión y riesgo suicida; DBT, MBT y terapia familiar quedan en certeza muy baja.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: recordatorio incómodo de que las terapias de moda carecen de evidencia GRADE alta; úsalo para enseñar appraisal y para tus dictámenes de comité de ética.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08168-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08168-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Med Internet Res · 5 jun 2026 · rct · 2026-06-05</div>
+          <div class="r10-title">Self-Guided Internet-Based Mindfulness-Informed Stress Management for Generalized Anxiety Disorder: Randomized Controlled Trial With Longitudinal Network Analysis</div>
+          <div class="r10-line">RCT (n=140) de mindfulness autoguiado por internet como adjunto en TAG con análisis de red longitudinal (CLPN/RI-CLPM): mejora ansiedad y depresión y mapea una vía unidireccional mindfulness→reducción de ansiedad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el matrimonio RCT + network analysis es el formato que tu línea dimensional necesita; espéralo como estándar y replícalo en tus propios datos.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/91751" target="_blank" rel="noopener">↗ doi.org/10.2196/91751</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">British Journal of Psychiatry · 9 jun 2026 · paper · 2026-06-09</div>
+          <div class="r10-title">Suicide rates in the USA following the Jon Bon Jovi Papageno media event</div>
+          <div class="r10-line">Series temporales (BJP): tras la cobertura del rescate de Jon Bon Jovi a una mujer (sep 2024), baja la mortalidad por suicidio en Tennessee (RR 0,78), efecto solo en varones —primera evidencia real del &#39;efecto Papageno&#39;—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: regalo para contenido y para guías de comunicación responsable; las narrativas de supervivencia serán la próxima palanca de prevención —hilo/reel listo—.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10668" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10668</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">British Journal of Psychiatry · 8 jun 2026 · paper · 2026-06-08</div>
+          <div class="r10-title">An investigation of recorded physical, domestic and sexual victimisation as risk factors for adverse clinical outcomes in severe mental illness: longitudinal study</div>
+          <div class="r10-line">Cohorte de 16.372 pacientes con enfermedad mental grave (Londres, vía NLP de registros): la victimización registrada predice más urgencias, ingresos y detenciones bajo Mental Health Act.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: caso de uso de IA (NLP sobre registros) que tu pilar ai-enhancement puede replicar; la lección clínica es &#39;pregunta por violencia, sistemáticamente&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10648" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10648</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">American Journal of Psychiatry · 10 jun 2026 · editorial · 2026-06-10</div>
+          <div class="r10-title">A Proposed Expansion of the Definition of Treatment-Resistant Schizophrenia</div>
+          <div class="r10-line">Rubio y Kane (AJP) proponen ampliar la definición de esquizofrenia resistente al tratamiento más allá del fracaso a dos antipsicóticos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: redefinir la TRS reabre el debate de cuándo ir a clozapina; vigílalo —cambia el algoritmo que enseñas en Residentado—.</div>
+          <a class="r10-link" href="https://doi.org/10.1176/appi.ajp.20251269" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.ajp.20251269</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El alza de TDAH/TEA no exige un &#39;nuevo veneno ambiental&#39;: la genética (iPSYCH, JAMA Psychiatry) muestra carga poligénica decreciente en diagnósticos recientes —el cambio está en el umbral, no en el cerebro—. Antídoto contra el pánico moral en tus clases.</li><li>En tranquilización rápida, el haloperidol en monoterapia es de los menos eficaces y el que más síntomas extrapiramidales deja (Lancet Psychiatry, IPD-NMA); la combinación antipsicótico+BZD gana en velocidad —pero paga hipotensión—.</li><li>&#39;Evidencia de muy baja certeza&#39; no es &#39;no funciona&#39;: el mismo NMA que rankea fármacos de agitación declara certeza muy baja por imprecisión. Enseña la diferencia o tus alumnos confundirán incertidumbre con nulidad.</li><li>La neuromelanina nigral en MRI sube en psicosis… pero parte sube por la dosis de antipsicótico (AJP). Todo biomarcador de imagen en pacientes medicados arrastra confounding by indication —regla de oro al leer &#39;precisión&#39;—.</li><li>Mind-body, no solo aeróbico: en depresión el ejercicio mente-cuerpo encabeza el ranking NMA para cognición global. El &#39;muévete&#39; genérico pierde frente al &#39;muévete con atención&#39;.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la carga poligénica baja conforme se amplían criterios, ¿en qué punto un &#39;caso leve&#39; de TDAH deja de ser trastorno y pasa a ser variación normal —y quién decide el corte?</li><li>¿Deberíamos retirar el haloperidol IM en monoterapia de los protocolos de urgencia peruanos a la luz de este IPD-NMA, o el contexto (disponibilidad, costo) aún lo justifica?</li><li>¿La NM-MRI puede volverse un biomarcador de estratificación dopaminérgica útil en entornos de recursos limitados, o el confound por dosis la inhabilita para decisiones clínicas?</li><li>Si las redes bayesianas localizan la vía ansiedad→somático→autolesión, ¿el target de neuromodulación debería elegirse por la vía individual del paciente en vez de por el diagnóstico?</li><li>¿Por qué las terapias adolescentes más promovidas (DBT, MBT) siguen en certeza GRADE muy baja, y qué diseño cerraría esa brecha sin esperar otra década?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel: &#39;¿Por qué parece que todos tienen TDAH ahora?&#39; — explicado con la cohorte iPSYCH (umbral diagnóstico, no epidemia biológica), tono anti-pánico, marca AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Caso clínico interactivo USAMEDIC para ENAM/Residentado: paciente agitado en urgencias — elige la tranquilización rápida y justifícala con el ranking SUCRA del IPD-NMA de Lancet Psychiatry.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-revisión/comentario para audiencia LATAM: viabilidad de la NM-MRI como biomarcador de precisión en psicosis en entornos de recursos limitados, abordando de frente la trampa del confounding by indication.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE / razonamiento dimensional: &#39;Del síndrome al circuito&#39;, usando la vía ansiedad→somático→autolesión (redes bayesianas + iTBS) como figura central de cómo la network theory aterriza en un target terapéutico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre el efecto Papageno (rescate de Bon Jovi) + guía de comunicación responsable del suicidio para creadores de salud mental —puente content-documentation + ética—.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Lancet Psychiatry ⭐</span><span class="tag highlight">JAMA Psychiatry ⭐</span><span class="tag highlight">American Journal of Psychiatry ⭐</span><span class="tag highlight">Molecular Psychiatry ⭐</span><span class="tag highlight">British Journal of Psychiatry ⭐</span><span class="tag highlight">Nature Medicine ⭐</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">BMC Psychiatry</span><span class="tag ">Journal of Medical Internet Research</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities vía MCP). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de junio de 2026.</div>
+</div>
+</body>
+</html>
