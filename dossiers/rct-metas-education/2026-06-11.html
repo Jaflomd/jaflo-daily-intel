@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">11 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">75</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">49</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Survey of Ophthalmology · 2026-06-10 · review</div>
+        <h3 class="r3-title">Artificial intelligence and medical retina training: A scoping review of educational opportunities, emerging risks, and curricular responses</h3>
+        <p class="r3-hook">Scoping review (PRISMA-ScR + JBI) que mapea cómo la IA autónoma de lectura retinal está reconfigurando el entrenamiento de especialistas: identifica oportunidades reales (asignación personalizada de casos, datasets sintéticos, feedback visual explicable, scaffolding) pero también riesgos documentados: deskilling, &#39;never-skilling&#39;, sesgo de automatización y disrupción de los marcos de evaluación. El dato que te importa, Javier: cuando la IA iguala o supera al residente de primer año, la formación de la identidad profesional del trainee queda en terreno inexplorado, y las respuestas institucionales y de acreditación van muy por detrás del despliegue clínico. Esto es munición directa para tu línea de IA-en-educación y tu libro de neurociencia educativa: el eje deja de ser &#39;¿la IA enseña mejor?&#39; y pasa a ser &#39;¿qué competencias y qué identidad profesional protejo de la IA, y cuándo permito el andamiaje?&#39;. Úsalo como marco-paraguas para una pieza AMAUTA sobre evaluación AI-resistant en ENAM/Residentado y como columna teórica del capítulo donde distingues deskilling de never-skilling.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.survophthal.2026.06.007" target="_blank" rel="noopener">↗ doi.org/10.1016/j.survophthal.2026.06.007</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Surgical Endoscopy · 2026 (RCT) · rct · 2026-03-25</div>
+        <h3 class="r3-title">Taxing working memory during laparoscopic training: reducing the impact of perfectionistic concerns on skill learning</h3>
+        <p class="r3-hook">RCT (n=55, simulador de cirugía mínimamente invasiva, retención a 48h) con un mecanismo contraintuitivo: añadir una tarea visuoespacial secundaria que carga la memoria de trabajo durante la práctica NO degradó el desempeño y eliminó el efecto tóxico del perfeccionismo autocrítico sobre la retención de la eficiencia motora. La hipótesis es elegante: ocupar la &#39;RAM&#39; mental con una tarea neutra le quita recursos a la rumiación, reduciendo el auto-foco negativo que sabotea el aprendizaje. Para ti cruza tres frentes a la vez: tu interés en neurodivergencia/perfeccionismo, la neurociencia del aprendizaje y la práctica deliberada en simulación. Es el único RCT real de la ventana y es muy &#39;paperable&#39; como semilla: replicar el paradigma en razonamiento diagnóstico (no solo motor) sería un estudio propio para USAMEDIC. Pregúntate si tu método test-first ya explota, sin nombrarlo, este mismo efecto de carga cognitiva para silenciar la rumiación del perfeccionista.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00464-026-12739-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s00464-026-12739-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Biochemistry and Molecular Biology Education · 2026-06-09 · paper</div>
+        <h3 class="r3-title">How Students Use ChatGPT in Biochemistry Education: Evaluating Students&#39; Prompts, Illustrations, and Reflective Assessments as Evidence</h3>
+        <p class="r3-hook">Estudio empírico de aula: 25 estudiantes de primer año debían dibujar un dipéptido Ala-Cys guiándose SOLO por ChatGPT. El hallazgo es brutal y limpio: el 100% de las estructuras que generó ChatGPT estaban mal, y los estudiantes —que tenían el conocimiento para detectar los errores— las copiaron igual, sin evaluación crítica, y luego pidieron &#39;una figura de autoridad&#39; (el docente) que validara. No es una historia de &#39;la IA se equivoca&#39;; es la demostración del cognitive offloading y el sesgo de automatización apagando el juicio del que ya sabe. Esto es oro para tu libro de neurociencia educativa y para contenido IG/YT: el caso concreto que ilustra por qué la IA mal andamiada produce la ilusión de fluidez sin aprendizaje. Encaja perfecto con tu pedagogía test-first y con una pieza AMAUTA sobre cómo diseñar tareas donde la IA no pueda sustituir el razonamiento; es la contraparte empírica (estudiantes reales) del scoping de retina que abre este dossier.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/bmb.70062" target="_blank" rel="noopener">↗ doi.org/10.1002/bmb.70062</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Odontology · 2026-06-10 · review</div>
+          <div class="r10-title">Large language models and generative artificial intelligence in endodontics: a scoping review</div>
+          <div class="r10-line">Scoping de 54 estudios: los LLM (ChatGPT-4o/5, Gemini 2.5, Claude 3.5/3.7, DeepSeek-R1) rivalizan con especialistas en escenarios estándar pero caen en casos complejos, y la arquitectura RAG anclada en guías reduce sustancialmente la alucinación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El criterio &#39;¿es buena la IA?&#39; migrará a &#39;¿está document-grounded?&#39;; tu Garden-RAG y tus bancos USAMEDIC deberían adoptar RAG sobre guías como requisito, no opción.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10266-026-01434-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s10266-026-01434-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Educational Evaluation for Health Professions (JEEHP) · 2026-06-09 · review</div>
+          <div class="r10-title">Analysis of digital twin applications in nursing practice and education: a scoping review</div>
+          <div class="r10-line">Scoping (15 estudios) en una revista núcleo de educación en profesiones de la salud: los gemelos digitales ya aparecen en práctica y educación de enfermería como entornos inmersivos de entrenamiento y soporte de decisión data-driven.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;gemelo digital del paciente&#39; será el próximo simulador de alta fidelidad; vale vigilarlo para tus simulaciones clínicas INACSL/AMEE antes de que se vuelva commodity.</div>
+          <a class="r10-link" href="https://doi.org/10.3352/jeehp.2026.23.13" target="_blank" rel="noopener">↗ doi.org/10.3352/jeehp.2026.23.13</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Continuing Education in the Health Professions · 2026-06-10 · paper</div>
+          <div class="r10-title">Between Incremental Change and Transformation: The Emerging Role of Generative AI in Continuing Professional Development Within Health Care Systems</div>
+          <div class="r10-line">Encuesta internacional (110 líderes de CPD, 14 países): la IA generativa se adopta como herramienta aumentativa de eficiencia y creatividad, con un bloque &#39;indeciso&#39; que decide si el cambio es incremental o transformador.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Quien gane a los &#39;indecisos&#39; con entrenamiento estructurado fija el estándar; hay hueco para que AMAUTA publique un onboarding de IA para docentes de salud.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/CEH.0000000000000648" target="_blank" rel="noopener">↗ doi.org/10.1097/CEH.0000000000000648</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Continuing Education in the Health Professions · 2026-06-10 · paper</div>
+          <div class="r10-title">Leveraging Traditional and Generative Artificial Intelligence for Programmatic Decision Making in Faculty Development</div>
+          <div class="r10-line">Framework AIEPE (5 fases, humano-en-el-loop): IA tradicional + generativa para evaluar programas; analizó 3361 comentarios (87.6% positivos) y conectó un &#39;no-show&#39; alto a docentes que se sentían poco preparados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La evaluación de cursos pasará de encuestas manuales a pipelines IA con supervisión humana; replicable casi sin costo marginal para medir tus cohortes USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/CEH.0000000000000654" target="_blank" rel="noopener">↗ doi.org/10.1097/CEH.0000000000000654</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Ophthalmology Science · 2026 · paper · 2026-03-11</div>
+          <div class="r10-title">Toward Long-Term Visual Field Appearance Forecasting Using Artificial Intelligence for Ophthalmic Education and Diagnosis</div>
+          <div class="r10-line">User study con 8 residentes: los pronósticos de campo visual por IA (modelo generativo GenVF) volvieron uniforme el error entre niveles de PGY y subieron la confianza, nivelando junior y senior.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La IA comprimirá la curva de aprendizaje pero borrará la señal que distingue al experto; tu evaluación tendrá que medir el proceso de razonamiento, no solo el output.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.xops.2026.101149" target="_blank" rel="noopener">↗ doi.org/10.1016/j.xops.2026.101149</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Clinical Teacher · 2026 · review · 2026-06-10</div>
+          <div class="r10-title">Gynaecology Teaching Associates in Medical Education — A Scoping Review</div>
+          <div class="r10-line">Scoping (83 fuentes): las Gynaecology Teaching Associates —educadoras que enseñan el examen pélvico con su propio cuerpo y dan feedback encarnado— reducen ansiedad y mejoran confianza, con evidencia mayormente corto-plazo y autorreportada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;feedback encarnado&#39; se formalizará como modalidad; ángulo ético-pedagógico potente para tu contenido sobre consentimiento y enseñanza de habilidades sensibles.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/tct.70460" target="_blank" rel="noopener">↗ doi.org/10.1111/tct.70460</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Iranian J Nursing and Midwifery Research · 2026 · review · 2026-05-07</div>
+          <div class="r10-title">A Comprehensive Review of Technological Innovations in Teaching Clinical Nursing Skills: A Scoping Review</div>
+          <div class="r10-line">Scoping (58 estudios): apps móviles, simulaciones virtuales y videos dominan la enseñanza de habilidades clínicas de enfermería, con la ética (privacidad y seguridad de datos) como eje recurrente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La tecnología educativa se da por sentada; el diferenciador será la gobernanza ética de datos, no el gadget — útil para tu lente Acai al diseñar cursos.</div>
+          <a class="r10-link" href="https://doi.org/10.4103/ijnmr.ijnmr_368_24" target="_blank" rel="noopener">↗ doi.org/10.4103/ijnmr.ijnmr_368_24</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Rural and Remote Health · 2026-06-08 · review</div>
+          <div class="r10-title">The association between medical student selection and a fit-for-purpose medical workforce in low- and middle-income countries in the Asia-Pacific region: a scoping review</div>
+          <div class="r10-line">Scoping en LMIC del Asia-Pacífico: la selección de estudiantes de medicina pivota hacia responsabilidad social y &#39;fit-for-purpose&#39; más que solo notas, con un marco propuesto para contextos de bajos recursos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El debate de admisiones por responsabilidad social llegará al Perú; un paper comparando la selección/ENAM peruana con este marco te posiciona en política educativa (sumable a RENACYT).</div>
+          <a class="r10-link" href="https://doi.org/10.22605/RRH10393" target="_blank" rel="noopener">↗ doi.org/10.22605/RRH10393</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinics in Colon and Rectal Surgery · 2025-12 · review · 2025-12-04</div>
+          <div class="r10-title">Self-learning and Simulation in the 21st Century: From Textbooks to ChatGPT</div>
+          <div class="r10-line">Revisión: la educación quirúrgica migra de libros a ChatGPT, e-learning y simulación con XR/IA para autoevaluación y preparación de boards, ante menos experiencia operatoria real del trainee.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El autoaprendizaje aumentado-por-IA será el default; el riesgo es confundir acceso con competencia — encaja con tu narrativa de &#39;never-skilling&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1055/s-0045-1813685" target="_blank" rel="noopener">↗ doi.org/10.1055/s-0045-1813685</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Pediatric Nursing · 2026-06-10 · paper</div>
+          <div class="r10-title">Comparison of the performance of ChatGPT Plus, Gemini Pro, and experienced nurses in pediatric emergency triage using physician reference assessment: A prospective observational study</div>
+          <div class="r10-line">Estudio prospectivo (378 pacientes): enfermeras experimentadas triaron pediatría con 92% de acierto vs 65% ChatGPT Plus y 63% Gemini Pro, con la IA sub-triando a los pacientes graves.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El contrapeso al hype: en juicio situado y de alto riesgo el experto humano todavía gana — buen dato para calibrar expectativas en tus charlas de IA clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pedn.2026.06.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pedn.2026.06.004</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el experimento de bioquímica (Mutlu, BMB Educ), el 100% de las estructuras que generó ChatGPT estaban mal y los estudiantes las copiaron pese a tener el conocimiento para detectarlas: el problema no es que la IA se equivoque, es que apaga el juicio crítico del que ya sabe (cognitive offloading + sesgo de automatización).</li><li>La amenaza educativa de la IA no es solo el &#39;deskilling&#39; (perder una habilidad que tuviste) sino el &#39;never-skilling&#39; (nunca desarrollarla): el scoping de retina lo nombra explícitamente y plantea la pregunta abierta de cómo se forma la identidad profesional cuando la IA ya iguala o supera al R1.</li><li>RCT contraintuitivo: cargar la memoria de trabajo con una tarea visuoespacial secundaria durante la práctica quirúrgica NO empeoró el desempeño y borró el efecto tóxico del perfeccionismo sobre la retención motora. Ocupar la &#39;RAM&#39; mental le quita combustible a la rumiación.</li><li>En el forecasting de campo visual, la IA niveló el error entre residentes junior y senior (MAE uniforme con IA vs variable sin IA): la IA comprime la curva de aprendizaje, pero también borra la señal que distingue al experto — un arma de doble filo para la evaluación.</li><li>RAG (retrieval-augmented generation) anclado en guías reduce sustancialmente la alucinación de los LLM en endodoncia: la lección transferible para tu Garden y USAMEDIC es que un LLM &#39;document-grounded&#39; es la diferencia entre herramienta y riesgo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cómo rediseño las evaluaciones de USAMEDIC/ENAM para que midan razonamiento que la IA no puede tercerizar, en vez de outputs que ChatGPT genera en segundos?</li><li>Si la IA produce &#39;never-skilling&#39;, ¿qué competencias clínicas debo blindar como &#39;se aprenden sin IA primero&#39; antes de permitir el andamiaje algorítmico?</li><li>¿El efecto de carga de memoria de trabajo sobre el perfeccionismo (retención motora) se transfiere a la práctica deliberada de razonamiento diagnóstico, no solo a lo motor?</li><li>¿Cómo distingo en mi banco de preguntas un distractor que entrena criterio de uno que la IA resuelve trivialmente, y qué dice eso sobre su validez?</li><li>¿Qué política de divulgación/consentimiento de IA debería exigir un comité de ética educativo (HVLH/AMAUTA) cuando estudiantes y docentes usan LLMs en formación y evaluación?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel &#39;El estudiante que copió el error de ChatGPT sabiendo que estaba mal&#39;: el experimento de bioquímica como caso vívido de sesgo de automatización en educación médica, cerrando con tu regla test-first.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición/scoping &#39;Never-skilling vs deskilling: marco para decidir qué competencias clínicas blindar de la IA en la formación de pregrado peruana&#39;, usando ENAM como caso y el scoping de retina como ancla teórica.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de neurociencia educativa — &#39;Cognitive offloading y la ilusión de fluidez: por qué la IA bien usada exige más juicio, no menos&#39;, anclado en los datos de ChatGPT-biochem y carga de memoria de trabajo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video &#39;5 formas en que la IA iguala al novato con el experto (y por qué eso rompe tu examen)&#39;, usando el user study de forecasting de campo visual y el contraste con el triaje pediátrico donde la IA pierde.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Editorial metodológica para AMAUTA — &#39;Diseñar evaluaciones AI-resistant: de outputs a razonamiento&#39;, con una rúbrica práctica para auditar bancos de preguntas y exigir RAG document-grounded en tutores LLM.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Survey of Ophthalmology</span><span class="tag ">Surgical Endoscopy</span><span class="tag ">J Educational Evaluation for Health Professions (JEEHP)</span><span class="tag ">J Continuing Education in the Health Professions</span><span class="tag ">Odontology</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">The Clinical Teacher</span><span class="tag highlight">Perspectives on Medical Education</span><span class="tag ">Biochemistry and Molecular Biology Education</span><span class="tag ">Ophthalmology Science</span><span class="tag ">British Journal of Ophthalmology</span><span class="tag ">Iranian J Nursing and Midwifery Research</span><span class="tag ">Rural and Remote Health</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP search_articles + get_article_metadata; ventanas pdat y edat 2026/06/06–2026/06/11; sort=pub_date). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de junio de 2026.</div>
+</div>
+</body>
+</html>
