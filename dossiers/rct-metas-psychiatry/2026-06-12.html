@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">12 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">39</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Child Psychiatry &amp; Human Development · 12 jun 2026 · meta-analysis · 2026-06-12</div>
+        <h3 class="r3-title">Eficacia y aceptabilidad comparadas de terapias no farmacológicas y nuevas farmacoterapias para autismo: revisión sistemática y network meta-análisis</h3>
+        <p class="r3-hook">NMA frecuentista de 106 RCT (5986 pacientes, 21 intervenciones) que rankea qué mueve los síntomas core del autismo: vs placebo, ejercicio (SMD -1.05), acupuntura/moxibustión (-0.87), tDCS (-0.86) y bumetanida (-0.57) mejoran, mientras los cannabinoides tienen la peor aceptabilidad. Te importa porque pega de lleno en tu línea TDAH/TEA/neurodivergencia + neuromodulación y alimenta tanto el libro de psicopatología dimensional como el contenido AMAUTA: el tDCS vuelve a aparecer como palanca no-farmacológica seria y el ejercicio como la intervención &#39;barata&#39; que encabeza el ranking. Úsalo como jerarquía de evidencia para un carrusel &#39;qué SÍ mueve los síntomas core del autismo&#39; y como caso para enseñar lectura crítica de NMA en residentado — con la advertencia honesta de que la certeza es baja y el ejercicio trae IC amplio.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10578-026-02040-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s10578-026-02040-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychological Medicine · 11 jun 2026 · meta-analysis · 2026-06-11</div>
+        <h3 class="r3-title">Diferencias sexuales en la arquitectura genética de la ansiedad: primer meta-análisis GWAS sexo-específico (UK Biobank + All of Us)</h3>
+        <p class="r3-hook">Primer meta-GWAS sexo-específico de ansiedad (85.042 casos mujeres vs 36.732 hombres): 21 loci líderes en mujeres frente a solo 5 en hombres, heredabilidad significativamente mayor en mujeres, y correlación genética entre sexos alta pero distinta de 1 (arquitecturas parcialmente distintas); además la ansiedad femenina correlaciona más fuerte con TDAH e IMC. Te importa porque es munición empírica directa para tu psiquiatría dimensional/de precisión (RDoC/HiTOP) y para tu libro: el sexo no es covariable a &#39;controlar&#39;, es un eje que reorganiza la señal — y la comorbilidad TDAH refuerza tu narrativa de neurodivergencia transdiagnóstica. Úsalo como perla conceptual &#39;promediar sexos enmascara biología&#39; para clase y para un hilo sobre por qué el dimorfismo sexual rompe el modelo categorial.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726104760" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726104760</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Sleep Research · 11 jun 2026 · meta-analysis · 2026-06-11</div>
+        <h3 class="r3-title">Riesgos del uso prolongado de benzodiacepinas en insomnio crónico: revisión sistemática y (network) meta-análisis</h3>
+        <p class="r3-hook">27 estudios sobre benzodiacepinas &gt;3 meses en insomnio crónico: quienes las usan crónicamente tienen el insomnio PEOR que quienes no medican nada y niveles significativamente más altos de depresión y ansiedad, sin reducción del riesgo de caídas — la evidencia respalda las guías que priorizan TCC-i y alternativas más seguras. Te importa por triple vía: deprescribing como mensaje clínico de alto valor para ENAM/Residentado, tu propia Foundation (sueño y regulación), y contenido de psicoeducación con evidencia proporcional. Úsalo para un post/clase &#39;por qué la benzo crónica para dormir te empeora el ánimo&#39; y un caso clínico de deprescripción estructurada — el dato contraintuitivo (peor que no medicar) es el gancho.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/jsr.70352" target="_blank" rel="noopener">↗ doi.org/10.1111/jsr.70352</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Public Health · 11 jun 2026 · meta-analysis · 2026-06-11</div>
+          <div class="r10-title">Eficacia comparada de distintas intervenciones de actividad física en personas con TEA: RS y network meta-análisis</div>
+          <div class="r10-line">NMA de 45 estudios (1479 con TEA): artes marciales = lo mejor para comunicación social (SMD -0.84), deportes de equipo para conductas estereotipadas (-1.39) y ejercicio mente-cuerpo para motricidad (+2.10), con dosis óptimas por dominio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;qué ejercicio para qué síntoma y a qué dosis&#39; es carrusel/Reel AMAUTA listo; predigo que la receta por dominio se vuelve tu formato estrella de neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12889-026-27965-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12889-026-27965-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 11 jun 2026 · paper · 2026-06-11</div>
+          <div class="r10-title">Proteómica plasmática de los rasgos de sueño: vías inmuno-metabólicas y proteínas priorizadas genéticamente</div>
+          <div class="r10-line">Atlas de 935 proteínas asociadas a 7 rasgos de sueño en 43.709 del UK Biobank; MR señala LTA como causal del sueño nocturno y las proteínas predicen depresión, demencia y mortalidad a 13,6 años.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La proteómica del sueño es el caballo de Troya de la psiquiatría de precisión; predigo que lo citas para sostener que el sueño es biomarcador transdiagnóstico, no solo síntoma.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03678-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03678-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 10 jun 2026 · paper · 2026-06-10</div>
+          <div class="r10-title">Metilación diferencial de ADN en sangre como mediadora entre PM2.5 y biomarcadores de Alzheimer en LCR</div>
+          <div class="r10-line">En 536 cognitivamente sanos, la metilación de ADN media 14-43% del efecto del PM2.5 sobre Aβ en LCR; 6 de 9 CpG anotan a genes neuroinflamatorios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El eje ambiente→epigenética→cerebro encaja con tu narrativa exposómica; predigo material para una nota del Garden sobre determinantes ambientales de neurodegeneración.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03662-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03662-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open · 07 jun 2026 · rct · 2026-06-07</div>
+          <div class="r10-title">Walking fOR Health (WORtH): ensayo de factibilidad para aumentar actividad y reducir sedentarismo en enfermedad mental grave</div>
+          <div class="r10-line">RCT de factibilidad (n=54) de caminar + coaching de salud en EMG: 90% de reclutamiento, 94% de seguimiento y +8,6 min/día de actividad moderada-vigorosa vs +1,0 en control.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La psiquiatría de estilo de vida con wearables escala; predigo que es el ejemplo perfecto para enseñar diseño de ensayos de factibilidad (feasibility ≠ eficacia) en tu curso de metodología.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2025-107567" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-107567</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Geriatrics · 11 jun 2026 · review · 2026-06-11</div>
+          <div class="r10-title">Componentes y efectos de intervenciones de soporte psicosocial para familiares de pacientes con delirium: revisión sistemática</div>
+          <div class="r10-line">RS de 8 estudios: las intervenciones psicosociales para familiares de pacientes con delirium mejoran el conocimiento, pero no muestran efecto claro en ansiedad/depresión y están pobremente reportadas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Gap clínico real y mal cubierto; predigo que sirve como ejemplo de &#39;reporting deficiente&#39; (TIDieR/CReDECI2) para enseñar cómo NO escribir una intervención.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12877-026-07750-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12877-026-07750-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Blood Advances · 09 jun 2026 · rct · 2026-06-09</div>
+          <div class="r10-title">Ensayo piloto aleatorizado de una intervención de soporte entre pares para trasplante de células madre hematopoyéticas (STEPP)</div>
+          <div class="r10-line">RCT piloto (n=90) de soporte telefónico entre pares post-trasplante: factible y aceptable, con mejoras pequeñas-moderadas en ansiedad (d=-0,58 a día 60), calidad de vida y autoeficacia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El soporte par como intervención escalable de bajo costo crece; predigo ángulo de contenido sobre intervenciones psicosociales de alto leverage para sistemas con pocos recursos (Perú).</div>
+          <a class="r10-link" href="https://doi.org/10.1182/bloodadvances.2025018918" target="_blank" rel="noopener">↗ doi.org/10.1182/bloodadvances.2025018918</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine · 08 jun 2026 · review · 2026-06-08</div>
+          <div class="r10-title">Experiencias emocionales del residente en el trabajo: revisión de alcance de investigación cualitativa</div>
+          <div class="r10-line">Scoping de 56 estudios cualitativos: las emociones del residente no se reducen a &#39;burnout&#39; sino al choque entre una identidad en desarrollo y las exigencias de la residencia; el bienestar exige abordar lo existencial.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Marco ideal para tu línea de educación médica + Foundation; predigo una nota/charla &#39;más allá del burnout&#39; para tus residentes de ENAM/Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10470-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10470-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Oral Health · 08 jun 2026 · review · 2026-06-08</div>
+          <div class="r10-title">Métodos no farmacológicos para mejorar el estado psicoemocional en pacientes adultos de extracción dental: revisión sistemática</div>
+          <div class="r10-line">RS de 25 RCT: música, realidad virtual, aromaterapia y relajación guiada reducen la ansiedad procedural (MDAS/STAI/cortisol salival), pero la heterogeneidad impide decir cuál gana.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Caja de herramientas conductuales de bajo costo para ansiedad procedural; predigo una perla sobre por qué &#39;algo funciona&#39; sin head-to-head sigue siendo evidencia débil.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12903-026-08209-6" target="_blank" rel="noopener">↗ doi.org/10.1186/s12903-026-08209-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Pulmonary Medicine · 10 jun 2026 · meta-analysis · 2026-06-10</div>
+          <div class="r10-title">Efectividad de la telerrehabilitación en pacientes con post-COVID-19: RS y meta-análisis actualizado de RCT</div>
+          <div class="r10-line">RS+MA de 28 RCT: la telerrehabilitación post-COVID mejora función física y fatiga, pero NO mueve ansiedad ni depresión (HADS no significativo).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;no efecto en salud mental&#39; es la perla; predigo que lo usas para enseñar que arreglar el cuerpo no arregla automáticamente el ánimo (separación de dominios).</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12890-026-04377-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12890-026-04377-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry · 05 jun 2026 · editorial · 2026-06-05</div>
+          <div class="r10-title">Impulsar la investigación traslacional clínica para el autismo profundo</div>
+          <div class="r10-line">Perspectiva (State &amp; Malenka) que empuja a priorizar la investigación traslacional del autismo profundo, el subgrupo más desatendido por la ciencia básica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El término &#39;autismo profundo&#39; se va a institucionalizar; predigo que te conviene posicionarte temprano en ese debate dimensional vs categorial en tu libro y contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.05.020" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.05.020</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En autismo, el ejercicio supera en tamaño de efecto a la mayoría de fármacos sobre síntomas core (SMD -1,05): la intervención más &#39;barata&#39; encabeza el ranking del NMA — y los cannabinoides son los peor aceptados.</li><li>Promediar hombres y mujeres en el GWAS de ansiedad esconde biología: 21 loci en mujeres frente a 5 en hombres, con mayor heredabilidad femenina. El sexo es señal, no ruido a controlar.</li><li>La benzodiacepina crónica para dormir deja el insomnio peor que no medicar y sube depresión y ansiedad: el &#39;parche&#39; es parte del problema, no la solución.</li><li>Mejorar el cuerpo no mejora el ánimo por defecto: la telerrehabilitación post-COVID sube la caminata y baja la fatiga, pero deja intactos HADS-ansiedad y depresión.</li><li>Las emociones del residente no son &#39;burnout&#39;: son el choque entre una identidad en formación y un bautismo de fuego — etiquetarlo mal hace que las intervenciones de bienestar fallen.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos ofrecer ejercicio estructurado como intervención de primera línea (no adyuvante) para síntomas core del autismo, dado que encabeza el NMA pese a su certeza baja?</li><li>Si la arquitectura genética de la ansiedad difiere por sexo, ¿qué tan defendible es seguir usando puntos de corte y algoritmos de tratamiento sexo-neutros?</li><li>¿Cuántos de tus pacientes con insomnio crónico siguen con benzodiacepina más de 3 meses, y qué los detiene de migrar a TCC-i?</li><li>¿La proteómica del sueño puede convertirse en un biomarcador transdiagnóstico accionable, o seguirá siendo asociación sin utilidad clínica?</li><li>¿Cómo enseñar a residentes a distinguir un NMA de certeza baja (IC amplio, heterogeneidad) de uno accionable, usando el de autismo como caso?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel AMAUTA: &#39;Qué ejercicio para qué síntoma del autismo (y a qué dosis)&#39; — receta por dominio a partir del NMA de actividad física en TEA.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/Reel de psicoeducación: &#39;Por qué tu benzo para dormir te está deprimiendo&#39; — deprescripción con la evidencia de J Sleep Res, evidencia proporcional al claim.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario/carta dimensional: el meta-GWAS sexo-específico de ansiedad como argumento empírico contra el modelo categorial sexo-neutro (línea HiTOP/RDoC).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional: &#39;el sexo como eje, no como covariable&#39;, usando los 21 vs 5 loci de ansiedad.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Mini-clase de razonamiento crítico para Residentado: leer un NMA de baja certeza sin que te lo vendan como verdad (caso autismo).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry (top)</span><span class="tag highlight">JAMA Psychiatry (top)</span><span class="tag highlight">American Journal of Psychiatry (top)</span><span class="tag highlight">Lancet Psychiatry (top)</span><span class="tag highlight">British Journal of Psychiatry (top)</span><span class="tag ">Biological Psychiatry (top)</span><span class="tag ">Psychological Medicine</span><span class="tag ">Child Psychiatry &amp; Human Development</span><span class="tag ">Journal of Sleep Research</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">BMC Public Health</span><span class="tag ">BMJ Open</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de junio de 2026.</div>
+</div>
+</body>
+</html>
