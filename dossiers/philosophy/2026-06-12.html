@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">12 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">49</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">79</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">J Med Internet Res · 2026-06-11 (vía PubMed) · paper</div>
+        <h3 class="r3-title">Patient Cognitive Bias in Large Language Model-Supported Health Consultations: Simulation-Based Comparative Study</h3>
+        <p class="r3-hook">Según PubMed: en 1,273 casos tipo USMLE y 6 LLMs, cuando el paciente llega con una hipótesis diagnóstica preferida (input cognitivamente sesgado), la precisión del modelo cae 7-39 puntos porcentuales y los errores se alinean con el sesgo del paciente en más de un tercio de los casos. Ni ajustar la temperatura ni los prompts anti-sesgo lo arreglan de forma fiable; lo que recupera 10-39 pp es un diseño dual-system: un LLM conversacional toma la historia (Sistema 1) y un modelo de razonamiento distinto emite el juicio diagnóstico (Sistema 2). Para Javier toca tres pilares a la vez —ai-enhancement (cómo construir tutores y asistentes diagnósticos que no hereden el sesgo del usuario), clinical-reasoning y amauta-education—: sus alumnos ENAM/Residentado llegan con autoetiquetas (&#39;tengo TDAH&#39;, &#39;es bipolaridad&#39;) y el mismo anclaje opera en la consulta humana. Úsalo como columna de un capítulo BMSE sobre razonamiento bajo sesgo y como criterio de diseño para cualquier herramienta de IA que se despliegue en USAMEDIC.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/85770" target="_blank" rel="noopener">↗ doi.org/10.2196/85770</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">BMJ Open · 2026-06-08 (vía PubMed) · review</div>
+        <h3 class="r3-title">Impact of emotional competence on clinical reasoning: a scoping review</h3>
+        <p class="r3-hook">Según PubMed: scoping review de 98 estudios que mapea cómo la competencia emocional (identificar, regular y usar emociones) modula el razonamiento clínico del médico. El hallazgo con mecanismo: el efecto positivo aparece sobre todo bajo incertidumbre y emergencias vitales, y el modulador clave es la regulación del estrés que reduce la carga cognitiva —fuera de la alta presión, el efecto se diluye—. Para Javier es munición directa para el BMSE y para AMAUTA: el razonamiento dimensional no es solo cognición fría; la regulación emocional es una variable de resultado entrenable, no un adorno. Úsalo para justificar incluir competencia emocional como constructo medible en simulaciones clínicas (p.ej., evaluación de riesgo suicida, donde la carga es máxima) y como contraargumento a currículos que separan &#39;lo cognitivo&#39; de &#39;lo afectivo&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjopen-2025-113483" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-113483</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Haili Hughes · Substack · 2026-06-09 · blog</div>
+        <h3 class="r3-title">Coaching the Thinking Behind the Teaching (Teacher Mental Models &amp; Decision Making, Art. 4)</h3>
+        <p class="r3-hook">Ensayo que propone Cue-Interpretation-Action como unidad de análisis del razonamiento profesional: la acción importa menos que el modelo mental que la generó, y el coaching funciona solo cuando hace visible y testea los enlaces entre lo que se notó (cue), lo que se creyó que significaba (interpretation) y la respuesta (action). El mecanismo es isomórfico al razonamiento clínico en psiquiatría —cue = síntoma/signo, interpretation = hipótesis diagnóstica, action = conducta— y, crucialmente, el error diagnóstico casi nunca vive en el cue ni en la action, sino en la capa de interpretación. Para Javier es un andamiaje listo para el libro de psicopatología (un capítulo &#39;dónde vive el error diagnóstico&#39;) y para diseñar coaching de razonamiento en AMAUTA con la pregunta-palanca &#39;¿qué más podría significar esto?&#39;. Es un caso donde lo conceptual-aplicable supera a lo anecdótico: un framework de 3 capas que se puede enseñar mañana.</p>
+        <a class="r3-link" href="https://hailihughes.substack.com/p/teacher-mental-models-and-decision" target="_blank" rel="noopener">↗ hailihughes.substack.com/p/teacher-mental-mo…</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Topography · 2026-06-12 (vía PubMed) · paper</div>
+          <div class="r10-title">Tracing the Moral Mind: How Individual Differences Modulate EEG Oscillations During Moral Decision-Making</div>
+          <div class="r10-line">Según PubMed: marcadores EEG disocian intuición (theta parieto-occipital, bottom-up) de deliberación (beta frontal, top-down) en decisión moral — el dual-process tiene firma electrofisiológica medible.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la próxima ola medirá estas firmas en razonamiento clínico real; Javier puede adelantarse correlacionando theta/beta con calibración diagnóstica en residentes (línea BMSE).</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10548-026-01222-6" target="_blank" rel="noopener">↗ doi.org/10.1007/s10548-026-01222-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Neurosci · 2026-06-10 (vía PubMed) · paper</div>
+          <div class="r10-title">Positive Bias in Value-Based Decision Making: Neurocognitive Associations with Resilience</div>
+          <div class="r10-line">Según PubMed: un sesgo de elección &#39;positivo&#39; se asocia a aceptación como rasgo de resiliencia, mediado por mayor control prefrontal sobre la información negativa (fMRI + modelado computacional, n=82).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el sesgo-como-adaptación encaja en RDoC (sistemas de valencia positiva); espera que se vuelva endofenotipo candidato de resiliencia — material fino para psiquiatría dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1523/JNEUROSCI.1734-25.2026" target="_blank" rel="noopener">↗ doi.org/10.1523/JNEUROSCI.1734-25.2026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Astral Codex Ten (Scott Alexander) · 2026-06-11 · blog</div>
+          <div class="r10-title">My AI Opinions</div>
+          <div class="r10-line">Scott Alexander compartimentaliza el razonamiento sobre IA (capacidad / seguridad / coordinación) y da rangos probabilísticos en vez de estimaciones puntuales — un framework de razonamiento bajo incertidumbre radical.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la compartimentalización + probabilidades explícitas es transferible 1:1 al pronóstico clínico y al diagnóstico diferencial; buen carrusel para enseñar a &#39;no confundir preguntas correlacionadas&#39;.</div>
+          <a class="r10-link" href="https://www.astralcodexten.com/p/my-ai-opinions" target="_blank" rel="noopener">↗ www.astralcodexten.com/p/my-ai-opinions</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Phys Ther Educ · 2026-06-08 (vía PubMed) · paper</div>
+          <div class="r10-title">An Exploration of the Impact of Practice Setting on Clinical Reasoning and Implications for Teaching</div>
+          <div class="r10-line">Según PubMed: el razonamiento clínico no es puramente interno — emerge de las affordances del entorno (situativity / ecological psychology); el setting cambia qué examina y prioriza el experto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: las simulaciones BMSE deberían variar el entorno a propósito para que el razonamiento transfiera; estandarizar el escenario mide solo media verdad.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/JTE.0000000000000492" target="_blank" rel="noopener">↗ doi.org/10.1097/JTE.0000000000000492</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Contin Educ Health Prof · 2026-06-10 (vía PubMed) · paper</div>
+          <div class="r10-title">Leveraging Traditional and Generative Artificial Intelligence for Programmatic Decision Making in Faculty Development (AIEPE)</div>
+          <div class="r10-line">Según PubMed: el framework AIEPE de 5 fases combina IA tradicional (sentimiento/temas) + generativa (síntesis narrativa) con human-in-the-loop para decisiones programáticas en desarrollo docente (3,361 comentarios analizados).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este patrón dual-stream + criterio humano es plantilla directa para evaluar cursos en AMAUTA/USAMEDIC a escala sin diluir el juicio.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/CEH.0000000000000654" target="_blank" rel="noopener">↗ doi.org/10.1097/CEH.0000000000000654</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS One · 2026-06-11 (vía PubMed) · paper</div>
+          <div class="r10-title">Enhancing nurses&#39; clinical decision-making confidence through dual pathways of self-directed learning: A structural equation model</div>
+          <div class="r10-line">Según PubMed: SEM (n=1,478) muestra que la inteligencia emocional eleva la confianza en la decisión clínica vía dos rutas de aprendizaje autodirigido (cognitiva 71.8%, relacional 50.8%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ojo, &#39;confianza&#39; ≠ &#39;precisión&#39;; entrenar confianza sin calibración puede inflar el error — buen contraste crítico para un ítem BMSE sobre overconfidence.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pone.0351551" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0351551</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-10 (vía PubMed) · paper</div>
+          <div class="r10-title">Developing diagnostic reasoning through point-of-care ultrasound in emergency medicine training: a qualitative study</div>
+          <div class="r10-line">Según PubMed: estudio cualitativo (n=28) muestra cómo el ultrasonido a pie de cama construye razonamiento diagnóstico al ligar visualización en tiempo real con escenarios-problema y reflexión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la tecnología que &#39;hace visible&#39; el dato acelera el razonamiento; análogo psiquiátrico: visualizar redes sintomáticas (network theory) como un &#39;POCUS cognitivo&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09406-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09406-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-08 (vía PubMed) · paper</div>
+          <div class="r10-title">Clinical decision-making skill in diagnosing oral diseases among medical interns</div>
+          <div class="r10-line">Según PubMed: internos diagnostican peor las presentaciones inespecíficas (boca ardiente, xerostomía) que las de patrón reconocible — el razonamiento falla donde no hay gestalt.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ese déficit en &#39;presentación inespecífica&#39; es justo el terreno psiquiátrico; ítems key-feature sobre cuadros ambiguos son oro para ENAM/Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09589-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09589-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Medical Ethics · 2026-06-10 (vía PubMed) · paper</div>
+          <div class="r10-title">Balancing the impact of socio-ethical and economic considerations on clinical-hospital decision-making</div>
+          <div class="r10-line">Según PubMed: gerentes médicos (n=82) rechazan priorizar explícitamente bajo escasez pero reencuadran restricciones económicas como justificaciones clínicas — tensión moral de nivel meso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el &#39;reencuadre clínico de lo económico&#39; es un sesgo institucional citable en tu comité de ética HVLH; buen caso para enseñar transparencia en asignación de recursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12910-026-01502-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12910-026-01502-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nautilus (Jason Socrates Bardi) · 2026-06-05 · blog</div>
+          <div class="r10-title">The Soul of Numbers</div>
+          <div class="r10-line">Ensayo: la cognición matemática sería un &#39;primitivo humano&#39; evolutivo (bebés, cuervos y peces &#39;cuentan&#39;), anterior al lenguaje; los sistemas simbólicos formales son interfaces culturales montadas sobre esa base.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si la intuición de magnitud precede al símbolo, el diseño instruccional debe anclar en intuición analógica primero — tesis fuerte para tu libro de neurociencia educativa.</div>
+          <a class="r10-link" href="https://nautil.us/the-soul-of-numbers-1281740" target="_blank" rel="noopener">↗ nautil.us/the-soul-of-numbers-1281740</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El sesgo cognitivo no vive solo en el clínico: cuando el paciente trae su hipótesis preferida, degrada la precisión diagnóstica de un LLM hasta 39 pp — y ni bajar la temperatura ni &#39;pedirle que no se sesgue&#39; lo arreglan; solo separar el rol conversacional (Sistema 1) del deliberativo (Sistema 2) lo recupera.</li><li>La intuición y la deliberación tienen firma eléctrica: el estilo decisorio espontáneo sube la potencia theta parieto-occipital (bottom-up) y buscar alternativas sube la beta frontal (top-down). El dual-process es medible, no solo metáfora de Kahneman.</li><li>No todo sesgo necesita corrección: un sesgo de elección &#39;positivo&#39; se asocia a aceptación como rasgo de resiliencia y a mayor control prefrontal sobre la información negativa. A veces el sesgo es salud, no error.</li><li>La competencia emocional mejora el razonamiento clínico sobre todo bajo estrés agudo y emergencias; en consulta tranquila su efecto casi desaparece. El mecanismo no es &#39;sentir bien&#39;, es regular el estrés para liberar memoria de trabajo.</li><li>El error diagnóstico rara vez está en el síntoma que ves (cue) ni en lo que haces (action), sino en la capa intermedia: qué creíste que significaba. &#39;¿Qué más podría significar esto?&#39; es la palanca de desanclaje.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>El sesgo cognitivo del paciente que tumba el diagnóstico de un LLM, ¿opera igual en la consulta psiquiátrica humana cuando el paciente llega con autoetiqueta (&#39;tengo TDAH/bipolaridad&#39;)? ¿Cuánto ancla al clínico y cómo lo medimos?</li><li>¿Podemos registrar la firma EEG intuición(theta)/deliberación(beta) en residentes de psiquiatría resolviendo casos, y usarla como marcador objetivo de calibración del razonamiento dimensional?</li><li>¿La competencia emocional protege el razonamiento clínico más en evaluación de riesgo suicida (carga máxima) que en diagnóstico ambulatorio rutinario? — replicar el hallazgo del scoping review específicamente en psiquiatría.</li><li>Si el razonamiento clínico emerge de las affordances del setting, ¿las simulaciones BMSE deben variar deliberadamente el entorno para lograr transferencia, en vez de estandarizarlo?</li><li>¿El framework Cue-Interpretation-Action enseña mejor el diagnóstico diferencial dimensional que el modelo hipotético-deductivo clásico, por localizar el error en la capa de interpretación?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel: &#39;Tu IA no es inmune a tus sesgos&#39; — por qué separar &#39;conversar&#39; de &#39;diagnosticar&#39; hace más segura a la IA médica, explicado con el estudio dual-system de JMIR y un ejemplo de autoetiqueta del paciente.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper empírico: firma EEG/conductual de intuición vs deliberación (theta/beta) en razonamiento diagnóstico psiquiátrico, comparando residentes vs expertos y anclando la lectura en HiTOP/network theory.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de libro (psicopatología/BMSE): &#39;Dónde vive el error diagnóstico&#39;, usando Cue-Interpretation-Action para mostrar que el error casi nunca está en el síntoma observado sino en la interpretación, con la pregunta-palanca &#39;¿qué más podría significar esto?&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG/YT: &#39;Cómo razonar bajo incertidumbre radical: compartimentaliza las preguntas&#39; — adaptando el framework de Scott Alexander (separar capacidad/seguridad/coordinación; rangos, no puntos) al pronóstico clínico y al diagnóstico diferencial.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Protocolo/paper de simulación AMAUTA: integrar la competencia emocional como variable de resultado medible en escenarios de alta carga (riesgo suicida), midiendo si la regulación del estrés mejora el razonamiento — operacionaliza el hallazgo del scoping review.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">J Med Internet Res</span><span class="tag ">BMJ Open</span><span class="tag ">Brain Topography</span><span class="tag ">Journal of Neuroscience</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">BMC Medical Ethics</span><span class="tag ">PLoS One</span><span class="tag ">Journal of Physical Therapy Education</span><span class="tag ">Journal of Continuing Education in the Health Professions</span><span class="tag ">Astral Codex Ten (Substack)</span><span class="tag ">Nautilus</span><span class="tag ">Substack (Haili Hughes)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · Substack (Haili Hughes) · Astral Codex Ten · Nautilus · LessWrong · X/Twitter · Reddit · Harvard Business Review · Behavioral Scientist · Farnam Street · The Knowledge Project (Shane Parrish) · Psyche. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de junio de 2026.</div>
+</div>
+</body>
+</html>
