@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-06-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">12 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">158</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">45</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Medical Internet Research, 2026 Jun 11. PMID 42275635 · paper · 2026-06-11</div>
+        <h3 class="r3-title">Patient Cognitive Bias in Large Language Model-Supported Health Consultations: Simulation-Based Comparative Study</h3>
+        <p class="r3-hook">Zuo et al. simularon pacientes con sesgo cognitivo (una preferencia diagnóstica explícita en su narrativa) en consultas multironda con seis LLMs sobre 1273 casos tipo USMLE: el sesgo del paciente derrumbó la precisión diagnóstica entre 7 y 39 puntos, y más de un tercio de los errores se alinearon con el diagnóstico preferido del paciente —conformidad sistemática, no ruido aleatorio—, con los modelos más pequeños cayendo casi a azar. Lo decisivo para Javier es qué NO funcionó y qué sí: bajar la temperatura y pedirle al modelo que &#39;no se sesgue&#39; apenas ayudaron, mientras que un marco de doble sistema —un LLM conversacional que toma la historia (Sistema 1) y un LLM de razonamiento, o1-mini, que emite el diagnóstico final (Sistema 2)— recuperó 10 a 39 puntos. Esto conecta de lleno con el libro BMSE/razonamiento dimensional (el dual-process convertido en arquitectura, no en metáfora), con precision-psychiatry (el sesgo de anclaje del paciente es exactamente la entrevista donde alguien llega diciendo &#39;tengo TDAH&#39; o &#39;esto es bipolaridad&#39; y arrastra el razonamiento del clínico) y con ai-enhancement (separar conversación de deliberación es una palanca de diseño medible). Cómo usarlo: exigir arquitectura de doble sistema antes de confiar en cualquier LLM clínico, y usar el hallazgo como evidencia dura de que el sesgo del interlocutor sesga al modelo igual que al humano —insumo directo para un capítulo y para el currículo de uso responsable de IA en AMAUTA.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/85770" target="_blank" rel="noopener">↗ doi.org/10.2196/85770</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Annals of Emergency Medicine, 2026 Jun 10. PMID 42274436 · paper · 2026-06-10</div>
+        <h3 class="r3-title">Defining Diagnostic Excellence and Missed Diagnostic Opportunity for the Emergency Department Setting</h3>
+        <p class="r3-hook">Berdahl et al. —con Gordon Schiff y Arjun Venkatesh, pesos pesados del campo de seguridad diagnóstica— usaron un panel RAND/UCLA (Delphi modificado, 11 expertos) para consensuar definiciones operativas de &#39;excelencia diagnóstica&#39; y &#39;oportunidad diagnóstica perdida&#39; en urgencias. El núcleo que vale el clic: definen ambas por la DIVERGENCIA de la práctica óptima basada en evidencia con la información disponible en el momento —una explicación precisa, oportuna y comunicada al paciente/familia—, explícitamente NO por el desenlace. Para Javier, que está construyendo el razonamiento clínico como competencia enseñable y evaluable, esto es el andamiaje conceptual que faltaba: separar &#39;se equivocó&#39; de &#39;perdió una oportunidad diagnóstica medible&#39; es justo lo que necesita un Competency Lab y una rúbrica, y el encuadre &#39;juzga el proceso, no el resultado&#39; es especialmente transferible a la psiquiatría dimensional, donde el desenlace es ruidoso y tardío. Cómo usarlo: adoptar las dos definiciones como vértebra de un módulo y una rúbrica de razonamiento diagnóstico en AMAUTA/USAMEDIC, y como base de un paper de posición que las adapte al contexto peruano/latino, donde aún nadie ha operacionalizado la excelencia diagnóstica como estándar evaluable.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.annemergmed.2026.04.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.annemergmed.2026.04.004</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Cancer Education, 2026 Jun 12. PMID 42277388 · review · 2026-06-12</div>
+        <h3 class="r3-title">Educational Interventions to Reduce Cancer Diagnostic Delays in Primary Care: A Scoping Review</h3>
+        <p class="r3-hook">Jerjes et al. (Imperial College) mapean con PRISMA-ScR las intervenciones educativas en atención primaria para acortar el retraso diagnóstico de cáncer: 16 publicaciones, 10 programas, desde enseñanza breve hasta mastery learning simulado y educación acoplada a soporte de decisión electrónico. El hallazgo honesto y contraintuitivo —el que a Javier le sirve más— es que la mayoría mejora competencia, confianza y proxies de proceso (calidad de documentación, actividad diagnóstica), pero muy pocos midieron intervalos de tiempo reales y esos efectos fueron mixtos o nulos, con las intervenciones digitales frenadas por mala integración al flujo y baja adopción. Es el patrón que él ya enseña: educar mueve confianza y conocimiento, pero el desenlace duro (tiempo al diagnóstico) casi no se mueve si no se rediseña el sistema. La review además nombra las conductas enseñables —razonamiento bajo incertidumbre, safety-netting, umbral de derivación— que son oro para el Competency Lab. Cómo usarlo: convertir esas conductas en objetivos de aprendizaje observables para un módulo de razonamiento diagnóstico, y usar el gap &#39;educación ≠ menos retraso real&#39; como tesis honesta de un contenido o capítulo sobre por qué enseñar a pensar no basta sin arreglar el entorno.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s13187-026-02921-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s13187-026-02921-1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports, 2026 Jun 11. PMID 42277336 · paper · 2026-06-11</div>
+          <div class="r10-title">Physician adoption patterns of AI-driven clinical decision support systems in urinary tract infection management</div>
+          <div class="r10-line">Estudio retrospectivo (626 médicos, 15 033 encuentros en Maccabi) donde un soporte de decisión con ML redujo el mismatch antibiótico ~30%, pero un tercio de los médicos no siguió la recomendación; los más jóvenes, con pacientes jóvenes y en práctica grupal adoptaron más, los de mayor edad y alto volumen menos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La barrera del soporte clínico con IA no será la precisión sino la sub-utilización selectiva; el ROI docente estará en perfilar y entrenar a quién no adopta, y Javier puede anticiparlo al diseñar cualquier herramienta de IA para AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-57724-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-57724-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports, 2026 Jun 11. PMID 42277236 · paper · 2026-06-11</div>
+          <div class="r10-title">Benchmarking GPT-5, Gemini 2.5 Pro, Grok 4, and other LLMs on pediatric dentistry questions from a dental specialization exam</div>
+          <div class="r10-line">Benchmark de 11 LLMs (17 con modo razonamiento) sobre 119 preguntas de un examen de especialización: Gemini 2.5 Pro (92.4%) y GPT-5 (90.8%) rozaron nivel experto, pero con un trade-off velocidad-precisión brutal —los modos de razonamiento subieron el puntaje pero tardaron hasta 68 s, mientras los modelos rápidos (&lt;1 s) fallaron más.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El trade-off velocidad-precisión será el eje de diseño de los tutores de examen; para ENAM/Residentado en USAMEDIC conviene usar modos de razonamiento para EXPLICAR y modelos rápidos solo para drills, nunca al revés.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-57392-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-57392-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 2026 Jun 10. PMID 42271388 · paper · 2026-06-10</div>
+          <div class="r10-title">Developing diagnostic reasoning through point-of-care ultrasound in emergency medicine training: a qualitative study of international medical students</div>
+          <div class="r10-line">Estudio cualitativo (28 estudiantes internacionales) que muestra cómo el POCUS desarrolla razonamiento diagnóstico al ligar visualización en tiempo real con escenarios PBL y scaffolding del instructor: la destreza emerge de integrar lo visual, lo experiencial y lo contextual, no de memorizar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La tecnología que hace VISIBLE el razonamiento (POCUS, imagen en vivo) se volverá vehículo estándar para enseñar cognición situada; molde replicable para enseñar formulación dimensional con casos en vivo en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09406-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09406-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Emergency Medicine, 2026 Jun 10. PMID 42269256 · paper · 2026-06-10</div>
+          <div class="r10-title">When Fire and Ice Collide: A Rare Case of Idiopathic Angioedema with Dapsone-Induced Methemoglobinemia</div>
+          <div class="r10-line">Caso real en urgencias: angioedema idiopático con metahemoglobinemia por dapsona (SatO2 refractaria pese a vía aérea asegurada); el mensaje explícito de los autores es que anclar en un solo diagnóstico retrasa identificar una segunda patología letal concurrente —vigilancia diagnóstica cuando la mejoría esperada no llega.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los casos de &#39;dos patologías letales simultáneas&#39; son el mejor material para enseñar cierre prematuro con desenlace; sirve directo para un reel/carrusel de anchoring bias y para banco de ítems ENAM.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jemermed.2026.05.002" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jemermed.2026.05.002</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neurobiology, 2026 Jun 11. PMID 42276239 · paper · 2026-06-11</div>
+          <div class="r10-title">Dynamic Reversal of IT-PFC Information Flow Orchestrates Visual Categorization Under Perceptual Uncertainty</div>
+          <div class="r10-line">Neurofisiología intracraneal en monos: ante estímulos ambiguos la jerarquía clásica IT→PFC se invierte, con un flujo temprano de feedback PFC→IT que refina la representación sensorial —evidencia mecanística de que ante incertidumbre el cerebro recluta control top-down, eco neural del Sistema 2.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La neurociencia de la incertidumbre dará sustrato biológico al dual-process; Javier puede usarla como puente entre RDoC (sistemas cognitivos) y la teoría del razonamiento clínico en su libro de neurociencia educativa.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pneurobio.2026.102933" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pneurobio.2026.102933</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports, 2026 Jun 11. PMID 42277077 · paper · 2026-06-11</div>
+          <div class="r10-title">AIDx: a locally deployable AI system for physician clinical decision support</div>
+          <div class="r10-line">Sistema LLM desplegable localmente (fine-tuned en EHR + RAG) que logró 83.6% en MultiMedQA; lo accionable es su análisis de errores: de 200 fallos, 41% fueron brechas de conocimiento y 38% errores de razonamiento —el razonamiento, no solo el conocimiento, es donde fallan los LLMs (estudio de un solo autor, benchmark text-only sin validación clínica).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La taxonomía &#39;knowledge gap vs reasoning error&#39; se volverá métrica estándar para auditar LLMs clínicos; útil para que Javier exija reportar TIPO de error, no solo accuracy, en cualquier evaluación de IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-47470-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-47470-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS One, 2026 Jun 11. PMID 42275372 · paper · 2026-06-11</div>
+          <div class="r10-title">Enhancing nurses&#39; clinical decision-making confidence through dual pathways of self-directed learning: A structural equation model</div>
+          <div class="r10-line">SEM en 1478 enfermeras: la inteligencia emocional predice la confianza en la toma de decisiones clínicas, mediada sobre todo por el aprendizaje autodirigido cognitivo (71.8% del efecto) y en menor grado por el relacional (50.8%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La confianza decisional se entrenará vía aprendizaje autodirigido más que vía contenido; pero ojo —confianza no es calibración: el reto siguiente es entrenar confianza CALIBRADA, no alta, para no fabricar cierre prematuro con más seguridad.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pone.0351551" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0351551</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Formative Research, 2026 Jun 11. PMID 42275000 · paper · 2026-06-11</div>
+          <div class="r10-title">Acceptability, Usability, and Perceived Quality of Care of a Digital Decision Support System in Tele-Primary Health Care in Sindh, Pakistan</div>
+          <div class="r10-line">Piloto mixto (30 médicas) de un soporte digital en tele-atención primaria en Sindh, Pakistán: se usó junto al juicio clínico (53%) más que como decisor autónomo, elevó la confianza y estandarizó práctica, pero con dudas sobre completitud del algoritmo y carga de flujo —evidencia de adopción real en bajos recursos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El soporte clínico con IA en LMIC se adoptará como copiloto, no como autopiloto; patrón directamente transferible al contexto peruano y a un paper de implementación con sello latino.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/81995" target="_blank" rel="noopener">↗ doi.org/10.2196/81995</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Serious Games, 2026 Jun 11. PMID 42275629 · review · 2026-06-11</div>
+          <div class="r10-title">Serious Games in Nursing Education: Scoping Review of Applications, Effectiveness, and Future Directions</div>
+          <div class="r10-line">Scoping review (24 estudios) de serious games en educación de enfermería: mejoran conocimiento, habilidades y razonamiento clínico, con puntos de decisión basados en escenarios (83%) como mecánica dominante, pero casi nadie midió métricas objetivas de uso ni seguimiento más allá del post inmediato.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La gamificación con puntos de decisión escalará el entrenamiento de razonamiento; oportunidad para que AMAUTA construya casos dimensionales gamificados midiendo razonamiento, no solo recall.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/86092" target="_blank" rel="noopener">↗ doi.org/10.2196/86092</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR AI, 2026 Jun 11. PMID 42275526 · paper · 2026-06-11</div>
+          <div class="r10-title">A Structured Comparison of the Coalition for Health AI Responsible AI Guide and South Korea&#39;s Trustworthy AI Guideline for Health Care AI Assurance</div>
+          <div class="r10-line">Comparación rúbrica-based de dos marcos de aseguramiento de IA en salud (CHAI voluntario vs guía gubernamental de Corea del Sur): el gubernamental cubre mejor el ciclo de vida y la gobernanza formal; el voluntario gana en herramientas e implementación accesible —modelos complementarios, no rivales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los comités de ética (incluido el del HVLH) necesitarán adoptar un marco de aseguramiento antes de aprobar IA clínica; insumo directo para anticipar la política institucional peruana, en línea con el liability sink de ayer.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/86220" target="_blank" rel="noopener">↗ doi.org/10.2196/86220</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Bajar la temperatura del modelo o pedirle que &#39;no se sesgue&#39; casi no protege contra el sesgo del paciente; lo que recupera 10 a 39 puntos de precisión es separar arquitectónicamente la conversación (Sistema 1) del razonamiento diagnóstico (Sistema 2) (JMIR). El dual-process no es solo teoría humana: funciona como diseño de máquina.</li><li>El error diagnóstico debería definirse por la divergencia de la práctica óptima con la información disponible, NO por el desenlace (Ann Emerg Med). Juzgar el razonamiento por el resultado es sesgo retrospectivo institucionalizado.</li><li>Cuando los LLMs fallan, casi tanto por razonamiento (38%) como por falta de conocimiento (41%) (Sci Rep/AIDx). El problema no es solo qué sabe el modelo, sino cómo encadena —y eso es justo lo que un accuracy no mide.</li><li>La educación a clínicos mejora confianza, conocimiento y proxies de proceso, pero apenas mueve el tiempo real al diagnóstico si no se rediseña el sistema (J Cancer Educ). Enseñar a pensar sin arreglar el entorno produce confianza sin desenlace.</li><li>Ante estímulos ambiguos, el cerebro invierte su jerarquía y manda señal top-down de la PFC a la corteza sensorial ANTES de &#39;ver&#39; bien (Prog Neurobiol). La deliberación tiene firma neural: la incertidumbre recluta control, no solo más datos.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si separar conversación de deliberación (doble sistema) inmuniza a un LLM contra el sesgo del paciente, ¿debería toda entrevista psiquiátrica asistida por IA correr la historia y el diagnóstico en dos modelos distintos, o eso solo traslada el sesgo a quién diseña el Sistema 2?</li><li>¿Se puede construir una rúbrica de &#39;excelencia diagnóstica&#39; psiquiátrica que evalúe el proceso (divergencia de la práctica óptima) en vez del desenlace, dado que en psiquiatría dimensional el desenlace es especialmente ruidoso y tardío?</li><li>Si la educación mejora confianza y conocimiento pero no el tiempo real al diagnóstico, ¿qué parte del razonamiento clínico es realmente enseñable en aula y qué parte exige rediseñar el entorno y el flujo de trabajo?</li><li>¿La distinción &#39;error de conocimiento vs error de razonamiento&#39; que se ve en LLMs (41% vs 38%) se traslada a los aprendices humanos, y cambiaría cómo damos feedback si supiéramos cuál de los dos falló?</li><li>Si la confianza decisional se entrena vía aprendizaje autodirigido, ¿cómo evitamos producir confianza alta sin calibración —cierre prematuro con más seguridad— en estudiantes que preparan ENAM/Residentado?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel: &#39;El truco que NO arregla el sesgo de la IA (y el que sí)&#39; — bajar temperatura o pedir neutralidad falla; separar conversación de razonamiento (Sistema 1/Sistema 2) recupera hasta 39 puntos de precisión (JMIR). Mensaje: el dual-process funciona hasta en máquinas. Pilar ai-enhancement + precision-psychiatry.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición: adaptar las definiciones de &#39;excelencia diagnóstica&#39; y &#39;oportunidad diagnóstica perdida&#39; (Ann Emerg Med) a la psiquiatría dimensional y al contexto peruano, evaluando proceso en vez de desenlace, como base de una rúbrica del Competency Lab. Pilar precision-psychiatry + amauta-education.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo (BMSE/razonamiento dimensional): &#39;Dos sistemas, una arquitectura&#39; — usar el hallazgo de doble sistema LLM (JMIR) y la neurociencia IT-PFC bajo incertidumbre (Prog Neurobiol) para anclar el dual-process en mecanismo, no en metáfora. Pilar amauta-education + research.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Caso para IG/YouTube: &#39;Cuando bajar el primer diagnóstico te mata&#39; — caso de angioedema + metahemoglobinemia por dapsona (J Emerg Med) para enseñar anclaje y cierre prematuro con desenlace, cerrando con la regla: si la mejoría esperada no llega, reabre el diagnóstico. Pilar content-documentation + amauta-education.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de implementación: &#39;Copiloto, no autopiloto: adopción de soporte clínico con IA en atención primaria peruana&#39; — partir del piloto de Sindh (JMIR Form Res) y del estudio de adopción de Maccabi (Sci Rep) para estudiar la sub-utilización selectiva en LMIC. Pilar ai-enhancement + research.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">Annals of Emergency Medicine</span><span class="tag ">Journal of Cancer Education</span><span class="tag ">Scientific Reports</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Progress in Neurobiology</span><span class="tag ">PLoS One</span><span class="tag ">JMIR Formative Research</span><span class="tag ">JMIR Serious Games</span><span class="tag ">JMIR AI</span><span class="tag ">Journal of Emergency Medicine</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (search_articles + get_article_metadata, ventana 2026/06/09-2026/06/12, datetype=pdat, sort=pub_date; 7 queries: clinical-reasoning core, IA+precisión/razonamiento, dual-process/metacognición/calibración, deskilling/automation-bias, educación+razonamiento diagnóstico, error/anclaje/cierre prematuro, IA-diagnóstico). Atribución a PubMed y DOIs verificados por sus términos de uso. · WebSearch de confirmación (medRxiv clinical reasoning/LLM, automation bias en physicians AI-trained, diagnostic error) — los preprints relevantes de medRxiv (benchmarking de razonamiento, safety-net diagnóstico, automation bias) son de febrero-marzo 2026, FUERA de la ventana de 48h, y se excluyeron; no se hallaron ítems web nuevos dentro de la ventana.. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de junio de 2026.</div>
+</div>
+</body>
+</html>
