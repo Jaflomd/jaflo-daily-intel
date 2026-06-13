@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">13 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">71</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">56</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Medicine · 12 jun 2026 · rct · 2026-06-12</div>
+        <h3 class="r3-title">Pramipexol (agonista dopaminérgico) para la depresión anhedónica: RCT con engagement de la diana en el estriado ventral</h3>
+        <p class="r3-hook">RCT doble ciego (n=85) de pramipexol add-on en MDD, distimia y depresión bipolar con anhedonia clínica (SHAPS): diferencia media -4.04 (IC95% -6.89 a -1.18; Hedges&#39; g=0.62), con preservación de la activación estriatal ventral y aumento de actividad física ligera, sostenido en una extensión abierta de 6 meses. Para Javier esto es oro dimensional: la anhedonia es el síntoma transdiagnóstico del Sistema de Valencia Positiva (RDoC) y aquí se trata el circuito de recompensa, no el rótulo DSM — material directo para el libro de psicopatología &#39;para el mundo&#39; y para el manual de razonamiento dimensional (pMSE/BMSE). La firma del grupo (&#39;Unit for Biological and Precision Psychiatry&#39;) y la coautoría de Diego Pizzagalli (referente del modelo de recompensa) lo convierten en bandera de psiquiatría de precisión, no en un ensayo farmacológico más. Úsalo como caso testigo en clase y carrusel: &#39;cuando tratas la dimensión (anhedonia/recompensa) en vez de la categoría, el target engagement se ve en el fMRI&#39; — eje narrativo perfecto para RDoC vs DSM.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41591-026-04465-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04465-9</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychotherapy and Psychosomatics · 12 jun 2026 · meta-analysis · 2026-06-12</div>
+        <h3 class="r3-title">MBCT para depresión difícil de tratar: meta-análisis de datos individuales (7 RCT, N=777) superior al tratamiento usual pero NO a otras psicoterapias</h3>
+        <p class="r3-hook">IPD meta-analysis bayesiano en depresión resistente/crónica: la terapia cognitiva basada en mindfulness (MBCT) supera al tratamiento usual (SMD -0.40 post, -0.41 a medio plazo; 92% y 85% de probabilidad posterior de superar la diferencia mínima importante), pero SIN superioridad sobre otras psicoterapias activas y sin moderadores robustos por severidad, cronicidad o comorbilidad. La lectura fina es la que le interesa a Javier: lo que funciona no es &#39;el mindfulness mágico&#39; sino &#39;una psicoterapia estructurada cualquiera &gt; nada&#39; — munición anti-hype para el libro y para clase de razonamiento clínico (el efecto vive en el comparador, no en el ingrediente). Conecta con su educación médica de precisión y con la regla recurrente &#39;el comparador define el hallazgo&#39;. Úsalo como ejemplo de cómo se lee un IPD-MA y de por qué &#39;superior a TAU&#39; es el claim más débil de un meta-análisis.</p>
+        <a class="r3-link" href="https://doi.org/10.1159/000552831" target="_blank" rel="noopener">↗ doi.org/10.1159/000552831</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Nature Medicine · 12 jun 2026 · paper · 2026-06-12</div>
+        <h3 class="r3-title">LLMs de propósito general superan a herramientas de IA clínica &#39;especializadas&#39; (OpenEvidence, UpToDate Expert AI) en benchmarks médicos</h3>
+        <p class="r3-hook">Evaluación independiente en 3 etapas (500 ítems MedQA, 500 HealthBench, y un benchmark RCQ de 100 queries clínicas reales revisadas a ciegas por 12 médicos → 1,800 anotaciones): GPT-5.2, Gemini 3.1 Pro y Claude Opus 4.6 superan a las herramientas clínicas &#39;especializadas&#39; en las tres etapas; estas últimas rinden igual que el AI Overview de Google. Para Javier esto reordena la tesis del negocio &#39;Aprendiz Experto&#39; y de AMAUTA/USAMEDIC: el wrapper especializado no agrega valor sobre el modelo frontera bien prompteado — su stack (Claude Opus) ya es estado del arte para razonamiento clínico y prep ENAM/Residentado. Pilar ai-enhancement + amauta-education en una sola pieza con evidencia dura y diseño blinded. Es artillería directa para un screencast IA-first: &#39;deja de pagar por la herramienta clínica con sello; el frontier model genérico + tu método gana en un benchmark de Nature Medicine&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41591-026-04431-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04431-5</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advances in Therapy · 12 jun 2026 · meta-analysis · 2026-06-12</div>
+          <div class="r10-title">Lumateperona y otros antipsicóticos atípicos como adyuvantes en depresión mayor: network meta-análisis de 10 RCT registracionales</div>
+          <div class="r10-line">NMA de 10 RCT: lumateperona lidera eficacia adyuvante en MDD (MADRS -4.70 vs placebo+ADT, SUCRA #1) y es el único nodo sin ganancia de peso — clave para tu enseñanza de atípicos y trade-offs de tolerabilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La guerra de los atípicos adyuvantes migrará del &#39;¿cuál baja más el MADRS?&#39; al &#39;¿cuál no engorda ni seda?&#39;; será tu caso estrella de carrusel sobre eficacia vs tolerabilidad — pero léelo con lente crítica: NMA financiado por J&amp;J.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s12325-026-03630-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s12325-026-03630-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychiatry · 10 jun 2026 · meta-analysis · 2026-06-10</div>
+          <div class="r10-title">Efecto placebo en trastornos por uso de alcohol, cocaína y metanfetamina: revisión sistemática y meta-análisis</div>
+          <div class="r10-line">El placebo reduce el craving en trastorno por alcohol (SMD 0.93) pero no significativamente en cocaína/metanfetamina — el efecto placebo no es uniforme entre adicciones, tiene especificidad de sustancia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Alimenta tu narrativa de &#39;el placebo es una variable activa, no ruido&#39;; predicción: el diseño de RCTs en adicciones migrará a brazos placebo estratificados por sustancia. Perla y carrusel ya listos.</div>
+          <a class="r10-link" href="https://doi.org/10.4088/JCP.25r16118" target="_blank" rel="noopener">↗ doi.org/10.4088/JCP.25r16118</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Pediatric Research · 12 jun 2026 · meta-analysis · 2026-06-12</div>
+          <div class="r10-title">Contacto piel-a-piel (kangaroo mother care) y depresión posparto: revisión sistemática y meta-análisis de ensayos controlados</div>
+          <div class="r10-line">SR+MA (13 estudios, 892 madres): el KMC reduce síntomas depresivos posparto (SMD -0.58), con efecto mayor en países en desarrollo y partos pretérmino — intervención de costo cero y alta escalabilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Encaja con tu mirada de equidad y contexto Perú; predicción: entrará en guías de salud mental perinatal de bajos recursos antes que cualquier fármaco nuevo. Material de divulgación de alto alcance.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41390-026-05157-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s41390-026-05157-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Current Psychiatry Reports · 11 jun 2026 · meta-analysis · 2026-06-11</div>
+          <div class="r10-title">Tratamiento farmacológico y psicológico de los síntomas depresivos en el trastorno dismórfico corporal: revisión sistemática y meta-análisis</div>
+          <div class="r10-line">SR+MA (46 estudios, N=2,227): ISRS (SMD -1.16) y TCC (SMD -1.12) reducen fuertemente la depresión en el TDC — comorbilidad clave del espectro obsesivo-compulsivo/imagen corporal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El TDC seguirá colándose en tu contenido de neurodivergencia e imagen corporal; predicción: se volverá ejemplo recurrente de &#39;depresión secundaria a un trastorno del espectro OC&#39; en tu manual.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11920-026-01688-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s11920-026-01688-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychology · 11 jun 2026 · review · 2026-06-11</div>
+          <div class="r10-title">Procesamiento sensorial extremo en personas de alto potencial intelectual: revisión sistemática</div>
+          <div class="r10-line">SR (PRISMA, 5 estudios elegibles): NO hay evidencia consistente de procesamiento sensorial extremo en personas de alto potencial intelectual; el mito &#39;superdotado = hipersensible&#39; se cae al controlar comorbilidad neurodivergente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Munición anti-mito perfecta para tu línea de neurodivergencia adulta; predicción: será uno de tus reels de &#39;lo que crees del superdotado y la ciencia no respalda&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40359-026-04958-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s40359-026-04958-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 12 jun 2026 · review · 2026-06-12</div>
+          <div class="r10-title">Caracterización genética de enfermedades neurodegenerativas e hidrocefalia normotensiva idiopática vía biobancos: lecciones de FinnGen</div>
+          <div class="r10-line">Revisión experta: biobancos de poblaciones aisladas (FinnGen, 500k) destapan variantes raras de efecto fuerte en Alzheimer/FTD/hidrocefalia normotensiva — plantilla de psiquiatría de precisión basada en registros.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Te sirve como argumento metodológico para defender biobancos en Perú/Latam; predicción: tu próximo argumento de grant citará las &#39;poblaciones fundadoras&#39; como vía rápida a la precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03676-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03676-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">British Journal of Sports Medicine · 12 jun 2026 · rct · 2026-06-12</div>
+          <div class="r10-title">Tratamiento multidisciplinario dirigido a síntomas para jóvenes con síntomas post-concusión persistentes: ensayo clínico aleatorizado</div>
+          <div class="r10-line">RCT (158 jóvenes 8-18a): el tratamiento multidisciplinario guiado por síntoma (educación + psicología + fisioterapia) acelera la recuperación post-concusión persistente (62.5% vs 37% de resolución completa).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Caso de &#39;tratamiento dimensional/sintomático &gt; esperar&#39;; predicción: lo citarás al defender abordajes transdiagnósticos guiados por síntoma frente al diagnóstico cerrado.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bjsports-2025-110880" target="_blank" rel="noopener">↗ doi.org/10.1136/bjsports-2025-110880</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Physical Therapy · 10 jun 2026 · rct · 2026-06-10</div>
+          <div class="r10-title">Ejercicio aeróbico sub-umbral en síntomas post-concusión persistentes del adulto: ensayo clínico aleatorizado</div>
+          <div class="r10-line">RCT (81 adultos): el ejercicio aeróbico sub-umbral mejora la intolerancia al ejercicio post-concusión, pero NO la carga sintomática global vs control — el ejercicio ayuda al cuerpo, no necesariamente al síntoma percibido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Conecta con tu eje Foundation/Kinobody (ejercicio como regulación); predicción: lo usarás como matiz honesto: &#39;la dosis sub-umbral es segura, pero el ejercicio no es panacea sintomática&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/ptj/pzag049" target="_blank" rel="noopener">↗ doi.org/10.1093/ptj/pzag049</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS One · 10 jun 2026 · rct · 2026-06-10</div>
+          <div class="r10-title">Intervención grupal de psicología positiva (STEP) para adultos jóvenes con depresión: ensayo piloto aleatorizado de factibilidad</div>
+          <div class="r10-line">RCT piloto (n=52, 18-26a): la intervención grupal de emociones positivas (STEP) es factible y aceptable, con reducciones de depresión e ideación suicida frente a tratamiento usual mejorado (underpowered, señal preliminar).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Señal temprana de &#39;emociones positivas como diana clínica&#39; (Valencia Positiva, RDoC); predicción: piloto → RCT grande; vale como ejemplo de cómo se construye evidencia por etapas (feasibility primero).</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pone.0350008" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0350008</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature Medicine · 12 jun 2026 · editorial · 2026-06-12</div>
+          <div class="r10-title">El Hong Kong Genome Project como iniciativa insignia de medicina de precisión en poblaciones chinas</div>
+          <div class="r10-line">Nature Medicine destaca el Hong Kong Genome Project como esfuerzo insignia de medicina de precisión en poblaciones chinas — otro golpe a la hegemonía de los datos genómicos europeos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza tu bandera de diversidad genómica (clave para precisión psiquiátrica en latinos); predicción: lo invocarás para justificar por qué Perú/Latam necesita su propio esfuerzo de genoma poblacional.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41591-026-04421-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04421-7</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>&#39;Superior a tratamiento usual&#39; es el claim más débil de un meta-análisis: el IPD-MA de MBCT gana contra TAU pero empata con cualquier psicoterapia activa — el comparador, no el ingrediente, manda (Psychother Psychosom, 10.1159/000552831).</li><li>El efecto placebo tiene especificidad de sustancia: aplasta el craving en alcohol (SMD 0.93) pero no en cocaína/metanfetamina — tratar &#39;el craving&#39; como una sola cosa es un error de diseño (J Clin Psychiatry, 10.4088/JCP.25r16118).</li><li>Tratar la dimensión (anhedonia/recompensa, RDoC) en lugar del rótulo DSM produce target engagement visible en fMRI: el pramipexol mueve el estriado ventral, no solo la escala SHAPS (Nature Medicine, 10.1038/s41591-026-04465-9).</li><li>El mito &#39;superdotado = hipersensible sensorial&#39; se cae al controlar comorbilidad neurodivergente: la sensibilidad extrema vive en la neurodivergencia, no en el CI alto (BMC Psychology, 10.1186/s40359-026-04958-9).</li><li>En 2026 el wrapper clínico &#39;especializado&#39; pierde contra el LLM frontera genérico bien prompteado: pagar por el sello no compra desempeño en benchmark médico (Nature Medicine, 10.1038/s41591-026-04431-5).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Y si el próximo eje de tu manual de razonamiento dimensional no es &#39;qué diagnóstico&#39; sino &#39;qué dimensión RDoC tratar&#39; — empezando por anhedonia/recompensa, como en el RCT de pramipexol?</li><li>¿Cómo enseñar a residentes ENAM/Residentado que &#39;superior a TAU&#39; es el claim más débil de un meta-análisis, usando el IPD-MA de MBCT como caso de lectura crítica?</li><li>¿El efecto placebo sustancia-específico debería cambiar cómo diseñas (o cómo critica tu comité de ética HVLH) los RCTs de adicciones?</li><li>¿Qué herramienta de IA clínica estás (o están tus alumnos) pagando que un Claude Opus bien prompteado ya supera — y cómo lo demuestras en un screencast del Aprendiz Experto?</li><li>¿Perú necesita su propio biobank/genoma poblacional para que la psiquiatría de precisión no sea solo &#39;de precisión para europeos&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel &#39;RDoC en acción: el día que un fármaco movió el circuito de la recompensa (no el rótulo)&#39; — el RCT de pramipexol como caso testigo de psiquiatría dimensional vs DSM.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario/editorial breve &#39;Superior a TAU ≠ superior: por qué el comparador define el hallazgo en psicoterapia&#39;, anclado en el IPD-MA de MBCT en depresión difícil de tratar.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del manual de razonamiento dimensional: &#39;Anhedonia como síntoma transdiagnóstico del Sistema de Valencia Positiva&#39;, con el caso pramipexol + el modelo de recompensa de Pizzagalli.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Screencast Aprendiz Experto &#39;Dejé de pagar OpenEvidence/UpToDate AI: el benchmark de Nature Medicine que lo prueba&#39; (ai-enhancement + monetización + método de prompting clínico).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel de neurodivergencia adulta &#39;3 mitos del superdotado que la evidencia 2026 no respalda&#39;, abriendo con el SR de procesamiento sensorial en alto potencial intelectual.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Medicine ⭐ (2 ítems: RCT anhedonia/pramipexol + benchmark de IA clínica + Hong Kong Genome Project)</span><span class="tag highlight">Molecular Psychiatry ⭐ (genética/biobancos: FinnGen)</span><span class="tag ">Psychotherapy and Psychosomatics ⭐ (IPD-MA de MBCT)</span><span class="tag ">Journal of Clinical Psychiatry ⭐ (placebo en trastornos por uso de sustancias)</span><span class="tag ">Current Psychiatry Reports (TDC: depresión, ISRS y TCC)</span><span class="tag ">Advances in Therapy (NMA de lumateperona)</span><span class="tag ">Pediatric Research (KMC y depresión posparto)</span><span class="tag ">BMC Psychology (procesamiento sensorial en alto potencial intelectual)</span><span class="tag ">British Journal of Sports Medicine (post-concusión juvenil)</span><span class="tag ">Physical Therapy (ejercicio sub-umbral post-concusión)</span><span class="tag ">PLoS One (piloto STEP)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de junio de 2026.</div>
+</div>
+</body>
+</html>
