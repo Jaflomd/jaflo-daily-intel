@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-06-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">13 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">158</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">44</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Neurology, Neurosurgery &amp; Psychiatry · 12 jun 2026 · paper · 2026-06-12</div>
+        <h3 class="r3-title">Apatía, depresión y anhedonia son disociables: un algoritmo de ML destila un test de 10 ítems que separa los síndromes &#39;puros&#39; (N=4578)</h3>
+        <p class="r3-hook">Un algoritmo de machine learning sobre 7 datasets (N=4578) demostró que apatía, depresión y anhedonia son construcciones disociables con firmas sintomáticas propias, y destiló un instrumento de 10 ítems (Apathy-Depression-Anhedonia Measure) que separa los síndromes &#39;puros&#39; con AUC&gt;0.90 e identifica cuál domina incluso en comorbilidad. Es munición directa para tu libro de psicopatología dimensional y para el BMSE/razonamiento dimensional: aquí hay evidencia empírica de que el solapamiento clínico no implica identidad latente, y de que la &#39;apatía emocional&#39; es una dimensión nueva ligada a empatía afectiva reducida —no a embotamiento por antidepresivos—. Úsalo como caso paradigmático en el capítulo de fenotipado dimensional y como prueba de que un test breve operacionaliza HiTOP/RDoC sin perder utilidad clínica; es base perfecta para un carrusel sobre &#39;por qué medir dimensiones le gana al diagnóstico categórico&#39;. (Según PubMed)</p>
+        <a class="r3-link" href="https://doi.org/10.1136/jnnp-2025-337245" target="_blank" rel="noopener">↗ doi.org/10.1136/jnnp-2025-337245</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Advanced Science · 12 jun 2026 · paper · 2026-06-12</div>
+        <h3 class="r3-title">Neuromodulación adaptativa guiada por red individual: solo la frecuencia óptima personalizada mejora la memoria de trabajo (no existe frecuencia &#39;universal&#39;)</h3>
+        <p class="r3-hook">Un marco de neuromodulación adaptativa combinó TMS-fMRI concurrente para mapear la red individual de memoria de trabajo de cada participante y un decodificador en tiempo real que determinó empíricamente la frecuencia óptima por persona (entre 5, 10 y 20 Hz); solo la estimulación a la frecuencia óptima mejoró la memoria de trabajo, y la variabilidad interindividual fue tan grande que demuele la idea de una frecuencia &#39;universal&#39;. Toca de lleno tu pilar de neuromodulación y la tesis de precisión: el target y la frecuencia no se eligen por protocolo poblacional sino por neuroanatomía y brain-state individuales, en circuito cerrado. Es cita obligada para argumentar por qué la rTMS de &#39;talla única&#39; subrinde, y material excelente para una clase USAMEDIC/AMAUTA sobre el salto de estimulación fija a estimulación guiada por biomarcador. (Según PubMed)</p>
+        <a class="r3-link" href="https://doi.org/10.1002/advs.202523009" target="_blank" rel="noopener">↗ doi.org/10.1002/advs.202523009</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Postgraduate Medical Journal · 12 jun 2026 · meta-analysis · 2026-06-12</div>
+        <h3 class="r3-title">Metaanálisis de 14 ECA (1116 estudiantes): la enseñanza con IA supera a la tradicional en conocimiento, habilidades y satisfacción —evidencia nivel 1a</h3>
+        <p class="r3-hook">Un metaanálisis de 14 ECA (1116 estudiantes) halló que la enseñanza basada en IA supera a la tradicional en conocimiento (SMD 0.36), habilidades (SMD 0.78) y satisfacción (SMD 0.97), con el mayor efecto en cursos prácticos —evidencia nivel 1a, aunque con heterogeneidad alta y posible sesgo de publicación—. Es el argumento de autoridad que tu marca AMAUTA/USAMEDIC necesitaba: ya no es promesa, hay metaanálisis que respalda integrar tutores y simuladores con IA en la preparación de ENAM y Residentado. Cítalo en cualquier propuesta de producto educativo IA-first y úsalo como gancho de contenido (&#39;la IA ya le gana a la clase tradicional en habilidades, no solo en teoría&#39;), pero acompáñalo del caveat metodológico para no sobrevender —ese matiz honesto es parte de tu voz. (Según PubMed)</p>
+        <a class="r3-link" href="https://doi.org/10.1093/postmj/qgag077" target="_blank" rel="noopener">↗ doi.org/10.1093/postmj/qgag077</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature Medicine · 12 jun 2026 · rct · 2026-06-12</div>
+          <div class="r10-title">ECA: el agonista dopaminérgico pramipexol reduce la anhedonia en trastornos del ánimo (g=0.62) con engagement de target en estriado ventral</div>
+          <div class="r10-line">ECA doble ciego (N=82): pramipexol añadido redujo la anhedonia (SHAPS, g=0.62) con engagement de target en estriado ventral y mejoría sostenida a 6 meses.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la anhedonia como dimensión-diana (no como ítem de la depresión) consolidará ensayos RDoC-first; perfecto para tu capítulo de recompensa y un reel sobre &#39;tratar dimensiones, no etiquetas&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41591-026-04465-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04465-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Formative Research · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Piloto: un chatbot LLM (Claude 3.7 Sonnet) como apoyo entre sesiones de TCC grupal reduce ansiedad en universitarios</div>
+          <div class="r10-line">Piloto (n=19): un chatbot LLM como adjunto entre sesiones de TCC grupal (Protocolo Unificado) redujo ansiedad (d=0.71) y mejoró bienestar, con usabilidad excelente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el modelo híbrido humano+LLM para soporte entre sesiones será el wedge de salud mental escalable; cruza tu línea de IA con tu interés en neurodivergencia adulta universitaria.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/84296" target="_blank" rel="noopener">↗ doi.org/10.2196/84296</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Translational Psychiatry · 12 jun 2026 · rct · 2026-06-12</div>
+          <div class="r10-title">ECA en esquizofrenia: la carga antipsicótica —no el perfil de receptor— modula la mejoría cognitiva por tDCS</div>
+          <div class="r10-line">ECA (n=120): mayor dosis antipsicótica (equivalentes de olanzapina) correlacionó con menor mejoría de memoria de trabajo por tDCS; no hubo diferencia entre antagonistas y agonistas parciales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la &#39;carga farmacológica&#39; entrará como variable de estratificación estándar en ensayos de neuromodulación; dato fino para tu pilar de neuromodulación.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41398-026-04160-w" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04160-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: CNNI · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Psiquiatría computacional: los síntomas ansioso-depresivos predicen mejor supresión de sesgos motivacionales (disociación transdiagnóstica vs compulsividad)</div>
+          <div class="r10-line">Estudio computacional (N=500): mayor sintomatología ansioso-depresiva predice mejor supresión de sesgos motivacionales (&#39;modo controlado&#39;), patrón opuesto al de compulsividad/intrusiones.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la psiquiatría computacional seguirá fragmentando el factor-p en mecanismos dimensionales; alimenta tu argumento HiTOP/RDoC en el libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsc.2026.06.001" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsc.2026.06.001</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Med (Cell Press) · 28 may 2026 · paper · 2026-05-28</div>
+          <div class="r10-title">Índice &#39;espectral&#39; por ML desde laboratorios de rutina ubica 7 enfermedades —incl. esquizofrenia— en un continuo de riesgo y severidad (n=394,957)</div>
+          <div class="r10-line">ML sobre laboratorios y signos vitales de rutina (n=394,957, BioMe + UK Biobank) genera SHIMMER, un índice que ubica 7 enfermedades —incluida esquizofrenia— en un continuo de riesgo, severidad, onset y supervivencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: los índices espectrales desde datos rutinarios serán el atajo barato a la estratificación; encaja con tu tesis de que la enfermedad vive en espectros, no en cajas.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.medj.2026.101150" target="_blank" rel="noopener">↗ doi.org/10.1016/j.medj.2026.101150</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">PET in vivo: menor disponibilidad del receptor muscarínico M1 en esquizofrenia valida la diana de xanomeline/COBENFY</div>
+          <div class="r10-line">PET in vivo (16 pacientes vs 16 controles): menor disponibilidad de M1 cortical y subcortical con tamaños de efecto grandes, posicionando a M1 como diana terapéutica y biomarcador.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: M1 como biomarcador de respuesta a muscarínicos abrirá la puerta a estratificar quién responde a COBENFY; tema candente para tu radar de psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.06.002" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.06.002</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">ABCD (N=8762, ML): los estimulantes &#39;atenúan&#39; la estructura cortical hacia el fenotipo control en niños con TDAH</div>
+          <div class="r10-line">Estudio ABCD (N=8762, ML): anfetamina y metilfenidato se asocian a cambios corticales que &#39;atenúan&#39; hacia el fenotipo control, con efectos que exceden al propio TDAH.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el debate sobre efectos estructurales de estimulantes en niños se hará viral; prepara contenido riguroso para tu línea TDAH antes de que lo haga el ruido.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-52107-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-52107-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Cancer · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Fenotipado digital pasivo: un enchufe inteligente que mide horas de TV clasifica riesgo de ansiedad/depresión mejor que un wearable</div>
+          <div class="r10-line">Observacional (n=41 sobrevivientes de cáncer mayores): el uso pasivo de TV captado por smart plug clasificó riesgo PHQ-4 (AUC 0.71 solo), superando al wearable de actividad (F1 0.66 vs 0.59).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el fenotipado digital migrará del wearable al ambiente (smart home) por menor carga del paciente; semilla para un proyecto de monitoreo pasivo de bajo costo.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/75050" target="_blank" rel="noopener">↗ doi.org/10.2196/75050</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Psychiatry in Clinical Practice · 11 jun 2026 · review · 2026-06-11</div>
+          <div class="r10-title">Revisión sistemática: la retina (OCT/OCT-A) muestra alteraciones correlacionadas con rasgos clínicos en autismo —biomarcador no invasivo emergente</div>
+          <div class="r10-line">Revisión sistemática: OCT/OCT-A revela cambios de grosor macular, CFNR y perfusión retiniana en autismo, algunos correlacionados con medidas clínicas del trastorno.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: &#39;la retina como ventana del cerebro&#39; será un meme científico potente; gancho perfecto para tu línea TEA/neurodivergencia y un carrusel divulgativo.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/13651501.2026.2673918" target="_blank" rel="noopener">↗ doi.org/10.1080/13651501.2026.2673918</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · 12 jun 2026 · review · 2026-06-12</div>
+          <div class="r10-title">Revisión: la clozapina induce síntomas obsesivo-compulsivos ligados a genes glutamatérgicos —pide estratificación de riesgo por biomarcadores</div>
+          <div class="r10-line">Revisión: 20-76% de pacientes con clozapina desarrollan síntomas obsesivo-compulsivos asociados a genes glutamatérgicos (SLC1A1, DLGAP3, GRIN2B) e interacción gen-ambiente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la farmacogenómica del efecto adverso (no solo de la eficacia) será el siguiente frente de precisión; material clínico fino para Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111783" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111783</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Solapamiento clínico ≠ identidad latente: con ML, apatía, depresión y anhedonia se separan con AUC&gt;0.90 incluso cuando coexisten —el argumento empírico contra el diagnóstico categórico cabe en un test de 10 ítems. (Según PubMed, DOI 10.1136/jnnp-2025-337245)</li><li>En neuromodulación no existe una frecuencia &#39;óptima&#39; universal: la mejor frecuencia de TMS varía por individuo y solo la personalizada mejora la memoria de trabajo. La &#39;talla única&#39; es la razón silenciosa de muchos ensayos negativos. (DOI 10.1002/advs.202523009)</li><li>La carga antipsicótica —no el perfil de receptor— predice cuánto mejora la cognición con tDCS: a más equivalentes de olanzapina, menos plasticidad. La dosis es variable de estratificación, no un detalle. (DOI 10.1038/s41398-026-04160-w)</li><li>Un enchufe inteligente que mide horas de TV clasificó riesgo de depresión/ansiedad mejor que un wearable de actividad (AUC 0.71 vs F1 0.59) —porque la adherencia mata al wearable. El mejor sensor es el que el paciente no tiene que recordar usar. (DOI 10.2196/75050)</li><li>La IA educativa rinde más en habilidades (SMD 0.78) que en conocimiento (SMD 0.36): su valor está en el &#39;hacer&#39;, no en el &#39;saber&#39;. Diseña los productos AMAUTA alrededor de la práctica, no del contenido. (DOI 10.1093/postmj/qgag077)</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Tu BMSE/razonamiento dimensional debería incluir un instrumento breve tipo ADA-10 que operacionalice dimensiones &#39;puras&#39; en vez de un checklist categórico?</li><li>Si la frecuencia óptima de neuromodulación es individual, ¿cómo enseñas rTMS en Residentado sin perpetuar el mito de los protocolos fijos?</li><li>¿La &#39;apatía emocional&#39; (ligada a empatía afectiva reducida, no a embotamiento por fármacos) merece un capítulo propio en tu libro de psicopatología?</li><li>¿Dónde está el límite ético de monitorear salud mental con sensores ambientales pasivos (smart home) sin consentimiento activo continuo —caso para tu comité HVLH?</li><li>Si la IA gana en habilidades pero la evidencia carga sesgo de publicación, ¿cómo comunicas el beneficio sin sobrevender en el marketing AMAUTA/USAMEDIC?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG: &#39;Apatía, depresión y anhedonia NO son lo mismo&#39; — el test de 10 ítems (ADA) que las separa con AUC&gt;0.90 y por qué cambia tu tratamiento. Pilares: precision-psychiatry + content-documentation.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Perspectiva/comentario: &#39;Del protocolo fijo al circuito cerrado&#39; — neuromodulación personalizada guiada por biomarcador como caso testigo de psiquiatría de precisión, usando el hallazgo de frecuencia óptima individual. Pilares: precision-psychiatry + research.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE: fenotipado dimensional aplicado —usar la disociación apatía/depresión/anhedonia como caso clínico paradigmático de RDoC/HiTOP en acción, con la &#39;apatía emocional&#39; como dimensión nueva. Pilares: precision-psychiatry + amauta-education.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel: &#39;La IA ya enseña mejor que la clase tradicional (sobre todo en habilidades)&#39; —metaanálisis nivel 1a de 14 ECA, con el caveat honesto del sesgo de publicación como diferenciador de voz. Pilares: amauta-education + ai-enhancement.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio en tu contexto: validar un instrumento dimensional breve (tipo ADA-10) en población peruana de ENAM/Residentado o clínica HVLH, midiendo utilidad para razonamiento clínico. Pilares: research + precision-psychiatry + amauta-education.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Medicine</span><span class="tag ">Advanced Science</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</span><span class="tag ">Translational Psychiatry</span><span class="tag ">Journal of Neurology, Neurosurgery &amp; Psychiatry</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Med (Cell Press)</span><span class="tag ">Postgraduate Medical Journal</span><span class="tag ">JMIR (Cancer / Formative Research)</span><span class="tag ">Scientific Reports</span><span class="tag ">International Journal of Psychiatry in Clinical Practice</span><span class="tag ">BMC Psychiatry</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP) · WebSearch · medRxiv/PsyArXiv (scan). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de junio de 2026.</div>
+</div>
+</body>
+</html>
