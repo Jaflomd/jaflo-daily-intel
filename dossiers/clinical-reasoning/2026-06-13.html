@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-06-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">13 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">120</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">63</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Communications · 12 jun 2026 (Buckley, Diao, Rodman, Rajpurkar, Manrai — Harvard/Beth Israel) · paper · 2026-06-12</div>
+        <h3 class="r3-title">Multimodal foundation models exploit text to make medical image predictions</h3>
+        <p class="r3-hook">Jaflo, este es el paper del día: en 1090 casos multimodales, los modelos fundacionales &#39;leen&#39; la imagen casi enteramente a través del texto, y basta una viñeta clínica engañosa para que o3 se desplome de 84% a 28% de exactitud — y agregar la imagen a un texto muy informativo a veces EMPEORA el desempeño (GPT-4V cayó en 69 conferencias clinicopatológicas). Te importa porque es el cierre prematuro y el anclaje que enseñas a evitar en humanos, ahora demostrado en máquinas: la IA hereda nuestros sesgos cognitivos por la puerta del prompt. Es munición directa para tu pilar ai-enhancement y para el capítulo de razonamiento dual del BMSE — el &#39;razonamiento&#39; de un LLM es tan frágil al anclaje como el de un R1. Úsalo como pieza ancla: un carrusel/Reel &#39;La IA también hace cierre prematuro&#39; y, en AMAUTA, como demo de por qué hay que dar el contexto sin sesgar la respuesta.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41467-026-74207-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41467-026-74207-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of the American Medical Informatics Association (JAMIA) · 11 jun 2026 · paper · 2026-06-11</div>
+        <h3 class="r3-title">Reasoning or reciting? A temporal contamination audit of large language models in clinical medicine</h3>
+        <p class="r3-hook">Jaflo, el contrapunto perfecto al #1: auditaron 2000 case reports — 1000 dentro del training (2021-2022) y 1000 post-cutoff (2025) — y la exactitud diagnóstica fue idéntica (66.8% &#39;contaminados&#39; vs 66.9% &#39;limpios&#39;), con similitud léxica y semántica planas, refutando la hipótesis de memorización con 10 000 evaluaciones validadas contra consenso médico. Te importa porque zanja con DATA el debate &#39;loro estocástico vs razonador genuino&#39; que aparece en cada charla tuya sobre IA en educación, y porque el diseño es trasladable: es exactamente la métrica que te falta para distinguir &#39;recitar&#39; de &#39;razonar&#39; en un banco ENAM. Léelo en par dialéctico con el Nature Comms — uno dice que el razonamiento de la IA es frágil al texto, el otro que es genuino y no memorizado — y tienes el esqueleto de una charla o de un editorial sobre qué significa &#39;razonar&#39; en 2026.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/jamia/ocag069" target="_blank" rel="noopener">↗ doi.org/10.1093/jamia/ocag069</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PLoS ONE · 12 jun 2026 (Parisien, Ring et al. — Science of Variation Group) · paper · 2026-06-12</div>
+        <h3 class="r3-title">Musculoskeletal surgeons use mixed reasoning rather than pure Bayesian strategies in clinical practice</h3>
+        <p class="r3-hook">Jaflo, evidencia empírica pura de razonamiento humano: 153 cirujanos respondieron 8 escenarios de test/tratamiento y el puntaje bayesiano promedio fue 3.0/4 — solo 29% de respuestas plenamente bayesianas, 8.6% completamente no-bayesianas, y un 42% usó razonamiento no-bayesiano al menos una vez. El dato fino es el Cronbach alfa de 0.43: el razonamiento bayesiano NO es un constructo único, es un set de habilidades context-dependent. Te importa porque desarma el supuesto de que &#39;enseñar probabilidad&#39; en abstracto basta — implica enseñar por escenario, justo el tipo de granularidad que tu BMSE/razonamiento dimensional y el Competency Lab de AMAUTA pueden operacionalizar. Úsalo como justificación metodológica para un módulo de razonamiento probabilístico por casos, y como semilla de un paper análogo con médicos peruanos en formación ENAM/residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1371/journal.pone.0351694" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0351694</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Exploring the use of AI-generated counterfactual chest X-rays to enhance diagnostic learning in medical education</div>
+          <div class="r10-line">Radiografías &#39;contrafácticas&#39; generadas por IA (misma anatomía, condición distinta) mejoraron exactitud y calibración de confianza en 42 médicos/estudiantes — y revelaron debilidades diagnósticas invisibles a la enseñanza tradicional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el &#39;what-if&#39; contrafáctico sobre el mismo paciente será una mecánica central de tu Competency Lab; arma un piloto con casos peruanos antes de que se vuelva producto comercial cerrado.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09597-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09597-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Antimicrobial Agents · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Reproducibility of AI-Generated Antibiotic Recommendations in Standardized Clinical Scenarios: A Proof-of-Concept Experimental Study</div>
+          <div class="r10-line">2400 interacciones: ChatGPT-5.2 era más consistente (acuerdo total en 5/12 casos) pero menos correcto que OpenEvidence (35.7% vs 54.8%) — la reproducibilidad NO se alinea con la corrección clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;reproducibilidad&#39; se volverá un criterio de gate junto a accuracy para CDSS-LLM; proponlo como eje en tu marco de IA para educación médica de precisión antes que nadie lo formalice.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ijantimicag.2026.107881" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ijantimicag.2026.107881</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 11 jun 2026 · paper · 2026-06-11</div>
+          <div class="r10-title">Impact of SNAPPS-based teaching on diagnostic accuracy and academic achievement in pathology residents</div>
+          <div class="r10-line">El modelo SNAPPS (Summarize-Narrow-Analyze-Probe-Plan-Self-directed) mejoró razonamiento diagnóstico y notas de MCQ en residentes de patología, con el mayor efecto en R3.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: SNAPPS es un andamiaje listo para empaquetar en AMAUTA como protocolo de presentación de casos; convéncelo en un Reel de &#39;cómo presentar un caso en 6 pasos&#39; y mídelo en tu cohorte ENAM.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09668-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09668-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Seminars in Oncology Nursing · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Nurses&#39; Clinical Decision-Making During PICC Dressing Application and Removal: A Qualitative Study</div>
+          <div class="r10-line">Think-aloud mapeado a Teoría de Doble Proceso: el Sistema 1 (rutina, cultura de servicio) y el Sistema 2 (deliberación ante piel frágil/preferencias) coexisten en decisiones aparentemente triviales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el think-aloud + dual-process es un método barato y replicable para tu línea de razonamiento; úsalo como diseño plantilla para estudiar cómo razonan tus residentes en tareas &#39;automáticas&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.soncn.2026.152259" target="_blank" rel="noopener">↗ doi.org/10.1016/j.soncn.2026.152259</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">AJNR American Journal of Neuroradiology · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Validation of Artificial Intelligence in Detecting Acute Cervical Spine Fractures on CT</div>
+          <div class="r10-line">En 2652 TC, los radiólogos superaron a la IA (Aidoc) en sensibilidad+especificidad combinadas (p=0.02); los falsos positivos venían de calcificaciones, fracturas crónicas y artefactos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el péndulo &#39;IA &gt; humano&#39; se está corrigiendo con validaciones honestas; guarda este como contrapeso en tu charla de IA — no para frenar adopción, sino para enseñar lectura crítica de claims.</div>
+          <a class="r10-link" href="https://doi.org/10.3174/ajnr.A9473" target="_blank" rel="noopener">↗ doi.org/10.3174/ajnr.A9473</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Performance of GPT-based large language models in hepatocellular carcinoma stratification: liver function, BCLC staging, and treatment recommendations</div>
+          <div class="r10-line">Los modelos &#39;de razonamiento&#39; (o1, o3) ganaron en tratamiento (hasta 90.6%) y en 9-14% de casos fueron MÁS guideline-concordantes que el tumor board — pero con tasa de error no despreciable.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la brecha entre modelos conversacionales y &#39;de razonamiento&#39; (o-series) es la mejor analogía viva de Sistema 1 vs Sistema 2 — material directo para tu capítulo dual-process del BMSE.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-56992-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-56992-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Epilepsia · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Bridging the outcome documentation gap in epilepsy surgery: Validating LLM agents for automated Engel and ILAE scoring from clinical notes</div>
+          <div class="r10-line">Un prompt &#39;context-aware&#39; con lógica temporal/causal llevó al LLM de 56.5% a 94.7% de concordancia en scoring de outcomes — el desempeño no vino del modelo sino de la ESTRUCTURA de razonamiento inyectada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;el prompt es el razonamiento&#39; será el insight transferible del año; tu ventaja es saber qué estructura clínica inyectar — empaquétalo como skill de prompting clínico para AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/epi.70341" target="_blank" rel="noopener">↗ doi.org/10.1002/epi.70341</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Surgical and Radiologic Anatomy · 9 jun 2026 · review · 2026-06-09</div>
+          <div class="r10-title">The role of metacognitive skills in anatomy education: a narrative review</div>
+          <div class="r10-line">El conocimiento metacognitivo se gana fácil, pero las conductas autorregulatorias requieren scaffolding sostenido, no sesiones aisladas — y funcionan mejor integradas al curso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la metacognición &#39;one-shot&#39; no transfiere; diseña el Competency Lab como práctica recurrente embebida, no como taller suelto, y tendrás ventaja sobre el mercado de cursos express.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00276-026-03919-6" target="_blank" rel="noopener">↗ doi.org/10.1007/s00276-026-03919-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Spine Journal · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Performance of large language models in interpreting evidence-based clinical guidelines for lumbar disc herniation with radiculopathy</div>
+          <div class="r10-line">Perplexity (grounded en referencias) fue más exacto y con la MENOR alucinación de referencias; ChatGPT-5.1 tuvo la mayor — el grounding, no el tamaño, predijo fiabilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: para educación, los modelos reference-grounded ganarán adopción clínica; enséñale a tus alumnos a exigir fuentes verificables al LLM como parte del razonamiento, no como extra.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00586-026-10069-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s00586-026-10069-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Endocrine Disorders · 11 jun 2026 · paper · 2026-06-11</div>
+          <div class="r10-title">Gray-zone decisions in subclinical hypothyroidism: a qualitative analysis of ChatGPT responses</div>
+          <div class="r10-line">Ante la zona gris (TSH 4-10), ChatGPT no da una respuesta sino tres perfiles de decisión (conservador guideline-based, proactivo por riesgo, shared-decision) — espeja la variabilidad humana ante la incertidumbre.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el análisis cualitativo de CÓMO razona el LLM (no solo si acierta) es un nicho de paper poco explotado; replícalo en un escenario psiquiátrico dimensional y tienes ángulo propio.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12902-026-02356-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12902-026-02356-1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El cierre prematuro ya no es solo humano: o3 cayó de 84% a 28% de exactitud cuando una viñeta engañosa lo ancló — la IA hereda nuestros sesgos por la puerta del prompt (Nature Communications).</li><li>Reproducibilidad ≠ corrección: ChatGPT-5.2 repetía la misma recomendación antibiótica en 5/12 casos pero acertaba menos que OpenEvidence (35.7% vs 54.8%) — consistencia confiada puede ser error confiado.</li><li>La memorización no explica el desempeño clínico de los LLM: 66.8% en casos vistos vs 66.9% en casos post-cutoff — el debate &#39;loro vs razonador&#39; por fin tiene data, no opinión (JAMIA).</li><li>Los cirujanos no son bayesianos puros: solo 29% de respuestas plenamente bayesianas y 42% no-bayesianas al menos una vez; con Cronbach 0.43, el razonamiento probabilístico es context-dependent y entrenable, no un rasgo fijo.</li><li>En la IA clínica, el prompt ES el razonamiento: inyectar lógica temporal/causal subió la concordancia de 56.5% a 94.7% sin cambiar el modelo (Epilepsia) — el conocimiento del clínico está en la estructura, no en el algoritmo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si un LLM sufre anclaje por el texto igual que un R1, ¿el debiasing que enseñamos a humanos (generar alternativas, slow-down) transfiere al prompting — y se puede medir?</li><li>¿Debería &#39;reproducibilidad&#39; ser un criterio de gate, junto a exactitud, antes de meter cualquier CDSS-LLM en un flujo de preparación ENAM/residentado?</li><li>¿Cómo distingo operacionalmente &#39;razonar&#39; de &#39;recitar&#39; en un residente — y el audit de contaminación temporal de JAMIA me da una métrica trasladable a un banco peruano?</li><li>Si el razonamiento bayesiano no es un constructo único (Cronbach 0.43), ¿implica enseñar probabilidad clínica por escenario en vez de en abstracto?</li><li>¿Los modelos de razonamiento (o3/o1) son mejor analogía del &#39;Sistema 2&#39; clínico que los conversacionales — y eso reordena cómo presento dual-process en el BMSE?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG + Reel: &#39;La IA también hace cierre prematuro&#39; — o3 de 84% a 28% con una pista falsa; el anclaje cognitivo en humanos y máquinas, con un caso peruano de ejemplo.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper empírico: &#39;¿Razonan o recitan los médicos en formación?&#39; — adaptar el audit de contaminación temporal de JAMIA a casos ENAM pre/post-fecha para medir razonamiento genuino vs memorización.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE/razonamiento dimensional: &#39;Dual-process en humanos y LLMs&#39; — Sistema 1/2 como marco unificado, usando nurses (S1/S2), o3 vs conversacionales y el dual-system framework como evidencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Screencast YouTube (Aprendiz Experto): &#39;Cómo NO dejar que ChatGPT te ancle&#39; — prompting anti-sesgo demostrado en vivo con casos clínicos, conectando debiasing humano y de máquina.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-revisión/perspectiva: &#39;Reproducibilidad y calibración como gates de calidad para CDSS-LLM en educación médica de precisión&#39; — proponer el marco antes de que se formalice afuera.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Communications</span><span class="tag ">Journal of the American Medical Informatics Association (JAMIA)</span><span class="tag ">PLoS ONE</span><span class="tag ">International Journal of Antimicrobial Agents</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Scientific Reports</span><span class="tag ">AJNR American Journal of Neuroradiology</span><span class="tag ">Seminars in Oncology Nursing</span><span class="tag ">Epilepsia</span><span class="tag ">European Spine Journal</span><span class="tag ">Surgical and Radiologic Anatomy</span><span class="tag ">BMC Endocrine Disorders</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de junio de 2026.</div>
+</div>
+</body>
+</html>
