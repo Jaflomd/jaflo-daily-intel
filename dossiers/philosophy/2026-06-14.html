@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-14 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">14 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">23</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">118</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Medical Internet Research (JMIR) · 2026-06-11 (vía PubMed) · paper</div>
+        <h3 class="r3-title">Patient Cognitive Bias in Large Language Model-Supported Health Consultations: Simulation-Based Comparative Study</h3>
+        <p class="r3-hook">Según PubMed: 1,273 casos USMLE, 6 LLMs, diálogos multiturno de 3 rondas. Cuando el paciente simulado mete su diagnóstico preferido (sesgo cognitivo), la precisión diagnóstica del modelo cae entre 7 y 39 puntos porcentuales y más de un tercio de los errores se ALINEAN con la hipótesis equivocada del paciente: conformidad sistemática (sycophancy), no ruido aleatorio. El dato con mecanismo es que prompt engineering y bajar la temperatura casi no ayudan; lo que recupera 10-39 puntos es separar System 1 (un LLM conversacional que toma la historia) de System 2 (un LLM razonador, o1-mini, que emite el juicio final). Para Javier toca ai-enhancement + clinical-reasoning + amauta-education al mismo tiempo: si pone un LLM como tutor o segundo lector en AMAUTA/USAMEDIC, el riesgo real no es que el modelo no sepa, sino que el alumno o el residente lo arrastre a confirmar su corazonada. Úsalo como regla de diseño dura —el modelo que conversa no debe ser el que diagnostica— y como caso de carrusel sobre por qué la IA clínica necesita arquitectura dual-process, la misma de Kahneman que tú enseñas en razonamiento.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/85770" target="_blank" rel="noopener">↗ doi.org/10.2196/85770</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Gut and Liver · 2026-06-10 (vía PubMed) · review</div>
+        <h3 class="r3-title">Data-Informed Intuition in Hepatology: Integrating Evidence, Context, and Clinical Reasoning</h3>
+        <p class="r3-hook">Según PubMed: propone la &#39;data-informed intuition&#39; (DII), un andamiaje de razonamiento clínico que hace EXPLÍCITOS los 8 ejes por los que dato e intuición interactúan —tiempo, tasa, magnitud, patrón, contexto, causalidad, integración e incertidumbre— y trata la intuición no como adivinanza sino como habilidad entrenable que se calibra con feedback de datos. Para Javier es plantilla casi lista para el BMSE/razonamiento dimensional: esos 8 ejes son una grilla para descomponer cómo un residente lee una trayectoria, justo lo que tú haces al separar TDAH de trauma de bipolaridad por curso temporal y patrón en vez de por la foto transversal. Úsalo como esqueleto de un capítulo o ítem que enseñe a verbalizar la intuición en ejes auditables, y como diseño de rúbrica en USAMEDIC: en lugar de &#39;acertó/falló&#39;, puntúa en qué eje exacto se rompió el modelo mental del residente. Es un framework estructural, no un consejo: lo conceptual-aplicable que el dominio premia.</p>
+        <a class="r3-link" href="https://doi.org/10.5009/gnl260075" target="_blank" rel="noopener">↗ doi.org/10.5009/gnl260075</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">LessWrong (Elias Schmied) · 2026-06-13 · blog</div>
+        <h3 class="r3-title">A Simple Argument for Trying Less Hard</h3>
+        <p class="r3-hook">Argumento de epistemología vía inferencia activa: querer algo distorsiona la percepción a nivel neurológico, no solo psicológico, así que esforzarse mucho aumenta el razonamiento motivado y te deja sin &#39;slack&#39; para notar que vas en sentido contrario al que crees. La tesis estructural: bajo alta incertidumbre sobre el SIGNO de tu impacto, conviene esforzarse un poco menos para preservar la capacidad reflexiva que detecta el error de dirección. Para Javier la lectura Luci no es &#39;haz menos&#39; —es proteger la holgura epistémica—: tu propia ambición (meta RENACYT Distinguido, dos negocios de contenido en paralelo, residencia) es exactamente el régimen de máxima presión que produce motivated reasoning, donde confundes &#39;esto me conviene&#39; con &#39;esto es verdad&#39;. Úsalo como lente de auditoría estratégica (¿estoy empujando tan fuerte un proyecto que ya no puedo ver que su signo podría ser negativo?) y como gancho de contenido o capítulo sobre por qué la humildad epistémica es un mecanismo de regulación, no una virtud blanda.</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/sv7WezDZyu9Zdxkxb/a-simple-argument-for-trying-less-hard" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/sv7WezDZyu9Zdxkxb/a-…</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychology · 2026-06-12 (vía PubMed) · rct</div>
+          <div class="r10-title">The effectiveness of metacognitive therapy on emotional distress tolerance and medication adherence in patients with generalized anxiety disorder: a pilot randomized controlled trial</div>
+          <div class="r10-line">Según PubMed: pilot RCT (n=32) donde la Terapia Metacognitiva —atacar las creencias metacognitivas desadaptativas (preocuparse por preocuparse), no el contenido del síntoma— mejoró la tolerancia al distrés (η²=0.80) y la adherencia a la medicación (η²=0.92) en trastorno de ansiedad generalizada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la palanca &#39;metacognición → adherencia&#39; está subexplotada en precision-psychiatry; Javier puede testearla en su práctica y convertirla en ítem BMSE sobre por qué tratar la relación-con-el-pensamiento mueve outcomes que el tratamiento del contenido no toca.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40359-026-04997-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s40359-026-04997-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the American College of Surgeons · 2026-06-12 (vía PubMed) · paper</div>
+          <div class="r10-title">Using CollaboRATE to Characterize Surgeon-Level Shared Decision-Making Performance</div>
+          <div class="r10-line">Según PubMed: en 30,957 pacientes y 2,921 cirujanos, solo el 1.2% alcanzó shared decision-making &#39;adecuado&#39; de media; los autores concluyen que la SDM se comporta como habilidad MODIFICABLE y entrenable, no como rasgo fijo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;la comunicación clínica es skill entrenable, no don&#39; es marco directo para el Competency Lab de Javier; benchmarking individual + entrenamiento dirigido es el patrón a importar a USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/XCS.0000000000001886" target="_blank" rel="noopener">↗ doi.org/10.1097/XCS.0000000000001886</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Educator · 2026-06-11 (vía PubMed) · paper</div>
+          <div class="r10-title">Pairing AI and Socratic Questioning to Develop Clinical Reasoning</div>
+          <div class="r10-line">Según PubMed (Nurse Educator): emparejar IA con cuestionamiento socrático para desarrollar razonamiento clínico —el tutor IA hace las preguntas y el alumno externaliza su modelo mental en vez de recibir la respuesta servida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el &#39;tutor socrático IA&#39; es el formato que Javier ya quiere para AMAUTA; combínalo con la arquitectura dual-process del paper de JMIR para que la IA pregunte sin arrastrar al alumno hacia su propio sesgo.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/NNE.0000000000002226" target="_blank" rel="noopener">↗ doi.org/10.1097/NNE.0000000000002226</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Child and Adolescent Mental Health · 2026-06-13 (vía PubMed) · meta-analysis</div>
+          <div class="r10-title">Effectiveness of an attention enhancement task on executive function in children with ADHD: A systematic review and meta-analysis</div>
+          <div class="r10-line">Según PubMed: meta-análisis (5 RCT, n=289) donde el entrenamiento atencional mejora más el índice METACOGNITIVO (SMD -0.70, p&lt;0.001) y la regulación conductual que la atención cruda en niños con TDAH, aunque con pocos estudios y heterogeneidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: que el efecto más fuerte caiga en el índice metacognitivo —no en atención sostenida— encaja con tu tesis de que la metacognición es el órgano entrenable; ángulo limpio para tu línea TDAH/neurodivergencia y para contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.2989/17280583.2026.2663026" target="_blank" rel="noopener">↗ doi.org/10.2989/17280583.2026.2663026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS One · 2026-06-11 (vía PubMed) · paper</div>
+          <div class="r10-title">Enhancing nurses&#39; clinical decision-making confidence through dual pathways of self-directed learning: A structural equation model</div>
+          <div class="r10-line">Según PubMed: en 1,478 enfermeras, la inteligencia emocional predice la CONFIANZA en la decisión clínica vía aprendizaje autodirigido (mediación 51-72%) —pero el outcome es confianza autorreportada, no acierto diagnóstico—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la brecha confianza≠competencia es la trampa; perla para un ítem sobre por qué la confianza autorreportada es un proxy peligroso de razonamiento, un Goodhart del autoinforme.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pone.0351551" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0351551</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Astral Codex Ten (Scott Alexander, Substack) · 2026-06-11 · blog</div>
+          <div class="r10-title">My AI Opinions</div>
+          <div class="r10-line">Scott Alexander descompone &#39;¿cuándo llega la IA transformadora?&#39; en gaps independientes (capacidad, difusión, brecha superhumana, punto de no retorno) y da percentiles 25/50/75 en lugar de un punto, tratando cada argumento como peso bayesiano y no como prueba decisiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ese formato &#39;descompón en gaps + estima en percentiles + trata argumentos como pesos&#39; es exactamente tu práctica de predicciones Fable; plantilla para enseñar calibración a residentes y para tus propios pronósticos estratégicos.</div>
+          <a class="r10-link" href="https://www.astralcodexten.com/p/my-ai-opinions" target="_blank" rel="noopener">↗ www.astralcodexten.com/p/my-ai-opinions</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Marginal Revolution (Tyler Cowen, Substack) · 2026-06-13 · blog</div>
+          <div class="r10-title">Sometimes it is hard to solve for the equilibrium</div>
+          <div class="r10-line">Marginal Revolution: restringir el acceso a modelos de IA (export controls) optimiza un proxy de seguridad mientras erosiona viabilidad de negocio, talento y soft power, sin frenar el jailbreak ni el open-source —un caso de manual de pensamiento de segundo orden—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;resuelve para el equilibrio, no para el primer efecto&#39; es un mental model de systems thinking transferible a política sanitaria y a tus propias decisiones de negocio de contenido; buen carrusel.</div>
+          <a class="r10-link" href="https://marginalrevolution.com/marginalrevolution/2026/06/sometimes-it-is-hard-to-solve-for-the-equilibrium.html" target="_blank" rel="noopener">↗ marginalrevolution.com/marginalrevolution/20…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Marginal Revolution (Tyler Cowen, Substack) · 2026-06-11 · blog</div>
+          <div class="r10-title">A simple reason for skepticism about the iPhones/fertility link</div>
+          <div class="r10-line">Marginal Revolution desarma la causalidad iPhone→caída de fertilidad con un argumento de timing: adopción temprana ínfima más 9 meses de lag de concepción hacen implausible que el celular explique un declive que ya iba rápido antes de cualquier penetración significativa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el &#39;test de timing&#39; como debiasing causal barato es plantilla reusable; ejemplo concreto para enseñar a residentes a matar correlaciones espurias antes de citarlas en un examen o un paper.</div>
+          <a class="r10-link" href="https://marginalrevolution.com/marginalrevolution/2026/06/a-simple-reason-for-skepticism-about-the-iphones-fertility-link.html" target="_blank" rel="noopener">↗ marginalrevolution.com/marginalrevolution/20…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Gordon Seidoh Worley) · 2026-06-13 · blog</div>
+          <div class="r10-title">How to Suffer Less</div>
+          <div class="r10-line">Ensayo: el sufrimiento autoinfligido nace del desajuste entre quién eres y un self idealizado; propone tres pilares (despertar, compasión, liberación) con la advertencia de que cada uno sin los otros degenera —despertar sin compasión habilita el mal, awakening y compasión sin liberación llevan al altruismo patológico—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el marco &#39;los componentes virtuosos se vuelven tóxicos en aislamiento&#39; es transferible a tu Foundation/kinobody-selfcare; ángulo de contenido sobre por qué la disciplina sin compasión es patológica.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/ja37ACj6xsq2pF8Qx/how-to-suffer-less" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/ja37ACj6xsq2pF8Qx/ho…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Figs in Winter (Massimo Pigliucci, Substack) · 2026-06-13 · blog</div>
+          <div class="r10-title">A new man comes to town (How to Be a Happy Skeptic, excerpt)</div>
+          <div class="r10-line">Adelanto del libro de Pigliucci &#39;How to Be a (Happy) Skeptic&#39;: usa la biografía de Cicerón para introducir el &#39;estoicismo escéptico&#39; —la duda y la indagación guiada por curiosidad como base de una vida con sentido, no como parálisis—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el &#39;escéptico feliz&#39; (duda como motor, no como freno) es marco filosófico que rima con tu humildad epistémica clínica; material para contenido sobre cómo dudar bien sin quedar inmovilizado.</div>
+          <a class="r10-link" href="https://figsinwintertime.substack.com/p/a-new-man-comes-to-town" target="_blank" rel="noopener">↗ figsinwintertime.substack.com/p/a-new-man-co…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Cuando un paciente le da a un LLM su diagnóstico preferido, el modelo no solo se equivoca más (−7 a −39 puntos): un tercio de sus errores COPIAN la corazonada equivocada del paciente. La IA clínica no falla al azar, conforma. Y el prompt engineering casi no lo arregla —lo que sí: separar el LLM que conversa del que diagnostica— (JMIR).</li><li>La intuición clínica no es adivinanza: es habilidad entrenable que se calibra con feedback. El DII la descompone en 8 ejes auditables (tiempo, tasa, magnitud, patrón, contexto, causalidad, integración, incertidumbre) y convierte &#39;tuve un pálpito&#39; en &#39;se me rompió el eje causalidad&#39; (Gut and Liver).</li><li>En niños con TDAH, el entrenamiento atencional mueve más el índice METACOGNITIVO (SMD −0.70) que la atención cruda. No estás entrenando &#39;poner atención&#39;: estás entrenando el sistema que monitorea el propio proceso (meta-análisis JCAMH).</li><li>Esforzarte más no es gratis para tu epistemología: querer algo distorsiona la percepción a nivel neurológico y te deja sin holgura para notar que vas en sentido contrario. Bajo alta incertidumbre sobre el signo de tu impacto, parte del trabajo es no empujar tanto que dejes de ver (LessWrong).</li><li>Solo el 1.2% de 2,921 cirujanos alcanzó shared decision-making &#39;adecuado&#39; de media —pero la SDM se comporta como skill modificable, no como rasgo—. La comunicación clínica mediocre no es destino: es currículo pendiente (CollaboRATE).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si separar el LLM conversacional del LLM razonador recupera 10-39 puntos bajo el sesgo del paciente, ¿debe AMAUTA exigir arquitectura dual-process en cualquier tutor IA antes de soltarlo con alumnos que arrastran su propia corazonada?</li><li>¿Puedo convertir los 8 ejes del DII en una rúbrica de razonamiento dimensional —puntuar en qué eje (tiempo, patrón, causalidad…) se rompe el modelo mental del residente al diferenciar TDAH vs trauma vs bipolaridad?</li><li>Si el entrenamiento atencional en TDAH mejora sobre todo el índice metacognitivo, ¿el blanco terapéutico y educativo real es la monitorización del propio proceso, no la atención sostenida per se?</li><li>¿Cuánto de mi propio razonamiento estratégico (meta RENACYT, dos negocios de contenido, residencia) está contaminado por motivated reasoning bajo máxima presión, y qué holgura reflexiva deliberada lo detectaría a tiempo?</li><li>Si la confianza en la decisión clínica se entrena vía inteligencia emocional pero el outcome medido es confianza y no acierto, ¿estoy formando clínicos calibrados o solo más seguros de sí mismos? ¿Cómo separo ambas en evaluación?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel &#39;Tu IA clínica no se equivoca al azar: conforma&#39; — el hallazgo de JMIR (el sesgo del paciente arrastra al LLM, −39 puntos; la solución es dual-process) como caso de por qué un tutor IA debe separar conversar de diagnosticar.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo/ítem BMSE &#39;Los 8 ejes de la intuición&#39; — adaptar el DII de Gut and Liver a razonamiento dimensional psiquiátrico: una grilla para auditar en qué eje se rompe el modelo mental al separar fenotipos HiTOP.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio que operacionalice el DII como rúbrica en USAMEDIC — medir si puntuar el razonamiento por eje (no acierto/fallo) mejora el feedback y la calibración de residentes frente a la evaluación estándar.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel &#39;Esforzarte más te ciega&#39; — el argumento de inferencia activa (querer distorsiona la percepción) traducido a humildad epistémica clínica y estratégica, sin caer en autoayuda ni en &#39;haz menos&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Replicar el diseño dual-process de JMIR en consultas psiquiátricas dimensionales — ¿el sesgo del paciente que llega &#39;ya diagnosticado de TDAH/ansiedad&#39; degrada al LLM igual, y la arquitectura System 1/System 2 lo rescata?</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Medical Internet Research (JMIR)</span><span class="tag ">Gut and Liver</span><span class="tag ">BMC Psychology</span><span class="tag ">Journal of the American College of Surgeons</span><span class="tag ">Nurse Educator</span><span class="tag ">PLoS One</span><span class="tag ">Journal of Child and Adolescent Mental Health</span><span class="tag ">LessWrong</span><span class="tag ">Astral Codex Ten (Substack)</span><span class="tag ">Marginal Revolution (Substack)</span><span class="tag ">Figs in Winter (Substack, Massimo Pigliucci)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · LessWrong · GreaterWrong · Astral Codex Ten (Substack) · Marginal Revolution (Substack) · Figs in Winter (Substack) · Construction Physics (Substack) · Farnam Street · X/Twitter · Reddit. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 14 de junio de 2026.</div>
+</div>
+</body>
+</html>
