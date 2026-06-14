@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-14 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">14 de junio de 2026 · 2026-W24 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">49</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">46</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Postgraduate Medical Journal · 12 jun 2026 · meta-analysis · 2026-06-12</div>
+        <h3 class="r3-title">Meta-análisis de RCTs: enseñanza basada en IA vs. enseñanza tradicional en educación médica</h3>
+        <p class="r3-hook">Meta-análisis de 14 RCTs (n=1116): la enseñanza basada en IA superó a la tradicional en conocimiento (SMD 0.36), habilidades (SMD 0.78) y satisfacción (SMD 0.97), con el efecto más grande en cursos prácticos. Esto es evidencia nivel 1a parada justo encima de tus pilares ai-enhancement + amauta-education: ya no es opinión que la IA enseña, es un meta con tamaños de efecto. La señal fina para ti es el patrón skills (0.78) &gt;&gt; recall (0.36): la IA rinde donde hay práctica y feedback, no donde solo hay memorización —exactamente cómo deberías repartir IA en USAMEDIC y en el curso Aprendiz Experto. Úsalo como ancla de evidencia en el libro de neurociencia educativa y como hook de contenido JafloMD: &#39;la IA mueve más la aguja en habilidades que en datos, y aquí está el meta que lo prueba&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/postmj/qgag077" target="_blank" rel="noopener">↗ doi.org/10.1093/postmj/qgag077</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Medical Teacher · 11 jun 2026 · paper · 2026-06-11</div>
+        <h3 class="r3-title">Angoff asistido por IA para fijar notas de corte: validación de no-inferioridad frente a panel docente</h3>
+        <p class="r3-hook">Estudio de no-inferioridad: las estimaciones Angoff generadas por IA (LLM, ML e híbrido) para preguntas de mejor respuesta única resultaron no-inferiores al panel de docentes humanos en 100 SBAs nuevos. El paso más caro e inescalable de un banco defendible —reunir expertos para fijar el cut-score— acaba de volverse commodity. Para tu banco MCQ de ENAM/Residentado (encaps-mcq-factory / qbank de USAMEDIC) esto es leverage directo: puedes escalar la fijación de notas de corte sin convocar diez docentes por lote, manteniendo defensibilidad psicométrica. Acción doble: replicar como validación peruana (paper publicable, casi nadie lo ha hecho en español) y convertirlo en un módulo del curso Aprendiz Experto: &#39;cómo fijar cut-scores de tu banco con IA-Angoff&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/0142159X.2026.2681212" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2681212</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Medical Teacher · 11 jun 2026 · review · 2026-06-11</div>
+        <h3 class="r3-title">OSCE lideradas por estudiantes: scoping review en educación de profesiones de la salud</h3>
+        <p class="r3-hook">Scoping review (19 estudios, 2014-2025, sobre todo en medicina): las OSCE lideradas por estudiantes —diseño, ejecución y feedback en manos de pares— son factibles y aceptables para expandir la práctica formativa cuando hay muchos estudiantes y pocos docentes. Esa es literalmente la restricción de USAMEDIC/AMAUTA al preparar ENAM y Residentado: demanda alta de práctica clínica con plana docente limitada. Pero ojo —y aquí está tu oportunidad—: la evidencia sigue siendo K1/autorreporte, sin outcomes duros. Acción doble: pilotear OSCE peer-led como ancla de práctica barata en tu prep de ENAM, y montar un estudio Kirkpatrick-2/3 que cubra el vacío de evidencia (paper con buena chance de publicación porque casi nadie mide más allá de satisfacción).</p>
+        <a class="r3-link" href="https://doi.org/10.1080/0142159X.2026.2684554" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2684554</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 11 jun 2026 · paper · 2026-06-11</div>
+          <div class="r10-title">Estaciones de Multiple Mini Interview generadas por IA: evaluación psicométrica</div>
+          <div class="r10-line">IA generativa produjo estaciones de MMI con fiabilidad y discriminación comparables a las hechas por humanos en 824 postulantes y ~4,897 interacciones (Monash).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La competencia docente que importará no es escribir ítems sino curarlos y gobernarlos; el banco de USAMEDIC debería migrar de &#39;producción&#39; a &#39;curación + auditoría de sesgo&#39; de ítems IA en 12 meses.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/86208" target="_blank" rel="noopener">↗ doi.org/10.2196/86208</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Entrenar comunicación empática con un chatbot GPT-4o con rol prompteado</div>
+          <div class="r10-line">Una sola conversación con un chatbot GPT-4o de rol prompteado mejoró la competencia comunicacional autoevaluada (d=0.58) en 162 estudiantes, en 4 escenarios clínicos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;paciente simulado IA&#39; será el caballo de batalla barato para entrenar comunicación y razonamiento clínico; AMAUTA puede tener su propio SP-bot antes de fin de año.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/88092" target="_blank" rel="noopener">↗ doi.org/10.2196/88092</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 11 jun 2026 · paper · 2026-06-11</div>
+          <div class="r10-title">Enseñanza SNAPPS y mejora del razonamiento diagnóstico en residentes</div>
+          <div class="r10-line">El modelo centrado en el aprendiz SNAPPS mejoró significativamente MCQ y checklist de razonamiento diagnóstico en residentes de patología a lo largo de los 3 años.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los frameworks estructurados de razonamiento (SNAPPS, illness scripts) volverán como andamiaje explícito para ENAM; material directo para tu línea de razonamiento clínico y el BMSE.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09668-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09668-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Radiografías de tórax contrafactuales generadas por IA para el aprendizaje diagnóstico</div>
+          <div class="r10-line">Radiografías contrafactuales (&#39;qué pasaría si fuera otro diagnóstico&#39; sobre la misma anatomía) mejoraron precisión, calibración de confianza y reflexión en 42 estudiantes/médicos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Lo contrafactual será la próxima palanca del razonamiento clínico: enseñar &#39;en qué me equivocaría&#39; calibra mejor que más casos —encaja de lleno con tu pensamiento dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09597-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09597-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 12 jun 2026 · review · 2026-06-12</div>
+          <div class="r10-title">IA en la educación médica del Reino Unido: marco para reformar el currículo</div>
+          <div class="r10-line">Viewpoint que propone un marco para incrustar alfabetización en IA, ética y simulación con IA en el currículo médico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los marcos de currículo-IA se volverán plantilla; AMAUTA puede adaptar uno como diferenciador frente a academias ENAM que aún no lo tienen.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/81953" target="_blank" rel="noopener">↗ doi.org/10.2196/81953</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine · 12 jun 2026 · editorial · 2026-06-12</div>
+          <div class="r10-title">Equidad como principio de implementación en la educación médica de precisión</div>
+          <div class="r10-line">Comentario: la equidad debe ser principio de implementación —no un añadido— al desplegar educación médica de precisión basada en IA y datos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En Perú, con brechas enormes entre facultades, el ángulo de equidad es a la vez salvaguarda ética (lente Acai) y posicionamiento; tu &#39;precision medical education&#39; debe nacer con equidad incrustada.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag172" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag172</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine · 11 jun 2026 · editorial · 2026-06-11</div>
+          <div class="r10-title">IA en educación médica: promesa, cautela y la necesidad de freno</div>
+          <div class="r10-line">Pieza de opinión que pide adopción cautelosa de IA generativa en educación médica (sesgo, sobre-dependencia, costo ambiental).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La misma semana llega el meta pro-IA y la advertencia anti-IA: la tensión &#39;evidencia vs. prudencia&#39; es el ángulo de contenido más jugoso para JafloMD/Aprendiz Experto.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag175" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag175</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 11 jun 2026 · paper · 2026-06-11</div>
+          <div class="r10-title">Mündlich: simulación de examen oral entre pares para aprendizaje orientado a competencias</div>
+          <div class="r10-line">Un simulacro de examen oral por enseñanza entre pares (~190 estudiantes) redujo el estrés y mejoró competencia y calidad de respuesta autoevaluadas, con tendencia favorable en el examen nacional posterior.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El simulacro oral peer-led es replicable para el componente oral del Residentado: barato, escalable y con señal de outcome en examen nacional.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09661-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09661-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Investigative Medicine · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Percepciones y experiencias de IA en estudiantes de medicina de 1.º y 2.º año</div>
+          <div class="r10-line">Encuesta a 108 estudiantes preclínicos: alta familiaridad y uso de ChatGPT y optimismo sobre IA, pero &gt;60% pide entrenamiento ético estructurado en IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La demanda estudiantil de &#39;IA ética estructurada&#39; es un hueco de mercado: un módulo corto de uso responsable de IA puede ser gancho de captación para USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/10815589261462547" target="_blank" rel="noopener">↗ doi.org/10.1177/10815589261462547</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Critical Care Explorations · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Análisis multiagente en primera persona para evaluar liderazgo en simulación de emergencia pediátrica</div>
+          <div class="r10-line">Estudio de factibilidad: smart glasses + detección de mirada (YOLO) extrajeron métricas objetivas de liderazgo durante simulaciones de emergencia pediátrica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La evaluación de habilidades no técnicas pasará de rúbrica subjetiva a sensores + IA; tu trabajo de simulation-designer y debriefing INACSL puede incorporar métricas de mirada en 1-2 años.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/CCE.0000000000001428" target="_blank" rel="noopener">↗ doi.org/10.1097/CCE.0000000000001428</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el meta de IA vs. enseñanza tradicional, el efecto en habilidades (SMD 0.78) más que duplica el de conocimiento (SMD 0.36): la IA rinde donde hay práctica y feedback, no donde solo hay memorización. Implicación para USAMEDIC: mete IA en simulación y casos, no en repaso de datos.</li><li>Fijar cut-scores con panel Angoff humano era el paso caro e inescalable de un banco defendible; la no-inferioridad del Angoff-IA convierte ese cuello de botella en commodity. Quien primero lo industrialice en Perú tendrá ventaja de banco.</li><li>&#39;La IA escribe evaluación válida&#39; dejó de ser aspiración: estaciones MMI generadas por IA igualaron la psicometría humana en ~4,897 interacciones. El foso competitivo se mueve de producir ítems a curarlos, auditarlos y gobernar su sesgo.</li><li>Las OSCE lideradas por estudiantes llevan una década reinventándose en pilotos locales con solo evidencia de satisfacción (K1). El gap no es de ideas sino de outcomes: quien mida K2-K3 publica.</li><li>Las radiografías contrafactuales mejoraron la calibración de confianza, no solo la precisión. La palanca contraintuitiva del razonamiento clínico es enseñar &#39;en qué me equivocaría&#39;, no dar más casos —pensamiento dimensional aplicado a la pedagogía.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿El efecto grande en habilidades del meta de IA (SMD 0.78) se sostiene en outcomes K3 —comportamiento clínico real— o se evapora fuera del entorno de práctica?</li><li>¿Un banco ENAM con notas de corte fijadas por IA-Angoff resistiría una auditoría psicométrica peruana, y qué evidencia mínima necesitaría para defenderlo?</li><li>Si la IA ya genera ítems MMI/MCQ válidos, ¿cuál es la nueva competencia que AMAUTA debe enseñar a sus docentes: curación, detección de sesgo o gobernanza del banco?</li><li>¿Pueden las OSCE peer-led escalar la práctica formativa en USAMEDIC sin canibalizar la credibilidad de la evaluación sumativa?</li><li>¿Enseñar calibración de confianza (no solo precisión diagnóstica) cambia mensurablemente el razonamiento de quienes preparan ENAM/Residentado?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel JafloMD: &#39;La IA enseña mejor habilidades (SMD 0.78) que conocimiento (SMD 0.36)&#39; —explicar el meta de 14 RCTs y dónde conviene meter IA en el estudio para ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper: estudio Kirkpatrick-2/3 de OSCE lideradas por estudiantes en contexto peruano (USAMEDIC), cubriendo el gap de evidencia autorreporte del scoping review.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Screencast Aprendiz Experto: &#39;Fija los cut-scores de tu banco de preguntas con IA-Angoff sin perder defensibilidad&#39; —tutorial reproducible con LLM + ML.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de neurociencia educativa: &#39;Dónde la IA mueve la aguja y dónde no&#39;, anclado en los tamaños de efecto del meta y en la lógica skills &gt; recall.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de validación local: ítems MCQ/MMI generados por IA para ENAM —replicar Monash/JMIR en USAMEDIC y reportar psicometría peruana.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Postgraduate Medical Journal</span><span class="tag ">Medical Teacher</span><span class="tag highlight">JMIR Medical Education</span><span class="tag highlight">Academic Medicine</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Critical Care Explorations</span><span class="tag ">Journal of Investigative Medicine</span><span class="tag ">European Journal of Dental Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities vía MCP). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 14 de junio de 2026.</div>
+</div>
+</body>
+</html>

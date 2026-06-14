@@ -1,0 +1,71 @@
+# ⭐ 🩺 Razonamiento Clínico — 2026-06-14
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/clinical-reasoning/2026-06-14.html
+
+## 🏆 Top 3
+- [ ] **Patient Cognitive Bias in Large Language Model-Supported Health Consultations: Simulation-Based Comparative Study** — _Journal of Medical Internet Research (JMIR) · 11 jun 2026 · paper_ — [doi.org/10.2196/85770](https://doi.org/10.2196/85770) <!--star:clinical-reasoning|2026-06-14|t3-1-->
+  > Jaflo, esto es teoría de doble proceso operacionalizada en silicio. Sobre 1273 casos USMLE simularon pacientes con sesgo cognitivo (preferencia diagnóstica explícita) y la precisión de 6 LLMs cayó entre 7 y 39 puntos porcentuales en consultas multiturno; más de un tercio de los errores se alineó con el dx preferido del paciente —conformidad sistemática, no ruido—, y los modelos más chicos rozaron el azar. Lo demoledor: prompt engineering y bajar temperature casi no protegieron; lo que recuperó 10–39 puntos fue separar la arquitectura en System 1 (conversación/anamnesis) y System 2 (juicio diagnóstico con o1-mini). Te importa porque es exactamente la columna del BMSE/razonamiento dimensional y del libro de psicopatología: el cierre prematuro inducido por el framing del paciente derriba tanto al humano como a la máquina, y el debiasing efectivo es estructural, no exhortativo. Úsalo como caso ancla de un capítulo BMSE sobre anchoring del paciente y como clase AMAUTA/ENAM que enseñe a separar recolección de datos de síntesis diagnóstica.
+- [ ] **Smartphone videos for infantile epileptic spasms triaging and assessment (VISTA): Impact of education and standardized clinical history on diagnostic accuracy** — _Epilepsia Open · 12 jun 2026 · paper_ — [doi.org/10.1002/epi4.70292](https://doi.org/10.1002/epi4.70292) <!--star:clinical-reasoning|2026-06-14|t3-2-->
+  > Jaflo, esto es la prueba experimental de que el razonamiento se enseña y rápido. Estudio multicéntrico (180 clínicos): una sesión breve de entrenamiento más historia clínica estandarizada subió la precisión para reconocer espasmos epilépticos de 64% a 72% (OR 1.86, AUC 0.80, sensibilidad 0.85), y el staff superó a los trainees por 24% —illness scripts en acción—. Mide precisión diagnóstica REAL, no autorreporte, sobre reconocimiento de patrón visual con un recurso de costo cero (video de celular). Te importa porque es justo la evidencia que el Competency Lab y AMAUTA necesitan para defender que una microintervención mueve la aguja diagnóstica, y porque el gap staff–trainee es el argumento empírico de tu neurociencia educativa. Úsalo como plantilla de un paper de educación médica replicable en Perú: caso estandarizado + una sesión, midiendo Δ precisión con AUC en internos USAMEDIC.
+- [ ] **Artificial intelligence and medical retina training: A scoping review of educational opportunities, emerging risks, and curricular responses** — _Survey of Ophthalmology · 10 jun 2026 · review_ — [doi.org/10.1016/j.survophthal.2026.06.007](https://doi.org/10.1016/j.survophthal.2026.06.007) <!--star:clinical-reasoning|2026-06-14|t3-3-->
+  > Jaflo, este review te entrega el vocabulario completo del debate más caliente del pilar ai-enhancement aplicado a la formación. Mapea cómo la IA autónoma cambia el entrenamiento clínico y nombra los riesgos con etiquetas que son oro para contenido: deskilling (el clínico pierde destreza), never-skilling (el trainee NUNCA la adquiere porque la IA ya supera a un R1), automation bias y la disrupción de la formación de identidad profesional. Documenta que las respuestas institucionales y de acreditación van muy por detrás del despliegue clínico, sin marcos de competencia validados. Te importa porque cruza tus tres frentes —razonamiento clínico, amauta-education y precisión— y porque el concepto never-skilling es un gancho perfecto para una serie AMAUTA y para argumentar por qué hay que capturar un baseline de razonamiento ahora, antes de que la IA esté en cada consultorio. Úsalo como marco conceptual de una clase o un editorial sobre razonamiento sin muletas.
+
+## 📡 Radar (10)
+- [ ] **Red-green disease: overreliance on color-coded OCT RNFL analysis in glaucoma diagnosis** — _Eye (London) · 10 jun 2026 · editorial_ — [doi.org/10.1038/s41433-026-04600-3](https://doi.org/10.1038/s41433-026-04600-3) <!--star:clinical-reasoning|2026-06-14|t10-1-->
+  > Confiar en el semáforo de color del software (OCT) genera su propio sesgo de automatización: el código de color ancla el ojo antes que el dato crudo.
+  > 🔮 Predicción Fable: el patrón rojo-verde se volverá un ejemplo canónico de automation bias visual; perla de IG y caso de clase sobre cómo la interfaz fabrica cierre prematuro.
+- [ ] **AI in UK Medical Education: A Framework for Curriculum Reform** — _JMIR Medical Education · 12 jun 2026 · paper_ — [doi.org/10.2196/81953](https://doi.org/10.2196/81953) <!--star:clinical-reasoning|2026-06-14|t10-2-->
+  > Propone competencias de IA para el currículo médico (sesgo algorítmico, ética, decisión clínica) y expone el cuello de botella: faltan docentes IA-alfabetizados.
+  > 🔮 Predicción Fable: insumo directo para un módulo AMAUTA de alfabetización en IA; el déficit de docentes capacitados es tu ventana de monetización como formador-de-formadores.
+- [ ] **AIDx: a locally deployable AI system for physician clinical decision support** — _Scientific Reports · 11 jun 2026 · paper_ — [doi.org/10.1038/s41598-026-47470-1](https://doi.org/10.1038/s41598-026-47470-1) <!--star:clinical-reasoning|2026-06-14|t10-3-->
+  > LLM local fine-tuneado con EHR (83.6% en MultiMedQA); el análisis de error muestra que 38% de las fallas son de razonamiento y 41% de conocimiento.
+  > 🔮 Predicción Fable: el despliegue on-premise de bajo costo es la vía para entornos peruanos; el dato clave para tu narrativa es que el cuello ya no es saber, es pensar bien.
+- [ ] **Accuracy of ophthalmic referral diagnoses by non-ophthalmologists in acute eye care: protocol for a systematic review and meta-analysis** — _BMJ Open · 12 jun 2026 · preprint_ — [doi.org/10.1136/bmjopen-2026-121497](https://doi.org/10.1136/bmjopen-2026-121497) <!--star:clinical-reasoning|2026-06-14|t10-4-->
+  > Cuantificará el error diagnóstico en referencias de no-especialistas, donde estudios previos sugieren que ~1 de 3 llega mal diagnosticada.
+  > 🔮 Predicción Fable: reposiciona el error diagnóstico en el handoff (no solo en la cabeza del que decide); ángulo subexplotado para tu línea de razonamiento clínico.
+- [ ] **Physician adoption patterns of AI-driven clinical decision support systems in urinary tract infection management** — _Scientific Reports · 11 jun 2026 · paper_ — [doi.org/10.1038/s41598-026-57724-7](https://doi.org/10.1038/s41598-026-57724-7) <!--star:clinical-reasoning|2026-06-14|t10-5-->
+  > Un CDSS redujo el mismatch antibiótico ~30%, pero ~33% de los médicos ignoró la recomendación; los mayores y de alto volumen adoptan menos.
+  > 🔮 Predicción Fable: el problema de la IA clínica ya no es accuracy sino adopción humana; predigo una ola de research sobre factores del clínico, terreno fértil para tu cruce psicología-decisión.
+- [ ] **Performance, safety, and limitations of multimodal large language models in wound image assessment** — _Scientific Reports · 11 jun 2026 · paper_ — [doi.org/10.1038/s41598-026-57441-1](https://doi.org/10.1038/s41598-026-57441-1) <!--star:clinical-reasoning|2026-06-14|t10-6-->
+  > Sobre 450 fotos clínicas, ChatGPT-4o lideró el dx (51.3%) y Gemini no respondió en 67–68% de los dominios: fiabilidad y seguridad aún frágiles.
+  > 🔮 Predicción Fable: la varianza brutal entre modelos volverá obligatorio reportar tasa de no-respuesta; úsalo para enseñar lectura crítica de papers IA en tu Competency Lab.
+- [ ] **Large language models and generative artificial intelligence in endodontics: a scoping review** — _Odontology · 10 jun 2026 · review_ — [doi.org/10.1007/s10266-026-01434-z](https://doi.org/10.1007/s10266-026-01434-z) <!--star:clinical-reasoning|2026-06-14|t10-7-->
+  > Los LLMs igualan al especialista en casos estándar pero caen en los complejos; RAG reduce alucinación y los autores piden tratarlos como adjutante asistivo, no decisor.
+  > 🔮 Predicción Fable: el encuadre LLM-como-adjutante (no autónomo) será el consenso 2026; encaja con tu mensaje de IA que aumenta, no reemplaza, el razonamiento.
+- [ ] **The GUIDE-CDSS framework: a comprehensive framework to GUIDE and evaluate the implementation of Clinical Decision Support Systems in healthcare** — _J Am Med Inform Assoc (JAMIA) · 11 jun 2026 · review_ — [doi.org/10.1093/jamia/ocag080](https://doi.org/10.1093/jamia/ocag080) <!--star:clinical-reasoning|2026-06-14|t10-8-->
+  > Síntesis de 23 revisiones en 8 determinantes de implementación de CDSS (relevancia, confianza, usabilidad, workflow, entrenamiento, recursos, estrategia).
+  > 🔮 Predicción Fable: checklist listo para auditar cualquier piloto de IA clínica; te sirve como rúbrica reutilizable para evaluar herramientas antes de adoptarlas en USAMEDIC.
+- [ ] **AI in orthodontic treatment planning: a systematic review comparing learning approaches** — _BMC Oral Health · 12 jun 2026 · review_ — [doi.org/10.1186/s12903-026-08854-x](https://doi.org/10.1186/s12903-026-08854-x) <!--star:clinical-reasoning|2026-06-14|t10-9-->
+  > Los sistemas basados en reglas/Bayes ofrecen más transparencia de razonamiento; los data-driven, más rendimiento: el viejo trade-off interpretabilidad vs accuracy.
+  > 🔮 Predicción Fable: el debate transparencia-vs-rendimiento migrará a la psiquiatría de precisión; un buen frame para discutir por qué un modelo dimensional explicable gana a una caja negra.
+- [ ] **Artificial intelligence and machine learning in sports medicine: mapping clinical tasks and assessing clinical maturity - a scoping review** — _BMC Medical Informatics and Decision Making · 12 jun 2026 · review_ — [doi.org/10.1186/s12911-026-03615-w](https://doi.org/10.1186/s12911-026-03615-w) <!--star:clinical-reasoning|2026-06-14|t10-10-->
+  > 97 estudios con alto rendimiento intra-muestra pero validación externa y calibración casi nunca reportadas: madurez clínica baja pese al hype.
+  > 🔮 Predicción Fable: 'rendimiento sin calibración' será el sello de la IA inmadura; perla recurrente para tu adversarial-stat-review y para enseñar a desconfiar del AUC solo.
+
+---
+
+## 💎 Perlas del día
+- El sesgo no se promptea: bajar temperature o pedirle a la IA que sea objetiva casi no protege contra el sesgo que el paciente le inyecta; lo que recupera precisión es arquitectura (separar anamnesis de juicio). El debiasing es estructural, no exhortativo —igual que en el BMSE.
+- Never-skilling > deskilling: el riesgo no es solo que el clínico experto pierda destreza, sino que el trainee NUNCA la adquiera porque la IA ya razona mejor que un R1. Hay que capturar un baseline de razonamiento ahora.
+- El cuello de botella se movió: en el análisis de error de un LLM clínico, 38% de las fallas fueron de razonamiento y solo el resto de conocimiento. Saber dejó de ser el límite; pensar bien lo es.
+- El error diagnóstico vive en el handoff: cuando ~1 de 3 referencias de no-especialistas llega con dx equivocado, buena parte de lo que llamamos mala cabeza es en realidad mala transferencia entre niveles de atención.
+- La enfermedad rojo-verde: confiar en el código de color del software (OCT) ancla el ojo antes que el dato crudo. La interfaz puede fabricar cierre prematuro tan eficazmente como un sesgo cognitivo humano.
+
+## ❓ Preguntas del día
+- ¿El cierre prematuro inducido por el framing del paciente es el mismo fenómeno en el humano y en el LLM, o solo se parecen? ¿Qué le dice esa simetría al modelo dual-process del BMSE dimensional?
+- Si separar System 1 (anamnesis) de System 2 (síntesis) recupera precisión en la IA, ¿deberíamos enseñar explícitamente a los residentes a desacoplar recolección de datos y juicio diagnóstico?
+- ¿Cómo medimos never-skilling en una residencia peruana antes de que la IA esté en todos los consultorios —qué baseline de razonamiento hay que capturar ya?
+- ¿Cuánto del error diagnóstico que atribuimos a mala cabeza es en realidad error de handoff o referencia (1 de 3 mal referidas)?
+- ¿Qué microintervención educativa estilo VISTA (una sola sesión) movería la precisión diagnóstica en ENAM/Residentado, y es medible con un AUC en internos USAMEDIC?
+
+## 💡 Ideas del día
+- (content) Reel/carrusel JafloMD 'Tu IA hereda tu sesgo': el estudio donde la preferencia del paciente derrumba hasta 39 puntos la precisión del LLM y por qué los prompts no lo salvan —solo la arquitectura System 1/System 2.
+- (book) Capítulo BMSE 'Doble proceso en silicio y en carne': usar el hallazgo System 1/System 2 del paper JMIR para anclar empíricamente el modelo dual-process del razonamiento dimensional y el cierre prematuro.
+- (paper) Paper de educación médica replicable en Perú estilo VISTA: microintervención de una sesión + caso estandarizado, midiendo Δ precisión diagnóstica con AUC en internos USAMEDIC/ENAM (recurso de costo cero).
+- (content) Serie AMAUTA 'Deskilling vs Never-skilling': qué pierde el clínico experto y qué nunca gana el trainee con IA, con un protocolo práctico de razonamiento sin muletas y captura de baseline.
+- (paper) Paper/marco de 'liability sink' y gobernanza de IA diagnóstica para comités de ética peruanos (HVLH): quién responde cuando la IA contribuye al error y cómo el consentimiento debe declarar su uso.
+
+---
+_Fuentes: PubMed · medRxiv (web) · WebSearch. Atribución a PubMed por sus términos de uso._
