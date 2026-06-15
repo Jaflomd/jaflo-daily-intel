@@ -1,0 +1,71 @@
+# ⭐ 🩺 Razonamiento Clínico — 2026-06-15
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/clinical-reasoning/2026-06-15.html
+
+## 🏆 Top 3
+- [ ] **Multimodal foundation models exploit text to make medical image predictions** — _Nature Communications · paper_ — [doi.org/10.1038/s41467-026-74207-5](https://doi.org/10.1038/s41467-026-74207-5) <!--star:clinical-reasoning|2026-06-15|t3-1-->
+  > El grupo de Rajpurkar, Rodman y Manrai (Harvard/BIDMC) probó 8 modelos multimodales con 1090 casos y mostró que la 'lectura de imagen' está manejada por el texto: la precisión sube monótonamente con cuánto texto informativo recibe el modelo, y un viñeta clínica engañosa hundió a o3 de 84% a 28% en casos que antes resolvía con la sola imagen. Jaflo, esto es anclaje y cierre prematuro de manual, pero dentro de la máquina: la IA no 'mira', se ancla al relato igual que un residente que lee la nota de admisión antes de ver al paciente. Es munición directa para tu línea de IA-en-razonamiento-clínico y para el libro de psicopatología/BMSE: el dual-process (Sistema 1 sesgado por el contexto) ahora tiene un análogo computacional medible que puedes enseñar. Úsalo como caso ancla en AMAUTA —'la IA también se ancla'— y como pieza de contenido JafloMD que contrasta heurística humana vs sesgo algorítmico con un dato brutal (84→28%). Es el ítem más citable y más enseñable de la ventana.
+- [ ] **Musculoskeletal surgeons use mixed reasoning rather than pure Bayesian strategies in clinical practice** — _PLoS One · Science of Variation Group · paper_ — [doi.org/10.1371/journal.pone.0351694](https://doi.org/10.1371/journal.pone.0351694) <!--star:clinical-reasoning|2026-06-15|t3-2-->
+  > 153 cirujanos (69% con >15 años de experiencia) resolvieron 8 escenarios de test-y-tratamiento; el razonamiento completamente no-bayesiano fue raro (8.6%) pero el bayesiano puro solo apareció en 29% —la mayoría reconoce la probabilidad previa pero la subpondera, sin actualización explícita. El Cronbach alfa de 0.43 es el hallazgo fino: el 'razonamiento clínico' no es un constructo único, sino habilidades distintas y dependientes del contexto. Jaflo, esto valida empíricamente la tesis central de tu BMSE/razonamiento dimensional: medir 'razonamiento' como un solo número es un error psicométrico; hay que escalonarlo por escenario, igual que HiTOP escalona la psicopatología. Para AMAUTA es oro: justifica enseñar Bayes como habilidad entrenable y específica de tarea (no como aptitud general), y te da el gancho para un módulo de 'subponderación del prior' en prep de ENAM/Residentado. También es semilla de paper propio: replicar el diseño en psiquiatras peruanos sería barato y publicable.
+- [ ] **Reproducibility of AI-Generated Antibiotic Recommendations in Standardized Clinical Scenarios: A Proof-of-Concept Experimental Study** — _International Journal of Antimicrobial Agents · paper_ — [doi.org/10.1016/j.ijantimicag.2026.107881](https://doi.org/10.1016/j.ijantimicag.2026.107881) <!--star:clinical-reasoning|2026-06-15|t3-3-->
+  > Sometieron 12 casos infectológicos 100 veces cada uno a ChatGPT-5.2 y a OpenEvidence (2400 interacciones) y midieron variabilidad con entropía de Shannon: en algunos escenarios la probabilidad de que dos respuestas idénticas difirieran llegó a 81%, y —el giro contraintuitivo— la reproducibilidad NO se alineó con la corrección. OpenEvidence acertó más (54.8% vs 35.7%, OR 12.4) pese a ser menos reproducible. Jaflo, esto rompe el supuesto que casi nadie audita: clínicos y educadores tratan al LLM como una calculadora determinista, y no lo es —mismo input, distinta receta. Es clave para tu línea de IA-en-investigación/educación y para precision-psychiatry (prescripción asistida): la reproducibilidad debe ser un criterio de gobernanza tan duro como la accuracy. Pieza de contenido perfecta para Aprendiz Experto ('por qué tu prompt clínico necesita ser corrido N veces') y advertencia metodológica para cualquier qbank o tutor de IA que estés construyendo.
+
+## 📡 Radar (10)
+- [ ] **Performance of GPT-based large language models in hepatocellular carcinoma stratification: liver function, BCLC staging, and treatment recommendations** — _Scientific Reports · paper_ — [doi.org/10.1038/s41598-026-56992-7](https://doi.org/10.1038/s41598-026-56992-7) <!--star:clinical-reasoning|2026-06-15|t10-1-->
+  > Los modelos optimizados para razonamiento (o1, o3) llegaron a 90.6% en recomendación terapéutica y en 9-14% de casos fueron más guideline-concordantes que el tumor board real.
+  > 🔮 Predicción Fable: el argumento '¿y si la IA razona mejor que el comité?' va a saltar de oncología a psiquiatría de precisión en 12-18 meses; posiciónate temprano con un estudio análogo en decisiones psicofarmacológicas.
+- [ ] **Validating LLM agents for automated Engel and ILAE scoring from clinical notes in epilepsy surgery** — _Epilepsia · paper_ — [doi.org/10.1002/epi.70341](https://doi.org/10.1002/epi.70341) <!--star:clinical-reasoning|2026-06-15|t10-2-->
+  > Un prompt 'definición sola' rindió 56.5%; agregar lógica temporal, causal y de adherencia (estructura de razonamiento explícita) lo subió a 94.7% —no basta saber la definición, hay que aplicar el razonamiento.
+  > 🔮 Predicción Fable: el 'context-aware prompting' es illness scripts para máquinas; el mismo principio que enseñas a humanos será el diseño dominante de agentes clínicos —escríbelo como puente conceptual en BMSE.
+- [ ] **Nurses' Clinical Decision-Making During PICC Dressing Application and Removal: A Qualitative Study (Dual Process Theory)** — _Seminars in Oncology Nursing · paper_ — [doi.org/10.1016/j.soncn.2026.152259](https://doi.org/10.1016/j.soncn.2026.152259) <!--star:clinical-reasoning|2026-06-15|t10-3-->
+  > Think-Aloud mapeado a Sistema 1/Sistema 2: lo rutinario fue intuitivo (moldeado por cultura de servicio y familiaridad), lo analítico emergió ante necesidades específicas del paciente, con procesos mixtos en la planificación anticipatoria.
+  > 🔮 Predicción Fable: el Think-Aloud + dual-process es el método cualitativo más infrautilizado en educación médica peruana; un estudio así con internos de USAMEDIC sería tu entrada barata a Medical Education.
+- [ ] **How productive emergency physicians work: a qualitative interview study of clinical workflow** — _Scand J Trauma Resusc Emerg Med · paper_ — [doi.org/10.1186/s13049-026-01638-w](https://doi.org/10.1186/s13049-026-01638-w) <!--star:clinical-reasoning|2026-06-15|t10-4-->
+  > Seis temas de la pericia en acción: conciencia situacional inicial, progresión paralela, descarga cognitiva (cognitive offloading), comunicación anticipatoria, uso selectivo de recursos y respuesta pragmática.
+  > 🔮 Predicción Fable: 'cognitive offloading' será el constructo puente entre razonamiento clínico y uso de IA; un carousel JafloMD que lo nombre va a pegar con residentes saturados.
+- [ ] **Performance of large language models in interpreting evidence-based clinical guidelines for lumbar disc herniation** — _European Spine Journal · paper_ — [doi.org/10.1007/s00586-026-10069-1](https://doi.org/10.1007/s00586-026-10069-1) <!--star:clinical-reasoning|2026-06-15|t10-5-->
+  > ChatGPT-5.1 vs Gemini vs Perplexity sobre guía NASS: Perplexity ganó en exactitud y tuvo la MENOR alucinación de referencias (4.15 vs 8.10 de ChatGPT) —el modelo 'orientado a fuentes' miente menos.
+  > 🔮 Predicción Fable: el 'Reference Hallucination Score' se va a estandarizar como métrica de confianza; adóptalo ya en tu pipeline de papers para auditar cualquier borrador asistido por IA.
+- [ ] **AI and machine learning in sports medicine: mapping clinical tasks and assessing clinical maturity — a scoping review** — _BMC Medical Informatics and Decision Making · review_ — [doi.org/10.1186/s12911-026-03615-w](https://doi.org/10.1186/s12911-026-03615-w) <!--star:clinical-reasoning|2026-06-15|t10-6-->
+  > 97 estudios con alto desempeño intra-muestra pero la calibración casi nunca se reporta y la validación prospectiva es rara: modelos para 'adjuntos de apoyo', no decisores autónomos.
+  > 🔮 Predicción Fable: la 'madurez clínica' (calibración + validación externa + integración de flujo) será el filtro que separe hype de herramienta; úsalo como rúbrica en tus revisiones de evidencia de IA.
+- [ ] **AI in orthodontic treatment planning: a systematic review comparing learning approaches** — _BMC Oral Health · review_ — [doi.org/10.1186/s12903-026-08854-x](https://doi.org/10.1186/s12903-026-08854-x) <!--star:clinical-reasoning|2026-06-15|t10-7-->
+  > Tradeoff nítido: los sistemas basados en conocimiento (reglas, fuzzy, bayesianos) ofrecen razonamiento transparente; los data-driven discriminan mejor pero son cajas negras —misma tensión interpretabilidad vs desempeño.
+  > 🔮 Predicción Fable: la interpretabilidad gana terreno en cuanto entra responsabilidad médico-legal; un híbrido 'reglas + ML' será el estándar enseñable para razonamiento asistido.
+- [ ] **"Spin" in randomized controlled trials of digital implant surgery: a meta-epidemiologic study** — _Evidence-Based Dentistry · paper_ — [doi.org/10.1038/s41432-026-01229-9](https://doi.org/10.1038/s41432-026-01229-9) <!--star:clinical-reasoning|2026-06-15|t10-8-->
+  > Spin en 40.2% de los abstracts de RCT; como el clínico ocupado decide leyendo solo el abstract, el lenguaje inflado se traduce directo en decisiones sesgadas (los p-values exactos reducen el spin).
+  > 🔮 Predicción Fable: 'leer solo el abstract' es el sesgo cognitivo más caro y menos enseñado; un módulo de appraisal anti-spin para ENAM/Residentado tiene demanda inmediata.
+- [ ] **AI in UK Medical Education: A Framework for Curriculum Reform** — _JMIR Medical Education · editorial_ — [doi.org/10.2196/81953](https://doi.org/10.2196/81953) <!--star:clinical-reasoning|2026-06-15|t10-9-->
+  > Framework de competencias para integrar IA al currículo médico; las brechas persistentes son sesgo algorítmico, ética de IA y razonamiento clínico asistido, con el cuello de botella en educadores no alfabetizados en IA.
+  > 🔮 Predicción Fable: el primer programa hispanohablante que certifique 'alfabetización de IA clínica' captura el mercado; ese es exactamente el solapamiento AMAUTA × Aprendiz Experto.
+- [ ] **Assessing the Third Wave of Generative AI: Performance on the 2024 Orthopaedic In-Training Examination** — _J Am Acad Orthop Surg · 2026;34(12) · paper_ — [doi.org/10.5435/JAAOS-D-25-00441](https://doi.org/10.5435/JAAOS-D-25-00441) <!--star:clinical-reasoning|2026-06-15|t10-10-->
+  > 8 de 11 modelos superaron al residente PGY5 y o1Pro-Deep-Research llegó a 90.8% (+17.8% sobre la media PGY5), pero los autores marcan límites en razonamiento clínico, experiencia vivida e interpretación de imágenes.
+  > 🔮 Predicción Fable: la IA ya gana exámenes de selección múltiple; la ventaja docente se mueve a lo que la IA no hace (razonamiento situado, examen físico, incertidumbre) —reorienta tu prep de ENAM hacia ahí.
+
+---
+
+## 💎 Perlas del día
+- El anclaje no es solo humano: una viñeta clínica engañosa hundió a o3 de 84% a 28% de precisión en imágenes que antes resolvía solo —la máquina sufre cierre prematuro como un residente que lee la nota antes de ver al paciente (Nat Commun).
+- Solo 29% del razonamiento de cirujanos expertos fue bayesiano puro; la mayoría reconoce el prior pero lo subpondera. El sesgo no es ignorar la probabilidad previa, es ignorarla a medias (PLoS One).
+- Reproducibilidad ≠ corrección: el LLM más consistente fue el menos exacto. Mismo prompt clínico, hasta 81% de probabilidad de respuesta distinta —correr el prompt una sola vez es un acto de fe (Int J Antimicrob Agents).
+- El salto de 56% a 95% en scoring automatizado vino de agregar 'lógica temporal, causal y de adherencia' al prompt: illness scripts para máquinas. La definición no razona; la estructura sí (Epilepsia).
+- El Cronbach alfa de 0.43 dice que 'razonamiento clínico' no es un constructo único sino habilidades dependientes de tarea —medirlo con un solo número es el mismo error psicométrico que medir psicopatología con un solo eje.
+
+## ❓ Preguntas del día
+- Si la IA se ancla al texto igual que un clínico, ¿el debiasing humano (considerar el opuesto, checklist) transfiere como técnica de prompting? ¿Y al revés?
+- ¿La 'subponderación del prior' que muestran los cirujanos es entrenable por tarea específica, o es un techo cognitivo estable? Diseño replicable en psiquiatras peruanos.
+- Si reproducibilidad y corrección se disocian, ¿cuántas corridas N necesita un prompt clínico antes de confiar en la moda de sus respuestas? ¿Existe un umbral de entropía 'seguro'?
+- ¿Qué fracción del razonamiento clínico experto es realmente 'cognitive offloading' bien calibrado, y cómo se enseña a descargar sin perder el control del caso?
+- ¿El 'Reference Hallucination Score' debería ser obligatorio en cualquier manuscrito o qbank asistido por IA antes de publicar?
+
+## 💡 Ideas del día
+- (content) Carousel JafloMD: 'La IA también se ancla' — el dato 84%→28% de o3 frente a una viñeta engañosa como espejo del cierre prematuro humano; cierra con la técnica de debiasing que sí transfiere.
+- (content) Reel/screencast Aprendiz Experto: 'Por qué tu prompt clínico necesita correrse N veces' — demostración en vivo de variabilidad (entropía) en recomendaciones de IA con el mismo input.
+- (paper) Paper replicable: medir razonamiento bayesiano vs no-bayesiano en psiquiatras y residentes peruanos con 8 viñetas (réplica del Science of Variation Group), reportando dependencia de contexto.
+- (book) Capítulo BMSE / razonamiento dimensional: 'Illness scripts para humanos y para máquinas' — el context-aware prompting como análogo computacional del script clínico, con el caso Engel/ILAE (56→95%).
+- (content) Módulo AMAUTA anti-spin para ENAM/Residentado: enseñar appraisal de abstracts (40% tienen spin) y la trampa de 'leer solo el abstract' como sesgo cognitivo entrenable.
+
+---
+_Fuentes: PubMed · medRxiv · Massachusetts Medical Society · Web (Google). Atribución a PubMed por sus términos de uso._
