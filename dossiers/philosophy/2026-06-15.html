@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-15 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">15 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">347</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Commoncog (Cedric Chin) · 2026-06-12 · blog</div>
+        <h3 class="r3-title">Sensemaking as the Heart of Expertise</h3>
+        <p class="r3-hook">Chin sostiene que los expertos no procesan más información que los novatos: construyen mejores marcos (frames) interpretativos, y la habilidad central de la pericia es decidir qué cuenta como dato relevante en la situación —Data-Frame Theory más Recognition-Primed Decision Making—. Para Javier esto es casi la tesis del BMSE/razonamiento dimensional dicha desde fuera de la medicina: por qué dos clínicos ven al mismo paciente distinto no es cantidad de conocimiento sino el frame con que entran, y por qué el experto pasa a sensemaking explícito justo cuando sus expectativas se violan. El mecanismo entrenable que propone —ver el caso, registrar tu propio frame, compararlo contra el del experto, iterar sobre los anclajes que fallaron— es un blueprint directo para AMAUTA/USAMEDIC y choca de frente con el reflejo de &#39;enseña más contenido&#39;. Úsalo como columna de un capítulo sobre construcción de marcos diagnósticos y como rediseño de rúbrica: no puntúes acierto/fallo, puntúa en qué frame se equivocó el residente.</p>
+        <a class="r3-link" href="https://commoncog.com/sensemaking-as-the-heart-of-expertise/" target="_blank" rel="noopener">↗ commoncog.com/sensemaking-as-the-heart-of-ex…</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">LessWrong · 2026-06-14 · blog</div>
+        <h3 class="r3-title">The Hidden Structures of Problems</h3>
+        <p class="r3-hook">Un catálogo de 31 arquetipos de problemas organizados por CÓMO resisten solución (interdependencia, desalineación, complejidad, motivación, sistemas), cada uno con nombre propio; la tesis estructural es que la dificultad nace de la estructura del problema, no del esfuerzo insuficiente, y reconocer el arquetipo predice si más esfuerzo ayuda o lo amplifica. Para Javier es herramienta de primera clase para razonamiento clínico dimensional: muchos casos HiTOP/RDoC son &#39;Smashed Watch&#39; (comorbilidades mutuamente dependientes) o &#39;Death Spiral&#39; (ciclos de refuerzo en psicopatología de red), y nombrar la estructura separa el diagnóstico de la solución, evitando aplicar la herramienta equivocada al problema equivocado. También aplica a la gestión del Lab y de los dos negocios de contenido en paralelo: distingue el problema que cede a empuje del que empeora con él (&#39;Leaky Pipe&#39;, &#39;Sleeping Dog&#39;). Úsalo como grilla para clasificar casos en el libro y como lente de auditoría estratégica antes de meter más horas a un frente que la estructura no va a soltar.</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/Cisy9STMoFYwboTsy/the-hidden-structures-of-problems" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/Cisy9STMoFYwboTsy/th…</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">LessWrong · 2026-06-14 · blog</div>
+        <h3 class="r3-title">Gradual Disempowerment at the Scale of One User</h3>
+        <p class="r3-hook">Describe el loop por el que delegar bien en una IA hace que tu propio juicio parezca menos necesario, lo que reduce la práctica, lo que acelera la atrofia, lo que vuelve más atractiva la siguiente delegación —y el punto crítico es que el loop se enciende precisamente cuando el consejo es BUENO, no cuando falla: Goodhart a la escala de un solo sistema nervioso—. Esto es tensión directa con el pilar ai-enhancement de Javier: si usar IA para investigar y enseñar atrofia el razonamiento clínico propio, el ROI se invierte sin que ningún momento individual lo delate. La lectura Luci no es &#39;usa menos IA&#39; sino preservar la habilidad como práctica activa: el contramovimiento que propone —redactar tu propia respuesta antes de consultar al modelo— es una regla de diseño importable a AMAUTA, donde un residente que diagnostica con IA sin haber entrenado el juicio independiente no desarrolla el músculo que la IA debería aumentar, no reemplazar. Úsalo como política explícita del Lab y como gancho de contenido o capítulo sobre por qué la humildad epistémica es un mecanismo de regulación, no una virtud blanda.</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/mcyZbyGYnap9ipA5S/gradual-disempowerment-at-the-scale-of-one-user" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/mcyZbyGYnap9ipA5S/gr…</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Marginal Revolution (Tyler Cowen) · 2026-06-15 · blog</div>
+          <div class="r10-title">General-purpose large language models outperform specialized clinical AI tools on medical benchmarks</div>
+          <div class="r10-line">Un estudio de Nature Medicine (12 jun 2026, DOI 10.1038/s41591-026-04431-5) enlazado por Cowen muestra que LLMs generales (GPT-5.2, Gemini 3.1 Pro, Claude Opus 4.6) superan consistentemente a tools clínicas especializadas (OpenEvidence, UpToDate Expert AI) en MedQA/HealthBench y queries reales —y los clínicos los prefirieron—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el cálculo de &#39;qué adoptar&#39; se invierte —orquestar bien un modelo general le rinde más a la psiquiatría de precisión que comprar verticales de nicho—; replícalo en casos HiTOP/RDoC y tienes paper más decisión de stack para el Lab.</div>
+          <a class="r10-link" href="https://marginalrevolution.com/marginalrevolution/2026/06/general-purpose-large-language-models-outperform-specialized-clinical-ai-tools-on-medical-benchmarks.html" target="_blank" rel="noopener">↗ marginalrevolution.com/marginalrevolution/20…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong · 2026-06-14 · blog</div>
+          <div class="r10-title">The Posture of Thought</div>
+          <div class="r10-line">Propone que la efectividad mental depende de la &#39;postura&#39; pre-cognitiva con que entras a pensar: dos ejes binarios (lean forward/backward × base narrow/wide) generan cuatro modos (probing, tracking, connecting, receiving), y la postura equivocada impide que ciertas habilidades se intenten siquiera.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es un diagnóstico fino para simulación y docencia —el residente en backward-narrow no genera diferenciales, el docente en forward-narrow no escucha—; vuélvelo un checklist de postura que el alumno fija antes de abrir el caso.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/Ks3A7Zcv5esNGjzN2/the-posture-of-thought" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/Ks3A7Zcv5esNGjzN2/th…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Figs in Winter (Massimo Pigliucci) · 2026-06-11 · blog</div>
+          <div class="r10-title">The art of ataraxia IVb — Carta a Herodoto, parte II (la cosmología curará tus miedos existenciales)</div>
+          <div class="r10-line">Pigliucci muestra que Epicuro, por confiar en la sensación directa, concluyó que el sol medía un pie, mientras Anaxágoras, confiando en la razón, infirió siglos antes que era enorme —la elección de fundamento epistémico determina qué errores sistemáticos cometes—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el caso histórico nítido del dilema fenomenología-vs-biomarcador en psiquiatría; gancho de capítulo y de clase sobre por qué el razonamiento dimensional necesita ambas fuentes de justificación, no elegir una.</div>
+          <a class="r10-link" href="https://figsinwintertime.substack.com/p/the-art-of-ataraxia-ivbletter-to" target="_blank" rel="noopener">↗ figsinwintertime.substack.com/p/the-art-of-a…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Integration and Implementation Insights (Faye Miller) · 2026-06-02 · blog</div>
+          <div class="r10-title">Cultivating epistemic humility in research teams</div>
+          <div class="r10-line">Miller nombra dos trampas que matan la humildad epistémica en equipos: la Confidence Trap (los sistemas premian certeza, no calibración) y la Silence Trap (el costo de disentir es asimétrico según jerarquía), con preguntas diagnósticas concretas para cada una.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la Silence Trap describe exactamente la dinámica de un comité de ética (HVLH) y de equipos de residencia; la pregunta &#39;¿quién no podría disentir abiertamente y cómo contribuiría de forma segura?&#39; es herramienta de gobernanza y de clase lista para usar.</div>
+          <a class="r10-link" href="https://i2insights.org/2026/06/02/epistemic-humility-in-teams/" target="_blank" rel="noopener">↗ i2insights.org/2026/06/02/epistemic-humility…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Marginal Revolution (Tyler Cowen) · 2026-06-12 · blog</div>
+          <div class="r10-title">Again, the research paper format will be dying out</div>
+          <div class="r10-line">Cowen enlaza un preprint de 37 autores (&#39;The Last Human-Written Paper&#39;) que propone reemplazar el paper por &#39;research packages&#39; ejecutables, atacando dos impuestos ocultos: el narrative tax (oculta experimentos fallidos) y el engineering tax (omite detalles necesarios para reproducir).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el formato de récord mutará hacia artefactos reproducibles por agentes; documentar ya tu pipeline de investigación en ese formato te da ventaja de leverage temprano frente a tus pares peruanos.</div>
+          <a class="r10-link" href="https://marginalrevolution.com/marginalrevolution/2026/06/again-the-paper-format-will-be-dying-out.html" target="_blank" rel="noopener">↗ marginalrevolution.com/marginalrevolution/20…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Marginal Revolution (Alex Tabarrok) · 2026-06-14 · blog</div>
+          <div class="r10-title">The Cultural War is a Civil War</div>
+          <div class="r10-line">Tabarrok argumenta que politizar el financiamiento científico erosiona la capacidad de investigación porque el precedente institucional —no la agenda de turno— es el activo real, y un peer review degradado a &#39;consultivo&#39; lo hereda la próxima administración de signo contrario.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el mismo patrón de captura política vive en CONCYTEC/RENACYT; el framework de &#39;reglas robustas a la identidad del partido que las aplica&#39; te da lenguaje de advocacy para defender la autonomía del peer review peruano.</div>
+          <a class="r10-link" href="https://marginalrevolution.com/marginalrevolution/2026/06/the-cultural-war-is-a-civil-war.html" target="_blank" rel="noopener">↗ marginalrevolution.com/marginalrevolution/20…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Richard Ngo) · 2026-06-09 · blog</div>
+          <div class="r10-title">Towards a Formal Scientific Epistemology</div>
+          <div class="r10-line">Ngo propone que la inducción lógica de Garrabrant —un mercado donde algoritmos compiten y los exitosos ganan influencia— modela mejor la ciencia que el Bayesianismo clásico: premia la predicción adelantada sobre la retrodicción y permite que coexistan teorías nuevas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: te da vocabulario formal para argumentar por qué HiTOP/RDoC merecen más peso que el DSM dado el patrón de evidencia acumulada; munición epistemológica para el libro y para la docencia de razonamiento científico.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/NKFtDgSH7iZo8skTK/towards-a-formal-scientific-epistemology" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/NKFtDgSH7iZo8skTK/to…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Practical Stoicism Podcast (Tanner Campbell) · 2026-06-13 · podcast</div>
+          <div class="r10-title">How to Engage in Politics Like a Stoic</div>
+          <div class="r10-line">Campbell aplica la dicotomía estoica del control al desacuerdo político: &#39;las personas asienten a lo que creen apropiado para ellas&#39;, así que la diferencia de valores no es irracionalidad sino perspectiva del otro —reconocerlo desactiva el marco de &#39;enemigo irracional&#39;—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es debiasing de hostilidad listo para el Competency Lab (comunicación) y un marco narrativo limpio (synkatathesis, asentimiento racional) para un episodio o carrusel sin caer en moralina.</div>
+          <a class="r10-link" href="https://www.stoicismpod.com/" target="_blank" rel="noopener">↗ www.stoicismpod.com</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong · 2026-06-14 · blog</div>
+          <div class="r10-title">Low-Temperature Bunk</div>
+          <div class="r10-line">Argumenta que las afirmaciones levemente erróneas de gente inteligente (&#39;bunk de baja temperatura&#39;) tienen valor epistémico: el error cercano a la verdad perturba el espacio de hipótesis del oyente y genera pensamiento nuevo, a diferencia del error grosero (se descarta) o la respuesta canónica (no genera nada).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: justifica diseñar casos de simulación con diagnóstico casi-correcto-pero-errado en vez de soluciones limpias; el error de baja temperatura es mejor combustible de aprendizaje clínico que el caso de manual.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/jpszhrrvwLwv9uvGd/low-temperature-bunk" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/jpszhrrvwLwv9uvGd/lo…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neural Horizons (Peter Benson, Substack) · 2026-06-01 · blog</div>
+          <div class="r10-title">A New Anthropology of Mind: Human-Machine Ecologies</div>
+          <div class="r10-line">Benson propone que la cognición ya opera dentro de ecologías humano-máquina que ENTRENAN (no solo extienden) el juicio, y aporta dos taxonomías diagnósticas (Cognitive Susceptibility, Robo-Psychology) que mapean cómo las vulnerabilidades humanas se acoplan a comportamientos de la IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el complemento estructural del ítem de Gradual Disempowerment; juntos te dan un marco para diseñar herramientas IA en AMAUTA que preserven —no atrofien— el razonamiento clínico del residente.</div>
+          <a class="r10-link" href="https://neuralhorizons.substack.com/p/a-new-anthropology-of-mind-human" target="_blank" rel="noopener">↗ neuralhorizons.substack.com/p/a-new-anthropo…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El experto no procesa más información que el novato: construye mejor el marco. Los datos no existen objetivamente en el caso —el frame con que entras decide qué cuenta como dato— y la pericia es entrar en sensemaking explícito justo cuando tus expectativas se violan (Commoncog).</li><li>El loop por el que la IA atrofia tu juicio se enciende cuando el consejo es BUENO, no cuando falla: cada delegación es racional, la atrofia es invisible y no hay momento de traspaso que la delate. Goodhart a la escala de un solo sistema nervioso (LessWrong).</li><li>La dificultad de un problema nace de su estructura, no de tu falta de esfuerzo. Hay arquetipos donde empujar más lo AMPLIFICA (&#39;Leaky Pipe&#39;, &#39;Sleeping Dog&#39;): nombrar la estructura te dice, antes de actuar, si el esfuerzo ayuda o hace daño (LessWrong).</li><li>Elegir tu fundamento epistémico no es neutral: Epicuro confió en los sentidos y concluyó que el sol medía un pie; Anaxágoras confió en la razón y acertó siglos antes. El fundamento determina qué errores sistemáticos cometes —y la psiquiatría elige entre fenómeno y biomarcador todos los días (Figs in Winter).</li><li>Un LLM general venció a tools clínicas especializadas (OpenEvidence, UpToDate Expert AI) en benchmarks médicos Y los clínicos lo prefirieron: la especialización por dominio sacrificó la amplitud justo donde el caso exigía integrar fisiopatología, farmacología y comunicación (Nature Medicine vía Marginal Revolution).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la pericia es construcción de marcos y no acumulación de datos, ¿el entrenamiento correcto en AMAUTA es la comparación reflexiva de frames (ver caso → registrar mi marco → contrastar con el del experto) en vez de más contenido?</li><li>¿Cuánto de mi razonamiento clínico se atrofia por delegar en IA precisamente cuando el consejo es bueno, y basta la regla &#39;redacto mi juicio antes de consultar al modelo&#39; para preservar el músculo?</li><li>¿Qué arquetipos de &#39;The Hidden Structures of Problems&#39; describen mejor mis casos HiTOP/RDoC —&#39;Smashed Watch&#39; para comorbilidad mutuamente dependiente, &#39;Death Spiral&#39; para ciclos de refuerzo en psicopatología de red— y en cuáles empeoro si empujo?</li><li>Si la fenomenología confía en el reporte del paciente (Epicuro) y los biomarcadores en la inferencia (Anaxágoras), ¿qué errores sistemáticos comete cada fundamento y cómo los combino sin que uno cancele al otro en razonamiento dimensional?</li><li>Si un LLM general supera a las tools de psiquiatría de precisión de nicho, ¿dejo de invertir en herramientas verticales y enfoco el Lab en orquestar bien un modelo general —y lo convierto en paper replicando el benchmark en casos dimensionales?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel &#39;El experto no sabe más: ve distinto&#39; — Data-Frame Theory de Chin aplicada a por qué dos psiquiatras leen al mismo paciente diferente; cierra con el ejercicio de frame-comparison reflexiva para residentes.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo/ítem BMSE &#39;Arquetipos del problema clínico&#39; — importar los 31 arquetipos de &#39;The Hidden Structures of Problems&#39; para clasificar casos por su estructura de resistencia (no por fenotipo) y decidir cuándo más esfuerzo diagnóstico ayuda o lo amplifica.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio AMAUTA: ¿entrenar comparación reflexiva de frames (sensemaking) calibra mejor el diagnóstico de residentes que enseñar metacognición abstracta? Diseño que dialoga con Pelaccia/Norman (el error es knowledge gaps, no velocidad de Sistema 1).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel &#39;Tu IA te mejora justo antes de empeorarte&#39; — el loop de Gradual Disempowerment y el contramovimiento (redacta tu juicio antes de consultar); humildad epistémica como mecanismo de regulación, sin caer en autoayuda.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Replicar el benchmark de Nature Medicine en razonamiento psiquiátrico dimensional: ¿un LLM general supera a tools de precisión en casos HiTOP/RDoC y los clínicos lo prefieren? Decide el stack de IA del Lab y produce evidencia citable.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Commoncog (Cedric Chin)</span><span class="tag ">LessWrong / GreaterWrong</span><span class="tag ">Marginal Revolution (Substack)</span><span class="tag ">Figs in Winter (Massimo Pigliucci, Substack)</span><span class="tag ">Integration and Implementation Insights (i2insights)</span><span class="tag ">Practical Stoicism Podcast</span><span class="tag ">Neural Horizons (Substack)</span><span class="tag highlight">Nature Medicine (vía Marginal Revolution)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · LessWrong / GreaterWrong · Marginal Revolution (Substack) · Commoncog · Figs in Winter (Substack) · Integration and Implementation Insights (i2insights) · Practical Stoicism Podcast · Neural Horizons (Substack) · Nature Medicine. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 15 de junio de 2026.</div>
+</div>
+</body>
+</html>
