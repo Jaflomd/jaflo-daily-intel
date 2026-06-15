@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-15 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">15 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Nurse Education Today · 2026-06-05 · review</div>
+        <h3 class="r3-title">Cómo se evalúa el razonamiento clínico en educación basada en simulación: revisión integrativa</h3>
+        <p class="r3-hook">Jaflo, esta revisión integrativa (35 estudios, Whittemore &amp; Knafl) audita CÓMO se mide el razonamiento clínico dentro de la simulación y el veredicto es demoledor: variabilidad masiva en diseño, anclaje teórico inconsistente y mezcla de instrumentos validados con medidas caseras, casi todo en cuidados agudos con pregrado. Esto le pega directo a tu trabajo de /simulation (INACSL + AMEE) y al núcleo del BMSE/razonamiento dimensional: la mayoría de simulaciones evalúan que el alumno &#39;haga&#39;, no que &#39;razone&#39;, y cuando dicen medir razonamiento clínico no estandarizan ni orientación, ni modalidad, ni debriefing. El gap es tu palanca: hay espacio para un marco propio de evaluación de razonamiento en simulación con anclaje teórico explícito y reporting estandarizado, vendible a AMAUTA y publicable como paper de método. Úsalo como justificación de Introduction y como checklist de diseño para cada estación que armes este ciclo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.nedt.2026.107222" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107222</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-06-12 · paper</div>
+        <h3 class="r3-title">Dependencia de ecografía vs. competencia por reparos anatómicos en entrenamiento de acceso vascular: encuesta multicéntrica</h3>
+        <p class="r3-hook">Jaflo, 682 anestesistas y docentes en China Oriental: el factor que más predijo preferir ecografía de por vida fue el MÉTODO con que aprendiste primero (aOR 6.83 para yugular interna, 5.54 para radial), y el 43% reportó ansiedad para canalizar sin ecógrafo pese a que el 90% reconoce que los reparos anatómicos importan. La transferencia a tu tesis de neurociencia educativa es directa y potente: el primer andamiaje cablea la preferencia y atrofia el músculo no usado; si formas médicos que razonan con IA desde el día 1, fabricas dependencia igual que la ecografía fabricó incompetencia en reparos. Esto es oro para tu wedge &#39;aprender en la era de la IA&#39; y para el discurso ENAM/Residentado sobre cuándo permitir y cuándo prohibir muletas tecnológicas. Es el mejor caso natural que vas a encontrar para argumentar diseño de currículo con desconexión deliberada de la herramienta.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09702-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09702-w</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Systematic Reviews · 2026-06-12 · paper</div>
+        <h3 class="r3-title">Consenso de tres LLMs para cribado de títulos y resúmenes en revisiones sistemáticas: prueba de concepto</h3>
+        <p class="r3-hook">Jaflo, prueba de concepto que solo acepta la decisión automática cuando ChatGPT, Gemini y Claude coinciden los tres: ~4 de cada 5 abstracts quedaron clasificados automáticamente, con desempeño SUPERIOR a cualquier LLM solo y mejoras estadísticamente significativas en todas las métricas, reservando al humano solo para los discordantes. Esto es palanca pura para tu pilar ai-enhancement y para la maquinaria del lab: lit-search, la fábrica de papers (S0→S7) y los 7 dominios de Inteligencia Diaria pueden adoptar el patrón de ensemble-con-veredicto-unánime para cribar a escala sin perder recall. Replícalo como nota metodológica publicable (tú ya operas multi-LLM a diario, tienes el caso de uso vivo) y, de paso, te da un argumento limpio para enseñar a residentes que el consenso entre modelos heterogéneos bate al modelo único. Implementación: usa el criterio de parada por umbral de desempeño que proponen antes de soltar el cribado automático.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s13643-026-03228-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s13643-026-03228-4</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Int J Antimicrobial Agents · 2026-06-12 · paper</div>
+          <div class="r10-title">Reproducibilidad de recomendaciones antibióticas generadas por IA: ChatGPT-5.2 vs. OpenEvidence (2.400 interacciones)</div>
+          <div class="r10-line">Sometieron 12 casos 100 veces a cada herramienta: OpenEvidence fue MÁS correcto (54.8% vs 35.7%) pero MENOS reproducible que ChatGPT; reproducibilidad y exactitud no se alinean.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: &#39;reproducibilidad ≠ exactitud&#39; será el principio central de toda alfabetización en IA clínica; conviértelo en módulo fijo de AMAUTA antes de que sea cliché.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ijantimicag.2026.107881" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ijantimicag.2026.107881</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Am Coll Clin Pharm · 2026-07 · review · 2026-06-12</div>
+          <div class="r10-title">Prescribing Caution: crítica a OpenEvidence para preguntas sobre medicación</div>
+          <div class="r10-line">Dos ejemplos ilustrativos exponen errores de exactitud y de resumen de fuentes en OpenEvidence justo en contenido farmacoterapéutico, la herramienta que más crece entre estudiantes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la adopción de OpenEvidence en pregrado superará a la verificación crítica; un carrusel tuyo mostrando un error real tendría tracción inmediata.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jac5.70237" target="_blank" rel="noopener">↗ doi.org/10.1002/jac5.70237</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 2026-06-12 · paper</div>
+          <div class="r10-title">Faculty vs. LLMs calificando transcripciones clínicas reales (estudio comparativo piloto)</div>
+          <div class="r10-line">Calificar transcripciones (no video) ahorró tiempo y concordó bien con el docente (ICC 0.83), pero los LLMs fueron inconsistentes: mismo prompt, score distinto en 82-90% de los casos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el LLM-como-evaluador llega a tu qbank y simulaciones, pero el humano-en-el-loop seguirá siendo obligatorio en lo de alto riesgo durante años.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/83376" target="_blank" rel="noopener">↗ doi.org/10.2196/83376</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-12 · paper</div>
+          <div class="r10-title">El ambiente de aprendizaje clínico moldea el capital psicológico del estudiante (SEM, n=2.589)</div>
+          <div class="r10-line">La auto-percepción social del alumno fue el mayor predictor positivo de capital psicológico; la percepción de los DOCENTES fue predictor NEGATIVO consistente (cultura jerárquica china).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el dato contraintuitivo (más profesor jerárquico resta) es un gancho perfecto para tu contenido sobre diseño de ambiente seguro de aprendizaje.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09670-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09670-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-12 · paper</div>
+          <div class="r10-title">De pandemia a endemia: estudio longitudinal multinacional del impacto de COVID-19 en la educación de posgrado</div>
+          <div class="r10-line">180 programas ACGME-I, 3 años, modelos mixtos: no hubo &#39;vuelta a la normalidad&#39; sino reversión selectiva con innovaciones virtuales que persistieron; extensiones de formación cayeron de 43% a 23%.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el marco de ingeniería de resiliencia aplicado a currículo es un ángulo limpio para tu línea de educación médica de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09657-y" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09657-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry · 2026-06-12 · paper</div>
+          <div class="r10-title">¿Cómo responden los LLMs preguntas sobre TDAH? ChatGPT vs. Gemini vs. DeepSeek</div>
+          <div class="r10-line">22 preguntas frecuentes de TDAH evaluadas por dos psiquiatras infantiles: precisión global alta (ChatGPT 91%, Gemini 89%, DeepSeek 87%) pero diferencias claras en utilidad y confiabilidad clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: este paper es munición directa para tu wedge de neurodivergencia adulta; el 9% que falla es exactamente el contenido que te diferencia del divulgador genérico.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08280-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08280-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Dental Education · 2026-06-12 · paper</div>
+          <div class="r10-title">Utilidad educativa de LLMs en odontología operatoria vía MCQ: exactitud, semántica y legibilidad</div>
+          <div class="r10-line">150 MCQs contra 5 LLMs: ChatGPT-4o y Gemini 2.5 Flash lideran en exactitud y alineación semántica, con métricas clásicas de clasificación + BLEU/coseno + Flesch.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el pipeline de evaluación LLM-sobre-MCQ es exactamente el QA que necesita tu encaps-mcq-factory; adáptalo como auditoría automatizada de ítems.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/eje.70213" target="_blank" rel="noopener">↗ doi.org/10.1111/eje.70213</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 2026-06-12 · review</div>
+          <div class="r10-title">Recomendaciones para estrategias de educación y concientización en enfermedades raras: scoping review</div>
+          <div class="r10-line">58 fuentes (PRISMA-ScR): la recomendación dominante (84%) fue educación y formación profesional, por encima de políticas públicas y tecnología digital.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: &#39;la educación del profesional es la palanca #1&#39; valida tu apuesta por formación docente; reusable como cita en grants de educación de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/79027" target="_blank" rel="noopener">↗ doi.org/10.2196/79027</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Child Adolesc Mental Health · 2026-06-13 · meta-analysis</div>
+          <div class="r10-title">Entrenamiento atencional y función ejecutiva en niños con TDAH: revisión sistemática y meta-análisis</div>
+          <div class="r10-line">5 RCTs (n=289; 3 en meta): el entrenamiento atencional mejoró el compuesto ejecutivo global, la regulación conductual y el índice metacognitivo, aunque con pocos estudios y heterogeneidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: meta pequeña pero directa a tu núcleo TDAH; úsala con cautela (k=3) como anclaje de un post sobre &#39;entrenar la atención sí mueve la metacognición&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2989/17280583.2026.2663026" target="_blank" rel="noopener">↗ doi.org/10.2989/17280583.2026.2663026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Subst Use Addict Treat · 2026-06-12 · paper</div>
+          <div class="r10-title">Agente de IA para entrevista motivacional: procesos conversacionales asociados a &#39;change talk&#39; en urgencias</div>
+          <div class="r10-line">98 pacientes, 105 sesiones con GPT-4 codificadas con MITI/MISC: el agente mantuvo estilo MI-consistente y la profundidad reflexiva + preguntas abiertas predijeron más &#39;change talk&#39; y mayor disposición al cambio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: enseñar comunicación empática vía agente de IA es un formato escalable para AMAUTA; el marco proceso-orientado es replicable para evaluar cualquier chatbot didáctico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.josat.2026.210053" target="_blank" rel="noopener">↗ doi.org/10.1016/j.josat.2026.210053</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Reproducibilidad ≠ exactitud: en antibióticos (42285312), OpenEvidence fue MÁS correcto (54.8% vs 35.7%) pero MENOS reproducible que ChatGPT. Enseña a tus residentes a no confundir una respuesta &#39;estable&#39; con una respuesta correcta — son ejes ortogonales.</li><li>El primer método con que aprendes te cablea de por vida: en acceso vascular (42277807), aprender con ecografía multiplicó por ~6.8 la preferencia permanente por ecografía y dejó al 43% ansioso sin ella. Si formas médicos que razonan con IA desde el día 1, atrofias el músculo sin IA.</li><li>Más docente jerárquico puede RESTAR: en un SEM de 2.589 estudiantes (42286587), la percepción de los profesores fue predictor negativo del capital psicológico; el factor protector fue la auto-percepción social del propio alumno. El ambiente entre pares pesa más que la figura del maestro.</li><li>La trampa Kirkpatrick sigue viva: la educación sube confianza y proceso pero rara vez mueve outcomes duros. El consenso de 3 LLMs heterogéneos (42286747) clasificó ~80% de abstracts mejor que cualquier modelo solo — el ensemble bate al individuo y solo necesitas humano para los discordantes.</li><li>La inconsistencia de los LLMs como evaluadores es medible y grande: mismo prompt, score distinto en 82-90% de las transcripciones (42285034), pese a buena concordancia promedio con el docente. La media engaña; la varianza es el riesgo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿La simulación que diseñas en AMAUTA mide razonamiento clínico real o solo desempeño/satisfacción? La revisión integrativa (42275957) muestra que casi nadie estandariza cómo evaluar CR en simulación.</li><li>Si el LLM califica con buena concordancia promedio pero baja consistencia (42285034), ¿dónde exactamente pones el humano-en-el-loop en tu encaps-mcq-factory y tus rúbricas?</li><li>¿Estamos criando una generación que no sabe razonar sin IA, igual que los anestesistas que ya no canalizan sin ecógrafo (42277807)? ¿Cuándo desconectas deliberadamente la herramienta en tu currículo?</li><li>¿Cuál es el nivel Kirkpatrick HONESTO de tus cursos ENAM/Residentado: conocimiento, conducta, o solo confianza? ¿Tienes alguna métrica de nivel 3-4?</li><li>¿Cómo le explicas a una familia con TDAH que ChatGPT acierta el ~91% (42286570) pero el 9% restante puede ser justo lo peligroso, sin caer ni en el hype ni en el pánico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel &#39;Reproducibilidad ≠ Exactitud&#39;: por qué tu IA médica puede ser perfectamente consistente y estar equivocada, con el caso antibiótico (42285312) + la crítica a OpenEvidence (42286997) como evidencia. Cierra con regla práctica para residentes.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de método: marco de evaluación del razonamiento clínico en simulación con anclaje teórico explícito y reporting estandarizado, explotando el gap documentado por la revisión integrativa (42275957). Vendible a AMAUTA y publicable.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de neurociencia educativa &#39;El músculo que se atrofia&#39;: transferir el hallazgo de dependencia tecnológica del acceso vascular (42277807) al aprendizaje asistido por IA, con principio de desconexión deliberada de la herramienta.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie &#39;IA y TDAH para adultos&#39;: qué tan confiable es preguntarle a ChatGPT/Gemini sobre TDAH (42286570), anclada a tu wedge de neurodivergencia adulta; el 9% que falla es tu diferenciador frente al divulgador genérico.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica: adoptar el protocolo de consenso multi-LLM con veredicto unánime (42286747) como capa de cribado en la fábrica de papers y los 7 dominios de Inteligencia Diaria, reportando recall, ahorro y criterio de parada. Tú ya tienes el caso de uso vivo.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BMC Medical Education</span><span class="tag ">Nurse Education Today</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Medical Teacher</span><span class="tag highlight">Academic Medicine</span><span class="tag highlight">Medical Education Online</span><span class="tag ">European Journal of Dental Education</span><span class="tag ">Systematic Reviews</span><span class="tag ">BMC Psychiatry</span><span class="tag ">Journal of Substance Use and Addiction Treatment</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities vía MCP). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 15 de junio de 2026.</div>
+</div>
+</body>
+</html>
