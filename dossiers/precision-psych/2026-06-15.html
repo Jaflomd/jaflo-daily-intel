@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-06-15 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">15 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">57</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">57</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Medicine · 12 jun 2026 · rct · 2026-06-12</div>
+        <h3 class="r3-title">ECA positivo en Nature Medicine: el agonista dopaminérgico pramipexol mejora la anhedonia transdiagnóstica —tratas la dimensión, no la etiqueta</h3>
+        <p class="r3-hook">Un ensayo doble ciego controlado con placebo (n=82, Unit for Biological and Precision Psychiatry de Lund) randomizó a pacientes con depresión mayor, distimia o depresión bipolar y anhedonia clínicamente significativa (SHAPS elevado) a pramipexol add-on o placebo por 9 semanas: el pramipexol redujo la anhedonia con diferencia media de -4.04 puntos SHAPS (p=0.006, Hedges g=0.62), aumentó la actividad física ligera y preservó la activación estriatal ventral relacionada con recompensa como engagement del target, con efecto sostenido a 6 meses de extensión abierta. Para ti esto es la prueba de concepto que tu libro dimensional necesita: la anhedonia no es un ítem de la depresión, es una dimensión RDoC de recompensa que cruza tres diagnósticos DSM y que ahora se mueve con un fármaco que apunta al mecanismo —el circuito dopaminérgico estriatal— no a la categoría. Úsalo como caso testigo del capítulo &#39;dimensión &gt; categoría&#39;: mismo target biológico, misma intervención, distintas cajas nosológicas. Es también munición para tu pilar precision-psychiatry y para una clase de Residentado sobre por qué estratificar por síntoma-mecanismo (anhedonia) supera a tratar por rótulo (MDD). (Según PubMed)</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41591-026-04465-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04465-9</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Postgraduate Medical Journal · 12 jun 2026 · meta-analysis · 2026-06-12</div>
+        <h3 class="r3-title">Metaanálisis nivel 1a (14 ECAs): la enseñanza con IA supera a la tradicional en conocimiento, habilidad y satisfacción —pero los autores admiten el sesgo de publicación</h3>
+        <p class="r3-hook">Una revisión sistemática + metaanálisis de 14 ECAs (1116 estudiantes, 558 vs 558) encontró que la enseñanza basada en IA supera a la tradicional en conocimiento (SMD 0.36), habilidades (SMD 0.78) y satisfacción (SMD 0.97), con el efecto más grande —y creciente— en cursos prácticos; pero los propios autores marcan alta heterogeneidad y probable sesgo de publicación y reporte. Para AMAUTA/USAMEDIC esto es la evidencia dura que valida tu apuesta IA-first, y la frase de cierre que te diferencia: el efecto es real y máximo en skills, no en teoría, así que tu curso debería rediseñarse alrededor de skills labs aumentados con IA —no de más clase grabada—. Es el complemento honesto del contrapeso quirúrgico de anteayer: la dirección del efecto se confirma a nivel 1a, pero la base de evidencia es joven y autoseleccionada. Vende la señal, nombra el caveat: esa es tu voz que no sobrevende, y es contenido + posicionamiento de alto leverage para tus dos negocios. (Según PubMed)</p>
+        <a class="r3-link" href="https://doi.org/10.1093/postmj/qgag077" target="_blank" rel="noopener">↗ doi.org/10.1093/postmj/qgag077</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Neurology, Neurosurgery &amp; Psychiatry · 12 jun 2026 · paper · 2026-06-12</div>
+        <h3 class="r3-title">JNNP (N=4578): apatía, depresión y anhedonia son disociables —y nace ADAM, un instrumento de 10 ítems que las separa con IA (AUC&gt;0.90)</h3>
+        <p class="r3-hook">Analizando 7 datasets (N=4578) con el Apathy Motivation Index, el BDI y el SHAPS, un algoritmo de machine learning identificó los 10 ítems no redundantes que disocian &#39;apatía pura&#39;, &#39;depresión pura&#39; y &#39;anhedonia pura&#39; con AUC&gt;0.90, revelando una estructura de cinco factores —depresión, anhedonia y tres dominios de apatía (conductual, social, emocional)— donde la apatía emocional correlaciona negativamente con la depresión y se liga a empatía afectiva reducida, no a embotamiento por antidepresivos. El producto es ADAM (Apathy-Depression-Anhedonia Measure), una herramienta breve y desplegable de fenotipado dimensional preciso. Para ti es oro doble: primero, valida empíricamente la tesis de tu BMSE/razonamiento dimensional —constructos que la clínica fusiona son separables si mides bien—; segundo, y esta es la jugada de la semana, ADAM mide la misma dimensión (anhedonia) que el ECA de pramipexol mueve. Tienes en un solo dossier el instrumento para medir Y el fármaco para tratar una dimensión RDoC: el pinza medición+tratamiento que necesita tu capítulo dimensional. Úsalo como tabla del capítulo y como gancho de carrusel. (Según PubMed)</p>
+        <a class="r3-link" href="https://doi.org/10.1136/jnnp-2025-337245" target="_blank" rel="noopener">↗ doi.org/10.1136/jnnp-2025-337245</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advanced Science · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Neuromodulación guiada por red individual: la TMS adaptativa con decodificación de estado cerebral mejora la memoria de trabajo solo a la frecuencia óptima de cada persona</div>
+          <div class="r10-line">TMS+fMRI concurrente con mapeo de red individualizado y decodificación en tiempo real determinó la frecuencia óptima por sujeto (entre 5/10/20 Hz); en un crossover, solo la frecuencia óptima mejoró la memoria de trabajo, con gran variabilidad interindividual —no existe un &#39;mejor&#39; universal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la neuromodulación de precisión migrará de &#39;protocolo fijo&#39; a &#39;frecuencia decodificada por red individual&#39;; dato fino para tu línea de neuromodulación y para desinflar el marketing de TMS de talla única.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/advs.202523009" target="_blank" rel="noopener">↗ doi.org/10.1002/advs.202523009</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Evidencia in vivo (PET): receptor muscarínico M1 reducido en esquizofrenia —el biomarcador que podría decidir quién recibe COBENFY/xanomeline</div>
+          <div class="r10-line">Con el ligando PET 11C-LSN3172176 (16 pacientes vs 16 controles), la disponibilidad de M1 fue menor en esquizofrenia en cortex y subcortex (-13% a -19%, efectos grandes), con un subgrupo de &gt;20% de déficit —justo cuando xanomeline (agonista M1/M4, primer antipsicótico no dopaminérgico) ya está aprobado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el M1-PET se perfila como biomarcador de estratificación para la era muscarínica; mecanismo-no-etiqueta para tu libro y caso de &#39;estratifica antes de prescribir&#39; para Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.06.002" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.06.002</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Paciente estandarizado IA: un chatbot GPT-4o con rol de paciente mejora la comunicación empática en estudiantes de medicina en una sola sesión</div>
+          <div class="r10-line">Estudio cuasi-experimental (162 estudiantes, 4 escenarios: decisión compartida, entrevista motivacional, ITS, malas noticias): una sola conversación con GPT-4o role-prompted subió la competencia comunicativa autopercibida (d=0.58) y el feedback de IA fue valorado como útil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el paciente estandarizado por IA escalará el entrenamiento relacional a costo marginal cero; pieza directa para tu simulación AMAUTA —prueba el híbrido IA-para-volumen + humano-para-lo-no-verbal.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/88092" target="_blank" rel="noopener">↗ doi.org/10.2196/88092</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Biomarcadores acústicos del habla para depresión: un set compacto, multi-cohorte (N=1857) y longitudinal a 8 semanas</div>
+          <div class="r10-line">De 6373 features acústicas, una reducción de redundancia dejó 23 marcadores representativos; el análisis por dimensión-síntoma halló sets no superpuestos (somático y ánimo deprimido los más estables) y 38 features con trayectorias de recuperación heterogéneas a 8 semanas —fenotipado digital específico de síntoma.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el habla será el biomarcador digital más barato y escalable de monitoreo en depresión; encaja con tu tesis de precisión accesible y con tu interés en fenotipado digital.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121374" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121374</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">IA generativa para razonamiento diagnóstico: radiografías de tórax &#39;contrafactuales&#39; mejoran el aprendizaje y la calibración de confianza</div>
+          <div class="r10-line">Imágenes contrafactuales (la misma anatomía del paciente alterada para mostrar otra condición realista: sano, neumonía, derrame) mejoraron exactitud y alinearon confianza con acierto en 42 aprendices, revelando debilidades diagnósticas invisibles a la enseñanza convencional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el &#39;qué pasaría si&#39; generativo se vuelve un método de enseñanza de razonamiento clínico; idea transferible a tu contenido y a casos contrafactuales en psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09597-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09597-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Translational Psychiatry · 12 jun 2026 · rct · 2026-06-12</div>
+          <div class="r10-title">Neuromodulación estratificada: la carga antipsicótica (no el perfil de unión D2) limita la ganancia cognitiva de la tDCS en esquizofrenia</div>
+          <div class="r10-line">ECA doble ciego (120 pacientes estables): a mayor dosis antipsicótica (equivalentes de olanzapina) menor mejora de memoria de trabajo con tDCS (r=-0.197, p=0.031), sin diferencia entre antagonistas D2 plenos y agonistas parciales —el bloqueo dopaminérgico total, no el receptor, modula la neuroplasticidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la carga farmacológica se volverá variable de estratificación obligatoria en ensayos de neuromodulación; dato para tu radar de por qué &#39;la medicación basal predice la respuesta al estímulo&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41398-026-04160-w" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04160-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Feedback de precisión automatizado: un LLM puntúa transcripciones clínicas casi como el docente —pero es inconsistente entre corridas</div>
+          <div class="r10-line">Comparar transcripciones vs video ahorró tiempo (12 vs 73 min) con buena fiabilidad (ICC 0.830); ChatGPT puntuó con acuerdo moderado frente al humano (ICC ~0.67-0.73) pero produjo scores variables con el mismo prompt —solo 10-18% idénticos en 3 corridas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el feedback de precisión por IA será viable para escala, pero la inconsistencia inter-corrida es el cuello de botella; KPI a medir en tu producto educativo antes de venderlo como &#39;objetivo&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/83376" target="_blank" rel="noopener">↗ doi.org/10.2196/83376</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Predicción de respuesta accesible: el estrés percibido en la semana 4 predice la remisión con escitalopram</div>
+          <div class="r10-line">Cohorte prospectiva (92 pacientes con escitalopram guiado por TDM): un PSS&lt;16 en la semana 4 dio remisión en 22/27, frente a 1/21 con PSS&gt;25 —un predictor barato, adaptable a plataformas digitales, independiente de la severidad basal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: las escalas autoaplicadas tempranas se volverán predictores digitales de respuesta a ISRS; perla de razonamiento clínico y semilla de monitoreo remoto en tu contexto.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121432" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121432</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Cancer · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Fenotipado digital pasivo y barato: un enchufe inteligente (uso de TV) detecta riesgo de salud mental en sobrevivientes mayores de cáncer</div>
+          <div class="r10-line">En 41 sobrevivientes (media 72 años), modelos de gradient boosting clasificaron riesgo PHQ-4; el enchufe inteligente solo (patrón de uso de TV como proxy de sedentarismo) logró AUC 0.71 superando al wearable, y combinado con báscula AUC 0.85.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el fenotipado digital migrará del wearable (con dropout) al ambiente pasivo de bajo costo; dato para tu tesis de precisión accesible en entornos de bajo recurso.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/75050" target="_blank" rel="noopener">↗ doi.org/10.2196/75050</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging · 12 jun 2026 · paper · 2026-06-12</div>
+          <div class="r10-title">Psiquiatría computacional: la supresión adaptativa de sesgos motivacionales aumenta con los rasgos de ansiedad/depresión, no con la compulsividad</div>
+          <div class="r10-line">En 500 participantes con una tarea Go/NoGo motivacional y modelado computacional, mayores síntomas ansioso-depresivos predijeron mejor desempeño cuando había que suprimir el sesgo (control &#39;costoso&#39;), mientras la compulsividad/intrusiones se asoció a peor desempeño general —patrones dimensión-específicos, no factor-p único.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el modelado computacional disociará dimensiones transdiagnósticas que la clínica confunde; insumo fino para tu marco RDoC/HiTOP y para el capítulo de razonamiento dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsc.2026.06.001" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsc.2026.06.001</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La jugada de la semana es la pinza medición+tratamiento sobre la MISMA dimensión: JNNP entrega ADAM, un instrumento de 10 ítems que disocia anhedonia de apatía y depresión (AUC&gt;0.90), y Nature Medicine entrega pramipexol, que mueve la anhedonia transdiagnósticamente (Hedges g=0.62) con engagement estriatal demostrado. Mides y tratas una dimensión RDoC, no una caja DSM. (DOI 10.1136/jnnp-2025-337245 + 10.1038/s41591-026-04465-9)</li><li>El pramipexol mejoró la anhedonia en MDD, distimia Y depresión bipolar a la vez: cuando el target es un mecanismo (recompensa dopaminérgica estriatal) y no un rótulo, una sola intervención cruza tres diagnósticos. Es el argumento clínico más limpio de &#39;dimensión &gt; categoría&#39; que vas a citar este mes. (DOI 10.1038/s41591-026-04465-9)</li><li>&#39;La IA enseña mejor&#39; ya es nivel 1a (14 ECAs, habilidades SMD 0.78), pero los propios autores marcan sesgo de publicación y alta heterogeneidad —y el efecto es máximo en cursos PRÁCTICOS, no teóricos. La lectura honesta: rediseña tu curso alrededor de skills labs aumentados con IA, y nombra el caveat en voz alta. Vender la señal sin la letra chica es lo que te diferencia. (DOI 10.1093/postmj/qgag077)</li><li>Con M1-PET mostrando déficit muscarínico in vivo en esquizofrenia (-13% a -19%, subgrupo &gt;20%) y COBENFY (xanomeline) ya aprobado, el biomarcador empieza a anteceder a la prescripción: estratificar quién recibe el primer antipsicótico no dopaminérgico es la pregunta de precisión del año. Mecanismo, no etiqueta. (DOI 10.1016/j.biopsych.2026.06.002)</li><li>No existe una frecuencia de TMS &#39;óptima universal&#39;: la neuromodulación guiada por red individual con decodificación de estado cerebral mejoró la memoria de trabajo SOLO a la frecuencia propia de cada sujeto —los protocolos de grupo promedian y matan el efecto. La precisión está en la red del individuo, no en el setting de la población. (DOI 10.1002/advs.202523009)</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la anhedonia ya es medible (ADAM, 10 ítems) y tratable (pramipexol, ECA positivo), ¿tu libro dimensional debería abrir con la anhedonia como caso testigo de &#39;dimensión &gt; categoría&#39;: una sola dimensión que se mide, se monitorea y se mueve con un fármaco?</li><li>Para AMAUTA/USAMEDIC: si el metaanálisis nivel 1a confirma que la IA supera a la enseñanza tradicional sobre todo en HABILIDADES prácticas, ¿rediseñas tu curso IA-first alrededor de skills labs aumentados —y dejas la teoría como autoestudio?</li><li>¿Un chatbot GPT con rol de paciente que mejora la comunicación empática en una sola sesión (d=0.58) basta para reemplazar pacientes estandarizados costosos en tu simulación, o el valor real está en el híbrido (IA para volumen + humano para lo no verbal)?</li><li>Con M1-PET mostrando déficit muscarínico y COBENFY aprobado, ¿cómo enseñas a tus residentes a razonar sobre estratificación por biomarcador antes de que el fármaco o la PET lleguen a Perú —enseñas el mecanismo o esperas el acceso?</li><li>Si no hay una frecuencia de TMS &#39;óptima universal&#39; y la respuesta depende de la red individual, ¿qué tan defendible es el marketing de neuromodulación que vende protocolos fijos —y cómo se lo explicas a un paciente que llega pidiendo &#39;TMS&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel &#39;Mide y mueve la anhedonia&#39;: ADAM (10 ítems) para medirla + el ECA de pramipexol para tratarla, como prueba de que una dimensión RDoC se opera de punta a punta. Tu pinza medición+tratamiento en una sola pieza. Pilares: precision-psychiatry + content-documentation.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro dimensional con la anhedonia como caso testigo: de síntoma transdiagnóstico a dimensión accionable (fenotipado ADAM → target engagement estriatal → respuesta a agonista dopaminérgico cruzando MDD/distimia/bipolar). El argumento más limpio de &#39;dimensión &gt; categoría&#39;. Pilares: precision-psychiatry + amauta-education.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post &#39;La IA enseña mejor (nivel 1a) — pero lee la letra chica&#39;: el metaanálisis de 14 ECAs + el sesgo de publicación que los propios autores admiten + el dato de que el efecto es máximo en skills. Tu voz que vende la señal sin sobrevender = diferenciador de tus dos negocios. Pilares: amauta-education + ai-enhancement.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio AMAUTA: paciente estandarizado por IA (GPT role-prompted) vs humano para entrenar comunicación empática en estudiantes peruanos, midiendo competencia, carga cognitiva y costo —vector de escala para tu negocio educativo y paper publicable. Pilares: amauta-education + research.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Ensayo de posicionamiento &#39;Educación médica de precisión con equidad, desde el Sur&#39;, anclado en el comentario de Academic Medicine de autoría latinoamericana (DOI 10.1093/acamed/wvag172): precisión educativa que no amplíe la brecha Norte-Sur. Te posiciona como voz LatAm del tema. Pilares: amauta-education + research.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Medicine</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</span><span class="tag ">Translational Psychiatry</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Journal of Neurology, Neurosurgery &amp; Psychiatry</span><span class="tag ">Schizophrenia Research</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Advanced Science</span><span class="tag highlight">Academic Medicine</span><span class="tag ">Postgraduate Medical Journal</span><span class="tag highlight">JMIR Medical Education</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">JMIR Cancer</span><span class="tag ">JMIR Formative Research</span><span class="tag ">Annals of Surgery</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP) · WebSearch · preprint/medRxiv scan. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 15 de junio de 2026.</div>
+</div>
+</body>
+</html>
