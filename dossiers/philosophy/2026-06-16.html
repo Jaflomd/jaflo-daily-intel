@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-16 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">16 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">209</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Psychiatry · 2026-06-16 · paper</div>
+        <h3 class="r3-title">The interplay among narcissistic vulnerability, interpersonal sensitivity, and metacognitive integration: A network analysis approach</h3>
+        <p class="r3-hook">Análisis de red (Gaussian graphical model + LASSO) en 287 pacientes con trastorno narcisista muestra que la vulnerabilidad narcisista es el nodo más central y que la integración metacognitiva ocupa la posición puente que conecta los rasgos maladaptativos con el distrés interpersonal. Para Javier es munición directa para la psiquiatría dimensional y el libro de psicopatología: evidencia cuantitativa de que la metacognición no es epifenómeno descriptivo sino nodo estructural del sistema —el tipo exacto de claim que HiTOP/RDoC necesitan para sostener que los procesos transdiagnósticos tienen estatus organizador, no solo correlacional—. La lectura BMSE es que un síntoma puente vale más que uno central a la hora de intervenir, porque desconectar el puente fragmenta la red entera. Úsalo como caso de cómo se lee una red psicopatológica en el manual de razonamiento dimensional, y como semilla de paper: replicar el modelo de red metacognición-rasgo en una muestra peruana o en otro fenotipo (TEA, TDAH adulto) es un wedge publicable y alineado con su línea de neurodivergencia.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/j.eurpsy.2026.12226" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.12226</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">PNAS · 2026-06-15 · paper</div>
+        <h3 class="r3-title">AI agents are sensitive to nudges</h3>
+        <p class="r3-hook">Cherep, Maes y Singh adaptan una tarea clásica de decisión humana y muestran que los LLMs son sustancialmente MÁS sensibles a nudges débiles que los humanos —defaults, sugerencias y resaltado de información desplazan su conducta mucho más que la nuestra—, y que ni el chain-of-thought ni los datos humanos en contexto estabilizan ese sesgo de forma confiable. Para el pilar ai-enhancement de Javier esto reencuadra el prompt como arquitectura de elección: cada cómo formulas una consulta a un modelo es un nudge amplificado, así que la revisión de literatura o el apoyo diagnóstico asistido heredan un sesgo que en humanos sería marginal. La aplicación inmediata es de gobernanza del Lab: estandarizar prompts neutrales y correr el mismo caso bajo dos framings opuestos como control de sesgo antes de confiar en la salida. Y es paper en sí mismo: portar este protocolo de choice architecture a viñetas clínicas dimensionales —¿el framing del caso desplaza el diagnóstico del modelo más que el del residente?— une ai-enhancement con razonamiento clínico en un diseño limpio.</p>
+        <a class="r3-link" href="https://doi.org/10.1073/pnas.2537030123" target="_blank" rel="noopener">↗ doi.org/10.1073/pnas.2537030123</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">LessWrong (Gretta Duleba) · 2026-06-16 · essay</div>
+        <h3 class="r3-title">A Test Suite for Concepts</h3>
+        <p class="r3-hook">Duleba sostiene que los marcos matemáticos de abstracciones naturales fracasan no por falta de teoría sino por falta de una batería diversa de ejemplos concretos, y construye una suite de prueba ordenada por grado de anclaje físico —desde objetos duros (pelota, naranja) hasta entidades agénticas (perro) y abstracciones difusas (monogamia, consciencia)— para someter cualquier afirmación sobre estructura conceptual a casos empíricos en vez de hand-waving. Para Javier el isomorfismo es exacto: los constructos psiquiátricos dimensionales son precisamente abstracciones difusas cuya estructura lógica cuesta precisar, y la pregunta &#39;¿este constructo tiene contenido epistémico real o solo reordena síntomas?&#39; es la que decide si HiTOP/RDoC son ciencia o taxonomía cosmética. El mecanismo —ordenar los conceptos por instanciación y exigir que el framework prediga en toda la gama— es importable como criterio de validez de constructo. Úsalo como lente metodológica en el libro y como rúbrica para auditar si una dimensión propuesta (p. ej. un factor de internalización) pasa la suite o solo cambia la etiqueta.</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/aHmyKpGqhTTJg9Tsi/a-test-suite-for-concepts" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/aHmyKpGqhTTJg9Tsi/a-…</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (cantsaymuch) · 2026-06-14 · essay</div>
+          <div class="r10-title">Our Work is Low Skill Expression</div>
+          <div class="r10-line">En dominios de alta varianza y baja ventaja por habilidad, el resultado de una sola apuesta es señal inútil de competencia (analogía del poker y de Tetlock sobre forecasting), así que la estrategia óptima es una cartera diversificada que incluye las apuestas que el consenso descarta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el argumento formal contra apostar todo el Lab a la línea que &#39;hoy va mejor&#39;; conviértelo en regla de portafolio —2-3 frentes de investigación de bajo consenso vivos— y en gancho de contenido sobre por qué las métricas de corto plazo engañan al creador.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/wTgnbETckJcDd7qgu/our-work-is-low-skill-expression" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/wTgnbETckJcDd7qgu/ou…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Elias Schmied) · 2026-06-13 · essay</div>
+          <div class="r10-title">A simple argument for trying less hard</div>
+          <div class="r10-line">Esforzarse al máximo bajo incertidumbre sobre el signo del impacto comprime el worldmodel hacia la hipótesis deseada y dispara el razonamiento motivado justo cuando más se necesita lucidez —el esfuerzo calibrado protege la capacidad epistémica, no la sacrifica—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: en residencia dura hasta 2027 esto es Foundation disfrazada de epistemología; la regla &#39;baja la intensidad para preservar reflectividad&#39; es defendible y aplica tanto a decisiones clínicas complejas como a la gestión simultánea de papers, grants y negocios.</div>
+          <a class="r10-link" href="https://www.greaterwrong.com/posts/sv7WezDZyu9Zdxkxb/a-simple-argument-for-trying-less-hard" target="_blank" rel="noopener">↗ www.greaterwrong.com/posts/sv7WezDZyu9Zdxkxb…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Adolescence · 2026-06-16 · paper</div>
+          <div class="r10-title">A Vicious Cycle of Psychological Distress and Problematic Mobile Phone Use in Adolescence: A Longitudinal Test of a Dual Metacognitive Pathway</div>
+          <div class="r10-line">Estudio longitudinal (n=830, dos olas) donde las creencias metacognitivas positivas (&#39;rumiar es útil&#39;) y negativas (&#39;no puedo parar&#39;) median completamente y en paralelo el ciclo bidireccional distrés↔uso problemático del móvil en adolescentes, anulando el efecto directo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el mecanismo dual es transferible al debiasing del razonamiento clínico —el residente que cree que rumiar el diagnóstico ayuda y que no puede detenerse es un análogo estructural—; feed directo a contenido sobre neurodivergencia y conducta adictiva.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jad.70206" target="_blank" rel="noopener">↗ doi.org/10.1002/jad.70206</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">PNAS (M.V. Puig, commentary) · 2026-06-15 · editorial</div>
+          <div class="r10-title">Revisiting dopamine function in cognition through abstract decision-making</div>
+          <div class="r10-line">Comentario en PNAS que revisa el rol de la dopamina prefrontal en la toma de decisiones abstractas bajo incertidumbre —el eje neuromodulador central de TDAH y de los circuitos de elección impulsiva—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: munición de actualización para el libro y para marcos RDoC de neurodivergencia; rastrea el paper primario que comenta y tienes la cita fresca para el capítulo de decisión/dopamina.</div>
+          <a class="r10-link" href="https://doi.org/10.1073/pnas.2611090123" target="_blank" rel="noopener">↗ doi.org/10.1073/pnas.2611090123</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Astrid Callender) · 2026-06-13 · essay</div>
+          <div class="r10-title">Presentfulness: Lucidity, Osmosis, and Dissociation</div>
+          <div class="r10-line">Propone tres modos discretos de procesamiento atencional —lucidez (activo, dirigido), osmosis (default pasivo) y disociación (mínimo consciente)— y sostiene que nombrarlos explícitamente actúa como palanca para entrar en el modo deseado, con efecto medible en retención.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: checklist de &#39;postura atencional&#39; para el estudio clínico y la simulación en AMAUTA; enseñar al alumno a reconocer en qué modo estudia es metacognición operacional, no abstracta.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/cREAEK6d8Q9EBS2uh/presentfulness-lucidity-osmosis-and-dissociation" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/cREAEK6d8Q9EBS2uh/pr…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Ben Pace) · 2026-06-15 · essay</div>
+          <div class="r10-title">The Power to Punish</div>
+          <div class="r10-line">Explora que la capacidad genuina de causar daño —no solo la opción— es condición para que la virtud tenga contenido moral, y que los sistemas que eliminan el poder de castigar también eliminan la accountability real (LLC, zero-stakes).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: lente de diseño para evaluaciones con stakes reales (USAMEDIC/ENAM) y para el Comité de Ética: sin consecuencias genuinas, el resultado no refleja competencia ni la conducta ética es elección.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/cM2bansJp9cMK3TNj/the-power-to-punish" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/cM2bansJp9cMK3TNj/th…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Bill Jackson) · 2026-06-13 · essay</div>
+          <div class="r10-title">Pulling hedonic utilitarianism out of ethical emotivism</div>
+          <div class="r10-line">Argumenta que el salto de &#39;parece obviamente verdadero&#39; a &#39;es verdadero&#39; es el mismo en proposiciones fácticas y morales, y que el dolor/placer ofrece una claridad epistémica &#39;stripped-down&#39; que ancla los juicios éticos en estados experienciales verificables.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: base epistemológica para el Comité de Ética del HVLH y para el problema de medir sufrimiento subjetivo en evaluación dimensional —anclar el juicio ético en experiencia, no en principios abstractos—.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/yKauDp6LgNpZ9L7iK/pulling-hedonic-utilitarianism-out-of-ethical-emotivism" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/yKauDp6LgNpZ9L7iK/pu…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Jon Brooks (Substack) · 2026-06-13 · essay</div>
+          <div class="r10-title">Two Mental Models That Could Change the Game</div>
+          <div class="r10-line">Dos marcos de decisión: &#39;Víctima-Villano-Héroe&#39; (nombrar tu rol narrativo interrumpe el automatismo de baja agencia y reabre el espacio de soluciones) y &#39;Logro vs. Plenitud&#39; (¿la decisión nace de un déficit percibido o de expansión de impacto?).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: diagnóstico limpio para kinobody-selfcare y para el motor de contenido —¿creas desde déficit de validación o desde leverage?—; carrusel listo sin caer en autoayuda.</div>
+          <a class="r10-link" href="https://jonbrooks.substack.com/p/two-mental-models-that-could-change" target="_blank" rel="noopener">↗ jonbrooks.substack.com/p/two-mental-models-t…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">What Is Stoicism? (Allan John, Substack) · 2026-06-14 · blog</div>
+          <div class="r10-title">Sunday Snippets: June 14th, 2026 — Two Kinds of Joy</div>
+          <div class="r10-line">Aplica a Hadot y Séneca la distinción laetitia (alegría dependiente de circunstancias) vs. gaudium (alegría solemne, independiente de condiciones externas) como recalibración del setpoint afectivo vía práctica filosófica diaria.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: recordatorio de arquitectura afectiva para la residencia dura hasta oct 2027; valor modesto, mejor como nota de Garden sobre setpoint estable que como pieza de contenido.</div>
+          <a class="r10-link" href="https://whatisstoicism.substack.com/p/sunday-snippets-june-14th-2026" target="_blank" rel="noopener">↗ whatisstoicism.substack.com/p/sunday-snippet…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Los LLMs son MÁS sensibles a nudges débiles que los humanos: un sesgo de framing que en una persona apenas mueve la conducta, en el modelo la desplaza fuerte —y el chain-of-thought no lo estabiliza—. El prompt no es una pregunta neutral; es arquitectura de elección amplificada (PNAS).</li><li>En psicopatología de red, el nodo que importa para intervenir no es el más central sino el puente: la integración metacognitiva conecta los rasgos del trastorno narcisista con el distrés interpersonal, y desconectar el puente fragmenta la red más que atacar el centro (European Psychiatry).</li><li>Esforzarte al máximo no es neutral para tu juicio: el deseo intenso comprime tu modelo del mundo hacia la hipótesis que quieres que sea verdad. El razonamiento motivado se enciende justo cuando más necesitas lucidez —y bajar la intensidad la protege (LessWrong).</li><li>En dominios de alta varianza, el resultado de una sola apuesta es ruido, no señal de tu habilidad: por eso el consenso subvalora sistemáticamente las ideas que parecen poco prometedoras y la cartera diversificada gana (LessWrong).</li><li>Un constructo dimensional sin batería de ejemplos que vaya de lo físico a lo difuso es hand-waving matemático: la diversidad de casos no es ilustración, es la prueba de que el framework tiene contenido epistémico real (LessWrong).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la integración metacognitiva es el nodo puente entre rasgo y distrés en el trastorno narcisista, ¿qué fenotipo neurodivergente (TDAH adulto, TEA) replica esa topología y vale un paper de red en muestra peruana?</li><li>¿El framing de una viñeta clínica desplaza el diagnóstico de un LLM más que el de un residente —y puedo convertir el protocolo de &#39;AI agents are sensitive to nudges&#39; en un estudio de razonamiento clínico asistido?</li><li>¿Cuáles de mis dimensiones psicopatológicas favoritas pasan la &#39;suite de prueba&#39; de conceptos (predicen en toda la gama de casos) y cuáles solo reordenan síntomas con etiqueta nueva?</li><li>¿La regla &#39;baja la intensidad para preservar reflectividad&#39; aplica a mis decisiones clínicas de alto riesgo, o solo a la gestión del portafolio del Lab —y cómo la operacionalizo sin que suene a excusa para evitar trabajo?</li><li>Si las creencias metacognitivas positivas y negativas median el ciclo adictivo en adolescentes, ¿enseñar a los residentes a detectar sus propias creencias metacognitivas sobre el diagnóstico (&#39;rumiar ayuda&#39;, &#39;no puedo parar&#39;) mejora el debiasing más que enseñar sesgos abstractos?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de red metacognición-rasgo: replicar el Gaussian graphical model de Aloi et al. (integración metacognitiva como nodo puente) en una muestra de TDAH adulto o TEA peruana; wedge dimensional + neurodivergencia, publicable y alineado a HiTOP/RDoC.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio ai-enhancement × razonamiento clínico: portar el protocolo de choice architecture de PNAS (&#39;AI agents are sensitive to nudges&#39;) a viñetas clínicas —correr el mismo caso bajo framings opuestos y medir el desplazamiento diagnóstico de LLM vs. residente—.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo/ítem BMSE &#39;Suite de prueba para constructos dimensionales&#39;: importar el criterio de Duleba (ordenar conceptos por anclaje físico y exigir predicción en toda la gama) como rúbrica de validez de constructo para HiTOP/RDoC.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel &#39;Tu prompt no es una pregunta, es un empujón&#39;: los LLMs son más sensibles a nudges que los humanos —enseñar a estandarizar prompts y correr framings opuestos como control de sesgo en investigación con IA—.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel &#39;Esforzarte más te hace pensar peor&#39;: la intensidad corrompe la epistemología vía razonamiento motivado, y la regla de bajar intensidad para preservar lucidez —humildad epistémica como mecanismo de regulación, sin autoayuda—.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">LessWrong / GreaterWrong</span><span class="tag ">Proceedings of the National Academy of Sciences (PNAS)</span><span class="tag ">European Psychiatry</span><span class="tag ">Journal of Adolescence</span><span class="tag ">Jon Brooks (Substack)</span><span class="tag ">What Is Stoicism? (Substack)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP) · PNAS · European Psychiatry · Journal of Adolescence · LessWrong / GreaterWrong · Astral Codex Ten · Marginal Revolution · Commoncog · Farnam Street · Construction Physics · Overcoming Bias · Figs in Winter (Pigliucci) · What Is Stoicism? (Substack) · Jon Brooks (Substack) · Philosophy Now · Aeon · Reddit (r/mentalmodels, r/philosophy, r/LessWrong) · X/Twitter · YouTube. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 16 de junio de 2026.</div>
+</div>
+</body>
+</html>
