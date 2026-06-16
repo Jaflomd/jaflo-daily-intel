@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-16 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">16 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">85</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">44</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-06-15 · meta-analysis</div>
+        <h3 class="r3-title">Eficacia del flipped classroom en educación médica: revisión sistemática y meta-análisis</h3>
+        <p class="r3-hook">Jaflo, 18 estudios metaanalizados confirman que el aula invertida bate a la enseñanza convencional con efectos moderados a grandes, y el dato que te importa es el subgrupo: los beneficios fueron MAYORES en residentes, sobre todo en habilidades procedimentales y en aprendizaje autodirigido, no en satisfacción. Esto destroza el prejuicio de que el active learning es cosa de pregrado y valida tu apuesta de AMAUTA/USAMEDIC justo donde está tu dinero: ENAM y Residentado. Úsalo como cita ancla para justificar el diseño flipped de tus cursos y como criterio de calidad —el meta advierte heterogeneidad alta y que el efecto es context-dependent, así que no vendas &#39;flip mágico&#39; sino flip con mecanismo explícito (qué hace el alumno antes, durante y después). Es tu mejor evidencia reciente para defender el formato ante un cliente institucional que aún cree que &#39;clase magistral = rigor&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09526-8" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09526-8</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-06-15 · paper</div>
+        <h3 class="r3-title">Enseñar a escala: analítica de team-based learning para soporte temprano (n≈861, Manchester)</h3>
+        <p class="r3-hook">Jaflo, esto es tu tesis de educación médica de precisión hecha operación: dos cohortes de primer año (435 + 426) donde el score individual de iRAT predijo el desempeño sumativo (R²≈0.38-0.41, reproducible dos años seguidos), y al identificar a los 50 peores y darles apoyo dirigido subieron 20% el semestre y BAJARON la tasa de reprobación 41%, sin inflar al resto de la cohorte. Y de regalo: TBL recortó 63% las horas de facilitador y 84% el uso de salas manteniendo 74% de satisfacción &#39;excelente&#39;. Para ti es doble palanca —precision-education (cazar al alumno en riesgo con los datos que YA generas) + leverage operativo (enseñar a más con menos)— y es directamente trasladable a tus cohortes ENAM/Residentado: el quiz que ya aplicas es un sistema de alerta temprana gratis. Conviértelo en paper de método en contexto peruano y en argumento de venta: &#39;no solo te enseño, te detecto antes de que reprueves&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09612-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09612-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Clinics (São Paulo) · 2026-06-15 · paper</div>
+        <h3 class="r3-title">DeepSeek-R1 en el USMLE: supera el promedio humano y a los modelos de OpenAI</h3>
+        <p class="r3-hook">Jaflo, un LLM open-source no occidental (DeepSeek-R1) sacó 92.5% en 321 preguntas estilo USMLE, batió a GPT-4o, o3-mini y o1-pro (todos ~78.8%, p&lt;0.0001) y superó el promedio humano en todos los Steps; el detalle de oro: en los casos donde los modelos discrepaban, R1 acertó 82.8% frente a 14-28% de OpenAI. Esto le pega a dos pilares tuyos —ai-enhancement y tu negocio qbank/ENAM— porque deshace el supuesto de &#39;el modelo frontera caro siempre gana&#39; y abre despliegue local y barato para bancos de preguntas y tutores de razonamiento. La amenaza estratégica es clara: si una IA gratis ya responde mejor que el alumno promedio, un qbank que solo &#39;tiene preguntas&#39; deja de ser defendible; tu foso pasa a ser el razonamiento dimensional que enseñas alrededor del ítem, no el ítem. Captúralo como contenido (Aprendiz Experto: &#39;una IA china le ganó al humano en el examen médico de EE.UU.&#39;) y como decisión de arquitectura para tu encaps-mcq-factory.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.clinsp.2026.101021" target="_blank" rel="noopener">↗ doi.org/10.1016/j.clinsp.2026.101021</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 2026-06-15 · paper</div>
+          <div class="r10-title">Sistema de feedback con LLM para escritura de reportes de caso (tutorial reproducible)</div>
+          <div class="r10-line">Guía paso a paso para educadores sin código: 4 chatbots (loop-based para razonamiento + single-shot para corrección) con Dify+Slack+Apps Script, human-in-the-loop y protocolo de desidentificación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: este es el plano exacto de un bot de feedback para tus alumnos AMAUTA; quien lo monte con anclaje pedagógico (no solo &#39;corrige&#39;) se queda con el mercado de tutoría escalable peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/76924" target="_blank" rel="noopener">↗ doi.org/10.2196/76924</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-15 · paper</div>
+          <div class="r10-title">Materiales de repaso para board generados por LLM en radiología (piloto, negativo honesto)</div>
+          <div class="r10-line">6.000 flashcards Anki + 833 infografías generadas por IA: adopción 62.5% pero retención solo 58.5%, escala de confianza-en-IA que no cuajó (α=0.58) y Net Promoter Score de -40; aún no justifica ensayo de eficacia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: &#39;lo usaron ≠ funcionó ≠ confiaron&#39; será la frase que separe a los que despliegan IA educativa con cabeza de los que solo generan volumen; perla obligada para tu qbank/Anki.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09704-8" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09704-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-15 · review</div>
+          <div class="r10-title">Tutoría entre pares en simulación clínica: revisión sistemática (11 estudios, 860 estudiantes)</div>
+          <div class="r10-line">Combinar simulación con peer tutoring mejora habilidades técnicas y no técnicas (autoconfianza, comunicación, reflexión) y crea ambientes psicológicamente seguros, pero casi todo se quedó en Kirkpatrick 2 y diseños no aleatorizados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el peer tutoring barato y seguro es tu atajo de costo en simulación AMAUTA; el hueco metodológico (sin RCT, sin seguimiento) es un paper esperándote.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09582-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09582-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education Online · 2026-06-15 · review</div>
+          <div class="r10-title">Coaching en educación médica de pregrado y posgrado: scoping review (141 estudios)</div>
+          <div class="r10-line">El coaching en medicina académica explotó (pico 2023) y se concentra en competency-based, pero el reporte de reclutamiento, entrenamiento y compensación del coach es inconsistente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el coaching competency-based es el envoltorio premium de tu mentoría; estandarizar &#39;cómo se forma al coach&#39; es producto vendible a instituciones.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/10872981.2026.2687304" target="_blank" rel="noopener">↗ doi.org/10.1080/10872981.2026.2687304</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · 2026-06-15 · review</div>
+          <div class="r10-title">Aplicaciones de DeepSeek en medicina: análisis bibliométrico + scoping (371 papers)</div>
+          <div class="r10-line">Crecimiento explosivo de DeepSeek en educación/decisión clínica, pero 66.6% de los estudios son de baja calidad (benchmarking sin validar, casos simulados, retrospectivos un centro) y los RCT con outcomes de paciente brillan por su ausencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el &#39;wow&#39; de la IA médica corre muy por delante de su evidencia; un reality check tuyo bien citado te posiciona como la voz adulta del tema.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/93354" target="_blank" rel="noopener">↗ doi.org/10.2196/93354</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-15 · paper</div>
+          <div class="r10-title">Gamificación en papel para educación basada en competencias en clerkship de obstetricia (cuasi-exp, n=102)</div>
+          <div class="r10-line">Un &#39;stamp rally&#39; de 20 tareas clínicas mapeadas a competencias (sin plataforma digital) subió satisfacción, autoeficacia, tasa de tareas completadas (92% vs 76%) y examen escrito (85 vs 78) frente al clerkship convencional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: la gamificación de bajo costo que operacionaliza CBME es perfecta para contextos peruanos sin presupuesto; cópiala como plantilla imprimible para tus rotaciones.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09725-3" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09725-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-15 · review</div>
+          <div class="r10-title">Autorregulación y regulación socialmente compartida en aprendizaje colaborativo adaptativo: scoping (31)</div>
+          <div class="r10-line">Los entornos adaptativos apoyan la regulación con feedback personalizado, dashboards y prompts, pero operan en paralelo: o regulan al individuo o al grupo, casi nunca ambos, y la evidencia en profesiones de salud es escasa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: el hueco &#39;armonizar SRL + SSRL&#39; es tu nicho teórico para diseñar el tutor adaptativo que de verdad orqueste individuo y equipo.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09355-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09355-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education · 2026-06-15 · paper</div>
+          <div class="r10-title">&#39;Family Meetings&#39;: práctica estructurada para seguridad psicológica en residencia quirúrgica</div>
+          <div class="r10-line">Reuniones facilitadas por el director de programa al cierre de cada bloque mejoraron la capacidad del residente de plantear preocupaciones sin miedo (encuesta ACGME 3 años), pero la satisfacción con la RESOLUCIÓN no cambió: sin follow-through visible, se cae.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: &#39;la seguridad psicológica sin seguimiento es teatro&#39; es un gancho de contenido potentísimo y un principio de diseño para cualquier ambiente de aprendizaje que armes.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104036" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104036</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine · 2026-06-15 · paper</div>
+          <div class="r10-title">¿Conectan UME y GME? Determinaciones del comité de competencias vs. milestones de PGY-1 (n=232, 18 especialidades)</div>
+          <div class="r10-line">La calificación de la EPA 6 (presentación oral del caso) en pregrado fue el predictor más fuerte del desempeño en milestones de primer año de residencia en múltiples dominios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: si la presentación oral predice la competencia futura, es la habilidad de mayor ROI para entrenar temprano; módulo fijo para tu currículo de razonamiento clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag177" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag177</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Anatomical Sciences Education · 2026-06-15 · paper</div>
+          <div class="r10-title">Tests iniciales de términos contribuyen a una educación anatómica efectiva (n=640)</div>
+          <div class="r10-line">Un test temprano de términos con imágenes y feedback inmediato predijo el examen práctico y mejoró significativamente a los alumnos de bajo rendimiento (&lt;60%), en un curso con horas curriculares recortadas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable: efecto de recuperación + feedback inmediato + bajo riesgo = el rescate del alumno que se ahoga; principio directo para tu neurociencia educativa y tus quizzes.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/ase.70281" target="_blank" rel="noopener">↗ doi.org/10.1002/ase.70281</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El flipped classroom rinde MÁS en residentes que en pregrado: el meta de 18 estudios (42298555) halló efectos mayores en posgrado, sobre todo en habilidades procedimentales y aprendizaje autodirigido. El prejuicio de que el active learning es &#39;para chicos&#39; está al revés; flipea más fuerte donde más está en juego (ENAM/Residentado).</li><li>Una IA open-source y gratis (DeepSeek-R1) le ganó a GPT-4o, o1-pro y al promedio humano en el USMLE (92.5%), y en los casos donde los modelos discrepaban acertó 82.8% vs 14-28% de OpenAI (42296682). El &#39;modelo frontera caro siempre gana&#39; se cayó; el foso de un qbank ya no es tener preguntas, es el razonamiento que enseñas alrededor.</li><li>Los datos que YA generas son un sistema de alerta temprana: el iRAT semanal predijo el examen final (R²≈0.4) y rescatar a los 50 peores cortó la reprobación 41% sin inflar al resto, además de recortar 63% las horas de facilitador (42298515). Precision-education a escala, más barata, no más cara.</li><li>Desplegar IA educativa no es lo mismo que enseñar con ella: 6.000 flashcards generadas por LLM tuvieron 62.5% de adopción pero 58.5% de retención, una escala de confianza-en-IA que no cuajó (α=0.58) y un Net Promoter Score de -40 (42298594). &#39;La usaron&#39; ≠ &#39;funcionó&#39; ≠ &#39;confían&#39;; son tres ejes distintos.</li><li>Kirkpatrick 2 no es Kirkpatrick 4: en un simulador de catarata de alta fidelidad todos subieron su curva de aprendizaje y se estabilizaron, pero los autores advierten que esas mejoras NO transfirieron solas al quirófano (42289672); y el 66.6% de los estudios de IA en medicina son baja calidad sin outcomes de paciente (42296533). Dominar el simulador no es dominar al paciente.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Tus cursos flipped de AMAUTA miden aprendizaje real (conocimiento/habilidad) o solo satisfacción, ahora que el meta (42298555) muestra que el efecto grande está en residentes y en self-directed learning, justo tu audiencia ENAM/Residentado?</li><li>¿Puedes convertir el quiz/iRAT que ya aplicas en un detector del 20% en riesgo y rescatarlo antes del examen, como hizo Manchester con caída del 41% en reprobación (42298515)?</li><li>Si DeepSeek-R1 ya supera el promedio humano en el USMLE (42296682), ¿qué le queda de defendible a un qbank que solo &#39;tiene preguntas&#39;? ¿Tu diferenciador es el banco o el razonamiento dimensional que enseñas alrededor del ítem?</li><li>¿Dónde exactamente pones el humano-en-el-loop al desplegar un bot de feedback (42297358) para no terminar con el -40 de NPS y la baja confianza del piloto de radiología (42298594)?</li><li>¿Qué nivel Kirkpatrick alcanzan honestamente tus simulaciones, sabiendo que las ganancias en simulador no transfieren solas al desempeño real (42289672) y que la presentación oral del caso predice competencia futura (42296378)?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel &#39;El flipped classroom funciona MEJOR en residentes&#39;: desmontar con el meta de 18 estudios (42298555) el mito de que el aprendizaje activo es solo para pregrado, anclado a ENAM/Residentado. Cierra con el matiz honesto (heterogeneidad alta = flip con mecanismo, no flip mágico).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo Aprendiz Experto &#39;Una IA china open-source le ganó a GPT-4 y al humano promedio en el examen médico de EE.UU.&#39; (42296682) + reality check del 66.6% de evidencia basura en IA médica (42296533). Wedge ai-enhancement con voz adulta, no hype.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de método de educación médica de precisión: usar analítica de aprendizaje rutinaria (iRAT/quiz) para intervención temprana en cohortes grandes, replicando el modelo Manchester (42298515) en contexto ENAM peruano y reportando R², caída de reprobación y horas-docente ahorradas.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Build/tutorial &#39;Tu propio bot de feedback con human-in-the-loop&#39; inspirado en 42297358 (Dify+Slack+Apps Script, loop-based para razonamiento + single-shot para corrección, desidentificación), para corregir casos/escritos de tus alumnos sin caer en el -40 NPS de radiología (42298594).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección de neurociencia educativa &#39;Por qué el testing temprano salva al alumno que se ahoga&#39;: efecto de recuperación + feedback inmediato + evaluación formativa de bajo riesgo (42298812), con el principio de detectar y rescatar al de bajo rendimiento antes del examen.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BMC Medical Education</span><span class="tag highlight">JMIR Medical Education</span><span class="tag highlight">Medical Education Online</span><span class="tag highlight">Academic Medicine</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Anatomical Sciences Education</span><span class="tag ">BMJ Open</span><span class="tag ">Clinics (São Paulo)</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">NPJ Digital Medicine</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities vía MCP). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 16 de junio de 2026.</div>
+</div>
+</body>
+</html>
