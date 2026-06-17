@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-17 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">17 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">38</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">38</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Int J Med Inform · 2026 · review · 2026-03-07</div>
+        <h3 class="r3-title">Machine learning sobre datos de redes sociales para detectar TDAH y autismo: revisión sistemática de 19 estudios (F1 0.48–0.89)</h3>
+        <p class="r3-hook">Según PubMed, esta SR de 19 estudios analizó datos de Reddit, Twitter, YouTube y Facebook con ML para detectar trastornos del neurodesarrollo —sobre todo TEA y TDAH— alcanzando F1 entre 0.48 y 0.89, con los modelos basados en video destacando para marcadores no verbales; persisten heterogeneidad metodológica, muestras pequeñas y problemas éticos de validez/sesgo/privacidad. Te importa, Jaflo, porque cruza tres de tus líneas a la vez: la neurodivergencia adulta (wedge del libro de psicopatología para el mundo), la IA aplicada (negocio Aprendiz Experto) y el diagnóstico dimensional de precisión —el digital phenotyping es exactamente el puente entre HiTOP/RDoC y el comportamiento real medible. Úsalo como reel/carousel JafloMD (&#39;¿tu feed delata tu TDAH?&#39;) con cierre ético no-diagnóstico, como sección del libro sobre fenotipado digital, y como ángulo de paper crítico sobre validez y sesgo algorítmico del neurotipo. Es el caso de uso donde tu autoridad clínica y tu narrativa IA-first se potencian en una sola pieza.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.ijmedinf.2026.106378" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ijmedinf.2026.106378</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">J Affect Disord · 2026 · rct · 2026-02-13</div>
+        <h3 class="r3-title">iTBS mejora depresión y anhedonia en adolescentes: RCT sham-controlado (n=60), con el rasgo hedónico basal como posible moderador</h3>
+        <p class="r3-hook">Según PubMed, 60 adolescentes (11–19 años) con depresión recibieron iTBS acelerado (30 sesiones en 2 semanas) o sham, con interacción grupo×tiempo robusta en HAMD-17 (F=40.3, p&lt;0.001) y mejora significativa en anhedonia (TEPS y sus cuatro subescalas); la moderación exploratoria por placer anticipatorio basal fue nominalmente significativa pero no sobrevivió la corrección de Holm-Bonferroni. Te importa, Jaflo, porque es la triple intersección de tus líneas vivas: neuromodulación, población adolescente y anhedonia como dominio de Positive Valence System del RDoC —el mismo blanco transdiagnóstico que vienes mapeando (ayer el pramipexol dopaminérgico, hoy iTBS). La búsqueda de un moderador de respuesta por rasgo hedónico basal es psiquiatría de precisión real, aunque el estudio sea unicéntrico y la moderación no haya aguantado la corrección. Capitalízalo en la sección de neuromodulación de BMSE, en una clase USAMEDIC sobre TMS en adolescentes y en un reel &#39;¿la anhedonia se trata con estimulación cerebral?&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.121398" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121398</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Cell Reports Medicine · 2026 · rct · 2026-05-07</div>
+        <h3 class="r3-title">El LSD induce cambios neuroplásticos en la sustancia blanca que correlacionan con la mejoría antidepresiva: subestudio DTI de un RCT (n=35)</h3>
+        <p class="r3-hook">Según PubMed, en el ensayo NCT03866252 (61 pacientes con depresión mayor aleatorizados a LSD dosis baja vs. moderada-alta) un subgrupo con DTI (n=35, 17 en alta dosis) mostró aumento de anisotropía fraccional en cápsula interna/externa, estría sagital y fórnix/estría terminal solo en alta dosis, y ese cambio estructural correlacionó con la mejoría depresiva a 2, 6 y 12 semanas. Te importa, Jaflo, porque es un biomarcador mecanicista de neuroplasticidad —el corazón de la psiquiatría de precisión que defiendes— y porque desplaza la conversación psicodélica de &#39;efecto mágico&#39; a &#39;mecanismo medible&#39;, publicado en Cell Reports Medicine (señal de calidad). Es munición para tu postura matizada y proporcional a la evidencia: hay mecanismo real, pero n pequeño y subestudio exploratorio. Úsalo como perla/hilo (&#39;los psicodélicos reorganizan tractos de sustancia blanca, no son magia&#39;) y como argumento para el capítulo sobre biomarcadores de respuesta del libro.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.xcrm.2026.102791" target="_blank" rel="noopener">↗ doi.org/10.1016/j.xcrm.2026.102791</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · meta-analysis · 2026-02-17</div>
+          <div class="r10-title">Agonistas de GLP-1 (Ozempic/Wegovy) y trastornos mentales: Mendelian randomization + meta-análisis no hallan vínculo causal con depresión, ansiedad, bipolar, esquizofrenia ni suicidio</div>
+          <div class="r10-line">MR de dos muestras + LDSC + coloc bayesiana + meta-análisis clínico: GLP-1R sin asociación causal con siete trastornos mentales, pero con señal significativa de mejora en trastornos de conducta alimentaria (SMD −0.71, p=0.006).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el pánico mediático &#39;Ozempic y suicidio&#39; se desinfla; el ángulo real para tu contenido es GLP-1 como herramienta emergente en TCA con atracón —prepara el explainer antes que la competencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121452" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121452</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry · 2026 (vol 99) · meta-analysis · 2025-09-29</div>
+          <div class="r10-title">Mega-análisis del transcriptoma de sangre periférica en depresión (N=6011) implica células linfoides e histonas</div>
+          <div class="r10-line">Reprocesamiento armonizado de 5 datasets ajustado por composición celular: la depresión se asocia de forma reproducible a descenso de histonas dependientes de replicación y a desregulación de células linfoides (T/NK), no a inflamación inespecífica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la inmunopsiquiatría migra de &#39;citoquinas elevadas&#39; a firmas celulares específicas y reproducibles; es el tipo de biomarcador que sostendrá la estratificación —cítalo en tu marco de precisión (apareció reindexado en el número de junio).</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2025.09.008" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2025.09.008</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · rct · 2026-02-17</div>
+          <div class="r10-title">tDCS sobre corteza prefrontal dorsomedial reduce síntomas somáticos en depresión: RCT sham-controlado (n=65) con campo eléctrico individualizado</div>
+          <div class="r10-line">tDCS sobre dmPFC 2 semanas mejora síntomas somáticos vs. sham; el campo eléctrico individualizado modelado en amígdala derecha correlaciona con la mejoría, uniendo neuromodulación y dosimetría personalizada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la neuromodulación con modelado de campo individualizado será el rostro accionable de la &#39;precision psychiatry&#39; —úsalo como ejemplo concreto en clase y libro frente al estímulo a ciegas.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121413" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121413</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · rct · 2026-02-23</div>
+          <div class="r10-title">Esketamina repetida en adolescentes con depresión y marcadores inflamatorios: RCT doble ciego vs. midazolam (n=49)</div>
+          <div class="r10-line">Sin efecto principal del fármaco sobre 10 citoquinas, pero IL-8, IFN-γ y C4 basal emergen como candidatos exploratorios a biomarcador de respuesta antidepresiva/antisuicida en adolescentes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los biomarcadores inflamatorios de respuesta a ketamina en jóvenes son terreno virgen; márcalo como gap en tu próxima revisión de precisión en depresión adolescente.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121488" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121488</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · meta-analysis · 2026-02-13</div>
+          <div class="r10-title">La variabilidad de la frecuencia cardíaca predice prospectivamente la depresión —pero con efecto pequeño: meta-análisis de 56 estudios</div>
+          <div class="r10-line">HRV se asocia negativamente con síntomas depresivos futuros en índices de frecuencia y tiempo (r≈−0.15 a −0.19), efecto pequeño y dependiente de contexto; útil como herramienta adjunta de vulnerabilidad, no de diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el wearable como tamizaje afectivo llegará, pero el effect size obliga a cautela —reel anti-hype: &#39;tu Apple Watch no predice tu depresión (todavía)&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121388" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121388</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · meta-analysis · 2026-02-11</div>
+          <div class="r10-title">Intervenciones de regulación emocional iniciadas en hospitalización por crisis suicida superan al cuidado usual: SR + meta-análisis exploratorio (12 estudios, n=1708)</div>
+          <div class="r10-line">DBT, mindfulness y ACT iniciadas durante la hospitalización (PRISMA, PROSPERO) son factibles, aceptables y reducen intentos e ideación suicida transdiagnósticamente, pese a heterogeneidad y muestras pequeñas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la ventana de hospitalización se consolida como punto de máxima palanca clínica; material directo para protocolo HVLH y clase de manejo de crisis.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121375" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121375</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · rct · 2026-02-16</div>
+          <div class="r10-title">En depresión marcadamente resistente, el MADRS total es menos sensible al cambio que el QIDS: análisis psicométrico del ensayo RECOVER (VNS)</div>
+          <div class="r10-line">Por teoría de respuesta al ítem, cinco dominios —ánimo, energía/lasitud, interés/anhedonia, autovisión negativa y concentración— concentran la señal de cambio; el puntaje total del MADRS pierde sensibilidad en TRD.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la medición por síntomas-núcleo desplazará al puntaje total como endpoint; munición fina para tu argumento BMSE de que el constructo importa más que la escala.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121447" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121447</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · rct · 2026-02-21</div>
+          <div class="r10-title">Responder a la remediación cognitiva en realidad virtual depende del &#39;fitness cognitivo&#39; basal, no del diagnóstico: RCT en ánimo y esquizofrenia (n=62)</div>
+          <div class="r10-line">Mayor discrepancia IQ-cognición basal (mejor desempeño del esperado) y mayor activación prefrontal dorsal predicen respuesta; el diagnóstico categorial no la predice.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la &#39;disposición al cambio&#39; neural transdiagnóstica encaja con tu lente RDoC/HiTOP —ángulo de paper sobre predictores agnósticos al diagnóstico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121482" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121482</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · rct · 2026-02-02</div>
+          <div class="r10-title">Reducir el uso de redes sociales a 1 h/día baja la soledad en jóvenes con ansiedad/depresión: RCT (n=260)</div>
+          <div class="r10-line">El recorte voluntario de redes redujo la soledad frente a control sin restricción, independiente del género o de las comparaciones sociales basales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el dato —beneficio que no discrimina por perfil— se vuelve viral; ideal para reel JafloMD con encuadre práctico (dosis de uso), no moralizante.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121331" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121331</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">J Affect Disord · 2026 · rct · 2026-02-13</div>
+          <div class="r10-title">La expectativa de mejora predice respuesta solo en psicoterapia, no en intervención de estilo de vida: subanálisis del CALM trial</div>
+          <div class="r10-line">En 182 participantes, mayor expectativa basal se asoció a más reducción del PHQ-9 solo en el brazo de psicoterapia; el efecto placebo es modalidad-específico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto reabre el debate sobre controles en ensayos de estilo de vida; matiz fino para tu contenido sobre &#39;por qué funciona la terapia&#39; y para diseñar mejores controles propios.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121431" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121431</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El placebo no es una constante universal: en depresión, la expectativa de mejora mueve la respuesta a psicoterapia pero NO a intervención de estilo de vida (CALM trial). Cada modalidad tiene su propio motor placebo —y eso cambia cómo diseñas tus controles.</li><li>En depresión marcadamente resistente, el puntaje total del MADRS pierde sensibilidad al cambio; cinco síntomas-núcleo (ánimo, energía, interés/anhedonia, pesimismo, concentración) cargan casi toda la señal (RECOVER). El constructo dimensional &gt; la escala global.</li><li>El miedo a que GLP-1 (Ozempic/Wegovy) cause suicidio no resiste la genética: la Mendelian randomization no encuentra vínculo causal con ningún trastorno mental —pero sí señal de beneficio en trastornos de conducta alimentaria (SMD −0.71).</li><li>Los psicodélicos no son neuroquímica difusa: el LSD reorganiza tractos concretos de sustancia blanca (anisotropía fraccional en cápsula, fórnix/estría terminal) y ese cambio estructural correlaciona con la mejoría antidepresiva meses después.</li><li>Responder a la remediación cognitiva no depende del diagnóstico (ánimo vs. esquizofrenia) sino del &#39;fitness cognitivo&#39; basal y de cuánto activa tu corteza prefrontal dorsal —la predicción de respuesta es transdiagnóstica, justo como anticipa el RDoC.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Estamos midiendo la depresión con la escala equivocada? Si el MADRS total enmascara el cambio en TRD, ¿qué implica para los endpoints de prácticamente todos los ensayos antidepresivos?</li><li>Si el digital phenotyping ya detecta TDAH/autismo por redes sociales con F1 hasta 0.89, ¿dónde queda la frontera ética entre tamizaje asistido por IA y vigilancia algorítmica del neurotipo?</li><li>¿Por qué la anhedonia responde a blancos tan distintos —pramipexol dopaminérgico ayer, iTBS hoy? ¿Es un dominio RDoC con múltiples puertas de entrada o estamos midiendo constructos diferentes bajo un mismo nombre?</li><li>¿Debe la inmunopsiquiatría abandonar el dogma &#39;citoquinas elevadas = depresión&#39; y migrar a firmas celulares específicas y reproducibles (linfoides/histonas)?</li><li>Si recortar redes a 1 h/día baja la soledad sin importar género ni comparación social, ¿el daño está en la dosis de uso más que en el contenido o el perfil del usuario?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel JafloMD: &#39;¿Tu feed delata tu TDAH?&#39; —IA que detecta neurodivergencia por redes sociales, con cierre ético no-diagnóstico, basado en la SR de 19 estudios de digital phenotyping.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carousel: &#39;Ozempic NO causa depresión ni suicidio (lo dice la genética)&#39; —desmonta el pánico con Mendelian randomization y abre la señal real en trastornos de conducta alimentaria.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección para el libro de psicopatología para el mundo: &#39;Fenotipado digital y biomarcadores de respuesta&#39; —del transcriptoma linfoide a la sustancia blanca psicodélica, unificados bajo precisión dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Revisión crítica: predictores de respuesta transdiagnósticos (fitness cognitivo basal, activación dPFC, rasgo hedónico) como operacionalización clínica del RDoC frente al diagnóstico categorial.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/clase ENAM-USAMEDIC: &#39;La anhedonia se trata&#39; —recorrido de blancos (dopaminérgico, neuromodulación iTBS) para enseñar el Positive Valence System de forma aplicada.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Affective Disorders (dominante esta ventana)</span><span class="tag ">Cell Reports Medicine [top]</span><span class="tag ">Biological Psychiatry [top]</span><span class="tag ">Psychological Medicine [top]</span><span class="tag ">Scientific Reports</span><span class="tag ">International Journal of Medical Informatics</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">Complementary Therapies in Medicine</span><span class="tag ">BMC Psychology</span><span class="tag ">BMC Neurology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 17 de junio de 2026.</div>
+</div>
+</body>
+</html>
