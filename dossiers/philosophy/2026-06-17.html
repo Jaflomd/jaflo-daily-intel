@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-17 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">17 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">21</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">235</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">LessWrong (Jasper Blank) · 2026-06-16 · essay</div>
+        <h3 class="r3-title">Claims All the Way Down</h3>
+        <p class="r3-hook">Jasper Blank propone descomponer cualquier argumento complejo en un árbol jerárquico de sub-claims, cada uno anclado a su fuente primaria, donde la validez se computa con odds bayesianos: la evidencia independiente se multiplica y la correlacionada se promedia geométricamente —y los LLMs por fin automatizan el mapeo manual que volvía insostenibles herramientas previas como Kialo o Squiggle. Para ti, Jaflo, es infraestructura epistémica directa: es exactamente la topología que el razonamiento clínico dimensional necesita para trazar de síntoma a diagnóstico de red (HiTOP/RDoC) con cada supuesto visible, editable y auditable, en vez de la caja negra del juicio experto. El BMSE puede adoptarlo como andamiaje formal —un caso clínico es un claim-tree donde cada nodo dimensional declara su odds y su fuente— y convierte tu manual de razonamiento en algo verificable, no retórico. Úsalo como esqueleto de un capítulo y como prototipo de herramienta IA del Lab: un claim-tree asistido por LLM para apreciación crítica de evidencia es paper de métodos y producto a la vez (pilares research + ai-enhancement).</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/ud6wrLLshsG8Jvkec/claims-all-the-way-down" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/ud6wrLLshsG8Jvkec/cl…</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Transplantation (Lippincott/Wolters Kluwer) · 2026-06-17 · paper</div>
+        <h3 class="r3-title">Higher Medical Urgency Is Associated With Greater Psychosocial Risk Tolerance in Liver Transplant Listing and Selection</h3>
+        <p class="r3-hook">Sobre 2,959 listados de trasplante hepático (2012-2023), con factores psicosociales extraídos por LLM, el equipo muestra que a mayor urgencia médica (MELD) los equipos aceptan sistemáticamente más riesgo psicosocial —historia de no-adherencia, bajo conocimiento, trauma previo— sin ninguna política que lo autorice: una heurística implícita de urgencia que suprime la aversión al riesgo y produce deriva opaca de criterios. Para ti, Jaflo, es un caso clínico naturalista perfecto del sesgo de afecto y disponibilidad operando a nivel institucional, estructuralmente idéntico a cómo un equipo de psiquiatría baja el umbral diagnóstico bajo presión de camas o saturación de urgencias —munición directa para tu argumento BMSE de que la nosología intuitiva necesita andamiaje explícito. Es además un patrón doble: usa extracción por LLM sobre texto clínico (pilar ai-enhancement), justo el método que podrías replicar en historias psiquiátricas peruanas. Llévalo al Comité de Ética del HVLH como ejemplo de por qué los criterios de selección deben ser explícitos, y al libro como demostración de que la heurística disfrazada de juicio individualizado es medible.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/TP.0000000000005800" target="_blank" rel="noopener">↗ doi.org/10.1097/TP.0000000000005800</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Astral Codex Ten (Scott Alexander &amp; Sasha Putilin) · 2026-06-16 · essay</div>
+        <h3 class="r3-title">Never Cross a River Four Feet Deep on Average</h3>
+        <p class="r3-hook">Scott Alexander y Sasha Putilin diseccionan una replicación fallida y muestran que el efecto positivo del estudio original venía enteramente de outliers en el brazo control —participantes que empeoraban progresivamente, plausiblemente por aburrimiento— enmascarados por el promedio agregado; el mecanismo es &#39;estadística de culto cargo&#39;: aplicar el ritual del p-value sin mirar la distribución cruda, que es como sobreviven al peer review los papers de neurociencia de N pequeño. Para ti, Jaflo, pega en dos lugares a la vez: es tu skill adversarial-stat-review hecho narrativa, y es el mismo error de ceguera distribucional que comete el clínico cuando lee un resultado grupal de RCT y lo aplica al paciente individual —el corazón de tu crítica a la evidencia promediada en psiquiatría dimensional. Conviértelo en caso de entrenamiento para el Comité de Ética del HVLH al evaluar diseños, y en pieza de contenido (carrusel/reel) sobre por qué &#39;el río de cuatro pies de profundidad promedio igual te ahoga&#39;. Y úsalo como recordatorio operativo: antes de creer cualquier efecto, exige ver la distribución, no solo la media.</p>
+        <a class="r3-link" href="https://www.astralcodexten.com/p/never-cross-a-river-four-feet-deep" target="_blank" rel="noopener">↗ www.astralcodexten.com/p/never-cross-a-river…</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (eluator) · 2026-06-16 · essay</div>
+          <div class="r10-title">Extreme Rationality: Still Not That Great</div>
+          <div class="r10-line">eluator argumenta que el debiasing formal fracasa porque interfiere con la cognición intuitiva experta en vez de potenciarla, que varios sesgos clásicos (loss aversion, confirmation bias, planning fallacy) tienen soporte de replicación más débil del asumido, y que las técnicas tipo CFAR carecen de validación longitudinal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el contrapunto necesario antes de meter rúbricas de debiasing a tus residentes —la pregunta de research es cuánta intervención cognitiva explícita mejora outcomes vs. solo añade ruido al sistema intuitivo; diseña el estudio que lo mide en razonamiento clínico.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/jAebQRmNnyzzqLfbX/extreme-rationality-still-not-that-great" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/jAebQRmNnyzzqLfbX/ex…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports · 2026-06-16 · paper</div>
+          <div class="r10-title">Psychological determinants of employee adaptation: a novel and robust learnability quotient-based fuzzy decision framework for organizational learning</div>
+          <div class="r10-line">Marco fuzzy esférico operacionaliza un &#39;Learnability Quotient&#39; de cuatro factores (flexibilidad cognitiva, conducta de cuestionamiento/indagación, apertura, tendencia reflexiva) y halla que cuestionar e indagar y la flexibilidad mental —no el conocimiento previo ni la motivación— predominan en la capacidad adaptativa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si cuestionar pesa más que el contenido, tu prep ENAM/Residentado debería escalonar hábitos interrogativos, no solo cobertura factual —taxonomía lista para el libro de neurociencia educativa y para rediseñar una sesión AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-57361-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-57361-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Palliative Care · 2026-06-16 · meta-analysis</div>
+          <div class="r10-title">The impact of opioid stigma on patient-provider interaction and decision-making in cancer pain management: a qualitative meta-synthesis</div>
+          <div class="r10-line">Meta-síntesis cualitativa de 20 estudios muestra que el estigma del opioide opera por supresión epistémica dual: el paciente internaliza vergüenza y silencia el dolor, el clínico tensiona analgesia vs. riesgo institucional y prescribe defensivamente —una &#39;carga de legitimidad&#39; donde el paciente debe probar su dolor en vez de recibir confianza epistémica presuntiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el mismo mecanismo distorsiona el juicio ante trastornos de personalidad, uso de sustancias y neurodivergencia —llévalo al BMSE como injusticia epistémica que sesga la decisión clínica y a un reel sobre sesgo estructural en la atención.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12904-026-02197-8" target="_blank" rel="noopener">↗ doi.org/10.1186/s12904-026-02197-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Oscar Davies) · 2026-06-16 · essay</div>
+          <div class="r10-title">What Differentiates Humans from Computers</div>
+          <div class="r10-line">Oscar Davies usa el marco de Peirce para distinguir la abducción —inferir lo plausible más allá de los datos usando conocimiento tácito— del pattern-matching estadístico, con la tesis de que outputs idénticos no implican procesos idénticos y la singularidad cognitiva vive en instancias irrepetibles.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: delimita dónde el razonamiento clínico experto (abductivo, contextual) es irreducible al LLM —el espacio donde la IA aumenta y no reemplaza; tesis de fondo para tu pilar ai-enhancement y para una clase AMAUTA sobre IA y juicio clínico.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/5kYsGqhjkdo3KadjB/what-differentiates-humans-from-computers" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/5kYsGqhjkdo3KadjB/wh…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Overcoming Bias (Robin Hanson) · 2026-06-14 · essay</div>
+          <div class="r10-title">The Promise of Polymath LLMs</div>
+          <div class="r10-line">Hanson plantea que conocer N campos expone N(N-1)/2 intersecciones donde una herramienta de un dominio resuelve un problema de otro, y que los LLMs podrían encontrar y resolver sistemáticamente contradicciones entre bases disciplinares —el hueco que la academia descuida porque cada campo solo premia la pericia intra-campo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el modelo operativo de tu psiquiatría de precisión (cruce RDoC × HiTOP × network theory) —usa un LLM como cazador de intersecciones disciplinares para generar ángulos de paper que nadie en un solo campo vería.</div>
+          <a class="r10-link" href="https://www.overcomingbias.com/p/the-promise-of-polymath-llms" target="_blank" rel="noopener">↗ www.overcomingbias.com/p/the-promise-of-poly…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Stoicism: Philosophy as a Way of Life (Donald J. Robertson, Substack) · 2026-06-16 · blog</div>
+          <div class="r10-title">This Darkness Is Not That Darkness</div>
+          <div class="r10-line">Robertson rescata la Semántica General de Korzybski como precursora de la TCC: &#39;el mapa no es el territorio&#39; y &#39;esta oscuridad no es aquella oscuridad&#39; —la sobre-generalización (colapsar situaciones distintas en una categoría) intensifica la ansiedad, y la distinción deliberada entre estímulo presente y trauma pasado interrumpe el ciclo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es un modelo mental de primer orden para debiasing clínico y para contenido sobre ansiedad —el framework mapa/territorio aplicado al razonamiento diagnóstico sesgado entra limpio al pilar precision-psychiatry.</div>
+          <a class="r10-link" href="https://donaldrobertson.substack.com/p/this-darkness-is-not-that-darkness" target="_blank" rel="noopener">↗ donaldrobertson.substack.com/p/this-darkness…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Massimo Pigliucci (Basic Books) · 2026-06-16 · editorial</div>
+          <div class="r10-title">How to Be a (Happy) Skeptic: The Power of Doubt in a Meaningful Life</div>
+          <div class="r10-line">Pigliucci publica un libro que articula el escepticismo académico de Cicerón (verisimilitudo, in utramque partem) como vía media entre dogmatismo y nihilismo: ajustar la creencia a la evidencia disponible manteniéndose abierto al error, duda productiva en vez de duda-parálisis.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el fundamento filosófico de tu &#39;evidencia proporcional al claim&#39; y de la postura provisional que HiTOP/RDoC exigen —cítalo como ancla en el libro de psicopatología y como referencia del Comité de Ética.</div>
+          <a class="r10-link" href="https://www.penguinrandomhouse.com/books/806907/how-to-be-a-happy-skeptic-by-massimo-pigliucci/" target="_blank" rel="noopener">↗ www.penguinrandomhouse.com/books/806907/how-…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Marginal Revolution (Tyler Cowen, linking Jacob &amp; Bailey) · 2026-06-15 · essay</div>
+          <div class="r10-title">Who Leads? Relative Age Effects on Social Capital</div>
+          <div class="r10-line">Una regresión discontinua difusa sobre datos de Facebook muestra que los niños relativamente mayores dentro de su cohorte escolar acumulan ~11% más amistades y tienen 42% más probabilidad de ser presidentes de clase, ventajas de capital social temprano que se componen hasta la adultez vía attachment preferencial.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el mecanismo de capital social detrás del relative-age effect que ya marca el sobre-diagnóstico de TDAH —tu línea de neurodivergencia; une el efecto de edad relativa en diagnóstico con el de liderazgo y tienes un ángulo de paper y de contenido.</div>
+          <a class="r10-link" href="https://marginalrevolution.com/marginalrevolution/2026/06/who-leads-relative-age-effects-on-social-capital.html" target="_blank" rel="noopener">↗ marginalrevolution.com/marginalrevolution/20…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Farnam Street (Shane Parrish) · 2026-06-14 · blog</div>
+          <div class="r10-title">Brain Food #685: Second &amp; Third-Order Effects, Performance Under Pressure</div>
+          <div class="r10-line">El número cruza a Bill Gurley (los sistemas complejos exigen rastrear efectos de segundo y tercer orden que el pensador de métrica única no ve) con Josh Waitzkin (rendir bajo presión es una habilidad entrenable aparte, no un subproducto del &#39;grit&#39;).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el encuadre de efectos de segundo/tercer orden es la base estructural del pensamiento dimensional (un síntoma es un nodo en una red, nunca solo un síntoma), y el de Waitzkin mapea a los momentos clínicos de alta presión que entrenas en residentes —dos anclas para una sesión BMSE.</div>
+          <a class="r10-link" href="https://fs.blog/brain-food/june-14-2026/" target="_blank" rel="noopener">↗ fs.blog/brain-food/june-14-2026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong (Ben Pace) · 2026-06-17 · essay</div>
+          <div class="r10-title">The Financial Ledger Theory of Apologies</div>
+          <div class="r10-line">Ben Pace reencuadra las disculpas como gestión de capital social vía un &#39;ledger financiero&#39;: imponer costos a otros genera deuda en tu ledger personal aunque el daño fuera inevitable, y asumir responsabilidad por costos inherentes —no solo por errores evitables— señaliza que interactuar contigo no deja al otro en peor posición.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: modelo estructural para comunicar en outcomes adversos de investigación y decisiones de comité con consecuencias no evitables —donde la disculpa convencional (&#39;lo haría distinto&#39;) no aplica; útil para tu pilar content-documentation sobre liderazgo.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/xhePNvxamTKPcobhB/the-financial-ledger-theory-of-apologies" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/xhePNvxamTKPcobhB/th…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un río de cuatro pies de profundidad promedio igual te ahoga: el efecto &#39;positivo&#39; de un estudio puede venir entero de outliers en el brazo control —gente que empeora por aburrimiento— y el promedio lo esconde. Antes de creer cualquier efecto, exige ver la distribución cruda, no la media (Astral Codex Ten).</li><li>Más debiasing no es más juicio: descomponer una decisión conscientemente muchas veces solo replica —con costo extra— lo que tu intuición experta ya hace, e interfiere con ella. El debiasing formal tiene menos validación longitudinal de la que asumimos (LessWrong).</li><li>Lo que predice la capacidad de adaptarse no es cuánto sabes ni cuánto te motivas, sino cuánto cuestionas tus propios supuestos y qué tan flexible eres cognitivamente —el conocimiento previo pesa menos que el hábito de indagar (Scientific Reports).</li><li>Bajo urgencia, el umbral de riesgo se mueve solo: a mayor gravedad del paciente, los equipos aceptan más riesgo psicosocial sin política que lo autorice —el sesgo de afecto disfrazado de juicio individualizado, medible y opaco (Transplantation).</li><li>La humildad epistémica no es parálisis: Cicerón ya operacionalizaba &#39;verisimilitudo&#39; —grados de confianza provisional ajustados a la evidencia— como alivio, no como duda que congela; es razonamiento bayesiano 2,000 años antes y la postura exacta que exige la psiquiatría dimensional (Pigliucci / The Stoic Mom).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Puedo construir un claim-tree asistido por LLM —odds bayesianos por nodo, fuente primaria por supuesto— que convierta un caso clínico dimensional (HiTOP/RDoC) en un razonamiento auditable, y es eso un paper de métodos o un producto del Lab?</li><li>Si los equipos de trasplante aceptan más riesgo psicosocial bajo mayor urgencia sin política explícita, ¿puedo demostrar la misma deriva de umbral diagnóstico bajo presión de camas en psiquiatría peruana usando extracción por LLM de historias clínicas?</li><li>¿Cuánta intervención de debiasing explícito mejora realmente el outcome del razonamiento clínico de mis residentes, y cuánta solo añade ruido al sistema intuitivo experto —cómo diseño el RCT que lo mide?</li><li>Si cuestionar e indagar predicen la adaptabilidad más que el conocimiento previo, ¿mi prep ENAM/Residentado está escalonando hábitos interrogativos o solo acumulando cobertura factual?</li><li>¿El efecto de edad relativa que infla el diagnóstico de TDAH comparte mecanismo de capital social con el que decide quién lidera la clase —y eso es un ángulo de paper que une mi línea de neurodivergencia con la formación de estatus temprano?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Herramienta + paper de métodos: claim-tree clínico asistido por LLM con odds bayesianos por nodo (adaptando &#39;Claims All the Way Down&#39;) para apreciación crítica de evidencia en razonamiento dimensional —producto del Lab y manuscrito a la vez.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Replicar el diseño de &#39;Higher Medical Urgency → risk tolerance&#39; en psiquiatría: extracción por LLM de factores en historias clínicas para demostrar deriva de umbral diagnóstico bajo presión asistencial —une ai-enhancement con clinical reasoning.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo/ítem BMSE &#39;La media te ahoga&#39;: importar el caso de ceguera distribucional de ACX como lección de por qué el clínico no debe leer un efecto grupal de RCT como verdad para el paciente individual, con la &#39;estadística de culto cargo&#39; como antipatrón.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel &#39;Tu intuición experta ya hace el debiasing&#39;: los sesgos clásicos replican peor de lo que crees y descomponer cada decisión a mano puede empeorar el juicio —humildad epistémica sin autoayuda (basado en Extreme Rationality).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel &#39;El umbral que se mueve solo&#39;: cómo la urgencia hace que un equipo médico acepte más riesgo sin darse cuenta —sesgo de afecto disfrazado de juicio clínico, con el caso de trasplante hepático como gancho (precision-psychiatry + content).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">LessWrong / GreaterWrong</span><span class="tag ">Astral Codex Ten</span><span class="tag ">Transplantation</span><span class="tag ">Scientific Reports</span><span class="tag ">BMC Palliative Care</span><span class="tag ">Overcoming Bias (Robin Hanson)</span><span class="tag ">Marginal Revolution</span><span class="tag highlight">Farnam Street</span><span class="tag ">Stoicism: Philosophy as a Way of Life (Donald Robertson)</span><span class="tag ">Massimo Pigliucci (Basic Books)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed / Crossref (verificación de DOIs) · Transplantation · Scientific Reports · BMC Palliative Care · LessWrong / GreaterWrong · Astral Codex Ten · Overcoming Bias · Marginal Revolution · Farnam Street · Donald Robertson (Substack) · The Stoic Mom (Substack) · What Is Stoicism? (Substack) · The Practice / Jon Brooks (Substack) · Penguin Random House (Pigliucci) · Reddit (r/mentalmodels, r/LessWrong, r/philosophy) · X/Twitter · YouTube. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 17 de junio de 2026.</div>
+</div>
+</body>
+</html>
