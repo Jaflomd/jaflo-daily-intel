@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-06-17 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">17 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">55</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Pharmacogenomics · 16 jun 2026 · review · 2026-06-16</div>
+        <h3 class="r3-title">Hoja de ruta de farmacogenómica para antidepresivos estratificados: qué es accionable (CYP2D6/2C19/2B6) y qué es humo (SLC6A4/HTR2A)</h3>
+        <p class="r3-hook">Baune separa en una revisión-roadmap lo que la farmacogenómica realmente permite hoy en depresión mayor: prescribir guiado por CYP2D6, CYP2C19 y —para ISRS selectos— CYP2B6 sí tiene respaldo; SLC6A4 y HTR2A NO son accionables. La señal de eficacia es pequeña-moderada en población general pero crece en pacientes severos, ya tratados o difíciles de tratar: es medicina estratificada por subgrupo, no un test para todos. Jaflo, esto es munición directa para tu pilar precision-psychiatry y para el libro de psicopatología: el mensaje &#39;trata la dimensión y el subgrupo, no la etiqueta&#39; tiene aquí un caso farmacológico limpio y citable. Úsalo como columna de razonamiento clínico (cuándo pedir PGx: antes de antidepresivos afectados, o tras no-respuesta/intolerancia/polifarmacia) y como contenido anti-hype que distingue panel propietario de evidencia real. Según PubMed.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/14622416.2026.2686866" target="_blank" rel="noopener">↗ doi.org/10.1080/14622416.2026.2686866</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">BMC Medical Education · 15 jun 2026 · paper · 2026-06-15</div>
+        <h3 class="r3-title">Enseñar a escala: la analítica de TBL detecta al 50 inferior y la intervención temprana baja 41% la reprobación de examen</h3>
+        <p class="r3-hook">La Universidad de Manchester reemplazó PBL por Team-Based Learning en dos cohortes (n=435 y 426) y mostró que el iRAT semanal predice el examen sumativo (R²≈0.38-0.41), reproducible año a año. Con esos datos identificaron a los 50 estudiantes más débiles y les dieron apoyo dirigido: +20% de rendimiento de semestre, +5% en sumativo y -41% en tasa de reprobación, sin inflar al resto, y de paso -63% horas de facilitador y -84% uso de aulas. Jaflo, este es el caso de educación de precisión que tu pilar amauta-education necesitaba con números: en AMAUTA/USAMEDIC ya tienes señales tempranas (simulacros, quizzes) que podrías convertir en un detector de quién va a reprobar el ENAM e intervenir antes. Es paper, contenido y producto a la vez: replica el R² del iRAT con tus datos de banco de preguntas y vendes &#39;intervención temprana&#39; como diferencial. Según PubMed.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09612-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09612-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Canadian Journal of Psychiatry · 16 jun 2026 · review · 2026-06-16</div>
+        <h3 class="r3-title">Genética del TDAH para el clínico: ~70% heredable, poligénica, sin test diagnóstico — y farmacogenética útil solo para dosis de atomoxetina</h3>
+        <p class="r3-hook">Schachar y colegas resumen, para el practicante, lo que la genética del TDAH sí dice: heredabilidad ~70% (comparable a otras condiciones neuropsiquiátricas mayores), poligénica (miles de variantes de efecto pequeño), con CNVs raras que solapan con autismo y rutas de neurodesarrollo en corteza frontal temprana. El golpe práctico: NO hay test genético diagnóstico, la farmacogenética solo justifica genotipar para dosis de atomoxetina (no para elegir estimulante), y la evaluación debe priorizar deterioro funcional, historia y comorbilidad. Jaflo, esto es oro para tu wedge de neurodivergencia adulta (book-psicopato) y para contenido: desmonta el mito del &#39;test de TDAH&#39; que tus pacientes y seguidores piden, conecta TDAH-TEA por CNV compartida (tu marco dimensional) y te da una psicoeducación gene-environment lista para carrusel/reel. Según PubMed.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/07067437261457230" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261457230</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">NPJ Digital Medicine · 15 jun 2026 · paper · 2026-06-15</div>
+          <div class="r10-title">Fenotipado digital con LLMs para detectar cambios de estado depresivo</div>
+          <div class="r10-line">LLMs (in-context learning + fine-tuning QLoRA) sobre datos de fenotipado digital superan a baselines tradicionales para detectar cambios en severidad de depresión durante episodios depresivos mayores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El fenotipado digital + LLM será el motor del monitoreo proactivo en trastornos del ánimo; capitalízalo en tu pilar ai-enhancement uniéndolo a tu marco dimensional (detectar la dimensión que se mueve, no la etiqueta).</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41746-026-02883-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s41746-026-02883-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature Communications · 15 jun 2026 · paper · 2026-06-15</div>
+          <div class="r10-title">La voz como biomarcador de depresión: auto-supervisado, validado externamente (AUC 0.879)</div>
+          <div class="r10-line">Framework de habla auto-supervisado (WavLM/HuBERT) en N=1.816 logra AUC 0.932 interno y 0.879 en validación externa para diagnóstico asistido de depresión mayor — barato y no invasivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La voz pasa de demo a tamizaje real; el diferenciador será validación externa como esta, no el AUC interno — vigila su degradación en español andino/quechua para tu contexto peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41467-026-74122-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41467-026-74122-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health · 16 jun 2026 · review · 2026-06-16</div>
+          <div class="r10-title">IA para detectar recaída en psicosis: revisión de alcance con techo de evidencia</div>
+          <div class="r10-line">Revisión de alcance (N=10 estudios) de IA para recaída psicótica: sensibilidad 0.25-0.77, especificidad 0.06-0.88, AUC 0.63-0.78 y casi nada replicado — promesa con techo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Madurará solo con colaboraciones grandes y modelado individual; úsala como referencia anti-hype cuando enseñes razonamiento clínico sobre &#39;IA que predice recaída&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92192" target="_blank" rel="noopener">↗ doi.org/10.2196/92192</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychiatry Research: Neuroimaging · 15 jun 2026 · review · 2026-06-15</div>
+          <div class="r10-title">Predicción de respuesta a TEC en esquizofrenia resistente vía neuroimagen + ML/radiómica</div>
+          <div class="r10-line">Revisión enfocada de modelos ML/radiómica con neuroimagen para predecir respuesta a TEC en esquizofrenia resistente (orbitofrontal, temporal, límbico) — hacia emparejar paciente-tratamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La predicción de respuesta a TEC podría ser el primer uso clínico real de radiómica en psiquiatría; conéctalo a tu línea de neuromodulación estratificada.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pscychresns.2026.112272" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pscychresns.2026.112272</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Alzheimer&#39;s Disease · 16 jun 2026 · rct · 2026-06-16</div>
+          <div class="r10-title">Angiopoyetina-2 modera la ganancia cognitiva de remediación + tDCS (RCT PACt-MD)</div>
+          <div class="r10-line">En el RCT PACt-MD (N=271), angiopoyetina-2 basal baja predice mayor ganancia cognitiva con remediación cognitiva + tDCS en adultos mayores con deterioro cognitivo leve o depresión remitida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los biomarcadores de angiogénesis se sumarán a la estratificación de quién responde a neuromodulación; vector de paper para tu pilar precision-psychiatry si consigues cohorte con tDCS.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/13872877261457934" target="_blank" rel="noopener">↗ doi.org/10.1177/13872877261457934</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open · 15 jun 2026 · paper · 2026-06-15</div>
+          <div class="r10-title">Panel de biomarcadores en suero y orina para diagnóstico de depresión (TRIPOD)</div>
+          <div class="r10-line">Panel de 34 biomarcadores en suero/orina + ML (reportado con TRIPOD) discrimina depresión de controles con AUC 0.81 interno pero solo 0.62-0.72 externo — utilidad clínica todavía modesta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El test de laboratorio para depresión seguirá siendo &#39;valor agregado&#39;, no diagnóstico; perfecto para enseñar la brecha entre AUC interno y externo.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjo.2026.11044" target="_blank" rel="noopener">↗ doi.org/10.1192/bjo.2026.11044</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Translational Psychiatry · 15 jun 2026 · paper · 2026-06-15</div>
+          <div class="r10-title">Exceso de banda beta en EEG correlaciona con severidad en síndrome Dup15q</div>
+          <div class="r10-line">El exceso de potencia beta en EEG (g=+1.84) en síndrome Dup15q correlaciona con severidad cognitiva y adaptativa — biomarcador electrofisiológico de hiperfunción GABA-A en un trastorno del neurodesarrollo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los biomarcadores EEG de balance excitación/inhibición se volverán endpoints en ensayos de neurodesarrollo; nutre tu marco dimensional TEA/neurodivergencia con un anclaje de circuito.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41398-026-04171-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04171-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">La metilación de OXT/SLC6A4/NR3C1 NO predice respuesta antidepresiva (resultado nulo)</div>
+          <div class="r10-line">Estudio longitudinal (N=66+66): la metilación de OXT/SLC6A4/NR3C1 no predice respuesta al tratamiento de depresión, y el efecto basal de OXT desaparece al ajustar por composición celular sanguínea.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Más resultados nulos depurarán la epigenética psiquiátrica; guárdalo como caso de &#39;confound oculto&#39; (composición celular) para tu enseñanza de lectura crítica.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-57641-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-57641-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 15 jun 2026 · review · 2026-06-15</div>
+          <div class="r10-title">Autorregulación individual y compartida en entornos de aprendizaje adaptativo colaborativo (gap en HPE)</div>
+          <div class="r10-line">Revisión de alcance (31 estudios): el aprendizaje adaptativo apoya la autorregulación con feedback personalizado y dashboards, pero casi no hay evidencia empírica en educación de profesiones de la salud — gap abierto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Quien llene ese vacío empírico en HPE marca agenda; es un gap citable para tu próximo paper de educación de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09355-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09355-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Heart Journal · 16 jun 2026 · review · 2026-06-16</div>
+          <div class="r10-title">Simulación con IA, gemelos digitales y aprendizaje personalizado en cardiología (revisión 2020-2025)</div>
+          <div class="r10-line">Revisión 2020-2025: la simulación mejora habilidad técnica 20-40% y reduce error médico 51% (d=0.85-2.2), con IA/gemelos digitales/aprendizaje personalizado como frontera — pero la brecha es demostrar mejores outcomes de paciente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La simulación con aprendizaje adaptativo se estandarizará; el límite (outcomes de paciente, no solo de habilidad) es exactamente el argumento que debes hacer en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/eurheartj/ehag410" target="_blank" rel="noopener">↗ doi.org/10.1093/eurheartj/ehag410</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Farmacogenómica no es &#39;débilmente útil para todos&#39;: es fuertemente útil para pocos. El mayor rendimiento de CYP2D6/2C19 aparece en pacientes severos o ya tratados, no en el MDD promedio — la estratificación por subgrupo le gana al &#39;test para todos&#39; (Pharmacogenomics, 10.1080/14622416.2026.2686866).</li><li>El predictor más barato de quién reprueba el examen ya lo tienes: el quiz semanal. En Manchester el iRAT explicó ~40% de la varianza del sumativo — más señal que muchos biomarcadores de sangre en psiquiatría (BMC Med Educ, 10.1186/s12909-026-09612-x).</li><li>No existe test genético para diagnosticar TDAH; la única farmacogenética que cambia conducta es dosificar atomoxetina. Lo que venden como &#39;test de TDAH&#39; es humo (Can J Psychiatry, 10.1177/07067437261457230).</li><li>Un biomarcador puede evaporarse al ajustar por composición celular sanguínea: la &#39;menor metilación de OXT&#39; en depresión desapareció al controlar neutrófilos/linfocitos. El confound estaba en el tubo, no en el cerebro (Sci Rep, 10.1038/s41598-026-57641-9).</li><li>El abismo entre AUC interno y externo es la métrica real: el panel de depresión cayó de 0.81 a 0.62-0.72 fuera de muestra y la revisión de psicosis casi no replicó. Sin validación externa, un AUC alto es marketing (BJPsych Open 10.1192/bjo.2026.11044; JMIR Ment Health 10.2196/92192).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Puedo replicar el R²≈0.40 del iRAT→sumativo con mis simulacros de USAMEDIC para predecir reprobación del ENAM e intervenir al cuartil inferior antes del examen?</li><li>¿Qué subgrupo de mis pacientes con depresión (severidad, fracasos previos, polifarmacia) justifica realmente pedir farmacogenómica CYP2D6/2C19, y cuál no?</li><li>Si la voz alcanza AUC externo 0.879 para depresión, ¿qué tan rápido degrada en hablantes de español andino/quechua y cómo lo validaríamos en Perú?</li><li>¿El fenotipado digital + LLM detecta la dimensión que se mueve (anhedonia, sueño) mejor que la etiqueta diagnóstica — y eso encaja con un readout RDoC/HiTOP?</li><li>¿Cuántos &#39;biomarcadores&#39; de psiquiatría que enseño sobrevivirían un ajuste por composición celular o una validación externa honesta?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel &#39;No existe el test genético de TDAH&#39;: desmonta el mito con la revisión de Can J Psychiatry, conecta TDAH-TEA por CNV compartida y cierra con qué SÍ sirve (deterioro funcional, atomoxetina).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper &#39;Del iRAT al ENAM&#39;: modelo predictivo de reprobación con datos de banco de preguntas USAMEDIC + intervención temprana al cuartil inferior, replicando Manchester en contexto peruano.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE/psicopato &#39;Trata el subgrupo, no la etiqueta&#39;: farmacogenómica de antidepresivos como caso clínico de estratificación (qué es accionable vs humo).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Mini-serie &#39;Cómo se evapora un biomarcador&#39;: el caso OXT/composición celular como clase de lectura crítica para residentes (razonamiento clínico + estadística).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Posición/revisión &#39;Educación de precisión en HPE: el gap empírico&#39;: tomar el vacío de autorregulación (SRL/SSRL) en profesiones de la salud y proponer agenda + diseño adaptativo medible.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Pharmacogenomics</span><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag highlight">Nature Communications</span><span class="tag ">NPJ Digital Medicine</span><span class="tag ">JMIR Mental Health</span><span class="tag highlight">BMC Medical Education</span><span class="tag highlight">BJPsych Open</span><span class="tag ">Translational Psychiatry</span><span class="tag ">Scientific Reports</span><span class="tag ">Psychiatry Research: Neuroimaging</span><span class="tag ">European Heart Journal</span><span class="tag ">Journal of Alzheimer&#39;s Disease</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · WebSearch (medRxiv/arXiv/JMIR/Nature — contexto). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 17 de junio de 2026.</div>
+</div>
+</body>
+</html>
