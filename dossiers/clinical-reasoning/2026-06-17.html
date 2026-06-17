@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-06-17 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">17 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">81</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">49</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Cognition · 16 jun 2026 · rct · 2026-06-16</div>
+        <h3 class="r3-title">The adaptive function of analytic thinking styles: Balancing effort and accuracy in meta-reasoning</h3>
+        <p class="r3-hook">RCT (N=364) con módulos online de humildad intelectual, curiosidad y tenacidad: no hubo efecto directo sobre el razonamiento, pero el grupo tratado deliberó MÁS solo en tareas con conflicto cognitivo —y NO cuando reflexionar no aportaba— con mayor sensibilidad metacognitiva al juzgar su propia precisión. El mecanismo es la pieza fina: lo que mejoró no fue &#39;pensar más&#39; sino una menor preferencia por la intuición, aplicada de forma selectiva. Para ti, Jaflo, esto es evidencia mecanística directa del override Sistema 1↔2 que sostiene tu BMSE/razonamiento dimensional y el capítulo de debiasing de tu neurociencia educativa: el debiasing efectivo baja el agarre de la intuición justo donde hay conflicto, no manda a sospechar de todo. Úsalo como ancla de un módulo del Competency Lab sobre &#39;cuándo desconfiar de tu corazonada&#39; y de un carousel que mate el mito de que más esfuerzo siempre es mejor razonamiento.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.cognition.2026.106618" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cognition.2026.106618</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">The Journal of Pediatrics · 16 jun 2026 · paper · 2026-06-16</div>
+        <h3 class="r3-title">Don&#39;t Skip A Beat: Deliberate Practice and Mastery Learning of Pediatric Electrocardiograms</h3>
+        <p class="r3-hook">345 pediatras, 46,649 interpretaciones de ECG con feedback inmediato hasta un estándar de maestría: ganancias de +14.6% / +15.0% / +19.8% en detectar hallazgo accionable, categorizarlo y elegir el diagnóstico; el 65% alcanzó el estándar en una mediana de 325 casos (~6.5h), y se mapearon los hallazgos que más engañan (hipertrofia ventricular, Brugada, QTc prolongado, isquemia/pericarditis). Esto es error diagnóstico REAL medido (16.5% incorrecto), no autorreporte, acoplado a deliberate practice con dosis cuantificada —exactamente el motor que necesitas para AMAUTA/USAMEDIC rumbo al ENAM y Residentado y para el Competency Lab. La jugada, Jaflo: armar bancos de casos espaciados con feedback alrededor de &#39;los hallazgos que engañan a todos&#39; y usar la cifra ≈325 casos-para-maestría como pitch de por qué un deck de casos vence a la clase magistral.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jpeds.2026.115192" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jpeds.2026.115192</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Scientific Reports · 16 jun 2026 · rct · 2026-06-16</div>
+        <h3 class="r3-title">DeepSeek-assisted problem-based learning for glaucoma education in an undergraduate ophthalmology clerkship: a randomized educational pilot study</h3>
+        <p class="r3-hook">RCT educativo (74 estudiantes): PBL asistido por DeepSeek vs PBL tradicional, mismo curso, mismo docente. El grupo con IA logró mayores notas teóricas (P=0.003) y mejoras significativas en razonamiento diagnóstico, habilidades de interrogatorio y proficiencia clínica vía Mini-CEX (todos P&lt;0.05) —pero los propios alumnos advirtieron que el consejo de la IA podía no ser siempre exacto. Es la primera señal aleatorizada de que un LLM open-source bien integrado a PBL sube el razonamiento clínico medido, justo el pilar ai-enhancement y tu tesis AMAUTA de que la IA bien diseñada potencia (no reemplaza) el razonamiento. La desconfianza del estudiante no es un bug: es el hábito de verificación/calibración que quieres enseñar. Prototipa, Jaflo, un módulo PBL con DeepSeek/Claude para USAMEDIC y su lección gemela: &#39;no confíes ciego, audita a tu tutor IA&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41598-026-58447-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-58447-5</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Construct Validity of a Multimodal Assessment Framework Combining Script Concordance Testing and High-Fidelity Simulation for Orthopedic Residents</div>
+          <div class="r10-line">El Script Concordance Test discrimina expertos de residentes (d=2.32) y PGY-2 de PGY-1, y predice el desempeño en simulación de alta fidelidad (|ρ|≥0.53): un instrumento barato que anticipa la conducta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El SCT se vuelve gate de tamizaje del Competency Lab/AMAUTA antes de gastar horas caras de simulación; mídelo como predictor de razonamiento, no como examen de contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104021" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104021</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Langenbeck&#39;s Archives of Surgery · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Towards clinically interpretable machine learning in emergency surgery: feature importance across clinical time points in abdominal pain</div>
+          <div class="r10-line">En dolor abdominal agudo la discriminación para cirugía urgente sube de 0.53→0.83 con labs+examen físico y la TC casi no aporta (0.83): el razonamiento se &#39;satura&#39; antes de la imagen.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Argumento de oro para enseñar parsimonia diagnóstica y frenar el reflejo de pedir TC; SHAP por timepoint como material docente del Competency Lab.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00423-026-04098-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s00423-026-04098-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Musculoskeletal Disorders · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Accuracy of visual estimation of shoulder abduction by expert physiotherapists: a comparative study using 3D motion capture</div>
+          <div class="r10-line">Fisioterapeutas con ≥10 años sobreestiman la abducción de hombro ~14.7° vs captura 3D, y el 89.9% sobreestima: la calibración del experto falla de forma sistemática y direccional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Insumo perfecto para un módulo de &#39;calibración del ojo clínico&#39; y para el capítulo de neurociencia educativa sobre por qué la confianza del experto no sustituye la medición.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12891-026-10073-y" target="_blank" rel="noopener">↗ doi.org/10.1186/s12891-026-10073-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Case Reports · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Acute severe mitral regurgitation mimicking pneumonia: the diagnostic value of echocardiography</div>
+          <div class="r10-line">Neumonía &#39;obvia&#39; por opacidad unilateral + inflamación que era insuficiencia mitral aguda por ruptura de cuerda; el eco a pie de cama rompió el anclaje y el cierre prematuro.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Caso-ancla para una clase/Reel sobre el antídoto del anclaje: pedir la prueba que reta la hipótesis, no más antibiótico.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bcr-2026-274025" target="_blank" rel="noopener">↗ doi.org/10.1136/bcr-2026-274025</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BJGP Open · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">The GP Evidence website: focus-group evaluation of a new point-of-care information resource</div>
+          <div class="r10-line">Un recurso point-of-care con números de beneficio/daño cambió intenciones de prescripción y subió la confianza de GPs: integrar magnitudes cuantitativas altera el razonamiento real, no solo el saber.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Modelo para un &#39;vademécum de magnitudes&#39; que AMAUTA podría adaptar para ENAM y decisión compartida basada en números, no en impresiones.</div>
+          <a class="r10-link" href="https://doi.org/10.3399/BJGPO.2025.0109" target="_blank" rel="noopener">↗ doi.org/10.3399/BJGPO.2025.0109</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JACC: Case Reports · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Severe Hypertriglyceridemia With Lipemia-Induced Analytical Interference: Diagnostic Challenges in a Chylomicronemia Phenotype</div>
+          <div class="r10-line">TP reportado como &#39;infinito&#39; y suero cremoso por hipertrigliceridemia severa: un artefacto de laboratorio casi desvía el manejo; el mixing study deshizo la falsa coagulopatía.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Perla de razonamiento sobre artefactos preanalíticos —&#39;no todo valor extremo es biológico&#39;— para el banco de casos USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jaccas.2026.108821" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jaccas.2026.108821</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Forensic Nursing · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Nonfatal Strangulation Knowledge and Experience in Health Care Professionals</div>
+          <div class="r10-line">El conocimiento sobre estrangulación no letal varió por rol profesional pero NO se asoció a los años de experiencia: la experiencia, sola, no calibra el razonamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza tu tesis AMAUTA de que la competencia exige educación estructurada y no &#39;se aprende en la práctica&#39; por ósmosis.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/JFN.0000000000000612" target="_blank" rel="noopener">↗ doi.org/10.1097/JFN.0000000000000612</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Thrombosis and Thrombolysis · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Machine learning to identify novel bleeding and residual thromboembolic risks in patients on anticoagulation</div>
+          <div class="r10-line">ML supera a HAS-BLED (AUC 0.88 vs 0.73) y a CHA2DS2-VASc (0.79 vs 0.63) para sangrado/tromboembolismo, con SHAP revelando predictores nuevos (PAP, LAVI, eGFR).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los scores heurísticos que enseñamos pasan a piso; el reto docente se mueve a enseñar cuándo y por qué desconfiar del modelo (automation bias).</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11239-026-03340-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s11239-026-03340-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Endocrine-Related Cancer · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">The NET Score: An Interpretable AI-Assisted Prognostic Score for Mortality Risk in Lung Neuroendocrine Tumors</div>
+          <div class="r10-line">LASSO selecciona 4 variables de rutina y arma un score interpretable 0-8 de mortalidad: IA que se queda transparente y usable a la cabecera, no caja negra.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Plantilla de &#39;IA interpretable&#39; que tu agenda de psiquiatría de precisión puede copiar: predicción accionable sin sacrificar explicabilidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1530/ERC-26-0164" target="_blank" rel="noopener">↗ doi.org/10.1530/ERC-26-0164</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Participatory Medicine · 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Enhancing Patient Participation in Co-Productive Decision-Making With Personal Value Sets: Clinical Trial Prototype</div>
+          <div class="r10-line">Prototipo (PUSH) que elicita el set COMPLETO de utilidades personales del paciente (EQ-5D-5L) en consulta para una decisión co-productiva real, no con preferencias promedio de la población.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Andamiaje para decisión compartida de precisión centrada en los valores del paciente —encaja con tu marco dimensional y con la psiquiatría de precisión orientada a la persona.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/81623" target="_blank" rel="noopener">↗ doi.org/10.2196/81623</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El debiasing que funciona no te hace &#39;pensar más en todo&#39;: baja selectivamente tu preferencia por la intuición justo en los casos con conflicto y te deja correr rápido cuando reflexionar no aporta (Orona, Cognition). El esfuerzo indiscriminado es el falso amigo.</li><li>La competencia en lectura de ECG pediátrico tiene dosis medible: ~325 casos con feedback (≈6.5h) para que el 65% alcance el estándar de maestría. La pericia es reps estructuradas, no talento innato (Boutis, J Pediatr).</li><li>El experto también está mal calibrado y en una dirección: fisioterapeutas con ≥10 años sobreestiman la abducción de hombro ~14.7° y el 89.9% sobreestima vs captura 3D. La confianza del ojo entrenado no sustituye la medición (Kenner, BMC Musculoskelet Disord).</li><li>El anclaje mata: la &#39;neumonía&#39; por opacidad + inflamación era insuficiencia mitral aguda por ruptura de cuerda; lo que rompió el cierre prematuro fue una prueba que retaba la hipótesis (eco), no más antibiótico (Teixeira, BMJ Case Rep).</li><li>Cuando el ML bate al CHA2DS2-VASc/HAS-BLED (AUC 0.88 vs 0.73), el heurístico clínico que enseñamos como gold standard empieza a ser el piso, no el techo; el nuevo skill es saber cuándo desconfiar del modelo (Leng, J Thromb Thrombolysis).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el debiasing actúa bajando la preferencia por la intuición y no subiendo el esfuerzo, ¿cómo medimos &#39;preferencia intuitiva&#39; en residentes peruanos antes/después de un módulo del Competency Lab?</li><li>¿Cuál es la &#39;dosis de maestría&#39; (nº de casos con feedback) para los 10 escenarios más frecuentes del ENAM, y se puede replicar el diseño de Boutis con un banco USAMEDIC?</li><li>¿La IA en PBL mejora el razonamiento por mejor andamiaje o solo por más tiempo-en-tarea? ¿Y la desconfianza del estudiante hacia la IA predice mejor calibración?</li><li>¿Qué tan calibrados están nuestros docentes-expertos cuando estiman &#39;a ojo&#39; (ángulos, severidad, probabilidad pretest), y conviene un check de calibración como gate docente?</li><li>Si los modelos ML ya baten a los scores heurísticos, ¿qué toca enseñar: el score, o cuándo y por qué desconfiar del modelo (automation bias)?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carousel/Reel &#39;El mito de pensar más&#39;: el debiasing real baja la intuición de forma selectiva, no te vuelve lento en todo (anclado en Orona/Cognition). Hook para IG JafloMD.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio &#39;deliberate practice to mastery&#39; para lectura de ECG/EKG en internos peruanos rumbo al ENAM, midiendo dosis-a-competencia y los hallazgos de alto error (réplica de Boutis en contexto LATAM/AMAUTA).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de neurociencia educativa: &#39;Calibración del experto&#39; — por qué el ojo entrenado se equivoca de forma sistemática (ángulos, probabilidad pretest) y cómo entrenar metacognición para corregirlo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie &#39;Anclaje en la sala&#39;: casos cortos donde la prueba que reta la hipótesis (eco a pie de cama, mixing study) deshace el cierre prematuro; formato Reel + banco de casos.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-RCT en USAMEDIC: PBL asistido por LLM (DeepSeek/Claude) vs PBL tradicional sobre razonamiento diagnóstico (Mini-CEX/SCT), con la desconfianza calibrada hacia la IA como outcome secundario.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Cognition</span><span class="tag ">The Journal of Pediatrics</span><span class="tag ">Scientific Reports</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Langenbeck&#39;s Archives of Surgery</span><span class="tag ">BMC Musculoskeletal Disorders</span><span class="tag ">BMJ Case Reports</span><span class="tag ">BJGP Open</span><span class="tag ">JACC: Case Reports</span><span class="tag ">Journal of Thrombosis and Thrombolysis</span><span class="tag ">Endocrine-Related Cancer</span><span class="tag ">Journal of Participatory Medicine</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · WebSearch (medRxiv, Europe PMC). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 17 de junio de 2026.</div>
+</div>
+</body>
+</html>
