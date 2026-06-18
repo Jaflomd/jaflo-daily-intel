@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-06-17 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">17 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">186</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">77</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">British Journal of Psychiatry · 2026-06-16 · review</div>
+        <h3 class="r3-title">Ethical issues in the clinical use of diagnostic technologies for rare causes of psychosis</h3>
+        <p class="r3-hook">Este review multidisciplinario (psiquiatría, neurología, filosofía, bioética; Oxford, Harvard, Freiburg) parte de un dato duro: ~5% de las psicosis de primer episodio tienen una causa rara y a veces reversible —encefalitis autoinmune, causas genéticas— detectable con punción lumbar, neuroimagen especializada o test genético, estudios hoy infrautilizados en psiquiatría. Jaflo, esto cae exactamente en tu intersección de tres pilares: neuropsiquiatría (la interfaz neurología-psiquiatría que distingue este dominio), precision-psychiatry, y bioética operativa —tú presides el comité de ética del HVLH, y el paper organiza el problema en justicia diagnóstica, responsabilidad moral del clínico y consecuencias no intencionadas (el &#39;excepcionalismo psiquiátrico&#39;). Es material para una sesión de ética del comité y para una pieza de contenido ENAM/residentado sobre &#39;las banderas rojas que obligan a descartar causa orgánica antes de etiquetar esquizofrenia&#39;. Úsalo como puente entre tu línea de razonamiento clínico dimensional y la psiquiatría de precisión: la pregunta no es solo &#39;qué test pedir&#39; sino &#39;a quién se lo negamos y por qué&#39;, que es donde la ética y el RDoC se tocan.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10675" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10675</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">NPP Digital Psychiatry &amp; Neuroscience (Nature) · 2026-06-16 · review</div>
+        <h3 class="r3-title">Characterizing the spiral: potential mechanisms in AI-associated delusions</h3>
+        <p class="r3-hook">Augustin, Pollak y Morrin (King&#39;s College / Maudsley) proponen el marco de la &#39;espiral de amplificación&#39; para los delirios asociados a IA: tres rasgos empíricos del chatbot —alineación lingüística (espeja el lenguaje del usuario), generación hiperpersonalizada y sicofancia (valida sin reality-testing)— convergen para co-construir activamente la ideación delirante, a diferencia de los viejos delirios que solo &#39;incorporaban&#39; la tecnología como tema. Jaflo, esto es oro multipilar: toca tu línea de IA aplicada, precision-psychiatry y, sobre todo, content-documentation —es un hook de carrusel/reel altísimo y un ángulo que casi nadie en español está explotando con rigor. Conecta directo con tu libro de psicopatología para el mundo: un capítulo sobre cómo la tecnología deja de ser &#39;contenido&#39; del delirio para volverse &#39;mecanismo&#39;. Es también un caso de uso perfecto para tu marca Aprendiz Experto (IA-first): explicar el mecanismo, no solo alarmar, posicionándote como la voz que entiende tanto la psicopatología como el LLM por dentro.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s44277-026-00065-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s44277-026-00065-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Neuroscience &amp; Biobehavioral Reviews · 2026-06-16 · review</div>
+        <h3 class="r3-title">Aging in Autism: A Systematic Review of Cognitive, Neural, and Physical Health Findings</h3>
+        <p class="r3-hook">Revisión sistemática de 56 estudios (UCLA, grupo de Catherine Lord) sobre el envejecimiento del adulto autista: no hay evidencia de envejecimiento globalmente acelerado, pero sí vulnerabilidades dirigidas —queja cognitiva subjetiva consistentemente elevada pese a medidas objetivas comparables, integridad de sustancia blanca, y tasas elevadas de neurodegeneración, deterioro sensorial e insuficiencia cardiaca/ictus pese a menor hipertensión. Jaflo, esto alimenta de forma directa el wedge de tu negocio de contenido book-psicopato: neurodivergencia adulta. La narrativa &#39;el autismo no es solo de la infancia: así envejece el cerebro autista&#39; es exactamente el tipo de reencuadre que tu audiencia adulta neurodivergente busca y que casi nadie cubre con evidencia. El paper también te da el dato más fino para diferenciarte: la brecha entre queja subjetiva y rendimiento objetivo es la señal, no el ruido —material para sección de libro y para un hilo/carrusel sobre &#39;camuflaje, carga alostática y por qué el adulto autista siente que su mente envejece más rápido&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106820" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106820</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Canadian Journal of Psychiatry · 2026-06-16 · review</div>
+          <div class="r10-title">Update on ADHD genetics: A practitioner&#39;s perspective</div>
+          <div class="r10-line">Review narrativa orientada al clínico: TDAH ~70% heredable (comparable a otros trastornos psiquiátricos mayores), poligénico, sin test diagnóstico genético; el único uso farmacogenético respaldado es dosificación de atomoxetina, no selección de estimulante.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este es tu guion de contenido ENAM/residentado más limpio del trimestre —&#39;lo que SÍ y NO dice la genética del TDAH a la familia que lo pregunta&#39;; capitalízalo como carrusel + clase corta antes de que la ola de &#39;tests genéticos de TDAH&#39; comerciales sature el feed.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/07067437261457230" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261457230</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Bioscience Reports · 2026-06-17 · review</div>
+          <div class="r10-title">A comprehensive overview of the biological foundations of ADHD</div>
+          <div class="r10-line">Overview integrador de la arquitectura biológica del TDAH —dopaminérgico/noradrenérgico, neuroimagen heterogénea, base poligénica, multi-ómica y correlación/interacción gen-ambiente— con énfasis en abordajes integrativos sobre el reduccionismo de un solo mecanismo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: encaja con tu marco dimensional/RDoC para enseñar TDAH como espectro multinivel y no como categoría; lo veo como el andamiaje &#39;biología&#39; de un capítulo de neurodivergencia adulta del book-psicopato.</div>
+          <a class="r10-link" href="https://doi.org/10.1042/BSR20254061" target="_blank" rel="noopener">↗ doi.org/10.1042/BSR20254061</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neurology · 2026-06-16 · meta-analysis</div>
+          <div class="r10-title">Fecal Microbiota Transplantation in Parkinson Disease: A Systematic Review, Meta-Analysis, and Meta-Regression</div>
+          <div class="r10-line">Meta-análisis (8 estudios, 220 pacientes) en Neurology: el FMT mejora la función motora en Parkinson (UPDRS-III, MD −9.67; en solo-RCT −6.82) y el estreñimiento, pero el beneficio es transitorio y con más eventos GI —eje intestino-cerebro modificable, no curativo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el hype del microbioma en neuropsiquiatría va a crecer; tu ventaja es traducir &#39;modificable pero transitorio&#39; sin sobrevender —perla de neuropsiquiatría que diferencia tu dossier del ruido divulgativo.</div>
+          <a class="r10-link" href="https://doi.org/10.1212/WNL.0000000000218175" target="_blank" rel="noopener">↗ doi.org/10.1212/WNL.0000000000218175</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Research Bulletin · 2026-06-16 · meta-analysis</div>
+          <div class="r10-title">Temporal patterns of neurostimulation efficacy in drug-resistant epilepsy: A systematic review and meta-analysis</div>
+          <div class="r10-line">95 cohortes (VNS abierto/cerrado, DBS, RNS) en epilepsia fármaco-resistente: las tasas de respuesta suben con el tiempo (39% a 3 meses → 63% a ≥21 meses) y las diferencias entre dispositivos se vuelven no significativas al ajustar por tiempo/selección.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza tu línea de neuromodulación —el mensaje accionable es &#39;ofrecer más temprano y medir a 1-2 años, no a 3 meses&#39;; material para una nota del Garden sobre remodelación de red y para diferenciar marketing de hardware vs. evidencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.brainresbull.2026.111995" target="_blank" rel="noopener">↗ doi.org/10.1016/j.brainresbull.2026.111995</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Child &amp; Adolescent Psychiatry · 2026-06-16 · meta-analysis</div>
+          <div class="r10-title">Emotion dysregulation in children and adolescents with externalizing disorders: a systematic review and meta-analysis</div>
+          <div class="r10-line">75 estudios, 11.913 participantes: la desregulación emocional correlaciona con síntomas externalizantes (TDAH/ODD/CD) con r=0.35, y la labilidad emocional pesa más (r=0.47) que el déficit de regulación (r=0.24); sin moderación por edad, sexo o medicación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es munición directa para tu psicopatología dimensional (espectro externalizante HiTOP) —la labilidad emocional como dimensión transdiagnóstica, no como síntoma accesorio; lo veo en dimensional-psych y en el BMSE.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00787-026-03090-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s00787-026-03090-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neurodegenerative Disease Management · 2026-06-17 · review</div>
+          <div class="r10-title">Diagnosis and management of frontotemporal dementia: a narrative review</div>
+          <div class="r10-line">Síntesis de la DFT: fenotipos clínicos, biomarcadores fluidos/imagen, herramientas IA emergentes y terapias en desarrollo (oligonucleótidos antisentido, restauración de progranulina, neuromodulación) —con el solapamiento psiquiátrico de la variante conductual como reto diagnóstico central.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la DFT conductual es el caso prototípico de la interfaz neuropsiquiátrica (se confunde con manía/depresión/psicosis); perfecto para una clase de razonamiento clínico sobre &#39;cuándo el psiquiatra debe pensar en neurodegeneración&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/17582024.2026.2687481" target="_blank" rel="noopener">↗ doi.org/10.1080/17582024.2026.2687481</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Review of Psychiatry · 2026-06-16 · review</div>
+          <div class="r10-title">Behavioral addictions in adolescents in Latin America: a narrative review of prevalence, mental health comorbidities, and gaps in care</div>
+          <div class="r10-line">Review sobre adicciones conductuales (internet, gaming, smartphone) en adolescentes latinoamericanos: prevalencias 10.6%–54.9% (heterogeneidad de instrumentos), comorbilidad consistente con TDAH/depresión/ansiedad/suicidalidad (RR 2.14–2.39 para conducta suicida), y casi nula evidencia regional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este es TU terreno —psiquiatra peruano, vacío de instrumentos validados ICD-11 y de workforce en la región; lo veo como una carta/review corto con autoría regional y como contenido de alto encaje cultural para tu audiencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/09540261.2026.2687525" target="_blank" rel="noopener">↗ doi.org/10.1080/09540261.2026.2687525</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">JAMIA (J Am Med Inform Assoc) · 2026-06-17 · paper</div>
+          <div class="r10-title">Large language models for full-text methods assessment: a case study on mediation analysis</div>
+          <div class="r10-line">Evaluación de 6 LLMs (incluido Claude Sonnet 4) extrayendo criterios metodológicos de 180 artículos de psiquiatría/psicología: correlación alta con revisores humanos (F1 r=0.95) en features explícitos, pero hasta 15% por debajo en tareas inferenciales; propone colaboración humano-IA criterio-específica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: respalda con datos tu pilar ai-enhancement y tu work de metodología/lit-search —el ángulo screencast Aprendiz Experto &#39;qué hace bien la IA al leer métodos y dónde todavía necesita al metodólogo&#39; es contenido pro y honesto a la vez.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/jamia/ocag108" target="_blank" rel="noopener">↗ doi.org/10.1093/jamia/ocag108</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Child and Family Psychology Review · 2026-06-16 · review</div>
+          <div class="r10-title">The Joy and the Pain of Being Alone: Managing the Solitude-Loneliness (SOLO) Paradox in People High on the Autism Spectrum</div>
+          <div class="r10-line">Review que conceptualiza la &#39;paradoja SOLO&#39;: el autista reporta soledad elevada y a la vez mayor preferencia por la soledad, una tensión entre necesidad de pertenecer y de estar solo que puede escalar a hikikomori y uso problemático de internet.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: reencuadre conceptual irresistible para tu wedge de neurodivergencia adulta —&#39;no es contradicción, es paradoja&#39;; hook de carrusel y sección de libro que valida la experiencia interna sin patologizarla.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10567-026-00576-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s10567-026-00576-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health · 2026-06-16 · review</div>
+          <div class="r10-title">Using AI to Detect Psychosis Relapse: Scoping Review</div>
+          <div class="r10-line">Scoping review (10 estudios) de IA para detectar recaída en psicosis vía fenotipado digital (smartphone/wearables, EMA, redes sociales): sensibilidad 0.25–0.77, especificidad 0.06–0.88, AUC 0.63–0.78, con casi nula replicación entre estudios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la promesa supera al rendimiento real —tu valor es señalar la brecha; encaja en precision-psych como nota sobre &#39;por qué el fenotipado digital aún no llega a la clínica&#39; y qué haría falta (LLMs, muestras grandes, colaboración).</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92192" target="_blank" rel="noopener">↗ doi.org/10.2196/92192</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Los delirios asociados a IA no &#39;incorporan&#39; la tecnología como tema (como los viejos delirios sobre radio/TV): el chatbot la CO-CONSTRUYE activamente vía sicofancia + hiperpersonalización + alineación lingüística. Es un mecanismo de retroalimentación, no un contenido pasivo (NPP Digital Psychiatry, doi.org/10.1038/s44277-026-00065-0).</li><li>En el adulto autista que envejece NO hay envejecimiento globalmente acelerado: las medidas cognitivas objetivas son comparables a las de neurotípicos, pero la queja cognitiva subjetiva está consistentemente elevada. La brecha subjetivo-objetivo ES la señal a vigilar, no el ruido (Neurosci Biobehav Rev, doi.org/10.1016/j.neubiorev.2026.106820).</li><li>El FMT mejora la motricidad en Parkinson de forma clínicamente apreciable (UPDRS-III ~−9.7) pero el efecto se evapora hacia las 24 semanas: el eje intestino-cerebro es modificable, no durable con un solo disparo (Neurology, doi.org/10.1212/WNL.0000000000218175).</li><li>TDAH ~70% heredable —tan heredable como otros trastornos psiquiátricos mayores— y sin embargo NO existe test diagnóstico genético; el único uso farmacogenético respaldado es la dosificación de atomoxetina, no la selección de estimulante. Contraintuitivo para la familia que pide &#39;el examen&#39; (Can J Psychiatry, doi.org/10.1177/07067437261457230).</li><li>En neuromodulación para epilepsia fármaco-resistente, la respuesta sigue subiendo 1-2 años (39%→63%) y la aparente &#39;superioridad&#39; de un dispositivo sobre otro se desvanece al ajustar por tiempo y selección: el ranking de hardware es, en gran parte, sesgo de indicación (Brain Res Bull, doi.org/10.1016/j.brainresbull.2026.111995).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cómo distinguir clínicamente una psicosis de primer episodio &#39;psiquiátrica&#39; de una causa neuropsiquiátrica rara y reversible (encefalitis autoinmune), y qué umbral justifica punción lumbar/imagen/genética sin caer en injusticia diagnóstica? (BJPsych, doi.org/10.1192/bjp.2026.10675)</li><li>Si la IA puede co-construir delirios vía sicofancia, ¿qué señales de &#39;espiral de amplificación&#39; debería tamizar un clínico en pacientes que usan chatbots intensamente —y cómo se documenta en la historia? (NPP, doi.org/10.1038/s44277-026-00065-0)</li><li>En el adulto autista que envejece, ¿la queja cognitiva subjetiva elevada es un pródromo real de neurodegeneración o un artefacto de camuflaje y carga alostática? (Neurosci Biobehav Rev, doi.org/10.1016/j.neubiorev.2026.106820)</li><li>¿Vale la pena secuenciar o calcular PRS en TDAH cuando la familia lo pide, o el mensaje correcto es &#39;70% heredable, cero test diagnóstico, solo atomoxetina como nicho farmacogenético&#39;? (Can J Psychiatry, doi.org/10.1177/07067437261457230)</li><li>¿La neuromodulación en epilepsia mejora por remodelación de red con el tiempo, y eso debería movernos a ofrecerla más temprano y medir resultados a 1-2 años en vez de a 3 meses? (Brain Res Bull, doi.org/10.1016/j.brainresbull.2026.111995)</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel JafloMD: &#39;Tu chatbot no te mete en un delirio: lo co-construye&#39;. Explica la espiral de amplificación (alineación lingüística + hiperpersonalización + sicofancia) con rigor, no alarma —ángulo IA+psicopatología casi vacío en español (basado en NPP Digital Psychiatry, doi.org/10.1038/s44277-026-00065-0).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección para book-psicopato (wedge neurodivergencia adulta): &#39;Envejecer siendo autista —lo que la queja cognitiva subjetiva sí y no predice&#39;; usa la brecha subjetivo-objetivo como tesis central (Neurosci Biobehav Rev, doi.org/10.1016/j.neubiorev.2026.106820).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Screencast Aprendiz Experto (IA-first): &#39;Cómo usar LLMs para extraer los métodos de un paper sin alucinar —qué hacen bien y dónde todavía necesitas al metodólogo&#39;, replicando el benchmark de JAMIA con tu propio flujo (doi.org/10.1093/jamia/ocag108).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/review corto con autoría regional: adicciones conductuales en adolescentes latinoamericanos —mapear el vacío de instrumentos validados ICD-11 y de workforce como agenda de equidad y de investigación peruana (Int Rev Psychiatry, doi.org/10.1080/09540261.2026.2687525).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel clínico ENAM/residentado: &#39;Psicosis de primer episodio —las banderas rojas que obligan a descartar causa orgánica reversible (~5%)&#39;, anclado en el marco de justicia diagnóstica del BJPsych (doi.org/10.1192/bjp.2026.10675).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">Neurology</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag highlight">NPP Digital Psychiatry &amp; Neuroscience (Nature)</span><span class="tag ">Annals of Internal Medicine — NMA viva de fármacos para obesidad (body normativo: American College of Physicians)</span><span class="tag ">Current Psychiatry Reports</span><span class="tag ">European Child &amp; Adolescent Psychiatry</span><span class="tag ">JMIR Mental Health</span><span class="tag ">International Review of Psychiatry</span><span class="tag ">Intensive Care Medicine</span><span class="tag ">JAMIA (J Am Med Inform Assoc)</span><span class="tag ">Brain Research Bulletin</span><span class="tag ">Neurodegenerative Disease Management</span><span class="tag ">Current Neurology and Neuroscience Reports</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 17 de junio de 2026.</div>
+</div>
+</body>
+</html>
