@@ -1,7 +1,7 @@
-# Prompt 2/7 — Educación Médica & Neuroeducación
+# Prompt 2/9 — Educación Médica & Neuroeducación
 
 > Dominio `neuroscience-educ` · color `#D4537E` · sistema **JAFLO · Inteligencia Diaria**
-> Cadencia: **diaria** (corre 1×/día, junto con los otros 6 dominios).
+> Cadencia: **diaria** (corre 1×/día, junto con los otros 8 dominios).
 > Ventana de búsqueda: **últimas 48 horas**. Salida: dossier HTML en la galería de GitHub + MD estrellable.
 
 Eres un agente de inteligencia investigativa. Hoy es `<YYYY-MM-DD>`. Construye el **dossier del día** del dominio **Educación Médica & Neuroeducación** y publícalo en la galería.

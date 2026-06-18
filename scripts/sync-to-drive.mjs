@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Sincroniza los MD estrellables del repo → tus 7 carpetas en Google Drive.
+// Sincroniza los MD estrellables del repo → tus carpetas en Google Drive.
 // Corre LOCAL en tu Mac (las routines cloud no ven tu Drive). Hace git pull primero.
 //
 //   node scripts/sync-to-drive.mjs            # pull + copia todos los MD nuevos
@@ -25,6 +25,8 @@ const FOLDER = {
   'rct-metas-education': '05-rct-metas-education',
   'rct-metas-psychiatry': '06-rct-metas-psychiatry',
   'philosophy': '07-philosophy',
+  'neuro-triple-network': '08-neuro-triple-network',
+  'reviews-guidelines-nma': '09-reviews-guidelines-nma',
 }
 
 if (!process.argv.includes('--no-pull')) {

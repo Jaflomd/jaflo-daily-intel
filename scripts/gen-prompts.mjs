@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Genera los 7 prompts agénticos (uno por dominio) como archivos .md autocontenidos.
+// Genera los prompts agénticos (uno por dominio) como archivos .md autocontenidos.
 // Fuente única de verdad: este config + el contrato compartido. Corre: node scripts/gen-prompts.mjs
 
 import fs from 'node:fs'
@@ -85,16 +85,30 @@ const DOMAINS = [
     sources: `1. **Web (fuente principal)** (WebSearch/WebFetch): Substack, blogs (Farnam Street, etc.), X/Twitter (\`min_faves:10\`), Reddit (r/mentalmodels, r/LessWrong, r/philosophy, r/socialskills, r/leadership), YouTube transcripts — últimos 7 días.
 2. **PubMed** (solo para los papers peer-reviewed): \`("decision making" OR "metacognition" OR "cognitive bias" OR "reasoning" OR "epistemic") AND "last 7 days"[dp]\`
 3. **Filtra** hustle culture, hacks de productividad y motivación vacía. Exige insight a nivel de **mecanismo**, no consejo genérico. Para \`top3\` prefiere artículos peer-reviewed o ensayos con framework estructural.` },
+  { n: 8, key: 'neuro-triple-network', title: 'Neurociencia · Triple Red & Neuropsiquiatría', color: '#7C3AED',
+    scope: 'Neurociencia de sistemas aplicada a la neuropsiquiatría, anclada en el **modelo de triple red** (Menon): Salience Network (ínsula anterior–córtex cingulado anterior dorsal), Default Mode Network y Central Executive / frontoparietal Network — su interacción, el *switching* SN→CEN/DMN mediado por la ínsula, y la *dysconnectivity* de redes a gran escala como mecanismo transdiagnóstico. Conectividad funcional (rs-fMRI, MEG/EEG), conectómica, gradientes corticales, balance excitación/inhibición, y cómo la disfunción de estas redes explica psicosis, depresión, TDAH, TEA, ansiedad y TOC. Incluye neurociencia cognitiva/afectiva traducible a psiquiatría de precisión y a biomarcadores de red.',
+    sources: `1. **PubMed** (carga vía ToolSearch \`mcp__6edc0969-...__search_articles\` y \`get_article_metadata\`). Dos queries:
+   - \`("triple network" OR "salience network" OR "default mode network" OR "central executive network" OR "frontoparietal network" OR "large-scale brain networks" OR "network dysconnectivity") AND (psychiatr* OR neuropsychiatr* OR "mental disorder") AND "last 7 days"[dp]\`
+   - \`("functional connectivity" OR "resting-state fMRI" OR "connectome" OR "anterior insula" OR "anterior cingulate") AND (schizophrenia OR psychosis OR depression OR ADHD OR autism OR anxiety OR bipolar) AND "brain network" AND "last 7 days"[dp]\`
+2. **Web** (WebSearch/WebFetch): bioRxiv/medRxiv (neuroscience, neurology), PsyArXiv, arXiv (q-bio.NC), X/Twitter (autores/labs clave: Menon, Sridharan, Bressler, Seeley, Uddin, Bzdok), Reddit (r/neuro, r/cogsci), blogs de neurociencia — últimos 7 días.
+3. **Filtra** neuroimagen sobre-interpretada y correlaciones sin mecanismo ni réplica. Exige puente translacional a neuropsiquiatría (no neurociencia básica pura sin implicancia clínica).` },
+  { n: 9, key: 'reviews-guidelines-nma', title: 'Revisiones, Guías & NMA', color: '#E11D48',
+    scope: 'Evidencia de **síntesis** y documentos que **definen la práctica**: *review articles* (narrativas, scoping, sistemáticas, umbrella/overview), **guías de práctica clínica** y *consensus statements*, y **network meta-analyses (NMA)**. Foco **principal en psiquiatría** (todo el espectro, infanto-juvenil y adulto) y **secundario en neuropsiquiatría** — la interfaz neurología-psiquiatría: demencias y deterioro cognitivo, epilepsia, trastornos del movimiento (Parkinson, Huntington), TCE, ictus, encefalitis autoinmune/neuroinflamación, trastornos neurológicos funcionales (FND), delirium y síntomas neuropsiquiátricos de enfermedad neurológica. Complementa a *Alta Evidencia · Psiquiatría* (que caza RCTs/meta primarios) trayendo lo que **resume y normatiza** el campo.',
+    sources: `1. **PubMed** (fuente principal, \`sort=pub_date\`, \`max_results=40\`, metadata en lotes de 5). Dos queries:
+   - Síntesis/guías en psiquiatría: \`((psychiatry OR "mental disorders" OR depression OR bipolar OR schizophrenia OR anxiety OR ADHD OR autism OR OCD OR PTSD OR "substance use") AND (review[pt] OR "systematic review"[pt] OR "practice guideline"[pt] OR guideline[pt] OR consensus[tiab] OR "network meta-analysis"[tiab] OR "umbrella review"[tiab] OR "scoping review"[tiab])) AND "last 7 days"[dp]\`
+   - Neuropsiquiatría (foco secundario): \`(("neuropsychiatry" OR dementia OR "cognitive impairment" OR epilepsy OR "Parkinson disease" OR "traumatic brain injury" OR stroke OR "autoimmune encephalitis" OR "functional neurological" OR delirium) AND (review[pt] OR "systematic review"[pt] OR "practice guideline"[pt] OR "network meta-analysis"[tiab] OR consensus[tiab])) AND "last 7 days"[dp]\`
+2. **Resalta guías y bodies normativos** (van en \`journals_activos\` y deben marcarse): APA, NICE, CANMAT, WFSBP, BAP, RANZCP, Maudsley, AAN, EAN, Cochrane; y journals top (Lancet Psychiatry, World Psychiatry, JAMA Psychiatry, AJP, BJPsych, Lancet Neurology, Nature Reviews).
+3. **Filtra** revisiones narrativas sin método ni aporte y guías locales sin novedad. Prioriza lo que **cambia o codifica** la conducta clínica.` },
 ]
 
 function prompt(d) {
   const day = (CAT[d.key] && CAT[d.key].day) || ''
   const sources = d.sources.replace(/\s*AND "last 7 days"\[dp\]/g, '')
   const deepBlock = DEEPSEARCH[d.key] ? `\n## Guía de búsqueda profunda (deep-search)\n\n${DEEPSEARCH[d.key]}\n` : ''
-  return `# Prompt ${d.n}/7 — ${d.title}
+  return `# Prompt ${d.n}/${DOMAINS.length} — ${d.title}
 
 > Dominio \`${d.key}\` · color \`${d.color}\` · sistema **JAFLO · Inteligencia Diaria**
-> Cadencia: **diaria** (corre 1×/día, junto con los otros 6 dominios).
+> Cadencia: **diaria** (corre 1×/día, junto con los otros ${DOMAINS.length - 1} dominios).
 > Ventana de búsqueda: **últimas 48 horas**. Salida: dossier HTML en la galería de GitHub + MD estrellable.
 
 Eres un agente de inteligencia investigativa. Hoy es \`<YYYY-MM-DD>\`. Construye el **dossier del día** del dominio **${d.title}** y publícalo en la galería.
@@ -137,4 +151,4 @@ for (const d of DOMAINS) {
   fs.writeFileSync(path.join(OUT, `${d.n}-${d.key}.md`), prompt(d))
   console.log(`✓ prompts/${d.n}-${d.key}.md`)
 }
-console.log('listo: 7 prompts generados')
+console.log(`listo: ${DOMAINS.length} prompts generados`)

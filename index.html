@@ -77,11 +77,11 @@ h1 span{background:linear-gradient(90deg,var(--gold),#5DCAA5);-webkit-background
   <div class="h-inner">
     <div class="brand-badge">◆ Dossier diario · automatizado</div>
     <h1>JAFLO · <span>Inteligencia Diaria</span></h1>
-    <div class="tagline">Siete dominios barridos cada día: psiquiatría de precisión, psicopatología dimensional, alta evidencia, razonamiento clínico, educación médica y modelos mentales. Curado y personalizado — top 3 extenso, 10 en radar, 5 perlas, 5 preguntas, 5 ideas.</div>
+    <div class="tagline">Nueve dominios barridos cada día: psiquiatría de precisión, psicopatología dimensional, alta evidencia, razonamiento clínico, educación médica, modelos mentales, neurociencia de redes (triple red) y revisiones/guías/NMA. Curado y personalizado — top 3 extenso, 10 en radar, 5 perlas, 5 preguntas, 5 ideas.</div>
     <div class="h-stats">
       <div class="h-stat"><b id="stat-dossiers">—</b><small>dossiers</small></div>
       <div class="h-stat"><b id="stat-days">—</b><small>días</small></div>
-      <div class="h-stat"><b id="stat-domains">7</b><small>dominios</small></div>
+      <div class="h-stat"><b id="stat-domains">—</b><small>dominios</small></div>
       <div class="h-stat"><b id="stat-latest">—</b><small>último</small></div>
     </div>
   </div>
@@ -166,6 +166,7 @@ function boot(){
   // stats
   const all=d.dossiers;
   document.getElementById('stat-dossiers').textContent=all.length;
+  document.getElementById('stat-domains').textContent=Object.keys(doms).length;
   document.getElementById('stat-days').textContent=new Set(all.map(x=>x.date)).size;
   document.getElementById('stat-latest').textContent=all.length?all[0].date.slice(5):'—';
   document.getElementById('foot-note').textContent=`${all.length} dossiers · manifest ${d.generated} · atribución PubMed por sus términos de uso`;

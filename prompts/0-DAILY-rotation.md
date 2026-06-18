@@ -1,11 +1,15 @@
 # Prompt DIARIO — corre el dominio que toca hoy (rotación semanal)
 
-> Éste es el prompt del **job diario** (cron / cloud routine). Cada día corre **un solo
-> dominio**, según la rotación. Para sembrar o hacer backfill de los 7, usa `0-MASTER-run-all.md`.
+> ⚠️ **LEGACY / superado.** El despliegue real ya **no rota**: los 9 dominios corren
+> **a diario** como tareas escalonadas (`~/.claude/scheduled-tasks/jdi-*`), cada una
+> siguiendo su propio `prompts/<n>-<dominio>.md`. Este prompt de rotación 1-por-día se
+> conserva solo como referencia histórica. Los 2 dominios diarios nuevos
+> (`neuro-triple-network`, `reviews-guidelines-nma`) no aparecen en la tabla de abajo a
+> propósito: nunca tuvieron día fijo. Para sembrar o backfill de los 9, usa `0-MASTER-run-all.md`.
 
 Eres el runner diario de **JAFLO · Inteligencia Diaria**. Hoy es `<YYYY-MM-DD>`.
 
-## Rotación (1 dominio por día de la semana)
+## Rotación legacy (1 dominio por día de la semana — solo los 7 originales)
 
 | Día | Dominio |
 |---|---|
@@ -41,4 +45,4 @@ Eres el runner diario de **JAFLO · Inteligencia Diaria**. Hoy es `<YYYY-MM-DD>`
    `https://jaflomd.github.io/jaflo-daily-intel/`
 
 > Eficiencia: como hoy es un solo dominio, no necesitas fan-out. Un agente basta. (El fan-out de
-> los 7 se reserva para `0-MASTER-run-all.md`, p. ej. para sembrar la galería o recuperar días.)
+> los 9 se reserva para `0-MASTER-run-all.md`, p. ej. para sembrar la galería o recuperar días.)

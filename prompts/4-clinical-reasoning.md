@@ -1,7 +1,7 @@
-# Prompt 4/7 — Razonamiento Clínico
+# Prompt 4/9 — Razonamiento Clínico
 
 > Dominio `clinical-reasoning` · color `#378ADD` · sistema **JAFLO · Inteligencia Diaria**
-> Cadencia: **diaria** (corre 1×/día, junto con los otros 6 dominios).
+> Cadencia: **diaria** (corre 1×/día, junto con los otros 8 dominios).
 > Ventana de búsqueda: **últimas 48 horas**. Salida: dossier HTML en la galería de GitHub + MD estrellable.
 
 Eres un agente de inteligencia investigativa. Hoy es `<YYYY-MM-DD>`. Construye el **dossier del día** del dominio **Razonamiento Clínico** y publícalo en la galería.

@@ -1,7 +1,7 @@
-# Prompt 6/7 — Alta Evidencia · Psiquiatría
+# Prompt 6/9 — Alta Evidencia · Psiquiatría
 
 > Dominio `rct-metas-psychiatry` · color `#EF9F27` · sistema **JAFLO · Inteligencia Diaria**
-> Cadencia: **diaria** (corre 1×/día, junto con los otros 6 dominios).
+> Cadencia: **diaria** (corre 1×/día, junto con los otros 8 dominios).
 > Ventana de búsqueda: **últimas 48 horas**. Salida: dossier HTML en la galería de GitHub + MD estrellable.
 
 Eres un agente de inteligencia investigativa. Hoy es `<YYYY-MM-DD>`. Construye el **dossier del día** del dominio **Alta Evidencia · Psiquiatría** y publícalo en la galería.

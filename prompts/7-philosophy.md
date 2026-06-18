@@ -1,7 +1,7 @@
-# Prompt 7/7 — Modelos Mentales & Filosofía
+# Prompt 7/9 — Modelos Mentales & Filosofía
 
 > Dominio `philosophy` · color `#639922` · sistema **JAFLO · Inteligencia Diaria**
-> Cadencia: **diaria** (corre 1×/día, junto con los otros 6 dominios).
+> Cadencia: **diaria** (corre 1×/día, junto con los otros 8 dominios).
 > Ventana de búsqueda: **últimas 48 horas**. Salida: dossier HTML en la galería de GitHub + MD estrellable.
 
 Eres un agente de inteligencia investigativa. Hoy es `<YYYY-MM-DD>`. Construye el **dossier del día** del dominio **Modelos Mentales & Filosofía** y publícalo en la galería.

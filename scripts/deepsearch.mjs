@@ -173,4 +173,61 @@ export const DEEPSEARCH = {
 **Queries afinadas:**
 - PubMed (date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date): ("decision making" OR metacognition OR "cognitive bias" OR reasoning OR epistemic OR "dual process")
 - Web (últimas 48 horas): Substack/Farnam Street/blogs; X ("mental models" OR "second order thinking" OR "epistemic humility" OR stoicism min_faves:10); Reddit r/mentalmodels, r/LessWrong, r/philosophy; YouTube transcripts.`,
+
+  'neuro-triple-network': `**Pregunta núcleo:** ¿Qué de las últimas 48 horas avanza el entendimiento de las redes cerebrales a gran escala —en especial la triple red (Salience / Default Mode / Central Executive)— y su disfunción en trastornos neuropsiquiátricos, con mecanismo y no solo correlación?
+
+**Marco PEO:**
+- P (población/contexto): muestras clínicas y comunitarias, cualquier edad; estructura y dinámica de redes cerebrales a gran escala.
+- E (exposición/fenómeno): triple network model, salience/DMN/CEN, switching mediado por la ínsula, dysconnectivity transdiagnóstica, conectividad funcional/efectiva (rs-fMRI, MEG/EEG), conectómica, gradientes corticales, balance E/I.
+- O (outcomes): mecanismo neurobiológico, validez/replicabilidad, biomarcadores de red, predicción de diagnóstico/respuesta, traducción a neuropsiquiatría.
+
+**Prioridad del top 3 (descendente):**
+1. Empírico sólido con mecanismo: neuroimagen con muestra adecuada y réplica/validación, estudios longitudinales, causal/efectivo (no solo correlación cruda), datos abiertos.
+2. Papers de posición/teóricos que REENCUADREN el modelo de triple red o las redes a gran escala (figuras clave: Menon, Sridharan, Seeley, Uddin, Bressler, Bzdok, Margulies) — suben si conectan con psiquiatría dimensional/de precisión.
+3. Aplicaciones translacionales: biomarcadores de red, neuromodulación dirigida por red (TMS/tDCS a nodos SN/CEN), fenotipado por conectividad.
+
+**BOOST en la selección:** intersección red × TDAH/TEA/neurodivergencia, red × psicosis/depresión, y red × neuromodulación o psiquiatría de precisión (líneas de Javier).
+
+**Exclusiones (anti-ruido):** neuroimagen sobre-interpretada (muestras minúsculas sin corrección, doble dipping), neuromitos, correlación sin mecanismo ni réplica, animal/preclínico sin puente clínico, divulgación 101 de "esta red hace X".
+
+**Señales de calidad:** tamaño muestral y poder, corrección por comparaciones múltiples, réplica/validación externa, preregistro, datos/código abiertos, distancia mecanismo→clínica declarada con honestidad.
+
+**Anti-alucinación:** ítems reales y verificables; DOI/URL solo si confirmado. Cita PubMed cuando uses PubMed.
+
+**Queries afinadas (PubMed, date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- Triple red / redes a gran escala:
+    ("triple network" OR "salience network" OR "default mode network" OR "central executive network" OR "frontoparietal network" OR "large-scale brain networks" OR dysconnectivity) AND (psychiatr* OR neuropsychiatr* OR "mental disorder")
+- Conectividad × trastornos (líneas de Javier):
+    ("functional connectivity" OR "resting-state fMRI" OR connectome OR "anterior insula" OR "anterior cingulate") AND (schizophrenia OR psychosis OR depression OR ADHD OR autism OR anxiety OR bipolar)
+- Web/preprint: bioRxiv/medRxiv (neuroscience/neurology), PsyArXiv, arXiv q-bio.NC; X de autores/labs clave (Menon/Sridharan/Seeley/Uddin/Bressler/Bzdok); Reddit r/neuro, r/cogsci de las últimas 48 horas.`,
+
+  'reviews-guidelines-nma': `**Pregunta núcleo:** ¿Qué documento de SÍNTESIS o que DEFINE LA PRÁCTICA (review article, guía de práctica clínica, consensus o network meta-analysis) de las últimas 48 horas resume, ranquea o normatiza la conducta clínica en psiquiatría (foco principal) o neuropsiquiatría (foco secundario)?
+
+**Marco PICO/PEO:**
+- P (población): pacientes psiquiátricos de cualquier edad (foco principal) y pacientes neuropsiquiátricos en la interfaz neurología-psiquiatría (foco secundario): demencias, epilepsia, trastornos del movimiento, TCE, ictus, encefalitis autoinmune, FND, delirium.
+- I/E: cualquier intervención o constructo cuya EVIDENCIA SE SINTETIZA o NORMATIZA (no el estudio primario en sí).
+- C: comparadores y rankings cuando aplique (NMA).
+- O: fuerza de recomendación, ranking comparativo, cambios de guía, certeza GRADE, aplicabilidad clínica.
+
+**Jerarquía de inclusión (prioridad descendente):**
+1. Guías de práctica clínica y consensus statements de bodies normativos (APA, NICE, CANMAT, WFSBP, BAP, RANZCP, Maudsley, AAN, EAN).
+2. Network meta-analyses (ranking comparativo de intervenciones).
+3. Systematic reviews / umbrella / scoping reviews con síntesis accionable.
+4. Reviews narrativas SOLO si son autoritativas o reencuadran el campo (autor/journal de referencia).
+
+**BOOST en la selección:** TDAH/TEA/neurodivergencia, neuromodulación, psiquiatría dimensional/de precisión; y todo lo de neuropsiquiatría (foco secundario, distintivo de este dominio). Guías nuevas o actualizadas suben al top 3.
+
+**Diferenciación dura (evita solapamiento con *Alta Evidencia · Psiquiatría*):** ese dominio caza RCTs y meta-análisis primarios; ESTE trae REVIEWS + GUÍAS + NMA y la cobertura de neuropsiquiatría. Si un ítem es un RCT individual, va al otro dominio, no aquí.
+
+**Exclusiones (ruido a descartar):** protocolos de review/guía sin resultados; editoriales/opinión sin método; reviews narrativas genéricas sin aporte; guías locales sin novedad; estudios primarios individuales (RCT/cohorte) salvo que sean la base de una síntesis reportada.
+
+**Señales de calidad a reportar:** certeza GRADE, conformidad PRISMA/AGREE II, registro PROSPERO, heterogeneidad (I²) y consistencia en NMA, fuerza de recomendación, body emisor de la guía.
+
+**Anti-alucinación:** todo ítem debe existir en la fuente; DOI solo si verificado en metadata. Cita PubMed.
+
+**Queries afinadas (PubMed, además de la base del dominio; aplica date_from = hoy − 3 días, date_to = hoy, datetype=pdat, sort=pub_date):**
+- Síntesis/guías en psiquiatría:
+    (psychiatry OR "mental disorders" OR depression OR bipolar OR schizophrenia OR anxiety OR ADHD OR autism OR OCD OR PTSD OR "substance use") AND (review[pt] OR "systematic review"[pt] OR "practice guideline"[pt] OR guideline[pt] OR consensus[tiab] OR "network meta-analysis"[tiab] OR "umbrella review"[tiab] OR "scoping review"[tiab])
+- Neuropsiquiatría (foco secundario):
+    ("neuropsychiatry" OR dementia OR "cognitive impairment" OR epilepsy OR "Parkinson disease" OR "traumatic brain injury" OR stroke OR "autoimmune encephalitis" OR "functional neurological" OR delirium) AND (review[pt] OR "systematic review"[pt] OR "practice guideline"[pt] OR "network meta-analysis"[tiab] OR consensus[tiab])`,
 }

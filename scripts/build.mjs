@@ -22,16 +22,21 @@ const DOSSIERS = path.join(ROOT, 'dossiers')
 const STARS = path.join(ROOT, 'stars')
 
 // ---- catálogo de dominios (orden y metadatos canónicos) -------------------
-// weekday: día en que corre cada agente (JS getDay → 0=domingo … 6=sábado).
-// Rotación: 1 dominio por día de la semana. Editar aquí cambia todo el sistema.
+// Todos los dominios corren A DIARIO como tareas programadas escalonadas
+// (~/.claude/scheduled-tasks/jdi-*), cada una barriendo las últimas 48 h.
+// title/color/icon alimentan la galería (index.html vía manifest.json).
+// weekday/day son una pista LEGACY de la rotación 1-por-día (domainForDate /
+// today-domain.mjs); los dominios nuevos diarios usan weekday:null, day:'Diario'.
 export const DOMAINS = {
-  'precision-psych':      { title: 'Psiquiatría & Educación de Precisión', color: '#1D9E75', icon: '🧬', weekday: 3, day: 'Miércoles' },
-  'neuroscience-educ':    { title: 'Educación Médica & Neuroeducación',     color: '#D4537E', icon: '🧠', weekday: 6, day: 'Sábado' },
-  'dimensional-psych':    { title: 'Psicopatología Dimensional',            color: '#5DCAA5', icon: '🕸️', weekday: 2, day: 'Martes' },
-  'clinical-reasoning':   { title: 'Razonamiento Clínico',                  color: '#378ADD', icon: '🩺', weekday: 4, day: 'Jueves' },
-  'rct-metas-education':  { title: 'Alta Evidencia · Educación',            color: '#D85A30', icon: '🎓', weekday: 5, day: 'Viernes' },
-  'rct-metas-psychiatry': { title: 'Alta Evidencia · Psiquiatría',          color: '#EF9F27', icon: '⚡', weekday: 1, day: 'Lunes' },
-  'philosophy':           { title: 'Modelos Mentales & Filosofía',          color: '#639922', icon: '♟️', weekday: 0, day: 'Domingo' },
+  'precision-psych':       { title: 'Psiquiatría & Educación de Precisión',     color: '#1D9E75', icon: '🧬', weekday: 3,    day: 'Miércoles' },
+  'neuroscience-educ':     { title: 'Educación Médica & Neuroeducación',         color: '#D4537E', icon: '🧠', weekday: 6,    day: 'Sábado' },
+  'dimensional-psych':     { title: 'Psicopatología Dimensional',                color: '#5DCAA5', icon: '🕸️', weekday: 2,    day: 'Martes' },
+  'clinical-reasoning':    { title: 'Razonamiento Clínico',                      color: '#378ADD', icon: '🩺', weekday: 4,    day: 'Jueves' },
+  'rct-metas-education':   { title: 'Alta Evidencia · Educación',                color: '#D85A30', icon: '🎓', weekday: 5,    day: 'Viernes' },
+  'rct-metas-psychiatry':  { title: 'Alta Evidencia · Psiquiatría',              color: '#EF9F27', icon: '⚡', weekday: 1,    day: 'Lunes' },
+  'philosophy':            { title: 'Modelos Mentales & Filosofía',              color: '#639922', icon: '♟️', weekday: 0,    day: 'Domingo' },
+  'neuro-triple-network':  { title: 'Neurociencia · Triple Red & Neuropsiquiatría', color: '#7C3AED', icon: '🌐', weekday: null, day: 'Diario' },
+  'reviews-guidelines-nma':{ title: 'Revisiones, Guías & NMA',                   color: '#E11D48', icon: '📋', weekday: null, day: 'Diario' },
 }
 
 // Dominio que toca para una fecha dada (según su día de la semana).

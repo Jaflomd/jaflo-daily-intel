@@ -1,15 +1,15 @@
 # JAFLO · Inteligencia Diaria
 
 Galería de **dossiers diarios** de inteligencia investigativa para Javier Flores-Cohaila.
-Siete dominios barridos cada día (papers, preprints, blogs, X, Reddit, YouTube),
+Nueve dominios barridos cada día (papers, preprints, blogs, X, Reddit, YouTube),
 curados y **personalizados**, renderizados como HTML bonito y navegables por **día**,
 **semana** y **dominio**.
 
 🔗 **Galería en vivo:** GitHub Pages (ver *Settings → Pages*).
 
-## 7 dominios, cada día (ventana 48 h)
+## 9 dominios, cada día (ventana 48 h)
 
-Los **7 dominios corren cada día** (7 routines, cron diario), cada uno barriendo las
+Los **9 dominios corren cada día** (9 tareas escalonadas, cron diario), cada uno barriendo las
 **últimas 48 horas**. Cada corrida publica un dossier HTML en la galería + un MD estrellable.
 
 | # | Dominio | Color | Fuente principal |
@@ -21,6 +21,8 @@ Los **7 dominios corren cada día** (7 routines, cron diario), cada uno barriend
 | 05 | Alta Evidencia · Educación (RCT/meta) | `#D85A30` | PubMed |
 | 06 | Alta Evidencia · Psiquiatría (RCT/meta/NMA) | `#EF9F27` | PubMed |
 | 07 | Modelos Mentales & Filosofía | `#639922` | Web (Substack/X/Reddit/YouTube) + PubMed |
+| 08 | Neurociencia · Triple Red & Neuropsiquiatría | `#7C3AED` | PubMed + bioRxiv/medRxiv/PsyArXiv/X |
+| 09 | Revisiones, Guías & NMA (psiquiatría/neuropsiquiatría) | `#E11D48` | PubMed (review/guideline/NMA) |
 
 Prompts listos para subir como routines en `prompts/routines/` (cron sugerido `0 5 * * *` c/u).
 Algunos llevan una **guía de búsqueda profunda** (deep-search) afinada — ver `scripts/deepsearch.mjs`.
@@ -56,7 +58,7 @@ prompts/routines/*.md  →  agente investiga (PubMed + web, 48 h)  →  data/<do
                           git push  →  GitHub Pages  →  index.html (galería navegable)
 ```
 
-- **`prompts/`** — los 7 prompts agénticos, autocontenidos. Fuente: `scripts/gen-prompts.mjs`.
+- **`prompts/`** — los 9 prompts agénticos, autocontenidos. Fuente: `scripts/gen-prompts.mjs`.
 - **`data/`** — JSON estructurado por dominio/fecha (lo produce el agente; cero fabricación).
 - **`scripts/build.mjs`** — renderizador determinista JSON → HTML + manifest.
 - **`index.html`** — galería: filtra por dominio, alterna vista día/semana/dominio, busca.
@@ -82,7 +84,7 @@ git add -A && git commit -m "dossier $DOMAIN $(date +%F)" && git push
 ```
 
 Para sembrar la galería o recuperar varios días de una, usa `prompts/0-MASTER-run-all.md`
-(corre los 7 dominios) y luego `node scripts/build.mjs --date <fecha>`.
+(corre los 9 dominios) y luego `node scripts/build.mjs --date <fecha>`.
 
 Comandos útiles de `build.mjs`:
 

@@ -12,7 +12,9 @@ const OUT = path.join(ROOT, 'prompts', 'routines')
 const REPO = 'https://github.com/Jaflomd/jaflo-daily-intel'
 const PAGES = 'https://jaflomd.github.io/jaflo-daily-intel/'
 
-// día (cron dow) → dominio
+// día (cron dow) → dominio. LEGACY: la rotación 1-por-día quedó superada; hoy
+// los dominios corren TODOS a diario (tareas escalonadas jdi-*). Estos archivos
+// son scaffolding de referencia para re-sembrar routines.
 const WEEK = [
   { dow: 1, day: 'Lunes',     key: 'rct-metas-psychiatry', n: 6, title: 'Alta Evidencia · Psiquiatría' },
   { dow: 2, day: 'Martes',    key: 'dimensional-psych',    n: 3, title: 'Psicopatología Dimensional' },
@@ -23,11 +25,19 @@ const WEEK = [
   { dow: 0, day: 'Domingo',   key: 'philosophy',           n: 7, title: 'Modelos Mentales & Filosofía' },
 ]
 
+// dominios diarios sin día fijo (cron escalonado propio).
+const DAILY = [
+  { day: 'Diario', key: 'neuro-triple-network',   n: 8, title: 'Neurociencia · Triple Red & Neuropsiquiatría', cron: '28 5 * * *' },
+  { day: 'Diario', key: 'reviews-guidelines-nma', n: 9, title: 'Revisiones, Guías & NMA',                       cron: '32 5 * * *' },
+]
+
+const TOTAL = WEEK.length + DAILY.length
+
 function routine(w) {
   const deepBlock = DEEPSEARCH[w.key]
     ? `\nGUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y filtrar ruido:\n\n${DEEPSEARCH[w.key]}\n`
     : ''
-  return `Eres el job diario de "JAFLO · Inteligencia Diaria" para el dominio **${w.key}** — ${w.title}. Corres 1×/día (junto con los otros 6 dominios) y publicas su dossier. El sistema es el repo ${REPO} y se publica en ${PAGES}
+  return `Eres el job diario de "JAFLO · Inteligencia Diaria" para el dominio **${w.key}** — ${w.title}. Corres 1×/día (junto con los otros ${TOTAL - 1} dominios) y publicas su dossier. El sistema es el repo ${REPO} y se publica en ${PAGES}
 
 LECTOR (personaliza TODO a él): Javier Flores-Cohaila — psiquiatra peruano, investigador (meta RENACYT Distinguido), educador médico (AMAUTA / USAMEDIC; prepara ENAM y Residentado). Líneas: psiquiatría dimensional (HiTOP/RDoC, network theory), TDAH/TEA/neurodivergencia, neuromodulación, psiquiatría de precisión, IA en investigación/educación, razonamiento clínico, educación médica de precisión. Escribe libros (psicopatología para el mundo, neurociencia educativa, BMSE). Voz directa, español natural, evidencia proporcional al claim.
 
@@ -64,4 +74,9 @@ WEEK.forEach((w, i) => {
   fs.writeFileSync(path.join(OUT, fn), routine(w))
   console.log(`✓ prompts/routines/${fn}  (dow=${w.dow} → cron "0 5 * * ${w.dow}")`)
 })
-console.log('\nlisto: 7 prompts de routine (uno por día).')
+DAILY.forEach((w) => {
+  const fn = `${w.n}-diario-${w.key}.md`
+  fs.writeFileSync(path.join(OUT, fn), routine(w))
+  console.log(`✓ prompts/routines/${fn}  (diario → cron "${w.cron}")`)
+})
+console.log(`\nlisto: ${TOTAL} prompts de routine (${WEEK.length} por día + ${DAILY.length} diarios).`)
