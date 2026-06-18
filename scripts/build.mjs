@@ -112,6 +112,53 @@ function sourceTag(item) {
   return { txt, hot }
 }
 
+// ---- helpers for category-based layout (reviews-guidelines-nma) ------------
+const RGN_CATEGORIES = [
+  { key: 'top3_reviews',        icon: '🔬', title: 'Top 3 Reviews',                sub: 'sistemáticas · scoping · umbrella · narrativas' },
+  { key: 'top3_nma',            icon: '🌐', title: 'Top 3 Network Meta-Analysis',   sub: 'ranking comparativo de intervenciones' },
+  { key: 'top3_guidelines',     icon: '📋', title: 'Top 3 Guías & Consensos',       sub: 'guías de práctica clínica · consensus statements' },
+  { key: 'top3_meta_analysis',  icon: '📊', title: 'Top 3 Meta-Analysis',           sub: 'síntesis cuantitativa de evidencia' },
+]
+
+function isRgnLayout(data) {
+  return RGN_CATEGORIES.some(c => Array.isArray(data[c.key]))
+}
+
+function rgnTotalItems(data) {
+  return RGN_CATEGORIES.reduce((n, c) => n + (data[c.key] || []).length, 0)
+}
+
+function renderRgnSections(data) {
+  return RGN_CATEGORIES.map(cat => {
+    const items = data[cat.key] || []
+    const cards = items.map((it, i) => {
+      const ln = linkFor(it); const st = sourceTag(it)
+      return `
+      <article class="r3-card">
+        <div class="r3-rank">${i + 1}</div>
+        <div class="r3-src ${st.hot ? 'hot' : ''}">${st.txt}</div>
+        <h3 class="r3-title">${esc(it.title)}</h3>
+        <p class="r3-hook">${esc(it.hook_extended)}</p>
+        ${ln ? `<a class="r3-link" href="${esc(ln.href)}" target="_blank" rel="noopener">↗ ${esc(ln.label)}</a>` : ''}
+      </article>`
+    }).join('')
+    const empty = items.length === 0
+      ? `<div class="thin-note">No se encontraron ${esc(cat.title.replace('Top 3 ', ''))} en la ventana de 48 h.</div>`
+      : ''
+    return `
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">${cat.icon}</div>
+      <span class="sec-title">${esc(cat.title)}</span>
+      <span class="sec-sub">${esc(cat.sub)}</span>
+      <span class="sec-count">${items.length}</span>
+    </div>
+    ${empty}
+    <div class="r3-grid">${cards}</div>
+  </section>`
+  }).join('\n')
+}
+
 // ---- dossier template ------------------------------------------------------
 export function renderDossier(data) {
   const meta = DOMAINS[data.domain_key] || { title: data.domain_title, color: data.accent_color || '#EF9F27', icon: '◆' }
@@ -123,7 +170,9 @@ export function renderDossier(data) {
     --accent-soft:${hexToRgba(accent, 0.07)};
     --accent-border:${hexToRgba(accent, 0.32)};`
 
-  const top3 = (data.top3 || []).map((it, i) => {
+  const useRgn = isRgnLayout(data)
+
+  const top3 = useRgn ? '' : (data.top3 || []).map((it, i) => {
     const ln = linkFor(it); const st = sourceTag(it)
     return `
       <article class="r3-card">
@@ -135,7 +184,7 @@ export function renderDossier(data) {
       </article>`
   }).join('')
 
-  const top10 = (data.top10 || []).map((it, i) => {
+  const top10 = useRgn ? '' : (data.top10 || []).map((it, i) => {
     const ln = linkFor(it); const st = sourceTag(it)
     return `
       <div class="r10-item">
@@ -164,6 +213,8 @@ export function renderDossier(data) {
 
   const m = data.meta || {}
   const thin = m.thin ? `<div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>` : ''
+
+  const itemCount = useRgn ? rgnTotalItems(data) : (data.top3 || []).length + (data.top10 || []).length
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -263,13 +314,13 @@ h1 .ic{font-size:24px;}
     <div class="stats">
       <div class="stat"><div class="stat-n">${m.total_found ?? '—'}</div><div class="stat-l">encontrados</div></div>
       <div class="stat"><div class="stat-n">${m.reviewed ?? '—'}</div><div class="stat-l">revisados</div></div>
-      <div class="stat"><div class="stat-n">${(data.top3 || []).length + (data.top10 || []).length}</div><div class="stat-l">curados</div></div>
+      <div class="stat"><div class="stat-n">${itemCount}</div><div class="stat-l">curados</div></div>
     </div>
   </div>
 </div>
 <div class="main">
   ${thin}
-  <section>
+  ${useRgn ? renderRgnSections(data) : `<section>
     <div class="sec-head">
       <div class="sec-ic">🏆</div>
       <span class="sec-title">Top 3 — lectura obligatoria</span>
@@ -287,7 +338,7 @@ h1 .ic{font-size:24px;}
       <span class="sec-count">${(data.top10 || []).length}</span>
     </div>
     <div class="r10-list">${top10}</div>
-  </section>
+  </section>`}
 
   <section>
     <div class="cols">
@@ -336,11 +387,21 @@ export function renderStarsMD(data) {
     const linkmd = ln ? ` — [${clean(ln.label)}](${ln.href})` : ''
     return `- [ ] **${clean(it.title)}** — _${clean(src)}_${linkmd} <!--star:${dk}|${date}|${id}-->`
   }
-  const top3 = (data.top3 || []).map((it, i) => `${line(it, 't3-' + (i + 1))}\n  > ${clean(it.hook_extended)}`).join('\n')
-  const top10 = (data.top10 || []).map((it, i) => {
-    const pred = it.prediction ? `\n  > 🔮 ${clean(it.prediction)}` : ''
-    return `${line(it, 't10-' + (i + 1))}\n  > ${clean(it.one_line)}${pred}`
-  }).join('\n')
+  const useRgn = isRgnLayout(data)
+  let mainSections
+  if (useRgn) {
+    mainSections = RGN_CATEGORIES.map(cat => {
+      const items = (data[cat.key] || []).map((it, i) => `${line(it, cat.key + '-' + (i + 1))}\n  > ${clean(it.hook_extended)}`).join('\n')
+      return `## ${cat.icon} ${cat.title}\n${items || '_(sin ítems en la ventana de 48 h)_'}`
+    }).join('\n\n')
+  } else {
+    const top3 = (data.top3 || []).map((it, i) => `${line(it, 't3-' + (i + 1))}\n  > ${clean(it.hook_extended)}`).join('\n')
+    const top10 = (data.top10 || []).map((it, i) => {
+      const pred = it.prediction ? `\n  > 🔮 ${clean(it.prediction)}` : ''
+      return `${line(it, 't10-' + (i + 1))}\n  > ${clean(it.one_line)}${pred}`
+    }).join('\n')
+    mainSections = `## 🏆 Top 3\n${top3 || '_(sin ítems)_'}\n\n## 📡 Radar (10)\n${top10 || '_(sin ítems)_'}`
+  }
   const perlas = (data.perlas || []).map(p => `- ${clean(p)}`).join('\n')
   const preguntas = (data.preguntas || []).map(q => `- ${clean(q)}`).join('\n')
   const ideas = (data.ideas || []).map(x => `- (${x.kind}) ${clean(x.idea)}`).join('\n')
@@ -351,11 +412,7 @@ export function renderStarsMD(data) {
 > Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
 > Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/${dk}/${date}.html
 
-## 🏆 Top 3
-${top3 || '_(sin ítems)_'}
-
-## 📡 Radar (10)
-${top10 || '_(sin ítems)_'}
+${mainSections}
 
 ---
 
@@ -419,6 +476,23 @@ function rebuildManifest() {
       if (!fs.existsSync(htmlPath)) continue
       let data = {}
       try { data = readJSON(path.join(dir, f)) } catch { continue }
+      const counts = isRgnLayout(data)
+        ? {
+            top3_reviews: (data.top3_reviews || []).length,
+            top3_nma: (data.top3_nma || []).length,
+            top3_guidelines: (data.top3_guidelines || []).length,
+            top3_meta_analysis: (data.top3_meta_analysis || []).length,
+            perlas: (data.perlas || []).length,
+            preguntas: (data.preguntas || []).length,
+            ideas: (data.ideas || []).length,
+          }
+        : {
+            top3: (data.top3 || []).length,
+            top10: (data.top10 || []).length,
+            perlas: (data.perlas || []).length,
+            preguntas: (data.preguntas || []).length,
+            ideas: (data.ideas || []).length,
+          }
       dossiers.push({
         domain,
         title: DOMAINS[domain].title,
@@ -428,13 +502,7 @@ function rebuildManifest() {
         week: isoWeek(date),
         file: `dossiers/${domain}/${date}.html`,
         md: `stars/${domain}/${date}_${domain}.md`,
-        counts: {
-          top3: (data.top3 || []).length,
-          top10: (data.top10 || []).length,
-          perlas: (data.perlas || []).length,
-          preguntas: (data.preguntas || []).length,
-          ideas: (data.ideas || []).length,
-        },
+        counts,
         thin: !!(data.meta && data.meta.thin),
       })
     }

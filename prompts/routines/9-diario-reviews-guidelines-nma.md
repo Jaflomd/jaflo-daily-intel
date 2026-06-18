@@ -45,9 +45,9 @@ GUÍA DE BÚSQUEDA PROFUNDA (deep-search) — úsala para afinar la búsqueda y 
 
 3) REGLA DURA ANTI-FABRICACIÓN: cada ítem REAL y hallado en búsquedas. DOI solo si verificado en metadata (si no, ""). Si el dominio está delgado esta semana → solo lo real + meta.thin=true. Nunca rellenar con papers inventados. Cita PubMed cuando uses PubMed.
 
-4) Produce las 5 secciones (español, personalizado a Javier) y escribe data/reviews-guidelines-nma/$TODAY.json (**sobrescribe** si ya existe) con el contrato (ver prompts/9-reviews-guidelines-nma.md):
-   { domain_key, domain_title, date, top3[3] (hook_extended: qué + por qué le importa a Javier + cómo usarlo), top10[10] (one_line + prediction = predicción Fable), perlas[5], preguntas[5], ideas[5] (kind: content|paper|book), journals_activos[], meta{total_found,reviewed,sources_used,thin} }
-   Cada hook_extended y cada prediction debe nombrar un proyecto/línea/pilar **concreto** de Javier (su libro de psicopatología, AMAUTA/USAMEDIC, línea TDAH/TEA, etc.), no algo genérico. Valida que el JSON parsea antes de construir.
+4) Produce las 8 secciones (español, personalizado a Javier) y escribe data/reviews-guidelines-nma/$TODAY.json (**sobrescribe** si ya existe) con el contrato por categoría (ver prompts/9-reviews-guidelines-nma.md):
+   { domain_key, domain_title, date, top3_reviews[≤3], top3_nma[≤3], top3_guidelines[≤3], top3_meta_analysis[≤3] (cada uno con hook_extended: qué + por qué le importa a Javier + cómo usarlo), perlas[5], preguntas[5], ideas[5] (kind: content|paper|book), journals_activos[], meta{total_found,reviewed,sources_used,thin} }
+   Si una categoría no tiene ítems en la ventana de 48h, deja el array vacío []. Cada hook_extended debe nombrar un proyecto/línea/pilar **concreto** de Javier (su libro de psicopatología, AMAUTA/USAMEDIC, línea TDAH/TEA, etc.), no algo genérico. Valida que el JSON parsea antes de construir.
 
 5) Renderiza, recopila favoritos y publica:
    node scripts/build.mjs reviews-guidelines-nma $TODAY     # HTML del dossier + MD estrellable (stars/reviews-guidelines-nma/)

@@ -60,15 +60,24 @@ Reúne los ítems reales de la ventana de 48h (idealmente 13: top3 + top10). Si 
 
 **Regla dura anti-fabricación:** cada ítem debe ser REAL y haber aparecido en tus búsquedas. DOI solo si lo confirmaste en metadata; si no, `doi:""`. Si la semana está delgada en este dominio, devuelve solo los hallazgos reales y marca `meta.thin=true`; jamás rellenes con papers inventados. Cita PubMed cuando uses PubMed (atribución + DOIs por sus términos de uso).
 
-## Las 5 secciones (todo en español, personalizado a Javier)
+## Las 8 secciones (todo en español, personalizado a Javier)
 
-1. **Top 3 — resumen extenso.** Por cada uno, un `hook_extended` que diga qué encontró, **por qué le importa a Javier** (conecta con su libro / línea / pilar concreto) y cómo usarlo.
-2. **Radar — 10 siguientes (resumen corto + predicción).** `one_line` (qué halló + relevancia) y `prediction` (tu predicción como Fable: hacia dónde va o cómo capitalizarlo).
-3. **5 perlas del día** — insight contraintuitivo o dato accionable, anclado en lo hallado.
-4. **5 preguntas del día** — clínicas o de investigación, que disparan el contenido de hoy.
-5. **5 ideas del día** — para contenido (IG/YT), paper o capítulo de libro; etiqueta `kind = content|paper|book`.
+Este dominio usa un layout especial por categoría (NO el genérico top3+radar):
 
-## Salida — contrato JSON (5 secciones)
+1. **Top 3 Reviews** — las 3 mejores revisiones (sistemáticas, scoping, umbrella, narrativas). `hook_extended` extenso.
+2. **Top 3 Network Meta-Analysis** — las 3 mejores NMA (ranking comparativo). `hook_extended` extenso.
+3. **Top 3 Guías & Consensos** — las 3 mejores guías de práctica clínica / consensus statements. `hook_extended` extenso.
+4. **Top 3 Meta-Analysis** — los 3 mejores meta-análisis estándar. `hook_extended` extenso.
+5. **5 perlas del día** — insight contraintuitivo o dato accionable, anclado en lo hallado.
+6. **5 preguntas del día** — clínicas o de investigación, que disparan el contenido de hoy.
+7. **5 ideas del día** — para contenido (IG/YT), paper o capítulo de libro; etiqueta `kind = content|paper|book`.
+8. **Journals activos** — medios y journals con publicaciones esta semana.
+
+Cada `hook_extended` dice qué encontró, **por qué le importa a Javier** (conecta con su libro / línea / pilar concreto) y cómo usarlo (3-5 oraciones).
+
+Si una categoría no tiene ítems en la ventana de 48h, deja el array vacío `[]` — el renderer muestra un aviso automáticamente.
+
+## Salida — contrato JSON (8 secciones)
 
 Escribe el resultado en `data/reviews-guidelines-nma/<YYYY-MM-DD>.json` con exactamente esta forma:
 
@@ -77,11 +86,17 @@ Escribe el resultado en `data/reviews-guidelines-nma/<YYYY-MM-DD>.json` con exac
   "domain_key": "reviews-guidelines-nma",
   "domain_title": "<título del dominio>",
   "date": "<YYYY-MM-DD>",
-  "top3": [
-    { "title": "", "source": "journal/medio + fecha", "type": "paper|review|meta-analysis|rct|preprint|blog|thread|podcast|editorial", "date": "", "url": "", "doi": "", "hook_extended": "Párrafo extenso (3-5 oraciones): qué encontró, por qué le importa A JAVIER (conecta con su libro/línea/pilar concreto), y cómo usarlo." }
+  "top3_reviews": [
+    { "title": "", "source": "journal/medio + fecha", "type": "review", "date": "", "url": "", "doi": "", "hook_extended": "Párrafo extenso (3-5 oraciones)." }
   ],
-  "top10": [
-    { "title": "", "source": "", "type": "", "date": "", "url": "", "doi": "", "one_line": "Una oración: qué halló + relevancia para Javier.", "prediction": "Predicción Fable (1 oración): hacia dónde va o cómo capitalizarlo." }
+  "top3_nma": [
+    { "title": "", "source": "", "type": "network-meta-analysis", "date": "", "url": "", "doi": "", "hook_extended": "" }
+  ],
+  "top3_guidelines": [
+    { "title": "", "source": "", "type": "guideline", "date": "", "url": "", "doi": "", "hook_extended": "" }
+  ],
+  "top3_meta_analysis": [
+    { "title": "", "source": "", "type": "meta-analysis", "date": "", "url": "", "doi": "", "hook_extended": "" }
   ],
   "perlas": ["5 perlas del día: insight contraintuitivo o dato accionable, anclado en lo hallado."],
   "preguntas": ["5 preguntas del día (clínicas o de investigación) que disparan el contenido de hoy."],
@@ -91,7 +106,7 @@ Escribe el resultado en `data/reviews-guidelines-nma/<YYYY-MM-DD>.json` con exac
 }
 ```
 
-- `top3` = 3 ítems. `top10` = 10 ítems. `perlas` / `preguntas` = 5 c/u. `ideas` = 5 (etiqueta `kind`).
+- Cada `top3_*` = hasta 3 ítems (puede ser `[]` si no hay en la ventana). `perlas` / `preguntas` = 5 c/u. `ideas` = 5 (etiqueta `kind`).
 - Todo el texto en **español**, personalizado a Javier.
 
 ## Construir y publicar
