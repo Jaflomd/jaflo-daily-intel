@@ -1,0 +1,71 @@
+# ⭐ 🌐 Neurociencia · Triple Red & Neuropsiquiatría — 2026-06-18
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/neuro-triple-network/2026-06-18.html
+
+## 🏆 Top 3
+- [ ] **Using connectome-based predictive models to reveal the systems standardized tests and clinical symptoms are reflecting** — _Nature Communications · 16 jun 2026 · paper_ — [doi.org/10.1038/s41467-026-73941-0](https://doi.org/10.1038/s41467-026-73941-0) <!--star:neuro-triple-network|2026-06-18|t3-1-->
+  > El grupo de Scheinost y Constable (Yale) invierte el modelado cerebro-conducta: en vez de preguntar qué red predice un test, definen a priori redes de conectividad para seis constructos cognitivos y, con kernel ridge regression en 302 participantes clínica y demográficamente diversos, miden qué sistema cerebral refleja realmente cada prueba y cada síntoma. A Javier esto le pega en el centro de su cruce precision-psychiatry × amauta-education: construye qbanks y prepara ENAM/Residentado, y aquí hay un marco cuantitativo para la pregunta de validez que persigue en BMSE/razonamiento dimensional —qué mide de verdad un puntaje, no qué dice medir. Úsalo como columna conceptual de un capítulo del libro de neurociencia educativa sobre validez de medición, y como argumento de fondo para una clase o carousel sobre por qué un score nunca es el constructo.
+- [ ] **Opposing sensitive period effects of early and late childhood maltreatment on corticolimbic responses in fear conditioning** — _Molecular Psychiatry · 17 jun 2026 · paper_ — [doi.org/10.1038/s41380-026-03689-y](https://doi.org/10.1038/s41380-026-03689-y) <!--star:neuro-triple-network|2026-06-18|t3-2-->
+  > Teicher (Harvard/McLean) y colaboradores, en 213 jóvenes con fMRI de condicionamiento pavloviano del miedo y un marco causal (selección por machine-learning más estimación TMLE), muestran que el maltrato temprano y el tardío empujan en direcciones OPUESTAS al circuito amígdala–vmPFC: el temprano agudiza la discriminación amenaza-seguridad y el acoplamiento con vmPFC, el tardío lo embota, y ambos patrones confieren vulnerabilidad a largo plazo. Para Javier es justo el tipo de evidencia que sostiene su psiquiatría dimensional (RDoC, valencia negativa) y su libro de psicopatología: el cuándo del trauma reordena el circuito, no solo el cuánto. Es el ejemplo estrella para enseñar periodos sensibles y especificidad temporal en RDoC, y materia prima para una pieza sobre por qué la cronología del trauma pesa más que el conteo de eventos.
+- [ ] **In-patient treatment and structural dysconnectivity in major depression — A longitudinal connectome study** — _European Neuropsychopharmacology · 13 jun 2026 · paper_ — [doi.org/10.1016/j.euroneuro.2026.112898](https://doi.org/10.1016/j.euroneuro.2026.112898) <!--star:neuro-triple-network|2026-06-18|t3-3-->
+  > Repple, van den Heuvel y cols. siguen el conectoma de sustancia blanca en 109 pacientes con depresión (50 con TEC) frente a 43 controles, pre y a seis semanas: la conectividad estructural AUMENTA tras el tratamiento —de forma transversal a la terapia, no exclusiva de la TEC— y la magnitud de ese aumento se asocia a la reducción de síntomas. Le importa a Javier porque es un biomarcador de respuesta basado en red, dinámico y no un correlato estático, y conecta con su línea de precision-psychiatry y neuromodulación: el conectoma como blanco terapéutico y como medida de neuroplasticidad. Úsalo para defender en clase o en contenido la idea de que tratar es remodelar la red, y como referencia para el capítulo sobre biomarcadores dinámicos de respuesta.
+
+## 📡 Radar (10)
+- [ ] **Abnormal effective connectivity of default mode network subsystems affects depressive symptoms and sleep disturbances in adolescents with internet gaming disorder** — _BMC Psychiatry · 12 jun 2026 · paper_ — [doi.org/10.1186/s12888-026-08266-9](https://doi.org/10.1186/s12888-026-08266-9) <!--star:neuro-triple-network|2026-06-18|t10-1-->
+  > Con modelado causal dinámico en 47 adolescentes con trastorno por videojuegos, la conectividad efectiva entre subsistemas del DMN (core→temporal medial) media la relación entre depresión y trastornos del sueño y predice síntomas.
+  > 🔮 El DMN dejará de tratarse como bloque único: los subsistemas (core/MTL/dMPFC) serán blancos de neuromodulación diferenciados — anota 'subsistemas del DMN' como ángulo fino para tu contenido de neurodivergencia y pantallas.
+- [ ] **Structural co-modulation: An individualized measure of inter-component interactions in source-based morphometry** — _NeuroImage · 12 jun 2026 · paper_ — [doi.org/10.1016/j.neuroimage.2026.122056](https://doi.org/10.1016/j.neuroimage.2026.122056) <!--star:neuro-triple-network|2026-06-18|t10-2-->
+  > Calhoun y cols. proponen una huella estructural individualizada (co-modulación) que revela reducciones dentro y entre redes visual, DMN y control cognitivo en 210 pacientes con esquizofrenia, correlacionada con cognición y síntomas.
+  > 🔮 La métrica individualizada, no de grupo, es la dirección hacia el fenotipado de precisión; estos fingerprints estructurales alimentarán clasificadores clínicos — guárdalo como referencia metodológica para tu línea dimensional.
+- [ ] **Severity-dependent alterations of functional network segregation and integration in tobacco use disorder** — _Progress in Neuro-Psychopharmacology & Biological Psychiatry · 16 jun 2026 · paper_ — [doi.org/10.1016/j.pnpbp.2026.111789](https://doi.org/10.1016/j.pnpbp.2026.111789) <!--star:neuro-triple-network|2026-06-18|t10-3-->
+  > En tabaquismo (n=102), la topología de red cambia con la severidad —de mayor integración global en fumadores leves a pérdida de segregación local en severos, con hipoconectividad del DMN y límbico— y un modelo multiescala clasifica severidad con AUC 0.84.
+  > 🔮 El gradiente de severidad por red será el marco para estadificar adicciones como dimensión y no categoría — encaja directo en tu narrativa HiTOP de espectros, no de umbrales.
+- [ ] **Prediction of an fMRI-based schizophrenia biomarker from EEG using dynamic functional connectivity: a simultaneous EEG-fMRI study** — _Biomedical Physics & Engineering Express · 17 jun 2026 · paper_ — [doi.org/10.1088/2057-1976/ae7804](https://doi.org/10.1088/2057-1976/ae7804) <!--star:neuro-triple-network|2026-06-18|t10-4-->
+  > Prueba de concepto que estima desde EEG un biomarcador de conectividad de esquizofrenia originalmente definido por fMRI (rho 0.77–0.86), abriendo neurofeedback basado en red con un equipo barato.
+  > 🔮 Trasladar biomarcadores de fMRI a EEG es la jugada de democratización para entornos de bajos recursos —léase Perú—; ángulo directo para tu pilar de precision-psychiatry accesible.
+- [ ] **Readiness to change: Exploring clinical, cognitive and neural predictors of treatment efficacy following virtual reality-based cognitive remediation in mood and schizophrenia spectrum disorders** — _Journal of Affective Disorders · feb 2026 (RCT) · rct_ — [doi.org/10.1016/j.jad.2026.121482](https://doi.org/10.1016/j.jad.2026.121482) <!--star:neuro-triple-network|2026-06-18|t10-5-->
+  > En remediación cognitiva por realidad virtual (RCT, n=62, trastornos del ánimo y del espectro esquizofrénico), la conectividad red de atención dorsal–salience y la activación dPFC basal predicen quién mejora.
+  > 🔮 La preparación para el cambio se volverá medible por red antes de tratar; predigo selección de pacientes guiada por conectividad salience-DAN — útil para tu cruce educación × cognición × precisión.
+- [ ] **[Brain functional and cognitive features in schizophrenia patients with positive and negative symptom features based on resting-state functional MRI]** — _Zhonghua Yi Xue Za Zhi (Chinese Med J) · 16 jun 2026 · paper_ — [doi.org/10.3760/cma.j.cn112137-20260410-00976](https://doi.org/10.3760/cma.j.cn112137-20260410-00976) <!--star:neuro-triple-network|2026-06-18|t10-6-->
+  > rs-fMRI separa esquizofrenia de predominio positivo vs negativo por el fALFF y la conectividad del núcleo caudado derecho, ligados a déficits cognitivos específicos de cada perfil.
+  > 🔮 Los subtipos sintomáticos tendrán firmas de circuito propias y el caudado emergerá como nodo discriminador — material para tu argumento dimensional sobre heterogeneidad intra-diagnóstico.
+- [ ] **Accurately modeling resting-brain functional connectivity using hypergraph neural field-Fourier deep neural network** — _Scientific Reports · 15 jun 2026 · paper_ — [doi.org/10.1038/s41598-026-57930-3](https://doi.org/10.1038/s41598-026-57930-3) <!--star:neuro-triple-network|2026-06-18|t10-7-->
+  > Un modelo de campo neuronal sobre hipergrafo más red Fourier predice la conectividad funcional desde la estructural con correlación 0.82 (vs 0.55 del modelo de difusión clásico) y recupera correlaciones negativas.
+  > 🔮 Los modelos generativos estructura→función serán el puente mecanicista que falta entre conectoma y síntoma — guárdalo como ejemplo de ai-enhancement aplicado a neurociencia de redes.
+- [ ] **Neurobiological mechanisms of anhedonia in adolescents with mood disorders: A scoping review** — _Journal of Affective Disorders · feb 2026 (revisión) · review_ — [doi.org/10.1016/j.jad.2026.121376](https://doi.org/10.1016/j.jad.2026.121376) <!--star:neuro-triple-network|2026-06-18|t10-8-->
+  > Revisión de 21 estudios (1278 pacientes) mapea la anhedonia adolescente a circuitos de recompensa cortico-estriatales y cortico-límbicos alterados, sobre todo en las fases de anticipación y de procesamiento del error.
+  > 🔮 La anhedonia se consolidará como dimensión RDoC medible por circuito de recompensa, con ventana de intervención temprana — semilla para contenido sobre motivación y recompensa en adolescentes.
+- [ ] **Clinical connectomics: Mapping structural brain networks in disease** — _Neuron · fascículo 2026 (revisión, Zalesky & Di Biase) · review_ — [doi.org/10.1016/j.neuron.2026.02.007](https://doi.org/10.1016/j.neuron.2026.02.007) <!--star:neuro-triple-network|2026-06-18|t10-9-->
+  > Revisión de mejores prácticas (Zalesky & Di Biase) para mapear conectomas estructurales en presencia de patología, clasificando anomalías de red y advirtiendo los sesgos de pipelines validados solo en sanos.
+  > 🔮 Estandarizar el mapeo de conectomas clínicos es prerrequisito para biomarcadores reproducibles; será cita obligada — añádelo a tu biblioteca de métodos de red.
+- [ ] **Neural substrates of apathy in Parkinson's disease: A systematic review of structural and functional neuroimaging studies** — _Brain Research Bulletin · may 2026 (revisión sistemática) · review_ — [doi.org/10.1016/j.brainresbull.2026.111922](https://doi.org/10.1016/j.brainresbull.2026.111922) <!--star:neuro-triple-network|2026-06-18|t10-10-->
+  > Revisión sistemática (16 estudios) ubica la apatía en Parkinson en redes fronto-estriato-límbicas, parcialmente disociable de la depresión y del deterioro cognitivo global.
+  > 🔮 La apatía como síndrome de circuito propio —no 'depresión light'— reforzará el enfoque dimensional transdiagnóstico de la motivación; encaja en tu marco de valencia/arousal.
+
+---
+
+## 💎 Perlas del día
+- La ínsula anterior no 'siente': conmuta. El modelo de triple red la trata como el switch que decide cuándo el cerebro mira afuera (red ejecutiva) o adentro (DMN); muchos síntomas son fallos de conmutación, no de un área aislada.
+- El DMN ya no es un bloque: hoy se diseca en subsistemas (core, temporal medial, dMPFC) y son ellos —no el DMN entero— los que median depresión y sueño en el trastorno por videojuegos adolescente. Decir 'el DMN' ya es impreciso.
+- Tratar la depresión remodela la red: a seis semanas la conectividad estructural sube y ese aumento, no el tipo de terapia, predice la mejoría. La neuroplasticidad es medible como cambio de conectoma.
+- En el trauma importa el cuándo más que el cuánto: maltrato temprano vs tardío empuja el circuito amígdala–vmPFC en direcciones opuestas. La cronología es un eje, no un detalle de fondo.
+- Un puntaje de test no es el constructo: con modelado de conectoma 'inverso' se puede ver qué sistema cerebral refleja realmente cada prueba — y a veces no es el que el test dice medir.
+
+## ❓ Preguntas del día
+- ¿Cuánto de lo que llamamos 'déficit atencional' en TEA/TDAH es en realidad un fallo de conmutación salience→ejecutivo y no un déficit del dominio en sí?
+- Si la conectividad estructural sube con cualquier tratamiento efectivo de depresión, ¿sirve como biomarcador de respuesta agnóstico a la modalidad para guiar decisiones clínicas en contextos como el peruano?
+- ¿Podemos estadificar adicciones (tabaco, videojuegos) por gradiente de red en vez de por categorías DSM, alineado con HiTOP?
+- ¿Qué mide realmente un ítem del ENAM o del Residentado a nivel de sistema cerebral, y cómo cambiaría el diseño de un qbank si lo supiéramos?
+- ¿El maltrato temprano vs tardío exige intervenciones distintas porque deja firmas de circuito opuestas en el sistema del miedo?
+
+## 💡 Ideas del día
+- (content) Carousel/Reel: 'Tu ínsula es un interruptor, no un sentimiento' — explicar el modelo de triple red (salience como switch DMN↔ejecutivo) con un ejemplo clínico de TDAH o ansiedad.
+- (book) Capítulo del libro de neurociencia educativa: 'Un puntaje no es el constructo' — usar el modelado de conectoma inverso (Yale) para discutir validez de medición en evaluación médica y qbanks.
+- (paper) Paper de perspectiva: estadificación dimensional de adicciones por topología de red (integración↔segregación) como puente entre HiTOP y conectómica.
+- (content) Clase AMAUTA/USAMEDIC: 'El cuándo del trauma' — periodos sensibles y efectos opuestos del maltrato temprano vs tardío sobre el circuito del miedo, con marco RDoC.
+- (paper) Paper metodológico: biomarcadores de red trasladables de fMRI a EEG para neurofeedback en entornos de bajos recursos (caso Perú), apoyado en la prueba de concepto EEG-fMRI de esquizofrenia.
+
+---
+_Fuentes: PubMed (NCBI E-utilities vía MCP) · bioRxiv/medRxiv/PsyArXiv (scan; sin ítems nuevos verificables dentro de ventana). Atribución a PubMed por sus términos de uso._
