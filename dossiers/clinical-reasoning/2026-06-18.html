@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-06-18 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">18 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">150</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">48</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature + 17 jun 2026 · paper · 2026-06-17</div>
+        <h3 class="r3-title">Towards autonomous medical artificial intelligence agents (MIRA)</h3>
+        <p class="r3-hook">Jaflo, este es el paper de portada del día: MIRA es un agente de IA autónomo que opera dentro de un EHR sandboxizado y recorre el espacio completo de acciones clínicas —toma anamnesis, ordena e interpreta laboratorio/imagen/microbiología, genera diagnóstico diferencial y formula plan (medica, programa cirugía, decide admisión)—; en simulaciones sobre casos reales superó a médicos en precisión diagnóstica y tomó decisiones concordantes con guías y seguras en medicación. Importa porque mueve tu pilar ai-enhancement de &#39;chatbot que aconseja texto libre&#39; a &#39;copiloto que ejecuta el ciclo de razonamiento&#39;, justo el salto que tu trabajo en IA aplicada a investigación/educación viene anticipando, y choca de frente con la pregunta que atraviesa tu libro de psicopatología y tu prep ENAM/Residentado: ¿qué enseñamos cuando un agente ya hace el workup mejor que el residente promedio? Léelo en tensión con la literatura que dice que los LLM colapsan en los pasos intermedios con datos sucios —MIRA gana en casos curados, no es validación prospectiva—. Úsalo como pieza ancla para una clase/carousel del Aprendiz Experto sobre &#39;el médico como supervisor de agentes&#39;, y como gancho conceptual para el capítulo de razonamiento clínico aumentado por IA.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41586-026-10675-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41586-026-10675-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Critical Care Medicine + 18 jun 2026 · paper · 2026-06-18</div>
+        <h3 class="r3-title">Large Language Models Provide Accurate but Potentially Unsafe Answers to Multimodal Critical Care Medicine Board Review Questions</h3>
+        <p class="r3-hook">Jaflo, ChatGPT-4o respondió 74.9% de preguntas multimodales de board de cuidados críticos correctamente —por encima del 71.1% de clínicos agrupados (p=0.03)— pero 14 revisores expertos juzgaron que el 33.3% de sus respuestas tenían potencial de daño clínico, sobre todo por mala interpretación de imágenes (61.7%) y razonamiento débil (68.3%) pese a alta comprensión del enunciado (87.4%). Esto es munición directa para tu línea de educación médica de precisión y para AMAUTA/USAMEDIC: la &#39;accuracy&#39; que vende la IA en bancos de preguntas no es competencia clínica, y el peligro vive en los pasos de razonamiento e integración visual, no en la letra final. El paper viene con un editorial gemelo —&#39;Correct Enough? Board Accuracy Is Not Clinical Competence&#39;— que te da el titular listo. Úsalo para enmarcar cómo diseñas tus qbanks ENAM (medir razonamiento y seguridad, no solo respuesta correcta) y como caso de portada para un reel sobre &#39;por qué tu MIR-bot puede aprobar el examen y matar al paciente&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/CCM.0000000000007228" target="_blank" rel="noopener">↗ doi.org/10.1097/CCM.0000000000007228</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">BMC Medical Education + 16 jun 2026 · rct · 2026-06-16</div>
+        <h3 class="r3-title">The PAPER heuristic: a structured cognitive aid to reduce intrinsic cognitive load in early clinical reasoning training</h3>
+        <p class="r3-hook">Jaflo, RCT simulado de un solo ciego con 290 estudiantes: un acrónimo desarrollado por Delphi (PAPER: Patient, Acute situation, Past history, Estimate, Recommendations) NO mejoró el desempeño clínico global, pero sí redujo significativamente la carga cognitiva intrínseca en los estudiantes de semestres tempranos —y el efecto dependió del momento de la formación—. Es exactamente el tipo de evidencia que necesitas para el Competency Lab y para tu libro de neurociencia educativa: un andamio cognitivo ayuda al novato a no ahogarse, pero en el avanzado es ruido; el timing curricular manda sobre la herramienta. Conecta con tu marco BMSE/razonamiento dimensional: los heurísticos estructurados son rieles temporales, no muletas permanentes. Úsalo para una clase del Aprendiz Experto sobre cuándo introducir scaffolds (y cuándo retirarlos), y como referencia metodológica si diseñas tu propio acrónimo de razonamiento para residentado peruano.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09639-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09639-0</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Int J Oral Maxillofac Surg + 17 jun 2026 · paper · 2026-06-17</div>
+          <div class="r10-title">Evaluating general vs retrieval-augmented generation LLMs on oral and maxillofacial surgery board examinations</div>
+          <div class="r10-line">Sobre 788 preguntas, Gemini 2.5 (83.8%) superó a ChatGPT-5 (73.2%) y Claude Sonnet 4 (72.3%); inyectar todo el material del examen vía RAG no dio ninguna ventaja (50.9 vs 51.4%): manda la arquitectura base, no el contexto inyectado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El hallazgo de &#39;patrones de error complementarios&#39; (humanos fallan en recall, IA falla en integrar contexto curricular regional) será el argumento mecanicístico que cite tu contenido para vender el copiloto sobre el reemplazo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ijom.2026.06.010" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ijom.2026.06.010</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Otolaryngology–Head and Neck Surgery + 17 jun 2026 · paper · 2026-06-17</div>
+          <div class="r10-title">The Utility of Large Language Models to Assist With Emergency Triage Decisions Within Otolaryngology</div>
+          <div class="r10-line">Estudio ciego de razonamiento diagnóstico: GPT-5 igualó al adjunto de otorrino en triaje de urgencias y los LLM superaron a los clínicos de emergencia, aunque requieren supervisión y calibración local.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El triaje asistido por LLM se volverá el primer caso de uso &#39;aprobable&#39; donde el especialista escasea; tu nicho será enseñar la calibración local y el guardrail, no el modelo.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/ohn.70313" target="_blank" rel="noopener">↗ doi.org/10.1002/ohn.70313</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Critical Care Medicine + 18 jun 2026 · editorial · 2026-06-18</div>
+          <div class="r10-title">Correct Enough? Board Accuracy Is Not Clinical Competence</div>
+          <div class="r10-line">Editorial que desacopla &#39;puntaje de board&#39; de &#39;competencia clínica&#39; a propósito del estudio multimodal de ChatGPT-4o: la métrica que celebra la IA mide lo más fácil de medir, no lo que protege al paciente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esta frase (&#39;accuracy ≠ competence&#39;) se vuelve tu titular reutilizable para todo el ciclo de contenido sobre IA en exámenes médicos y para reposicionar cómo evalúas en USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/CCM.0000000000007259" target="_blank" rel="noopener">↗ doi.org/10.1097/CCM.0000000000007259</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">AJR American Journal of Roentgenology + 17 jun 2026 · editorial · 2026-06-17</div>
+          <div class="r10-title">Diagnostic Reasoning Augmented by Large Language Models: Maintaining the Human-in-the-Loop</div>
+          <div class="r10-line">Comentario que insiste en mantener al humano en el bucle del razonamiento diagnóstico aumentado por LLM —el modelo propone, el clínico calibra y responde—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;human-in-the-loop&#39; pasará de eslogan a requisito regulatorio/educativo; conviene que tu marca lo operacionalice con un protocolo concreto de verificación antes que la competencia.</div>
+          <a class="r10-link" href="https://doi.org/10.2214/AJR.26.35340" target="_blank" rel="noopener">↗ doi.org/10.2214/AJR.26.35340</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Seminars in Thrombosis and Hemostasis + 17 jun 2026 · review · 2026-06-17</div>
+          <div class="r10-title">Making Machine Learning Clinically Useful in Thrombosis and Hemostasis: A Roadmap for Diagnostic Translation</div>
+          <div class="r10-line">Propone tratar las herramientas de ML como instrumentos diagnósticos (uso previsto, población, estándar de referencia, validación por fases) y entrega un checklist desplegable para distinguir prototipo de herramienta lista.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Ese checklist es plantilla directa para tu pilar research: lo adaptas a psiquiatría de precisión y tienes un instrumento de appraisal reutilizable para tus revisiones y tu comité.</div>
+          <a class="r10-link" href="https://doi.org/10.1055/a-2888-3814" target="_blank" rel="noopener">↗ doi.org/10.1055/a-2888-3814</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Med (Cell Press) + 17 jun 2026 · review · 2026-06-17</div>
+          <div class="r10-title">Withdrawal effects following treatment discontinuation: A blind spot in evidence-based medicine</div>
+          <div class="r10-line">Los efectos de retirada (riesgo transitorio elevado tras discontinuar, más allá de perder el efecto del fármaco) están sub-reconocidos y distorsionan tanto el diseño de estudios como la interpretación clínica de la no-adherencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Tema con vector psiquiátrico fuerte (antidepresivos, benzodiacepinas, estimulantes en TDAH): será un capítulo o serie sobre cómo el sesgo de continuidad contamina el razonamiento terapéutico en neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.medj.2026.101181" target="_blank" rel="noopener">↗ doi.org/10.1016/j.medj.2026.101181</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Internal Medicine (Tokyo) + 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Invasive Aspergillus Sinusitis Masquerading as Hypertrophic Pachymeningitis Complicated by a Ruptured Infectious Internal Carotid Artery Aneurysm</div>
+          <div class="r10-line">Caso de error diagnóstico: micosis invasiva que imita paquimeningitis hipertrófica; los corticoides empíricos sin excluir etiología fúngica precipitaron deterioro catastrófico —cierre prematuro de manual—.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Illness script perfecto para tu material de razonamiento: el &#39;red flag&#39; es tratar la inflamación antes de descartar infección; lo conviertes en una viñeta de debiasing con la pregunta &#39;qué me haría estar equivocado&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2169/internalmedicine.7244-26" target="_blank" rel="noopener">↗ doi.org/10.2169/internalmedicine.7244-26</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education + 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Implementing and evaluating a seminar-case learning model in postgraduate orthodontic education</div>
+          <div class="r10-line">Modelo seminario+caso con ganancias percibidas en razonamiento clínico (87.5%), pero con curva en U por experiencia: el grupo intermedio (50–80 casos) reportó la menor satisfacción.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La curva en U es el dato accionable: tu diseño instruccional debe segmentar por nivel (novatos y expertos ganan distinto que el &#39;meseta intermedia&#39;), insumo para cómo estratificas cohortes en tus programas.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09627-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09627-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Pediatrics + 17 jun 2026 · review · 2026-06-17</div>
+          <div class="r10-title">Bridging the Gap: Implementing Race-Conscious Clinical Guidance in Pediatrics</div>
+          <div class="r10-line">Mapea cómo eliminar la &#39;corrección por raza&#39; incrustada en algoritmos y guías —un sesgo sistémico que usa la raza como proxy defectuoso de ancestría/estatus socioeconómico— y migrar a herramientas raza-neutrales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El sesgo embebido en algoritmos es el nuevo frente del debiasing; cruzado con psiquiatría de precisión, te da un ángulo de equidad para tu comité de ética y para contenido sobre &#39;sesgo automatizado&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1542/peds.2026-076070f" target="_blank" rel="noopener">↗ doi.org/10.1542/peds.2026-076070f</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Participatory Medicine + 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Enhancing Patient Participation in Co-Productive Decision-Making With Personal Value Sets (PUSH): Clinical Trial Prototype</div>
+          <div class="r10-line">Prototipo (PUSH/EQ-5D-5L) que elicita el set de utilidad personal del paciente en la consulta para una decisión co-producida, evitando la &#39;aura de exactitud&#39; de los porcentajes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La decisión compartida cuantificada-pero-no-falsamente-precisa encaja con tu psiquiatría dimensional; candidato a herramienta de aula para enseñar razonamiento terapéutico centrado en valores.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/81623" target="_blank" rel="noopener">↗ doi.org/10.2196/81623</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Accuracy ≠ competencia: ChatGPT-4o superó a clínicos en board de críticos (74.9% vs 71.1%) y aun así 1 de cada 3 respuestas tenía potencial de daño. El peligro no está en la letra final, sino en los pasos de razonamiento e interpretación de imágenes.</li><li>RAG no te hace más listo: dar al modelo acceso total al material del examen no movió la aguja (50.9% vs 51.4% sin RAG). Lo que decide el desempeño es la arquitectura base, no el contexto inyectado —ojo con vender &#39;IA entrenada en tu temario&#39; como ventaja.</li><li>Error complementario humano/IA: los humanos fallan en recall factual; la IA falla en integrar el contexto curricular y regional. Es el argumento mecanicístico más limpio para el copiloto-sobre-reemplazo, y para enseñar dónde sigue siendo insustituible el clínico.</li><li>El andamio sirve al novato, estorba al experto: el acrónimo PAPER bajó la carga cognitiva intrínseca solo en estudiantes tempranos. Diseña scaffolds con fecha de caducidad: el timing curricular pesa más que la herramienta.</li><li>Punto ciego de la MBE: el efecto de retirada (riesgo transitorio tras discontinuar, no solo pérdida del efecto) casi nunca se modela. Es un sesgo de continuidad que contamina cómo leemos la no-adherencia —especialmente en fármacos psiquiátricos.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si un agente autónomo (MIRA) supera a médicos en casos curados pero los LLM colapsan en los pasos intermedios con datos sucios, ¿qué competencia exacta debe certificar el ENAM/Residentado en 2027: el diagnóstico final o el workup con información incompleta?</li><li>¿Cómo se mide &#39;razonamiento seguro&#39; y no solo &#39;respuesta correcta&#39; en un qbank? ¿Qué tendría que puntuar un ítem para penalizar la respuesta plausible-pero-peligrosa?</li><li>¿Cuándo introducir y cuándo retirar un heurístico estructurado de razonamiento para no fabricar dependencia en el aprendiz avanzado?</li><li>En triaje asistido por LLM, ¿qué guardrail mínimo y qué calibración local convierten &#39;GPT-5 iguala al adjunto&#39; en algo desplegable y no en sesgo de automatización?</li><li>¿Cuánto del &#39;razonamiento&#39; que enseñamos es en realidad recuperación de illness scripts, y qué parte es genuina integración contextual que la IA aún no replica?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carousel &#39;Tu MIR-bot aprueba el examen y mata al paciente&#39;: contrasta MIRA (Nature) y el 33% de respuestas con potencial de daño en críticos para mostrar por qué accuracy ≠ competencia. Cierre con la pregunta de qué se debe certificar.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie del Aprendiz Experto &#39;El médico como supervisor de agentes&#39;: 3 capítulos —qué hace bien el agente, dónde falla (pasos intermedios, datos sucios), y el protocolo human-in-the-loop de verificación antes de aceptar una sugerencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper/ensayo metodológico: adaptar el checklist de &#39;ML como instrumento diagnóstico&#39; (roadmap de translación) a psiquiatría de precisión, proponiendo criterios de uso previsto, estándar de referencia y validación por fases para modelos en salud mental.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio educativo propio: RCT/cuasi-experimento de un acrónimo de razonamiento clínico para residentado peruano, midiendo carga cognitiva (no solo desempeño) y estratificando por nivel, replicando el diseño PAPER en contexto ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de razonamiento clínico/neurociencia educativa: &#39;Sesgos automatizados&#39; —cierre prematuro humano, sesgo de automatización con IA, y corrección por raza embebida en algoritmos como un mismo fenómeno de heurísticos que se vuelven trampas.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature</span><span class="tag ">Critical Care Medicine</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Otolaryngology–Head and Neck Surgery</span><span class="tag ">AJR American Journal of Roentgenology</span><span class="tag ">International Journal of Oral and Maxillofacial Surgery</span><span class="tag ">Med (Cell Press)</span><span class="tag ">Seminars in Thrombosis and Hemostasis</span><span class="tag ">Pediatrics</span><span class="tag ">Internal Medicine (Tokyo)</span><span class="tag ">Journal of Participatory Medicine</span><span class="tag ">Journal of Clinical Epidemiology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP: search_articles + get_article_metadata) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 18 de junio de 2026.</div>
+</div>
+</body>
+</html>
