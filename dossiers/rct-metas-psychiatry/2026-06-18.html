@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-18 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">18 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">64</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">43</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JAMA Psychiatry · 2026-06-17 · meta-analysis</div>
+        <h3 class="r3-title">Avatar therapy lidera las psicoterapias dirigidas a alucinaciones auditivas en esquizofrenia: SR + meta-análisis de 23 RCTs (n=2016) en JAMA Psychiatry</h3>
+        <p class="r3-hook">Según PubMed, esta MA de JAMA Psychiatry (23 RCTs, n=2016, PRISMA + GRADE) muestra que las intervenciones psicológicas dirigidas a alucinaciones auditivas en trastornos del espectro esquizofrénico reducen su severidad con un efecto pequeño global (SMD -0.18, NNT 16, certeza baja), pero la terapia de avatar destaca con el mayor tamaño de efecto (SMD -0.37, p&lt;0.001) y buena tolerabilidad. Te importa, Jaflo, porque cruza tres de tus líneas a la vez: psiquiatría dimensional (la voz como síntoma-objetivo, no la categoría &#39;esquizofrenia&#39;), IA aplicada (el avatar es un agente conversacional que personifica la voz —territorio directo del Aprendiz Experto y de tu narrativa IA-first en salud mental—) y educación médica de precisión (caso perfecto para enseñar evidencia proporcional: el promedio del campo es modesto, pero un subtipo de intervención supera al resto). Úsalo como clase USAMEDIC sobre manejo de psicosis más allá del antipsicótico, como reel/hilo JafloMD (&#39;¿se puede negociar con tus voces? la ciencia de la avatar therapy&#39;) con encuadre no estigmatizante, y como ángulo de paper/capítulo sobre la convergencia IA + psicoterapia dirigida a síntomas. Es munición fresca de revista top para tu tesis de que tratamos dimensiones, no etiquetas.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1443" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1443</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychological Medicine · 2026-06-15 · rct</div>
+        <h3 class="r3-title">Un agonista 5-HT4 reposicionado (prucalopride) mejora la cognición en depresión recurrente en remisión: RCT doble ciego (n=50) en Psychological Medicine</h3>
+        <p class="r3-hook">Según PubMed, este RCT doble ciego de Psychological Medicine (n=50, prucalopride 2 mg/día vs placebo durante 7-10 días en adultos con ≥2 episodios previos de depresión, actualmente eutímicos) encontró mejoras objetivas en recuerdo verbal auditivo, velocidad en una tarea compleja de memoria de trabajo sin pérdida de precisión y reconocimiento de expresiones faciales rápidas, independientes del ánimo basal y de la queja cognitiva subjetiva —replicando el efecto procognitivo que el mismo grupo ya había visto en voluntarios sanos. Te importa, Jaflo, porque el deterioro cognitivo es el síntoma residual más subtratado de la depresión, y un agonista 5-HT4R reposicionado (un fármaco gastrointestinal ya aprobado) como potenciador cognitivo es psiquiatría de precisión real y barata: blanco mecanístico nuevo, dominio cognitivo del RDoC, y vector editorial para el capítulo de dominios/biomarcadores de respuesta de BMSE. El n es pequeño y la ventana corta, así que el claim correcto es &#39;señal replicada y prometedora&#39;, no &#39;tratamiento listo&#39;. Capitalízalo en una clase sobre cognición en depresión, como perla (&#39;¿un proquinético serotoninérgico mejora la memoria?&#39;) y como ejemplo de drug repurposing guiado por mecanismo.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726104450" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726104450</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Affective Disorders · 2026 (reindexado en la ventana) · rct · 2026-02-12</div>
+        <h3 class="r3-title">La psilocibina con psicoterapia reduce la anhedonia en depresión resistente: análisis secundario de un RCT waitlist-controlado (n=30)</h3>
+        <p class="r3-hook">Según PubMed, este análisis secundario de un RCT waitlist-controlado (n=30, ≥1 dosis de 25 mg de psilocibina + psicoterapia en depresión resistente al tratamiento, incluyendo bipolar II) mostró una reducción significativa de la anhedonia medida por SHAPS al endpoint primario de 2 semanas, con mejoría clínicamente significativa sostenida a 3 y 6 meses. Te importa, Jaflo, porque la anhedonia es el dominio de Positive Valence System del RDoC que vienes persiguiendo a través de blancos distintos en dossiers previos (pramipexol dopaminérgico, iTBS, LSD y sustancia blanca) —y aquí entra la psilocibina, reforzando tu tesis de que un mismo dominio transdiagnóstico tiene múltiples puertas farmacológicas. Es n pequeño y outcome secundario, así que funciona mejor como pieza de un argumento acumulativo que como evidencia definitiva. Úsalo en la sección de anhedonia/PVS del libro de psicopatología y de BMSE, y como hilo JafloMD sobre por qué el placer es el blanco que la psiquiatría está redescubriendo —con la cautela proporcional que te caracteriza.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.121385" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121385</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Complementary Therapies in Medicine · 2026-06-15 · meta-analysis</div>
+          <div class="r10-title">NMA de ejercicio mente-cuerpo para ansiedad y depresión en cáncer: Baduanjin y Wuqinxi encabezan el ranking (64 RCTs, n=4448)</div>
+          <div class="r10-line">NMA de 64 RCTs (n=4448): el ejercicio mente-cuerpo supera al control en ansiedad (SMD -1.14) y depresión (SMD -0.87); Baduanjin lidera lo ansiolítico y Wuqinxi lo antidepresivo, pero con red en estrella y certeza de moderada a muy baja.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el ranking concreto de qigong/tai chi se citará más de lo que la certeza permite; úsalo en clase como caso de cómo leer un NMA en estrella sin sobreinterpretar al #1.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ctim.2026.103397" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ctim.2026.103397</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports · 2026-06-16 · rct</div>
+          <div class="r10-title">Suplementar hierro a lactantes amamantados sanos reduce problemas de conducta a los 3 años: RCT doble ciego (n=221)</div>
+          <div class="r10-line">RCT doble ciego placebo-controlado: hierro en dosis baja (~1 mg/kg, 4-9 meses) en lactantes sanos no anémicos redujo el T-score externalizante del CBCL y la conducta agresiva a los 3 años (outcome secundario preespecificado).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la nutrición temprana como modulador del neurodesarrollo conductual gana tracción; ángulo de contenido y de capítulo sobre determinantes biológicos modificables de la neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-56401-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-56401-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Psychotraumatology · 2026-06-15 · rct</div>
+          <div class="r10-title">El sueño basal NO predice la respuesta a terapia centrada en trauma en TEPT: análisis secundario de RCT (n=178 mujeres)</div>
+          <div class="r10-line">Ni el sueño subjetivo (PSQI) ni el objetivo (actigrafía, diario) predijeron la reducción de síntomas tras CPT o DBT-PTSD; la depresión no moderó el efecto: el mal sueño no es prerequisito para iniciar el tratamiento del trauma.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto erosiona el dogma &#39;arregla el sueño antes de tratar el trauma&#39;; perla clínica y argumento para protocolo HVLH de no retrasar la terapia eficaz.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/20008066.2026.2674492" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2674492</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Oral Health · 2026-06-16 · review</div>
+          <div class="r10-title">Salud oral y olanzapina: scoping review revela xerostomía, periodontitis y movimientos linguales anómalos infravalorados</div>
+          <div class="r10-line">Scoping review (18 estudios): olanzapina se asocia a xerostomía (30-60%), periodontitis moderada-severa (36-60%), caries elevada y mayor riesgo de movimientos linguales anómalos (ROR 6.7), con un modelo de &#39;amplificación sinérgica cuádruple&#39; (anticolinérgico, metabólico, disbiosis, neuro-conductual).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la salud oral entrará en los checklists de monitoreo de antipsicóticos; pearl práctica subvalorada para clase de efectos adversos y para tu consulta.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12903-026-08901-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12903-026-08901-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry · 2026-06-16 · review</div>
+          <div class="r10-title">Salud cardiovascular y trastornos mentales comunes en menores de 50: relación bidireccional (SR, n=731,650)</div>
+          <div class="r10-line">SR de estudios observacionales (11 estudios): mejor salud cardiovascular (Life&#39;s Simple 7 / Essential 8) se asocia a menos depresión/ansiedad y los trastornos mentales a peor CVH; bidireccionalidad inferida, no establecida en los mismos estudios, con predominio de diseños transversales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la &#39;psiquiatría del estilo de vida&#39; se institucionaliza; conecta con tu pilar kinobody-selfcare y con contenido cuerpo-mente sin moralina.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08281-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08281-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 2026 (reindexado en la ventana) · rct · 2026-02-15</div>
+          <div class="r10-title">TCC transdiagnóstica por internet mejora depresión, ansiedad y discapacidad en esclerosis múltiple: RCT (n=142)</div>
+          <div class="r10-line">Un curso transdiagnóstico de TCC por internet (6 lecciones, 10 semanas) mejoró depresión (g=0.54), ansiedad (g=0.37) y discapacidad en adultos con EM, con efectos mantenidos a 3 y 12 meses y sin eventos adversos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la TCC digital transdiagnóstica para comorbilidad médica es producto escalable; modelo para un programa propio o caso de IA + psicoeducación.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121403" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121403</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 2026 (reindexado en la ventana) · rct · 2026-02-23</div>
+          <div class="r10-title">Más gráficos no es más terapia: añadir personaje y visuales a la CBM-I para depresión no aportó beneficio (RCT proof-of-concept, n=138)</div>
+          <div class="r10-line">Todas las versiones de modificación del sesgo de interpretación (CBM-I) redujeron el sesgo negativo, pero añadir gráficos y un personaje encarnado no superó al texto plano; mejoró la sensación de presencia, no los resultados terapéuticos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el &#39;más gamificación = mejor&#39; se desinfla; lección de diseño para tus productos digitales (el contenido manda sobre el envoltorio visual).</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121493" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121493</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychology · 2026-06-15 · meta-analysis</div>
+          <div class="r10-title">Intervenciones psicológicas para el latigazo cervical: mejoran dolor, discapacidad y también depresión y ansiedad (SR+MA, 11 RCTs)</div>
+          <div class="r10-line">SR+MA de 11 RCTs: las intervenciones psicológicas mejoran dolor, discapacidad, catastrofización y kinesiofobia, además de depresión, ansiedad, estrés y autoeficacia, con beneficios inmediatos y a 6-12 meses en whiplash.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice más integración psico-física en dolor crónico; ejemplo mente-cuerpo para clase y contenido sobre el componente psicológico del dolor.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40359-026-04955-y" target="_blank" rel="noopener">↗ doi.org/10.1186/s40359-026-04955-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Research Bulletin · 2026 (reindexado en la ventana) · review · 2026-05-06</div>
+          <div class="r10-title">Sustratos neurales de la apatía en Parkinson: circuito fronto-estriato-límbico parcialmente disociable de la depresión (SR de neuroimagen, 16 estudios)</div>
+          <div class="r10-line">SR de neuroimagen (16 estudios): la apatía en Parkinson se asocia a menor volumen y conectividad alterada en corteza prefrontal dorsolateral/inferior, ACC y núcleo accumbens, correlacionando con su severidad y disociable de los síntomas depresivos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que apatía y anhedonia convergen como un eje motivacional transdiagnóstico (RDoC); material para tu mapa dimensional de la motivación en BMSE.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.brainresbull.2026.111922" target="_blank" rel="noopener">↗ doi.org/10.1016/j.brainresbull.2026.111922</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 2026-06-17 · paper</div>
+          <div class="r10-title">Ventanas sensibles: maltrato infantil temprano vs tardío produce efectos OPUESTOS en el condicionamiento del miedo (fMRI, n=213)</div>
+          <div class="r10-line">Estudio fMRI con ML causal (TMLE): el maltrato temprano se asoció a mayor discriminación amenaza-seguridad y acoplamiento vmPFC, el tardío a una discriminación embotada —dos ventanas de vulnerabilidad por timing, no solo por carga acumulada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el momento del trauma, no solo su cantidad, guiará intervenciones; ángulo potente para neurociencia educativa y para tu lente dimensional del desarrollo (alta evidencia mecanística, no RCT).</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03689-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03689-y</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La &#39;avatar therapy&#39; —dialogar con un avatar que personifica tus voces— es la intervención psicológica con mayor efecto sobre las alucinaciones auditivas en esquizofrenia (SMD -0.37), por encima del promedio modesto del campo. La IA conversacional no solo enseña: también trata.</li><li>Un fármaco gastrointestinal (prucalopride, agonista 5-HT4) mejora la memoria verbal y la velocidad cognitiva en depresión en remisión, independientemente del ánimo. El reposicionamiento de fármacos guiado por mecanismo es psiquiatría de precisión rápida y barata.</li><li>El dogma &#39;arregla el sueño antes de tratar el trauma&#39; no resiste los datos: ni el sueño subjetivo ni el medido por actigrafía predijeron la respuesta a terapia centrada en trauma en mujeres con TEPT. No retrases lo que ya funciona.</li><li>Añadir gráficos y un personaje a una intervención digital para depresión no mejoró nada sobre el texto plano. La gamificación seduce al diseñador, no necesariamente al cerebro del paciente —cuídalo al construir tus propios productos.</li><li>La anhedonia tiene muchas puertas: dopamina, neuromodulación y ahora psilocibina la mueven. Si un mismo síntoma responde a blancos tan distintos, quizá estamos midiendo un dominio (PVS del RDoC), no una enfermedad.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la avatar therapy supera al resto de psicoterapias para las voces, ¿el mecanismo es la exposición, la externalización de la voz o la propia interfaz de IA? ¿Y qué cambia cuando el avatar lo genera un LLM en tiempo real?</li><li>¿Cuántos síntomas residuales de la depresión —cognición, anhedonia— estamos dejando sin tratar porque medimos solo el ánimo con escalas globales?</li><li>Si un agonista 5-HT4R mejora la cognición y la psilocibina mueve la anhedonia, ¿el futuro es &#39;un fármaco por dominio RDoC&#39; en vez de &#39;un antidepresivo para todo&#39;?</li><li>¿Por qué insistimos en estabilizar el sueño antes de la terapia de trauma si la evidencia dice que no es prerequisito? ¿Cuánto de nuestra secuencia clínica es hábito y no dato?</li><li>Si el timing del maltrato (temprano vs tardío) produce efectos neurales opuestos, ¿nuestras categorías diagnósticas de trauma están borrando información que la cronología sí captura?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo JafloMD: &#39;Le hablas a un avatar de tu propia voz y mejora&#39; — la avatar therapy como el cruce más concreto de IA + psicoterapia, con encuadre no estigmatizante y evidencia proporcional (efecto real pero modesto, avatar &gt; resto).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección para BMSE / libro de psicopatología: &#39;Un fármaco por dominio&#39; — prucalopride para cognición, psilocibina para anhedonia, como evidencia de que el RDoC ya reorganiza la farmacología por dominios y no por categorías.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Revisión/comentario: convergencia IA + psicoterapia dirigida a síntomas (avatar therapy, chatbots terapéuticos) — qué funciona, qué falta, y los riesgos cuando el agente conversacional es un LLM generativo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carousel/clase USAMEDIC: &#39;Mitos de la secuencia clínica&#39;, abriendo con &#39;¿hay que arreglar el sueño antes de tratar el trauma?&#39; (no, según los datos) para enseñar pensamiento basado en evidencia frente al hábito.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel Aprendiz Experto: &#39;Por qué más diseño no es más aprendizaje&#39; — el RCT donde añadir gráficos y un personaje a una intervención digital no aportó nada, aplicado al diseño de tus propios productos educativos IA-first.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JAMA Psychiatry [top]</span><span class="tag highlight">Molecular Psychiatry [top]</span><span class="tag ">Psychological Medicine [top]</span><span class="tag ">Journal of Affective Disorders (dominante esta ventana)</span><span class="tag highlight">Nature Medicine [top]</span><span class="tag ">Complementary Therapies in Medicine</span><span class="tag ">BMC Psychiatry</span><span class="tag ">BMC Psychology</span><span class="tag ">BMC Oral Health</span><span class="tag ">Brain Research Bulletin</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">Scientific Reports</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 18 de junio de 2026.</div>
+</div>
+</body>
+</html>
