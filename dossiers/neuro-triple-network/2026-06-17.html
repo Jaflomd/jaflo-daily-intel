@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-06-17 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">17 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Child &amp; Adolescent Psychiatry (PubMed), 2026-06-16 · paper</div>
+        <h3 class="r3-title">Contribution of attentional mechanisms to verbal and nonverbal communication in boys with ASD</h3>
+        <p class="r3-hook">Con rs-fMRI en 53 niños con TEA y 27 controles típicos (5-12 años), el grupo modeló cuatro redes a la vez —Default Mode (DMN), Saliencia (SN), Atención Dorsal (DAN) y Lenguaje (LN)— y encontró hipoconectividad SN↔LN y sobreconectividad DMN↔LN en TEA. El golpe contraintuitivo: los déficits de comunicación verbal y no verbal NO se asociaron a la red del lenguaje, sino a la conectividad reducida DENTRO de la DAN y entre DAN↔SN, o sea, un problema de atención sostenida y switching, no de lenguaje aislado. Para ti, Jaflo, esto cae justo en tu línea viva de TDAH/TEA/neurodivergencia y en tu libro de psicopatología: reencuadra el síntoma comunicativo del autismo como falla de red atencional dentro del marco de triple red, no como déficit lingüístico. Úsalo como pieza de contenido (el lenguaje en TEA es atención de red mal acoplada) y como ejemplo clínico de por qué el modelo de triple red es columna transdiagnóstica en el capítulo de neurodivergencia. Muestra pediátrica decente para el campo, aunque solo varones y diseño transversal.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00787-026-03089-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s00787-026-03089-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Affective Disorders (PubMed), 2026 · paper · 2026-02-13</div>
+        <h3 class="r3-title">Mapping development trajectories of default mode network dysfunction in major depressive disorder using the subtype and stage inference model</h3>
+        <p class="r3-hook">En 815 pacientes con depresión y 816 controles, aplicaron el modelo data-driven Subtype and Stage Inference (SuStaIn) sobre fALFF de la DMN y partieron la depresión en dos trayectorias distintas: Subtipo 1 con afectación temprana parahipocampal→prefrontal ventrolateral (gradiente límbico-visuolingüístico) y Subtipo 2 dominado por prefrontal dorsolateral, cingulado anterior e ínsula (perfil ejecutivo). El mensaje fuerte es que &#39;MDD = una sola firma DMN&#39; es falso: la heterogeneidad de la red mapea a subtipos ordenables. Jaflo, esto es exactamente tu cruce de psiquiatría dimensional (HiTOP/RDoC) con psiquiatría de precisión y biomarcadores de red: un ejemplo limpio, con N grande, de estratificación basada en red en vez de en checklist DSM. Úsalo como caso ancla en el libro BMSE/razonamiento dimensional y como semilla para un comentario o perspectiva sobre estadificación de redes en depresión. SuStaIn además es una herramienta metodológica que podrías importar a tus propios datasets.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.121433" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121433</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PNAS (PubMed), 2026-06-08 · paper</div>
+        <h3 class="r3-title">Psychedelics disrupt hierarchical cortical propagations in the default mode network of humans and mice</h3>
+        <p class="r3-hook">El grupo de Leanne Williams (Stanford) adaptó análisis de optical flow para rastrear la dirección del flujo de actividad en la DMN a través de cuatro datasets independientes (humanos y ratones; MDMA, psilocibina y LSD; nueve contrastes droga-vs-control) y mostró que todos los psicodélicos atenúan la magnitud y la direccionalidad bottom-up (ascendente) del flujo en la DMN. Lo decisivo: el cambio es de dirección del procesamiento jerárquico, no solo de cuánto se activa, y esa atenuación —replicable entre especies y fármacos— es lo único que correlaciona con el reporte subjetivo. Jaflo, esto es mecanismo sobre correlación (tu vara de calidad) y conecta tu interés en neuromodulación y psiquiatría de precisión con un fenotipo de red traducible. Úsalo como contenido de alto impacto (&#39;los psicodélicos no apagan tu DMN, cambian la dirección del flujo&#39;) y como referencia metodológica: optical flow para dinámica direccional es una técnica que distingue mecanismo de la conectividad estática de siempre.</p>
+        <a class="r3-link" href="https://doi.org/10.1073/pnas.2522000123" target="_blank" rel="noopener">↗ doi.org/10.1073/pnas.2522000123</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioural Brain Research (PubMed), 2026-06-16 · review</div>
+          <div class="r10-title">Neuroimaging studies of non-suicidal self-injury in young adults with major depressive disorder</div>
+          <div class="r10-line">Revisión sistemática PRISMA (24 estudios, 2.379 participantes, edad ≤23) que halla una firma de red propia de la depresión con autolesión: DMN hiperconectada con otras redes y red frontoparietal anómalamente suprimida, distinta de la depresión sin autolesión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El síntoma —no solo el diagnóstico— se volverá la unidad de mapeo a red; Jaflo puede capitalizarlo posicionando la autolesión como fenotipo transdiagnóstico de triple red en su libro y en contenido sobre neurodivergencia adulta.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbr.2026.116316" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbr.2026.116316</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Anesthesia &amp; Analgesia (PubMed), 2026-06-17 · paper</div>
+          <div class="r10-title">Association of Preoperative Posterior Cingulate Cortex Microstructural Damage With Postoperative Delirium</div>
+          <div class="r10-line">En 110 adultos mayores, el daño microestructural (NODDI) del cingulado posterior dorsal —hub de la DMN— ya presente antes de la cirugía predice delirium postoperatorio y déficit de atención, independiente de amiloide en LCR.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La vulnerabilidad de nodos DMN como predictor pre-evento abrirá biomarcadores de reserva de red; útil para Javier como ejemplo de que la red predice el colapso atencional antes del síntoma.</div>
+          <a class="r10-link" href="https://doi.org/10.1213/ANE.0000000000008127" target="_blank" rel="noopener">↗ doi.org/10.1213/ANE.0000000000008127</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders (PubMed), 2026 · paper · 2026-02-16</div>
+          <div class="r10-title">Discriminating between major depressive disorder and bipolar depression: Aberrant EEG microstate dynamics and machine learning classification</div>
+          <div class="r10-line">En 210 sujetos, los microestados EEG (proxy barato de la dinámica de redes a gran escala) diferencian MDD de depresión bipolar con AUC 83-93%: microestado C ligado a DMN, microestado D a red de control ejecutivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los microestados EEG serán la puerta de entrada de bajo costo a biomarcadores de red en países sin fMRI masivo; Jaflo podría liderar un piloto peruano de diferenciación MDD/bipolar con EEG.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121422" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121422</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Sleep Research (PubMed), 2026-06-15 · paper</div>
+          <div class="r10-title">Chronotype and Time of Day Effects in Oddball Task Performance: Behavioural and Cerebral Correlates</div>
+          <div class="r10-line">fMRI en 31 cronotipos extremos: en la hora óptima sube el control top-down del córtex frontal inferior, y en la hora subóptima se activa el OFC medial (nodo DMN), consistente con desenganche atencional por desincronía circadiana.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El balance DMN↔control ejecutivo modulado por cronotipo dará un argumento de rendimiento; cruza con tu pilar kinobody-selfcare como contenido sobre &#39;tu atención tiene horario de red&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jsr.70391" target="_blank" rel="noopener">↗ doi.org/10.1111/jsr.70391</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports (PubMed), 2026-06-17 · paper</div>
+          <div class="r10-title">Ventrolateral prefrontal-amygdala rTMS modulation of impulsivity in borderline personality disorder: a proof-of-concept study</div>
+          <div class="r10-line">Prueba de concepto (n=11) con iTBS individualizado por conectividad: estimular el VLPFC derecho (target elegido por su conectividad funcional a la amígdala) redujo la impulsividad en TLP, no la reactividad emocional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La neuromodulación guiada por conectividad individual será el estándar de psiquiatría de precisión; Javier puede usarlo como caso de &#39;TMS dirigida por red&#39; en su línea de neuromodulación, vigilando que el N sea ínfimo.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-56692-2" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-56692-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Alzheimer&#39;s Research &amp; Therapy (PubMed), 2026-06-16 · paper</div>
+          <div class="r10-title">Transcranial pulse stimulation modulates spectral signatures of Alzheimer&#39;s disease in the 3×Tg-AD mouse model</div>
+          <div class="r10-line">Preclínico (ratón 3×Tg-AD): la disfunción de red a gran escala tiene firma espectral (redistribución slow-5→slow-4) y la estimulación por pulsos transcraneales reequilibra potencia de baja frecuencia y coherencia de red en cíngulo e ínsula.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El acoplamiento neuromodulación + firma espectral de red madurará como marco de monitoreo; relevante como antecedente mecanístico para Javier, con la salvedad de que es modelo animal sin puente clínico aún.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s13195-026-02109-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s13195-026-02109-1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En TEA, los déficits de comunicación se explican mejor por la red de atención dorsal y su acoplamiento con la saliencia que por la red del lenguaje: el problema es de switching atencional, no solo lingüístico.</li><li>La depresión no tiene una firma DMN única: con SuStaIn, 815 pacientes se parten en dos trayectorias (límbica vs ejecutiva), volviendo obsoleto el claim &#39;MDD = hipoconectividad DMN&#39; como verdad única.</li><li>Los psicodélicos no &#39;apagan&#39; la DMN: atenúan específicamente el flujo bottom-up (ascendente), y es ese cambio de dirección —no la magnitud— lo que correlaciona con la experiencia subjetiva.</li><li>Un nodo DMN estructuralmente dañado (cingulado posterior) predice delirium postoperatorio y déficit de atención antes de la cirugía e independiente de amiloide: la vulnerabilidad de red precede al evento.</li><li>La autolesión no suicida en depresión juvenil tiene firma de red propia (DMN hiperconectada + frontoparietal suprimida), distinta de la depresión sin autolesión: el síntoma, no solo el diagnóstico, mapea a la red.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la comunicación en TEA depende del eje atención-saliencia y no del lenguaje, ¿deberían las intervenciones priorizar entrenamiento atencional sobre terapia de lenguaje pura?</li><li>¿Los subtipos DMN de la depresión (límbico vs ejecutivo) predicen respuesta diferencial a TMS vs ISRS, o son descripción sin valor pronóstico todavía?</li><li>¿La direccionalidad del flujo cortical (bottom-up vs top-down) es un biomarcador de red más replicable que la conectividad estática para psiquiatría de precisión?</li><li>¿Qué tan transdiagnóstico es el patrón &#39;DMN↑ / frontoparietal↓&#39;? ¿Aparece igual en autolesión, depresión y neurodivergencia, o el detalle distingue cuadros?</li><li>Para el Perú, donde el fMRI escasea, ¿pueden los microestados EEG (proxy barato de redes a gran escala) servir como puerta de entrada a biomarcadores de red en clínica real?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel: &#39;El lenguaje en autismo no es (solo) un problema de lenguaje&#39; — la red de atención dorsal y la saliencia explican mejor la comunicación que la red lingüística (ancla: estudio rs-fMRI en niños con TEA).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Perspectiva/comentario corto sobre estratificación data-driven de la depresión por subtipos DMN (SuStaIn) como puente operativo entre HiTOP/RDoC y psiquiatría de precisión.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de razonamiento dimensional: &#39;El modelo de triple red como columna transdiagnóstica&#39;, usando como casos vivos los hallazgos de hoy en TEA, depresión y autolesión.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel de alto impacto sobre psicodélicos y DMN: &#39;no apagan tu mente, cambian la dirección del flujo&#39; — mecanismo con honestidad evidencial, sin sobreinterpretar.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio de factibilidad en Perú: microestados EEG como biomarcador de red de bajo costo para diferenciar depresión unipolar vs bipolar, replicando la firma C(DMN)/D(control ejecutivo).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">European Child &amp; Adolescent Psychiatry</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">PNAS</span><span class="tag ">Behavioural Brain Research</span><span class="tag ">Anesthesia &amp; Analgesia</span><span class="tag ">Scientific Reports</span><span class="tag ">Alzheimer&#39;s Research &amp; Therapy</span><span class="tag ">Journal of Sleep Research</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP) · bioRxiv/medRxiv (WebSearch) · PsyArXiv/OSF (WebSearch). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 17 de junio de 2026.</div>
+</div>
+</body>
+</html>
