@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-06-19 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">19 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">55</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">J Child Psychol Psychiatry — 18 jun 2026 · paper · 2026-06-18</div>
+        <h3 class="r3-title">Modelo de alerta temprana por machine learning para riesgo de salud mental adolescente usando el factor p</h3>
+        <p class="r3-hook">Jaflo, este grupo entrenó un XGBoost sobre 5,283 adolescentes chinos (validación externa en 968) usando el factor p — la varianza transdiagnóstica compartida — como outcome único, y el predictor #1 no fue ningún síntoma psiquiátrico sino la calidad de sueño, seguida de rumiación, estrés interpersonal e impulsividad (F1 macro 0.73 interno, 0.80 externo). Es munición directa para tu libro de psicopatología dimensional y para el pilar precision-psychiatry: muestra que el factor p no es solo una abstracción factorial sino un blanco operacionable de tamizaje poblacional, y que sus determinantes más potentes son regulatorios (sueño), justo el terreno de Mario/Foundation. Úsalo como caso ancla en ai-enhancement: &#39;el factor p + ML reordena el tamizaje de riesgo&#39; es a la vez un carousel y una sección de capítulo. La lección para ENAM/Residentado es brutal de simple: pregunta por sueño antes que por la checklist categorial.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/jcpp.70194" target="_blank" rel="noopener">↗ doi.org/10.1111/jcpp.70194</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Clinical Psychological Science — 15 jun 2026 · paper · 2026-06-15</div>
+        <h3 class="r3-title">¿Tienen los síndromes internalizantes validez incremental unos sobre otros?</h3>
+        <p class="r3-hook">Jaflo, Watts (figura HiTOP) y colegas usan el NESARC (N=43,093) para resolver la pregunta que tu capítulo dimensional tiene que cerrar: si ya existe el espectro internalizante, ¿aportan algo aún sus síndromes específicos? Respuesta empírica: ansiedad generalizada, depresión mayor y pánico conservan validez incremental sobre los demás internalizantes frente a 22 criterios externos (salud, funcionamiento); fobia social y específica casi no. Eso es exactamente el debate lumping-vs-splitting que sostiene tu libro de psicopatología para el mundo: ni el espectro solo ni los síndromes DSM solos — hay información en ambos niveles de la jerarquía y el nivel correcto depende de la decisión clínica. Cítalo como prueba de que HiTOP no borra los síndromes, los ordena, y conviértelo en una lámina de razonamiento dimensional para BMSE.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/21677026261443518" target="_blank" rel="noopener">↗ doi.org/10.1177/21677026261443518</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">General Hospital Psychiatry — 16 jun 2026 · paper · 2026-06-16</div>
+        <h3 class="r3-title">Clustering data-driven de trastornos somáticos funcionales sugiere un continuo de severidad, no síndromes distintos</h3>
+        <p class="r3-hook">Jaflo, 301 pacientes con trastornos somáticos funcionales y dos algoritmos independientes (k-means y latent class analysis): ambos parten la muestra por severidad global, no por órgano ni por síndrome — el clásico &#39;fibromialgia vs colon irritable vs fatiga crónica&#39; se disuelve en un solo espectro de carga sintomática. Y el trauma infantil aparece como vulnerabilidad transdiagnóstica elevada en ambos clusters, independiente de la severidad. Para tu libro de psicopatología dimensional es el ejemplo perfecto de cómo lo dimensional gana terreno justo donde la medicina categorial más fracasa (síntomas médicamente inexplicados), y conecta con tu pilar precision-psychiatry vía estratificación por severidad + trauma. Úsalo en contenido para psiquiatría de enlace y como argumento de que las etiquetas de síndrome funcional son cortes arbitrarios sobre un continuo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.genhosppsych.2026.06.008" target="_blank" rel="noopener">↗ doi.org/10.1016/j.genhosppsych.2026.06.008</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Eur Child Adolesc Psychiatry — 16 jun 2026 · meta-analysis · 2026-06-16</div>
+          <div class="r10-title">Desregulación emocional en niños y adolescentes con trastornos externalizantes: revisión sistemática y metaanálisis</div>
+          <div class="r10-line">Jaflo, metaanálisis de 75 estudios (11,913 niños/adolescentes): la desregulación emocional correlaciona con síntomas externalizantes r=0.35, y la labilidad emocional (r=0.47) pesa el doble que el déficit de regulación (r=0.24) — la ED es transdiagnóstica al espectro externalizante TDAH/ODD/CD.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La labilidad emocional se consolidará como specifier dimensional del TDAH esta década; posiciónate temprano con un capítulo/clase que la trate como dimensión, no como comorbilidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00787-026-03090-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s00787-026-03090-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports — 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Contribución independiente de la desregulación emocional a intentos de suicidio en adolescentes, más allá de la depresión</div>
+          <div class="r10-line">Jaflo, en 182 adolescentes referidos, la sensibilidad interpersonal (dimensión de desregulación emocional, RIPoSt-Y) predijo intentos de suicidio recientes con valor incremental más allá del episodio depresivo mayor.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El tamizaje de riesgo suicida migrará de &#39;tiene depresión sí/no&#39; a dimensiones afectivas medibles; material directo para una pieza de razonamiento clínico dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-57386-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-57386-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry — 17 jun 2026 · paper · 2026-06-17</div>
+          <div class="r10-title">Rasgos autistas en niños con TDAH: evidencia preliminar de un subgrupo con conducta agresiva y rule-breaking elevadas</div>
+          <div class="r10-line">Jaflo, un subgrupo de niños con TDAH + rasgos autistas mostró más conducta agresiva y rule-breaking que incluso el grupo TDAH+TEA completo — la neurodivergencia como gradiente con perfiles, no como casillas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;TDAH con rasgos autistas&#39; será un fenotipo dimensional clínicamente útil; encaja en tu wedge de neurodivergencia adulta y en contenido de psicopato.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08278-5" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08278-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychiatry Investigation — 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">¿Sigue vigente la melancolía de Richard Baxter? Estructuras de red comparadas en depresión rica vs libre de culpa en Asia</div>
+          <div class="r10-line">Jaflo, las redes de síntomas depresivos difieren entre depresión &#39;rica en culpa&#39; (nodo central: ánimo deprimido ligado a autoinculpación) y &#39;libre de culpa&#39; (nodo central: pérdida de energía) en una muestra transnacional de 11 países asiáticos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La network theory revivirá subtipos históricos de melancolía con datos modernos; gancho narrativo potentísimo para un reel de historia + ciencia dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.30773/pi.2025.0371" target="_blank" rel="noopener">↗ doi.org/10.30773/pi.2025.0371</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Vulnerabilidad narcisista, sensibilidad interpersonal e integración metacognitiva: un análisis de redes en TNP</div>
+          <div class="r10-line">Jaflo, en 287 pacientes con trastorno narcisista de personalidad, la vulnerabilidad narcisista (no la grandiosidad) es el nodo más central de la red, junto con sensibilidad interpersonal e integración metacognitiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El narcisismo se reconceptualizará como vulnerabilidad central + grandiosidad defensiva; útil para tu material de personalidad dimensional y razonamiento clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.12226" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.12226</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Geriatrics — 17 jun 2026 · paper · 2026-06-17</div>
+          <div class="r10-title">Tipos latentes de depresión y factores clave en ancianos rurales de China: machine learning + análisis de redes</div>
+          <div class="r10-line">Jaflo, ML + network analysis sobre 3,114 ancianos rurales chinos identifica 4 tipos latentes de depresión; malestar físico y autopercepción de salud ocupan los nodos centrales y la enfermedad crónica hace de puente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El tamizaje de depresión por umbral único cederá a la identificación de tipos latentes; modelo replicable casi tal cual para población peruana de bajos recursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12877-026-07804-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12877-026-07804-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychology — 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Medición y validez de la DERS y sus formas cortas: el modelo bifactor DERS-18 gana</div>
+          <div class="r10-line">Jaflo, comparación de las 5 versiones de la DERS: el bifactor DERS-18 ajusta mejor, y solo los factores específicos (no el general) se asocian a internalización — matiz fino para medir desregulación emocional como dimensión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las escalas de ED se reportarán cada vez más en estructura bifactor general+específico; insumo metodológico directo para tus revisiones psicométricas y adversarial-stat-review.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jclp.70170" target="_blank" rel="noopener">↗ doi.org/10.1002/jclp.70170</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Canadian Journal of Psychiatry — 16 jun 2026 · review · 2026-06-16</div>
+          <div class="r10-title">Actualización en genética del TDAH: perspectiva del clínico</div>
+          <div class="r10-line">Jaflo, revisión para clínicos: TDAH heredable ~70%, poligénico, con CNVs que solapan con autismo; no hay test genético diagnóstico y el genotipado de rutina no se justifica salvo dosificación de atomoxetina.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La psicoeducación genética del TDAH será diferenciador en consulta privada; material listo para una clase AMAUTA/USAMEDIC sobre &#39;qué decir y qué NO pedir&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/07067437261457230" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261457230</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Review of Psychiatry — 16 jun 2026 · review · 2026-06-16</div>
+          <div class="r10-title">Adicciones conductuales en adolescentes de América Latina: revisión narrativa de prevalencia, comorbilidad y brechas</div>
+          <div class="r10-line">Jaflo, revisión de adicciones conductuales en adolescentes latinoamericanos: prevalencias 10.6–54.9% (heterogeneidad de instrumentos), con TDAH/depresión/ansiedad/suicidalidad como comorbilidades y casi cero evidencia regional ni instrumentos ICD-11 validados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Hay un vacío de instrumentos validados para Perú/LatAm — oportunidad de paper regional con tu firma y leverage de pilar research.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/09540261.2026.2687525" target="_blank" rel="noopener">↗ doi.org/10.1080/09540261.2026.2687525</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Attention Disorders — 16 jun 2026 · paper · 2026-06-16</div>
+          <div class="r10-title">Patrones de diagnóstico de TDAH: comorbilidades e impacto de la edad relativa en la probabilidad de diagnóstico</div>
+          <div class="r10-line">Jaflo, cohorte nacional finlandesa (66,146 casos vs 256,270 controles): nacer más tarde en el año cohortal eleva las odds de diagnóstico de TDAH, y la carga de comorbilidad ya está presente años antes del diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El efecto de edad relativa alimentará el debate de sobrediagnóstico; perla perfecta para un reel que matice &#39;TDAH&#39; sin negarlo y refuerce el encuadre dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/10870547261451069" target="_blank" rel="noopener">↗ doi.org/10.1177/10870547261451069</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Jaflo, el predictor #1 del factor p adolescente no es un síntoma psiquiátrico: es la calidad de sueño. Foundation antes que fenomenología.</li><li>Jaflo, dos algoritmos ciegos partieron los trastornos somáticos funcionales por severidad, no por órgano — el síndrome &#39;funcional&#39; es un corte arbitrario sobre un continuo.</li><li>Jaflo, en desregulación emocional la labilidad (r=0.47) predice externalización el doble que el déficit de regulación (r=0.24); no son lo mismo y medirlos juntos diluye la señal.</li><li>Jaflo, HiTOP no mata a los síndromes: ansiedad generalizada, depresión y pánico aún aportan validez incremental sobre el espectro internalizante. El nivel correcto depende de la pregunta clínica.</li><li>Jaflo, en el narcisismo patológico el nodo central de la red es la vulnerabilidad, no la grandiosidad — lo que ves primero en consulta es la defensa, no el núcleo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Jaflo, ¿deberías abrir tu consulta de razonamiento dimensional preguntando por sueño antes que por la checklist de síntomas categoriales?</li><li>Jaflo, ¿qué nivel de la jerarquía HiTOP usas para qué decisión: espectro para pronóstico, síndrome para tratamiento?</li><li>Jaflo, ¿la labilidad emocional merece ser un specifier dimensional del TDAH en tu material educativo, separada de la comorbilidad?</li><li>Jaflo, ¿cuántos de tus &#39;diagnósticos funcionales&#39; en enlace son en realidad un punto en un continuo de severidad + trauma?</li><li>Jaflo, ¿existe ya un instrumento de adicciones conductuales validado para adolescentes peruanos, o ahí hay un paper esperándote?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carousel: &#39;El factor p ya tiene un blanco de tamizaje y es el sueño&#39; — del paper de ML adolescente al consultorio, con la jerarquía dimensional como gancho.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro dimensional: &#39;Lumping vs splitting, resuelto&#39; — usar NESARC / validez incremental internalizante para mostrar que HiTOP ordena, no borra los síndromes.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper regional: validación de un instrumento ICD-11 de adicciones conductuales en adolescentes peruanos, aprovechando el vacío LatAm ya documentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel: &#39;Melancolía con culpa vs sin culpa&#39; — la network theory moderna revive a Richard Baxter; historia + ciencia dimensional en 45 segundos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase AMAUTA/USAMEDIC: &#39;Genética del TDAH para la consulta&#39; — qué decir (heredabilidad ~70%, poligénico, solapa autismo) y qué NO pedir (test genético de rutina).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Child Psychology and Psychiatry</span><span class="tag ">Clinical Psychological Science</span><span class="tag ">General Hospital Psychiatry</span><span class="tag ">European Child &amp; Adolescent Psychiatry</span><span class="tag ">Scientific Reports</span><span class="tag ">BMC Psychiatry</span><span class="tag ">European Psychiatry</span><span class="tag ">Psychiatry Investigation</span><span class="tag ">BMC Geriatrics</span><span class="tag ">Journal of Clinical Psychology</span><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag ">International Review of Psychiatry</span><span class="tag ">Journal of Attention Disorders</span><span class="tag highlight">Nature</span><span class="tag ">PLOS Mental Health</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP) · WebSearch: PsyArXiv/OSF · WebSearch: medRxiv · WebSearch: HiTOP-system. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 19 de junio de 2026.</div>
+</div>
+</body>
+</html>
