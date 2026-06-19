@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-19 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">19 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">20</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">62</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">BMC Medical Education + 2026-06-17 · meta-analysis</div>
+        <h3 class="r3-title">¿Es hora de un currículo de IA en pregrado médico? SR + meta-análisis (26 estudios, n=20,963): 78% lo quiere, solo 36% se siente capaz de aplicarla</h3>
+        <p class="r3-hook">Jaflo, meta-análisis de 26 estudios (n=20,963 estudiantes de medicina) cuantifica el &#39;optimism-competence gap&#39;: 83.1% cree que la formación en IA es necesaria, pero solo 36.4% se siente capaz de aplicarla en clínica. Esto valida con evidencia dura —no con hype— la tesis de venta de tu curso Aprendiz Experto y de AMAUTA/USAMEDIC: la demanda existe y la brecha es la oportunidad. Las barreras top que reporta —currículo saturado (68%), falta de expertise docente (52%), preocupaciones éticas (41%)— son exactamente el hueco que tu producto IA-first llena sin pelear contra el currículo formal. Úsalo como gancho de apertura del curso (&#39;no te enseño IA, cierro la brecha que este paper mide&#39;) y como dato de autoridad en un carrusel; mueve los pilares ai-enhancement y amauta-education de un solo golpe.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09630-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09630-9</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">JMIR Formative Research + 2026-06-16 · rct</div>
+        <h3 class="r3-title">Avatar-IA vs presentador humano en videos explicativos: RCT cruzado cegado (feasibility, n=13) — sin diferencia en aprendizaje, humano gana en TODA la experiencia de usuario</h3>
+        <p class="r3-hook">Jaflo, RCT cruzado, observador cegado (estudio de factibilidad, n=13) comparó videos de contenido idéntico presentados por un avatar generado con IA vs un presentador humano: las ganancias de aprendizaje a corto plazo no difirieron significativamente, pero el humano ganó en todas las dimensiones de experiencia de usuario (AttrakDiff2). Es una decisión operativa directa para tu negocio de contenido y para el pipeline cap→clase del curso Aprendiz Experto: para transmitir conocimiento puro un avatar-IA rinde igual y escala barato, pero para construir marca y conexión (JafloMD, Marina/Miranda) tu rostro sigue siendo el activo. La jugada: avatar para el volumen de microclases, tu cara para hooks y piezas de autoridad. Es feasibility con muestra pequeña —no prueba equivalencia— pero la señal de &#39;automatiza el conocimiento, humaniza la marca&#39; es limpia y publicable como contenido.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/90037" target="_blank" rel="noopener">↗ doi.org/10.2196/90037</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">BMC Medical Education + 2026-06-17 · paper</div>
+        <h3 class="r3-title">Longitudinal peruano (Cusco, 5 facultades, n=417, 2020-2023): el aprendizaje virtual prolongado erosionó empatía, trabajo en equipo y bienestar</h3>
+        <p class="r3-hook">Jaflo, estudio longitudinal en las cinco facultades de medicina y enfermería de Cusco (n=417, 2020-2023, dos cohortes con exposición virtual corta vs prolongada) muestra que la exposición prolongada a lo virtual frenó el avance en empatía, trabajo en equipo y aprendizaje de por vida, con peor bienestar y mayor riesgo de depresión. Es data peruana sobre educación médica —escasa y directamente citable— para tu línea de educación médica de precisión, para el comité de ética HVLH y como munición para el libro de neurociencia educativa: el virtual mal diseñado tiene costo medible en formación profesional, no solo en notas. Úsalo como contrapeso honesto a tu narrativa IA-first: la tecnología sin diseño híbrido/presencial cobra factura en lo humano, y decirlo en voz alta te da credibilidad que el puro tecno-optimismo no compra.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09750-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09750-2</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education + 2026-06-17 · review</div>
+          <div class="r10-title">Soft skills en escuelas de medicina: scoping review de 83 estudios</div>
+          <div class="r10-line">Scoping de 83 estudios mapea cómo integrar soft skills (comunicación, empatía, humanismo) en el currículo médico y qué lo bloquea.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las &#39;andragogías innovadoras&#39; que señala serán el próximo nicho de microcursos IA-first; posiciónate antes de que se sature.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09059-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09059-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher + 2026-06-17 · review</div>
+          <div class="r10-title">Burnout, resiliencia y &#39;el costo de aprender&#39; en estudiantes de medicina: scoping informado por formación de identidad profesional (63 estudios)</div>
+          <div class="r10-line">Scoping de 63 estudios reconceptualiza el burnout estudiantil como señal de identidad profesional bajo tensión, no como síntoma aislado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El framing &#39;costo de aprender&#39; + neurodivergencia será lenguaje de contenido viral; encaja con tu wedge de neurodivergencia adulta.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2685310" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2685310</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today + 2026-06-15 · review</div>
+          <div class="r10-title">Fundamentos teóricos del aprendizaje en el lugar de trabajo en enfermería: scoping review (35 estudios)</div>
+          <div class="r10-line">Scoping de 35 estudios: el aprendizaje clínico-laboral en enfermería rara vez explicita la teoría educativa que lo sostiene.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Hueco de producto: cursos que hagan explícita la teoría detrás de la práctica; aplica el mismo diagnóstico al residentado médico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107232" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107232</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education + 2026-06-17 · paper</div>
+          <div class="r10-title">Quizzes formativos de baja apuesta predicen el examen sumativo (R=0.63) en un curso preclínico grande</div>
+          <div class="r10-line">Mixed-methods (n=316, 2 cohortes): el desempeño en quizzes de baja apuesta correlaciona fuerte con el examen final y detecta temprano a quien necesita apoyo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Valida tu qbank ENAM como sistema de alerta temprana, no solo práctica; reposiciónalo como predictor y sube el ticket.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09496-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09496-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open + 2026-06-18 · review</div>
+          <div class="r10-title">Comparación de 6 modalidades de educación en técnica inhalatoria: protocolo de SR + network meta-análisis bayesiano</div>
+          <div class="r10-line">Protocolo de NMA que rankeará 6 modalidades educativas (cara a cara, video, teach-to-goal, farmacéutico, enfermería, feedback con sensor) — método de &#39;qué formato enseña mejor&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La plantilla NMA-de-modalidades-educativas es replicable para tu pregunta &#39;¿qué formato enseña mejor X?&#39;; guárdala como método de paper.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2026-120185" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2026-120185</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education + 2026-06-17 · paper</div>
+          <div class="r10-title">Adopción de IA entre estudiantes de farmacia en Siria: 86.8% la usa, cero andamiaje institucional</div>
+          <div class="r10-line">Transversal (n=295): 86.8% usa IA (ChatGPT 96.5%) con actitudes positivas pero soporte institucional casi nulo (1.55/5) y débil verificación crítica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El patrón &#39;alta adopción + cero gobernanza&#39; se repite en Perú; tu curso puede ser el andamiaje que las universidades no dan.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09708-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09708-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education + 2026-06-17 · paper</div>
+          <div class="r10-title">Personas con discapacidad como educadores-paciente y formación de identidad profesional: estudio cualitativo</div>
+          <div class="r10-line">La voz en primera persona de personas con discapacidad como educadoras desafía prejuicios y desarrolla empatía e identidad profesional en estudiantes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La &#39;voz del paciente neurodivergente&#39; como educador es formato de contenido potente para tu wedge; piénsalo para el libro de psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09540-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09540-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Experimental Orthopaedics + 2026-06-16 · review</div>
+          <div class="r10-title">XR/VR/AR/MR en artroplastia de rodilla: scoping review (54 estudios) — solo 9 tocan educación</div>
+          <div class="r10-line">De 54 estudios de realidad extendida en rodilla, solo 9 son educativos (entrenamiento quirúrgico); la evidencia educativa sigue delgada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La realidad mixta en educación quirúrgica aún es evidencia inmadura; obsérvala, no inviertas producto ahí todavía.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jeo2.70788" target="_blank" rel="noopener">↗ doi.org/10.1002/jeo2.70788</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education + 2026-06-18 · editorial</div>
+          <div class="r10-title">&#39;Currículo fantasma&#39; y neurodivergencia: iniciativa de mejora de calidad</div>
+          <div class="r10-line">Pieza breve de mejora de calidad sobre el &#39;currículo oculto/fantasma&#39; y la experiencia de estudiantes neurodivergentes en medicina.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El &#39;currículo oculto&#39; aplicado a neurodivergencia es literalmente tu lenguaje; conviértelo en una serie de contenido para tu audiencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/medu.70254" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70254</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education + 2026-06-17 · editorial</div>
+          <div class="r10-title">¿Quién entrena al coach? Aprendices como socios en la co-creación de la práctica de coaching</div>
+          <div class="r10-line">Comentario que propone a los aprendices como socios activos en la co-creación de la práctica de coaching, no solo receptores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La co-creación aprendiz-coach valida tu pedagogía co-creativa; declárala como marco explícito en AMAUTA y en el curso.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/medu.70250" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70250</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El cuello de botella de la IA en educación médica no es el acceso sino la confianza: 83% quiere formación, solo 36% se siente capaz de aplicarla. El producto que gana no enseña IA, cierra esa brecha.</li><li>Un avatar-IA enseña igual que tú en aprendizaje puro, pero pierde en experiencia de usuario. Traducción de negocio: automatiza el conocimiento, humaniza la marca.</li><li>Más virtual no es más aprendizaje: en Cusco, la exposición prolongada a lo virtual frenó empatía y trabajo en equipo. El híbrido bien diseñado no es nostalgia, es evidencia.</li><li>Un quiz de baja apuesta a la 6ª semana ya predice el examen final (R=0.63). El valor real del qbank no es practicar, es detectar temprano a quien va a fallar.</li><li>El burnout del estudiante se entiende mejor como identidad profesional bajo tensión que como síntoma aislado; la intervención no es resiliencia individual, es rediseño del entorno.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Tu curso de IA cierra la brecha optimismo-competencia (saber aplicarla) o solo alimenta el optimismo de que es necesaria?</li><li>¿Cuándo conviene un avatar-IA y cuándo tu cara? ¿Dónde está el punto de quiebre entre escala barata y conexión de marca?</li><li>¿Cuánto del daño del aprendizaje virtual en Cusco fue el medio y cuánto el mal diseño instruccional? ¿Se puede separar?</li><li>¿Y si reposicionas el qbank ENAM como sistema de alerta temprana del estudiante en riesgo, en vez de &#39;banco de preguntas&#39;?</li><li>Si el burnout es identidad profesional bajo tensión, ¿qué métrica de identidad deberíamos medir antes que la depresión?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel: &#39;El 78% quiere IA, solo el 36% sabe usarla&#39; — la brecha optimismo-competencia como gancho de venta del curso Aprendiz Experto, con la meta (n=20,963) como dato de autoridad.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto: &#39;¿Avatar-IA o mi cara?&#39; — explica el RCT cruzado y la regla &#39;automatiza conocimiento, humaniza marca&#39; para creadores IA-first; cierra con cuándo usar cada uno.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de perspectiva/comentario: replicar el diseño longitudinal de Cusco para medir el costo del virtual en formación médica peruana, con lente RDoC de regulación y bienestar.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de neurociencia educativa: &#39;El costo de aprender&#39; — burnout como identidad profesional bajo tensión + neurodivergencia, anclado en el scoping de PIF (63 estudios).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reframe de producto: reposicionar el qbank ENAM como predictor/alerta temprana usando la evidencia de quizzes formativos que predicen el sumativo (R=0.63).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BMC Medical Education</span><span class="tag ">Medical Teacher</span><span class="tag highlight">Medical Education</span><span class="tag ">Nurse Education Today</span><span class="tag ">JMIR Formative Research</span><span class="tag ">BMJ Open</span><span class="tag ">Journal of Experimental Orthopaedics</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 19 de junio de 2026.</div>
+</div>
+</body>
+</html>
