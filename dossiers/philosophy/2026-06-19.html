@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-19 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">19 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">28</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">210</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Karger · estudio de viñetas (27 clínicos franceses, 6 viñetas) · 2026-06-18 · paper</div>
+        <h3 class="r3-title">Symptom course in psychiatric and neurodevelopmental diagnostic reasoning: an exploratory vignette-based study</h3>
+        <p class="r3-hook">Veintisiete clínicos franceses evaluaron 6 viñetas y el CURSO temporal del síntoma —no los criterios transversales del DSM— fue lo que decidió la atribución diagnóstica: una resolución rápida tras tratar una condición asociada empujó al diagnóstico único (77.8–92.6%), mientras que un curso típico persistente sostuvo el doble diagnóstico (81.5–96.3%). Para ti, Jaflo, es evidencia empírica directa para el book-psicopato y el BMSE: el clínico YA razona sobre trayectorias, lo que falta es codificarlo —exactamente lo que HiTOP/RDoC capturan al pensar en spectra y curso, no en cortes categoriales. Úsalo como ancla del capítulo de razonamiento diagnóstico en neurodivergencia, donde la comorbilidad TDAH/TEA se resuelve precisamente por curso, no por checklist. Y es un diseño replicable de bajo costo: una viñeta-RCT peruana que mida cómo el curso sesga la atribución diagnóstica en residentes ENAM/Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1159/000553133" target="_blank" rel="noopener">↗ doi.org/10.1159/000553133</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">BMJ Quality &amp; Safety · 2026-06-18 · paper</div>
+        <h3 class="r3-title">Artificial intelligence chain-of-thought reasoning in nuanced medical scenarios: mitigation of cognitive biases through model intransigence</h3>
+        <p class="r3-hook">DeepSeek-R1 mitigó 6 de 10 sesgos cognitivos de médicos mediante respuestas binarias &#39;intransigentes&#39; —pero falló en post hoc fallacy, efecto señuelo, navaja de Occam e hindsight bias—, mientras OpenAI y Google divergieron sustancialmente de los médicos en todos los escenarios. El mecanismo es contraintuitivo: lo que debiasa no es razonar más elaboradamente, sino que el modelo NO cede al framing del caso —la terquedad, no la deliberación. Para ti, Jaflo, cruza clinical-reasoning + ai-enhancement + debiasing y le pone límites duros a la fantasía de la &#39;IA como scaffold de debiasing&#39;: sirve para anclaje y disponibilidad, pero no para los sesgos que exigen metarrazonamiento. Conviértelo en clase/contenido del Aprendiz Experto (&#39;por qué una IA terca razona mejor que una complaciente&#39;) y en advertencia metodológica antes de usar IA como segundo lector en tu prep de Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjqs-2025-019299" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjqs-2025-019299</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Astral Codex Ten · Scott Alexander · 2026-06-18 · essay</div>
+        <h3 class="r3-title">Waiting For The Miracle</h3>
+        <p class="r3-hook">Scott Alexander propone un mecanismo óptico de cuatro pasos —nube fina que atenúa el sol hasta hacerlo mirable, afterimage, microsácadas que distribuyen el halo, y blanqueo retiniano UV que produce cromatopsia— para explicar los &#39;milagros del sol&#39; de Fátima y Medjugorje sin recurrir a lo sobrenatural, con un argumento epistémico mucho más filoso: miles de testigos reportando lo mismo NO valida la experiencia como externamente real, porque la expectativa construye la percepción (su esposa vio colores girar y él no vio nada, mirando el mismo sol). Para ti, Jaflo, es el ensayo-bandera de modelos mentales del día y mapea exacto sobre tu escepticismo de validez de constructo en psiquiatría: el testimonio convergente de pacientes, clínicos y familias puede reflejar percepción compartida construida, no ground truth —el mismo problema que RDoC intenta esquivar. Úsalo en el book-psicopato como caso de &#39;consenso ≠ validez&#39; y en contenido sobre por qué un síntoma reportado por muchos no prueba una entidad natural; refuerza además tu argumento de que la fenomenología compartida es hipótesis, no verificación.</p>
+        <a class="r3-link" href="https://www.astralcodexten.com/p/waiting-for-the-miracle" target="_blank" rel="noopener">↗ www.astralcodexten.com/p/waiting-for-the-mir…</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">NPJ Digital Medicine (Nature) · Presacan et al. · 2026-06-16 · paper</div>
+          <div class="r10-title">When silence is safer: a review and decision-theoretic framework for LLM abstention in healthcare</div>
+          <div class="r10-line">Revisión + marco teórico-decisional que trata la abstención del LLM (&#39;no sé&#39;) como optimización de utilidad bajo incertidumbre y daño, distingue abstención por incertidumbre vs. por seguridad, halla que los LLMs actuales fallan en rechazar peticiones clínicas problemáticas, e introduce el benchmark MedSAFE.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la humildad epistémica deja de ser virtud y se vuelve función de costo medible —&#39;saber cuándo abstenerse&#39; será el outcome que debes exigir a cualquier IA que uses en investigación o prep ENAM; ángulo para un paper de educación médica sobre IA que enseña a dudar.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41746-026-02882-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41746-026-02882-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">PNAS 123(25) · Denton, Feldman &amp; Johannemann · 2026-06-18 · paper</div>
+          <div class="r10-title">Conformity to popular, not average, opinions: Models, data, and evolution</div>
+          <div class="r10-line">Datos conductuales + simulación evolutiva muestran que los aprendices sociales copian la opinión MÁS POPULAR (la moda), no el promedio de sus pares (modelo French-DeGroot), y este sesgo hacia lo popular acelera la polarización y reduce la precisión colectiva en redes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: explica por qué los diagnósticos &#39;de moda&#39; y los consensos clínicos frágiles se adoptan por popularidad y no por solidez —es el argumento formal para el book-psicopato sobre por qué categorías DSM débiles persisten; base de un reel sobre &#39;lo popular no es lo correcto&#39; en salud mental.</div>
+          <a class="r10-link" href="https://doi.org/10.1073/pnas.2530712123" target="_blank" rel="noopener">↗ doi.org/10.1073/pnas.2530712123</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica · Chen S &amp; Zhou T · 2026-06-17 · paper</div>
+          <div class="r10-title">Beyond intention: A cognitive-affective-ethical framework for translation students&#39; in-task acceptance of AI-generated feedback</div>
+          <div class="r10-line">En 124 estudiantes y 3,596 decisiones, la aceptación de feedback generado por IA NO se rige por la intención sino por una secuencia condicional jerárquica —verificación cognitiva → calibración de confianza afectiva → control ético-identitario—, y el género del texto fue el predictor más fuerte (81.2% técnico vs. 49.9% literario).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es el modelo de cómo un estudiante acepta o rechaza feedback de IA —portátil a tu curso Aprendiz Experto y al BMSE para diseñar feedback que pase los tres filtros; paper de educación médica sobre adopción de tutores IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107269" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107269</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Geriatric Medicine · 2026-06-18 · paper</div>
+          <div class="r10-title">Intensive care under uncertainty: a qualitative study of how older patients and their relatives wish to contribute to decision-making</div>
+          <div class="r10-line">En 355 pacientes noruegos ≥80 años y sus allegados, cinco modalidades de participación en decisiones de UCI (buscar conocimiento, compartir experiencia, reconocer diversidad etaria, mejorar el proceso, construir confianza) funcionan como estrategias de afrontamiento ante la incertidumbre multidimensional de la enfermedad crítica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la decisión compartida bajo incertidumbre como afrontamiento —no solo como derecho— da un ángulo para tu razonamiento clínico y ética (HVLH): mapear cómo paciente y familia procesan la incertidumbre rediseña el consentimiento informado.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s41999-026-01523-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s41999-026-01523-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong · Zack_M_Davis · 2026-06-18 · essay</div>
+          <div class="r10-title">Contra Pace on When to Apologize</div>
+          <div class="r10-line">Réplica a la &#39;teoría del libro contable de las disculpas&#39; de Ben Pace: una disculpa genuina exige un cambio de política conductual, no solo un asiento contable, porque sin cambio el &#39;pago&#39; es fraudulento y la parte agraviada no puede ser obligada a aceptarlo —debate racionalista en vivo sobre la epistemia de la rendición de cuentas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el par Pace–Davis es un caso vivo de cómo se estresa un framework de normas sociales —material directo para distinguir feedback performativo de operativo en la supervisión clínica AMAUTA; pieza de content-documentation sobre liderazgo.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/E9Ff3zkmjG99LBBJH/contra-pace-on-when-to-apologize" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/E9Ff3zkmjG99LBBJH/co…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong · Connor Blake · 2026-06-17 · essay</div>
+          <div class="r10-title">Effective Altruism will be unbundled (Rational-Agentic-Maximalist Philosophies)</div>
+          <div class="r10-line">Blake descompone el Altruismo Eficaz en cuatro componentes separables —Racionalismo, Agencia de Impacto, Maximalismo y un sistema de valores (RAMPs)— y argumenta que el mismo template, cargado con valores distintos (Objetivismo, e/acc), genera movimientos ideológicamente diversos pero estructuralmente idénticos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: descomponer una ideología en &#39;template + valores&#39; es un modelo mental transferible —úsalo para descomponer paradigmas psiquiátricos (DSM = template categorial + valores; HiTOP = template dimensional + valores) en un ensayo de fundamentos del book-psicopato.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/hoR4mWkaPKKgstioX/rational-agentic-maximalist-philosophies" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/hoR4mWkaPKKgstioX/ra…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Marginal Revolution · Tyler Cowen · 2026-06-19 · blog</div>
+          <div class="r10-title">How research in math will change (from my email)</div>
+          <div class="r10-line">Un matemático corresponsal sostiene que la IA transforma la investigación matemática al permitir probar rápido conjeturas computacionales acumuladas y cerrar pruebas estancadas, que la IA guiada por humanos supera a la autónoma, y predice que formatos de proyecto interactivos desplazarán al PDF y disruptirán el peer review.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;IA guiada por humano &gt; IA autónoma&#39; + la muerte del PDF es arquitectura para tus negocios de contenido —el leverage de Aprendiz Experto está en productos interactivos asistidos por IA, no en PDFs; decisión de formato (ai-enhancement).</div>
+          <a class="r10-link" href="https://marginalrevolution.com/marginalrevolution/2026/06/how-research-in-math-will-change-from-my-email.html" target="_blank" rel="noopener">↗ marginalrevolution.com/marginalrevolution/20…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Very Bad Wizards · David Pizarro &amp; Tamler Sommers · 2026-06-16 · podcast</div>
+          <div class="r10-title">Episode 334: Let&#39;s Get Metaphysical</div>
+          <div class="r10-line">Pizarro y Sommers discuten un paper que defiende tratar los insights místicos de la meditación como fuente legítima de evidencia filosófica junto a la ciencia y la metafísica, y examinan investigación evolutiva sobre la conducta de &#39;simping&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ¿es la introspección meditativa evidencia o artefacto? —tensión directa con tu escepticismo de validez de constructo (igual que el milagro de ACX): la fenomenología introspectiva es hipótesis, no dato; ángulo para razonamiento clínico sobre el valor del reporte subjetivo.</div>
+          <a class="r10-link" href="https://verybadwizards.com/334" target="_blank" rel="noopener">↗ verybadwizards.com/334</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Huberman Lab · Andy Stumpf · 2026-06-15 · podcast</div>
+          <div class="r10-title">The Mental Frame &amp; Specific Daily Actions to Succeed | Andy Stumpf</div>
+          <div class="r10-line">Stumpf operacionaliza la disciplina como la &#39;elección ligeramente más difícil&#39; momento a momento y la distinción esfera de influencia vs. esfera de preocupación (dicotomía estoica del control), con discusión explícita de prevención de suicidio en alto rendimiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la dicotomía del control aplicada a la regulación ejecutiva —material para kinobody-selfcare y un reel sobre por qué enfocarse en lo controlable es regulación emocional basada en mecanismo, no autoayuda; cuidado con el encuadre motivacional.</div>
+          <a class="r10-link" href="https://www.youtube.com/watch?v=baecUt1GaPk" target="_blank" rel="noopener">↗ www.youtube.com/watch?v=baecUt1GaPk</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El curso temporal del síntoma, no el corte transversal del DSM, es lo que de verdad decide el diagnóstico: los clínicos atribuyen a una sola causa cuando los síntomas se resuelven rápido (78–93%) y sostienen doble diagnóstico cuando persisten (82–96%). El razonamiento dimensional ya vive en la cabeza del clínico —falta codificarlo (viñetas, 27 clínicos, Karger).</li><li>Una IA &#39;terca&#39; debiasa mejor que una complaciente: DeepSeek-R1 redujo 6/10 sesgos cognitivos de médicos justamente por NO ceder al framing del caso, pero falló en los sesgos que exigen metarrazonamiento (post hoc, señuelo, Occam, hindsight). El debiasing por IA es específico por TIPO de sesgo, no universal (BMJ Quality &amp; Safety).</li><li>Miles de testigos viendo el mismo &#39;milagro&#39; no prueban nada externo: la expectativa construye la percepción tan fuerte que dos personas miran el mismo sol y una ve colores girar y la otra nada. Consenso ≠ validez de constructo —el mismo problema que RDoC intenta esquivar en psiquiatría (Scott Alexander, ACX).</li><li>La gente no promedia las opiniones ajenas: copia la MÁS POPULAR (la moda). Por eso los diagnósticos de moda y los consensos clínicos frágiles se amplifican y resisten la evidencia contraria —el mecanismo evolutivo de conformidad acelera el consenso falso (PNAS, datos + simulación).</li><li>La abstención de una IA (&#39;no sé&#39;) no es debilidad: es una decisión de optimización de utilidad bajo incertidumbre y daño. Los LLMs actuales fallan en rechazar peticiones clínicas problemáticas —saber cuándo callar es el outcome a exigir, no un detalle a tolerar (NPJ Digital Medicine, marco MedSAFE).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el curso temporal del síntoma decide la atribución diagnóstica más que los criterios transversales, ¿debería el BMSE enseñar razonamiento diagnóstico como inferencia sobre trayectorias (HiTOP/RDoC) en vez de matching de criterios DSM?</li><li>¿Puedo replicar el diseño de viñetas francés en residentes peruanos para medir cómo el curso sesga la atribución de comorbilidad TDAH/TEA —y eso es un paper de razonamiento clínico dimensional listo para diseñar?</li><li>Si una IA terca debiasa solo ciertos sesgos, ¿cuáles de los que cometen mis residentes ENAM/Residentado son &#39;tipo IA-tratable&#39; (anclaje, disponibilidad) y cuáles necesitan metarrazonamiento humano (hindsight, Occam)?</li><li>Si el consenso clínico se forma copiando lo popular y no lo correcto (PNAS), ¿cuántas categorías DSM que enseño persisten por conformidad evolutiva más que por validez —y cómo lo demuestro en el book-psicopato?</li><li>¿Debería exigir &#39;abstención calibrada&#39; (saber decir no sé) como criterio de aceptación de cualquier IA que use como segundo lector clínico o asistente de investigación, midiéndolo con algo como MedSAFE?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Viñeta-RCT peruana que mida cómo el curso temporal del síntoma sesga la atribución diagnóstica (única vs. doble) en residentes, replicando el diseño francés (Karger) con foco en comorbilidad TDAH/TEA —razonamiento clínico dimensional listo para diseñar.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel &#39;Por qué una IA terca razona mejor que una complaciente&#39;: el hallazgo de BMJ Quality &amp; Safety de que la intransigencia del modelo reduce 6/10 sesgos —gancho de clinical-reasoning + IA sin tecnicismo.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del book-psicopato &#39;Consenso no es validez&#39;: fusiona el milagro del sol de ACX (la expectativa construye la percepción) con el modelo de conformidad de PNAS (copiamos lo popular, no lo correcto) para argumentar por qué la fenomenología compartida no prueba entidades naturales en psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de educación médica: aplicar el marco de aceptación de feedback de IA (verificación cognitiva → confianza afectiva → control ético, Acta Psychologica) a tutores IA en residentes peruanos —cómo diseñar feedback que pase los tres filtros del estudiante.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie Aprendiz Experto sobre humildad epistémica como FUNCIÓN, no virtud: &#39;enseñar a la IA (y a ti) cuándo decir no sé&#39;, anclada en el marco de abstención de NPJ Digital Medicine y el benchmark MedSAFE.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">BMJ Quality &amp; Safety</span><span class="tag ">Karger (razonamiento diagnóstico)</span><span class="tag highlight">NPJ Digital Medicine (Nature)</span><span class="tag ">PNAS</span><span class="tag ">Acta Psychologica</span><span class="tag ">European Geriatric Medicine</span><span class="tag ">Astral Codex Ten (Scott Alexander)</span><span class="tag ">LessWrong / GreaterWrong</span><span class="tag ">Marginal Revolution (Tyler Cowen)</span><span class="tag ">Very Bad Wizards</span><span class="tag ">Huberman Lab</span><span class="tag highlight">Farnam Street</span><span class="tag ">Figs in Winter (Massimo Pigliucci)</span><span class="tag ">Stoicism: Philosophy as a Way of Life (Donald Robertson)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed / Europe PMC (búsqueda y verificación de DOIs y metadata) · CrossRef (verificación de DOIs) · BMJ Quality &amp; Safety · Karger (razonamiento diagnóstico) · NPJ Digital Medicine (Nature) · PNAS · Acta Psychologica · European Geriatric Medicine · Astral Codex Ten · LessWrong / GreaterWrong · Marginal Revolution (Tyler Cowen) · Very Bad Wizards · Huberman Lab (YouTube) · Farnam Street / Brain Food · Figs in Winter (Massimo Pigliucci, Substack) · Stoicism: Philosophy as a Way of Life (Donald Robertson, Substack) · Commoncog (Cedric Chin) · Ryan Holiday / Daily Stoic · Reddit (r/mentalmodels, r/LessWrong, r/philosophy) · X/Twitter. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 19 de junio de 2026.</div>
+</div>
+</body>
+</html>
