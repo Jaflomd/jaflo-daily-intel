@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-06-19 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">19 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">209</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychopathology · 18 jun 2026 · paper · 2026-06-18</div>
+        <h3 class="r3-title">Curso sintomático en el razonamiento diagnóstico psiquiátrico y del neurodesarrollo: estudio exploratorio basado en viñetas</h3>
+        <p class="r3-hook">27 clínicos franceses (13 psiquiatras + 14 no médicos) razonaron sobre 6 viñetas y el patrón es nítido: cuando los síntomas remitían rápido al tratar la condición subyacente (TDAH+SAOS, dificultades del lenguaje+hipoacusia, psicosis+encefalitis anti-NMDAr) atribuían todo a la causa subyacente (77.8–92.6%); cuando seguían un curso típico y persistente (esquizofrenia+microdeleción 22q11, TEA+mutación SHANK3, DI+síndrome alcohólico fetal) mantenían doble diagnóstico (81.5–96.3%). El curso temporal —no solo el corte transversal del DSM— gobierna la decisión. Te importa porque es evidencia empírica de que los clínicos ya razonan dimensional y longitudinalmente aunque el manual sea categorial: justo la tesis del book-psicopato y del BMSE/razonamiento dimensional, y golpea de lleno tu línea TDAH/TEA/neurodivergencia. Úsalo como viñeta-ancla de un capítulo o clase AMAUTA sobre &#39;el diagnóstico como hipótesis revisable en el tiempo&#39; y como dato citable para el wedge de neurodivergencia adulta.</p>
+        <a class="r3-link" href="https://doi.org/10.1159/000553133" target="_blank" rel="noopener">↗ doi.org/10.1159/000553133</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">BMJ Quality &amp; Safety · 18 jun 2026 · paper · 2026-06-18</div>
+        <h3 class="r3-title">Razonamiento por cadena de pensamiento en IA en escenarios médicos matizados: mitigación de sesgos cognitivos por intransigencia del modelo</h3>
+        <p class="r3-hook">Redelmeier y Wang probaron 10 escenarios diseñados con sesgo (p. ej. cirugía enmarcada en supervivencia vs mortalidad) en modelos de razonamiento de DeepSeek, OpenAI y Google, contra 2507 médicos en ejercicio. DeepSeek-R1 mitigó 6 de 10 sesgos cognitivos… pero generando respuestas &#39;todo o nada&#39; intransigentes (medido por entropía de Shannon). Persistieron cuatro: falacia post hoc, efecto señuelo, navaja de Occam y sesgo retrospectivo. Y en los 10 escenarios la respuesta promedio del modelo se desvió sustancialmente de la del médico promedio. Te importa porque es el matiz que tu pilar ai-enhancement necesita: la IA no &#39;debiasea&#39;, cambia el sesgo flexible por rigidez dogmática. Es oro para tu narrativa de IA en razonamiento clínico (Aprendiz Experto + contenido) y para el BMSE. Úsalo en un carousel/reel &#39;la IA no te quita el sesgo, te lo cambia por dogma&#39; y en un módulo de Competency Lab sobre cuándo desconfiar del chain-of-thought.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjqs-2025-019299" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjqs-2025-019299</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">BMJ Quality &amp; Safety · 18 jun 2026 · review · 2026-06-18</div>
+        <h3 class="r3-title">Puente entre seguridad diagnóstica y salud mental: revisión sistemática de inequidades en el diagnóstico de TEA</h3>
+        <p class="r3-hook">Revisión sistemática de 20 estudios (EE. UU., 2015–2024) guiada por el Diagnostic Process Framework del National Academies. El TEA emergió como el trastorno mental más estudiado (17/20); el error dominante fue el diagnóstico tardío; 11 factores alimentan la inequidad: baja alfabetización en salud de pacientes y cuidadores, problemas de cobertura, sesgo del proveedor durante la anamnesis, instrumentos culturalmente no equivalentes para pacientes negros e hispanos, y uso de jerga o falta de intérpretes al comunicar el diagnóstico. Te importa porque une tres ejes tuyos —error diagnóstico, neurodivergencia e inequidad— y entrega el andamiaje &#39;proceso diagnóstico&#39; para hablar de neurodivergencia adulta no diagnosticada (tu wedge) con evidencia y no con opinión. Úsalo como marco de un capítulo de book-psicopato sobre por qué la ND adulta se diagnostica tarde, y como base de contenido que posiciona tu autoridad sin moralina.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjqs-2025-018723" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjqs-2025-018723</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Gynecology and Obstetrics · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Decisión clínica de colposcopistas vs modelos de lenguaje en displasia cervical: estudio piloto prospectivo multicéntrico</div>
+          <div class="r10-line">ChatGPT-4o/5 igualaron a 10 colposcopistas (≈69.6% de concordancia); GPT-5 superó en lesiones precancerosas (81.8% vs 66.4%) pero los clínicos ganaron en casos ambiguos (86% vs 60%), y los humanos tendieron a sobretratar CIN I.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el patrón &#39;IA buena en lo prototípico, humano en lo ambiguo&#39; se vuelve el argumento estándar de los co-pilotos diagnósticos; capitalízalo como tesis central de tu línea IA + razonamiento.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00404-026-08498-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00404-026-08498-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLOS Digital Health · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Los modelos de lenguaje perpetúan sesgo en cuidados paliativos: dataset adversarial PCAD</div>
+          <div class="r10-line">GPT-4o mostró sesgo en ~33% de respuestas adversariales de cuidados paliativos (PCAD), sobre todo &#39;aceptar la premisa sesgada&#39; y &#39;potencial de omitir intervención&#39; según etnia, edad o diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los datasets adversariales por identidad serán el nuevo estándar de auditoría de IA clínica; predicción: aparecerá un equivalente en psiquiatría/ND, y podrías construirlo tú primero.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pdig.0001451" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pdig.0001451</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Current Psychiatry Reports · 18 jun 2026 · review · 2026-06-18</div>
+          <div class="r10-title">El espejo digital: potencial clínico y riesgos relacionales de la IA generativa en salud mental</div>
+          <div class="r10-line">Revisión sobre IA generativa en salud mental: útil en evaluación, planificación y monitoreo entre sesiones, pero el &#39;espejo sicofántico&#39; puede reforzar esquemas desadaptativos o ideación delirante y carece de la profundidad relacional terapéutica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El riesgo relacional (sicofancia que valida de más) será el tema caliente 2026–27; posiciónate temprano con contenido sobre &#39;IA que te da la razón demasiado&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11920-026-01690-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s11920-026-01690-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neurology · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Clinical Reasoning: mujer de 58 años con visión borrosa indolora</div>
+          <div class="r10-line">Caso docente del formato &#39;Clinical Reasoning&#39; de Neurology: visión borrosa progresiva, uveítis y edema de disco que terminan en neurosífilis (RPR 1:1024), con pitfalls de interpretar pruebas en neuro-oftalmología.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El formato &#39;Clinical Reasoning&#39; de Neurology sigue siendo la plantilla de oro para enseñar illness scripts; clónalo para tus casos AMAUTA/ENAM por su estructura de diferencial explícito.</div>
+          <a class="r10-link" href="https://doi.org/10.1212/WNL.0000000000218244" target="_blank" rel="noopener">↗ doi.org/10.1212/WNL.0000000000218244</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src hot">New England Journal of Medicine · 18 jun 2026 · review · 2026-06-18</div>
+          <div class="r10-title">Manejo del cáncer diferenciado de tiroides: marco de decisión terapéutica riesgo-adaptado</div>
+          <div class="r10-line">Revisión NEJM que propone un marco explícito de decisión terapéutica riesgo-adaptado (vigilancia activa en bajo riesgo, minimalismo, comparación de riesgos/beneficios/preferencias) para evitar sobrediagnóstico y sobretratamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los marcos &#39;riesgo-adaptado + preferencias del paciente&#39; son plantilla transferible a psiquiatría; úsalo para enseñar razonamiento terapéutico dimensional, no solo diagnóstico.</div>
+          <a class="r10-link" href="https://doi.org/10.1056/NEJMra2416814" target="_blank" rel="noopener">↗ doi.org/10.1056/NEJMra2416814</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Anesthesiology · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Dosis de noradrenalina ponderada por peso vs absoluta y riesgo de mortalidad en pacientes obesos con shock séptico</div>
+          <div class="r10-line">En 10,246 pacientes con shock séptico, la dosis de noradrenalina ponderada por peso subestima la mortalidad en obesos (hasta 26% de divergencia a dosis altas); la dosis absoluta es consistente entre categorías de IMC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Caso de manual sobre cómo una &#39;herramienta de decisión&#39; mal escalada distorsiona el juicio; perla perfecta para el BMSE sobre métricas que engañan al razonamiento.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/ALN.0000000000006134" target="_blank" rel="noopener">↗ doi.org/10.1097/ALN.0000000000006134</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Geriatric Medicine · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Cuidados intensivos bajo incertidumbre: cómo pacientes mayores y familiares quieren contribuir a la decisión</div>
+          <div class="r10-line">Estudio cualitativo (con Paul Han) donde pacientes muy mayores y familias aportan &#39;conocimiento personal&#39; para afrontar la incertidumbre multidimensional de las decisiones en UCI, leído con un marco de tolerancia a la incertidumbre.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La tolerancia a la incertidumbre se consolida como constructo medible del razonamiento clínico; intégralo al Competency Lab como dimensión evaluable, no anecdótica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s41999-026-01523-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s41999-026-01523-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · 18 jun 2026 · editorial · 2026-06-18</div>
+          <div class="r10-title">Más allá del consenso visual: marco de referencia escalonado para estudios de IA en cistoscopia</div>
+          <div class="r10-line">Debate metodológico (carta + respuesta) sobre marcos de referencia escalonados para validar IA diagnóstica en cistoscopia: el &#39;consenso visual&#39; no basta como gold standard del razonamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Cómo definimos el gold standard será la grieta de credibilidad de los estudios de IA diagnóstica; tema natural para un paper metodológico tuyo en psiquiatría/educación.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/101910" target="_blank" rel="noopener">↗ doi.org/10.2196/101910</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Radiology · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Impacto del análisis cuantitativo adjunto en la interpretación visual del PET amiloide: estudio multicéntrico</div>
+          <div class="r10-line">En 950 pacientes, añadir cuantificación (Centiloid/SUVR) a la lectura visual de PET amiloide subió la confianza (76.3→83.7%) y el acuerdo inter-lector (κ 0.746→0.826), sobre todo en casos equívocos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La cuantificación-como-adjunto (no reemplazo) es el modelo que ganará en imagen; análogo directo a usar escalas dimensionales como adjunto al juicio clínico, no como sustituto.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00330-026-12687-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s00330-026-12687-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Emergency Radiology · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Acuerdo entre residentes de medicina de emergencia y radiólogos en la interpretación de TC de tórax (RSNA)</div>
+          <div class="r10-line">Buen acuerdo global (κ 0.705) entre residentes de emergencia y radiólogos en TC de tórax COVID-RSNA, pero se desploma en patrones &#39;indeterminado&#39; y &#39;atípico&#39; (κ ≈0.34); mejora con el nivel de formación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El acuerdo cae justo en lo ambiguo: ahí debe concentrarse el entrenamiento del razonamiento; dato para diseñar tus casos AMAUTA estratificados por dificultad.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10140-026-02505-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s10140-026-02505-y</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La IA &#39;razonadora&#39; no elimina el sesgo: lo reemplaza por intransigencia dogmática. DeepSeek-R1 mitigó 6/10 sesgos volviéndose &#39;todo o nada&#39;, no más sabio (Redelmeier, BMJ Qual Saf).</li><li>El curso temporal manda sobre el corte transversal: el mismo síntoma se atribuye a la causa subyacente si remite rápido y pasa a doble diagnóstico si persiste; los clínicos ya razonan longitudinalmente aunque el DSM sea categorial.</li><li>El error diagnóstico no es democrático: en TEA y salud mental el patrón dominante es el diagnóstico tardío, y golpea más a baja alfabetización en salud y a minorías (revisión sistemática BMJ Qual Saf).</li><li>Una métrica mal escalada es el sesgo: dosificar noradrenalina por kg subestima la mortalidad en obesos hasta 26%; la herramienta de decisión puede engañar el juicio más que el clínico.</li><li>La IA converge con el humano en lo prototípico (precancerosas 81.8%) y pierde en lo ambiguo (atípicos 86% vs 60%): el diagnóstico diferencial difícil sigue siendo el último reducto del juicio clínico.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la IA &#39;debiasea&#39; volviéndose intransigente, ¿qué es peor para el paciente: el sesgo flexible del médico o el dogma rígido del modelo?</li><li>¿Puede formalizarse el &#39;curso sintomático en el tiempo&#39; como criterio explícito de razonamiento dimensional en el BMSE, más allá del corte transversal del DSM?</li><li>¿Cuánto del diagnóstico tardío de neurodivergencia adulta es error diagnóstico evitable y cuánto es límite real del proceso diagnóstico?</li><li>¿Qué revelaría un dataset adversarial tipo PCAD construido para sesgo diagnóstico en psiquiatría/ND latinoamericana y en español?</li><li>Si el acuerdo inter-clínico solo se desploma en lo &#39;indeterminado/atípico&#39;, ¿no deberíamos entrenar el razonamiento exclusivamente con casos ambiguos?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carousel/reel &#39;La IA no te quita el sesgo, te lo cambia por dogma&#39;: explica el hallazgo de Redelmeier (6/10 sesgos mitigados por intransigencia) para tu audiencia del Aprendiz Experto, con un caso de framing supervivencia vs mortalidad.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de book-psicopato sobre el curso sintomático como eje del razonamiento dimensional, anclado en la viñeta de Psychopathology (TDAH+SAOS que remite vs TEA+SHANK3 que persiste).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper metodológico: dataset adversarial de sesgo diagnóstico en psiquiatría/ND para auditar LLMs en español (réplica conceptual del PCAD), con eje de identidad latinoamericana.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo Competency Lab/AMAUTA &#39;razonar en lo ambiguo&#39;: casos estratificados por dificultad donde el acuerdo inter-clínico se desploma (κ atípico ≈0.34), midiendo tolerancia a la incertidumbre.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase ENAM/Residentado clonando el formato &#39;Clinical Reasoning&#39; de Neurology: caso de sífilis ocular como illness script + pitfalls de interpretación de pruebas serológicas y de LCR.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">BMJ Quality &amp; Safety</span><span class="tag ">Psychopathology</span><span class="tag ">Current Psychiatry Reports</span><span class="tag highlight">New England Journal of Medicine</span><span class="tag ">Anesthesiology</span><span class="tag ">Neurology</span><span class="tag ">PLOS Digital Health</span><span class="tag ">Archives of Gynecology and Obstetrics</span><span class="tag ">European Radiology</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">European Geriatric Medicine</span><span class="tag ">Critical Care Medicine</span><span class="tag highlight">medRxiv / NEJM AI</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP: search_articles + get_article_metadata) · WebSearch (medRxiv, NEJM AI). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 19 de junio de 2026.</div>
+</div>
+</body>
+</html>
