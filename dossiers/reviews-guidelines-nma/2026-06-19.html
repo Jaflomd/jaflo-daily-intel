@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-06-19 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">19 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">178</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">61</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Neuropsychology Review · 2026-06-18 · review</div>
+        <h3 class="r3-title">Health Outcomes Following Traumatic Brain Injury: An Umbrella Review</h3>
+        <p class="r3-hook">Umbrella review que reanaliza 41 meta-análisis (671 estudios primarios, 83 millones de personas, 40 países) sobre desenlaces tras traumatismo craneoencefálico: el TCE a cualquier edad se asocia a daño transversal en dominios neurológico, del sueño, cognitivo, de salud mental y conductual. El dato que importa para tu lente metodológica: el 78% de los meta-análisis incluidos fue clasificado como calidad &#39;críticamente baja&#39; por AMSTAR2, lo que bloquea conclusiones causales pese al N gigante. Para tu línea de neuropsiquiatría y para el Manual BMSE/razonamiento dimensional es un caso de manual de cómo un campo entero puede verse robusto por volumen y ser frágil por método. Úsalo en USAMEDIC/AMAUTA como ejemplo vivo de jerarquía de evidencia y de por qué &#39;hay 41 meta-análisis&#39; no equivale a &#39;está probado&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11065-026-09704-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s11065-026-09704-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Current Psychiatry Reports · 2026-06-18 · review</div>
+        <h3 class="r3-title">The Digital Mirror: Clinical Potentials and Relational Risks of Generative AI in Mental Health Interventions</h3>
+        <p class="r3-hook">Revisión que separa lo que sirve de lo que es riesgo relacional en IA generativa para salud mental: los chatbots reducen ansiedad y síntomas depresivos a corto plazo donde no hay clínico, pero la terapia humana sigue siendo superior en compromiso emocional y cambio profundo. El concepto clave para tu contenido es el &#39;espejo sicofántico&#39;: la IA refuerza esquemas desadaptativos o ideación delirante al validar en exceso, justo lo opuesto a los &#39;desajustes calibrados&#39; que producen transformación. Esto alimenta directo tu pilar ai-enhancement y tu negocio Aprendiz Experto: es el argumento honesto de &#39;IA como capa adyuvante supervisada, no reemplazo del terapeuta&#39;. Material de carrusel/reel JafloMD y de clase sobre límites éticos de la IA en clínica, además de insumo para tu comité de ética (HVLH).</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11920-026-01690-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s11920-026-01690-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Brain, Behavior, and Immunity · 2026-06-18 · review</div>
+        <h3 class="r3-title">Complement component C4 and neuroimaging in psychiatry: A systematic review</h3>
+        <p class="r3-hook">Revisión sistemática que mapea cómo el componente del complemento C4A —ligado a poda sináptica excesiva— se relaciona con micro/macroestructura y conectividad cerebral en psiquiatría. De 317 artículos solo 11 cumplieron criterios, con hallazgos heterogéneos salvo una señal consistente: mayor C4A se asocia a menor superficie y grosor de corteza entorrinal. Para tu línea de psiquiatría de precisión y para el libro de psicopatología es un recordatorio de que el biomarcador estrella (C4/esquizofrenia) sigue lejos del uso clínico y necesita estandarización. Sirve como ancla &#39;de la biología a la nada-todavía&#39; para enseñar la brecha entre mecanismo y aplicación en HiTOP/RDoC.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.bbi.2026.106873" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.106873</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Reproductive and Infant Psychology · 2026-06-17 · network-meta-analysis</div>
+        <h3 class="r3-title">Effectiveness of digital psychological interventions for perinatal depression: a network meta-analysis</h3>
+        <p class="r3-hook">Network meta-analysis (32 RCTs, 8.577 participantes) que rankea intervenciones psicológicas digitales para depresión perinatal: las basadas en mindfulness (MBI) salieron primeras post-intervención y, junto con terapia interpersonal, sostuvieron el efecto en el seguimiento. Es psiquiatría primaria + salud mental digital, justo el cruce de tu pilar ai-enhancement con clínica real. Para el Aprendiz Experto y JafloMD el gancho es &#39;qué formato digital gana cuando los comparas de frente&#39;, con SUCRA como herramienta de jerarquía. Cuidado con el claim: los subgrupos por modo de entrega e ingreso del país no fueron significativos, así que el ranking es de modalidad terapéutica, no de plataforma.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/02646838.2026.2689402" target="_blank" rel="noopener">↗ doi.org/10.1080/02646838.2026.2689402</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Epilepsy Research · 2026-06-15 · network-meta-analysis</div>
+        <h3 class="r3-title">Lacosamide versus brivaracetam as adjunctive therapy for drug-resistant focal epilepsy: A placebo-anchored indirect comparison and network meta-analysis</h3>
+        <p class="r3-hook">NMA con comparación indirecta anclada a placebo (8 ensayos, 3.338 pacientes) que enfrenta lacosamida vs brivaracetam como adyuvantes en epilepsia focal farmacorresistente: no hubo diferencia clara en respondedores ≥50% ni en libertad de crisis, con certeza CINeMA mayormente baja por imprecisión. El valor para tu neuropsiquiatría es el &#39;hallazgo nulo honesto&#39;: cuando dos fármacos no se separan, la decisión migra a tolerabilidad, costo y perfil del paciente, no a un ranking ilusorio. Buen ejemplo para ENAM/Residentado de leer una NMA sin sobreinterpretar SUCRA, y contrapunto didáctico al hype de &#39;el mejor antiepiléptico&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.eplepsyres.2026.107850" target="_blank" rel="noopener">↗ doi.org/10.1016/j.eplepsyres.2026.107850</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of NeuroInterventional Surgery · 2026-06-18 · network-meta-analysis</div>
+        <h3 class="r3-title">Evaluating the effectiveness and safety of initial thrombectomy approaches for acute anterior large vessel occlusions: a comparative network analysis of techniques</h3>
+        <p class="r3-hook">Network meta-analysis bayesiano (44 estudios, 19.268 pacientes) sobre estrategias de trombectomía de primera línea en oclusión de gran vaso anterior: SRA+BGC domina recanalización y first-pass effect, mientras CA+BGC logra la mayor independencia funcional a 90 días y menor mortalidad. Cae en tu foco secundario de neuropsiquiatría (ictus) y es un ejemplo metodológicamente limpio de SUCRA + RoB 2.0/ROBINS-I para enseñar jerarquización comparativa. Para el material de razonamiento clínico ilustra una lección potente: &#39;mejor recanalización&#39; no siempre es &#39;mejor desenlace funcional&#39;. Resérvalo para módulos de neurología de urgencia más que para psiquiatría pura.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/jnis-2025-023769" target="_blank" rel="noopener">↗ doi.org/10.1136/jnis-2025-023769</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Addiction Medicine · ASAM (body normativo) · 2026-06-19 · guideline</div>
+        <h3 class="r3-title">ASAM Consensus Standards for Substance Use Disorder Care Capabilities in Hospitals and Emergency Departments</h3>
+        <p class="r3-hook">Estándares de consenso de la American Society of Addiction Medicine (ASAM) para capacidades de atención del trastorno por uso de sustancias en hospitales y urgencias, vía Task Force + revisión de evidencia + Delphi formal. Definen 7 competencias núcleo: identificación/engagement, manejo de intoxicación y abstinencia, sobredosis y post-sobredosis, inicio y continuación de fármacos para adicción, comorbilidad, enlace a cuidado continuo y reducción de riesgo. Es body normativo puro y aterriza un problema casi huérfano en el hospital general peruano: úsalo como plantilla para protocolos institucionales y como contenido de educación médica sobre adicciones. Conecta con tu rol en comités y con la formación ENAM/Residentado, donde el manejo de SUD suele ser punto ciego.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/ADM.0000000000001729" target="_blank" rel="noopener">↗ doi.org/10.1097/ADM.0000000000001729</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">British Journal of Sports Medicine · 2026-06-18 · guideline</div>
+        <h3 class="r3-title">Mental health in tennis: a cross-organisational hybrid summit-Delphi consensus process</h3>
+        <p class="r3-hook">Consenso cross-organizacional (cumbre presencial + Delphi, 83 expertos de los 7 cuerpos rectores del tenis) que adopta 2 principios fundacionales y 25 recomendaciones accionables en 5 dominios: estándares de cuidado, educación, medios/redes, salvaguarda e investigación. Más allá del tenis, el método es replicable y es justo lo que enseñas: cómo se fabrica un consenso multi-stakeholder sin perder rigor. Para tu pilar amauta-education y tu contenido es un caso de &#39;salud mental como prioridad organizacional&#39;, no individual. Útil como molde si alguna vez armas un consenso peruano de salud mental en un gremio o institución.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bjsports-2025-111479" target="_blank" rel="noopener">↗ doi.org/10.1136/bjsports-2025-111479</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Psychological Medicine · Horowitz &amp; D. Taylor (órbita Maudsley) · 2026-06-18 · guideline</div>
+        <h3 class="r3-title">Pharmacological principles for safe benzodiazepine and Z-drug dose reduction</h3>
+        <p class="r3-hook">Principios farmacológicos que definen práctica para retirar benzodiacepinas y fármacos Z de forma segura, firmados por autores de referencia en deprescribing (Horowitz, David Taylor — órbita Maudsley). La tesis codifica conducta: como la relación dosis–ocupación del receptor GABA-A es hiperbólica, las reducciones lineales generan cambios crecientes de ocupación y abstinencia escalante; hay que hacer tapering hiperbólico/proporcional (5–10% de la última dosis), lento (meses–años) y con dosis finales minúsculas (hasta ~0,2 mg de diazepam-equivalente). Es oro clínico directo para tu práctica y para ENAM/Residentado, y un argumento de que las guías actuales (lineales) están desalineadas con la farmacología. Material de carrusel JafloMD de altísimo valor: &#39;por qué bajar benzos en línea recta fracasa&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726104887" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726104887</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Brain, Behavior, and Immunity · 2026-06-18 · meta-analysis</div>
+        <h3 class="r3-title">Inflammatory protein markers and treatment outcomes across mood and psychotic disorders: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática y meta-análisis transdiagnóstico (105 estudios revisados, 42 en meta; esquizofrenia, bipolar, depresión mayor) sobre marcadores inflamatorios y respuesta al tratamiento psicofarmacológico. Resultado sobrio: IL-6 no predice nada; los respondedores muestran mayor caída de TNF-α basal-endpoint, y PCR baja vs alta se asocia a remisión (OR 1,84), pero la evidencia se concentra casi toda en depresión y con heterogeneidad alta. Esto es central para tu psiquiatría dimensional/de precisión y para el libro de psicopatología: el sueño transdiagnóstico de &#39;la inflamación predice respuesta&#39; sigue sin cumplirse y exige pasar de proteínas candidatas a proteómica sin hipótesis. Gancho perfecto para enseñar por qué HiTOP/RDoC necesitan biomarcadores que aún no tenemos.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.bbi.2026.106874" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.106874</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">GeroScience · 2026-06-18 · meta-analysis</div>
+        <h3 class="r3-title">Targeting brain rhythms to support cognition in aging: a systematic review and meta-analysis of tACS across healthy aging, mild cognitive impairment, and Alzheimer&#39;s disease</h3>
+        <p class="r3-hook">Primer meta-análisis de estimulación transcraneal por corriente alterna (tACS) en mayores de 60 (22 estudios, 826 participantes): efecto moderado sobre cognición (g=0,55 tras excluir un outlier), más consistente para memoria en deterioro cognitivo leve (g=0,59, I²=0%) y más variable en envejecimiento sano y Alzheimer. Es tu línea de neuromodulación con un mensaje accionable: la señal es real pero la heterogeneidad de protocolos exige dosis-respuesta estandarizada antes de traducir. Para JafloMD y el Aprendiz Experto es contenido sobre &#39;modular ritmos cerebrales para la memoria&#39; con la dosis justa de escepticismo. Úsalo también como ejemplo de cómo un solo outlier infla un pooled estimate.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11357-026-02312-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s11357-026-02312-w</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Neurology · 2026-06-16 · meta-analysis</div>
+        <h3 class="r3-title">Fecal Microbiota Transplantation in Parkinson Disease: A Systematic Review, Meta-Analysis, and Meta-Regression</h3>
+        <p class="r3-hook">Revisión sistemática + meta-análisis + meta-regresión en Neurology (8 estudios, 220 pacientes) sobre trasplante de microbiota fecal en Parkinson: mejora motora significativa (UPDRS-III −9,67; −6,82 solo en RCTs) y de estreñimiento, pero los beneficios en calidad de vida se diluyen a las 24 semanas y los eventos gastrointestinales son más frecuentes (RR 3,12). Cae en tu foco secundario de neuropsiquiatría y en el eje intestino-cerebro que cruza varias de tus líneas. El mensaje proporcional al claim: efecto transitorio, muestras pequeñas y conclusiones que aún descansan en estudios observacionales. Buen material para contenido &#39;gut-brain axis sin sobrevender&#39; y para distinguir promesa mecanística de utilidad clínica.</p>
+        <a class="r3-link" href="https://doi.org/10.1212/WNL.0000000000218175" target="_blank" rel="noopener">↗ doi.org/10.1212/WNL.0000000000218175</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El 78% de los 41 meta-análisis sobre TCE es de calidad &#39;críticamente baja&#39; por AMSTAR2: volumen de evidencia ≠ certeza. La próxima vez que alguien diga &#39;hay decenas de meta-análisis&#39;, pregunta por el AMSTAR2.</li><li>En depresión y psicosis, la PCR basal baja vs alta se asocia a remisión (OR 1,84) pero IL-6 no predice respuesta: el biomarcador inflamatorio &#39;estrella&#39; no es el que funciona, y casi toda la evidencia es de depresión, no transdiagnóstica.</li><li>La curva dosis–ocupación del receptor GABA-A es hiperbólica: bajar benzodiacepinas en línea recta produce abstinencia escalante. La última dosis antes de cero puede necesitar ser tan baja como 0,2 mg de diazepam-equivalente.</li><li>En trombectomía de gran vaso, la estrategia que mejor recanaliza (SRA+BGC) no es la que da mejor independencia funcional a 90 días (CA+BGC): el endpoint sustituto y el desenlace que importa no coinciden.</li><li>En IA generativa para salud mental el riesgo no es solo el error factual sino el &#39;espejo sicofántico&#39;: validar en exceso refuerza esquemas desadaptativos. Lo terapéutico es el desajuste calibrado, no el acuerdo permanente.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuántos de los meta-análisis que cito en mis clases pasarían un AMSTAR2 si los auditara como hizo la umbrella review de TCE?</li><li>Si IL-6 no predice respuesta y la PCR apenas lo hace, ¿qué necesita realmente un biomarcador para entrar a la psiquiatría dimensional/de precisión que enseño?</li><li>¿Cómo enseño a un residente a leer una NMA con SUCRA sin que confunda &#39;ranking&#39; con &#39;diferencia clínica real&#39; (caso lacosamida vs brivaracetam)?</li><li>¿Vale la pena un carrusel/clase sobre tapering hiperbólico de benzodiacepinas, dado que la práctica peruana sigue asumiendo reducción lineal?</li><li>¿Dónde traza la línea ética un comité (HVLH) entre IA generativa como apoyo en salud mental y el riesgo de dependencia/espejo sicofántico en pacientes vulnerables?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel JafloMD: &#39;Por qué bajar benzodiacepinas en línea recta fracasa&#39; — la curva hiperbólica GABA-A en 6 láminas, con la analogía del último escalón a 0,2 mg de diazepam-equivalente.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/clase Aprendiz Experto: &#39;El espejo sicofántico de la IA en salud mental&#39; — qué hace bien un chatbot y por qué no reemplaza el desajuste calibrado del terapeuta.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario metodológico: usar la umbrella review de TCE (78% AMSTAR2 críticamente bajo) como caso de un paper sobre &#39;inflación de certeza por volumen&#39; en educación médica.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección para el libro de psicopatología/BMSE: &#39;Biomarcadores que aún no llegan&#39; — C4/poda sináptica e inflamación como ejemplos de la brecha mecanismo→clínica en psiquiatría de precisión.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie neurodivergencia adulta (wedge del negocio): a partir de la revisión de función visual en TEA, pieza sobre déficits sensoriales subdiagnosticados y lo que el diagnóstico adulto suele pasar por alto.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Neuropsychology Review</span><span class="tag ">Current Psychiatry Reports</span><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">Journal of Addiction Medicine (ASAM · body normativo)</span><span class="tag ">British Journal of Sports Medicine</span><span class="tag ">Psychological Medicine</span><span class="tag ">Neurology</span><span class="tag ">Journal of NeuroInterventional Surgery</span><span class="tag ">Epilepsy Research</span><span class="tag ">GeroScience</span><span class="tag ">Journal of Reproductive and Infant Psychology</span><span class="tag highlight">BJPsych Open</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">International Review of Psychiatry</span><span class="tag ">Annals of Internal Medicine (ACP · body normativo)</span><span class="tag ">Circulation (AHA · scientific statement)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 19 de junio de 2026.</div>
+</div>
+</body>
+</html>
