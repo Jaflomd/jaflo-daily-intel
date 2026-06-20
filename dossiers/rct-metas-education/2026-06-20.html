@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-20 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">20 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">BMC Medical Education · 17 jun 2026 · rct · 2026-06-17</div>
+        <h3 class="r3-title">MCQ generadas por IA vs por estudiantes: RCT cegado (n=258) — ítems psicométricamente equivalentes con ganancia de eficiencia de 5.6×</h3>
+        <p class="r3-hook">RCT real, participant-blinded y parallel-group en estudiantes de primer año: 112 ítems case-based single-best-answer generados por un workflow dual (ChatGPT genera, Gemini valida) frente a ítems escritos por estudiantes senior, todos sobre los mismos objetivos curriculares. La IA tardó 4.2 vs 19.6 min/ítem (5.6× más rápido), con aceptabilidad equivalente (claridad, dificultad, relevancia, valor educativo) y solo una diferencia pequeña a favor del humano en discriminación. Por qué te importa, Jaflo: esto es el pilar ai-enhancement aplicado directo a tus bancos qbank de USAMEDIC/ENAM/Residentado — ya hay evidencia de nivel RCT de que un pipeline human-in-the-loop produce MCQ a escala sin sacrificar psicometría. Cómo usarlo: dato de autoridad para vender el método IA-first del Aprendiz Experto y blindar tu propio pipeline ante escépticos; cita la advertencia de los autores (no generaliza a exámenes sumativos de alto riesgo ni closed-book) para mantener evidencia proporcional al claim.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09671-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09671-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Advances in Health Sciences Education · 19 jun 2026 · review · 2026-06-19</div>
+        <h3 class="r3-title">Enseñar la indagación en medicina y enfermería: scoping de 103 intervenciones (lente de Dewey) — casi ninguna entrena la incertidumbre ni la actitud</h3>
+        <p class="r3-hook">Scoping de 103 artículos de intervenciones para enseñar &#39;inquiry&#39; leído con el marco de John Dewey (la indagación como método de cinco fases + actitud psicológica). Hallazgo central: más allá del razonamiento clínico y la EBM, las intervenciones se enfocan en construir conocimiento y habilidades de método, pero descuidan dos piezas deweyanas críticas: (1) la fase inicial de reconocer y experimentar la incertidumbre —el verdadero motor de la indagación auténtica— y (2) cultivar explícitamente la actitud hacia la indagación como objetivo educativo. Por qué te importa, Jaflo: da andamiaje teórico de un journal top de HPE a tu tesis del BMSE/razonamiento dimensional de que el razonamiento clínico empieza por habitar la incertidumbre, no por aplicar algoritmos. Cómo usarlo: marco para un capítulo o clase de &#39;enseñar a dudar bien&#39; en el libro de neurociencia educativa, y gap citable para la introducción de un paper de educación médica de precisión.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10459-026-10555-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s10459-026-10555-7</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">JMIR Medical Education · 16 jun 2026 · paper · 2026-06-16</div>
+        <h3 class="r3-title">Feedback de IA vs supervisor humano en logs de internado (n=161, GPT-4o, evaluadores cegados): la IA gana en estructura y criterio; el humano, en juicio clínico contextual</h3>
+        <p class="r3-hook">Estudio mixto en entorno auténtico (no laboratorio): 161 logs semanales de internado de 47 estudiantes de 5º-6º año en Nagoya, comparando feedback de GPT-4o vs supervisores, evaluado a ciegas por 10 docentes y 10 estudiantes con rúbrica de 5 categorías. La IA fue ~4× más larga y superó claramente en &#39;basado en criterios&#39; (OR 11.8) y &#39;dirección clara&#39; (OR 6.6) con mayor consistencia; sin diferencia en exactitud, priorización o tono, mientras el supervisor aportó juicio anclado en observación clínica. Los 20 evaluadores identificaron correctamente la fuente. Por qué te importa, Jaflo: demuestra en clerkship real —no en aula simulada— que la IA complementa y no reemplaza el feedback, justo el balance que vendes en el Aprendiz Experto y aplicas en AMAUTA. Cómo usarlo: evidencia para un modelo híbrido de feedback en tus cursos y gancho de contenido sobre &#39;qué hace mejor la IA y qué solo el docente&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/90064" target="_blank" rel="noopener">↗ doi.org/10.2196/90064</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports · 16 jun 2026 · rct · 2026-06-16</div>
+          <div class="r10-title">PBL asistido por DeepSeek vs enseñanza tradicional en internado de oftalmología: RCT piloto (n=74) con mejores notas teóricas y razonamiento diagnóstico</div>
+          <div class="r10-line">RCT real (mide aprendizaje, no solo satisfacción): el grupo PBL-DeepSeek superó en examen teórico (p=0.003) y en Mini-CEX (interrogatorio, razonamiento diagnóstico), aunque los alumnos desconfiaron de la exactitud de la IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El combo LLM open-source + PBL será el formato IA-first dominante en LMIC por costo casi cero; Jaflo puede prototiparlo en USAMEDIC antes que la competencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-58447-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-58447-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher · 17 jun 2026 · review · 2026-06-17</div>
+          <div class="r10-title">Hacer que el trabajo en grupo funcione en profesiones de la salud: scoping (30 estudios) — el factor decisivo es el facilitador, no los alumnos</div>
+          <div class="r10-line">Contra la creencia común de que el trabajo en grupo es lo que hacen los estudiantes, la evidencia señala que el docente/facilitador y el diseño intencional son lo que hace que los grupos funcionen.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El próximo diferenciador de los cursos de Jaflo no será el contenido sino el diseño de facilitación; volver &#39;rol del facilitador&#39; un checklist medible es leverage replicable.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2687664" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2687664</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education Online · 15 jun 2026 · review · 2026-06-15</div>
+          <div class="r10-title">Coaching en educación médica de pre y posgrado: scoping de 141 artículos — domina el coaching basado en competencias, pero el reporte de reclutamiento y entrenamiento de coaches es inconsistente</div>
+          <div class="r10-line">El coaching en medicina académica creció hasta 2023; la mayoría es coaching por competencias (n=91) y bienestar del aprendiz (n=26), con barreras de tiempo, ambigüedad de rol y preparación del coachee.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El coaching por competencias se estandarizará en residencias; un programa de coaching con métricas claras es producto vendible a universidades peruanas y encaja con CBME.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/10872981.2026.2687304" target="_blank" rel="noopener">↗ doi.org/10.1080/10872981.2026.2687304</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 15 jun 2026 · review · 2026-06-15</div>
+          <div class="r10-title">Autorregulación individual y regulación socialmente compartida en aprendizaje colaborativo adaptativo: scoping (31 estudios) — la evidencia empírica en HPE es &#39;críticamente escasa&#39;</div>
+          <div class="r10-line">La regulación colaborativa es dinámica (oscila entre lo individual y lo compartido) y los sistemas adaptativos hoy soportan uno u otro proceso, casi nunca ambos; falta investigación empírica en profesiones de la salud.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La autorregulación compartida será el próximo gran tema de la neurociencia educativa; el vacío empírico en HPE es una veta de papers directa para Jaflo.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09355-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09355-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · 15 jun 2026 · review · 2026-06-15</div>
+          <div class="r10-title">DeepSeek en medicina: bibliometría + scoping (353 estudios) — 66.6% de evidencia de baja calidad y casi cero RCTs con outcomes relevantes</div>
+          <div class="r10-line">El LLM open-source DeepSeek se evaluó en 5 dominios (educación del paciente, soporte a decisión clínica, educación médica, flujo de trabajo, investigación), pero dos tercios de los estudios son de baja calidad y faltan RCTs prospectivos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vendrá una oleada de RCTs serios que separarán señal de ruido; posicionarte como la voz que exige evidencia proporcional al claim da reputación y diferenciación.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/93354" target="_blank" rel="noopener">↗ doi.org/10.2196/93354</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Heart Journal · 16 jun 2026 · review · 2026-06-16</div>
+          <div class="r10-title">Entrenamiento basado en simulación en cardiología intervencionista y cirugía cardíaca: meta-análisis (&gt;6000 participantes) — reducción de errores de 51% y effect sizes d=0.85-2.2</div>
+          <div class="r10-line">La simulación muestra mejoras técnicas de 20-40% y effect sizes grandes para adquisición de habilidad, pero persiste la brecha de demostrar mejora directa en outcomes del paciente y barreras de costo ($50k-$200k por sistema).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los effect sizes enormes de la simulación migrarán a comunicación y razonamiento clínico; Jaflo puede argumentar simulación de razonamiento dimensional con esta evidencia prestada.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/eurheartj/ehag410" target="_blank" rel="noopener">↗ doi.org/10.1093/eurheartj/ehag410</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open · 15 jun 2026 · review · 2026-06-15</div>
+          <div class="r10-title">CBL/PBL/TBL en educación en salud pública: scoping (22 estudios) — el aprendizaje activo mejora el pensamiento crítico pero choca con sobrecarga cognitiva y costo de implementación</div>
+          <div class="r10-line">Los métodos activos potencian pensamiento crítico y resolución de problemas en salud pública, pero los retos son sobrecarga cognitiva (PBL), participación inequitativa (CBL) y carga de tiempo del estudiante (TBL), más formación docente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El aprendizaje activo se expandirá a salud pública y posgrado; el cuello de botella seguirá siendo la formación docente — oportunidad de un taller AMAUTA empaquetable.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2025-108317" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-108317</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Nursing · 19 jun 2026 · review · 2026-06-19</div>
+          <div class="r10-title">Capacidad investigadora de enfermeras clínicas: scoping (79 artículos) — el liderazgo visionario y la liberación de tiempo son los facilitadores clave</div>
+          <div class="r10-line">Las barreras (falta de tiempo, formación insuficiente, cultura no investigadora) y los facilitadores (infraestructura, mentoría, liderazgo) configuran un marco multinivel con 23 intervenciones reportadas para construir capacidad investigadora.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La capacidad investigadora se volverá KPI institucional; un programa de mentoría investigadora encaja con el rol RENACYT Distinguido de Jaflo como producto de leverage.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jocn.70401" target="_blank" rel="noopener">↗ doi.org/10.1111/jocn.70401</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today · 15 jun 2026 · review · 2026-06-15</div>
+          <div class="r10-title">Fundamentos teóricos del aprendizaje en el lugar de trabajo para futuras enfermeras: scoping (35 estudios) — la teoría rara vez se explicita en el currículo de prácticas</div>
+          <div class="r10-line">Pocos currículos explicitan su base teórica; cuando lo hacen (aprendizaje sociocultural, situado, comunidades de práctica) estructuran mejor supervisión, participación y reflexión en tres dimensiones: contextual, social e individual.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La teoría explícita del aprendizaje en prácticas será requisito de acreditación; quien la sistematice primero gana ventaja curricular —terreno fértil para un framework de Jaflo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107232" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107232</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Health Policy and Planning · 18 jun 2026 · review · 2026-06-18</div>
+          <div class="r10-title">La omnipresencia del racismo en establecimientos de salud en América Latina: scoping (70 estudios, Brasil/México) — recomienda integrar marcos antirracistas en la educación médica</div>
+          <div class="r10-line">El racismo institucional, interpersonal e internalizado afecta a poblaciones indígenas, afrodescendientes y migrantes en LatAm; entre las soluciones, integrar marcos antirracistas y decoloniales en la formación médica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La equidad y los marcos decoloniales entrarán al currículo médico latinoamericano; Jaflo, como peruano con voz, puede liderar la conversación con evidencia en vez de consigna.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/heapol/czag050" target="_blank" rel="noopener">↗ doi.org/10.1093/heapol/czag050</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Velocidad sin pérdida de calidad: un RCT cegado (n=258) muestra que generar MCQ con IA (ChatGPT+Gemini) es 5.6× más rápido que con estudiantes y psicométricamente equivalente — el cuello de botella del banco de preguntas ya no es técnico, es de gobernanza humana.</li><li>La IA no escribe feedback peor, lo escribe más estructurado: superó al supervisor humano en &#39;basado en criterios&#39; (OR 11.8) y consistencia, pero perdió en juicio clínico contextual — el valor docente se desplazó del formato al sentido.</li><li>Enseñamos a indagar sin enseñar a dudar: de 103 intervenciones, casi ninguna entrena la fase de reconocer la incertidumbre, que es justo donde nace la indagación auténtica según Dewey.</li><li>El trabajo en grupo no se &#39;deja pasar&#39;, se diseña: la evidencia apunta al facilitador como variable decisiva, no a la composición del grupo — mala noticia para quien cree que juntar alumnos basta.</li><li>La ola DeepSeek/LLM en medicina es ruidosa pero hueca: 66.6% de los estudios son de baja calidad y faltan RCTs con outcomes que importen — el hype corre muy por delante de la evidencia.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuánto de mi banco qbank (ENAM/Residentado) puedo migrar a un pipeline human-in-the-loop con IA sin tocar la calidad psicométrica, y cómo lo audito objetivamente?</li><li>Si la IA ya da mejor feedback estructurado, ¿qué parte del feedback debo reservar deliberadamente para el docente humano en AMAUTA?</li><li>¿Puedo diseñar una clase del Aprendiz Experto que enseñe explícitamente a &#39;habitar la incertidumbre&#39; antes de entregar el algoritmo, al estilo deweyano?</li><li>¿Mis PBL/TBL fallan por los alumnos o porque no estoy diseñando el rol del facilitador? ¿Qué métrica de facilitación puedo medir?</li><li>¿Vale la pena un RCT propio en USAMEDIC de PBL + LLM open-source vs tradicional, dado que el formato es barato y la evidencia piloto ya es favorable?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel: &#39;La IA hace tus preguntas 5.6× más rápido y nadie nota la diferencia&#39; — RCT n=258 como dato de autoridad para vender el método qbank IA-first del Aprendiz Experto, con la advertencia de alto riesgo como cierre honesto.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/YouTube: &#39;Qué hace mejor la IA y qué solo tú&#39; — el estudio de feedback IA vs humano (n=161) como reencuadre del valor docente; gancho ético no diagnóstico para AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de educación médica de precisión: RCT en USAMEDIC de MCQ IA-asistidas (human-in-the-loop) vs autoría docente, midiendo psicometría + tiempo + transferencia al ENAM — replica el diseño de BMC Med Educ en contexto peruano.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de neurociencia educativa: &#39;Enseñar a dudar&#39; — la fase de incertidumbre deweyana como prerrequisito del razonamiento clínico, anclado en el scoping de 103 intervenciones y conectado al BMSE.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/comentario: &#39;El espejismo DeepSeek en educación médica&#39; — usar el scoping (66.6% baja calidad, cero RCTs prospectivos) para argumentar evidencia proporcional al claim y proponer estándares mínimos de reporte para LLMs en HPE.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BMC Medical Education</span><span class="tag ">Medical Teacher</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag highlight">JMIR Medical Education</span><span class="tag highlight">Medical Education Online</span><span class="tag ">Scientific Reports</span><span class="tag ">European Heart Journal</span><span class="tag ">BMJ Open</span><span class="tag ">Journal of Clinical Nursing</span><span class="tag ">Nurse Education Today</span><span class="tag ">Health Policy and Planning</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP eutils). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 20 de junio de 2026.</div>
+</div>
+</body>
+</html>
