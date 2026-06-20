@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-20 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">20 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Prog Neuropsychopharmacol Biol Psychiatry · vol. 147 (indexado jun 2026) · meta-analysis · 2026-05-13</div>
+        <h3 class="r3-title">Biomarcadores de TMS distinguen TDAH, Tourette, depresión y autismo en niños: un mapa de excitabilidad e inhibición cortical trastorno por trastorno (revisión sistemática + meta-análisis, 26 estudios)</h3>
+        <p class="r3-hook">Esta revisión sistemática con meta-análisis de 26 estudios mapea firmas electrofisiológicas de estimulación magnética transcraneal (TMS) trastorno por trastorno en menores: el TDAH muestra SICI aumentado y periodo de silencio cortical (CSP) acortado; Tourette, CSP reducido; depresión mayor, CSP disminuido con facilitación intracortical aumentada e inhibición de intervalo largo debilitada; autismo y parálisis cerebral, asimetría interhemisférica atípica. Para tu línea de psiquiatría de precisión y tu apuesta por TDAH/TEA/neurodivergencia esto es oro: un biomarcador no invasivo y multidimensional de excitabilidad/inhibición cortical que se lee como un patrón RDoC traducido a neurofisiología — el tipo de evidencia mecanística que el BMSE/razonamiento dimensional necesita para anclar &#39;qué circuito está roto&#39; por encima de la etiqueta DSM. Úsalo como caso paradigmático en el book-neurociencia-educativa y en el curso Aprendiz Experto para enseñar cómo un marcador como el CSP separa fenotipos, y en consulta/docencia como argumento de por qué la neuromodulación no es one-size-fits-all. Cuidado con el hype: la propia revisión lo marca como evidencia preliminar, sin umbrales diagnósticos validados aún.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111735" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111735</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JAMA Psychiatry · 17 jun 2026 · rct · 2026-06-17</div>
+        <h3 class="r3-title">La interocepción gastrointestinal predice recaída en anorexia nerviosa restrictiva ya recuperada de peso (ensayo cruzado aleatorizado con cápsula vibrante + modelado computacional, n=62 AN / 57 controles)</h3>
+        <p class="r3-hook">En este ensayo cruzado, simple ciego y aleatorizado, mujeres con anorexia restrictiva ya restauradas de peso tragaron una cápsula vibrante que estimuló el intestino mientras se medía detección perceptual, EEG, fisiología y modelado computacional. Frente a controles sanas, las pacientes detectaban peor las señales gástricas (d=-0.98), tenían &#39;priors&#39; maladaptativos y aprendizaje rígido — y, clave, esos marcadores interoceptivos predijeron recaída a 6 meses (priors OR=3.8; sesgo de respuesta OR=5.4; malestar gástrico OR=5.7). Esto es exactamente tu terreno de psiquiatría dimensional y RDoC: el dominio de interocepción dejando de ser teoría y volviéndose un marcador predictivo medible con una sonda ingerible escalable. Material de primera para el BMSE/razonamiento dimensional (interocepción como eje transdiagnóstico) y para un capítulo del book-psicopato sobre cómo el cuerpo, no el peso, manda en el pronóstico; en clínica, abre la pregunta de monitorizar respuesta a tratamiento con biomarcadores de bajo costo.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1301" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1301</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">JAMA Psychiatry · 17 jun 2026 · meta-analysis · 2026-06-17</div>
+        <h3 class="r3-title">Avatar therapy lidera entre las intervenciones psicológicas para alucinaciones auditivas en esquizofrenia (revisión sistemática + meta-análisis de 23 RCTs, n=2016)</h3>
+        <p class="r3-hook">Meta-análisis de 23 RCTs (2016 participantes, 5 enfoques terapéuticos): las intervenciones psicológicas dirigidas a alucinaciones auditivas en esquizofrenia reducen su severidad de forma modesta global (SMD -0.18; NNT 16; GRADE bajo), pero el subanálisis muestra a la avatar therapy — darle voz y rostro digitales a la &#39;voz&#39; para que el paciente la confronte — con el mayor tamaño de efecto (SMD -0.37) y alta tolerabilidad. Para ti conecta tres pilares: psiquiatría dimensional (las voces como fenómeno graduable, no binario), ai-enhancement (una terapia mediada por tecnología/avatar que escala) y content-documentation (es un gancho visual brutal para IG/YouTube de JafloMD). Aprovéchalo como pieza de divulgación &#39;la terapia donde le hablas a tu alucinación&#39; y como ejemplo en clase USAMEDIC de cómo leer un meta-análisis con GRADE bajo sin sobrevender; ojo con la certeza baja y la heterogeneidad entre enfoques al comunicarlo.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1443" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1443</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JAMA Psychiatry · 17 jun 2026 · review · 2026-06-17</div>
+          <div class="r10-title">Los determinantes sociales se &#39;incrustan&#39; en el cerebro psicótico: adversidad temprana, pobreza y racismo ligados a adelgazamiento cortical y menor conectividad en el espectro esquizofrénico (revisión sistemática, 114 estudios, n=10 921)</div>
+          <div class="r10-line">114 estudios y casi 11 000 participantes muestran evidencia fuerte de que la adversidad social (trauma temprano sobre todo, también desconexión, racismo, pobreza, inseguridad alimentaria) se asocia a anomalías estructurales, funcionales y neuroquímicas a lo largo del curso de la esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el exposoma social entrará al marco HiTOP/network como nodo causal medible; capitalízalo en el book-psicopato y en un carrusel sobre &#39;por qué el código postal moldea el cerebro psicótico&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1312" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1312</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychotherapy and Psychosomatics · 19 jun 2026 · meta-analysis · 2026-06-19</div>
+          <div class="r10-title">Ketamina + psicoterapia para TEPT: la severidad basal es el predictor más robusto de mejoría, no la ruta ni la dosis (revisión sistemática + meta-análisis de datos individuales, 12 estudios, n=533)</div>
+          <div class="r10-line">IPDMA de 12 estudios: a mayor severidad inicial de TEPT, mayor reducción sintomática; intensidad de sesiones y timing podrían importar, pero 9/12 estudios fueron de baja calidad y solo la severidad basal sobrevivió el análisis de sensibilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la psiquiatría de precisión psicodélica se moverá a estratificar por severidad basal; material directo para una clase de razonamiento clínico sobre &#39;a quién sí, a quién todavía no&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1159/000553144" target="_blank" rel="noopener">↗ doi.org/10.1159/000553144</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Prog Neuropsychopharmacol Biol Psychiatry · vol. 147 (indexado jun 2026) · meta-analysis · 2026-05-08</div>
+          <div class="r10-title">Firma metabolómica de la depresión: glutamato y aspartato elevados, glicina/glutamina/taurina/BCAA reducidos (meta-análisis de 11 datasets sanguíneos, 1050 muestras, 1111 metabolitos)</div>
+          <div class="r10-line">42 metabolitos alterados convergen en desbalance excitación-inhibición (glutamatérgico), metabolismo de aminoácidos aromáticos/ramificados y energía — una huella biológica candidata para diagnóstico y tratamiento de la depresión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza el caso glutamatérgico (ketamina y derivados); úsalo como evidencia biológica en el capítulo de depresión del book-psicopato y en contenido sobre &#39;la depresión también es metabólica&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111737" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111737</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Translational Psychiatry · 19 jun 2026 · review · 2026-06-19</div>
+          <div class="r10-title">La depresión apaga los sentidos: hiposensibilidad en los cinco canales como correlato y posible &#39;escape&#39; funcional (revisión sistemática narrativa, 51 estudios)</div>
+          <div class="r10-line">Primera síntesis de los cinco sentidos: vista, oído, gusto, tacto y olfato muestran hiposensibilidad concurrente con depresión mayor, reinterpretable como un retiro funcional de un entorno nocivo más que como simple daño.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ángulo dimensional/RDoC fresco y pegajoso para IG (&#39;la depresión te baja el volumen del mundo&#39;); raro pero memorable, ideal para un reel de JafloMD.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41398-026-04165-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04165-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · 18 jun 2026 · rct · 2026-06-18</div>
+          <div class="r10-title">Una intervención digital momentánea guiada por coach con IA NO movió el afecto ni el estrés en jóvenes (microensayo aleatorizado, 170 participantes, 13 059 evaluaciones)</div>
+          <div class="r10-line">El entrenamiento digital AI4U (compasión, EMA/EMI) no mostró efecto proximal sobre afecto positivo, negativo ni estrés tras iniciar los componentes — un null grande y honesto en mHealth juvenil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el null importa — la IA en salud mental juvenil necesita dosis y timing correctos, no solo notificaciones; honestidad que distingue tu marca frente al hype de apps en el negocio Aprendiz Experto.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/85552" target="_blank" rel="noopener">↗ doi.org/10.2196/85552</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Prog Neuropsychopharmacol Biol Psychiatry · vol. 147 (indexado jun 2026) · meta-analysis · 2026-04-28</div>
+          <div class="r10-title">La autoconexión aberrante del putamen izquierdo predice la severidad de la dependencia a la nicotina (meta-análisis de neuroimagen + modelado causal dinámico espectral, 66 fumadores / 54 controles)</div>
+          <div class="r10-line">Integrando meta-análisis de volumen de materia gris con spDCM, la conectividad efectiva entre regiones estructuralmente alteradas — y sobre todo la autoconexión del putamen — funciona como biomarcador predictivo de la gravedad de la adicción.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: network theory aplicada a adicciones ganará tracción; nodo para un post sobre &#39;el cerebro adicto como red mal cableada, no como antojo de voluntad&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111726" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111726</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Prog Neuropsychopharmacol Biol Psychiatry · vol. 147 (indexado jun 2026) · review · 2026-04-22</div>
+          <div class="r10-title">El retraso del lenguaje expresivo es un trastorno del neurodesarrollo con cascada neural y valor predictivo (revisión sistemática de EEG y neuroimagen, 16 estudios)</div>
+          <div class="r10-line">EEG muestra una cascada (gamma frontal aumentada, MMN reducida, PMN ausente, N400 alterada) y la neuroimagen una red perisilviana atípica; estas firmas predicen el desenlace lingüístico posterior y empujan a un enfoque de medicina de precisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: abre la puerta a neuromodulación temprana guiada por circuito en neurodesarrollo; relevante a tu línea de neurodivergencia y a un módulo del curso sobre marcadores tempranos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111719" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111719</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">British Journal of Psychiatry · 16 jun 2026 · review · 2026-06-16</div>
+          <div class="r10-title">Ética de las tecnologías diagnósticas para causas raras de psicosis: justicia, responsabilidad moral y consecuencias no buscadas (revisión multidisciplinaria)</div>
+          <div class="r10-line">Cerca del 5% de las psicosis de primer episodio tienen causas raras y a veces reversibles detectables con punción lumbar, neuroimagen especializada o test genético; usar (o no) estas tecnologías plantea dilemas de justicia diagnóstica, deber de saber los red flags y &#39;exceptionalismo psiquiátrico&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: tema ideal para tu Comité de Ética HVLH y una clase de razonamiento bayesiano en psicosis; ensayo sobre cuándo el work-up de lo raro ayuda y cuándo daña.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10675" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10675</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry · 18 jun 2026 · meta-analysis · 2026-06-18</div>
+          <div class="r10-title">Conducta suicida en estudiantes etíopes: ideación 19.3% e intento 9.0%, con decepción académica y antecedente familiar como factores fuertes (revisión sistemática + meta-análisis)</div>
+          <div class="r10-line">Pooled de 12 estudios (ideación) y 10 (intento): apoyo social pobre, depresión, antecedente familiar de suicidio y decepción con el rendimiento académico se asocian a ambos; ser mujer y ansiedad, solo a ideación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: aunque es LMIC, el patrón &#39;decepción académica → riesgo&#39; es transferible a tu población ENAM/residentado; vale tamizar riesgo en cohortes USAMEDIC bajo alta presión de examen.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08320-6" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08320-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Lancet Psychiatry · 18 jun 2026 · editorial · 2026-06-18</div>
+          <div class="r10-title">Comunicación, expectativa y respuesta placebo en el diseño de ensayos clínicos</div>
+          <div class="r10-line">Carta que argumenta cómo la forma de comunicar y las expectativas del participante modulan la respuesta placebo y, por tanto, la lectura de eficacia en ensayos — el placebo como variable de diseño, no como ruido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: directriz metodológica para tus propios protocolos y para enseñar lectura crítica; convierte el manejo de expectativas en un punto explícito de tus diseños y de tus clases de metodología.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/S2215-0366(26)00159-8" target="_blank" rel="noopener">↗ doi.org/10.1016/S2215-0366(26)00159-8</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En TEPT con ketamina + psicoterapia, lo que más predice mejoría no es la ruta ni la dosis: es qué tan severo llegó el paciente. La gravedad basal manda como estratificador (JAMA/Psychother Psychosom, IPDMA).</li><li>La depresión no solo baja el ánimo: apaga los cinco sentidos, y esa hiposensibilidad podría ser un escape adaptativo del entorno, no solo daño colateral.</li><li>Avatar therapy — hacerle hablar a la voz que el paciente escucha — superó a todas las demás psicoterapias para alucinaciones auditivas (SMD -0.37) en datos de JAMA Psychiatry.</li><li>Biomarcador &#39;de panza&#39;: en anorexia ya recuperada de peso, qué tan mal detecta el paciente su propio estómago (priors interoceptivos rígidos) predijo recaída con OR cercano a 5.</li><li>En jóvenes, una app guiada por coach con IA no movió la aguja del afecto momentáneo: el recordatorio de que la dosis y el timing, no la tecnología, deciden el efecto.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el periodo de silencio cortical diferencia TDAH de Tourette de depresión en niños, ¿cuándo deja de ser hallazgo de grupo y se vuelve umbral clínico usable en consulta?</li><li>¿La interocepción gastrointestinal es un blanco terapéutico en trastornos alimentarios (entrenamiento interoceptivo) o solo un marcador de riesgo de recaída?</li><li>¿La firma metabolómica glutamatérgica de la depresión identifica al subgrupo que responde a ketamina/glutamatérgicos, o es ruido transdiagnóstico?</li><li>Si la adversidad social se &#39;incrusta&#39; en el cerebro psicótico, ¿qué intervención estructural —no farmacológica— tendría el mayor efecto sobre la neurobiología?</li><li>¿Cuánto del beneficio de las psicoterapias para voces es efecto específico vs. expectativa/placebo bien comunicado en el diseño del ensayo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG JafloMD: &#39;Avatar therapy: la terapia donde le hablas a tu alucinación&#39; — cómo una terapia mediada por tecnología le ganó a las demás para voces, con la advertencia honesta de GRADE bajo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/screencast Aprendiz Experto: &#39;La depresión te apaga los sentidos&#39; — hiposensibilidad sensorial como ventana RDoC explicada en 45 segundos.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-revisión/comentario dimensional uniendo interocepción (anorexia), hiposensibilidad sensorial (depresión) y excitabilidad cortical por TMS (neurodesarrollo) como evidencia convergente de fenotipos RDoC accionables.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del book-psicopato: &#39;El exposoma social del cerebro psicótico&#39; usando la revisión JAMA Psychiatry de determinantes sociales + neurobiología en esquizofrenia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase USAMEDIC de razonamiento clínico: caso de ética en psicosis de primer episodio — cuándo pedir punción lumbar/neuroimagen/genética y la justicia diagnóstica detrás.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JAMA Psychiatry</span><span class="tag highlight">Lancet Psychiatry</span><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">Psychotherapy and Psychosomatics</span><span class="tag ">Translational Psychiatry</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">BMC Psychiatry</span><span class="tag ">BMC Psychology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP search_articles + get_article_metadata). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 20 de junio de 2026.</div>
+</div>
+</body>
+</html>
