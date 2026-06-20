@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-06-20 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">20 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">193</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">57</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Brain Informatics · 2026-06-19 · review</div>
+        <h3 class="r3-title">RDoC-informed explainable AI as a paradigm for multilevel Alzheimer&#39;s disease diagnosis and progression prediction: a systematic review</h3>
+        <p class="r3-hook">Esta revisión sistemática propone exactamente la fusión que tú llevas años empujando: montar la IA explicable (XAI) sobre el andamiaje dimensional de RDoC, mapeando genes/APOE, biomarcadores amiloide-tau, atrofia, hipometabolismo PET, qEEG y marcadores digitales sobre unidades de análisis (Sistemas Cognitivos, Valencia Negativa, Arousal). Para ti es doble palanca: toca de lleno precision-psychiatry y ai-enhancement, y es un caso de uso listo para robar al BMSE/razonamiento dimensional — el diagnóstico multinivel de demencias enseñado como pipeline RDoC×XAI, no como checklist DSM. Úsalo como columna de un capítulo o de una clase de Aprendiz Experto sobre &#39;cómo la IA razona en niveles&#39; y como semilla de un paper de posición que extienda el marco del Alzheimer al espectro psiquiátrico completo. Es el ítem más alineado con tu tesis dimensional de toda la ventana.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s40708-026-00310-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s40708-026-00310-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Prog Neuropsychopharmacol Biol Psychiatry · vol 147 (indexado 2026-06) · review · 2026-04-15</div>
+        <h3 class="r3-title">Chronobiological disruption in ADHD: Developmental mechanisms linking sleep, behavior, and comorbid conditions</h3>
+        <p class="r3-hook">Revisión integradora que cruza disfunción dopaminérgica con desalineación circadiana en TDAH, implicando a CRY1 como nodo que liga sueño, regulación emocional y comorbilidad metabólica (obesidad, ánimo, uso de sustancias). Es directo al wedge de neurodivergencia adulta del book-psicopato y al pilar kinobody-selfcare: la cronoterapia alineada al cronotipo (luz, melatonina, higiene de sueño) aparece como intervención tratable y estratificable, no como consejo genérico. Sirve para un carrusel/reel sobre &#39;tu TDAH es también un reloj descalibrado&#39; y como base clínica de una oferta de precisión para adultos neurodivergentes. Conecta tu Foundation (sueño) con tu línea de psiquiatría dimensional en una sola pieza.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111700" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111700</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Biological Psychiatry · 2026-06-19 · review</div>
+        <h3 class="r3-title">Antipsychotic drug action, novel treatment targets, and the failure of current clinical trial designs in evaluating new target molecules</h3>
+        <p class="r3-hook">Grace y Uliana arman la mejor síntesis reciente del modelo de hiperactividad hipocampal → desregulación dopaminérgica en esquizofrenia, y lanzan una bomba metodológica: ensayos de moléculas nuevas (pomaglumetad) pudieron fallar no por falta de eficacia sino por exposición previa a antagonistas D2 que generó supersensibilidad postsináptica. Para tu voz crítica y tu línea de razonamiento/research es oro: el historial de tratamiento del paciente es covariable de diseño, no ruido. Úsalo como caso en el BMSE para enseñar &#39;por qué los RCT psiquiátricos fracasan&#39; y como ángulo de un comentario sobre diseño de ensayos en psiquiatría de precisión. Es de Biological Psychiatry y de las 24h — material premium para divulgación de alto nivel.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.biopsych.2026.06.010" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.06.010</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">iScience · vol 29(6) (indexado 2026-06) · network-meta-analysis · 2026-04-17</div>
+        <h3 class="r3-title">A comparative study of five telerehabilitation therapies for improving core symptoms in stroke patients: A network meta-analysis (2,833 patients)</h3>
+        <p class="r3-hook">NMA de 2.833 pacientes que ranquea cinco telerrehabilitaciones tras ictus: realidad virtual remota lidera marcha (SUCRA 92,4%) y recuperación de miembro superior, brain-computer interface domina control motor fino (SUCRA 87,6%) y el exoesqueleto puntea calidad de vida. Encaja en tu foco secundario de neuropsiquiatría y en tu interés por neuromodulación/tecnología: el mensaje es &#39;selección precision-targeted por objetivo funcional&#39;, no terapia única para todos. Sírvelo como caso didáctico de &#39;cómo leer un SUCRA en 8 minutos&#39; para Aprendiz Experto y como ejemplo de medicina de precisión aplicada a rehabilitación. Nota honesta: hoy la cosecha de NMA en psiquiatría/neuropsiquiatría fue delgada — este es el ítem real y sólido de la categoría.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.isci.2026.115774" target="_blank" rel="noopener">↗ doi.org/10.1016/j.isci.2026.115774</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Indian Pediatrics (sobre guía AHA/ASA 2026) · 2026-06-19 · guideline</div>
+        <h3 class="r3-title">American Heart Association/American Stroke Association 2026 Guideline for the Early Management of Patients with Acute Ischemic Stroke: Pediatric Perspective</h3>
+        <p class="r3-hook">Body normativo de peso (AHA/ASA): por primera vez la guía 2026 de manejo temprano del ictus isquémico incorpora recomendaciones pediátricas basadas en evidencia, y este artículo destila las diferencias clave frente a otras guías de stroke pediátrico. Para tu radar de neuropsiquiatría secundaria es la actualización normativa del día, y para amauta-education es munición directa de razonamiento clínico para ENAM/Residentado (manejo agudo, trombólisis, trombectomía). Úsalo como anclaje de una clase de actualización y como recordatorio de que &#39;guía nueva o actualizada sube al top&#39;. Marca: emisor normativo (AHA/ASA).</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s13312-026-00376-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s13312-026-00376-7</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Current Opinion in Neurology · 2026-06-17 · guideline</div>
+        <h3 class="r3-title">Multimodal mapping of balance dysfunction in Parkinson&#39;s disease: a consensus roadmap for research and intervention</h3>
+        <p class="r3-hook">Consenso Delphi (≥80% acuerdo) de un taskforce interdisciplinario que ordena el caos metodológico del balance en Parkinson a través de cuatro dominios (video-oculografía/vHIT, VEMPs, posturografía, paradigmas perceptuales) y prioriza medidas de capacidad reactiva sobre el sway. Toca tu foco de neuropsiquiatría (trastornos del movimiento) y modela algo que te interesa como método: cómo un campo fragmentado se normatiza vía consenso + datasets mínimos compartidos. Útil como ejemplo en docencia de &#39;cómo se construye un estándar&#39; y como referencia si tocas síntomas neuropsiquiátricos de la enfermedad de Parkinson. Marca: consenso (modified Delphi).</p>
+        <a class="r3-link" href="https://doi.org/10.1097/WCO.0000000000001502" target="_blank" rel="noopener">↗ doi.org/10.1097/WCO.0000000000001502</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">npj Digital Medicine · 2026-06-19 · guideline</div>
+        <h3 class="r3-title">Young people&#39;s perceptions and recommendations for conversational generative AI in youth mental health</h3>
+        <p class="r3-hook">Recomendaciones co-diseñadas (grupo de Hickie, Brain and Mind Centre) con 32 jóvenes sobre chatbots de IA generativa en salud mental juvenil — no es una guía clínica formal, sino un consenso de stakeholders con cuatro ejes accionables: humanizar la IA sin deshumanizar el cuidado, transparencia (&#39;qué hay bajo el capó&#39;), encaje contextual y apropiación segura. Para ti cruza ai-enhancement, salud mental y tu rol en comités de ética (HVLH): es plantilla directa de qué salvaguardas exigir si un protocolo introduce IA conversacional con pacientes. Úsalo como esqueleto de una nota de posición sobre gobernanza de chatbots en salud mental y como contenido sobre &#39;IA en psiquiatría sin perder lo humano&#39;. Cuídalo como consenso/recomendaciones, no como CPG.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41746-026-02888-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41746-026-02888-9</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Prog Neuropsychopharmacol Biol Psychiatry · vol 147 (indexado 2026-06) · meta-analysis · 2026-05-08</div>
+        <h3 class="r3-title">Meta-analysis of blood metabolomics reveals dysregulated amino acid, neurotransmitter, and energy pathways in depression</h3>
+        <p class="r3-hook">Meta-análisis que integra 11 datasets de metabolómica sanguínea (1.050 muestras, 1.111 metabolitos) y encuentra firma consistente en depresión: glutamato, aspartato y cuerpos cetónicos elevados; glicina, glutamina, taurina y aminoácidos ramificados reducidos. Es precision-psychiatry pura: apunta a un biomarcador periférico para una enfermedad aún diagnosticada por conducta, no por biología. Úsalo para tu argumento de fondo en el book-psicopato (la psicopatología necesita anclas medibles) y como base de un carrusel sobre &#39;la depresión también se ve en sangre&#39;. Conecta con tu interés en HiTOP/RDoC: la heterogeneidad metabólica refuerza que &#39;depresión&#39; es un paraguas, no un fenotipo único.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111737" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111737</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Prog Neuropsychopharmacol Biol Psychiatry · vol 147 (indexado 2026-06) · meta-analysis · 2026-05-13</div>
+        <h3 class="r3-title">TMS-biomarkers discovery in children and adolescents with neurological disorders: A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Síntesis de 26 estudios que mapea biomarcadores electrofisiológicos por TMS en pediatría: TDAH muestra SICI aumentado y período de silencio cortical (CSP) acortado; Tourette CSP reducido; depresión CSP disminuido con facilitación intracortical elevada; y asimetría interhemisférica atípica en TEA. Triple jackpot para ti: neuromodulación + neurodivergencia + población infanto-juvenil, justo el corazón de tu línea dimensional. Es evidencia preliminar (los autores lo subrayan), así que úsalo con calibración: ideal para enseñar &#39;biomarcador prometedor ≠ biomarcador clínico&#39; en el BMSE y para contenido sobre excitabilidad cortical como ventana objetiva a la neurodivergencia. Buen insumo para un ángulo de paper sobre fenotipado neurofisiológico.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111735" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111735</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Respiratory Medicine · 2026-06-19 · meta-analysis</div>
+        <h3 class="r3-title">Acute Respiratory Distress Syndrome and Delirium: A Systematic Review and Meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis (PROSPERO, 13 estudios, 10.052 pacientes) que estima delirium en 41% de pacientes con SDRA, pero el riesgo relativo frente a control NO alcanzó significancia (RR 1,34; IC 0,63-2,83) con heterogeneidad sustancial. Esa disociación —prevalencia altísima, asociación no concluyente— es una perla metodológica perfecta para tu razonamiento clínico: prevalencia no es causalidad, y el delirium queda en tu foco de neuropsiquiatría (interfaz UCI). Úsalo como caso de enseñanza de lectura crítica para ENAM/Residentado y como ejemplo en el BMSE de cómo un I² alto desinfla una conclusión aparentemente robusta. El mensaje accionable real: minimizar sedación y movilización temprana, aunque la causalidad siga abierta.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.rmed.2026.108982" target="_blank" rel="noopener">↗ doi.org/10.1016/j.rmed.2026.108982</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Pronosticar respuesta a antidepresivos por genética sigue siendo promesa incumplida: los hallazgos de gen candidato (SLC6A4) se disolvieron con la replicación, y lo único clínicamente accionable hoy es la farmacocinética (CYP2D6/2C19/2B6 para dosificación), no la predicción de eficacia (rev. Lyndon, Harvard, DOI 10.1016/j.pnpbp.2026.111738). Vende farmacocinética, no eficacia.</li><li>Grace lanza la covariable olvidada de los ensayos psiquiátricos: moléculas nuevas como pomaglumetad pudieron fracasar por exposición PREVIA a antagonistas D2 (supersensibilidad postsináptica), no por inefectividad — el historial de tratamiento es diseño, no ruido (DOI 10.1016/j.biopsych.2026.06.010).</li><li>Delirium aparece en 41% del SDRA, pero el RR vs control no fue significativo (1,34; IC 0,63-2,83): prevalencia altísima ≠ asociación causal. Perla de lectura crítica lista para tu módulo de razonamiento (DOI 10.1016/j.rmed.2026.108982).</li><li>En el dlPFC de primate, los microcircuitos de capa III que sostienen memoria de trabajo dependen de NMDA + acetilcolina (no AMPA) y se &#39;apagan&#39; bajo estrés/inflamación abriendo canales de K+ en las espinas; múltiples genotipos de esquizofrenia convergen en debilitar las MISMAS espinas → un fenotipo compartido (Arnsten, DOI 10.1016/j.biopsych.2026.06.008). Argumento dimensional/RDoC de primera.</li><li>El TDAH como reloj descalibrado: CRY1 y la desalineación circadiana ligan el trastorno con obesidad, ánimo y uso de sustancias, y la cronoterapia alineada al cronotipo individual (luz, melatonina, sueño) es palanca tratable y estratificable (DOI 10.1016/j.pnpbp.2026.111700) — Foundation + neurodivergencia en una sola jugada.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Puede un marco RDoC + XAI (DOI 10.1186/s40708-026-00310-4) volverse el backbone del BMSE/razonamiento dimensional para enseñar diagnóstico multinivel —no solo en demencias, sino en psicosis y neurodivergencia— a residentes?</li><li>En mi práctica, ¿qué fracción de &#39;no respondedores&#39; a antidepresivos es farmacocinética (metabolizadores CYP) versus farmacodinámica, y conviene un panel CYP antes que perseguir biomarcadores de eficacia que aún no existen?</li><li>Si el delirium aparece en 41% del SDRA pero sin RR significativo, ¿cómo enseño la diferencia prevalencia↔asociación↔causalidad como objeto de aprendizaje explícito en el módulo de razonamiento clínico?</li><li>¿Cómo deberían las guías de salud mental juvenil incorporar chatbots de IA generativa (DOI 10.1038/s41746-026-02888-9) sin deshumanizar el cuidado, y qué salvaguardas mínimas exigiría yo en un protocolo del Comité de Ética del HVLH?</li><li>¿Es la cronoterapia alineada al cronotipo en TDAH adulto un wedge clínico monetizable y diferenciado para el negocio digital de neurodivergencia adulta del book-psicopato?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel JafloMD: &#39;Por qué tu antidepresivo no funciona — 1 de cada 3 veces es tu hígado (CYP), no tu cerebro&#39;. Traduce la revisión de farmacogenómica a divulgación honesta: lo accionable hoy es la dosis (farmacocinética), no la promesa de predecir eficacia.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición/perspective: extender el marco RDoC + IA explicable (publicado para Alzheimer) como estándar de razonamiento diagnóstico dimensional aplicado al espectro psiquiátrico completo, con HiTOP como capa de organización fenotípica. Aterriza tu tesis dimensional en un formato publicable.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE/razonamiento dimensional usando el caso &#39;delirium en SDRA&#39; (prevalencia 41% sin RR significativo) para enseñar prevalencia ≠ asociación ≠ causalidad, lectura de I² y certeza GRADE, con el lector resolviendo el sesgo antes de la respuesta.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clip Aprendiz Experto: &#39;Cómo leer una network meta-analysis en 8 minutos&#39; usando el NMA de telerrehabilitación de ictus (SUCRA, ranking por objetivo funcional). Método + IA, formato screencast, con plantilla descargable para interpretar SUCRA.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Scoping review / paper de precisión sobre cronoterapia en TDAH adulto como intervención estratificada por cronotipo (base: revisión CRY1/circadiano), sirviendo a la vez de evidencia para la oferta clínica de neurodivergencia adulta.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Biological Psychiatry (2 revisiones de alto nivel: Grace sobre antipsicóticos, Arnsten sobre circuitos corticales)</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry (vol 147: ADHD circadiano, metabolómica en depresión, TMS pediátrico)</span><span class="tag ">npj Digital Medicine (recomendaciones de IA generativa en salud mental juvenil)</span><span class="tag ">Current Opinion in Neurology (consenso Delphi de balance en Parkinson)</span><span class="tag ">Brain Informatics (revisión sistemática RDoC + XAI en Alzheimer)</span><span class="tag ">Respiratory Medicine (meta-análisis SDRA-delirium)</span><span class="tag ">iScience (NMA de telerrehabilitación de ictus)</span><span class="tag ">AHA/ASA — emisor normativo (guía 2026 de ictus isquémico agudo, perspectiva pediátrica)</span><span class="tag ">ASAM — emisor normativo (consensus standards SUD en hospitales/ED, activo esta semana)</span><span class="tag ">British Journal of Sports Medicine (consenso Delphi salud mental en tenis, activo esta semana)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 20 de junio de 2026.</div>
+</div>
+</body>
+</html>
