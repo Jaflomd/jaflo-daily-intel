@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-06-20 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">20 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">44</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Mood and Anxiety Disorders · 2 jun 2026 (Magnus Medical / Nolan Williams, Stanford) · paper · 2026-06-02</div>
+        <h3 class="r3-title">Real-world evidence of SAINT® effectiveness in a heterogenous clinical population with psychiatric and medical comorbidities: A multicenter, open-label, community-based study</h3>
+        <p class="r3-hook">Magnus Medical y el grupo de Nolan Williams publican el mayor cohorte de mundo real de SAINT —iTBS acelerado guiado por conectividad funcional individual— en 101 pacientes con depresión resistente atendidos en 7 clínicas comunitarias de EE.UU.: 68.3% quedaron &#39;mucho mejor&#39; (CGI-I ≤ 2) en 5 días y 89% lograron beneficio clínico, sin abandonos por tolerabilidad y sin que la severidad basal ni el sitio cambiaran la respuesta. Para Javier esto es el corazón de su línea red × neuromodulación y de precision-psychiatry: la novedad no es &#39;el TMS funciona&#39; sino que el blanco se elige por el conectoma propio de cada paciente (DLPFC anticorrelacionado al cíngulo subgenual) y aun así escala fuera del laboratorio. Es la prueba de que la psiquiatría de precisión guiada por red ya salió del paper y entró a la práctica privada, justo el argumento que necesita para su libro de psicopatología y para contenido de &#39;el futuro del tratamiento&#39;. Úsalo como pieza ancla para una clase sobre neuromodulación personalizada y como contraste honesto: es open-label, no RCT, así que enseña también dónde poner el asterisco de evidencia proporcional al claim.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.xjmad.2026.100184" target="_blank" rel="noopener">↗ doi.org/10.1016/j.xjmad.2026.100184</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychological Medicine · 19 jun 2026 (West China Hospital, Sichuan) · paper · 2026-06-19</div>
+        <h3 class="r3-title">Schizophrenia and bipolar disorder: a comparative analysis of genetic and brain network connectivity</h3>
+        <p class="r3-hook">Este grupo de West China descompone con GWIS la arquitectura genética compartida y específica de esquizofrenia y trastorno bipolar, y la cruza con conectividad funcional y estructural de redes en reposo del UK Biobank usando inferencia causal para estimar direccionalidad. El hallazgo fuerte: la conectividad estructural dentro del DMN tiene efectos OPUESTOS en SCZ vs BD pese a su solapamiento clínico, mientras la red límbica y el control frontotemporal aparecen como sustratos transdiagnósticos con relación causal candidata. Para Javier es munición dimensional de primer nivel: el mismo nodo de red puede empujar en sentidos contrarios según el trastorno, lo que sostiene su tesis de que HiTOP/RDoC necesitan separar lo compartido de lo específico a nivel de circuito, no de etiqueta DSM. Aterrízalo en su capítulo de psicopatología dimensional y en una clase para residentes sobre por qué &#39;esquizofrenia y bipolar se parecen pero su cerebro no&#39;, y guárdalo como referencia metodológica de imaging genetics + causalidad.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726104413" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726104413</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · jun 2026 (Southwest University) · paper · 2026-06-06</div>
+        <h3 class="r3-title">Subregion-specific insular dysconnectivity in internet gaming disorder: From macroscale network abnormalities to transcriptomic and cellular substrates</h3>
+        <p class="r3-hook">En 71 pacientes con trastorno por videojuegos y 80 controles, este grupo de Southwest University mapea la conectividad de seis subregiones insulares y la decodifica contra el Allen Human Brain Atlas: la ínsula anterior dorsal se sobreconecta con el paracingulado y se desconecta del polo frontal, alterando la coordinación salience–DMN–ejecutivo, y la severidad clínica escala con el circuito ínsula dorsal derecha–paracingulado. Lo elegante es que ligan esa disconectividad macroescala a firmas transcripcionales y celulares en ventanas del desarrollo (infancia, adolescencia, adultez joven), declarando explícitamente que extiende el modelo de triple red a la adicción conductual. Para Javier esto es triple red en estado puro y la ínsula como switch de Menon: el síntoma adictivo no vive en un área sino en el fallo de conmutación entre redes, su tesis recurrente. Úsalo como ejemplo clínico del circuito salience↔DMN↔ejecutivo en clase y como columna de contenido sobre &#39;por qué enganchan las pantallas: es la ínsula que no conmuta&#39;, con el puente extra de mecanismo molecular para no quedarte en correlación.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111771" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111771</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 17 jun 2026 (Teicher, Harvard / McLean) · paper · 2026-06-17</div>
+          <div class="r10-title">Opposing sensitive period effects of early and late childhood maltreatment on corticolimbic responses in fear conditioning</div>
+          <div class="r10-line">Teicher y cols. (n = 213) muestran con un marco causal (TMLE + selección de características) que el maltrato temprano agudiza la discriminación amenaza-seguridad y el acoplamiento amígdala–vmPFC, mientras el maltrato tardío la embota: dos ventanas de sensibilidad con firmas corticolímbicas opuestas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La psicopatología del trauma se fechará por ventana de exposición y no por &#39;dosis total&#39;; predigo intervenciones cronometradas al período sensible — semilla directa para tu marco dimensional del desarrollo y tu contenido de neurodivergencia/ACEs.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03689-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03689-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · jun 2026 (Kunming + Brainnetome) · paper · 2026-06-02</div>
+          <div class="r10-title">Synergistic-redundant dysfunction in autism spectrum disorder: Heterogeneity and molecular mechanisms</div>
+          <div class="r10-line">En 842 personas con TEA y 933 controles, la descomposición de información integrada revela que las interacciones sinérgicas crecen con la edad y las redundantes siguen una U invertida (pico en adolescencia), ancladas a sistemas dopaminérgico/GABAérgico y a astrocitos/microglía.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La heterogeneidad del TEA se leerá como balance sinergia–redundancia dependiente de la edad, no como un déficit fijo; predigo biomarcadores informacionales por etapa — ángulo directo para tu wedge de neurodivergencia y desarrollo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111765" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111765</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Dialogues in Clinical Neuroscience · 18 jun 2026 (Asan Medical Center, Seúl) · paper · 2026-06-18</div>
+          <div class="r10-title">Mapping topological abnormalities in cortical similarity networks to schizophrenia-associated gene expression</div>
+          <div class="r10-line">Con redes de similaridad cortical en 1.216 participantes, la esquizofrenia muestra centralidad reducida en nodos de salience (cíngulo anterior), DMN (cíngulo posterior), ínsula y visual, y esos patrones mapean a genes de transporte de iones metálicos sobreexpresados en la adolescencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La disconectividad estructural de la SCZ se anclará a programas genéticos del neurodesarrollo adolescente; predigo que la imaging transcriptomics será estándar para fechar el origen del circuito — referencia para tu biblioteca de mecanismos de red.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/19585969.2026.2682773" target="_blank" rel="noopener">↗ doi.org/10.1080/19585969.2026.2682773</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry · 19 jun 2026 (Zhengzhou University) · paper · 2026-06-19</div>
+          <div class="r10-title">Distance-related functional connectivity alterations in first-episode, drug-naïve major depressive disorder: a resting-state fMRI study with atlas-based neurotransmitter correlates</div>
+          <div class="r10-line">En 191 pacientes con depresión de primer episodio sin medicar, la conectividad de largo alcance prefrontal cae y la de corto alcance parietal sube, y ese patrón espacial covaría con mapas PET de neurotransmisores y con el balance excitación-inhibición regional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La depresión temprana se describirá por geometría de conexión (largo vs corto alcance) atada a química regional; predigo firmas E/I espaciales como diana de precisión — útil para tu cruce precision-psychiatry accesible.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08307-3" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08307-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine · 18 jun 2026 (West China / psicoradiología, Xiamen) · paper · 2026-06-18</div>
+          <div class="r10-title">Variations of structural-functional coupling in post-traumatic stress disorder are associated with underlying molecular and transcriptional features</div>
+          <div class="r10-line">En 61 sobrevivientes de terremoto con TEPT vs 62 expuestos sin TEPT, el acoplamiento estructura-función se altera en DMN, FPN y redes atencionales, y esas variaciones específicas se ligan a genes de sinapsis y neurotransmisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El TEPT tendrá una firma de &#39;desajuste estructura-función&#39; con base transcripcional, no solo de actividad; predigo que el SFC será un biomarcador integrador de trauma — encaja en tu línea de mecanismos de red y precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726104838" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726104838</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · jun 2026 (Second Xiangya, Changsha) · paper · 2026-05-05</div>
+          <div class="r10-title">Brain state dynamics and working memory in patients with major depressive disorder and bipolar disorder</div>
+          <div class="r10-line">Usando el Bayesian Switching Dynamical System (método del lab de Menon) en 42 MDD, 75 BD y 64 controles, la depresión —no el bipolar— sobre-ocupa un estado latente de DMN anterior durante la memoria de trabajo, y eso predice respuestas más lentas e información verbal más pobre.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los déficits cognitivos se leerán como transiciones latentes mal calibradas y no como &#39;menos activación&#39;; predigo que la dinámica de estados ocultos separará MDD de BD — material para tu razonamiento dimensional y tu manual BMSE.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111728" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111728</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · jun 2026 (Second Xiangya, Changsha) · paper · 2026-05-04</div>
+          <div class="r10-title">Structural brain network alterations in schizophrenia and ultra-high risk populations: Linking olfactory dysfunction to clinical symptoms</div>
+          <div class="r10-line">En 99 primeros episodios de SCZ, 72 ultra-alto-riesgo seguidos 2 años y 69 controles, el volumen de DMN y FPN media el vínculo entre disfunción olfativa y síntomas, y el olfato más un modelo estructural predice conversión a psicosis (AUC 0.86).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El olfato barato + red estructural se volverá tamizaje de riesgo psicótico en entornos de pocos escáneres; predigo un test de conversión accesible — ángulo para precision-psychiatry de bajo costo en Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111729" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111729</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Neuropsychopharmacology · 13 jun 2026 (Münster / Frankfurt) · paper · 2026-06-13</div>
+          <div class="r10-title">In-patient treatment and structural dysconnectivity in major depression — A longitudinal connectome study</div>
+          <div class="r10-line">En 109 pacientes hospitalizados por depresión (50 con TEC) seguidos 6 semanas, el conectoma estructural se fortalece tras el tratamiento de forma transversal a las terapias, y el grado de aumento se correlaciona con la reducción de síntomas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El cambio de conectoma será un biomarcador de respuesta agnóstico a la terapia (neuroplasticidad medible); predigo monitoreo de tratamiento por conectividad — referencia para tu narrativa de &#39;el cerebro que se reconecta al mejorar&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.euroneuro.2026.112898" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.112898</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Neuroscience · 29 may 2026 (University Medicine Greifswald) · paper · 2026-05-29</div>
+          <div class="r10-title">Multimodal imaging-based targeting approach for network-level brain stimulation</div>
+          <div class="r10-line">Un marco multimodal de fMRI (37 sujetos) muestra cómo elegir blancos de tDCS por la red funcional confiable del nodo y su solapamiento con la activación de tarea, desplazando el rationale de &#39;estimular un área&#39; a &#39;apuntar a un nodo de la vía&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La estimulación no invasiva pasará de coordenadas a nodos-de-red prospectivos y testeo de hipótesis; predigo protocolos tDCS guiados por conectividad — pieza para tu línea red × neuromodulación y su viabilidad de bajo costo.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fnins.2026.1803897" target="_blank" rel="noopener">↗ doi.org/10.3389/fnins.2026.1803897</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neural Networks · 15 jun 2026 (Changzhou University) · paper · 2026-06-15</div>
+          <div class="r10-title">MM-TransUNet: Multi-modal and multi-graph feature learning for neurodevelopmental disorder diagnosis</div>
+          <div class="r10-line">MM-TransUNet, un modelo multimodal y multigrafo de topología de redes cerebrales, supera al estado del arte diagnosticando TEA (ABIDE) y TDAH (ADHD-200) con buena generalización entre cohortes y código abierto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El diagnóstico de neurodivergencia se apoyará en grafos de conectividad + deep learning generalizable, no en un solo dataset; predigo clasificadores reproducibles como tamiz auxiliar — ángulo para tu pilar ai-enhancement y tu contenido de IA en investigación.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neunet.2026.109237" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neunet.2026.109237</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La ínsula no es un área, es un interruptor: en el trastorno por videojuegos la ínsula anterior dorsal se sobreconecta al cíngulo y se desconecta del polo frontal — el síntoma vive en el fallo de conmutación salience↔DMN↔ejecutivo, no en una región.</li><li>El mismo nodo, signo opuesto: la conectividad estructural del DMN empuja en direcciones contrarias en esquizofrenia y bipolar pese a su parecido clínico. El solapamiento sintomático esconde circuitos divergentes.</li><li>El trauma tiene reloj: el maltrato temprano AGUDIZA la discriminación amenaza-seguridad (amígdala–vmPFC) y el tardío la EMBOTA. No es la dosis total, es la ventana de exposición — y ambas firmas, opuestas, dejan vulnerabilidad.</li><li>Mejorar es reconectar: en depresión hospitalizada el conectoma estructural se fortalece con el tratamiento sea cual sea la terapia (incluida TEC), y cuanto más se fortalece, más bajan los síntomas. Neuroplasticidad medible como biomarcador.</li><li>El olfato delata a la red: en ultra-alto-riesgo, perder olfato más un DMN/FPN reducido predice conversión a psicosis con AUC 0.86. Un test barato puede sustituir parte de lo que hoy le pedimos a un escáner caro.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si SAINT funciona en clínica real eligiendo el blanco por el conectoma de cada paciente, ¿cuánto sube la respuesta versus TMS de coordenada fija, y es replicable en un servicio peruano sin fMRI de alta gama?</li><li>Cuando el DMN empuja en sentidos opuestos en esquizofrenia y bipolar, ¿podemos usar la dirección del efecto de red como criterio diferencial donde la clínica se confunde?</li><li>Si el maltrato temprano y el tardío dejan firmas corticolímbicas opuestas, ¿deberíamos fechar el trauma en la historia clínica como fechamos una fractura, y cronometrar la intervención al período sensible?</li><li>¿La sinergia-redundancia de información dependiente de la edad en TEA es un mejor biomarcador de etapa que la conectividad cruda, y cómo se lo explico a residentes que solo vieron &#39;autismo = subconectividad&#39;?</li><li>¿Alcanza el olfato + una RM estructural barata para tamizar riesgo de psicosis en atención de recursos limitados, o el AUC 0.86 se cae fuera del centro académico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/Carousel: &#39;Tu ínsula es un interruptor, no un botón&#39; — explicar el modelo de triple red de Menon con el caso del enganche a pantallas (la ínsula dorsal que no conmuta entre DMN y ejecutivo en el trastorno por videojuegos).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de perspectiva: la dirección del efecto de red (DMN opuesto en SCZ vs BD) como criterio dimensional para el diagnóstico diferencial — puente entre imaging genetics, causalidad y HiTOP en la clínica peruana.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología: &#39;El trauma tiene reloj&#39; — usar las ventanas sensibles de maltrato (temprano agudiza, tardío embota el circuito amígdala–vmPFC) para enseñar desarrollo, ACEs y por qué el cuándo importa tanto como el cuánto.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>YT (Aprendiz Experto): &#39;Cómo se elige dónde estimular el cerebro&#39; — SAINT y la neuromodulación guiada por conectividad como ejemplo de psiquiatría de precisión que ya salió del laboratorio a la clínica.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper metodológico/translacional: tamizaje de conversión a psicosis con olfato + RM estructural (DMN/FPN) como herramienta de bajo costo para servicios de salud mental con pocos escáneres.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychological Medicine</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">BMC Psychiatry</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag ">Journal of Mood and Anxiety Disorders</span><span class="tag ">Dialogues in Clinical Neuroscience</span><span class="tag ">Comprehensive Psychiatry</span><span class="tag ">Neural Networks</span><span class="tag ">Frontiers in Neuroscience</span><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">CNS Neuroscience &amp; Therapeutics</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities vía MCP) — 6 queries (pdat + edat; date_from = hoy−3 días para cubrir el retraso de indexación), atribución y DOIs por términos de uso · WebSearch — scan de bioRxiv/medRxiv/PsyArXiv y autores/labs clave (Menon, Sridharan, Seeley, Uddin, Bressler): sin preprints nuevos verificables dentro de la ventana de 48h. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 20 de junio de 2026.</div>
+</div>
+</body>
+</html>
