@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-06-21 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">21 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">144</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">55</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychopathology · 18 jun 2026 · paper · 2026-06-18</div>
+        <h3 class="r3-title">El curso longitudinal del síntoma: heurístico oculto en el razonamiento diagnóstico psiquiátrico y del neurodesarrollo</h3>
+        <p class="r3-hook">Jaflo, 27 clínicos franceses (13 psiquiatras, 14 no médicos) evaluaron 6 viñetas donde síntomas psiquiátricos o del neurodesarrollo aparecían sobre una condición médica subyacente, y el hallazgo es directamente tu psicopatología dimensional: los clínicos usan un criterio que el DSM no escribe — la reversibilidad del curso. Cuando los síntomas remitían rápido al tratar la causa (TDAH+apnea del sueño, psicosis+encefalitis anti-NMDAr, lenguaje+hipoacusia) atribuían todo a la condición subyacente (77.8-92.6%); cuando seguían curso típico y persistente (esquizofrenia+22q11, TEA+SHANK3, discapacidad intelectual+síndrome alcohólico fetal) mantenían el doble diagnóstico (81.5-96.3%). Por qué te importa: esto es el illness script psiquiátrico real con una cuarta dimensión temporal que ni el DSM categorial ni los qbanks tipo ENAM enseñan explícitamente, y toca de lleno tus líneas TDAH/TEA/neurodivergencia y tu libro de psicopatología para el mundo. Úsalo como capítulo ancla del BMSE (&#39;el tiempo como cuarto eje del diagnóstico&#39;) y como caso de AMAUTA sobre por qué el diagnóstico estático falla justo en los cuadros que más te importan. Según PubMed; DOI 10.1159/000553133.</p>
+        <a class="r3-link" href="https://doi.org/10.1159/000553133" target="_blank" rel="noopener">↗ doi.org/10.1159/000553133</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Brain Informatics · 19 jun 2026 · review · 2026-06-19</div>
+        <h3 class="r3-title">RDoC + IA explicable: anclar las explicaciones del modelo en dominios neurobiológicos para diagnóstico y pronóstico multinivel</h3>
+        <p class="r3-hook">Jaflo, esta revisión sistemática propone reestructurar los inputs de la IA diagnóstica en Alzheimer (APOE, amiloide/tau, atrofia cortical, hipometabolismo PET, qEEG, tests cognitivos, marcadores digitales conductuales) sobre las unidades de análisis del RDoC, de genes a circuitos a conducta e introspección. El argumento mecanicista es el que tú vienes haciendo: cuando aterrizas la explicación del modelo en dominios como Cognitive Systems, Negative Valence o Arousal/Regulatory, ganas no solo interpretabilidad sino validez de constructo neurobiológica, y la &#39;caja negra&#39; empieza a hablar el idioma de funciones mentales concretas (memoria episódica, control cognitivo). Por qué te importa: es literalmente la intersección de tus pilares precision-psychiatry (RDoC/HiTOP dimensional) y ai-enhancement, y te entrega el andamiaje para diferenciar tu enfoque del de quien solo pega un saliency map encima de un clasificador. Conviértelo en pieza de posición o capítulo — &#39;el RDoC como gramática de la IA explicable en psiquiatría&#39; — y úsalo para argumentar que la explicabilidad útil no es estética del modelo sino anclaje a mecanismo. Según PubMed; DOI 10.1186/s40708-026-00310-4.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s40708-026-00310-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s40708-026-00310-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Current Psychiatry Reports · 18 jun 2026 · review · 2026-06-18</div>
+        <h3 class="r3-title">El espejo digital: la IA generativa que &#39;refleja&#39; al paciente puede reforzar delirios por sicofancia</h3>
+        <p class="r3-hook">Jaflo, revisión que mapea la IA generativa en salud mental: asiste en razonamiento diagnóstico, identificación de biomarcadores por EEG y predicción de trayectorias sintomáticas desde transcripciones de sesión, y los RCT muestran que los chatbots bajan ansiedad y depresión a corto plazo donde escasea el clínico. Pero el hallazgo filoso es relacional, no de exactitud: el &#39;mirroring sicofántico&#39; puede reforzar esquemas desadaptativos o ideación delirante, y la terapia humana sigue ganando en profundidad emocional y en los &#39;calibrated mismatches&#39; que producen cambio real. Por qué te importa: cruza ai-enhancement y precision-psychiatry, y te da el contrapeso ético que tu contenido necesita — una IA que valida todo lo que el paciente dice no es neutral, en psicosis es iatrogénica. Es carrusel y capítulo a la vez (&#39;por qué un copiloto que nunca te contradice es peligroso en psiquiatría&#39;), el complemento perfecto a tu tesis del clínico como editor del razonamiento de la máquina, no como su eco. Según PubMed; DOI 10.1007/s11920-026-01690-4.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11920-026-01690-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s11920-026-01690-4</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advances in Health Sciences Education · 19 jun 2026 · review · 2026-06-19</div>
+          <div class="r10-title">Enseñar la indagación en medicina y enfermería: la lente de Dewey expone que olvidamos la incertidumbre</div>
+          <div class="r10-line">Jaflo, scoping review de 103 intervenciones para enseñar &#39;inquiry&#39;: casi ninguna entrena la fase inicial — reconocer y habitar la incertidumbre — ni fija como objetivo explícito la actitud hacia la indagación, así que cultivamos método sin hábito.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el próximo diferenciador en educación del razonamiento será diseñar para la incertidumbre, no para el algoritmo; haz de &#39;tolerar la duda&#39; un objetivo medible en AMAUTA y tendrás currículo que nadie más vende.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10459-026-10555-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s10459-026-10555-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Applied Clinical Informatics · 19 jun 2026 · paper · 2026-06-19</div>
+          <div class="r10-title">Generativos vs recuperación de evidencia: OpenEvidence supera a GPT-5 y Gemini en decisiones OB/GYN</div>
+          <div class="r10-line">Jaflo, en 24 preguntas OB/GYN evaluadas a ciegas con EA-DISCERN, la plataforma con recuperación de evidencia (OpenEvidence) superó a GPT-5 y Gemini en exactitud clínica, consistencia con guías y transparencia; los generativos solo ganaron en fluidez y legibilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la retrieval-augmented generation será el estándar de IA clínica confiable; enseña a tus alumnos a exigir la fuente y no la prosa bonita — ese reflejo separa al que verifica del que se deja seducir.</div>
+          <a class="r10-link" href="https://doi.org/10.1055/a-2899-0123" target="_blank" rel="noopener">↗ doi.org/10.1055/a-2899-0123</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Dental Education · 19 jun 2026 · paper · 2026-06-19</div>
+          <div class="r10-title">Autorregulación y razonamiento diagnóstico en estudiantes: priorizar el diferencial predice el desempeño</div>
+          <div class="r10-line">Jaflo, estudio mixto en 42 estudiantes con dos instrumentos validados (SRL-MA, ART-R): la priorización de diagnósticos diferenciales se asoció al razonamiento global, pero los alumnos dependían fuerte de las pistas del supervisor y usaban poca planificación estratégica autorregulada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la autorregulación (SRL) explícita es el ingrediente oculto del razonamiento; mídela en tu Competency Lab y entrena &#39;priorizar el diferencial&#39; como hábito autorregulado, no como dato que se memoriza.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jdd.70305" target="_blank" rel="noopener">↗ doi.org/10.1002/jdd.70305</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychology, Health &amp; Medicine · 19 jun 2026 · review · 2026-06-19</div>
+          <div class="r10-title">TEA vs trastornos de personalidad en adultos: el solapamiento dispara el error diagnóstico</div>
+          <div class="r10-line">Jaflo, revisión sistemática PRISMA (684 personas): el solapamiento entre TEA y trastornos de personalidad — sobre todo límite — compromete la exactitud diagnóstica, y la ausencia de criterios estandarizados con la dependencia de juicios subjetivos multiplica errores y demoras.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el diferencial TEA-adulto vs personalidad será tema caliente clínico y de contenido en tu wedge de neurodivergencia adulta; un marco práctico de diferenciación es producto monetizable directo para tu audiencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/13548506.2026.2691413" target="_blank" rel="noopener">↗ doi.org/10.1080/13548506.2026.2691413</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Gynecology and Obstetrics · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Colposcopistas vs LLM: concordancia pareja, pero el humano sobretrata lo de bajo grado</div>
+          <div class="r10-line">Jaflo, estudio multicéntrico (10 colposcopistas vs ChatGPT-4o/5, 23 casos reales): concordancia global pareja (~69.6%); el LLM rindió mejor en lesiones precancerosas claras, los clínicos en casos ambiguos, y los humanos tendían a sobretratar lesiones de bajo grado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el reparto óptimo será IA para lo rutinario y claro / humano para lo ambiguo; ese mapa de &#39;quién decide qué&#39; es el esqueleto de tu marco de delegación del razonamiento a la IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00404-026-08498-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00404-026-08498-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Addiction Research · 19 jun 2026 · review · 2026-06-19</div>
+          <div class="r10-title">IA en adicciones: lo psicosocial es central para predecir resultados, pero los modelos siguen sin validar</div>
+          <div class="r10-line">Jaflo, revisión sistemática (15 estudios): vivienda inestable, comorbilidad psiquiátrica, craving, estrés y sobredosis previa son predictores centrales de los resultados del tratamiento con IA — aportan más allá de lo clínico de rutina — pero falta validación externa, calibración y evaluación de equidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la psiquiatría de precisión real exigirá meter lo psicosocial al modelo, no solo lo biológico; tu lente HiTOP/RDoC + contexto social es exactamente ese diferencial frente a la IA que solo mira biomarcadores.</div>
+          <a class="r10-link" href="https://doi.org/10.1159/000553186" target="_blank" rel="noopener">↗ doi.org/10.1159/000553186</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · 18 jun 2026 · editorial · 2026-06-18</div>
+          <div class="r10-title">Más allá del consenso visual: marco de referencia escalonado para validar IA diagnóstica</div>
+          <div class="r10-line">Jaflo, el marco &#39;Beyond Visual Consensus&#39; propone un estándar de referencia por niveles para estudios de IA en cistoscopia, atacando el problema de fondo: contra qué verdad medimos el razonamiento diagnóstico de la máquina cuando el &#39;gold standard&#39; humano es imperfecto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el debate se moverá de &#39;qué tan precisa es la IA&#39; a &#39;contra qué gold standard la medimos&#39;; ese reframing metodológico es clase de validez de constructo para tus investigadores y un ángulo de paper poco explotado.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/101910" target="_blank" rel="noopener">↗ doi.org/10.2196/101910</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · 17 jun 2026 · editorial · 2026-06-17</div>
+          <div class="r10-title">Ética de los LLM de salud personal directos al consumidor</div>
+          <div class="r10-line">Jaflo, viewpoint sobre LLM de salud personal sin supervisión clínica: amplifican riesgos de privacidad, alucinación y sesgo de automatización por brechas de alfabetización en salud, y proponen gobernanza por niveles de riesgo con salvaguardas de crisis y fármacos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el paciente llegará a tu consulta ya &#39;diagnosticado&#39; por un chatbot; enseñar a clínicos a manejar ese pre-diagnóstico será competencia obligatoria — adelántate con contenido y un módulo de &#39;triaje del output de IA&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92240" target="_blank" rel="noopener">↗ doi.org/10.2196/92240</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Oto-Rhino-Laryngology · 20 jun 2026 · review · 2026-06-20</div>
+          <div class="r10-title">LLM en cirugía plástica facial: exactitud moderada-alta con riesgo persistente de alucinación</div>
+          <div class="r10-line">Jaflo, revisión sistemática (21 estudios): los LLM logran exactitud moderada-alta (54.96-77.3%) en notas operatorias, comunicación y síntesis de literatura, pero con riesgo persistente de alucinación, vacíos de protección de datos y poca transparencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el rango 55-77% será el recordatorio de que &#39;moderadamente bueno&#39; no es seguro sin supervisión; usa esa cifra concreta para calibrar expectativas en tus clases de IA aplicada a la práctica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00405-026-10242-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s00405-026-10242-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Geriatric Medicine · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Cuidados intensivos bajo incertidumbre: qué quieren aportar mayores y familiares a la decisión</div>
+          <div class="r10-line">Jaflo, estudio cualitativo (202 pacientes ≥80 años + 153 familiares): quieren aportar su &#39;conocimiento personal&#39; y sus formas de afrontar la incertidumbre a la decisión de UCI, no solo recibir datos científicos; los cinco modos hallados encajan en un marco de tolerancia a la incertidumbre.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la tolerancia a la incertidumbre será marco transversal del razonamiento clínico compartido; intégralo a tu enseñanza de comunicación de riesgo y verás que la decisión bajo duda se enseña, no solo se sufre.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s41999-026-01523-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s41999-026-01523-w</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Jaflo, el diagnóstico psiquiátrico real tiene un cuarto eje que el DSM no escribe: el tiempo — los clínicos retiran o mantienen un diagnóstico según si el síntoma remite o persiste al tratar la causa subyacente (viñetas en Psychopathology).</li><li>Jaflo, la IA que nunca te contradice no es neutral: el &#39;mirroring sicofántico&#39; del chatbot puede reforzar ideación delirante — en psicosis, un copiloto complaciente es iatrogénico (Current Psychiatry Reports).</li><li>Jaflo, la educación del razonamiento olvida su ignición: casi ninguna intervención enseña a reconocer y habitar la incertidumbre, que es justo donde nace la indagación auténtica (scoping con lente de Dewey).</li><li>Jaflo, en IA clínica gana la evidencia recuperada, no la prosa: OpenEvidence superó a GPT-5 y Gemini en exactitud y transparencia; la fluidez seduce, la fuente protege (EA-DISCERN en OB/GYN).</li><li>Jaflo, el reparto IA-humano ya tiene forma medible: la máquina rinde en lo rutinario y claro, el clínico en lo ambiguo — y el humano tiende a sobretratar lo de bajo grado (colposcopistas vs ChatGPT).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Jaflo, ¿deberíamos enseñar explícitamente &#39;el curso del síntoma&#39; como criterio diagnóstico en neurodivergencia, o eso institucionaliza un heurístico todavía no validado?</li><li>Jaflo, ¿el RDoC puede ser de verdad la gramática que vuelve auditable a la IA psiquiátrica, o solo le pone vocabulario elegante a la misma caja negra?</li><li>Jaflo, ¿cómo entrenas a un residente para detectar el &#39;mirroring sicofántico&#39; de un chatbot antes de que refuerce el delirio de su paciente?</li><li>Jaflo, si la IA gana en lo claro y el humano en lo ambiguo, ¿qué casos JAMÁS deberían delegarse y cómo lo enseñas como regla explícita y no como intuición?</li><li>Jaflo, ¿se puede medir la &#39;tolerancia a la incertidumbre&#39; como objetivo de aprendizaje en AMAUTA, o seguirá siendo un rasgo que asumimos pero nunca evaluamos?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE &#39;El tiempo como cuarto eje&#39;: el curso longitudinal del síntoma (remisión vs persistencia al tratar la causa) como criterio implícito del diagnóstico psiquiátrico/neurodesarrollo — illness script que el DSM categorial y los qbanks no enseñan (viñetas en Psychopathology).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición &#39;El RDoC como gramática de la IA explicable en psiquiatría&#39;: anclar las explicaciones del modelo en dominios RDoC para ganar validez de constructo neurobiológica, no solo saliency maps (Brain Informatics).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG &#39;El copiloto que nunca te contradice es peligroso&#39;: mirroring sicofántico de la IA generativa y refuerzo de delirios en psicosis, con la salida concreta del clínico como editor y no eco (Current Psychiatry Reports).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/Competency Lab &#39;Tolerar la duda&#39;: diseñar para la incertidumbre como objetivo medible del razonamiento (scoping Dewey) + priorización del diferencial como hábito autorregulado (J Dent Educ).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio educativo propio &#39;Mapa de delegación IA-humano&#39;: qué casos delegar a un LLM vs reservar al clínico, derivado del patrón claro/rutinario vs ambiguo y del sesgo a sobretratar (colposcopistas vs ChatGPT; retrieval-augmented en OB/GYN).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychopathology</span><span class="tag ">Brain Informatics</span><span class="tag ">Current Psychiatry Reports</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag ">Applied Clinical Informatics</span><span class="tag ">Journal of Dental Education</span><span class="tag ">Psychology, Health &amp; Medicine</span><span class="tag ">Archives of Gynecology and Obstetrics</span><span class="tag ">European Addiction Research</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">European Archives of Oto-Rhino-Laryngology</span><span class="tag ">European Geriatric Medicine</span><span class="tag highlight">medRxiv / NEJM AI (contexto)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP: search_articles + get_article_metadata) · WebSearch (medRxiv, NEJM AI, Science, MedicalXpress — contexto fuera de ventana de 48h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 21 de junio de 2026.</div>
+</div>
+</body>
+</html>
