@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-21 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">21 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">28</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">49</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">British Journal of Psychiatry · 19 jun 2026 · paper · 2026-06-19</div>
+        <h3 class="r3-title">La comorbilidad psiquiátrica —no el autismo en sí— es lo que multiplica la mortalidad prematura en personas autistas (cohorte poblacional sueca, 2 958 317 individuos, 70 546 autistas)</h3>
+        <p class="r3-hook">Cohorte de registro sueco que sigue de los 16 a los 46 años: los autistas CON condición psiquiátrica concurrente tienen 3.2 muertes/1000 personas-año, frente a 0.96 en autistas sin psicopatología y 0.27 en no autistas sin psicopatología; el riesgo relativo de muerte prematura es HR 13.85 vs no-autistas sanos, HR 3.44 vs autistas sin psicopatología, y —el dato que cambia el marco— HR 1.47 incluso sobre personas con psicopatología pero sin autismo. Jaflo, esto es munición directa para tu wedge de neurodivergencia adulta (book-psicopato) y para precision-psychiatry: la diana accionable no es &#39;el autismo&#39;, es la depresión/ansiedad/uso de sustancias tratable encima, que hoy se subdiagnostica por anclaje en el dx de TEA. Úsalo como tesis de un capítulo y como pieza de contenido: &#39;lo que mata no es el espectro, es la psicopatología que dejamos de mirar&#39;. Es además un gap LatAm gritando paper: los datos son escandinavos, no hay equivalente peruano.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10696" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10696</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Frontiers in Psychiatry · 3 jun 2026 (indexado esta ventana) · review · 2026-06-03</div>
+        <h3 class="r3-title">Qué componentes de la intervención temprana en psicosis están realmente respaldados: apraisal AGREE II + síntesis de 26 guías y estándares internacionales (CHR-P y primer episodio)</h3>
+        <p class="r3-hook">Primera revisión que combina apraisal metodológico formal (AGREE II) con síntesis estructurada de componentes de servicio para intervención temprana en psicosis; 26 documentos (24 guías + 2 estándares), calidad metodológica solo moderada y muy variable en rigor de desarrollo y aplicabilidad. Destila 32 recomendaciones core: para alto riesgo clínico (CHR-P) → servicios especializados, evaluación multidisciplinaria, TCC, intervención familiar y uso cauto de antipsicóticos; para primer episodio → equipos multidisciplinarios, seguimiento asertivo, trabajo familiar, psicoeducación, monitoreo farmacológico estructurado y apoyo a educación/empleo. Jaflo, esto te sirve doble: como esqueleto basado en evidencia para enseñar razonamiento de modelo-de-cuidado en AMAUTA/USAMEDIC, y como marco de precision-psychiatry para distinguir qué es &#39;core&#39; real vs. arrastre histórico. Es material listo para una clase de razonamiento clínico dimensional sobre el pródromo.</p>
+        <a class="r3-link" href="https://doi.org/10.3389/fpsyt.2026.1831668" target="_blank" rel="noopener">↗ doi.org/10.3389/fpsyt.2026.1831668</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">BMJ Quality &amp; Safety · 18 jun 2026 · review · 2026-06-18</div>
+        <h3 class="r3-title">Las inequidades en el diagnóstico de trastornos mentales se concentran en el TEA: el error dominante no es el falso positivo sino el retraso, y la alfabetización en salud del cuidador es la causa #1</h3>
+        <p class="r3-hook">Revisión sistemática (20 estudios, 2015-2024, EE.UU.) guiada por el marco de proceso diagnóstico de la National Academies: el TEA emergió como el trastorno más estudiado (17/20) y casi todos los errores fueron de diagnóstico retrasado, no de sobrediagnóstico. Las 11 causas se mapean al proceso: alfabetización en salud limitada del paciente/cuidador como causa líder en el reconocimiento de síntomas, cobertura de seguro retrasando el contacto, sesgo del proveedor en la anamnesis, instrumentos culturalmente no equivalentes para pacientes negros/latinos, y jerga médica + falta de intérpretes al comunicar el dx. Jaflo, esto es razonamiento clínico puro para tu libro BMSE/dimensional: el retraso diagnóstico en TEA como falla de proceso (anclaje, disponibilidad, alfabetización del informante), no como déficit de criterios. Cruza tus tres lentes —precisión, equidad (Acai) y educación médica— y da un caso perfecto para enseñar cómo el sesgo se incrusta en cada paso del diagnóstico.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjqs-2025-018723" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjqs-2025-018723</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Educational Evaluation for Health Professions · 18 jun 2026 · rct · 2026-06-18</div>
+          <div class="r10-title">Un taller único de manejo de estrés + habilidades de comunicación NO mejoró ni el rendimiento OSCE ni la ansiedad de examen en estudiantes de medicina de bajo rendimiento (RCT, n=109)</div>
+          <div class="r10-line">RCT francés con examinadores cegados: la intervención de sesión única no movió OSCE (dif 0.08/20) ni STAI, e incluso subió transitoriamente la ansiedad post-taller — la dosis única es insuficiente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esto es oro de contenido para Aprendiz Experto/AMAUTA — &#39;cómo NO preparar el ENAM&#39;; el futuro de la prep es longitudinal y personalizada, no el workshop motivacional de un día.</div>
+          <a class="r10-link" href="https://doi.org/10.3352/jeehp.2026.23.19" target="_blank" rel="noopener">↗ doi.org/10.3352/jeehp.2026.23.19</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open Respiratory Research · 18 jun 2026 · meta-analysis · 2026-06-18</div>
+          <div class="r10-title">La enfermedad mental comórbida empeora todos los desenlaces de EPOC: peor función pulmonar, más exacerbaciones, hospitalizaciones y mortalidad (SR + meta-análisis, 58 estudios, 707 037 participantes)</div>
+          <div class="r10-line">Depresión y ansiedad mostraron las asociaciones más fuertes; mortalidad ajustada HR 1.34, exacerbaciones IRR 1.64, hospitalización OR 1.61 — la psiquiatría de enlace mueve outcomes médicos duros.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el argumento de integrar salud mental en enfermedad crónica va a dominar la agenda de financiamiento; perfecto para un abstract de psiquiatría de enlace en congreso.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjresp-2025-003977" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjresp-2025-003977</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Psychology &amp; Psychotherapy · 2026 · rct · 2026-06-19</div>
+          <div class="r10-title">La alianza terapéutica NO medió la relación entre apego y desenlace en depresión; el patrón evitativo-alto/ansioso-bajo fue el que más mejoró (RCT, n=118 depresión mayor)</div>
+          <div class="r10-line">Modelo de mediación multinivel sin soporte para la alianza como mecanismo; análisis de superficie de respuesta reveló que la combinación apego evitativo alto + ansioso bajo predijo la mayor mejoría — contraintuitivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la &#39;alianza como mecanismo universal&#39; se va a seguir agrietando; el campo migrará a perfiles dimensionales de paciente que predicen respuesta diferencial.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/cpp.70296" target="_blank" rel="noopener">↗ doi.org/10.1002/cpp.70296</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Genetic Counseling · 2026 · rct · 2026-06-19</div>
+          <div class="r10-title">Mindfulness reduce el burnout en consejeros genéticos vs. control pasivo (d=-0.84), pero el control activo de meditación falló como comparador (RCT de 3 brazos, n=397)</div>
+          <div class="r10-line">57% de los clínicos cumplían criterios de burnout al inicio; mindfulness ganó al no-tratamiento pero el control activo no logró aislar el ingrediente específico, dejando la hipótesis primaria sin poder probarse.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: lección metodológica recurrente — el campo del mindfulness seguirá inflando efectos por comparar contra nada; gancho perfecto para tu skill adversarial-stat-review.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jgc4.70241" target="_blank" rel="noopener">↗ doi.org/10.1002/jgc4.70241</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Psychology &amp; Psychotherapy · 2026 · rct · 2026-06-19</div>
+          <div class="r10-title">TCC híbrida + apoyo entre pares reduce la depresión en mujeres trans frente a cuidado usual (RCT con medidas repetidas)</div>
+          <div class="r10-line">La depresión se mantuvo estable en el grupo experimental y empeoró en el control; además bajó el estigma sexual internalizado y subieron autoestima y autoeficacia, con señal de efecto mayor en quienes pasaron por cirugía de afirmación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: integrar pares dentro de TCC va a escalar en poblaciones minoritarias de difícil acceso; buen caso para tu línea de psiquiatría dimensional con foco en determinantes sociales.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/cpp.70298" target="_blank" rel="noopener">↗ doi.org/10.1002/cpp.70298</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Women&#39;s Mental Health · 19 jun 2026 · rct · 2026-06-19</div>
+          <div class="r10-title">MBSR en línea reduce síntomas premenstruales y miedo al parto, y mejora el bienestar psicológico en mujeres con síndrome premenstrual (RCT, n=126)</div>
+          <div class="r10-line">8 sesiones online de MBSR con efectos moderados sobre SPM y miedo al parto, y efecto grande sobre bienestar (η²=0.285), pero sin seguimiento a largo plazo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el MBSR digital escalable seguirá empujando hacia salud mental perinatal preventiva; nicho de contenido femenino poco saturado para JafloMD.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00737-026-01737-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s00737-026-01737-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psycho-Oncology · jun 2026 · rct · 2026-06-19</div>
+          <div class="r10-title">ACT reduce la ansiedad ante la muerte, la evitación experiencial y mejora el sentido de vida en sobrevivientes de cáncer, con efecto sostenido a 3 meses (RCT, n=50)</div>
+          <div class="r10-line">8 sesiones individuales de ACT con reducciones grandes y persistentes en ansiedad de muerte y mejoras en calidad de vida funcional, aunque limitado por muestra pequeña y comparador en lista de espera.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ACT para ansiedad de muerte es un ángulo existencial con gran tracción narrativa; potencial pieza de contenido de alto engagement sobre sentido y mortalidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/pon.70492" target="_blank" rel="noopener">↗ doi.org/10.1002/pon.70492</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Public Health · 3 jun 2026 (indexado esta ventana) · meta-analysis · 2026-06-03</div>
+          <div class="r10-title">El entrenamiento a cuidadores liderado por enfermería mejora función motora y reduce ansiedad/depresión post-ACV en el sobreviviente (SR + meta-análisis, 8 RCTs)</div>
+          <div class="r10-line">Mejoras en función motora (SMD 0.60), calidad de vida y reducción de ansiedad/depresión (SMD 0.49) en sobrevivientes, y grandes ganancias en competencia del cuidador — pero sin efecto sobre la carga del cuidador.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el cuidador como vector terapéutico crecerá; la carga del cuidador queda como gap persistente que pide intervención específica.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fpubh.2026.1820177" target="_blank" rel="noopener">↗ doi.org/10.3389/fpubh.2026.1820177</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Public Health · 19 jun 2026 · review · 2026-06-19</div>
+          <div class="r10-title">Intervenciones adaptadas socio-culturalmente mejoran desenlaces en minorías étnicas con multimorbilidad, integrando salud física y mental (revisión sistemática, 15 estudios)</div>
+          <div class="r10-line">La mayoría reclutó minorías con depresión comórbida + condición física; 5/15 mejoraron todos los desenlaces y la adaptación cultural + activos comunitarios fueron clave, casi toda la evidencia de Norteamérica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la adaptación cultural pasará de &#39;nice-to-have&#39; a requisito de diseño; gap geográfico evidente para replicar el modelo en LatAm/Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12889-026-28056-y" target="_blank" rel="noopener">↗ doi.org/10.1186/s12889-026-28056-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Occupational Rehabilitation · 19 jun 2026 · meta-analysis · 2026-06-19</div>
+          <div class="r10-title">El enfoque participativo de retorno al trabajo funciona en lumbalgia pero NO en ausentismo por salud mental (SR + meta-análisis, 8 RCTs)</div>
+          <div class="r10-line">Certeza moderada de beneficio en dolor lumbar, pero certeza muy baja y sin efecto para trabajadores de baja por condición mental — la salud mental laboral necesita su propio modelo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: copiar protocolos de retorno físico a salud mental seguirá fallando; se abre espacio para diseñar un enfoque participativo específico para baja psiquiátrica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10926-026-10410-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s10926-026-10410-x</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En autistas, la psicopatología comórbida no solo suma riesgo: el riesgo de muerte prematura supera incluso al de tener el trastorno psiquiátrico sin autismo (HR 1.47 por encima). Lo tratable está encima del espectro, no en él.</li><li>Golpe a la &#39;vía final común&#39;: los CNV de riesgo para esquizofrenia (15q13.3del, 3q29del, 1q21.1del, 22q11.2del, 16p11.2dup) NO convergen en una vía molecular compartida —cada uno perturba circuitos distintos y de forma dinámica según el desarrollo— en modelos murinos con single-cell del córtex prefrontal (Mol Psychiatry, 10.1038/s41380-026-03679-0). Argumento para estratificar por circuito, no buscar &#39;el&#39; biomarcador.</li><li>Recordatorio adversarial: en el RCT de mindfulness para burnout (n=397), el control activo de meditación falló como comparador, dejando la hipótesis primaria sin poder probarse. Buena parte de la &#39;evidencia&#39; de mindfulness compara contra nada y confunde efecto inespecífico con específico.</li><li>Una sesión única no alcanza: un taller de manejo de estrés + comunicación no movió ni el OSCE ni la ansiedad de examen, e incluso la subió transitoriamente. La dosis y la personalización importan más que el formato motivacional.</li><li>En TEA el problema diagnóstico dominante no es el falso positivo sino el retraso, y la causa #1 en el reconocimiento de síntomas fue la alfabetización en salud del cuidador — el sesgo del proceso, no el criterio.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos tamizar y tratar la comorbilidad psiquiátrica en adultos autistas con la misma agresividad con que tamizamos factores cardiovasculares, tratándola como estrategia de mortalidad?</li><li>Si los CNV de esquizofrenia no convergen molecularmente, ¿tiene sentido seguir buscando &#39;el&#39; biomarcador transdiagnóstico, o el futuro es estratificación por vía/circuito (RDoC real)?</li><li>¿La alianza terapéutica está sobrevalorada como mecanismo de cambio, o el problema es que la medimos mal y a destiempo?</li><li>¿Por qué un taller único de manejo de estrés no movió la ansiedad de examen — falta de dosis, falta de personalización, o estamos midiendo el desenlace equivocado para la prep ENAM?</li><li>En intervención temprana en psicosis, ¿qué componentes del modelo de cuidado son verdaderamente &#39;core&#39; por evidencia y cuáles son arrastre histórico que podría recortarse sin perder eficacia?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel JafloMD: &#39;El autismo no te mata; la depresión no tratada encima, sí&#39;. Desmonta el dato de mortalidad de la cohorte sueca (2.96M) con el ángulo de neurodivergencia adulta — wedge directo del negocio book-psicopato.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta o mini-revisión dimensional: &#39;Buscar un biomarcador único de esquizofrenia es un error de categoría&#39;, usando la no-convergencia de los CNV + HiTOP/RDoC como argumento de estratificación por circuito.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE/razonamiento dimensional: el retraso diagnóstico en TEA como falla de proceso clínico (anclaje, disponibilidad, alfabetización del informante), con el SR de BMJ Quality &amp; Safety como caso ancla.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Screencast Aprendiz Experto: &#39;Cómo NO preparar el ENAM&#39; — por qué un taller único de manejo de estrés no mejoró ni el OSCE ni la ansiedad de examen (RCT francés), y qué sí funciona (longitudinal + personalizado).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Protocolo de SR/cohorte LatAm: comorbilidad psiquiátrica y mortalidad prematura en neurodivergencia adulta en Perú — los datos publicados son escandinavos, no hay equivalente regional (gap geográfico explícito).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">British Journal of Psychiatry (top)</span><span class="tag highlight">Lancet Psychiatry (top)</span><span class="tag highlight">Molecular Psychiatry (top)</span><span class="tag highlight">Cochrane Database of Systematic Reviews (top)</span><span class="tag ">BMJ Quality &amp; Safety</span><span class="tag ">Frontiers in Psychiatry</span><span class="tag ">Clinical Psychology &amp; Psychotherapy</span><span class="tag ">Psycho-Oncology</span><span class="tag ">Archives of Women&#39;s Mental Health</span><span class="tag ">BMJ Open Respiratory Research</span><span class="tag ">Journal of Genetic Counseling</span><span class="tag ">Journal of Occupational Rehabilitation</span><span class="tag ">BMC Public Health</span><span class="tag ">Journal of Educational Evaluation for Health Professions</span><span class="tag ">Frontiers in Public Health</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP search_articles + get_article_metadata; queries pdat + edat, ventana 2026/06/18–2026/06/21). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 21 de junio de 2026.</div>
+</div>
+</body>
+</html>
