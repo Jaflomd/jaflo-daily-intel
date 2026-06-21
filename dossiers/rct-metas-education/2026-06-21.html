@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-21 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">21 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">66</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">53</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-06-19 · rct</div>
+        <h3 class="r3-title">Modelo de entrenamiento escalonado (L1→L3) para residentes de cirugía de mama: RCT de educación de precisión basada en competencias (CBME, n=20)</h3>
+        <p class="r3-hook">RCT que asigna 20 residentes a un currículo CBME escalonado (L1 destrezas básicas → L2 procedimientos menores → L3 avanzados, 6 meses) versus entrenamiento convencional, con outcomes DUROS, no satisfacción: concordancia patológica de biopsia 98% vs 86% (P=0.009), éxito de canalización de port 96% vs 80% (P=0.012) y tiempo operatorio en cirugía conservadora 120±15 vs 180±20 min (P&lt;0.001). Jaflo, esto es literalmente &#39;educación médica de precisión&#39; operacionalizada: una escalera competency-based con métricas observables, justo el esqueleto que necesitas para llevar BMSE/razonamiento dimensional y tus productos ENAM/Residentado de &#39;cubrir temario&#39; a &#39;demostrar competencia escalonada&#39;. Úsalo como plantilla de diseño: define L1-L3 para razonamiento clínico, ancla cada nivel a un outcome medible (no a horas), y tienes el armazón de un paper de precision education aplicable al Residentado peruano. n pequeño, así que el valor es el framework, no la magnitud del efecto.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09688-5" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09688-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-06-18 · rct</div>
+        <h3 class="r3-title">Flipped classroom vs clase magistral en estudiantes de enfermería: RCT ciego con efecto grande sobre desempeño (η²=0.65)</h3>
+        <p class="r3-hook">RCT single-blind, paralelo, con análisis por intención de tratar (n=58, Qom University): el aula invertida supera a la clase magistral en conocimiento (ANCOVA controlando pretest, F=104.7, P&lt;0.001, η² parcial=0.65, efecto grande) y en percepción del ambiente (satisfacción, involucramiento, orientación a la tarea, innovación). Jaflo, este es el dato &#39;limpio&#39; que pedías para tu línea amauta-education: no es satisfacción Kirkpatrick-1, es desempeño con aleatorización y ITT. PERO léelo junto al cuasi-experimento de neuroanatomía dental de hoy (42316205), donde flipped y tradicional empataron: la lección estratégica es que el flipped no es magia universal, rinde según contenido y diseño. Úsalo como espina de un carrusel/clase: &#39;cuándo el flipped gana y cuándo solo añade carga&#39;, y como argumento para rediseñar tus módulos USAMEDIC de alto volumen conceptual con preparación previa + práctica activa, no para todo el curso indiscriminadamente.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09746-y" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09746-y</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-06-19 · review</div>
+        <h3 class="r3-title">Realidad inmersiva (VR/AR) en educación dental clínica: revisión sistemática (13 estudios) con reducción de tiempo y errores</h3>
+        <p class="r3-hook">Revisión sistemática (PROSPERO CRD42024617799, 2014-2025, 13 estudios) que compara realidad inmersiva contra entrenamiento dental tradicional: la IR reduce tiempo de procedimiento, acorta la duración del entrenamiento, disminuye errores y mejora conocimiento y destreza. Jaflo, esto toca tus pilares ai-enhancement + amauta-education y tu instinto de ROI: la promesa de la simulación inmersiva es eficiencia (menos horas para misma competencia), no solo &#39;engagement&#39;. La pregunta consigliere que debes hacerte antes de comprar hardware es la del pilar Mario: ¿el delta de tiempo/errores justifica el costo frente a simulación de baja fidelidad bien diseñada? Úsalo como base de un episodio sobre &#39;cuándo la tecnología educativa paga y cuándo es teatro caro&#39;, y como referencia si algún día evalúas integrar simulación en tus programas. Nivel de evidencia: SR sin meta, heterogénea; trátala como mapa, no como veredicto.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09739-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09739-x</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-19 · meta-analysis</div>
+          <div class="r10-title">Factores asociados a la identidad profesional de internos de enfermería en China: SR + meta-análisis (48 estudios)</div>
+          <div class="r10-line">Meta-análisis de correlaciones: la identidad profesional se asocia más al cuidado humanístico (r=0.77) y al ambiente de aprendizaje clínico (r=0.53) que a la conducta de práctica clínica (no significativa).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la formación de identidad profesional desplazará el foco de &#39;horas en piso&#39; a diseñar el clima del rotatorio; oportunidad para un instrumento de identidad profesional adaptado al internado peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09692-9" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09692-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-19 · review</div>
+          <div class="r10-title">Educación con ultrasonido en pregrado: revisión sistemática de elementos didácticos y teóricos</div>
+          <div class="r10-line">SR que halla el aula invertida, el blended learning y la simulación como los enfoques más efectivos para enseñar ecografía (destreza psicomotora + interpretación de imagen).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: POCUS en pregrado se vuelve estándar; el cuello de botella migrará de &#39;tener equipo&#39; a &#39;tener un diseño instruccional con teoría de aprendizaje explícita&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09089-8" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09089-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Education for Primary Care · 2026-06-19 · review</div>
+          <div class="r10-title">Integración de médicos graduados en el extranjero (IMG) a atención primaria: SR + síntesis narrativa (40 estudios)</div>
+          <div class="r10-line">Los IMG enfrentan sesgo sistémico, aislamiento y barreras de comunicación; mentoría, feedback culturalmente sensible y entrenamiento dirigido facilitan la integración y reducen el differential attainment.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el differential attainment será el próximo gran tema de equidad en educación médica; ángulo natural para Javier dada la migración de médicos peruanos a sistemas anglosajones.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/14739879.2026.2673589" target="_blank" rel="noopener">↗ doi.org/10.1080/14739879.2026.2673589</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open · 2026-06-18 · review</div>
+          <div class="r10-title">Modalidades de educación en técnica inhalatoria en asma/EPOC: protocolo de SR + network meta-análisis bayesiano (6 modalidades)</div>
+          <div class="r10-line">Solo 31% de pacientes logra técnica inhalatoria correcta en 40 años; este protocolo NMA comparará y rankeará 6 modalidades educativas (demostración, video, teach-to-goal, farmacéutico, enfermería, feedback con sensor).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el NMA de modalidades educativas se vuelve plantilla metodológica; Javier puede copiar la estructura (TIDieR + nodos a priori + CINeMA) para rankear métodos de enseñanza en sus propios cursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2026-120185" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2026-120185</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open · 2026-06-19 · review</div>
+          <div class="r10-title">Capacitación de docentes escolares en educación sexual integral: scoping review mixto (74 estudios)</div>
+          <div class="r10-line">La formación preservicio es el enfoque más efectivo y la duración óptima es dependiente del contexto, pero exige combinar presencial + online con soporte técnico de seguimiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el patrón &#39;preservicio + blended + follow-up&#39; se replicará en faculty development; aplica directo a cómo Javier forma a sus propios docentes/tutores en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2025-111342" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-111342</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine · 2026-06-18 · rct</div>
+          <div class="r10-title">Cómics para orientar a aprendices en pase de visita al pie de cama: RCT por equipos (233 participantes)</div>
+          <div class="r10-line">RCT que aleatoriza atendings+equipos a una orientación basada en cómic vs práctica usual: autoeficacia para bedside rounding sube de 17% basal a 78% (vs 61% control) y comodidad del atending a 100% (vs 67%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la &#39;medicina gráfica&#39; como onboarding de tareas clínicas crecerá; formato barato y replicable que Javier podría testear como recurso visual de bajo costo para razonamiento clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag184" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag184</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-19 · paper</div>
+          <div class="r10-title">Efectos del género del preceptor y del estudiante en las notas de clerkship (6,855 evaluaciones)</div>
+          <div class="r10-line">Análisis de 6,855 evaluaciones: las preceptoras asignan notas modestamente más bajas (P&lt;0.0001) y la cultura de calificación por especialidad influye fuerte; la evaluación clínica numérica no es objetiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la variabilidad de evaluador empujará hacia evaluación programática y calibración de calificadores; argumento para estandarizar rúbricas en tus bancos y rotaciones.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09707-5" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09707-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-19 · paper</div>
+          <div class="r10-title">Blended learning para habilidades comunicativas médicas incl. comunicación relacionada con IA: piloto con OSCE</div>
+          <div class="r10-line">Piloto (n=6, flipped + pacientes estandarizados + H5P): mayores ganancias en competencias de comunicación relacionadas con IA y cierre de consulta que en comunicación narrativa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;comunicar la IA al paciente&#39; será una competencia curricular formal; Javier puede adelantarse con contenido sobre cómo el médico explica decisiones asistidas por IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09662-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09662-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-18 · paper</div>
+          <div class="r10-title">Preferencias de recursos de aprendizaje en línea por etapa: lente de teoría de la carga cognitiva (estudiantes UK años 1-2)</div>
+          <div class="r10-line">Las preferencias cambian por etapa: videos interactivos pre-clase, preguntas de práctica post-clase y simulacros online pre-examen son lo más valorado; el exceso de recursos impone carga cognitiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el diseño de recursos &#39;por etapa de aprendizaje&#39; será buena práctica; material directo para el capítulo de carga cognitiva de tu libro de neurociencia educativa.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09694-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09694-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-18 · paper</div>
+          <div class="r10-title">Flipped learning en neuroanatomía dental: cuasi-experimento con resultado NULO entre grupos</div>
+          <div class="r10-line">Pretest-postest-seguimiento (n=59): tanto flipped como clase tradicional mejoraron conocimiento del nervio facial, pero SIN diferencia significativa entre grupos (contrapeso al hype del aula invertida).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: acumularán nulos del flipped en contenidos memorísticos; el debate maduro será &#39;para qué contenido&#39;, no &#39;flipped sí/no&#39; — gancho perfecto para contenido de matices.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09742-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09742-2</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La MISMA intervención da resultados opuestos hoy: el flipped classroom gana grande en un RCT de enfermería (η²=0.65, 42316159) pero EMPATA con la clase tradicional en neuroanatomía dental (42316205). El efecto depende del contenido y del diseño, no del método: el flipped no es magia universal.</li><li>En la identidad profesional del interno (meta de 48 estudios, 42316143), el &#39;cuidado humanístico&#39; (r=0.77) y el ambiente de aprendizaje clínico (r=0.53) pesan más que la conducta de práctica clínica (no significativa). La identidad se forma por CLIMA del rotatorio, no por número de horas.</li><li>En razonamiento diagnóstico, los estudiantes dependen del feedback del supervisor como muleta y usan estrategias autorreguladoras inespecíficas (42319197). El cuello de botella no es conocimiento: es autorregulación (SRL) no entrenada explícitamente.</li><li>El maltrato laboral —no el género en sí— explica el gap de burnout en faculty quirúrgico: al ajustar por mistreatment, la asociación género→burnout desaparece (n=3,253, 42312558). Corolario estratégico: intervenir el ambiente, no &#39;arreglar&#39; a las mujeres.</li><li>La resiliencia psicológica es modificador de efecto, no escudo: en posgrados, el impacto de eventos académicos adversos sobre ansiedad es OR≈12.2 con baja resiliencia vs ≈3.8 con alta (42321729). La resiliencia no evita el estresor, modula su daño — lente RDoC/HiTOP de regulación pura.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Para qué tipos de contenido el flipped classroom realmente supera a la clase magistral, y cuándo solo añade carga sin ganancia (contraste enfermería vs neuroanatomía de hoy)?</li><li>¿Un modelo escalonado CBME (L1→L3) con outcomes duros es replicable y defendible en ENAM/Residentado peruano, o solo reordena el mismo temario con nombre nuevo?</li><li>Si la realidad inmersiva reduce tiempo y errores en simulación, ¿el ROI del hardware justifica reemplazar simulación de baja fidelidad bien diseñada, o es teatro caro?</li><li>¿Cómo medir feedback literacy (no satisfacción) como outcome real y verificable en los cursos USAMEDIC?</li><li>¿La autorregulación (SRL) en razonamiento clínico se puede entrenar explícitamente, o seguimos graduando aprendices dependientes del feedback del docente?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel: &#39;El flipped classroom no siempre gana&#39; — un RCT lo prueba (η²=0.65) y un cuasi-experimento de hoy lo empata; enseña a decidir POR CONTENIDO, no por moda. Evidencia proporcional, sin hype.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper/comentario: adaptar el modelo escalonado CBME de educación de precisión (L1→L3 con outcomes observables) al Residentado/ENAM peruano; protocolo o position paper con métricas duras.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Capítulo del libro de neurociencia educativa: &#39;Carga cognitiva por etapa de aprendizaje&#39; — recursos pre-clase (video interactivo), post-clase (preguntas de práctica) y pre-examen (simulacros), anclado en CLT y en datos de preferencias reales.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/post: &#39;Feedback literacy &gt; satisfacción&#39; — por qué la evaluación docente por satisfacción miente y cómo rediseñar la retroalimentación en tus cursos para que sea outcome real.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición/SR: de &#39;aprendiz dependiente del feedback&#39; a &#39;autorregulado&#39; — entrenar SRL explícita en razonamiento diagnóstico como competencia evaluable.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BMC Medical Education</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag highlight">Medical Education Online</span><span class="tag highlight">Academic Medicine</span><span class="tag ">Journal of Dental Education</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">BMJ Open</span><span class="tag ">JBI Evidence Synthesis</span><span class="tag ">Education for Primary Care</span><span class="tag ">Annals of Surgery</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities vía MCP). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 21 de junio de 2026.</div>
+</div>
+</body>
+</html>
