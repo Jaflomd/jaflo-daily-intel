@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-06-21 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">21 de junio de 2026 · 2026-W25 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">151</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">73</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Translational Psychiatry · 19 jun 2026 · review · 2026-06-19</div>
+        <h3 class="r3-title">A systematic narrative review of the form, process, and function of sensory hyposensitivity in depression</h3>
+        <p class="r3-hook">La depresión no solo cambia el ánimo: 51 estudios + 5 reviews muestran que apaga los cinco sentidos (visión, oído, gusto, tacto, olfato), y los autores lo reencuadran como un &#39;escape&#39; funcional de un entorno nocivo, no como un déficit aislado. Para tu libro de psicopatología para el mundo y tu marco dimensional (HiTOP/RDoC) esto es oro: un correlato transdiagnóstico que se entiende mejor como función que como lesión. Úsalo como caso bandera para enseñar a residentes y en contenido la diferencia entre &#39;lo que el síntoma hace&#39; vs &#39;lo que el síntoma es&#39;. Encaja directo con tu BMSE/razonamiento dimensional y con la tesis de que la psicopatología es adaptación malograda.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41398-026-04165-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04165-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · may 2026 (en ventana de indexación) · review · 2026-04-23</div>
+        <h3 class="r3-title">Serotonergic psychedelics for Autism spectrum disorder: Neurobiological mechanisms and translational prospects</h3>
+        <p class="r3-hook">Review que sintetiza cómo psilocibina y LSD (agonistas 5-HT2A) podrían relajar los &#39;priors&#39; corticales rígidos del TEA y reabrir ventanas críticas de aprendizaje social vía BDNF/mTOR y modulación neuroinmune (marcos REBUS / anarchic brain). Esto toca de lleno tu wedge de neurodivergencia adulta (book-psicopato como negocio digital) y tu línea de neuromodulación / psiquiatría de precisión. Material premium para contenido: el ángulo &#39;reabrir plasticidad en autismo&#39; es viral pero exige tu disclaimer de evidencia proporcional, porque todo aquí es preclínico o etapa muy temprana. Guárdalo como pieza de autoridad, no como promesa clínica.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111717" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111717</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · may 2026 (en ventana de indexación) · review · 2026-05-08</div>
+        <h3 class="r3-title">The cooccurrence of psychosis and emergent cognitive impairment/decline in rare genetic disorders: A scoping review</h3>
+        <p class="r3-hook">Scoping review que mapea 52 categorías de trastornos genéticos y 90 genes/variantes que pueden causar a la vez psicosis y deterioro cognitivo de inicio nuevo: el diferencial exacto que un residente suele olvidar. Es neuropsiquiatría pura (tu foco secundario distintivo) y combustible directo para QBanks de ENAM/Residentado y para tu razonamiento clínico dimensional. La conducta accionable: ante psicosis + declive cognitivo joven, pensar genético antes de cerrar en esquizofrenia. Sirve como esqueleto para una clase AMAUTA de &#39;banderas rojas del diferencial psicosis-demencia&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111739" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111739</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Reproductive and Infant Psychology · 17 jun 2026 · network-meta-analysis · 2026-06-17</div>
+        <h3 class="r3-title">Effectiveness of digital psychological interventions for perinatal depression: a network meta-analysis</h3>
+        <p class="r3-hook">NMA de 32 ECA y 8.577 mujeres que rankea intervenciones digitales para depresión perinatal: las basadas en mindfulness (MBI) salen #1 post-intervención y, junto con terapia interpersonal (IPT), sostienen el efecto al seguimiento (registro PROSPERO, RoB 2, SUCRA). Para Perú y contextos de bajo recurso esto es leverage puro: una intervención escalable, digital y de primera línea para una población desatendida. Conecta con tu pilar ai-enhancement (entrega digital) y con posibles productos del Aprendiz Experto o protocolos clínicos. Ojo con el matiz: los subgrupos por modo de entrega e ingreso del país no fueron significativos, así que el ranking es global, no a la medida.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/02646838.2026.2689402" target="_blank" rel="noopener">↗ doi.org/10.1080/02646838.2026.2689402</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">British Journal of Sports Medicine · 18 jun 2026 · guideline · 2026-06-18</div>
+        <h3 class="r3-title">Mental health in tennis: a cross-organisational hybrid summit-Delphi consensus process</h3>
+        <p class="r3-hook">Consenso Delphi entre las 7 federaciones del tenis (83 panelistas) que adopta 2 principios fundacionales + 25 recomendaciones accionables de salud mental en atletas elite y juveniles, en 5 dominios (estándares de cuidado, educación, medios, safeguarding, investigación). Más allá del tenis, es un modelo replicable de gobernanza de salud mental que puedes adaptar a educación médica (USAMEDIC/AMAUTA) o a programas de bienestar. Para contenido sirve el ángulo &#39;la salud mental se prioriza desde arriba o no existe&#39;. Úsalo además como plantilla de cómo se construye un consenso multi-stakeholder, algo que tú mismo operas en comités.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bjsports-2025-111479" target="_blank" rel="noopener">↗ doi.org/10.1136/bjsports-2025-111479</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Chinese Journal of Pediatrics (Zhonghua Er Ke Za Zhi) · 16 jun 2026 · texto en chino · guideline · 2026-06-16</div>
+        <h3 class="r3-title">Expert consensus on the identification and management pathways of common emotional and psychosomatic problems in pediatric clinical services (2026)</h3>
+        <p class="r3-hook">Consenso experto 2026 que define rutas de identificación y manejo de problemas emocionales y psicosomáticos comunes en pediatría general: exactamente el puente atención primaria ↔ salud mental infantil que tu enseñanza toca. Aunque viene de China, el patrón (cómo el pediatra de primer contacto detecta y deriva) es transferible a tu material de ENAM/Residentado y a la neurodivergencia infantil. Conviértelo en checklist o algoritmo para clase o QBank. Verifica el contenido fino antes de citar cifras: el documento está en chino y solo tienes el título indexado en PubMed.</p>
+        <a class="r3-link" href="https://doi.org/10.3760/cma.j.cn112140-20260401-00260" target="_blank" rel="noopener">↗ doi.org/10.3760/cma.j.cn112140-20260401-00260</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Voice · 16 jun 2026 · guideline · 2026-06-16</div>
+        <h3 class="r3-title">Expert Consensus Statement on Acoustic Metrics for Swallowing Dysfunction Screening in Older Adults: A Delphi Study</h3>
+        <p class="r3-hook">Consenso multidisciplinario (17 expertos, método Delphi, 9 ítems) sobre métricas acústicas de voz y tos para tamizar disfagia en adultos mayores, con foco explícito en el potencial de la IA y la advertencia sobre sesgo algorítmico y equidad de acceso. Te sirve doble: ángulo neuropsiquiátrico (la disfagia se cruza con demencia, delirium, Parkinson y frailty) y ángulo ai-enhancement (screening barato y no invasivo por audio). Es un caso real de cómo un consenso integra IA con prudencia sobre sesgo, justo tu narrativa de &#39;IA en clínica con criterio&#39;. Idea de producto: tamizaje por audio en geriatría de bajo recurso.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jvoice.2026.05.036" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jvoice.2026.05.036</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">BMJ Open Respiratory Research · 18 jun 2026 · meta-analysis · 2026-06-18</div>
+        <h3 class="r3-title">Association between mental health and chronic obstructive pulmonary disease (COPD) outcomes: systematic review and meta-analysis</h3>
+        <p class="r3-hook">58 estudios y 707.037 pacientes muestran que la enfermedad mental comórbida (sobre todo depresión y ansiedad) empeora cada outcome de EPOC: función pulmonar, carga sintomática, exacerbaciones, hospitalizaciones y mortalidad (HR ajustado 1.34). Es el argumento de oro para la psiquiatría de enlace y para tu tesis de que separar mente y cuerpo cuesta vidas. Úsalo en contenido y en clase como dato duro de por qué integrar la salud mental en la medicina general. Conecta con tu lente de precisión y con el costo real de no tratar lo psiquiátrico.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjresp-2025-003977" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjresp-2025-003977</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Molecular Neurobiology · 18 jun 2026 · meta-analysis · 2026-06-18</div>
+        <h3 class="r3-title">Targeting Neuroinflammation in Adult Ischemic Stroke: Direct Immunotherapy, Regenerative Cell-Based Strategies, and Translational Challenges — A Systematic Review with Exploratory Meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática de 55 estudios (3 ECA, N=637 en el meta-análisis exploratorio) sobre inmunoterapia y terapia celular contra la neuroinflamación post-ictus: biológicamente plausible y segura en fase temprana, pero todavía SIN beneficio clínico consistente (OR 0.87, IC cruza 1; I²=46%). Lección transversal para tu psiquiatría de precisión: la neuroinflamación es diana de moda y los ensayos siguen sin convertir mecanismo en outcome. Es un recordatorio honesto contra el hype neuroinmune que también invade la psiquiatría. Buen contrapunto para enseñar lectura crítica de evidencia traslacional.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s12035-026-05980-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s12035-026-05980-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Molecular Brain · 19 jun 2026 · meta-analysis · 2026-06-19</div>
+        <h3 class="r3-title">Therapeutic potential of AdipoRon in cognitive, depressive, and anxiety disorders: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis preclínico de AdipoRon (agonista del receptor de adiponectina) que muestra efectos antidepresivos, ansiolíticos y pro-cognitivos en roedores, vía proteínas sinápticas (sinaptofisina, PSD-95) y modulación de citocinas (CAMARADES/SYRCLE). Toca tu interés en el eje metabolismo-cerebro y la psiquiatría de precisión metabólica (y de refilón tu Foundation/Kinobody: la adiponectina nace del tejido metabólico). Es señal temprana, no clínica: los propios autores piden cautela por pocos estudios y alta heterogeneidad. Guárdalo como hipótesis a vigilar, no como claim para contenido.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s13041-026-01323-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s13041-026-01323-0</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La depresión no &#39;embota&#39; por daño: apaga los sentidos como estrategia de escape de un entorno nocivo. Reencuadre dimensional puro para tu libro: el síntoma como función, no como lesión.</li><li>Brutal para metodología: en la umbrella review de outcomes de TBI (Neuropsychology Review), el 78% de los 41 meta-análisis incluidos fue calidad &#39;críticamente baja&#39; por AMSTAR2. La síntesis de evidencia abunda; la síntesis confiable, no.</li><li>Farmacogenética de antidepresivos: el viejo SLC6A4 colapsó en estudios grandes. Lo único clínicamente útil hoy es dosificar por CYP2D6/CYP2C19 (y CYP2B6); predecir eficacia sigue siendo promesa, no práctica.</li><li>En depresión perinatal, el mindfulness digital le gana a las demás intervenciones online en el ranking NMA: escalable, barato y candidato a primera línea en contextos como Perú.</li><li>707 mil pacientes lo confirman: depresión/ansiedad comórbida sube exacerbaciones, hospitalizaciones y mortalidad en EPOC. La psiquiatría de enlace no es lujo, es supervivencia.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Puede HiTOP/RDoC incorporar la hiposensibilidad sensorial como dimensión transdiagnóstica de &#39;retirada/escape&#39;, y no solo como rasgo de la depresión?</li><li>¿Debería la exposición previa a antipsicóticos (supersensibilidad D2) ser criterio de estratificación en ensayos, y entrar como distractor fino en tus QBanks de ENAM?</li><li>Ante psicosis + deterioro cognitivo de inicio joven, ¿qué algoritmo mínimo le enseñarías a un residente para pensar &#39;genético&#39; antes de cerrar en esquizofrenia?</li><li>¿Es ético y viable escalar mindfulness digital como primera línea de depresión perinatal en zonas del Perú sin psicólogos?</li><li>Si la neuroinflamación post-ictus aún no convierte mecanismo en outcome clínico, ¿qué dice eso sobre el entusiasmo neuroinmune en depresión?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carousel JafloMD: &#39;Tu cerebro apaga los sentidos para escapar de la depresión&#39;, basado en la review de hiposensibilidad sensorial; cierre dimensional, sin lenguaje diagnóstico ni promesa.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo book-psicopato sobre &#39;función adaptativa malograda&#39;: teje la hiposensibilidad sensorial en depresión con la ansiedad &#39;for better or worse&#39; como dos caras del síntoma-como-función.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Umbrella review propia con AMSTAR2 estricto en un tema tuyo (p.ej. neuromodulación en depresión): el gap está servido, ya que el 78% de las síntesis actuales de TBI son de baja calidad.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Aprendiz Experto, screencast IA-first: &#39;Cómo filtré 150 papers a 10 con PubMed MCP + IA en minutos&#39; — meta-contenido del propio pipeline de inteligencia diaria.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Scoping/algoritmo de diferencial dimensional &#39;psicosis + deterioro cognitivo de causa genética&#39; para QBank ENAM/Residentado AMAUTA, derivado del scoping review de 52 trastornos.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry (muy activo hoy: psicodélicos en TEA, psicosis+demencia genética, farmacogenética de antidepresivos)</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Translational Psychiatry</span><span class="tag ">Molecular Neurobiology</span><span class="tag ">Molecular Brain</span><span class="tag ">BMC Psychiatry</span><span class="tag ">Journal of Reproductive and Infant Psychology</span><span class="tag ">British Journal of Sports Medicine (★ consenso multi-organización)</span><span class="tag ">Journal of Voice (★ expert consensus statement)</span><span class="tag ">Chinese Journal of Pediatrics / Zhonghua Er Ke Za Zhi (★ consenso experto 2026)</span><span class="tag highlight">Cochrane Database of Systematic Reviews (★ body normativo de evidencia; activo, aunque su update de hoy quedó fuera de alcance)</span><span class="tag ">Neuropsychology Review (umbrella review de TBI)</span><span class="tag ">Molecular Neurodegeneration</span><span class="tag ">Current Opinion in Neurology</span><span class="tag ">International Journal of Stroke</span><span class="tag ">Expert Opinion on Emerging Drugs</span><span class="tag ">Nota: hoy no se indexaron guías nuevas de APA/NICE/CANMAT/WFSBP/BAP/RANZCP/AAN/EAN en la ventana; los &#39;consensos&#39; del día son de menor peso normativo.</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 21 de junio de 2026.</div>
+</div>
+</body>
+</html>
