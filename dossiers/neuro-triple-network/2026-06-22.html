@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-06-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">22 de junio de 2026 · 2026-W26 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">42</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">31</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Translational Psychiatry · 20 jun 2026 · review · 2026-06-20</div>
+        <h3 class="r3-title">Rethinking EEG biomarkers of brain disorders: a transdiagnostic dimensional view</h3>
+        <p class="r3-hook">Jaflo, síntesis de 176 estudios EEG (dolor crónico, migraña, fatiga, depresión) que muestra que el hallazgo más consistente NO es específico de ningún diagnóstico: el aumento de actividad de baja frecuencia (LFA), compatible con disritmia tálamo-cortical y desbalance excitación/inhibición. El argumento clave para ti: la inespecificidad no es ruido, es la señal — un marcador transdiagnóstico y dimensional que sirve para estratificar, monitorear y dirigir neuromodulación. Es exactamente la tesis de tu BMSE/pMSE: mismo fenómeno observable, eje dimensional, especificador mecanístico (aquí E/I) por debajo. Úsalo como cita-ancla en el capítulo donde defiendes biomarcadores colgados de dimensiones HiTOP/RDoC y no de cajas DSM, y como ejemplo barato y escalable (EEG, no fMRI) para tu audiencia de psiquiatría de precisión.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41398-026-04187-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04187-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging · 20 jun 2026 · paper · 2026-06-20</div>
+        <h3 class="r3-title">Altered sensorimotor-association axis patterning of global functional connectivity in an autism subtype with low levels of language, intellectual, and adaptive functioning</h3>
+        <p class="r3-hook">Jaflo, el grupo de Lombardo estratifica el autismo en dos subtipos (alto vs bajo LIAF: lenguaje, intelecto y funcionamiento adaptativo) con un modelo fenotípico que generaliza al 92% en datos independientes, y muestra que la hiperconectividad en áreas de asociación junto a hipoconectividad sensoriomotora sigue el eje sensorimotor-asociación (el gradiente cortical de Margulies). Lo potente: la alteración es más marcada en el subtipo bajo-LIAF, o sea hay una firma de red graduada por severidad, no un &#39;autismo&#39; único. Para tu wedge de neurodivergencia adulta y tu libro de psicopatología dimensional esto es oro: el mismo gradiente macroescala que organiza la corteza organiza la heterogeneidad clínica — fenotipo→conectividad→subtipo. Úsalo para argumentar subtipado por conectividad en vez de etiqueta categórica, y como ejemplo de réplica cruzada (la señal de calidad que sueles exigir).</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.bpsc.2026.06.005" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsc.2026.06.005</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">American Journal of Geriatric Psychiatry · may 2026 (indexado 21 jun) · paper · 2026-05-29</div>
+        <h3 class="r3-title">Gray Matter Volume Predicts Improvement in Depression Symptoms Following Psychotherapy in Late Life Depression</h3>
+        <p class="r3-hook">Jaflo, en 104 adultos mayores con depresión, el volumen de materia gris basal en regiones de redes afectiva y cognitiva (cingulado posterior, ínsula, precúneo, cingulado anterior rostral y, de forma divergente, núcleo accumbens) predice quién responde a Terapia de Solución de Problemas. El gancho: varias de esas regiones son nodos DMN/salience que también predicen respuesta a antidepresivos, pero el accumbens (reward) aparece como candidato propio de la respuesta psicoterapéutica. Para tu línea de psiquiatría de precisión es un caso limpio de &#39;neuroimagen que estratifica tratamiento&#39; — y barato de comunicar: estructura basal → probabilidad de respuesta. Úsalo como contrapunto realista a los modelos de conectividad (aquí basta volumen) y como ejemplo en contenido sobre por qué no todos responden igual a la misma terapia.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jagp.2026.05.014" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jagp.2026.05.014</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Human Brain Mapping · 15 jun 2026 · paper · 2026-06-15</div>
+          <div class="r10-title">Individual Differences in Error-Related Brain Activity and Post-Error Slowing in Children</div>
+          <div class="r10-line">En 159 niños y 40 adultos, mayor actividad de error en cingulado anterior dorsal e ínsula anterior (los nodos de la salience network) predice mejor ajuste conductual y menor costo de cambio de tarea; los niños cometen errores consecutivos donde los adultos cometen aislados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la maduración de la salience network será marco para tu libro de neurociencia educativa — &#39;el cerebro que aprende del error&#39; — y un reel de alto enganche; espera más trabajos ligando dACC/ínsula a metacognición en el aula.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/hbm.70581" target="_blank" rel="noopener">↗ doi.org/10.1002/hbm.70581</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Discover Mental Health · 21 jun 2026 · paper · 2026-06-21</div>
+          <div class="r10-title">Associations between anterior hypothalamic subunits and ADHD and autistic traits revealed by deep learning MRI segmentation</div>
+          <div class="r10-line">Segmentación con deep learning de subnúcleos hipotalámicos: menor volumen de la región supraóptica (rica en oxitocina) se asocia a más rasgos autistas y mayor severidad de TDAH en adultos no clínicos (n=23), sugiriendo un eje neuroendocrino dimensional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: n=23 no aguanta peso, pero el ángulo oxitocina↔neurodivergencia adulta es carnada perfecta para tu wedge; surgirán réplicas con muestras grandes y, si sobreviven, abren un biomarcador estructural barato.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s44192-026-00521-5" target="_blank" rel="noopener">↗ doi.org/10.1007/s44192-026-00521-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Computers in Biology and Medicine · 20 jun 2026 · paper · 2026-06-20</div>
+          <div class="r10-title">Diagnosis of ADHD in children from EEG signals using amplitude modulation features</div>
+          <div class="r10-line">Marcador EEG de TDAH basado en modulación de amplitud (acoplamiento cruzado de frecuencias gamma/beta frontal) que reporta 99.46% de exactitud diagnóstica en un dataset público de 121 niños.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ese 99.46% es bandera roja de sobreajuste a un solo dataset; servirá para tu contenido crítico de &#39;IA que promete diagnóstico y no generaliza&#39; y para enseñar a tus residentes a leer ML clínico con escepticismo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.compbiomed.2026.111828" target="_blank" rel="noopener">↗ doi.org/10.1016/j.compbiomed.2026.111828</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Human Neuroscience · 3 jun 2026 (indexado jun) · review · 2026-06-03</div>
+          <div class="r10-title">Advancing understanding of developmental coordination disorder in children: data from the literature</div>
+          <div class="r10-line">Revisión PRISMA de 72 estudios: el trastorno del desarrollo de la coordinación muestra firmas estructurales/funcionales en DLPFC, giro frontal inferior, cerebelo y ganglios basales, y la comorbilidad con TDAH/TEA agrava la firma de red.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el TDC es el &#39;primo olvidado&#39; de la neurodivergencia; cabe en tu mapa de fenotipos dimensionales y da una clase/carrusel sobre cómo las comorbilidades comparten circuito, no etiqueta.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fnhum.2026.1779776" target="_blank" rel="noopener">↗ doi.org/10.3389/fnhum.2026.1779776</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports · 20 jun 2026 · rct · 2026-06-20</div>
+          <div class="r10-title">Effects of acute ebselen add-on treatment on resting state functional connectivity in depressed patients with inadequate response to antidepressants</div>
+          <div class="r10-line">ECA doble ciego: 7 días de ebselen (mimético de litio) como add-on en depresión resistente no produjo cambios de conectividad en reposo que sobrevivieran corrección por comparaciones múltiples.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: null honesto y publicado — material ideal para tu contenido sobre por qué los nulos importan y por qué 7 días es poco; el ebselen seguirá vivo, pero la señal de conectividad necesitará dosis/tiempo mayores.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-58393-2" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-58393-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychiatry Research: Neuroimaging · 15 jun 2026 · paper · 2026-06-15</div>
+          <div class="r10-title">Brain functional connectivity patterns associated with adiposity in schizophrenia</div>
+          <div class="r10-line">Machine learning sobre rs-fMRI en ayuno y posprandial: en esquizofrenia (n=46) la adiposidad se predice desde redes límbica/sensoriomotora (ayuno) y visual/DMN/control ejecutivo (posprandial), distinto del patrón sin esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la comorbilidad metabólica es el talón de Aquiles de tus pacientes F20 (tu programa REACTIVA); este eje red↔grasa abrirá intervenciones de precisión y un ángulo Foundation-Kinobody que casi nadie cruza.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pscychresns.2026.112274" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pscychresns.2026.112274</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cognitive, Affective &amp; Behavioral Neuroscience · 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Fronto-Parietal EEG asymmetry interactions predict negative attention bias: A secondary data analysis</div>
+          <div class="r10-line">En 50 mujeres jóvenes con síntomas depresivos leves-moderados, las asimetrías alfa frontales y parietales interactúan para predecir el sesgo atencional negativo, refinando los modelos de sesgo en depresión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: exploratorio y pide réplica, pero el frame &#39;asimetría frontoparietal → mirada negativa&#39; es didáctico; úsalo con pinzas y como ejemplo de por qué los análisis secundarios necesitan preregistro.</div>
+          <a class="r10-link" href="https://doi.org/10.3758/s13415-026-01466-6" target="_blank" rel="noopener">↗ doi.org/10.3758/s13415-026-01466-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience Bulletin · 19 jun 2026 · paper · 2026-06-19</div>
+          <div class="r10-title">Male-Biased Social Deficits in Chd8 Mouse Model of Autism Linked to Hippocampal Abnormalities</div>
+          <div class="r10-line">Modelo murino Chd8 que recapitula el sesgo masculino 4:1 del autismo: el agrandamiento hipocampal y la disrupción de conectividad hipocampal predicen la severidad del déficit social solo en machos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: preclínico, pero el sesgo de sexo es tu tema — explica por qué el autismo en mujeres se subdiagnostica; munición para contenido sobre neurodivergencia femenina y para vigilar la traducción humana.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s12264-026-01653-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s12264-026-01653-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuron · 17 jun 2026 · editorial · 2026-06-17</div>
+          <div class="r10-title">Shedding light on α2δ-1 function in neuronal networks (preview de Dos Santos et al.)</div>
+          <div class="r10-line">Comentario en Neuron: un ectodominio soluble de α2δ-1 (SEAD1) reequilibra excitación/inhibición potenciando interneuronas parvalbúmina y rescata déficits de circuito y cognición en un modelo murino relevante a esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el desbalance E/I es el &#39;porqué&#39; mecanístico que tu BMSE exige bajo cada score; esta diana molecular conecta interneurón→circuito→cognición y anticipa fármacos que arreglan la red, no solo el síntoma.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuron.2026.05.021" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuron.2026.05.021</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Human Neuroscience · 2 jun 2026 (indexado jun) · paper · 2026-06-02</div>
+          <div class="r10-title">Primitive reflexes as candidate quantitative readouts of hierarchical inhibitory control across the lifespan</div>
+          <div class="r10-line">Marco teórico: la persistencia o reaparición de reflejos primitivos (en TDAH, dislexia, envejecimiento, Alzheimer/Parkinson) sería una lectura conductual barata de sistemas inhibitorios jerárquicos (GABA) desde la médula hasta la corteza.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: hipótesis sin validar, pero la idea &#39;reflejo = ventana al control inhibitorio distribuido&#39; es contenido irresistible y un puente entre tu eje E/I y un examen físico de 2 minutos; espera intentos de operacionalizarla.</div>
+          <a class="r10-link" href="https://doi.org/10.3389/fnhum.2026.1860053" target="_blank" rel="noopener">↗ doi.org/10.3389/fnhum.2026.1860053</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La inespecificidad diagnóstica de un biomarcador EEG no lo invalida: el aumento de actividad de baja frecuencia es transdiagnóstico precisamente porque marca un mecanismo compartido (disbalance E/I) — justo la lógica &#39;mismo score, ruta mecanística&#39; de tu BMSE. (Transl Psychiatry, DOI 10.1038/s41398-026-04187-z)</li><li>El mismo gradiente cortical sensorimotor→asociación que organiza el cerebro sano organiza la severidad del autismo: la heterogeneidad clínica vive sobre un eje neuroanatómico, no sobre categorías DSM. (Biol Psychiatry CNNI, DOI 10.1016/j.bpsc.2026.06.005)</li><li>En depresión geriátrica a veces basta el volumen de materia gris basal (no la conectividad) para predecir respuesta a psicoterapia, y el núcleo accumbens emerge como marca propia de la respuesta psicoterapéutica, distinta de la farmacológica. (Am J Geriatr Psychiatry, DOI 10.1016/j.jagp.2026.05.014)</li><li>Cuidado con los papers de IA que reportan &gt;99% de exactitud diagnóstica en un solo dataset público: en TDAH-EEG es señal de sobreajuste, no de un biomarcador listo para clínica. (Comput Biol Med, DOI 10.1016/j.compbiomed.2026.111828)</li><li>Los nodos clásicos de la salience network (cingulado anterior dorsal + ínsula anterior) maduran tarde: por eso los niños corrigen el error en varios intentos y los adultos en uno — &#39;aprender del error&#39; es desarrollo de red, no de voluntad. (Human Brain Mapping, DOI 10.1002/hbm.70581)</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Puede un eje E/I medido por EEG (actividad de baja frecuencia) servir como especificador mecanístico transdiagnóstico dentro del marco BMSE, en vez de un biomarcador por diagnóstico?</li><li>Si el autismo se ordena sobre el gradiente sensorimotor-asociación, ¿el subtipado por conectividad predice mejor la respuesta a intervención que las etiquetas DSM en neurodivergencia adulta?</li><li>¿Qué nodos de red (DMN/salience/reward) predicen respuesta a psicoterapia vs a fármaco, y se puede construir un algoritmo de asignación de tratamiento de precisión a partir de eso?</li><li>En esquizofrenia, ¿la firma de conectividad que predice adiposidad abre una intervención metabólica dirigida por red, integrable a un programa de rehabilitación como REACTIVA?</li><li>¿El desarrollo de la salience network (dACC/ínsula) y el ajuste post-error es un objetivo entrenable en educación médica de precisión y razonamiento clínico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel JafloMD: &#39;Tu cerebro aprende del error, no de la culpa&#39; — la salience network (cingulado anterior + ínsula) madura tarde y por eso los niños necesitan varios intentos; aterriza en estudio/ENAM y en crianza. (basado en Human Brain Mapping 2026)</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE/pMSE: &#39;El especificador E/I&#39; — usar la actividad de baja frecuencia EEG transdiagnóstica y el rescate de interneuronas parvalbúmina (α2δ-1/SEAD1) como evidencia del polo mecanístico excitación/inhibición bajo un mismo score.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición/perspective: &#39;Del DSM al gradiente&#39; — subtipado dimensional por el eje sensorimotor-asociación en neurodivergencia (autismo low/high-LIAF + TDAH), argumentando conectividad &gt; categoría para psiquiatría de precisión.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido &#39;IA en psiquiatría: lee la letra chica&#39; — desmontar el 99.46% del clasificador EEG-TDAH y enseñar a residentes a detectar sobreajuste y data leakage en papers de ML clínico. (pilares ai-enhancement + amauta-education)</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-PRD / extensión REACTIVA: módulo metabólico guiado por red — cruzar la firma conectividad↔adiposidad en F20 con Foundation/Kinobody para una intervención de precisión en pabellón femenino.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Translational Psychiatry</span><span class="tag ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</span><span class="tag ">American Journal of Geriatric Psychiatry</span><span class="tag ">Human Brain Mapping</span><span class="tag ">Psychological Medicine</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Scientific Reports</span><span class="tag ">Psychiatry Research: Neuroimaging</span><span class="tag ">Neuron</span><span class="tag ">Neuroscience Bulletin</span><span class="tag ">Frontiers in Human Neuroscience</span><span class="tag ">Computers in Biology and Medicine</span><span class="tag ">Discover Mental Health</span><span class="tag ">Cognitive, Affective &amp; Behavioral Neuroscience</span><span class="tag ">Dialogues in Clinical Neuroscience</span><span class="tag ">BMC Psychiatry</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP: search_articles + get_article_metadata; queries pdat y edat, ventana 2026/06/17–2026/06/22) · bioRxiv / medRxiv / PsyArXiv vía WebSearch (sin novedades dentro de la ventana de 48h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de junio de 2026.</div>
+</div>
+</body>
+</html>
