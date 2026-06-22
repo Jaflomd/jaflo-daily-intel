@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-06-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">22 de junio de 2026 · 2026-W26 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">84</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">49</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Translational Psychiatry · 2026-06-20 · review</div>
+        <h3 class="r3-title">Repensar los biomarcadores EEG: la actividad de baja frecuencia es la alteración más consistente en 176 estudios (dolor crónico, migraña, fatiga y depresión) — y su falta de especificidad es el punto</h3>
+        <p class="r3-hook">Revisión del grupo de la Technical University of Munich (Translational Psychiatry, 20/06) que sintetiza 176 estudios de EEG y demuestra que el marcador más reproducible a través de dolor crónico, migraña, fatiga y depresión es el aumento de actividad de baja frecuencia (LFA), consistente con disritmia tálamo-cortical y desbalance excitación/inhibición. El argumento central es contraintuitivo y exactamente tu tesis: la NO-especificidad por trastorno no resta valor clínico, apunta a una disfunción neural compartida que sostiene dimensiones sintomáticas (afecto negativo, disfunción cognitiva, manifestaciones somáticas). Jaflo, esto es munición de primera para el libro BMSE y tu línea dimensional: es el puente HiTOP (qué) ↔ RDoC (por qué) pintado con un biomarcador fisiológico real, no con teoría. Úsalo como cita-marco en el capítulo de arquitectura fenómeno→score→RDoC y como pieza de contenido: &#39;el biomarcador que sirve PRECISAMENTE porque no respeta las categorías del DSM&#39;. Mueve precision-psychiatry + research + content-documentation.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41398-026-04187-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04187-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Affective Disorders · 2026-06-20 · paper</div>
+        <h3 class="r3-title">Teoría de redes de la plasticidad: la fuerza de conectividad entre síntomas predice quién se deprime (ρ=−0.54; HR=0.20) en 146 personas sanas seguidas con EMA</h3>
+        <p class="r3-hook">Estudio prospectivo del Istituto Superiore di Sanità (J Affect Disord, 20/06) que operacionaliza una &#39;teoría de redes de la plasticidad&#39;: midió por ecological momentary assessment la fuerza de conectividad entre ítems sintomáticos en 146 sanos del estudio Multi-Mood y la usó como marcador pronóstico. El hallazgo es elegante y poco intuitivo: alta plasticidad = conectividad débil; quienes tenían redes sintomáticas más débiles mostraron mayor cambio absoluto posterior en síntomas depresivos (ρ=−0.54), llegaron antes al umbral depresivo y tuvieron mayor riesgo (los de red fuerte: HR=0.20). Jaflo, esto aterriza tu línea explícita de network theory en algo predictivo y preventivo, no solo descriptivo: la rigidez de la red protege, la flexibilidad expone (para bien o para mal). Encadénalo con la revisión EEG de hoy para un capítulo o carrusel sobre &#39;el cerebro como red dinámica&#39; y evalúa si la métrica de conectividad EMA es replicable en tu pabellón agudo del HVLH como marcador barato de riesgo de recaída. Pilar precision-psychiatry + research.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122129" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122129</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Medical Education · 2026-06-21 · editorial</div>
+        <h3 class="r3-title">Kevin Eva en el centenario de Kelley: los exámenes de altas consecuencias mal concebidos amenazan la competencia que dicen garantizar</h3>
+        <p class="r3-hook">Análisis crítico de Kevin Eva y Beth-Ann Cummings (Medical Education, 21/06) que aprovecha el centenario del trabajo de Kelley sobre validez para desmontar tres mitos del high-stakes testing en la era de la educación por competencias (CBME). Tesis: montar un argumento de validez sin demostrar cómo la decisión de alto riesgo influye en lo que pasa ANTES y DESPUÉS del examen no solo es insuficiente, es contraproducente — un examen psicométricamente impecable puede degradar la competencia si prioriza saltar el obstáculo sobre las conductas que importan a largo plazo. Jaflo, esto va directo al corazón de USAMEDIC/AMAUTA y tu prep de ENAM/Residentado: tu simulacro, ¿mide competencia o solo ordena candidatos? Es el ítem de educación de precisión del día y la base perfecta para un ensayo o pieza de contenido con autoridad sobre &#39;assessment que enseña vs. assessment que filtra&#39;, con un peso pesado del med-ed (Eva) como respaldo. Mueve amauta-education + content-documentation.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/medu.70252" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70252</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Current Opinion in Psychiatry · 2026-06-22 · review</div>
+          <div class="r10-title">rTMS para el trastorno obsesivo-compulsivo: la frontera ya no es &#39;¿funciona?&#39; sino &#39;¿para quién y dónde apunto?&#39;</div>
+          <div class="r10-line">Revisión que sintetiza la evidencia de rTMS en TOC: eficacia moderada con heterogeneidad de protocolos, sin predictores clínicos claros, y un giro del campo hacia targeting personalizado guiado por predictores neurales y biomarcadores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El próximo salto en neuromodulación será el lazo cerrado con predictores neurales individuales; tu línea de neuromodulación de precisión es de las de mayor leverage clínico-académico — vigílala y considera registrar marcadores de targeting.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/YCO.0000000000001107" target="_blank" rel="noopener">↗ doi.org/10.1097/YCO.0000000000001107</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience · 2026-04-15 · review</div>
+          <div class="r10-title">Esquizofrenia y demencia frontotemporal: dos entidades distintas con disfunciones de circuito convergentes (vía kynurenina, E/I prefrontal, neuroinmunidad)</div>
+          <div class="r10-line">Revisión narrativa que mapea los mecanismos compartidos entre esquizofrenia y DFT (dopamina/glutamato-NMDA, desbalance E/I prefrontal, vía kynurenina por inflamación crónica) y propone biomarcadores y dianas transdiagnósticas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La frontera psiquiatría↔neurodegeneración se difuminará vía biomarcadores transdiagnósticos; material directo para tu marco dimensional sobre &#39;mismos circuitos, distintas etiquetas&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroscience.2026.04.003" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroscience.2026.04.003</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Alzheimer&#39;s Research &amp; Therapy · 2026-06-20 · paper</div>
+          <div class="r10-title">Gemelos digitales del cerebro: combinar modelado de cerebro virtual + HD-EEG explica &gt;90% de la varianza de la memoria episódica en deterioro cognitivo leve</div>
+          <div class="r10-line">En 30 pacientes con MCI, los gemelos digitales individuales (cerebro virtual basado en RM de alto campo + HD-EEG) explicaron &gt;90% de la varianza del rendimiento de memoria episódica, superando a cada técnica por separado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El gemelo digital pasará de neuro a psiquiatría como herramienta de pronóstico personalizado; es el método de psiquiatría computacional que conviene aprender ahora, no después.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s13195-026-02114-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s13195-026-02114-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">AJOB Neuroscience · 2026-06-19 · paper</div>
+          <div class="r10-title">El valor de saber cuándo: análisis ético de la predicción de edad de inicio en enfermedades neurodegenerativas genéticas</div>
+          <div class="r10-line">Marco ético (4 dominios: enfermedad, test, individuo, contexto) para implementar responsablemente tests biomarcadores que predicen la edad de inicio en Huntington, DFT y ataxias espinocerebelosas en portadores y personas en riesgo 50%.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Cuando el biomarcador prediga inicio antes que síntoma, la pregunta dura no será la exactitud sino si conviene saber; encaja con tu rol en el Comité de Ética del HVLH y un ensayo sobre &#39;el derecho a no saber&#39; en psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/21507740.2026.2686616" target="_blank" rel="noopener">↗ doi.org/10.1080/21507740.2026.2686616</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Prog Neuro-Psychopharmacol Biol Psychiatry · vol. 147 · paper · 2026-05-28</div>
+          <div class="r10-title">Marcadores TMS de función GABAérgica/glutamatérgica ligados a adversidad infantil en depresión adolescente (n=47)</div>
+          <div class="r10-line">En 47 adolescentes con depresión mayor, mayor adversidad infantil (CTQ) se asoció a inhibición GABA-B aumentada (LICI debilitada) y el abuso físico a más facilitación glutamatérgica (ICF), medidas por TMS — biomarcadores candidatos de psicopatología relacionada con trauma.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La neurofisiología TMS se consolidará como ventana fisiológica de la huella del trauma; conecta neuromodulación + neurodesarrollo + tu marco dimensional de adversidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111761" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111761</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">NPJ Parkinson&#39;s Disease · 2026-06-19 · paper</div>
+          <div class="r10-title">Biomarcadores lipídicos en glóbulos rojos y plasma para Parkinson idiopático (panel con AUC 0.834)</div>
+          <div class="r10-line">Lipidómica por LC-IMS en 156 pacientes con Parkinson idiopático vs 155 controles: 240 lípidos alterados en glóbulos rojos, panel discriminatorio AUC 0.834, con módulos ligados a ferroptosis y señalización esfingolipídica convergiendo en toxicidad por alfa-sinucleína.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La lipidómica periférica acercará el biomarcador &#39;de tubo de sangre&#39; a la neurodegeneración; ejemplo limpio de estratificación molecular para tu narrativa de evidencia proporcional al claim.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41531-026-01434-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41531-026-01434-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">GeroScience · 2026-06-20 · paper</div>
+          <div class="r10-title">Una firma de conectividad dinámica local→distante marca el riesgo temprano de Alzheimer en adultos cognitivamente normales</div>
+          <div class="r10-line">En 86 adultos sanos del ensayo AGUEDA, los marcadores de riesgo de Alzheimer (positividad amiloide, APOE4, neurofilamento) convergieron en una misma firma: menor conectividad local y mayor conectividad distante, candidata a marcador funcional de vulnerabilidad temprana.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La convergencia de marcadores heterogéneos en UNA firma funcional es el patrón que define la precisión madura; replícalo conceptualmente para estratificación de riesgo psiquiátrico.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11357-026-02333-5" target="_blank" rel="noopener">↗ doi.org/10.1007/s11357-026-02333-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-20 · review</div>
+          <div class="r10-title">Educación e inclusión de la discapacidad en profesiones de salud: revisión de alcance de 172 publicaciones — fragmentada y sin estándares de competencia</div>
+          <div class="r10-line">Scoping review (172 publicaciones, 19 temas) que halla que la formación en inclusión de la discapacidad es mayormente sesiones cortas sin herramientas validadas de evaluación, y pide estándares de competencia globalmente alineados e integración longitudinal en CBME.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las competencias de inclusión se formalizarán dentro de marcos CBME; oportunidad para que AMAUTA diseñe un módulo longitudinal con evaluación validada, no un taller suelto.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09492-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09492-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-19 · review</div>
+          <div class="r10-title">Realidad inmersiva en educación dental: revisión sistemática — menos tiempo y errores de procedimiento, más adquisición de habilidades</div>
+          <div class="r10-line">Revisión sistemática (13 estudios) que muestra que la realidad inmersiva reduce el tiempo y los errores de procedimiento y acorta la duración del entrenamiento frente a métodos tradicionales en educación dental.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La simulación inmersiva se volverá el default de la práctica deliberada en habilidades procedimentales; modelo trasladable a tus simulaciones clínicas (simulation-designer, INACSL/AMEE).</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09739-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09739-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Biological Macromolecules · 2026-06-21 · paper</div>
+          <div class="r10-title">Identificación de proteínas CYP450 con modelos de lenguaje de proteínas multimodales (exactitud &gt;95%, auROC 0.970)</div>
+          <div class="r10-line">Framework de deep learning que fusiona embeddings de modelos de lenguaje de proteínas + conservación evolutiva para identificar enzimas CYP450 (exactitud &gt;95%, auROC 0.970), superando a ML tradicional — infraestructura para farmacogenómica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los modelos de lenguaje de proteínas acelerarán la base de la farmacogenómica (el único frente PGx que sí llegó a la clínica psiquiátrica); ejemplo de tu pilar ai-enhancement aplicado al metabolismo de fármacos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ijbiomac.2026.153150" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ijbiomac.2026.153150</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El biomarcador EEG más reproducible en psiquiatría y neurología no es específico de ningún trastorno: la actividad de baja frecuencia sube igual en dolor crónico, migraña, fatiga y depresión. Su valor está justo ahí — mapea a dimensiones compartidas (afecto negativo, disfunción cognitiva), no a etiquetas DSM. El fracaso del biomarcador &#39;de un trastorno&#39; es la prueba del enfoque dimensional.</li><li>En la teoría de redes de la plasticidad pasa algo contraintuitivo: una red de síntomas DÉBILMENTE conectada es más plástica y más vulnerable a deprimirse (HR de los de red fuerte = 0.20). La rigidez protege, la flexibilidad expone. El cambio — para mejor o peor — vive en las conexiones débiles.</li><li>Un examen de altas consecuencias con validez psicométrica impecable puede DEGRADAR la competencia. La validez no es un punto de corte defendible: si ignora lo que el examen provoca antes y después (estudiar para el test, no para el paciente), se vuelve contraproducente. Pregúntaselo a tu simulacro de ENAM.</li><li>En neuromodulación el debate ya no es si el rTMS funciona —funciona, con efecto moderado— sino para quién y dónde apuntar. La heterogeneidad de protocolos, no la eficacia, es el cuello de botella; el futuro es targeting guiado por predictores neurales individuales.</li><li>Ya podemos predecir la edad de inicio de una enfermedad neurodegenerativa antes del primer síntoma. La pregunta dura dejó de ser la exactitud del test: es si saberlo ayuda o daña a la persona cuando aún no hay tratamiento. Ese es terreno de comité de ética, no de algoritmo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el biomarcador EEG más sólido es transdiagnóstico, ¿conviene reordenar el BMSE alrededor de DIMENSIONES compartidas (afecto negativo, disfunción cognitiva, soma) ancladas cada una a un marcador fisiológico, en vez de seguir capítulo por trastorno?</li><li>¿La fuerza de conectividad entre síntomas medida por EMA podría usarse como marcador barato de riesgo de recaída en tu pabellón agudo femenino del HVLH, o el efecto solo aparece en muestras de sanos como en el estudio del Multi-Mood?</li><li>Tu simulacro de ENAM/Residentado, ¿mide competencia o solo ordena candidatos? Aplicando a Eva: ¿qué le pasa al aprendizaje de tus alumnos ANTES (qué estudian) y DESPUÉS (qué retienen) del punto de corte?</li><li>¿Vale la pena empezar a registrar marcadores TMS (SICI, CSP, LICI, ICF) en pacientes seleccionados de tu práctica como biomarcadores candidatos de adversidad/respuesta, o el costo-beneficio aún no cierra fuera de investigación en Perú?</li><li>¿Con qué marco ético decide el Comité del HVLH si se le comunica a un paciente una predicción de inicio de enfermedad sin tratamiento disponible — y aplica el mismo &#39;derecho a no saber&#39; a los biomarcadores psiquiátricos de riesgo que vienen?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/reel: &#39;El biomarcador que sirve PORQUE no es específico&#39;. La actividad de baja frecuencia del EEG aparece en dolor, migraña, fatiga y depresión — y eso la vuelve un marcador dimensional, no un fracaso. Wedge de tu negocio de contenido: psiquiatría dimensional explicada con un dato fresco y autoridad, anclado en la revisión de Translational Psychiatry.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección para el libro BMSE: &#39;De la etiqueta a la dimensión fisiológica&#39;. Usar el caso EEG-LFA + la integración HiTOP/RDoC como espina del puente qué↔porqué, complementado con la convergencia 2026 de subtipos biológicos de depresión (metabolómicos y neuroanatómicos por ML) que apareció esta semana en el radar. Mensaje: &#39;mismo síndrome, biología distinta, tratamiento distinto&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de perspectiva (AMAUTA/USAMEDIC): aplicar la crítica de Kevin Eva a la validez del ENAM. Tesis: &#39;validez no es un punto de corte defendible&#39; — proponer un marco de assessment-for-learning para la preparación peruana, midiendo qué conductas de estudio induce el examen y qué retiene el residente después.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie Aprendiz Experto (YouTube IA-first): &#39;Tu red de síntomas: por qué la rigidez te protege y la flexibilidad te expone&#39;. Explicar la teoría de redes de la plasticidad con un caso clínico simple y una visualización de red, apalancado en el dato ρ=−0.54 / HR=0.20 como gancho de credibilidad.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-revisión/ensayo: &#39;Neuromodulación de precisión: del ¿funciona? al ¿para quién y dónde apunto?&#39;. Integrar la revisión de rTMS en TOC + los marcadores TMS de adversidad en depresión adolescente para argumentar el giro de eficacia a targeting biomarcador-guiado; puente explícito a tu línea de neuromodulación y al lazo cerrado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Translational Psychiatry</span><span class="tag ">Journal of Affective Disorders</span><span class="tag highlight">Medical Education</span><span class="tag ">Current Opinion in Psychiatry</span><span class="tag ">Alzheimer&#39;s Research &amp; Therapy</span><span class="tag ">GeroScience</span><span class="tag ">NPJ Parkinson&#39;s Disease</span><span class="tag ">AJOB Neuroscience</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry (vol. 147)</span><span class="tag ">Neuroscience</span><span class="tag ">International Journal of Biological Macromolecules</span><span class="tag ">Preprints: medRxiv · arXiv (cs.LG, q-bio)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP: search_articles + get_article_metadata; ventana pdat 2026/06/19–2026/06/22, sort=pub_date; 2 queries núcleo — psiquiatría de precisión [39 hits] y educación de precisión [5 hits]; metadata recuperada para los 44 PMIDs en lotes de 5). Atribución a PubMed y DOIs incluidos. · Barrido web/preprints en paralelo (Workflow, 4 finders: medRxiv/PsyArXiv, arXiv cs.LG/q-bio, educación de precisión médica, X/Reddit/GitHub/Substack). Devolvió contexto fuerte (subtipos metabolómicos/neuroanatómicos de depresión, auditorías de fidelidad de simuladores LLM, NEJM precision-education, RDoC en ensayos), pero la mayoría fuera de la ventana estricta de 48-72h; usado para afilar perlas/preguntas/ideas, no para ocupar slots fechados. Dedup estricto contra el dossier 2026-06-21 (ANK3/liafensina, OSA wearables, fluencia verbal, clustering esquizofrenia, RDoC-XAI Alzheimer, Angelman, TEA connectoma, CBME mama — descartados por repetidos).. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de junio de 2026.</div>
+</div>
+</body>
+</html>
