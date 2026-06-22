@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-06-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">22 de junio de 2026 · 2026-W26 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychological Medicine, 15 jun 2026 · RCT doble ciego · rct · 2026-06-15</div>
+        <h3 class="r3-title">El agonismo 5-HT4 (prucaloprida) mejora la cognición objetiva en depresión remitida, independiente del estado de ánimo</h3>
+        <p class="r3-hook">Jaflo, este ensayo doble ciego (n=50, ≥2 episodios previos, prucaloprida 2 mg/d vs placebo por 7-10 días) muestra que agonizar el receptor 5-HT4 mejora el recuerdo verbal (AVLT), acelera la memoria de trabajo compleja sin perder precisión y mejora el reconocimiento de expresiones faciales rápidas — y todo esto es independiente del ánimo basal y de la queja cognitiva subjetiva. Importa porque toca de lleno tu línea de psiquiatría de precisión y el dominio cognitivo de RDoC: la disfunción cognitiva de la depresión es un blanco mecanístico tratable por una vía (serotoninérgica/neuroplástica) distinta a la del afecto, exactamente el tipo de disociación &#39;mismo síntoma, ruta distinta&#39; que vertebra el BMSE. Es además munición directa para REACTIVA: un fármaco procognitivo con repurposing (la prucaloprida es un procinético GI aprobado) que podría potenciar la rehabilitación cognitiva. Úsalo como caso ancla en el capítulo de cognición del BMSE y como hook de contenido sobre &#39;la depresión deja una huella cognitiva que el antidepresivo no borra&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726104450" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726104450</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Cochrane Database of Systematic Reviews, 17 jun 2026 · SR + meta-análisis · meta-analysis · 2026-06-17</div>
+        <h3 class="r3-title">Cochrane: la baja competencia lingüística temprana es una vulnerabilidad del neurodesarrollo duradera, no un retraso que se cura solo</h3>
+        <p class="r3-hook">Jaflo, esta revisión Cochrane sintetiza 80 estudios (72 en meta-análisis, 15 cohortes, ~28,828 niños): la baja competencia lingüística detectada entre los 4 y 8 años predice, a los 12+ años, deterioro grande en lenguaje (g=-1.36, certeza moderada) y literacidad (g=-1.12, certeza ALTA), y deterioro moderado en bienestar psicológico (g=-0.50) y relaciones sociales (g=-0.64). El mensaje de cierre es contundente y citable: no es un retraso transitorio, es un marcador de vulnerabilidad evolutiva persistente. Conecta directo con tu libro de neurociencia educativa y el pilar amauta-education: la ventana 4-8 años es una palanca de intervención de altísimo ROI, y la certeza ALTA en literacidad te permite afirmar sin hedging. Es también el ladrillo de evidencia para argumentar tamizaje lingüístico temprano como política de precisión educativa.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/14651858.CD015268.pub2" target="_blank" rel="noopener">↗ doi.org/10.1002/14651858.CD015268.pub2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">European Journal of Pediatrics, 20 jun 2026 · revisión sistemática · review · 2026-06-20</div>
+        <h3 class="r3-title">El trastorno del desarrollo de la coordinación se comporta como espectro de pervasividad, no como subtipos discretos</h3>
+        <p class="r3-hook">Jaflo, esta revisión sistemática (10 estudios de 1719 cribados) intentó hallar subtipos estadísticos del trastorno del desarrollo de la coordinación (DCD) y el veredicto es oro para tu tesis dimensional: los clusters que aparecen reflejan gradientes de severidad, no perfiles categóricos distintos, con certeza baja a muy baja para subtipos discretos — los autores concluyen que el DCD se conceptualiza mejor como espectro de pervasividad que como categorías. Es evidencia empírica fresca de que el clustering en neurodesarrollo NO recupera taxones naturales, justo el argumento HiTOP/dimensional que sostiene tu libro de psicopatología para el mundo y el BMSE. Úsalo como contraejemplo accionable (&#39;cuando buscamos categorías, encontramos dimensiones de severidad&#39;) y como puente: el mismo razonamiento que aplicas a TDAH/TEA aplica al DCD, un trastorno motor del neurodesarrollo que rara vez entra en la conversación dimensional. Material directo para un carrusel o una sección de método.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00431-026-07180-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s00431-026-07180-2</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">8</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Addiction Research, 19 jun 2026 · SR · review · 2026-06-19</div>
+          <div class="r10-title">Integrar determinantes psicosociales en modelos de IA para predecir desenlaces del tratamiento de adicciones</div>
+          <div class="r10-line">Jaflo, 15 estudios muestran que vivienda inestable, comorbilidad psiquiátrica, craving, empleo y desventaja del barrio añaden valor predictivo a los modelos de ML por encima de las variables clínicas, con EMA/fenotipado digital liderando la predicción a corto plazo — pero casi sin validación externa ni evaluación de fairness.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la psiquiatría de precisión basada en IA migrará de &#39;biomarcadores&#39; a &#39;exposomas psicosociales&#39;; el nicho de Javier es el puente equidad+IA — escribir el editorial latino sobre por qué un modelo sin fairness en un contexto peruano es un modelo peligroso.</div>
+          <a class="r10-link" href="https://doi.org/10.1159/000553186" target="_blank" rel="noopener">↗ doi.org/10.1159/000553186</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 17 jun 2026 · SR · review · 2026-06-17</div>
+          <div class="r10-title">Costo-efectividad de las intervenciones de prevención del suicidio y la autolesión: 69 estudios</div>
+          <div class="r10-line">Jaflo, la prevención del suicidio (restricción de medios, capacitación en concientización, psicoterapia, tamizaje, servicios de apoyo) es consistentemente costo-efectiva o ahorradora de costos en 69 estudios — pero 63/69 son de países de altos ingresos y falta evidencia en niños, ancianos y LMIC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el vacío LMIC es tu apertura — un análisis de transferibilidad de costo-efectividad al sistema peruano es un paper de alto leverage de política y un argumento de grant casi escrito.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726104814" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726104814</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Health Expectations, jun 2026 · SR · review · 2026-06-19</div>
+          <div class="r10-title">PROMs de ansiedad en ensayos de demencia: casi todo es proxy-reportado y los instrumentos no están validados para demencia</div>
+          <div class="r10-line">Jaflo, de 29 RCT (n=5697), el 93% usó herramientas validadas de ansiedad pero solo el 44% usó PROMs reportados por el paciente (sobre todo HADS), con sobrerrepresentación de mujeres y etnia blanca y cero validación específica para demencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la medición es el cuello de botella oculto de la psiquiatría geriátrica de precisión; un PROM de ansiedad culturalmente adaptado para adultos mayores hispanohablantes es un activo psicométrico reusable con vector de paper + dataset.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/hex.70736" target="_blank" rel="noopener">↗ doi.org/10.1111/hex.70736</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychology, 17 jun 2026 · meta-análisis · meta-analysis · 2026-06-17</div>
+          <div class="r10-title">Adicción a internet ↔ depresión, ansiedad, TDAH y TOC en niños y adolescentes: meta-análisis de 36,432</div>
+          <div class="r10-line">Jaflo, en 22 estudios la adicción a internet se asocia con TDAH (OR=2.78), depresión (OR=2.35), ansiedad (OR=2.11) y TOC (OR=1.92) en menores, con heterogeneidad moderada-alta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el uso problemático de internet se consolidará como modificador transdiagnóstico, no diagnóstico aparte — encaja en tu marco dimensional y es contenido ENAM/Residentado de alta demanda (tamizaje en la evaluación psiquiátrica del adolescente).</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40359-026-05010-6" target="_blank" rel="noopener">↗ doi.org/10.1186/s40359-026-05010-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry, 20 jun 2026 · SR + meta-análisis · meta-analysis · 2026-06-20</div>
+          <div class="r10-title">Trastornos mentales tras lesión medular traumática, sintetizados con un grafo de conocimiento</div>
+          <div class="r10-line">Jaflo, prevalencias agrupadas post-lesión medular: depresión 24%, PTSD 25%, ansiedad 23%, abuso de sustancias 36%, desregulación del sueño 41% — y el autorreporte sobreestima la depresión en 40% frente a entrevista clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el método (grafo de conocimiento SNOMED/UMLS + SPARQL para superar la búsqueda tradicional) te interesa más que el resultado — es plantilla de síntesis IA-asistida que puedes adoptar en la fábrica de papers.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08245-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08245-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Addiction Science &amp; Clinical Practice, 19 jun 2026 · SR + meta-análisis · meta-analysis · 2026-06-19</div>
+          <div class="r10-title">Tres de cada cuatro pacientes en mantenimiento con metadona duermen mal</div>
+          <div class="r10-line">Jaflo, prevalencia agrupada de mal dormir (PSQI&gt;5) del 75% en mantenimiento con metadona y apnea del sueño entre 39-78%, con certeza moderada — el sueño es un eje clínico desatendido en adicciones.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el sueño se volverá blanco terapéutico de primera línea en trastornos por sustancias; el ángulo Foundation (sueño como regulador) es tu marco para conectarlo con la autorregulación cognitiva.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s13722-026-00690-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s13722-026-00690-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Neurology, 20 jun 2026 · meta-análisis · meta-analysis · 2026-06-20</div>
+          <div class="r10-title">El deterioro cognitivo vascular es un &#39;síndrome de desconexión&#39; que colocaliza con la red de dopamina y serotonina</div>
+          <div class="r10-line">Jaflo, el mapeo de redes de 18 estudios (682 pacientes) muestra que la atrofia dispersa del deterioro cognitivo vascular converge en las redes somatomotora y de saliencia, anclada en neuronas de proyección de larga distancia y coherente con la distribución de DAT y 5-HTT.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el atrophy-network-mapping sobre conectomas normativos será estándar en neuropsiquiatría dimensional — es exactamente el método que alimenta tu dominio de Triple Red, vale la pena un teach-me técnico.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00415-026-13950-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s00415-026-13950-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports, 16 jun 2026 · RCT doble ciego · rct · 2026-06-16</div>
+          <div class="r10-title">Suplementar hierro en lactantes amamantados reduce los problemas conductuales a los 3 años</div>
+          <div class="r10-line">Jaflo, en un RCT (221 aleatorizados, NCT02242188) el hierro a dosis baja entre los 4-9 meses redujo las puntuaciones externalizantes del CBCL a los 3 años (45.6 vs 48.6, p=.006) y la conducta agresiva — en lactantes sanos no anémicos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la nutrición temprana como prevención del neurodesarrollo conductual es contenido de altísima demanda para padres; cuidado con el matiz (desenlace secundario preespecificado, n parcial) — es perfecto para enseñar lectura crítica.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-56401-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-56401-z</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La cognición de la depresión tiene un blanco farmacológico propio: la prucaloprida (agonista 5-HT4) mejoró memoria y velocidad en pacientes YA remitidos, independiente del ánimo — el antidepresivo que sube el humor no necesariamente repara la cognición.</li><li>Cuando buscas subtipos en el neurodesarrollo (DCD) con clustering, encuentras gradientes de severidad, no categorías: la dimensión emerge incluso cuando la metodología fue diseñada para hallar cajones.</li><li>La literacidad a los 12+ años es el desenlace con certeza ALTA (g=-1.12) ligado a la baja competencia lingüística temprana — pocas veces la evidencia educativa permite afirmar con tan poco hedging.</li><li>Un modelo de IA que predice recaída en adicciones SIN evaluar fairness ni validación externa no es un avance: es un sesgo automatizado esperando a desplegarse — la equidad es requisito, no extra.</li><li>El autorreporte sobreestima la depresión post-lesión medular en ~40% frente a entrevista clínica: el instrumento define la prevalencia tanto como la enfermedad.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿La huella cognitiva persistente de la depresión remitida es un especificador mecanístico (vía 5-HT4/neuroplasticidad) separable del afecto, y cómo lo codificaría el BMSE por polo?</li><li>Si el clustering no recupera subtipos discretos en DCD, ¿qué otros &#39;subtipos&#39; clínicos de neurodesarrollo (subtipos de TDAH, fenotipos de TEA) sobrevivirían a la misma prueba dimensional?</li><li>¿Cuál es el costo-efectividad esperado de la restricción de medios y el tamizaje de suicidio si se transfiere al sistema de salud peruano, donde la evidencia LMIC está ausente?</li><li>¿Qué se necesita para que un PROM de ansiedad sea válido en demencia y culturalmente apropiado para adultos mayores hispanohablantes, en lugar de seguir usando proxies genéricos?</li><li>¿Debe el tamizaje de uso problemático de internet integrarse como modificador transdiagnóstico en la evaluación del adolescente, dado el OR≈2.8 con TDAH?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel: &#39;Tu antidepresivo te subió el ánimo pero no te devolvió la memoria&#39; — la cognición de la depresión como blanco terapéutico propio (5-HT4), anclado en el RCT de prucaloprida.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección de método para el libro dimensional: &#39;Cuando buscas categorías y encuentras dimensiones&#39; — usar la revisión de subtipos de DCD como caso empírico de por qué el clustering no recupera taxones naturales en neurodesarrollo.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de transferibilidad: análisis de costo-efectividad de prevención del suicidio adaptado al sistema peruano, cerrando el vacío LMIC que el SR de Psychological Medicine deja explícito.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/teach-me técnico: &#39;atrophy network mapping&#39; explicado en 60s — cómo un conectoma normativo convierte hallazgos dispersos en una red única (alimenta el dominio Triple Red).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper-posición: &#39;IA en adicciones sin fairness es sesgo automatizado&#39; — argumento ético-metodológico desde el SR de European Addiction Research, con lente de equidad latinoamericana.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychological Medicine</span><span class="tag highlight">Cochrane Database of Systematic Reviews</span><span class="tag ">European Addiction Research</span><span class="tag ">BMC Psychiatry</span><span class="tag ">BMC Psychology</span><span class="tag ">European Journal of Pediatrics</span><span class="tag ">Addiction Science &amp; Clinical Practice</span><span class="tag ">Journal of Neurology</span><span class="tag ">Scientific Reports</span><span class="tag ">Health Expectations</span><span class="tag highlight">British Journal of Psychiatry</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Journal of the American Academy of Child &amp; Adolescent Psychiatry</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (vía MCP NCBI E-utilities). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de junio de 2026.</div>
+</div>
+</body>
+</html>
