@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-06-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">22 de junio de 2026 · 2026-W26 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">35</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">120</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Brain Informatics — 19 jun 2026 · review · 2026-06-19</div>
+        <h3 class="r3-title">RDoC-informed explainable AI as a paradigm for multilevel Alzheimer&#39;s disease diagnosis and progression prediction: a systematic review</h3>
+        <p class="r3-hook">Jaflo, esto es lo más cercano a tu BMSE que se ha publicado esta semana: una revisión sistemática que casa el RDoC del NIMH con explainable AI (SHAP, LIME, attention maps) para Alzheimer, y el mecanismo es exactamente el tuyo. Un output de IA (un peso SHAP de 0.3) es opaco hasta que lo anclas a una teoría biológica; al mapearlo sobre dominios RDoC (genes→circuitos→conducta→introspección) deja de ser estadística y se vuelve hipótesis mecanística accionable —&#39;esta señal contribuye a desregulación de Negative Valence&#39;, no &#39;feature X pesa 0.3&#39;. Es la misma jugada que sostiene tu libro: el especificador mecanístico RDoC por polo es lo que convierte un score bipolar −2..+2 en una ruta de tratamiento. Úsalo como cita ancla en el capítulo de arquitectura del BMSE para mostrar que &#39;mismo score, mecanismo distinto&#39; no es una idea tuya aislada sino una convergencia que ya está pasando en neuroimagen; mueve research + precision-psychiatry + ai-enhancement de golpe.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s40708-026-00310-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s40708-026-00310-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">World Journal of Methodology — 20 jun 2026 · review · 2026-06-20</div>
+        <h3 class="r3-title">Biases of large language models in diagnosing Cushing&#39;s syndrome</h3>
+        <p class="r3-hook">Jaflo, el hallazgo contraintuitivo aquí es el &#39;bias stacking&#39;: el clínico aplica disponibilidad (Cushing es raro → lo salta) y anclaje (obesidad+HTA → dx metabólico), la IA se entrena sobre esas notas sesgadas y aprende el mismo atajo, y encima la spectrum bias la estrecha a casos ya confirmados. El error no nace de ignorancia sino de velocidad de pattern-matching que adelanta a la corrección de tasa base —y el único corrector es una &#39;pausa diagnóstica&#39; explícita con inyección de base-rate. Para ti esto es munición directa de precision-psychiatry y del BMSE: el anclaje a MDD cuando la presentación es espectro bipolar es el mismo defecto, y tu framework &#39;mismo score, ruta distinta&#39; es precisamente el mecanismo que fuerza la pausa antes de cerrar. Te sirve además como aviso de diseño para cualquier herramienta de IA clínica que armes: si la entrenas con notas peruanas sesgadas, hereda y amplifica el sesgo local. Idea de paper: trasladar esta taxonomía a un comentario sobre dx psiquiátrico dimensional asistido por IA.</p>
+        <a class="r3-link" href="https://doi.org/10.5662/wjm.v16.i2.115059" target="_blank" rel="noopener">↗ doi.org/10.5662/wjm.v16.i2.115059</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Escaping Flatland · Henrik Karlsson (Substack) — 22 jun 2026 · blog · 2026-06-22</div>
+        <h3 class="r3-title">How not to forget what matters (Hypomnēmata)</h3>
+        <p class="r3-hook">Jaflo, Karlsson revive la práctica grecorromana de los hypomnēmata y articula un mecanismo que explica el agujero central de tu enseñanza: el insight no cambia conducta; solo la re-confrontación deliberada y diaria convierte conocimiento declarativo en carácter (ethopoiesis). El protocolo tiene cinco pasos —coleccionar pasajes-principio, revisarlos a hora fija, identificar el que toca tu lucha actual, meditarlo por escrito, repetir hasta que la respuesta esté &#39;lista a la mano&#39; para situaciones impredecibles— y la clave es que la virtud, a diferencia del hábito, no se encadena a un trigger predecible, por eso necesita revisión amplia. Esto es exactamente por qué tus residentes recitan criterios diagnósticos y aun así fallan el razonamiento clínico bajo presión: el conocimiento nunca se volvió carácter. Conéctalo con el BMSE como disposición encarnada (no checklist) y úsalo como columna de un capítulo —o como sistema personal para que tus pilares P&amp;A se vuelvan carácter por revisión diaria, no por sprints de proyecto que se evaporan al cerrar. Mueve amauta-education + content-documentation + kinobody-selfcare.</p>
+        <a class="r3-link" href="https://www.henrikkarlsson.xyz/p/hypomnemata" target="_blank" rel="noopener">↗ www.henrikkarlsson.xyz/p/hypomnemata</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Quality &amp; Safety — 18 jun 2026 · paper · 2026-06-18</div>
+          <div class="r10-title">Artificial intelligence chain-of-thought reasoning in nuanced medical scenarios: mitigation of cognitive biases through model intransigence</div>
+          <div class="r10-line">Jaflo, chain-of-thought mitigó 6/10 sesgos cognitivos (vs 2.507 médicos) por &#39;intransigencia&#39; (entropía ≈0), pero esa misma rigidez es el fallo en sesgos estructurales como navaja de Occam, posthoc, decoy e hindsight — el clínico pasa a &#39;editor vigilante&#39;, no receptor pasivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el discurso va a virar de &#39;¿la IA acierta?&#39; a &#39;¿qué sesgo mitiga vs cuál amplifica?&#39;; capitalízalo con un marco enseñable para residentes ENAM que mapee cada sesgo al modo de uso de IA —se vuelve clase y carousel de Aprendiz Experto.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjqs-2025-019299" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjqs-2025-019299</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Annals of Surgery — 22 jun 2026 · paper · 2026-06-22</div>
+          <div class="r10-title">Non-technical Errors, a Hidden Contributor to Patient Mortality in Emergency General Surgery: A National Retrospective Cohort Study</div>
+          <div class="r10-line">Jaflo, en 1.164 muertes quirúrgicas el 67,9% tuvo errores no técnicos y el 89,9% ocurrió FUERA del quirófano: dominan situational awareness (49,3%) y decisión (40,9%), no la técnica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la simulación de precisión migrará del gesto procedimental al entorno cognitivo donde el error realmente pasa (sala, triaje); diseña tus escenarios INACSL/AMEE sobre apreciación de gravedad y reconocimiento de signos, no sobre el procedimiento.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/SLA.0000000000007111" target="_blank" rel="noopener">↗ doi.org/10.1097/SLA.0000000000007111</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychology — 20 jun 2026 · meta-analysis · 2026-06-20</div>
+          <div class="r10-title">Thinking and feeling matter: a second-order meta-analysis of student characteristics across developmental domains and their effect on academic outcomes</div>
+          <div class="r10-line">Jaflo, meta-análisis de 2º orden (29 meta-análisis, 71 ES): la cognición pone el techo pero personalidad y emoción positiva (moderadas) determinan cuánto te acercas; el efecto pico en kínder y se atenúa hacia secundaria.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la jerarquía cognición&gt;personalidad&gt;emoción se volverá el esqueleto de tu libro de neurociencia educativa; el ángulo monetizable es que en adultos (tu público Aprendiz Experto) los levers maleables son conciencia/apertura y regulación emocional, no &#39;más inteligencia&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40359-026-05035-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s40359-026-05035-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">LessWrong — 19 jun 2026 · blog · 2026-06-19</div>
+          <div class="r10-title">World-modeling the US vs. Anthropic Standoff on Claude Fable</div>
+          <div class="r10-line">Jaflo, descompone un evento incierto en 4 escenarios mutuamente excluyentes, genera forecasts condicionales por escenario y se niega a bajar ninguno de &lt;10% — disciplina de calibración que resiste el &#39;colapso narrativo&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es second-order thinking puro para dx ambiguo —correr modelos condicionales paralelos (si bipolar entonces X; si TDAH entonces Y) en vez de anclar a una historia; lo convertirás en un módulo de razonamiento clínico dimensional.</div>
+          <a class="r10-link" href="https://www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/world-modeling-the-us-vs-anthropic-standoff-on-claude-fable" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/zhRe3tdBpsZbGCdDK/wo…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">3 Quarks Daily · Marie Snyder — 21 jun 2026 · blog · 2026-06-21</div>
+          <div class="r10-title">The Complexity of Letting Go</div>
+          <div class="r10-line">Jaflo, distingue resignación (aceptar el resultado con amargura → rumiación recursiva) de aceptación (reconocer la realidad sin culpa → movimiento hacia adelante), con firma conductual y anclaje en DBT de Linehan (&#39;la salida del infierno es a través de la miseria, no rodeándola&#39;).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la distinción resignación/aceptación tiene utilidad diferencial real (duelo complicado vs trastorno adaptativo) y es contenido clínico de alto rendimiento; el cierre prematuro de la ambivalencia es el mismo defecto que el cierre cognitivo en razonamiento.</div>
+          <a class="r10-link" href="https://3quarksdaily.com/3quarksdaily/2026/06/the-complexity-of-letting-go.html" target="_blank" rel="noopener">↗ 3quarksdaily.com/3quarksdaily/2026/06/the-co…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neural Horizons · Peter Benson (Substack) — 21 jun 2026 · blog · 2026-06-21</div>
+          <div class="r10-title">Semantic Integrity — The Polished Lie</div>
+          <div class="r10-line">Jaflo, la IA invierte el sentido del razonamiento —de output pulido hacia atrás a la evidencia— y corta las &#39;vigas portantes&#39; (caveats, fuentes, exclusiones); el efecto de verdad ilusoria hace que lo fluido se sienta verdadero (fluidez ≠ exactitud).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;proteger la fricción&#39; y &#39;procedencia como infraestructura&#39; se volverán principios de diseño; es justo tu regla anti-fabricación elevada a tesis — material directo para tu protocolo de verificación de citas y para el BMSE donde la exactitud del mecanismo es el riesgo nuclear.</div>
+          <a class="r10-link" href="https://neuralhorizons.substack.com/p/semantic-integrity-the-polished-lie" target="_blank" rel="noopener">↗ neuralhorizons.substack.com/p/semantic-integ…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Dr. Charles M. Russo (Substack) — 21 jun 2026 · blog · 2026-06-21</div>
+          <div class="r10-title">Metacognitive Tradecraft for Human-AI Intelligence Analysis (MATRIX Framework)</div>
+          <div class="r10-line">Jaflo, protocolo auditable de 6 pasos (Monitoreo metacognitivo → hipótesis Alternativas → evidencia Trazable → uso de IA gestionado por Riesgo → calibración Iterativa → revisión adversarial eXterna) que evita &#39;la ilusión de trabajo cognitivo completado porque salió un output pulido&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este tipo de checklist metacognitivo se estandarizará para trabajo de alto riesgo; cálcalo sobre tu grill-me/adversarial-stat-review y sobre el flujo del comité de ética HVLH — el paso de revisión adversarial es tu defensa contra el cierre prematuro.</div>
+          <a class="r10-link" href="https://drcharlesmrusso.substack.com/p/metacognitive-tradecraft-for-human" target="_blank" rel="noopener">↗ drcharlesmrusso.substack.com/p/metacognitive…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Philosophy Publics · Mona Mona (Substack) — 19 jun 2026 · blog · 2026-06-19</div>
+          <div class="r10-title">Philosophy &amp; Theory Roundup — 19 jun 2026 (incl. &#39;The Broken Ladder: How AI Severed the Reproduction of Expertise&#39;)</div>
+          <div class="r10-line">Jaflo, &#39;La escalera rota&#39; argumenta que la IA destruye el &#39;commons del aprendizaje&#39; —el trato intertemporal donde las pérdidas del junior se vuelven expertise del senior— al automatizar justo las tareas de nivel de entrada que transmitían conocimiento tácito.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este será el dilema central de la educación médica con IA; si la IA hace las presentaciones de caso y los diferenciales que el residente aprendía haciéndolos, AMAUTA tiene que rediseñar dónde se forma el tácito — ensayo y posible paper de educación médica de precisión.</div>
+          <a class="r10-link" href="https://philosophypublics.substack.com/p/philosophy-and-theory-roundup-june-9ae" target="_blank" rel="noopener">↗ philosophypublics.substack.com/p/philosophy-…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Huberman Lab — 15 jun 2026 · podcast · 2026-06-15</div>
+          <div class="r10-title">The Mental Frame &amp; Specific Daily Actions to Succeed — Andy Stumpf</div>
+          <div class="r10-line">Jaflo, dos herramientas operativas: &#39;Influencia vs Preocupación&#39; (clasifica cada pensamiento; actúa/agenda/delega lo influenciable, suelta lo demás → cierra loops abiertos que drenan memoria de trabajo) y &#39;haz la opción ligeramente más difícil&#39; (recalibra la predicción de dificultad y construye micro-disciplina transferible).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la dicotomía del control como checklist de triaje es tu mejor defensa de Foundation contra la sobrecarga (grants, comité, residencia); la micro-disciplina alimenta directo el arco Kinobody→Ironman 36 meses y es enseñable en simulación.</div>
+          <a class="r10-link" href="https://www.hubermanlab.com/episode/the-mental-frame-and-specific-daily-actions-to-succeed-andy-stumpf" target="_blank" rel="noopener">↗ www.hubermanlab.com/episode/the-mental-frame…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Modern Wisdom #1111 — 15 jun 2026 · podcast · 2026-06-15</div>
+          <div class="r10-title">The Hidden Cost of Overthinking Everything — George Mack</div>
+          <div class="r10-line">Jaflo, el &#39;Midwit Trap&#39;: los extremos de la curva convergen en simplicidad (uno no puede complicar, el otro ya modeló la complejidad y volvió a heurísticas); la zona peligrosa es el medio-alto. La rumiación activa los mismos circuitos de simulación que la acción → sensación de progreso sin output + recursos drenados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: explica por qué clínicos e investigadores muy entrenados sufren parálisis por análisis (submission, grants, diseño de curso); el modelo de rumiación es además útil clínicamente para los loops ejecutivos tipo TDAH — contenido y ángulo de precision-psychiatry.</div>
+          <a class="r10-link" href="https://www.youtube.com/watch?v=1P7m6xrC8T0" target="_blank" rel="noopener">↗ www.youtube.com/watch?v=1P7m6xrC8T0</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Bias stacking: meter más IA no reduce el sesgo diagnóstico, lo amplifica — la IA se entrena sobre notas ya sesgadas por anclaje y disponibilidad, y el único corrector real es una pausa diagnóstica explícita con inyección de tasa base, no más cómputo (World J Methodology, Cushing&#39;s).</li><li>La misma virtud es el vicio: chain-of-thought baja 6/10 sesgos por comprometerse de lleno con una respuesta (entropía ≈0), pero esa intransigencia ES el fallo cuando el sesgo es estructural (navaja de Occam) — se cierra sobre lo parsimonioso aunque el dato no lo sostenga (BMJ Q&amp;S).</li><li>El insight no cambia conducta: solo la re-confrontación diaria convierte el principio declarativo en carácter; por eso el residente recita criterios y aun así falla el razonamiento bajo presión — el conocimiento nunca se volvió disposición (Hypomnēmata, Karlsson).</li><li>El 89,9% de los errores que matan en cirugía de emergencia ocurre FUERA del quirófano y son no-técnicos (conciencia situacional, decisión) — la simulación de precisión debería replicar la sala y el triaje, no el procedimiento (Annals of Surgery).</li><li>Lo que se ve vs lo que no se ve: toda intervención que &#39;funciona&#39; destruye la economía-problema que sostenía — bajar hospitalizaciones también reduce los datos de resistencia al tratamiento y la exposición del residente a casos graves; mapea siempre el efecto de segundo orden antes de aprobar (Bastiat, Marginal Revolution).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué sesgos cognitivos mitiga la IA con chain-of-thought y cuáles amplifica en diagnóstico psiquiátrico dimensional, y dónde debe entrar la &#39;pausa diagnóstica + base-rate&#39; en un flujo asistido por IA?</li><li>¿El BMSE/RDoC opera como &#39;horizonte de significado&#39; que hace legible el dato clínico, o como andamio de explicabilidad (tipo RDoC-XAI) que convierte el output opaco en hipótesis mecanística — o ambos a la vez?</li><li>¿Cuánto del razonamiento clínico fallido es framing failure (mal sensemaking, anclaje al frame equivocado) versus déficit de conocimiento, y qué entrenas si quieres mover la aguja?</li><li>Si la IA automatiza las tareas junior donde el residente formaba el conocimiento tácito (diferenciales, presentaciones de caso), ¿dónde reconstruye AMAUTA la &#39;escalera de aprendizaje&#39; rota?</li><li>¿Cómo distinguir cognitive offloading (delego ejecución, retengo el juicio) de cognitive surrender (la IA genera el juicio y yo lo ratifico) en residentes que preparan ENAM, y cómo lo evalúas?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carousel &#39;El score es el mismo, el mecanismo es opuesto&#39;: usar el paper RDoC-XAI (Brain Informatics) como prueba pública de que la psiquiatría ya migra hacia explicabilidad mecanística — ancla visual del mensaje central del BMSE para JafloMD.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario/perspective: &#39;Bias stacking en psiquiatría asistida por IA&#39; — trasladar la taxonomía humano-algorítmica del paper de Cushing&#39;s al diagnóstico psiquiátrico dimensional (anclaje MDD vs espectro bipolar) y proponer la pausa diagnóstica como contramedida.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección/capítulo BMSE: &#39;Razonamiento como carácter, no checklist&#39; — fusionar hypomnēmata (ethopoiesis) con sensemaking/frame failure para explicar por qué el residente recita criterios y falla bajo presión, y posicionar el BMSE como disposición encarnada.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie Aprendiz Experto &#39;Influencia vs Preocupación&#39; (Stumpf) + dicotomía del control: protocolo de triaje cognitivo para residentes en sobrecarga ENAM/burnout, con la micro-disciplina (&#39;opción ligeramente más difícil&#39;) enganchada al arco Kinobody.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Ensayo/paper de educación médica de precisión: &#39;La escalera rota&#39; — riesgo del apprenticeship commons cuando la IA automatiza las tareas junior; proponer dónde y cómo AMAUTA reinstala la transmisión de conocimiento tácito.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Brain Informatics</span><span class="tag ">World Journal of Methodology</span><span class="tag ">Annals of Surgery</span><span class="tag ">BMC Psychology</span><span class="tag ">BMJ Quality &amp; Safety</span><span class="tag ">LessWrong</span><span class="tag ">EA Forum</span><span class="tag ">Marginal Revolution</span><span class="tag ">3 Quarks Daily</span><span class="tag ">Escaping Flatland (Henrik Karlsson)</span><span class="tag ">Neural Horizons (Substack)</span><span class="tag ">Philosophy Publics (Substack)</span><span class="tag ">Huberman Lab</span><span class="tag ">Modern Wisdom</span><span class="tag ">The Daily Stoic</span><span class="tag ">What Is Stoicism? (Substack)</span><span class="tag ">Overcoming Bias (Robin Hanson)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (MCP, datetype=pdat, 2026-06-19 a 2026-06-22; +indexación BMJ Q&amp;S 06-18) · WebSearch / WebFetch (verificación por fetch directo de cada ítem) · LessWrong · EA Forum · Astral Codex Ten · Overcoming Bias · Marginal Revolution · 3 Quarks Daily · Escaping Flatland / Henrik Karlsson · Neural Horizons (Substack) · Philosophy Publics (Substack) · Dr. Charles M. Russo (Substack) · Huberman Lab · Modern Wisdom · The Daily Stoic · What Is Stoicism? (Substack) · Brain Informatics · World Journal of Methodology · Annals of Surgery · BMC Psychology · BMJ Quality &amp; Safety. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de junio de 2026.</div>
+</div>
+</body>
+</html>
