@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-06-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">22 de junio de 2026 · 2026-W26 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">51</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Medical Teacher · 2026-06-21 · meta-analysis</div>
+        <h3 class="r3-title">¿Pueden los LLM generar preguntas de examen comparables a las humanas? Revisión sistemática + meta-análisis en educación médica</h3>
+        <p class="r3-hook">Primer meta-análisis (12 estudios; 2 RCT + 10 no aleatorizados) que compara ítems MCQ generados por IA vs por humanos: no hay diferencia en dificultad (SMD 0.05) ni en discriminación (SMD -0.10), aunque en exámenes de licenciatura los ítems humanos resultaron más difíciles y un análisis de sensibilidad inclinó la discriminación a favor de la IA. Para Javier esto es munición directa de doble pilar (ai-enhancement + amauta-education): legitima usar LLM como motor de primer borrador en sus bancos ENAM/Residentado y en USAMEDIC, sin renunciar a calidad psicométrica. La clave accionable es el marco que proponen los autores —procedencia, vigilancia psicométrica continua y human gatekeeping con checkpoints auditables— que es exactamente el SOP que debería formalizar en su qbank antes de escalar producción con IA. Úsalo como evidencia-ancla para una clase/carousel de Aprendiz Experto sobre &#39;cómo escribir 200 preguntas buenas con IA sin que se note&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/0142159X.2026.2691072" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2691072</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-06-20 · rct</div>
+        <h3 class="r3-title">Entrenamiento de soporte vital avanzado en dosis baja y alta frecuencia vs jornada anual completa: RCT con seguimiento a 12 meses</h3>
+        <p class="r3-hook">RCT (n=35 profesionales de emergencias) que a 12 meses muestra que el entrenamiento espaciado de baja dosis y alta frecuencia supera a la jornada anual única en desempeño global de reanimación (4.7 vs 4.2; p&lt;0.001), con la mayor brecha en habilidades NO técnicas (4.8 vs 3.9) y tiempos críticos más cortos (CPR, análisis de ritmo, vía aérea, hands-off). Para Javier es la demostración limpia del efecto de espaciamiento aplicado a competencia clínica retenida —el corazón de su libro de neurociencia educativa y del curso Aprendiz Experto— y un argumento contra el &#39;taller maratónico&#39; que domina la educación médica peruana. Tradúcelo a su tesis de diseño: micro-dosis frecuentes baten al evento intensivo, no solo en conocimiento sino en comportamiento bajo presión. Es además el patrón que debería estructurar la cadencia de simulacros ENAM (semanal corto &gt; simulacro anual).</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09717-3" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09717-3</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Advances in Health Sciences Education · 2026-06-19 · review</div>
+        <h3 class="r3-title">La indagación (inquiry) en medicina y enfermería bajo la lente de Dewey: scoping review de 103 intervenciones</h3>
+        <p class="r3-hook">Scoping review en una de las revistas top de HPE: revisa 103 intervenciones que enseñan indagación y encuentra que casi todas se reducen a &#39;participación en investigación&#39; y descuidan dos piezas deweyanas críticas —(1) hacer que el aprendiz reconozca y experimente la incertidumbre como punto de arranque, y (2) cultivar explícitamente la actitud hacia la indagación, no solo la habilidad metodológica. Esto le habla directo a Javier en dos frentes: su línea de razonamiento clínico/BMSE (la incertidumbre como motor diagnóstico, no como defecto a eliminar) y su crítica a la formación que confunde &#39;saber el método&#39; con &#39;tener el hábito mental&#39;. Es material de capítulo: el diagnóstico dimensional empieza cuando el clínico se permite no saber todavía. Úsalo para enmarcar una sección sobre cómo enseñar tolerancia a la incertidumbre en residentes.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10459-026-10555-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s10459-026-10555-7</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-20 · review</div>
+          <div class="r10-title">Educación y formación de profesionales de salud en inclusión de la discapacidad: scoping review (172 publicaciones)</div>
+          <div class="r10-line">172 publicaciones, 19 temas, pero casi todo son módulos sueltos sin herramientas validadas de outcome ni estándares competenciales globales — campo fragmentado y maduro para sistematizar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El próximo salto serán marcos competency-based longitudinales con evaluación validada; Javier puede adelantarse posicionando neurodivergencia adulta como caso de inclusión en su contenido y cursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09492-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09492-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Mycoses · 2026-06 · rct · 2026-06-19</div>
+          <div class="r10-title">Entrenamiento por video vs PDF sobre conocimiento de enfermedad fúngica invasiva en médicos: RCT clúster multicéntrico (n=294, 18 hospitales)</div>
+          <div class="r10-line">En CME real, el video venció al PDF (70.9% vs 52.6% de médicos con mejora de score), confirmando que el formato importa incluso con el mismo contenido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El video estructurado seguirá ganando a la lectura pasiva; el diferencial futuro de Javier es video screencast IA-first bien diseñado, no solo &#39;grabar la clase&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/myc.70198" target="_blank" rel="noopener">↗ doi.org/10.1111/myc.70198</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Educational Evaluation for Health Professions · 2026-06-18 · rct</div>
+          <div class="r10-title">Taller multimodal corto (manejo de estrés + comunicación) sobre desempeño OSCE y ansiedad: RCT con resultado NULO (n=109)</div>
+          <div class="r10-line">Un taller único de soporte a estudiantes franceses de bajo rendimiento NO mejoró ni el OSCE (13.0 vs 13.3) ni la ansiedad — la dosis única es insuficiente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza la tesis del espaciamiento: las intervenciones one-shot mueren en el seguimiento; el contenido de Javier debería vender programas, no talleres aislados.</div>
+          <a class="r10-link" href="https://doi.org/10.3352/jeehp.2026.23.19" target="_blank" rel="noopener">↗ doi.org/10.3352/jeehp.2026.23.19</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-18 · rct</div>
+          <div class="r10-title">Instrucción asistida por video en habilidades de catéter venoso central en estudiantes de enfermería: RCT (n=66)</div>
+          <div class="r10-line">El video mejoró habilidades psicomotoras de CVC, pero su efecto sobre ansiedad y satisfacción quedó no concluyente — el video enseña la mano, no calma la emoción.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El video gana en skill, no en regulación afectiva; el combo ganador será video + práctica deliberada con feedback, no video solo.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09532-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09532-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher · 2026-06-20 · paper</div>
+          <div class="r10-title">Pacientes virtuales estandarizados con LLM y desempeño en entrevista clínica: estudio observacional (n=92)</div>
+          <div class="r10-line">19,380 turnos de diálogo con 0.34% de alucinación; más práctica voluntaria con el VSP se asoció a mejor score SP (ρ=0.28, ~10.6% de varianza) — andamio escalable de práctica autorregulada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los VSP con LLM se volverán infraestructura estándar de práctica clínica; oportunidad para Javier de prototipar uno en español para ENAM/OSCE peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2681965" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2681965</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-20 · rct</div>
+          <div class="r10-title">Realidad virtual en anatomía oftálmica: facilitación por pares = facilitación por experto (estudio experimental, n=63)</div>
+          <div class="r10-line">Estudiantes de 2º año con VR + facilitador par igualaron a los del experto (15.1 vs 15.2), con baja cinetosis — el peer-facilitation es escalable sin perder outcome.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Peer-assisted + VR será la fórmula de bajo costo para escalar simulación; encaja con un modelo de cohortes donde alumnos avanzados facilitan a nuevos.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09659-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09659-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today · 2026-06-15 · review</div>
+          <div class="r10-title">Fundamentos teóricos del aprendizaje en el lugar de trabajo para futuros enfermeros: scoping review (35 estudios)</div>
+          <div class="r10-line">El currículo de prácticas clínicas rara vez explicita su teoría; cuando lo hace (sociocultural, situated learning, comunidades de práctica) estructura mejor supervisión y reflexión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La tendencia es hacer explícita la teoría detrás del rotatorio; Javier puede diferenciarse documentando el &#39;por qué pedagógico&#39; de cada actividad de sus cursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107232" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107232</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Nursing · 2026-06-19 · review</div>
+          <div class="r10-title">Fortalecer la capacidad investigadora de enfermeras clínicas: scoping review de factores de engagement (79 artículos)</div>
+          <div class="r10-line">Barreras: tiempo, formación, soporte, cultura. Facilitadores: infraestructura, mentoría, liderazgo visionario; mapea 23 intervenciones y un marco multinivel.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El cuello de botella de la investigación no es talento sino sistema; insight transferible al posicionamiento de Javier como mentor-investigador que vende método, no solo contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jocn.70401" target="_blank" rel="noopener">↗ doi.org/10.1111/jocn.70401</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-06-20 · paper</div>
+          <div class="r10-title">Modelo de competencia docente para simulación integrada con IA generativa: estudio cuantitativo multi-método (TPACK, 434 participantes)</div>
+          <div class="r10-line">Escala Delphi de 16 ítems para medir competencia docente en simulación + GenAI, pero los autores admiten que captura más &#39;conciencia ética&#39; que gobernanza real.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vienen rúbricas de competencia docente en IA; Javier puede capitalizar siendo el formador que certifica esa competencia, no solo el que la describe.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09734-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09734-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education · 2026-06-21 · editorial</div>
+          <div class="r10-title">Concepciones estrechas de validez en exámenes de alto riesgo socavan la competencia (análisis crítico, centenario de Kelley)</div>
+          <div class="r10-line">Eva y Cummings: una decisión de alto riesgo que asegura &#39;competencia&#39; puede, predeciblemente, amenazarla si el examen premia atajos de corto plazo sobre conductas de largo plazo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El debate high-stakes testing se intensifica (EE.UU./Canadá recortan, UK expande); ángulo perfecto para que Javier opine con autoridad sobre el ENAM como instrumento.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/medu.70252" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70252</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Mismo contenido, distinto formato, distinto resultado: en CME real el video venció al PDF (70.9% vs 52.6% de médicos mejoraron). El medio no es neutro — es parte del &#39;tratamiento educativo&#39;.</li><li>Los LLM ya generan ítems MCQ con calidad psicométrica indistinguible de la humana en dificultad y discriminación; el cuello de botella ya no es escribir preguntas, es auditarlas (procedencia + vigilancia + human gatekeeping).</li><li>El taller único es educación homeopática: un workshop multimodal de soporte NO movió ni OSCE ni ansiedad. Lo que retiene competencia es dosis baja y alta frecuencia, no el evento intensivo.</li><li>La indagación clínica no se enseña enseñando el método: se enseña haciendo que el aprendiz experimente la incertidumbre y forme actitud hacia ella — justo lo que el 100% de las intervenciones revisadas descuida.</li><li>Un facilitador par con VR igualó al experto en aprendizaje de anatomía (15.1 vs 15.2): la escalabilidad de la simulación no exige clonar al docente experto, exige diseñar bien el andamio.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el video bate al PDF a igual contenido, ¿qué porcentaje de mi material ENAM/USAMEDIC sigue siendo texto pasivo que podría convertir a video estructurado con mayor retención?</li><li>¿Cómo sería un SOP de producción de banco de preguntas con IA que cumpla el estándar del meta-análisis: procedencia trazable, vigilancia psicométrica continua y gatekeeping humano por ítem?</li><li>Si la dosis única no retiene competencia, ¿mi oferta de Aprendiz Experto debería venderse como programa espaciado de micro-dosis en vez de masterclass aislada?</li><li>¿Estoy enseñando razonamiento clínico como método (algoritmo) o como hábito mental que arranca tolerando la incertidumbre, según el hallazgo deweyano?</li><li>¿Puede un paciente virtual con LLM en español, con tasa de alucinación &lt;0.5%, convertirse en mi infraestructura de práctica OSCE escalable para residentado peruano?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carousel/reel &#39;Escribe 200 preguntas con IA sin que se note&#39;: traduce el meta-análisis LLM-vs-humano a un protocolo de 3 checkpoints (procedencia, vigilancia psicométrica, gatekeeping) — wedge directo de AI-enhancement + USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase de Aprendiz Experto sobre el efecto de espaciamiento aplicado a competencia clínica retenida, usando el RCT de ALS dosis-baja-alta-frecuencia como caso ancla (micro-dosis &gt; maratón).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de razonamiento clínico/BMSE: &#39;Tolerar la incertidumbre como primer acto diagnóstico&#39;, enmarcado en el scoping deweyano — la indagación como hábito, no como método.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición: el ENAM bajo la lente del centenario de validez de Kelley — cómo un examen de alto riesgo puede paradójicamente amenazar la competencia que pretende certificar (Eva &amp; Cummings como marco).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Prototipo de Paciente Virtual Estandarizado con LLM en español para OSCE peruano: diseño + medición de tasa de alucinación + asociación con desempeño, replicando el estudio de Medical Teacher como piloto local.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BMC Medical Education</span><span class="tag ">Medical Teacher</span><span class="tag highlight">Medical Education</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag ">Nurse Education Today</span><span class="tag ">Anatomical Sciences Education</span><span class="tag ">Journal of Educational Evaluation for Health Professions</span><span class="tag ">Journal of Clinical Nursing</span><span class="tag ">Mycoses</span><span class="tag ">BMJ Open</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de junio de 2026.</div>
+</div>
+</body>
+</html>
