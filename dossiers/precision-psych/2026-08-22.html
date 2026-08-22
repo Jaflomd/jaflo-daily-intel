@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-08-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">22 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">49</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">17</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Genetics · 2026-08-20 · paper</div>
+        <h3 class="r3-title">DDx-PRS: un polygenic risk score que ya no predice &quot;caso vs. control&quot; sino la probabilidad relativa entre esquizofrenia, bipolar y depresión</h3>
+        <p class="r3-hook">El Psychiatric Genomics Consortium (Peyrot et al., Nature Genetics, 20/08) publica DDx-PRS: en vez del PRS clásico caso-vs-control, el modelo estima simultáneamente la probabilidad posterior de cada diagnóstico (ej. SCZ 50% / BIP 25% / MDD 15% / control 10%) modelando la covarianza genética entre trastornos, entrenado sobre &gt;1 millón de personas y validado en una muestra held-out de 11,460. Jaflo, esto es munición directa para tu línea dimensional y el libro BMSE: convierte el diagnóstico categorial en un vector de probabilidades relativas entre entidades vecinas, exactamente el argumento que vienes armando contra el DSM discreto — y es genética dura, no teoría. Úsalo como ancla del capítulo de arquitectura fenómeno→score→diagnóstico diferencial, y como pieza de contenido: &#39;tu diagnóstico ya no es una etiqueta, es un vector&#39;. Mueve precision-psychiatry + research + content-documentation.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41588-026-02684-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s41588-026-02684-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychiatry Research · 2026-08-20 · paper</div>
+        <h3 class="r3-title">Farmacogenómica guiando la dosis de antidepresivos en 400 pacientes: 92% vs 74.5% de respuesta clínica y la mitad de discontinuación</h3>
+        <p class="r3-hook">Estudio clínico chino (Fan et al., Psychiatry Research, 20/08) que asignó 400 pacientes con depresión a dosificación guiada por farmacogenómica (PGx-g) vs. manejo clínico habitual: el grupo PGx-g llegó a 92% de respuesta clínica vs. 74.5%, con menos reacciones adversas (6% vs 13.5%) y menos discontinuación del tratamiento (6.5% vs 14.2%). Jaflo, el dato que más te sirve no es la eficacia — es la caída a la mitad en discontinuación: la farmacogenómica no solo elige mejor fármaco, reduce el abandono, que es lo que en la práctica real del HVLH mata la adherencia más que cualquier otra variable. Es evidencia clínica aplicable (no hype) para tu línea de psiquiatría de precisión y un caso de uso concreto para justificar paneles PGx en tu práctica o en contenido dirigido a colegas. Mueve precision-psychiatry + research.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.psychres.2026.117369" target="_blank" rel="noopener">↗ doi.org/10.1016/j.psychres.2026.117369</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Postgraduate Medical Journal · 2026-08-21 · review</div>
+        <h3 class="r3-title">IA para evaluar competencias en educación médica: de 1002 estudios cribados, solo 32 sobrevivieron el filtro metodológico</h3>
+        <p class="r3-hook">Scoping review PRISMA-ScR (Hui et al., Postgraduate Medical Journal, 21/08) que mapea el uso real de IA para evaluación en Competency-Based Medical Education: de 1002 resultados de búsqueda en MEDLINE/EMBASE/PsycINFO/Scopus, solo 32 estudios cumplieron criterios de inclusión, cubriendo evaluación de habilidades quirúrgicas/procedimentales, notas clínicas, comunicación, generación de feedback y proyección de desempeño del residente. Jaflo, este es el ítem de educación de precisión del día y aterriza directo en AMAUTA/USAMEDIC: la tasa de supervivencia de ~3% es la prueba empírica de tu propio filtro anti-hype — la mayoría de lo que se vende como &#39;IA para evaluar competencias&#39; no pasa el corte metodológico. Úsalo para calibrar qué exigirle (granularidad, validez, gobernanza) antes de meter IA a calificar un simulacro ENAM/Residentado, y como pieza de autoridad para contenido sobre &#39;assessment con IA que sí funciona vs. marketing&#39;. Mueve amauta-education + content-documentation.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/postmj/qgaf195" target="_blank" rel="noopener">↗ doi.org/10.1093/postmj/qgaf195</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 2026-08-19 · paper</div>
+          <div class="r10-title">Modelo de machine learning con 699 metabolitos identifica esquizofrenia resistente a tratamiento con AUC 0.958</div>
+          <div class="r10-line">En 112 pacientes con esquizofrenia resistente, 232 no-resistentes y 145 controles, un modelo random forest sobre 58 metabolitos alterados (validado con nested cross-validation 5×5) alcanzó AUC 0.958 para identificar resistencia al tratamiento, con correlaciones específicas a dominios cognitivos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La metabolómica periférica se consolidará como screening barato de resistencia terapéutica antes de escalar antipsicóticos; vale la pena que lo sigas para tu línea de biomarcadores aplicados en el HVLH.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03827-6" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03827-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Annals of General Psychiatry · 2026-08-20 · paper</div>
+          <div class="r10-title">Marcadores de voz para depresión: robustos entre hospitales para features temporales, pero el &#39;ruido de grabación&#39; se disfraza de biomarcador en jitter/shimmer</div>
+          <div class="r10-line">Validación cruzada entre dos cohortes psiquiátricas alemanas (135 participantes): duración de pausa y MFCC se replicaron entre sitios (AUC 0.63 fuera de muestra), pero shimmer/jitter mostraron asociaciones que se invirtieron de dirección entre hospitales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El fenotipado por voz avanzará más rápido en features temporales/espectrales que en calidad vocal; útil como caso de enseñanza sobre qué exigir antes de adoptar un &#39;biomarcador digital&#39; comercial.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12991-026-00691-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12991-026-00691-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Pharmacogenomics Journal · 2026-08-19 · paper</div>
+          <div class="r10-title">El genotipo CYP2D6 predice peor respuesta y más efectos adversos en depresión mayor hospitalizada (n=99)</div>
+          <div class="r10-line">Cohorte retrospectiva serbia: metabolizadores pobres/intermedios de CYP2D6 tuvieron 9.0 y 4.3 puntos menos de mejoría en HAM-D y más efectos adversos que metabolizadores normales, en solo ~4 semanas de hospitalización.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El genotipado CYP2D6 seguirá acumulando evidencia confirmatoria (no solo exploratoria); ya es defendible como estándar de práctica citable en tu línea de precisión farmacológica.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41397-026-00428-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41397-026-00428-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry (PRONIA) · 2026-08-20 · paper</div>
+          <div class="r10-title">En psicosis temprana, el deterioro general y la severidad específica de síntomas corresponden a circuitos de sustancia blanca distintos</div>
+          <div class="r10-line">En 882 personas del consorcio PRONIA, el componente de anisotropía fraccional ligado a &#39;deterioro general&#39; se replicó también en el grupo con depresión (transdiagnóstico), mientras el ligado a severidad psicótica específica no.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es evidencia estructural directa a favor de separar un factor general tipo &#39;p&#39; de factores específicos de trastorno; cítalo cuando defiendas HiTOP/bifactor frente a colegas categorialistas.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03832-9" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03832-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · 2026-08-20 · paper</div>
+          <div class="r10-title">Terapia psicodélica como reconfiguración de red: modelo del eje longitudinal hipocampal en dos fases (desestabilización → reconsolidación)</div>
+          <div class="r10-line">Marco teórico que extiende el modelo dual E/I de psicodélicos al eje anterior-posterior del hipocampo, proponiendo biomarcadores testables (conectividad, medidas E/I) para explicar por qué la respuesta terapéutica difiere entre pacientes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este framework generará estudios de neuroimagen buscando el biomarcador de &#39;quién responde a psicodélicos&#39;; encaja con tu línea de network theory aplicada a neuromodulación.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111898" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111898</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Ethics · 2026-08-20 · paper</div>
+          <div class="r10-title">La injusticia epistémica del fenotipado digital psiquiátrico no es solo un riesgo — la ignorancia estructural también puede empoderar al paciente</div>
+          <div class="r10-line">Análisis filosófico que reformula la injusticia epistémica en fenotipado digital psiquiátrico como una cuestión de tipos de ignorancia (fenomenológica, objetiva, estructural), algunas de las cuales pueden aprovecharse para dar más poder epistémico al paciente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los comités de ética empezarán a exigir marcos de este tipo antes de aprobar protocolos de digital phenotyping; material directo para tu rol en el comité de ética del HVLH.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/jme-2025-110858" target="_blank" rel="noopener">↗ doi.org/10.1136/jme-2025-110858</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">NPP – Digital Psychiatry and Neuroscience · 2026-08-20 · editorial</div>
+          <div class="r10-title">Cinco prioridades del ACNP para que la IA en salud mental deje de ser validación técnica y se vuelva impacto clínico real</div>
+          <div class="r10-line">Grupo de estudio ACNP 2026 (Paulus, Torous et al.) identifica cinco barreras infraestructurales —no computacionales— para que la IA psiquiátrica funcione en clínica real, y pide moverse de modelos predictivos a mecanicistas/causales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este documento se citará como referencia de gobernanza en cada paper de &#39;IA en psiquiatría&#39; del próximo año; útil como filtro anti-hype propio cuando evalúes qué IA vale la pena adoptar en tu práctica.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s44277-026-00068-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s44277-026-00068-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Computer Assisted Radiology and Surgery · 2026-08-19 · paper</div>
+          <div class="r10-title">Seguimiento manos libres con IA evalúa sutura quirúrgica sin sensores ni marcadores físicos</div>
+          <div class="r10-line">Framework markerless con tracking 3D de manos + LSTM-atención clasifica el nivel de destreza en sutura vascular con una sola cámara (96.4% de segmentación, F1=0.73 por video), aunque cae a 52% al generalizar a cirujanos nunca vistos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Herramientas así se moverán de investigación a simuladores de bajo costo en 2-3 años; útil como ejemplo de &#39;feedback de precisión&#39; honesto sobre sus límites de generalización, ideal para clase sobre validación externa.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11548-026-03770-5" target="_blank" rel="noopener">↗ doi.org/10.1007/s11548-026-03770-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Pediatric Orthopedics · 2026-08-19 · paper</div>
+          <div class="r10-title">Intervención estructurada con 1609 radiografías pediátricas mejora 20.5% la estratificación de riesgo en residentes de ortopedia</div>
+          <div class="r10-line">Estudio prospectivo multicéntrico (115 residentes, 64,489 interpretaciones): práctica basada en casos con feedback inmediato hasta alcanzar 90% de desempeño mejoró precisión diagnóstica (+10.5%), localización (+11.9%) y estratificación de riesgo (+20.5%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El modelo &#39;práctica deliberada con feedback inmediato hasta umbral&#39; es exportable tal cual a un módulo AMAUTA de radiología/imágenes para ENAM; mide el tamaño de muestra necesario para tu propio piloto.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/BPO.0000000000003446" target="_blank" rel="noopener">↗ doi.org/10.1097/BPO.0000000000003446</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">AEM Education and Training · 2026-08-16 · paper</div>
+          <div class="r10-title">Coaching como vehículo de educación de precisión: el blueprint que define las dos decisiones fundacionales antes de lanzar un programa</div>
+          <div class="r10-line">Blueprint educativo que nombra explícitamente al coaching como vehículo de &#39;precision education&#39; y Master Adaptive Learners, y reduce el diseño de un programa a dos decisiones fundacionales: objetivos del programa y teoría del cambio/modelo de coaching.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El lenguaje &#39;coaching = educación de precisión&#39; se volverá estándar en medical education en los próximos meses; es la plantilla más directa que tienes para formalizar el componente de mentoría/coaching dentro de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/aet2.70243" target="_blank" rel="noopener">↗ doi.org/10.1002/aet2.70243</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>DDx-PRS no busca &#39;diagnosticar&#39;: asigna probabilidades relativas entre diagnósticos vecinos (SCZ/BIP/MDD/control) — el diagnóstico categorial se convierte en un vector, no en una etiqueta.</li><li>En el estudio de farmacogenómica china, el hallazgo más útil no es la eficacia (92% vs 74.5%) sino que la discontinuación del tratamiento se redujo a la mitad — la genética mejora sobre todo la adherencia, no solo la respuesta.</li><li>Los marcadores de voz para depresión SÍ cruzan de hospital a hospital en features temporales (duración de pausa, MFCC), pero shimmer y jitter — la &#39;calidad de voz&#39; — se invirtieron de dirección entre las dos cohortes: un biomarcador candente en un sitio puede ser artefacto de grabación en otro.</li><li>En psicosis temprana, el componente de &#39;deterioro general&#39; del PRONIA se replicó también en pacientes con depresión (transdiagnóstico), pero el componente de severidad psicótica específica no — evidencia estructural de que el factor p y los factores específicos son circuitos distintos, no la misma cosa medida dos veces.</li><li>De 1002 estudios de IA para evaluación educativa cribados por PRISMA-ScR, solo 32 (~3%) sobrevivieron el filtro metodológico — el propio campo de &#39;IA en educación médica&#39; es, en su mayoría, ruido.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si DDx-PRS te da un vector de probabilidades entre esquizofrenia, bipolar y depresión en vez de una etiqueta, ¿cómo se lo explicas a un paciente en consulta sin generar más ansiedad diagnóstica que certeza?</li><li>¿Cuánto del salto de adherencia en el grupo guiado por farmacogenómica es el genotipo en sí, y cuánto es el efecto de que el paciente sienta que el tratamiento fue elegido &#39;para él&#39; y no al azar?</li><li>Si los marcadores de voz para depresión no pasan de AUC 0.63 al generalizar entre dos hospitales alemanes, ¿qué estándar mínimo de validación externa exigirías antes de llevarlos a una app comercial en Perú?</li><li>¿El &#39;deterioro general&#39; transdiagnóstico de PRONIA es el mismo constructo que el factor p de la psicopatología dimensional, o son primos que miden cosas distintas bajo el mismo nombre?</li><li>Si solo el 3% de los estudios de IA para evaluación educativa sobrevive un filtro metodológico serio, ¿qué mínimo de evidencia exigirías antes de dejar que un modelo califique un simulacro ENAM en AMAUTA?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG: &#39;Tu diagnóstico ya no es una etiqueta, es un vector&#39; — explicando DDx-PRS con el ejemplo SCZ/BIP/MDD en probabilidades relativas.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video YT: &#39;Lo que 400 pacientes con depresión te enseñan sobre por qué la farmacogenómica reduce el abandono del tratamiento (no solo mejora la respuesta)&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo BMSE sobre &#39;deterioro general vs. severidad específica&#39; usando el hallazgo estructural de PRONIA (sustancia blanca) como caso ilustrativo del factor p.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Perspectiva/editorial proponiendo un estándar mínimo tipo TRIPOD-AI para herramientas de IA usadas en evaluación de simulacros ENAM/Residentado en AMAUTA, inspirado en el filtro 32/1002 del scoping review de Postgrad Med J.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Diseñar el &#39;blueprint de coaching de precisión&#39; de AEM Educ Train como módulo formal de mentoría dentro de AMAUTA/USAMEDIC, con las dos decisiones fundacionales (objetivos + teoría del cambio) documentadas.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Genetics</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Psychiatry Research</span><span class="tag ">Annals of General Psychiatry</span><span class="tag ">The Pharmacogenomics Journal</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Journal of Medical Ethics</span><span class="tag ">NPP - Digital Psychiatry and Neuroscience</span><span class="tag ">Postgraduate Medical Journal</span><span class="tag ">Journal of Pediatric Orthopedics</span><span class="tag ">International Journal of Computer Assisted Radiology and Surgery</span><span class="tag ">AEM Education and Training</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch) · Consensus (triangulación de contexto, sin verificación de fecha). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de agosto de 2026.</div>
+</div>
+</body>
+</html>
