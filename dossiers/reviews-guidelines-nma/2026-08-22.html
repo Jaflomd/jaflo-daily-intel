@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-08-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">22 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">71</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">38</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · 2026-08-20 · review</div>
+        <h3 class="r3-title">From network destabilisation to adaptive reconfiguration: a hippocampal longitudinal axis model of psychedelic-assisted therapy</h3>
+        <p class="r3-hook">Marco teórico que extiende los modelos de excitación/inhibición de la acción psicodélica a un eje longitudinal hipocampal (anterior-posterior): fase 1 de desestabilización E/I que afloja patrones desadaptativos, fase 2 de reconfiguración plástica dependiente de experiencia, con efectos transdiagnósticos propuestos sobre dominios afectivos, cognitivos y conductuales. Es prácticamente un capítulo listo para tu libro de psicopatología dimensional: un modelo que explica un mecanismo transdiagnóstico (no disorder-specific) con predicciones de biomarcador testeables, exactamente la lógica HiTOP/RDoC que defiendes. Conecta directo con tu línea de neuromodulación y psiquiatría de precisión —el eje hipocampal como sustrato para estratificar quién responde a terapia asistida con psicodélicos. Úsalo como base de una clase o hilo sobre &#39;cómo un mismo mecanismo de red explica por qué la terapia psicodélica funciona en depresión, TEPT y adicciones a la vez&#39;, y como cita ancla si escribes sobre biomarcadores de neuroplasticidad para el BMSE.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111898" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111898</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Current Psychiatry Reports · 2026-08-21 · review</div>
+        <h3 class="r3-title">GLP-1 and dual GIP/GLP-1 receptor agonists&#39; psychopharmacology and neuropsychiatric effects: a Bradford Hill-informed evaluation</h3>
+        <p class="r3-hook">Revisión sistemática con criterios de Bradford Hill que integra farmacología de receptor, neurociencia preclínica, RCTs y farmacovigilancia para evaluar el vínculo entre agonistas GLP-1/GIP-GLP-1 y depresión, ansiedad, suicidalidad, conducta de recompensa, cognición y alteraciones oculares: concluye plausibilidad biológica pero evidencia aún insuficiente para causalidad en la mayoría de desenlaces. Con semaglutida y tirzepatida ya integrados a la práctica general, esto es contenido de alta demanda para tu audiencia AMAUTA/USAMEDIC (pregunta de examen inminente) y para tu comité de ética del HVLH si evalúan protocolos con estos fármacos en pacientes psiquiátricos. Es también un caso de manual de razonamiento causal proporcional a la evidencia —biológicamente plausible pero no probado— que puedes usar para enseñar a distinguir señal de farmacovigilancia de causalidad establecida. Ángulo de contenido: &#39;¿Ozempic te puede deprimir? Lo que dice (y no dice) la evidencia&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11920-026-01709-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s11920-026-01709-w</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">The Lancet Psychiatry · 2026-08-20 · review</div>
+        <h3 class="r3-title">From prediction to decision: prediction-based decision rules and target trial emulation in ADHD</h3>
+        <p class="r3-hook">Personal View que explica por qué más de 100 modelos predictivos de TDAH nunca llegaron a la clínica: falta la &#39;regla de decisión&#39; que traduce el output del modelo en una acción concreta. Proponen combinar reglas de decisión basadas en predicción con emulación de ensayo diana (target trial emulation) en datos observacionales, con dos ejemplos: intensidad de tratamiento guiada por predicción de persistencia y selección de fármaco por predicción de respuesta. Cae directo en tu línea TDAH/TEA y en tu pilar de psiquiatría de precisión, y en Lancet Psychiatry —journal de referencia, sube prioridad. Es munición de primera para enseñar razonamiento clínico basado en modelos a residentes: el problema no es la IA, es no cerrar el lazo entre predicción y decisión accionable. Ángulo de clase o paper: por qué un modelo predictivo &#39;exitoso&#39; en AUC puede seguir siendo clínicamente inútil sin una regla de decisión explícita.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S2215-0366(26)00227-0" target="_blank" rel="noopener">↗ doi.org/10.1016/S2215-0366(26)00227-0</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Global Health · 2026-08-21 · network-meta-analysis</div>
+        <h3 class="r3-title">Antidiabetic medication classes and Parkinson disease risk: a Bayesian network meta-analysis of observational cohorts</h3>
+        <p class="r3-hook">NMA bayesiano de 9 cohortes observacionales (712,287 pacientes) que rankea clases de antidiabéticos por riesgo de Parkinson: ninguna diferencia estadísticamente significativa entre clases, pero por probabilidad de rango los SGLT2i tienden a rankear más bajo en ≥75 años y los GLP-1RA en &lt;75 años, sugiriendo potencial neuroprotector que aún requiere validación controlada. Encaja con la revisión de GLP-1 de arriba —dos fuentes independientes convergiendo en la misma familia de fármacos como área caliente de psiquiatría/neurología de precisión— y con tu interés en neuromodulación farmacológica del riesgo neurodegenerativo. Es el único NMA real de la ventana de 48-72h en este dominio: útil como ejemplo docente de por qué un ranking de probabilidad en NMA observacional NO equivale a jerarquía causal de eficacia, y como gancho de contenido sobre el giro de los fármacos metabólicos hacia la neuropsiquiatría.</p>
+        <a class="r3-link" href="https://doi.org/10.7189/jogh.16.04187" target="_blank" rel="noopener">↗ doi.org/10.7189/jogh.16.04187</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">NPP – Digital Psychiatry and Neuroscience (American College of Neuropsychopharmacology) · 2026-08-20 · guideline</div>
+        <h3 class="r3-title">Responsible and innovative AI for mental health care: five priority themes (ACNP Study Group)</h3>
+        <p class="r3-hook">Síntesis de un grupo de estudio del ACNP (body normativo, no guía formal pero sí consenso de sociedad científica) que identifica las barreras REALES a la adopción de IA en psiquiatría clínica: no son computacionales sino de infraestructura —sistemas de medición poco confiables, gobernanza incompleta, estándares de evidencia insuficientes. Cinco prioridades: infraestructura de fenotipado/medición robusta, herramientas de aumento clínico que reduzcan carga de trabajo, intervenciones dirigidas al paciente rigurosamente evaluadas, marcos de gobernanza para sesgo/equidad, y modelos mecanicistas-causales. Es el documento más directamente accionable del día para tu pilar ai-enhancement y para tu comité de ética del HVLH al evaluar cualquier herramienta de IA clínica que entre a revisión. Úsalo como checklist de gobernanza en tus clases de Aprendiz Experto sobre IA aplicada a psiquiatría: exige a cualquier vendor o protocolo que responda a estas cinco prioridades antes de adoptarlo.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s44277-026-00068-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s44277-026-00068-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of the American Heart Association (75 expertos) · 2026-08-20 · guideline</div>
+        <h3 class="r3-title">Cardiovascular and stroke considerations for antiamyloid therapies in Alzheimer disease: a multi-society scientific statement</h3>
+        <p class="r3-hook">Consenso de 75 expertos que normatiza cómo seleccionar candidatos a terapias antiamiloides (lecanemab/donanemab-tipo) considerando riesgo cardiovascular concurrente, y cómo construir sistemas de atención para Alzheimer que integren monitoreo de ARIA con manejo cardiovascular. Neuropsiquiatría en estado puro: la interfaz demencia-cardio-neurología que es foco secundario explícito de este dominio, y con altísima relevancia práctica porque estas terapias ya se prescriben y sus efectos adversos (ARIA-E/H) tienen presentación neuropsiquiátrica (confusión, cefalea, convulsiones). Para tu docencia ENAM/Residentado es material de examen de altísima probabilidad —terapias antiamiloides son tema caliente 2026. Úsalo para armar un caso clínico de razonamiento: paciente con Alzheimer temprano + riesgo vascular, ¿es candidato a AAT? Qué vigilar y cuándo suspender.</p>
+        <a class="r3-link" href="https://doi.org/10.1161/JAHA.125.048108" target="_blank" rel="noopener">↗ doi.org/10.1161/JAHA.125.048108</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Neural Transmission (Austria/Alemania/Suiza) · 2026-08-21 · guideline</div>
+        <h3 class="r3-title">Symptom prevalence and pharmacological management in late-stage Parkinson disease: a multinational Delphi consensus</h3>
+        <p class="r3-hook">Encuesta multinacional (118 respondientes) + Delphi de expertos en cuidados paliativos especializados que define manejo de Parkinson en etapa tardía: disfagia (94%), demencia (74%), rigidez (78%) como síntomas más prevalentes; consenso de mantener levodopa hasta el final de vida, quetiapina preferida para delirium y clozapina para psicosis. Esto es psiquiatría de interconsulta pura —justo la interfaz neurología-psiquiatría que distingue a este dominio— y te da la respuesta actualizada por consenso experto a una pregunta clínica frecuente: qué antipsicótico usar en psicosis/delirium por Parkinson y por qué (perfil D2 bajo, riesgo extrapiramidal). Úsalo en docencia de razonamiento clínico geriátrico/paliativo y como referencia directa la próxima vez que un residente pregunte por manejo psiquiátrico de EP avanzada.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00702-026-03255-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s00702-026-03255-4</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Nordic Journal of Psychiatry · 2026-08-20 · meta-analysis</div>
+        <h3 class="r3-title">Minor physical anomalies in ASD and ADHD: a meta-analysis of a shared transdiagnostic marker</h3>
+        <p class="r3-hook">Meta-análisis de 20 estudios que confirma anomalías físicas menores elevadas tanto en TEA como en TDAH (g=0.72), sin diferenciar entre ambos: las anomalías funcionan como marcador transdiagnóstico de perturbación del desarrollo temprano, no como rasgo distintivo de una u otra condición. Es evidencia dura para tu línea TDAH/TEA/neurodivergencia y otro ladrillo para el argumento dimensional de tu libro: dos &#39;categorías&#39; DSM comparten un marcador biológico de origen común, lo que empuja hacia un espectro de neurodesarrollo compartido en vez de trastornos discretos. Úsalo en tu docencia ENAM/Residentado como ejemplo de signo físico con valor diagnóstico transdiagnóstico (útil en el examen físico psiquiátrico infantil) y como gancho de contenido: &#39;lo que el cuerpo revela antes que la conducta&#39; en neurodivergencia.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/08039488.2026.2720122" target="_blank" rel="noopener">↗ doi.org/10.1080/08039488.2026.2720122</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Canadian Journal of Psychiatry · 2026-08-20 · meta-analysis</div>
+        <h3 class="r3-title">Prevalence and correlates of depressive symptoms across Canada during the COVID-19 pandemic: a meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis de 144 estudios: prevalencia agrupada de síntomas depresivos de 31.1% en Canadá durante COVID-19, con variación significativa por provincia, instrumento de medición y periodo de evaluación, y mayor carga en mujeres. Más allá del dato puntual, es un caso de manual de heterogeneidad metodológica en epidemiología psiquiátrica —útil para tu docencia de lectura crítica sobre por qué comparar &#39;prevalencias&#39; entre estudios sin armonizar instrumento y ventana temporal es un error frecuente en residentes. Sirve también como contraste histórico/metodológico si preparas contenido sobre la salud mental pospandemia y la necesidad de estrategias nacionales coordinadas de salud mental, un tema con paralelo directo al contexto peruano.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/07067437261477556" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261477556</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Annals of Medicine · 2026-08-19 · meta-analysis</div>
+        <h3 class="r3-title">Rasagiline versus selegiline for early-stage Parkinson disease: a meta-analysis and pharmacoeconomic study</h3>
+        <p class="r3-hook">Meta-análisis de 10 RCTs: eficacia y seguridad comparables entre rasagilina y selegilina en Parkinson temprano, pero rasagilina no es costo-efectiva al precio actual (ICER muy por encima del umbral convencional). Es un ejemplo perfecto de evidencia proporcional al claim aplicada a farmacoeconomía —dos fármacos &#39;iguales&#39; en eficacia no son intercambiables en valor clínico real— y material directo para tu docencia sobre lectura crítica de estudios de costo-efectividad, un ángulo que suele faltar en la formación de residentes centrada solo en eficacia/seguridad. Relevante también para tu interfaz neuropsiquiátrica (IMAO-B en trastornos del movimiento) y como contraste con el ítem del NMA de antidiabéticos: la neuroprotección farmacológica en Parkinson sigue siendo un campo de decisiones basadas en costo, no solo en biología.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/07853890.2026.2711475" target="_blank" rel="noopener">↗ doi.org/10.1080/07853890.2026.2711475</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un mismo eje de red hipocampal (anterior-posterior) explicaría por qué la terapia psicodélica funciona en depresión, TEPT y adicciones a la vez: desestabilización E/I transitoria seguida de reconfiguración plástica dependiente de experiencia. Mecanismo transdiagnóstico, no disorder-specific (Prog Neuropsychopharmacol Biol Psychiatry, 10.1016/j.pnpbp.2026.111898).</li><li>Las anomalías físicas menores (implantación baja de orejas, paladar alto, etc.) están igualmente elevadas en TEA y TDAH (g=0.72): no distinguen entre ambos, son marcador compartido de perturbación temprana del neurodesarrollo. Un dato de examen físico con lectura dimensional (Nord J Psychiatry, 10.1080/08039488.2026.2720122).</li><li>Rasagilina y selegilina son clínicamente equivalentes en Parkinson temprano, pero rasagilina no es costo-efectiva al precio actual: eficacia igual no es valor igual. Recordatorio de que la farmacoeconomía es parte de la evidencia, no un añadido (Ann Med, 10.1080/07853890.2026.2711475).</li><li>En NMA bayesiano de 712,287 pacientes, ningún antidiabético reduce significativamente el riesgo de Parkinson, pero SGLT2i y GLP-1RA rankean más bajo en riesgo según edad (≥75 vs &lt;75). Ranking de probabilidad en NMA observacional ≠ jerarquía causal de eficacia (J Glob Health, 10.7189/jogh.16.04187).</li><li>Consenso Delphi en Parkinson avanzado: quetiapina para delirium, clozapina para psicosis, levodopa mantenida hasta el final de vida. La psiquiatría de interconsulta en EP terminal tiene ya una respuesta consensuada, no solo empírica (J Neural Transm, 10.1007/s00702-026-03255-4).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿El eje hipocampal longitudinal ofrece el biomarcador que le falta a la terapia psicodélica para dejar de ser &#39;para todos&#39; y volverse estratificable por respuesta esperada — el puente concreto hacia psiquiatría de precisión en neuromodulación?</li><li>Si la plausibilidad biológica de GLP-1 y riesgo neuropsiquiátrico es real pero la causalidad no está probada, ¿cómo se comunica ese matiz a un paciente que pregunta &#39;¿Ozempic me puede deprimir?&#39; sin caer en alarmismo ni en falsa tranquilidad?</li><li>¿Por qué más de 100 modelos predictivos de TDAH fracasaron en llegar a la clínica, y qué cambiaría si cada modelo viniera obligado a traer su regla de decisión antes de publicarse?</li><li>¿Debería la anomalía física menor entrar al examen físico psiquiátrico infantil de rutina como marcador transdiagnóstico de riesgo de neurodesarrollo, o su valor predictivo individual es demasiado bajo para uso clínico?</li><li>Con terapias antiamiloides ya en uso, ¿qué tan preparado está el sistema de salud peruano —sin el &#39;systems of care&#39; que pide el consenso de JAHA— para vigilar ARIA y riesgo cardiovascular en estos pacientes?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel: &#39;El mismo mecanismo, tres diagnósticos&#39; — el eje hipocampal longitudinal como explicación transdiagnóstica de por qué la terapia psicodélica sirve en depresión, TEPT y adicciones (base: Prog Neuropsychopharmacol Biol Psychiatry, 10.1016/j.pnpbp.2026.111898).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Pieza Aprendiz Experto: &#39;¿Ozempic te puede deprimir? Lo que dice (y no dice) la evidencia&#39; combinando la revisión Bradford Hill de GLP-1 con el NMA de antidiabéticos y riesgo de Parkinson — plausibilidad biológica vs causalidad probada.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección de libro de psicopatología dimensional: &#39;anomalías físicas menores como marcador transdiagnóstico&#39; — TEA y TDAH comparten origen de neurodesarrollo, no son categorías discretas (Nord J Psychiatry).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-paper o carta editorial: por qué un modelo predictivo de TDAH necesita una regla de decisión explícita para ser clínicamente útil, usando el marco de target trial emulation del Personal View de Lancet Psychiatry como plantilla metodológica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase/carrusel para residentes: &#39;Psiquiatría de interconsulta en Parkinson avanzado&#39; — quetiapina vs clozapina en psicosis/delirium por EP, según el consenso Delphi multinacional, con caso clínico de decisión de suspender/mantener levodopa.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">The Lancet Psychiatry (top)</span><span class="tag ">Current Psychiatry Reports</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">NPP - Digital Psychiatry and Neuroscience (ACNP)</span><span class="tag ">Journal of the American Heart Association</span><span class="tag ">Journal of Neural Transmission</span><span class="tag ">Journal of Global Health</span><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag ">Nordic Journal of Psychiatry</span><span class="tag ">Schizophrenia Bulletin</span><span class="tag ">Annals of Medicine</span><span class="tag ">Critical Care</span><span class="tag ">International Journal of Stroke (World Stroke Organization)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de agosto de 2026.</div>
+</div>
+</body>
+</html>
