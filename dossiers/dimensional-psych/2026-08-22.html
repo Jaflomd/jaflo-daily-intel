@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-08-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">22 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">94</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Child Psychiatry and Human Development · 2026-08-20 · paper</div>
+        <h3 class="r3-title">Un análisis de red ecológico mapea 24 correlatos directos del factor p en 8,981 adolescentes chinos</h3>
+        <p class="r3-hook">Li, Gong y Li corren un análisis de red &#39;ecológico&#39; (no solo síntomas, sino variables multinivel: sueño, rumiación, trauma, conflicto familiar, victimización entre pares, estrés académico y presión digital) sobre un factor general de psicopatología en 8,981 adolescentes chinos, y encuentran que la calidad del sueño es el nodo con la asociación directa más fuerte con el factor p. Para ti esto es oro puro de network theory aplicado a escala poblacional real: no es un factor p abstracto, es un mapa de qué palancas mover primero (sueño antes que &#39;terapia genérica&#39;), justo el tipo de evidencia que tu libro de psicopatología necesita para pasar de &#39;la dimensionalidad existe&#39; a &#39;la dimensionalidad se interviene&#39;. Úsalo como caso ancla en el capítulo de factor p/red del BMSE, y como contraste directo con datos peruanos si logras replicar el diseño ecológico en una muestra de Lima vía HVLH.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10578-026-02085-5" target="_blank" rel="noopener">↗ doi.org/10.1007/s10578-026-02085-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Psychopathology and Clinical Science · 2026-08-20 · paper</div>
+        <h3 class="r3-title">La sistematicidad al decidir (no la tasa de descuento) predice psicopatología transdiagnóstica en 8,884 adolescentes, replicado en adultos jóvenes</h3>
+        <p class="r3-hook">Molloy, Weigard y colegas extienden el modelo clásico de descuento hiperbólico con un parámetro de &#39;sistematicidad&#39; (consistencia en las elecciones) y muestran, en 8,884 adolescentes con replicación en 115 adultos jóvenes, que esa consistencia —no la impaciencia por la recompensa— predice de forma robusta atención, internalización y externalización por igual, y correlaciona con función ejecutiva. Es psiquiatría computacional aplicada de manera limpia a la pregunta que más te importa: un mecanismo cognitivo único, medible, que atraviesa espectros HiTOP enteros sin importar la etiqueta categorial. Encaja directo con tu pilar de precisión (un marcador de proceso, no de síntoma) y es material de clase ideal para Aprendiz Experto sobre por qué el razonamiento clínico dimensional necesita mecanismos computacionales, no solo cuestionarios.</p>
+        <a class="r3-link" href="https://doi.org/10.1037/abn0001168" target="_blank" rel="noopener">↗ doi.org/10.1037/abn0001168</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PLOS Mental Health · 2026-08-21 · paper</div>
+        <h3 class="r3-title">Predicción multimodal de conversión y remisión de psicosis en jóvenes de ultra-alto riesgo: el modelo clínico+socioambiental gana a lo molecular</h3>
+        <p class="r3-hook">Kong y colegas (cohorte LYRIKS, Singapur, n=56 UHR) comparan seis tipos de datos —desde riesgo socioambiental hasta puntajes genéticos— para predecir conversión y remisión de psicosis a 12 meses, y el modelo ganador combina CAARMS clínico + entorno social + funcionamiento social; lo molecular/genético aún no aporta valor incremental clínico. Es munición directa para tu línea de staging/psiquiatría de precisión: confirma que, hoy, la estratificación de riesgo se gana con variables clínico-funcionales bien medidas antes que con biomarcadores de laboratorio, un mensaje que puedes llevar tal cual a ENAM/Residentado (razonamiento clínico &gt; sobre-tecnificación prematura) y a un ítem del BMSE sobre jerarquía de evidencia para specifiers de riesgo.</p>
+        <a class="r3-link" href="https://doi.org/10.1371/journal.pmen.0000686" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pmen.0000686</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">5</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Child &amp; Adolescent Psychology · 2026-08-21 · paper</div>
+          <div class="r10-title">RDoC y depresión juvenil: cuánto (y qué tan bien) se están midiendo los factores ambientales</div>
+          <div class="r10-line">Revisión sistemática: solo el 36% de los estudios RDoC de depresión juvenil miden inestabilidad económica, y los adolescentes están peor cubiertos que los niños — RDoC en la práctica todavía subpesa el contexto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta brecha ambiental en RDoC se va a citar como argumento para integrar variables socioeconómicas como &#39;unidad de análisis&#39; formal; úsalo para justificar por qué tu libro pide contexto peruano explícito, no RDoC importado sin ajuste.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/15374416.2026.2718199" target="_blank" rel="noopener">↗ doi.org/10.1080/15374416.2026.2718199</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Sleep · 2026-08-20 · paper</div>
+          <div class="r10-title">Trayectorias de sueño transdiagnósticas a lo largo del ciclo menstrual en pacientes psiquiátricos con suicidalidad reciente</div>
+          <div class="r10-line">142 pacientes psiquiátricos con ideación/intento reciente: el sueño perimenstrual/luteal se agrupa en subtipos heterogéneos que se acoplan a patrones sintomáticos — ventanas cíclicas de vulnerabilidad, no un rasgo estático.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el monitoreo &#39;cycle-aware&#39; se va a proponer como specifier dimensional de riesgo suicida en mujeres; encaja con el nodo de sueño que lidera el dossier de hoy — dos papers, un mismo mecanismo candidato.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/sleep/zsag220" target="_blank" rel="noopener">↗ doi.org/10.1093/sleep/zsag220</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Autism · 2026-08-20 · paper</div>
+          <div class="r10-title">Desregulación emocional y rasgos autistas: dos rutas (bajo ánimo persistente vs. reactividad intensa) con solapamiento parcial autista/no autista</div>
+          <div class="r10-line">99 jóvenes (64 autistas): dos tipos de desregulación emocional se asocian a dificultades de comunicación social y conductas repetitivas, con matices entre autistas y no autistas — mecanismo transdiagnóstico, expresión modulada por neurotipo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;dos rutas de desregulación&#39; se convertirá en un specifier útil para tu línea TDAH/TEA×dimensional; candidato directo para un carrusel IG sobre por qué &#39;desregulado&#39; no es un diagnóstico, es un fenotipo con subtipos.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/13623613261472147" target="_blank" rel="noopener">↗ doi.org/10.1177/13623613261472147</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · 2026-08-20 · paper</div>
+          <div class="r10-title">Un modelo de red hipocampal de dos fases para la terapia psicodélica: desestabilización seguida de reconfiguración adaptativa</div>
+          <div class="r10-line">Marco teórico: el eje anteroposterior del hipocampo como sustrato espacialmente diferenciado de un proceso en dos fases (desestabilización de red → reconfiguración de circuito) que explicaría el beneficio transdiagnóstico (afectivo, cognitivo, conductual) de los psicodélicos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es especulativo (aún sin datos propios) pero da lenguaje de red testeable a tu línea de neuromodulación; archívalo como hipótesis a vigilar, no como evidencia, yúsalo para plantear una pregunta de investigación con biomarcador de fase.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111898" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111898</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nordic Journal of Psychiatry · 2026-08-20 · meta-analysis</div>
+          <div class="r10-title">Anomalías físicas menores en TEA y TDAH: meta-análisis confirma que son un marcador transdiagnóstico, no diferencial</div>
+          <div class="r10-line">Meta-análisis de 12 estudios TEA + 8 TDAH: anomalías físicas menores elevadas por igual en ambos (g=0.72) sin diferenciar entre ellos — huella de neurodesarrollo atípico compartida, no marcador diagnóstico específico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza el argumento de que TDAH/TEA comparten una vía prenatal común y que la frontera categorial DSM entre ambos es débil también a nivel morfológico; dato de respaldo (no headline) para tu wedge de neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/08039488.2026.2720122" target="_blank" rel="noopener">↗ doi.org/10.1080/08039488.2026.2720122</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En una red ecológica de 8,981 adolescentes, el nodo con mayor peso directo sobre el factor p no es un síntoma psiquiátrico: es la calidad del sueño. La palanca de intervención transdiagnóstica más barata puede no estar en el DSM.</li><li>No es la impaciencia por la recompensa lo que predice psicopatología transdiagnóstica: es cuán &#39;sistemáticas&#39; (consistentes) son tus decisiones. Un mecanismo computacional único explica atención, internalización y externalización a la vez — un solo proceso, tres etiquetas distintas.</li><li>En jóvenes de ultra-alto riesgo de psicosis, lo clínico-social (CAARMS + entorno + funcionamiento) predijo mejor conversión y remisión que los datos genéticos/moleculares. La sofisticación biológica todavía pierde contra la buena entrevista.</li><li>Solo 36% de los estudios RDoC en depresión juvenil miden inestabilidad económica: un marco &#39;biobehavioral&#39; que subpesa el contexto socioeconómico se arriesga a medir el mecanismo equivocado en la población equivocada.</li><li>Las anomalías físicas menores son igual de frecuentes en TEA que en TDAH (g=0.72 en ambos, sin diferencia entre grupos): una huella prenatal compartida que la frontera categorial DSM entre ambos diagnósticos no logra explicar.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el sueño es el nodo con más peso directo sobre el factor p en adolescentes, ¿debería una intervención transdiagnóstica de primera línea empezar ahí antes que en el síntoma psiquiátrico presentado?</li><li>¿La &#39;sistematicidad&#39; en la toma de decisiones puede medirse en consulta (tarea breve de descuento) como marcador dimensional de riesgo, o solo sirve a escala de investigación con miles de sujetos?</li><li>Para el BMSE: ¿conviene jerarquizar explícitamente specifiers clínico-funcionales por encima de biomarcadores moleculares mientras estos últimos no aporten valor incremental, como muestra el estudio de psicosis UHR?</li><li>¿Qué variables económicas/contextuales peruanas (no las que RDoC subpesa en EE.UU.) deberían entrar como &#39;unidad de análisis&#39; obligatoria en un RDoC adaptado a HVLH?</li><li>Si TEA y TDAH comparten huella prenatal (anomalías físicas menores) sin diferenciarse entre sí, ¿qué tan sostenible es seguir tratándolos como categorías separadas en el razonamiento clínico de pregrado que enseñas en AMAUTA/USAMEDIC?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG JafloMD: &#39;El mejor predictor de tu salud mental no es un síntoma, es tu sueño&#39; — el nodo más fuerte de la red ecológica de 8,981 adolescentes, con gancho hacia intervención transdiagnóstica simple.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Ítem BMSE: &#39;sistematicidad decisional&#39; como marcador computacional único que atraviesa atención/internalización/externalización — caso testigo de mecanismo transdiagnóstico medible, con la réplica en adultos jóvenes como evidencia de robustez.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/comentario: proponer una adaptación RDoC con &#39;unidad de análisis contextual peruana&#39; (economía, migración interna, informalidad) a partir del hallazgo de que RDoC en depresión juvenil subpesa lo socioeconómico — vínculo directo con HVLH.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase Aprendiz Experto: por qué el modelo clínico+socioambiental venció a lo genético/molecular prediciendo conversión a psicosis — jerarquía de evidencia para razonamiento clínico ENAM/Residentado, sin sobre-tecnificación prematura.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota corta/reel: TEA y TDAH comparten huella física prenatal (anomalías menores) sin diferenciarse entre sí — argumento visual para &#39;la frontera categorial es más débil de lo que el DSM sugiere&#39;, ancla para el wedge de neurodivergencia.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Child Psychiatry and Human Development</span><span class="tag ">Journal of Psychopathology and Clinical Science</span><span class="tag ">PLOS Mental Health</span><span class="tag ">Journal of Clinical Child &amp; Adolescent Psychology</span><span class="tag ">Sleep</span><span class="tag ">Autism</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Nordic Journal of Psychiatry</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils esearch/esummary/efetch directo, sin MCP de PubMed disponible en este entorno; ventana pdat 2026/08/19-2026/08/22; queries dominio + HiTOP/RDoC/p-factor/bifactor/network + staging/specifier/clinical utility + ADHD/autism/neurodevelopment + genetic/GWAS/biomarker + internalizing/externalizing/symptom network) · Consensus MCP (cross-check de metadata y búsqueda conceptual; varios candidatos descartados tras verificar en PubMed que su fecha real caía fuera de la ventana de 48-72h) · WebSearch (PsyArXiv/medRxiv y figuras clave del campo: sin preprints ni hilos X/Reddit nuevos y verificables en esta ventana — solo literatura ya publicada/antigua, descartada por anti-fabricación). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de agosto de 2026.</div>
+</div>
+</body>
+</html>
