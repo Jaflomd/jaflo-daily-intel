@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-08-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">22 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">44</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Diagnosis (Berlin) · 2026-08-19 · review</div>
+        <h3 class="r3-title">El sueño y el razonamiento clínico de los residentes: revisión de alcance sobre lo que sabemos (y no sabemos)</h3>
+        <p class="r3-hook">Revisión de alcance (marco Arksey &amp; O&#39;Malley, 4309 registros iniciales, 31 estudios incluidos) que mapea la evidencia sobre sueño y razonamiento clínico en residencia: encuentra que la mayoría de estudios usa medidas de sueño autorreportadas y desenlaces heterogéneos (precisión diagnóstica, errores médicos, velocidad de decisión, desempeño técnico, seguridad del paciente), sin un marco metodológico unificado. Para Javier esto toca directo su línea de razonamiento clínico/BMSE —el sueño como variable de contexto que modula el proceso diagnóstico, no un simple ruido de fondo— y conecta con su línea TDAH/neurodivergencia, donde la privación de sueño y la carga cognitiva ya son terreno conocido. Es también munición para su pilar amauta-education: la reforma de horas de trabajo ACGME que motiva la revisión es un debate directamente trasladable a la discusión sobre guardias y residentado en Perú. Úsalo como ancla de un capítulo o hilo sobre por qué &#39;aguantar la guardia&#39; no es una medida neutral de preparación clínica, sino una que degrada exactamente la habilidad que se quiere formar.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0024" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0024</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Gastroenterology and Hepatology · 2026-08-21 · rct</div>
+        <h3 class="r3-title">Entrenamiento autodirigido con simulador Mikoto para colonoscopía en gastroenterología: ensayo aleatorizado multicéntrico internacional</h3>
+        <p class="r3-hook">Ensayo clúster-aleatorizado multicéntrico (12 residentes de gastroenterología, 11 instituciones en Japón y Taiwán, 420 colonoscopías analizadas) que suma 100 sesiones autodirigidas en simulador Mikoto durante 2 semanas: la tasa de intubación cecal post-entrenamiento no difirió significativamente entre grupos (80.0% vs 77.8%; OR ajustado 1.34, IC95% 0.37-4.84), pero dentro del grupo intervención la mejora respecto a su propia línea base sí fue significativa (60% a 80%, p=0.003). Para Javier es un caso de estudio perfecto de cómo leer literatura educativa con rigor —el titular fácil sería &#39;el simulador funciona&#39;, pero el diseño con grupo control muestra que la mejora intra-grupo no prueba superioridad, distinción que debería enseñar explícitamente en su banco ENAM/Residentado sobre lectura crítica de RCTs educativos. También es evidencia a favor de su tesis de práctica deliberada autodirigida (pilar amauta-education): 100 sesiones cortas y distribuidas movieron una curva de aprendizaje real, aunque no bastaron para vencer al entrenamiento estándar cara a cara. Tradúcelo a una pieza de contenido sobre &#39;por qué un resultado nulo en el desenlace principal no es un estudio fallido&#39; —ejercicio de literatura crítica que refuerza su marca de rigor metodológico.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/jgh.70679" target="_blank" rel="noopener">↗ doi.org/10.1111/jgh.70679</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Postgraduate Medical Journal · 2026-08-21 · review</div>
+        <h3 class="r3-title">Inteligencia artificial para evaluación en educación médica basada en competencias: prácticas actuales y direcciones futuras</h3>
+        <p class="r3-hook">Revisión de alcance (PRISMA-ScR, búsqueda en MEDLINE/EMBASE/PsycINFO/Scopus, 1002 resultados, 32 estudios incluidos) que mapea todos los usos reportados de IA en evaluación de educación médica basada en competencias (CBME): evaluación de habilidades quirúrgicas/procedimentales, notas clínicas, comunicación, generación de feedback, predicción de desempeño y análisis de feedback narrativo de supervisores. Concluye que la IA aporta evaluaciones más oportunas pero aún carece de granularidad —justo la tensión que Javier vive todos los días entre sus pilares ai-enhancement y amauta-education al automatizar partes de su banco de preguntas y retroalimentación en USAMEDIC. Es el mapa de terreno que le faltaba: en qué categorías de evaluación ya hay evidencia (habilidad procedimental, notas clínicas) y en cuáles el campo sigue verde (feedback narrativo con granularidad clínica real). Úsalo para diseñar el roadmap de qué automatizar primero en su qbank de Residentado sin sacrificar la calidad del feedback formativo.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/postmj/qgaf195" target="_blank" rel="noopener">↗ doi.org/10.1093/postmj/qgaf195</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education · 2026-08-20 · rct</div>
+          <div class="r10-title">Realidad virtual inmersiva vs. instrucción tradicional en el concepto Bobath: ensayo aleatorizado en estudiantes de fisioterapia</div>
+          <div class="r10-line">RCT ciego para el evaluador (n=20) muestra que la VR inmersiva no mejora el conocimiento teórico pero sí la habilidad práctica en el seguimiento a 2 semanas (+15 puntos de mediana, p=0.017) frente a instrucción tradicional del concepto Bobath.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La VR seguirá ganando terreno como refuerzo de habilidad práctica más que de conocimiento declarativo; el patrón (el conocimiento se olvida igual, la práctica en VR retiene mejor) es un argumento reutilizable en el diseño de talleres prácticos de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-09904-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09904-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine · 2026-08-20 · rct</div>
+          <div class="r10-title">Entrenamiento de consejería dietética guiado por tecnología prepara a residentes para la toma de decisiones compartida sobre dieta</div>
+          <div class="r10-line">RCT con 52 residentes de medicina familiar/interna: el entrenamiento tecnológico &#39;Nutri&#39; superó al entrenamiento estándar en satisfacción (4.08 vs 3.42, p=0.01) e intención de abordar dieta (4.46 vs 4.00, p=0.02), con mayor ganancia en competencia de consejería.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El entrenamiento asistido por tecnología para habilidades de comunicación/consejería se volverá el estándar sobre el role-play tradicional; replicable en el módulo de entrevista clínica de USAMEDIC con simulaciones guiadas por checklist digital.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10721-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10721-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Oto-Rhino-Laryngology · 2026-08-20 · rct</div>
+          <div class="r10-title">Efecto de la variación anatómica sobre el aprendizaje y la carga cognitiva en entrenamiento simulado de mastoidectomía: ensayo aleatorizado</div>
+          <div class="r10-line">RCT en simulación VR de mastoidectomía: practicar en huesos temporales anatómicamente distintos no mejoró la curva de aprendizaje ni cambió la carga cognitiva frente a practicar en el mismo caso repetido — la variación no es necesaria para la adquisición básica de habilidad en novatos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El diseño de casos variados solo pagará dividendos en etapas más avanzadas de la curva de habilidad, no en la fase de novato; útil para secuenciar cuándo introducir &#39;casos difíciles&#39; en un curso de habilidades procedimentales.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00405-026-10546-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s00405-026-10546-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Surgical Endoscopy · 2026-08-20 · review</div>
+          <div class="r10-title">Modelos de órganos animales en entrenamiento de cirugía laparoscópica: revisión sistemática</div>
+          <div class="r10-line">Revisión sistemática (56 estudios, 2025 participantes, evaluada con MERSQI) encuentra que solo 12/56 estudios (21%) aportan evidencia de transferencia de habilidad a la clínica real, pese al uso creciente de modelos animales de alta fidelidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La brecha entre &#39;se entrenó en el simulador&#39; y &#39;se transfirió a la clínica&#39; seguirá siendo el punto ciego de la simulación quirúrgica; el diferencial de valor está en medir transferencia, no solo desempeño en el modelo.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00464-026-13266-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s00464-026-13266-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher · 2026-08-19 · review</div>
+          <div class="r10-title">Juegos serios y gamificación en entrenamiento de emergencias y cuidados críticos: implicancias para la educación en profesiones de la salud</div>
+          <div class="r10-line">Revisión de alcance registrada (PRISMA-ScR, 52 estudios de 669 registros) mapea 6 familias de intervención (juegos digitales, gamificación de plataforma, escape rooms, competencias simuladas, juegos de mesa, VR/AR gamificada) y encuentra que la evaluación se queda mayormente en niveles Kirkpatrick proximales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El siguiente ciclo de investigación en gamificación tendrá que subir a Kirkpatrick 3-4 (comportamiento/desenlaces) para justificar la inversión; oportunidad de posicionar un escape room o competencia gamificada ENAM con medición real de retención, no solo de enganche.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2710216" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2710216</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Anatomical Sciences Education · 2026-08-20 · paper</div>
+          <div class="r10-title">Integrar realidad virtual colaborativa en neuroanatomía médica mejora selectivamente la comprensión espacial a corto plazo</div>
+          <div class="r10-line">Estudio controlado (n=183; 85 con laboratorio VR colaborativo de 1h vs 98 curso estándar) muestra mejora inmediata en preguntas espaciales sobre el tema entrenado en VR, pero sin diferencia en retención a 6 meses entre grupos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La VR gana en el momento del aprendizaje espacial puntual, pero por sí sola no resuelve retención a largo plazo; el modelo ganador combinará VR puntual + reactivación espaciada, coherente con la tesis de espaciamiento de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/ase.70341" target="_blank" rel="noopener">↗ doi.org/10.1002/ase.70341</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Simulation in Healthcare · 2026-08-21 · review</div>
+          <div class="r10-title">Análisis de autoría en estudios de educación basada en simulación en países de ingresos bajos y medios: revisión sistemática</div>
+          <div class="r10-line">Revisión sistemática (27,738 registros cribados, 97 estudios de 50 países de ingresos bajos y medios) encuentra que la autoría local se estancó alrededor de 49% desde 2007, sin mejora significativa en dos décadas (p=0.45).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La presión por autoría local equitativa en investigación de simulación seguirá creciendo; posicionarse como investigador peruano RENACYT que publica autoría-primera en simulación es una ventaja competitiva concreta y medible en este campo.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/SIH.0000000000000956" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000956</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education · 2026-08-20 · paper</div>
+          <div class="r10-title">Pacientes estandarizados digitales: marco conceptual para educación médica potenciada por IA generativa</div>
+          <div class="r10-line">Artículo de posición que propone un marco de 4 dimensiones (arquitectura, interacción multimodal, modelado de personalidad, ética) para pacientes estandarizados con IA generativa — aún sin datos empíricos de desempeño, pero mapa de diseño explícito.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En 12-18 meses veremos los primeros RCT que evalúen estos marcos frente a pacientes estandarizados humanos; Javier puede adelantarse prototipando un paciente estandarizado en español para OSCE peruano usando exactamente estas 4 dimensiones como checklist de diseño.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/91050" target="_blank" rel="noopener">↗ doi.org/10.2196/91050</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher · 2026-08-21 · paper</div>
+          <div class="r10-title">Prácticas de feedback distintas entre profesiones de la salud en un mismo entorno clínico</div>
+          <div class="r10-line">Estudio cualitativo en un hospital suizo (marco R2C2) encuentra que enfermería, fisioterapia y medicina tienen orientaciones de feedback distintas y a veces incompatibles dentro del mismo servicio clínico — los médicos lo viven como transmisión unidireccional de información.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La formación en feedback interprofesional específica por &#39;dialecto&#39; de cada profesión ganará terreno sobre el entrenamiento genérico; insumo directo para un módulo AMAUTA sobre cómo dar y recibir feedback clínico según el rol del receptor.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2712420" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2712420</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">La Revue de Médecine Interne · 2026-08-20 · paper</div>
+          <div class="r10-title">Características y desempeño del nuevo método de evaluación en los exámenes prácticos digitales interfacultades del segundo ciclo de medicina (Francia)</div>
+          <div class="r10-line">Análisis de 304 preguntas de examen práctico digital tipo EDN en 12 universidades francesas: las preguntas de respuesta corta discriminaron mejor que las de opción múltiple, y la relación entre tasa de éxito y poder discriminativo tuvo forma de U invertida (mejor discriminación entre 45-65% de éxito).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El diseño de bancos de preguntas seguirá migrando hacia más preguntas de respuesta corta y menos opción múltiple pura para ganar poder discriminativo; dato accionable directo para calibrar la dificultad objetivo (45-65% de aciertos) del próximo lote de preguntas ENAM/Residentado de USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.revmed.2026.08.002" target="_blank" rel="noopener">↗ doi.org/10.1016/j.revmed.2026.08.002</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un simulador de colonoscopía con 100 sesiones autodirigidas mejoró la línea base del propio grupo (60%→80% de intubación cecal) pero no venció al entrenamiento estándar cara a cara — mejorar respecto a uno mismo no es lo mismo que ser superior al comparador, la trampa de lectura más común en literatura educativa.</li><li>En simulación VR de mastoidectomía, entrenar con anatomía variada no aceleró el aprendizaje del novato: la variedad de casos difíciles paga después, no al inicio de la curva de habilidad.</li><li>Solo 12 de 56 estudios sobre modelos animales de cirugía laparoscópica (21%) midieron si la habilidad realmente se transfirió a la clínica real — la mayoría de la &#39;evidencia&#39; de simulación quirúrgica se queda en el simulador, nunca llega al quirófano.</li><li>La autoría local en investigación de simulación en países de ingresos bajos y medios lleva 20 años estancada en ~49%, sin mejora — la inequidad de autoría no se resuelve sola con más publicaciones, se resuelve con decisión editorial activa.</li><li>En un examen práctico digital de 304 preguntas, la mejor discriminación entre estudiantes buenos y no tan buenos no ocurrió en las preguntas más difíciles, sino en las de dificultad intermedia (45-65% de aciertos) — la pregunta &#39;brutal&#39; que casi nadie acierta suele discriminar peor que una moderadamente difícil.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuánto de la fatiga y privación de sueño de mis residentes en preparación para el Residentado está degradando silenciosamente su razonamiento clínico, más allá de lo que capturan las evaluaciones de conocimiento puro?</li><li>Si la mejora intra-grupo no prueba superioridad frente al comparador, ¿cuántos estudios que cito en mis propias clases sobre &#39;lo que funciona&#39; en educación médica confunden ambas cosas?</li><li>¿Debería mi banco de preguntas ENAM/Residentado calibrar deliberadamente la dificultad hacia el rango de 45-65% de aciertos para maximizar poder discriminativo, en vez de perseguir preguntas &#39;difíciles&#39;?</li><li>¿Qué de mi entrenamiento en habilidades procedimentales o de entrevista clínica sigue midiendo solo confianza/satisfacción del estudiante en vez de transferencia real a la práctica clínica?</li><li>Si construyo un paciente estandarizado con IA generativa en español para OSCE peruano, ¿qué de las 4 dimensiones del marco (arquitectura, interacción multimodal, modelado de personalidad, ética) es lo primero que debo resolver antes de escalarlo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/carousel &#39;Por qué un RCT con resultado nulo no es un estudio fallido&#39;: usa el ensayo del simulador de colonoscopía (mejora intra-grupo real, sin superioridad frente a control) para enseñar lectura crítica de literatura educativa a sus alumnos de Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA sobre calibración de bancos de preguntas: aplicar el hallazgo francés (mejor discriminación en 45-65% de tasa de éxito) para re-auditar y recalibrar la dificultad objetivo del qbank ENAM/USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de neurociencia educativa: &#39;El sueño como variable del razonamiento clínico, no como ruido de fondo&#39; — sintetiza la revisión de alcance y conecta con su línea TDAH/neurodivergencia y el debate ACGME sobre horas de guardia en Perú.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Piloto/paper de posición: diseñar y prototipar un Paciente Estandarizado Digital en español (OSCE peruano) siguiendo el marco de 4 dimensiones (arquitectura, interacción multimodal, personalidad, ética) del artículo de JMIR Medical Education como checklist de diseño inicial.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Estudio propio de autoría-primera: dado el estancamiento de 20 años en autoría local de investigación en simulación de países LMIC, publicar como primer autor peruano un estudio de simulación/educación médica para posicionarse frente a ese vacío editorial documentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">Journal of Gastroenterology and Hepatology</span><span class="tag ">Postgraduate Medical Journal</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">European Archives of Oto-Rhino-Laryngology</span><span class="tag ">Surgical Endoscopy</span><span class="tag ">Medical Teacher</span><span class="tag ">Anatomical Sciences Education</span><span class="tag ">Simulation in Healthcare</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">La Revue de Médecine Interne</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de agosto de 2026.</div>
+</div>
+</body>
+</html>
