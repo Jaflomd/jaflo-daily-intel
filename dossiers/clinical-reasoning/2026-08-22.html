@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-08-22 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">22 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">84</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">35</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Medicine · 19 ago 2026 · paper · 2026-08-19</div>
+        <h3 class="r3-title">SHAKED en urgencias: el ensayo prospectivo que muestra que el freno de la IA clínica no es la exactitud, es el enganche del clínico</h3>
+        <p class="r3-hook">Jaflo, esta es la evaluación DECIDE-AI etapa 1 de SHAKED, un sistema de soporte de decisión basado en múltiples LLM desplegado en urgencias reales durante 4 semanas con 1,138 pacientes: 99 de 100 salidas revisadas fueron clínicamente apropiadas — el algoritmo funciona — y aun así la adopción por los médicos cayó de 68% a 30%, con desenganche proporcional a la carga de turno (OR 0.72 por hora). Por qué te importa: es la prueba empírica más limpia de tu tesis de que el cuello de botella de la IA en el razonamiento clínico no es técnico sino conductual — el clínico deja de usar la herramienta justo cuando más carga cognitiva tiene, que es cuando más la necesitaría. Úsalo como ancla de tu módulo AMAUTA de &#39;uso calibrado de IA&#39; (no &#39;saber usar IA&#39; sino &#39;seguir usándola bajo presión&#39;), y como dato duro para el capítulo de ai-enhancement de tu próximo libro: mide enganche, no solo exactitud, si vas a diseñar o evaluar cualquier piloto de IA clínica. Según Europe PMC/PubMed; DOI 10.1038/s41591-026-04601-5.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41591-026-04601-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04601-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Medical Internet Research · 21 ago 2026 · paper · 2026-08-21</div>
+        <h3 class="r3-title">Antes o después de decidir: cuándo le muestras a un médico la sugerencia de la IA cambia cuánto confía el paciente en la decisión</h3>
+        <p class="r3-hook">Jaflo, dos experimentos preregistrados con viñetas (n=489 y n=570, público general en Alemania) manipulan tipo de soporte de IA (descriptivo vs. sugerencia diagnóstica) y, en el segundo experimento, el momento: decisión secuencial (el médico decide solo y luego revisa la IA) vs. decisión concurrente (revisa la IA antes de decidir). El hallazgo clave para tu línea: el orden en que se introduce la IA no solo cambia el desempeño del médico, cambia cuánto confía el paciente en la decisión híbrida resultante. Por qué te importa: esto es dual-process aplicado al diseño de flujo, no solo al sesgo del clínico — conecta directo con tu framework de razonamiento clínico y con tu pilar de precisión psiquiátrica, donde la secuencia &#39;decido primero, IA después&#39; podría ser la política correcta para preservar autonomía diagnóstica Y confianza del paciente. Es material listo para un módulo AMAUTA sobre diseño de flujo médico-IA (no solo sobre sesgos del médico) y para contenido dirigido a pacientes sobre por qué confiar (o no) en una decisión asistida por IA. Según Europe PMC/PubMed; DOI 10.2196/93172.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/93172" target="_blank" rel="noopener">↗ doi.org/10.2196/93172</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Emergency Radiology · 20 ago 2026 · paper · 2026-08-20</div>
+        <h3 class="r3-title">El neumotórax fantasma: un caso real donde la alerta de la IA fue falsa y el contexto clínico —no el píxel— evitó el error</h3>
+        <p class="r3-hook">Jaflo, caso real: varón de 81 años con marcapasos implantado por vía izquierda; la radiografía post-procedimiento fue leída por un sistema de IA que marcó una alerta positiva de neumotórax apical DERECHO. El equipo tratante detectó de inmediato la discordancia clínico-radiológica (el acceso venoso fue izquierdo, el paciente estaba estable y saturando bien) y pidió TC, que descartó el neumotórax — falso positivo confirmado. Por qué te importa: es el caso más enseñable de la semana para tu razonamiento clínico dimensional y tu Competency Lab — la IA de imagen ve el píxel pero no incorpora el dato procedimental/clínico, y el error se evitó por un illness script bien anclado en contexto, no por mejor imagen. Conviértelo en carrusel IG/YT (&#39;la IA vio bien la imagen y falló igual&#39;) y en ejemplo de apertura para enseñar que la discordancia clínico-radiológica es una habilidad de razonamiento, no un detalle técnico. Según Europe PMC/PubMed; DOI 10.1007/s10140-026-02533-8.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10140-026-02533-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s10140-026-02533-8</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medicina Clínica · 21 ago 2026 · review · 2026-08-21</div>
+          <div class="r10-title">Marco &#39;physician-in-the-loop&#39; estratificado por incertidumbre diagnóstica para IA generativa en razonamiento clínico</div>
+          <div class="r10-line">Jaflo, revisión narrativa de medicina interna: los LLM mejoran el diagnóstico diferencial cuando los usan profesionales entrenados en flujos estructurados, pero el uso pasivo genera sesgo y la colaboración médico-IA no siempre supera a la IA sola, así que proponen un marco operativo estratificado por el nivel de incertidumbre diagnóstica del caso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este marco &#39;consulta la IA antes o después según la incertidumbre&#39; es el andamiaje que le falta a tu módulo de IA en AMAUTA — conviértelo en rúbrica de decisión para residentes ENAM/Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.medcli.2026.107567" target="_blank" rel="noopener">↗ doi.org/10.1016/j.medcli.2026.107567</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (De Gruyter) · 19 ago 2026 · review · 2026-08-19</div>
+          <div class="r10-title">Lo que 31 estudios dicen sobre sueño y razonamiento clínico del residente: la deuda de sueño no es solo fatiga, es error diagnóstico</div>
+          <div class="r10-line">Jaflo, scoping review (4,309 artículos cribados, 31 incluidos) mapea cómo la privación de sueño y el trabajo por turnos erosionan específicamente el razonamiento clínico —no solo el ánimo o la velocidad— en la formación de residentes, con métodos heterogéneos para medir el desempeño diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el debate de horas de trabajo (ACGME) se reabre con este tipo de evidencia; es materia prima para un módulo AMAUTA de &#39;higiene de sueño como higiene diagnóstica&#39; de cara al Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0024" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0024</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (De Gruyter) · 19 ago 2026 · paper · 2026-08-19</div>
+          <div class="r10-title">Tres modelos de atención que sí bajan el error diagnóstico y el costo: redes de seguridad, navegación optimizada, soporte de decisión</div>
+          <div class="r10-line">Jaflo, marco desarrollado con 1,632 fuentes, 19 entrevistas a expertos y 4 programas ejemplares identifica 3 arquetipos de mayor valor para reducir el error diagnóstico y el costo del sistema: redes de seguridad diagnósticas, navegación optimizada de pacientes y soporte de decisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: estos 3 arquetipos son el esqueleto para un servicio de &#39;auditoría de seguridad diagnóstica&#39; que podrías ofrecer a clínicas peruanas bajo tu marca AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0074" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0074</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (De Gruyter) · 19 ago 2026 · editorial · 2026-08-19</div>
+          <div class="r10-title">Además de las 3 prioridades de Stanford (CERC) para la seguridad diagnóstica, estos autores añaden 3 más —con foco en aprender del propio error</div>
+          <div class="r10-line">Jaflo, comentario que coteja las 3 prioridades del Clinical Excellence Research Center de Stanford (navegación de pacientes, soporte de decisión, redes de seguridad) con 3 intervenciones adicionales que los autores proponen, incluida &#39;encontrar y aprender sistemáticamente de los errores diagnósticos&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;aprender del propio error diagnóstico&#39; institucionalizado —no solo M&amp;M informal— será el próximo estándar de calidad; es contenido directo para tu Competency Lab.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0147" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0147</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Infectious Diseases · 19 ago 2026 · editorial · 2026-08-19</div>
+          <div class="r10-title">El escriba de IA gana eficiencia y pierde la narrativa de enfermedad en la nota clínica</div>
+          <div class="r10-line">Jaflo, ensayo en infectología argumenta que el escriba por NLP mejora la eficiencia documental pero aplana el lenguaje interpretativo y centrado en el paciente que la nota clínica usa como herramienta terapéutica y de razonamiento, sobre todo en cuadros con incertidumbre diagnóstica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;la nota como razonamiento&#39; (no solo registro) se defenderá como competencia explícita frente al auge de escribas de IA; conecta directo con tu tesis del médico-editor y con tu línea de psicopatología narrativa.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/cid/ciag494" target="_blank" rel="noopener">↗ doi.org/10.1093/cid/ciag494</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Medical Informatics · 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">Modo &#39;pensante&#39; vs. prompts detallados: qué mueve más la aguja cuando un chatbot toma la anamnesis</div>
+          <div class="r10-line">Jaflo, estudio de simulación 2×2 con Qwen3-14B (prompt detallado/mínimo × modo de razonamiento interno activado/desactivado) evalúa qué configuración de chatbot capta más información clínicamente relevante en la toma de historia, frente a un sistema basado en reglas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el diseño de prompt + razonamiento interno visible se volverá un parámetro clínico auditable, no un detalle técnico de ingeniería; es contenido AMAUTA sobre &#39;cómo prompt-ear IA clínica bien&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/94614" target="_blank" rel="noopener">↗ doi.org/10.2196/94614</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Online Journal of Public Health Informatics · 20 ago 2026 · review · 2026-08-20</div>
+          <div class="r10-title">247 estudios de LLM en salud auditados con 11 criterios de IA confiable: la seguridad avanza más lento que el hype</div>
+          <div class="r10-line">Jaflo, revisión sistemática PRISMA de 247 estudios aplica un marco de 11 dominios (seguridad, fiabilidad, ética, transparencia, equidad, privacidad, robustez, calidad de datos, verificabilidad, entre otros) a la investigación de LLM en salud.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta checklist de 11 dominios se volverá el filtro estándar antes de meter cualquier herramienta de IA en un flujo clínico o educativo — úsala como rúbrica de adopción en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/97240" target="_blank" rel="noopener">↗ doi.org/10.2196/97240</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Journal of Hand Surgery · 19 ago 2026 · paper · 2026-08-19</div>
+          <div class="r10-title">Claude, ChatGPT, Gemini y Open Evidence contra cirujanos de mano fellowship: concordancia alta en casos fáciles, brecha en los difíciles</div>
+          <div class="r10-line">Jaflo, 9 viñetas clínicas de cirugía de mano (4 fáciles, 5 complejas) comparan la concordancia de manejo entre 4 plataformas de IA comercial y cirujanos de mano certificados por fellowship de tres instituciones.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el patrón &#39;fácil = IA a la par, difícil = se abre la brecha&#39; se va a repetir dominio por dominio; es evidencia lista para tu argumento de que la IA amplifica al experto pero no lo reemplaza en el caso complejo — tu terreno en psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jhsa.2026.06.010" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jhsa.2026.06.010</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 21 ago 2026 · preprint · 2026-08-21</div>
+          <div class="r10-title">DDx-Finder: un framework open-source con Model Context Protocol que conecta la historia clínica y la literatura para sugerir diagnóstico diferencial</div>
+          <div class="r10-line">Jaflo, framework open-source que usa servidores MCP para acceder directamente a la historia clínica electrónica y a la literatura, generando queries de búsqueda por LLM para recuperar reportes de caso relevantes y ofrecer soporte diagnóstico diferencial transparente sin depender de sistemas propietarios; validado con un caso clínico de prueba de concepto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: MCP como estándar de conexión bajará el costo de construir tu propio asistente diagnóstico auditable — prototipo replicable para tu línea de IA aplicada a investigación/educación y para el Competency Lab.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.08.18.26359085" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.18.26359085</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Clinical Pharmacy · 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">Framework híbrido de IA para optimizar farmacoterapia en polifarmacia: RAG + reglas deterministas + razonamiento de LLM bajo supervisión clínica</div>
+          <div class="r10-line">Jaflo, framework conceptual que combina generación aumentada por recuperación, reglas de seguridad deterministas y razonamiento de LLM para optimizar la farmacoterapia en pacientes multimórbidos, con 7 principios de diseño bajo supervisión clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los frameworks híbridos (reglas + RAG + LLM) van a reemplazar a los sistemas 100% basados en reglas en soporte de decisión — trasládalo mentalmente a la polifarmacia psiquiátrica geriátrica, tu cruce entre precision-psychiatry y neurodivergencia adulta.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11096-026-02205-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s11096-026-02205-0</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el ensayo SHAKED, el 99% de las salidas de la IA eran clínicamente apropiadas y aun así la adopción cayó de 68% a 30% en 4 semanas: la exactitud del algoritmo no predice si el clínico va a seguir usándolo justo cuando más carga tiene.</li><li>En cirugía de mano, la brecha entre IA y cirujano fellowship no está en los casos fáciles —ahí empatan— sino en los difíciles: el valor del experto se concentra exactamente donde el volumen de casos complejos es menor.</li><li>Mostrar la sugerencia de la IA antes de que el médico decida (concurrente) no es lo mismo que mostrarla después de una decisión independiente (secuencial): el orden cambia la confianza del paciente en la decisión híbrida, no solo la exactitud del médico.</li><li>El neumotórax fantasma: el sistema de IA solo vio el píxel, no el lado del acceso venoso ni la saturación de oxígeno — el error se evitó por discordancia clínico-radiológica bien razonada, no por mejor imagen.</li><li>El escriba de IA que &#39;ahorra tiempo&#39; en la nota clínica también aplana la narrativa de enfermedad que en infectología funciona como herramienta terapéutica: la eficiencia documental y el razonamiento clínico compiten por el mismo texto.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué pasa si mides el &#39;enganche&#39; del clínico con la IA —no solo su exactitud— como el verdadero endpoint de un piloto de IA clínica, y cómo cambiaría eso el diseño de tus propios pilotos en AMAUTA?</li><li>¿En qué punto de incertidumbre diagnóstica de un caso debería tu residente consultar la IA primero vs. decidir solo y revisar después, y cómo lo enseñarías en el Competency Lab?</li><li>¿Qué illness scripts tuyos (TDAH/TEA, psiquiatría dimensional) fallarían igual que el neumotórax fantasma si un modelo solo viera el dato aislado sin el contexto longitudinal del paciente?</li><li>¿Cuánto de la nota clínica que enseñas a escribir en AMAUTA es narrativa de enfermedad razonada vs. registro que un escriba de IA ya generaría igual de bien?</li><li>¿Cómo diseñarías un experimento tipo &#39;timing de la IA&#39; pero para tu propio flujo de investigación: mostrarte la sugerencia del modelo antes o después de tu primer borrador de hipótesis?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG/YT: &#39;El neumotórax fantasma — cuando la IA ve bien el píxel y falla el contexto&#39;, con el caso real como gancho de razonamiento clínico vs. IA de imagen pura.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición: &#39;Enganche, no exactitud&#39; — usando el ensayo SHAKED como caso ancla para argumentar que la adopción bajo carga de trabajo debe ser el endpoint primario en ensayos de IA clínica, con aplicación a AMAUTA/Competency Lab.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA: rúbrica &#39;physician-in-the-loop por incertidumbre&#39; basada en el marco de Medicina Clínica — cuándo consultar la IA antes y cuándo después, según el nivel de incertidumbre diagnóstica del caso ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de libro (psicopatología para el mundo / BMSE): &#39;La nota como razonamiento&#39; — defender la narrativa de enfermedad como competencia clínica explícita frente al auge de escribas de IA, con el caso de infectología como contrapunto.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Prototipo interno: adaptar la arquitectura de DDx-Finder (MCP + LLM) como asistente de diagnóstico diferencial dimensional para tu línea de psiquiatría de precisión, replicable en el Competency Lab.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Medicine</span><span class="tag ">Journal of Medical Internet Research (JMIR)</span><span class="tag ">JMIR Medical Informatics</span><span class="tag ">Diagnosis (De Gruyter)</span><span class="tag ">Medicina Clínica</span><span class="tag ">Emergency Radiology</span><span class="tag ">Clinical Infectious Diseases</span><span class="tag ">The Journal of Hand Surgery</span><span class="tag ">International Journal of Clinical Pharmacy</span><span class="tag ">Online Journal of Public Health Informatics</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (PubMed/MEDLINE) · medRxiv. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 22 de agosto de 2026.</div>
+</div>
+</body>
+</html>
