@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-08-23 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">23 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">92</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">92</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Academic Radiology · 21 ago 2026 · paper · 2026-08-21</div>
+        <h3 class="r3-title">IA en radiografía de tórax: no mejora la exactitud, pero sí dispara la confianza del lector — la firma clásica del sesgo de automatización</h3>
+        <p class="r3-hook">Jaflo, estudio prospectivo crossover monocéntrico con 5 lectores (1-6 años de experiencia) evaluando 1,200 pacientes (1,861 radiografías) con y sin cada una de 4 herramientas de IA comerciales, con washout de 14 días y orden aleatorizado: la IA NO mejoró la exactitud diagnóstica global y para derrame pleural y nódulos pulmonares la empeoró (más falsos positivos), mientras que acortó el tiempo de lectura (6-17s por caso, p≤0.031), subió la confianza diagnóstica en 4 de 5 lectores y redujo las interconsultas a un radiólogo senior. Por qué te importa: es el dato duro que le falta a tu tesis de que el cuello de botella de la IA clínica es conductual, no técnico — aquí el riesgo no es que el clínico ignore la IA, es que confíe más en una herramienta que en algunos escenarios rinde peor y consulta menos al experto. Úsalo como caso ancla para tu módulo AMAUTA de calibración diagnóstica (&#39;rápido y seguro no es lo mismo que preciso&#39;) y como ejemplo empírico de sesgo de automatización para el capítulo de ai-enhancement de tu próximo libro.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.acra.2026.08.014" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.014</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Cancer Education · 21 ago 2026 · paper · 2026-08-21</div>
+        <h3 class="r3-title">¿De quién heredaste tu umbral? La apprenticeship silenciosa que fija cuándo un médico refiere un cáncer</h3>
+        <p class="r3-hook">Jaflo, artículo conceptual que introduce &#39;threshold inheritance&#39;: los residentes no solo aprenden umbrales de referencia oncológica de las guías, los absorben tácitamente del supervisor que los entrenó — su tolerancia al riesgo, su desconfianza en ciertas pruebas, su lenguaje explicativo se transmiten como hábito, no como razonamiento explícito. Los autores proponen evaluar a los aprendices por razonamiento calibrado y capacidad de explicar &#39;qué cambiaría el plan&#39;, no por conformidad con el estilo de un mentor. Por qué te importa: esto es illness scripts y cierre prematuro aplicados al nivel meta — el currículo oculto de cómo se transmite el umbral diagnóstico — y es exactamente el tipo de sesgo invisible que tu Competency Lab podría hacer visible con ejercicios de comparación de casos límite entre mentor y residente. Material listo para un módulo AMAUTA sobre calibración de umbrales en ENAM/Residentado, y para un capítulo sobre razonamiento clínico dimensional en tu libro.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s13187-026-02972-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s13187-026-02972-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Nature Genetics · 20 ago 2026 · paper · 2026-08-20</div>
+        <h3 class="r3-title">DDx-PRS: diagnóstico diferencial psiquiátrico calibrado con puntajes poligénicos, a escala de más de un millón de personas</h3>
+        <p class="r3-hook">Jaflo, DDx-PRS estima probabilidades posteriores conjuntas de categorías diagnósticas psiquiátricas modelando la estructura de varianza-covarianza compartida entre trastornos, aplicado a datos del Psychiatric Genomics Consortium (n=1,048,683): el modelo está bien calibrado y muestra utilidad clínica potencial en ciertos contextos. Por qué te importa: es un argumento genético duro para tu línea de psiquiatría dimensional — trata el diagnóstico psiquiátrico como probabilidades superpuestas y calibradas en vez de categorías mutuamente excluyentes, resonando directo con tu marco HiTOP/RDoC y con la idea de que el &#39;razonamiento clínico&#39; en psiquiatría debería reportar incertidumbre, no una etiqueta binaria. Es material de primera para el capítulo de psiquiatría de precisión de tu libro de psicopatología dimensional, y para contenido que explique por qué &#39;calibración&#39; (no solo exactitud) debería ser la métrica que exigimos a cualquier herramienta diagnóstica, humana o algorítmica.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41588-026-02684-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s41588-026-02684-x</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 21 ago 2026 · preprint · 2026-08-21</div>
+          <div class="r10-title">DDx-Finder: sistema humano-en-el-lazo con LLM que consulta la historia clínica y la literatura en tiempo real vía Model Context Protocol</div>
+          <div class="r10-line">Jaflo, framework open-source que usa servidores MCP para que un LLM extraiga estado clínico directo de la historia electrónica y la literatura y arme diagnóstico diferencial humano-en-el-lazo, atacando el problema de costo computacional y privacidad de otros sistemas de soporte diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta arquitectura MCP + human-in-the-loop es el tipo de blueprint técnico que podrías adaptar (o pedirle a un dev que adapte) como tutor de razonamiento clínico dentro de AMAUTA, en vez de depender de una API cerrada.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.08.18.26359085" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.18.26359085</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 21 ago 2026 · preprint · 2026-08-21</div>
+          <div class="r10-title">Médicos recién graduados en zonas rurales valoran una app de soporte diagnóstico, pero la conectividad y el idioma la frenan</div>
+          <div class="r10-line">Jaflo, estudio mixto con médicos recién egresados en zonas rurales: valoraron la búsqueda rápida, la información organizada y basada en evidencia, y el soporte al razonamiento diagnóstico de una app de soporte de decisión clínica móvil, pero conectividad, barreras de idioma y recursos no disponibles limitaron su uso real en el terreno.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si los autores confirman contexto latinoamericano, esto es evidencia directa y local para argumentar por una versión offline-first de las herramientas de razonamiento clínico que promueves en AMAUTA para el médico serumista/rural, no solo para el residente urbano.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.08.18.26360759" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.18.26360759</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open · 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">SAMURAI-fracture: protocolo de ensayo multicéntrico que mide si la IA de detección de fracturas reduce &#39;contactos de salud inapropiados&#39;, no solo exactitud</div>
+          <div class="r10-line">Jaflo, protocolo de ensayo controlado aleatorizado por clústeres en urgencias y unidades de lesiones menores del Reino Unido, 6 meses, con IA de detección de fracturas: el desenlace primario no es la exactitud del algoritmo sino &#39;contactos de salud inapropiados&#39; (referencias erróneas, visitas repetidas, fracturas no comunicadas).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este cambio de métrica —de exactitud del algoritmo a impacto en la trayectoria del paciente— es hacia donde va toda evaluación seria de IA diagnóstica, y es el estándar que deberías exigir cuando evalúes cualquier herramienta de IA para tu propio contenido o docencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2026-120631" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2026-120631</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open · 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">Cómo usar IA generativa para enseñar razonamiento clínico en psiquiatría de pregrado, sin que reemplace el pensamiento del estudiante</div>
+          <div class="r10-line">Jaflo, resumen de una experiencia educativa en la Aston Medical School integrando IA generativa en la enseñanza de psiquiatría de cuarto año, con foco en cómo estructurar el uso de la IA para que apoye —y no sustituya— el razonamiento clínico del estudiante.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esperaría ver más reportes de implementación como este en los próximos meses en congresos de educación psiquiátrica — es exactamente el tipo de evidencia de terreno que puedes citar y adaptar directamente para el módulo de IA de tu currículo AMAUTA de psiquiatría.</div>
+          <a class="r10-link" href="https://europepmc.org/article/PMC/PMC13325035" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13325035</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine · 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">La concordancia de sexo médico-paciente no cambia la exactitud diagnóstica, pero las médicas superan a los médicos en varios casos límite</div>
+          <div class="r10-line">Jaflo, experimento factorial aleatorizado con 1,027 médicos de atención primaria en EE. UU. usando viñetas de Hashimoto, POTS, esclerosis múltiple, sífilis y lupus: la concordancia de sexo médico-paciente no afectó la exactitud diagnóstica, pero las médicas superaron a los médicos en varias viñetas (p. ej. POTS 51.8% vs 41.7%, sífilis 68.0% vs 55.3%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el hallazgo interesante no es la concordancia (que no importó) sino qué factor a nivel del médico individual explica la brecha — buen gancho de contenido para desmontar un titular fácil (&#39;doctoras diagnostican mejor&#39;) y exigir el mecanismo real detrás.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10670-6" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10670-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Dental Education · 22 ago 2026 · rct · 2026-08-22</div>
+          <div class="r10-title">Sistemas de respuesta de audiencia adaptativos mejoran la exactitud diagnóstica en la enseñanza de lesiones orales: ensayo aleatorizado</div>
+          <div class="r10-line">Jaflo, ensayo controlado aleatorizado que compara sistemas de respuesta de audiencia (clickers) adaptativos frente al formato estándar para enseñar diagnóstico de lesiones de mucosa oral, midiendo exactitud diagnóstica como desenlace.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: aunque es en odontología, el diseño (ARS adaptativo con retroalimentación inmediata caso a caso) es directamente trasplantable a tus clases masivas de USAMEDIC para ENAM/Residentado — vale la pena pedirle el paper completo a tu equipo antes de descartarlo por ser de otra especialidad.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42631352/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42631352</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Academic Radiology · 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">Fusión multimodal con Transformer distingue deficiencia de hormona de crecimiento de talla baja idiopática mejor que cualquier modelo unimodal</div>
+          <div class="r10-line">Jaflo, estudio retrospectivo en dos centros (618 niños entrenamiento, 164 validación externa) donde un modelo Transformer que fusiona resonancia hipofisaria, texto clínico y datos clínicos estructurados logró AUC 0.896 en el cohorte externo para diferenciar dos diagnósticos pediátricos que suelen confundirse, superando a cada modalidad por separado y con buena calibración.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la fusión multimodal (imagen + texto + clínica, no imagen sola) es hacia donde va toda IA diagnóstica seria — útil como ejemplo técnico concreto si alguna vez explicas en AMAUTA por qué &#39;IA que solo mira la imagen&#39; es una generación ya superada.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.acra.2026.08.015" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.015</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La IA de radiografía de tórax bajó la exactitud en algunos hallazgos y aun así subió la confianza del lector y bajó las interconsultas al senior — rápido y seguro no es lo mismo que preciso.</li><li>Los residentes no heredan solo el diagnóstico de su mentor, heredan su umbral de referencia — el sesgo más difícil de enseñar es el que nunca se dice en voz alta.</li><li>Un modelo genético (DDx-PRS) que trata el diagnóstico psiquiátrico como probabilidades calibradas, no etiquetas fijas, es un argumento duro —no solo filosófico— a favor de la psiquiatría dimensional.</li><li>La concordancia de sexo médico-paciente no predijo exactitud diagnóstica en un ensayo con más de 1,000 médicos; lo que sí predijo fue el sexo del médico en sí, sin que el mecanismo esté claro todavía.</li><li>El nuevo estándar para evaluar IA diagnóstica ya no es &#39;qué tan exacto es el algoritmo&#39; sino &#39;cuántos contactos de salud inapropiados evita&#39; — la métrica que importa cambió de lugar.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la IA te hace sentir más seguro sin hacerte más preciso, ¿cómo entrenas a un residente ENAM a desconfiar de su propia sensación de certeza asistida por IA?</li><li>¿Qué umbral de referencia heredaste de tu propio mentor sin cuestionarlo — y podrías defenderlo hoy con evidencia si alguien te lo pidiera?</li><li>¿Debería la psiquiatría dimensional adoptar puntajes poligénicos como parte del diagnóstico diferencial de rutina, o el riesgo de sobre-medicalizar supera el beneficio de la calibración?</li><li>¿Qué factor a nivel individual del médico —no la concordancia de sexo— explica que unos superen a otros en casos diagnósticos límite?</li><li>¿Qué pasa con la adopción de IA clínica cuando la conectividad falla, como en el estudio con médicos rurales — estamos diseñando herramientas para el hospital urbano o para el terreno real?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG/YT: &#39;La IA te hace más rápido y más seguro — no necesariamente más preciso&#39;, usando el estudio de radiografía de tórax como caso.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/hilo AMAUTA sobre &#39;threshold inheritance&#39;: ejercicio para que residentes comparen su decisión de referencia con la de su mentor en un caso límite real.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio piloto: calibración diagnóstica de residentes ENAM con y sin apoyo de un sistema tipo DDx-Finder, midiendo confianza vs exactitud.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional incorporando DDx-PRS como ejemplo de diagnóstico psiquiátrico probabilístico frente al categórico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/hilo desmontando el titular fácil &#39;las doctoras diagnostican mejor&#39; con el estudio de concordancia de sexo, exigiendo el mecanismo real detrás del hallazgo.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Academic Radiology</span><span class="tag ">Journal of Cancer Education</span><span class="tag highlight">Nature Genetics</span><span class="tag ">medRxiv</span><span class="tag ">BMJ Open</span><span class="tag highlight">BJPsych Open</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Journal of Dental Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/Europe PMC · medRxiv (Europe PMC preprints) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 23 de agosto de 2026.</div>
+</div>
+</body>
+</html>
