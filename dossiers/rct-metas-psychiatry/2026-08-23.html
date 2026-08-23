@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-08-23 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">23 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">143</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">BJPsych Open, 19 ago 2026 · abstract del RCPsych International Congress 2026 · network meta-analysis · meta-analysis · 2026-08-19</div>
+        <h3 class="r3-title">Network meta-analysis: la psicoterapia asistida con psilocibina lidera el ranking de eficacia frente a ketamina y MDMA</h3>
+        <p class="r3-hook">Jaflo, esta NMA de contraste (6 ensayos) compara psilocibina, ketamina y MDMA-asistida frente a controles activos (escitalopram, placebo activo, lista de espera) en depresión, trauma y uso de sustancias, y encuentra un efecto sumario grande y significativo a favor de las terapias psicodélicas (Hedges g=-0.89, IC95% -1.07 a -0.72), con psilocibina en dosis alta liderando el ranking SUCRA por encima de dosis bajas y de las otras moléculas. Te importa porque es la primera vez que ves estas tres terapias comparadas en un mismo marco cuantitativo transdiagnóstico (mood/trauma/sustancias), justo el tipo de síntesis dimensional que citarías en el capítulo de psicofarmacología del libro de psicopatología — aunque ojo, es un abstract de congreso con solo 6 estudios, no el paper completo, así que trátalo como señal fuerte pero preliminar. Úsalo como gancho para un contenido AMAUTA sobre &#39;leer una NMA con SUCRA sin creer que ya es guía clínica&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjo.2026.11141" target="_blank" rel="noopener">↗ doi.org/10.1192/bjo.2026.11141</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Molecular Psychiatry, 19 ago 2026 · estudio observacional + modelo de machine learning · paper · 2026-08-19</div>
+        <h3 class="r3-title">Machine learning sobre 699 metabolitos identifica una firma metabólica de la esquizofrenia resistente al tratamiento</h3>
+        <p class="r3-hook">Jaflo, este estudio (112 pacientes con esquizofrenia resistente al tratamiento, 232 no resistentes, 145 controles sanos) perfila 699 metabolitos por UHPLC-HRMS y entrena un modelo de machine learning (OPLS-DA) que identifica una firma metabólica asociada a la resistencia al tratamiento y a los déficits cognitivos medidos con PANSS, RBANS y TAS-26. Es una cita directa para tu línea de psiquiatría de precisión: no es un solo biomarcador de laboratorio, es un patrón multivariado leído por ML — el argumento que necesitas para mostrar que &#39;precisión&#39; hoy significa integrar ómica + IA, no pedir un solo examen. Úsalo como caso de enseñanza AMAUTA/USAMEDIC sobre cómo leer un modelo predictivo psiquiátrico más allá del AUC, y como candidato de cita en el capítulo de biomarcadores del BMSE.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03827-6" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03827-6</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Molecular Psychiatry, 21 ago 2026 · RCT doble ciego, sham-controlado · rct · 2026-08-21</div>
+        <h3 class="r3-title">HD-tDCS con TMS-EEG: una sola sesión de neuromodulación mejora la memoria de trabajo en esquizofrenia</h3>
+        <p class="r3-hook">Jaflo, este RCT (69 pacientes con esquizofrenia, 34 HD-tDCS activa vs. 35 sham) muestra que una sola sesión de estimulación transcraneal de corriente directa de alta definición sobre la DLPFC mejora la precisión en una tarea 2-back (p&lt;.001) y reduce el tiempo de reacción (p&lt;.01), con TMS-EEG confirmando el mecanismo: menor excitabilidad en corteza entorrinal e hipocampo tras la estimulación activa. Esto es evidencia directa para tu línea de neuromodulación: combina eficacia clínica con un biomarcador neurofisiológico del mecanismo en la misma sesión, el tipo de diseño &#39;efecto + mecanismo&#39; que puedes citar como estándar de calidad en tus clases sobre neuromodulación en psicosis. Además, una sola sesión con señal significativa es un dato provocador para discutir dosis mínima efectiva en protocolos de tDCS.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03835-6" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03835-6</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open, 19 ago 2026 · abstract del RCPsych International Congress 2026 · systematic review · review · 2026-08-19</div>
+          <div class="r10-title">Revisión sistemática de 120 estudios sobre LLMs en salud mental: identificación de síntomas, detección temprana y apoyo diagnóstico</div>
+          <div class="r10-line">Jaflo, esta revisión sistemática (120 estudios, 8 bases + preprints, PRISMA) mapea el uso de LLMs en salud mental —identificación de síntomas, detección temprana, estratificación de riesgo, apoyo diagnóstico, psicoterapia y agentes conversacionales— y concluye que el rendimiento suele igualar a sistemas automatizados previos, pero la validación en práctica clínica real sigue siendo limitada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se volverá la revisión de referencia para argumentar &#39;la IA es herramienta complementaria, no reemplazo&#39; en tus charlas AMAUTA y en tu propia línea de IA aplicada a investigación — cítala antes que alguien la use en tu contra en un debate.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjo.2026.11093" target="_blank" rel="noopener">↗ doi.org/10.1192/bjo.2026.11093</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open, 19 ago 2026 · abstract del RCPsych International Congress 2026 · systematic review + meta-analysis · meta-analysis · 2026-08-19</div>
+          <div class="r10-title">Meta-análisis de mismatch negativity en esquizofrenia: un biomarcador que progresa con el curso de la enfermedad</div>
+          <div class="r10-line">Jaflo, este meta-análisis (2493 artículos cribados, extracción manual y asistida por GPT5) confirma que la amplitud de mismatch negativity auditiva se reduce progresivamente desde alto riesgo (g=0.37) hasta primer episodio (g=0.50) y esquizofrenia crónica (g=0.85), sin reducción significativa en familiares de primer grado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la MMN se consolidará como biomarcador de estadificación de curso, no solo de diagnóstico — y el uso de GPT5 para extracción de datos es un método que puedes adoptar en tu propia fábrica de revisiones sistemáticas.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjo.2026.11113" target="_blank" rel="noopener">↗ doi.org/10.1192/bjo.2026.11113</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open, 19 ago 2026 · abstract del RCPsych International Congress 2026 · systematic review narrativa · review · 2026-08-19</div>
+          <div class="r10-title">TDAH de inicio tardío: revisión encuentra evidencia inconclusa sobre si es un subtipo neurológico real</div>
+          <div class="r10-line">Jaflo, esta revisión narrativa (PubMed/PsycINFO/Embase desde 2000, un solo revisor) encuentra evidencia contradictoria sobre un subtipo de TDAH de inicio tardío en adultos, atribuible en parte a sesgo de recuerdo retrospectivo o a síntomas infantiles &#39;enmascarados&#39; que se solapan con trauma complejo y desregulación emocional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el debate seguirá abierto; es material directo para tus clases ENAM/Residentado sobre los límites del criterio de edad de inicio del DSM-5 en TDAH adulto.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjo.2026.11252" target="_blank" rel="noopener">↗ doi.org/10.1192/bjo.2026.11252</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Autism and Developmental Disorders, 21 ago 2026 · umbrella systematic review · review · 2026-08-21</div>
+          <div class="r10-title">Umbrella review: el &#39;fenotipo femenino del autismo&#39; es más sobre camuflaje que sobre síntomas nucleares distintos</div>
+          <div class="r10-line">Jaflo, esta umbrella review (34 estudios) no halla evidencia concluyente de diferencias de sexo/género en comunicación social, amistades o estereotipias motoras en autismo, pero sí confirma que las mujeres autistas muestran menos conductas restringidas/repetitivas y mayor capacidad de camuflaje.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza tu línea TEA/neurodivergencia con un argumento contraintuitivo — el &#39;fenotipo femenino&#39; no es un perfil sintomático distinto, es principalmente enmascaramiento, y eso cambia cómo debería cribarse.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10803-026-07484-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s10803-026-07484-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the American Academy of Child &amp; Adolescent Psychiatry, 20 ago 2026 · RCT · rct · 2026-08-20</div>
+          <div class="r10-title">RCT: un programa de tareas por app tras el tratamiento de una sesión para fobias específicas infantiles</div>
+          <div class="r10-line">Jaflo, en 172 niños (7-14 años) con fobia específica que ya recibieron el Tratamiento de Una Sesión (OST), este RCT compara agregar un programa de tareas guiado por app versus tareas guiadas por terapeuta, evaluando estatus diagnóstico, severidad clínica y evitación conductual hasta los 6 meses.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si el app iguala o supera al homework tradicional, es la evidencia que necesitas para escalar OST digitalmente en un contexto de telesalud infantil peruano con pocos terapeutas entrenados.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jaac.2026.08.007" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jaac.2026.08.007</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Lancet Psychiatry, 20 ago 2026 · Personal View · review · 2026-08-20</div>
+          <div class="r10-title">Personal View en Lancet Psychiatry: por qué más de 100 modelos predictivos de TDAH nunca llegaron a la práctica clínica</div>
+          <div class="r10-line">Jaflo, este Personal View argumenta que más de 100 modelos predictivos de TDAH se quedaron en el papel porque nadie definió &#39;reglas de decisión&#39; que traduzcan el riesgo predicho en una acción clínica concreta, y propone target trial emulation combinada con esas reglas como camino de implementación, con dos ejemplos trabajados en TDAH.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se volverá lectura obligatoria en tu línea de psiquiatría de precisión — el molde metodológico (predicción → regla de decisión → target trial emulation) es exportable directo a tu propio pipeline de investigación en TDAH.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/s2215-0366(26)00227-0" target="_blank" rel="noopener">↗ doi.org/10.1016/s2215-0366(26)00227-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry, 18 ago 2026 · RCT doble ciego, sham-controlado, cruzado · rct · 2026-08-18</div>
+          <div class="r10-title">RCT cruzado: qué le hace la TMS al cerebro de alguien con trastorno por uso de alcohol, medido con espectroscopía</div>
+          <div class="r10-line">Jaflo, en 70 personas con trastorno por uso de alcohol moderado-severo, una sola sesión de TMS (10Hz sobre dlPFC o theta-burst continua sobre mPFC) frente a sham alteró los niveles de neurometabolitos excitatorios (glutamato, glutamina, glicina) e inhibitorios (GABA) medidos por espectroscopía de protón bajo la bobina.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: mecanicista pero clave — cuando alguien pregunte &#39;por qué funciona la TMS en adicciones&#39;, ya tienes la respuesta neuroquímica, útil directo para tu línea de neuromodulación.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03815-w" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03815-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JAMA Psychiatry, 19 ago 2026 · estudio transversal, dos muestras independientes · paper · 2026-08-19</div>
+          <div class="r10-title">Los circuitos de valoración de recompensa e impulsividad se disocian en el riesgo de manía</div>
+          <div class="r10-line">Jaflo, en dos muestras independientes de adultos, la activación en corteza prefrontal ventrolateral izquierda y área premotora suplementaria durante la expectativa de recompensa se asocia de forma disociable con valoración de la recompensa (menor descuento) versus toma de decisiones impulsiva (mayor descuento), moderado por la severidad depresiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: aporta evidencia a un modelo dimensional de la manía como dos circuitos separables en vez de un solo &#39;polo opuesto a la depresión&#39; — cita candidata para el capítulo bipolar de tu libro de psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1001/jamapsychiatry.2026.2510" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.2510</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research in Developmental Disabilities, 21 ago 2026 · systematic review · review · 2026-08-21</div>
+          <div class="r10-title">Revisión sistemática mapea qué factores moldean las interacciones entre pares en niños y adolescentes autistas</div>
+          <div class="r10-line">Jaflo, esta revisión sistemática examina la cantidad y calidad de las interacciones entre pares en niños/adolescentes autistas y cómo se asocian con edad, sexo, severidad del autismo, habilidades sociales y cognitivas, tipo de compañero de interacción, y factores emocionales/contextuales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: buena base para diseñar intervención escolar/social en tu línea TEA — contenido con aplicación directa para padres y educadores en tu audiencia AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ridd.2026.105366" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ridd.2026.105366</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open, 19 ago 2026 · abstract del RCPsych International Congress 2026 · systematic review · review · 2026-08-19</div>
+          <div class="r10-title">Qué tipo de entrenamiento de habilidades mejora la función ejecutiva en adultos con TDAH (y cuál no)</div>
+          <div class="r10-line">Jaflo, de 12 estudios categorizados en cuatro tipos de intervención, el entrenamiento centrado en ocupación mostró las mejoras más consistentes dentro-de-grupo en función ejecutiva, la regulación emocional mostró efectos moderados-a-grandes frente a controles autoguiados, y el entrenamiento cognitivo con coaching mejoró memoria de trabajo pero con ganancias mínimas en funcionamiento diario.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza que entrenar función ejecutiva &#39;en contexto real&#39; (ocupacional/emocional) rinde más que tareas cognitivas aisladas — argumento directo para tus módulos AMAUTA sobre manejo no farmacológico del TDAH adulto.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjo.2026.11237" target="_blank" rel="noopener">↗ doi.org/10.1192/bjo.2026.11237</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En la NMA de psicodélicos, la psilocibina no gana por ser &#39;la más psicodélica&#39;: gana por dosis — alta dosis supera a baja dosis en el ranking SUCRA, lo que sugiere que el mecanismo dosis-dependiente importa más que la sustancia en sí.</li><li>La firma metabólica de la esquizofrenia resistente al tratamiento no es un solo biomarcador de laboratorio: es un patrón entre 699 metabolitos que solo un modelo de machine learning logra leer — la precisión psiquiátrica ya no cabe en un examen aislado.</li><li>Una sola sesión de HD-tDCS ya cambia la memoria de trabajo en esquizofrenia (p&lt;.001): la neuromodulación no necesariamente necesita semanas de protocolo para mostrar señal medible y mecanísticamente verificable con TMS-EEG.</li><li>El &#39;fenotipo femenino del autismo&#39; que tanto se repite en redes no es, según la evidencia agregada de 34 estudios, un perfil sintomático distinto: es sobre todo camuflaje — las mujeres autistas ocultan mejor, no presentan síntomas nucleares diferentes.</li><li>La mismatch negativity progresa en gradiente casi ordenado (g=0.37 en alto riesgo → 0.50 en primer episodio → 0.85 en esquizofrenia crónica): es de los pocos biomarcadores que no solo diagnostican, sino que podrían estadificar el curso de la enfermedad.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la psicoterapia con psilocibina ya rankea más alto que ketamina y MDMA en una network meta-analysis (aunque con solo 6 estudios), ¿qué tan pronto veremos guías clínicas moverse antes de que la evidencia sea robusta?</li><li>¿Deberíamos empezar a usar la mismatch negativity como marcador de estadificación de curso (no solo de diagnóstico) en pacientes de alto riesgo de psicosis, dado el gradiente g=0.37→0.85?</li><li>Si más de 100 modelos predictivos de TDAH nunca llegaron a la práctica clínica por falta de &#39;reglas de decisión&#39;, ¿cuántos de los biomarcadores que citamos en clase corren el mismo riesgo de quedarse solo en el paper?</li><li>¿Es replicable la firma metabólica de esquizofrenia resistente (699 metabolitos + ML) en una cohorte peruana, o es un hallazgo ómico específico de la población estudiada?</li><li>Si el entrenamiento de función ejecutiva &#39;en contexto real&#39; (ocupacional/emocional) supera al entrenamiento cognitivo aislado en TDAH adulto, ¿seguimos indicando tareas de laboratorio como intervención en vez de usarlas solo como medida de resultado?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG: &#39;Psilocibina vs. ketamina vs. MDMA: lo que dice la primera network meta-analysis que las compara directamente&#39; — con el ranking SUCRA simplificado y la advertencia de que aún es abstract de congreso.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Adaptar el pipeline de extracción de datos asistida por GPT5 (usado en el meta-análisis de mismatch negativity) a tu propia línea de revisiones sistemáticas — primer meta-análisis peruano con extracción semi-automatizada por LLM, documentado como método.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del BMSE / libro de psicopatología dimensional sobre la manía como dos circuitos disociables (valoración de recompensa vs. impulsividad) en vez de un solo polo opuesto a la depresión.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC: &#39;Por qué tus modelos predictivos de TDAH no cambian la práctica&#39; — usando el Personal View de Lancet Psychiatry como caso de lectura crítica para ENAM/Residentado sobre el salto de predicción a decisión clínica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video: &#39;El mito del autismo femenino distinto&#39; — usando la umbrella review de 34 estudios para desmontar la idea de que existe un perfil sintomático femenino aparte, en vez de solo mejor camuflaje.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">BJPsych Open</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag highlight">Lancet Psychiatry</span><span class="tag highlight">JAMA Psychiatry</span><span class="tag ">Journal of Autism and Developmental Disorders</span><span class="tag ">Journal of the American Academy of Child &amp; Adolescent Psychiatry</span><span class="tag ">Research in Developmental Disabilities</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC REST API (proxy de PubMed, filtrado por FIRST_PDATE) · PMC (texto completo de abstracts de congreso, BJPsych Open / RCPsych International Congress 2026) · WebSearch (triage complementario). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 23 de agosto de 2026.</div>
+</div>
+</body>
+</html>
