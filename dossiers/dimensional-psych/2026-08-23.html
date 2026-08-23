@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-08-23 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">23 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">52</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">PsyArXiv (preprint) · 2026-08-21 · preprint</div>
+        <h3 class="r3-title">Validación de invarianza de medición al nivel más fino del HiTOP: 87 facetas del HiTOP-SR alemán probadas por sexo, edad y nivel socioeconómico</h3>
+        <p class="r3-hook">Trummer, Wendt, Schroeders y Zimmermann prueban invarianza de medición en las 87 facetas (el nivel más granular de la jerarquía) del HiTOP-SR alemán en 1,049 adultos, cruzando sexo, edad y NSE: 74.3% de las 261 comparaciones alcanzan invarianza escalar, 14.6% muestran no-invarianza (generalmente leve-moderada) y 11.1% no son estimables por baja prevalencia de base. Para tu libro esto es la prueba metodológica que necesitas para el capítulo de medición dimensional: no basta con que el HiTOP &#39;funcione&#39; a nivel de espectro, hay que auditar facetas individuales antes de comparar puntajes entre grupos — exactamente el tipo de rigor que separa un instrumento importado sin ajuste de uno validado para poblaciones específicas. Úsalo como plantilla metodológica directa si logras impulsar una validación HiTOP/RDoC peruana vía HVLH: mismo diseño (CFA multigrupo ordinal, invarianza configural/métrica/escalar) aplicado a NSE y contexto peruano en lugar de alemán.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/t4ry2_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/t4ry2_v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience · 2026-08-22 · paper</div>
+        <h3 class="r3-title">El Minimum Dataset del Centro Alemán de Salud Mental (DZPG) valida RDoC y clusters clínico-psicosociales con invarianza entre muestra clínica y no clínica</h3>
+        <p class="r3-hook">Förstner y el consorcio DZPG (N=2,287 muestra representativa + N=322 muestra clínica) validan mediante CFA multigrupo la estructura latente de los clusters RDoC, Salud General y Clínico-Psicosocial de un dataset mínimo diseñado para armonizar datos de salud mental entre instituciones alemanas: ajuste excelente en los tres clusters (CFI&gt;.99, RMSEA&lt;.04) e invarianza configural y escalar completa entre grupos clínicos y no clínicos, con la excepción de no-invarianza métrica en Salud General. Es munición directa para tu pilar de psiquiatría de precisión y para AMAUTA: un marco RDoC operacionalizado a escala de sistema de salud, no solo de laboratorio, que demuestra que se puede construir un dataset mínimo comparable entre consulta general y especializada — el tipo de infraestructura que argumentarías falta en el sistema peruano y que podría ser un caso de estudio para proponer algo análogo desde HVLH o AMAUTA.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02315-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02315-w</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">JCPP Advances · 2026-08-20 · editorial</div>
+        <h3 class="r3-title">Editorial en JCPP Advances propone conectar los espectros sintomáticos del HiTOP con los mecanismos de cambio de la terapia cognitivo-conductual</h3>
+        <p class="r3-hook">Stanton, Burke, Towne y Whitesides (Special Issue de JCPP Advances sobre enfoques transdiagnósticos en salud mental infanto-juvenil) proponen un puente explícito entre las dimensiones sintomáticas del HiTOP y los mecanismos de vulnerabilidad sociocognitiva (SCV) que trabaja la TCC/terapias de tercera ola, con ideas concretas para desarrollo de medidas compartidas y terminología más precisa que conecte evaluación dimensional con planificación de tratamiento personalizado. Esto es exactamente la brecha que tu línea de razonamiento clínico dimensional necesita cerrar: hoy puedes decir &#39;este paciente puntúa alto en Internalizing/Distress&#39; pero el editorial señala que la traducción a &#39;por lo tanto ataca este mecanismo cognitivo en terapia&#39; sigue siendo ad hoc. Es material de clase directo para Aprendiz Experto/AMAUTA — un algoritmo de &#39;del espectro HiTOP al mecanismo TCC&#39; sería un diferenciador curricular fuerte para preparar Residentado con razonamiento verdaderamente dimensional, no solo diagnóstico categorial con TCC pegada encima.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/jcv2.70161" target="_blank" rel="noopener">↗ doi.org/10.1002/jcv2.70161</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">JCPP Advances · 2026-08-21 · editorial</div>
+          <div class="r10-title">Comentario de Kaczkurkin en JCPP Advances sobre redes sintomáticas transdiagnósticas en psicopatología emergente adolescente</div>
+          <div class="r10-line">Kaczkurkin (Vanderbilt) comenta el estudio de red longitudinal de Häfeli et al. sobre psicopatología emergente en adolescentes suizos, situando la teoría de redes como herramienta para entender cómo se forma la psicopatología antes de cristalizar en diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta comparación entre teoría de redes (dinámica, proceso) y modelos jerárquicos tipo p-factor (estructura, severidad) va a convertirse en un debate recurrente de &#39;complementarios vs. rivales&#39; en 2026-2027; te conviene anticiparlo en el libro como dos capas del mismo fenómeno, no una alternativa a la otra.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jcv2.70165" target="_blank" rel="noopener">↗ doi.org/10.1002/jcv2.70165</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">JCPP Advances · 2026-08-21 · editorial</div>
+          <div class="r10-title">Comentario de Wang, Wang y Chan sobre comprensión integrada de la psicopatología general (respuesta a Devine et al.)</div>
+          <div class="r10-line">Comentario conceptual que discute hacia dónde debe evolucionar el entendimiento del factor p general de psicopatología, en la misma edición especial de JCPP Advances sobre transdiagnóstico infanto-juvenil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: junto con el comentario de Kaczkurkin en el mismo número, este par de piezas conceptuales va a citarse como el momento en que JCPP Advances intentó reconciliar factor p y network psychopathology en una sola edición — vale la pena leer ambos comentarios y el paper original de Devine et al. como bloque para el capítulo de estructura del libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jcv2.70163" target="_blank" rel="noopener">↗ doi.org/10.1002/jcv2.70163</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Neuropsychopharmacology · 2026-08-21 · paper</div>
+          <div class="r10-title">Patrones globales de prescripción de clozapina: 1 de cada 5 indicaciones registradas es fuera del espectro esquizofrenia</div>
+          <div class="r10-line">Fitzgerald y colegas analizan datos IQVIA de 55 países: 82.3% de la prescripción de clozapina es para espectro esquizofrenia, pero ~18% es transdiagnóstica (bipolar 59.3% del resto, luego ansiedad/movimiento/epilepsia/demencia), con fuerte variación regional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta evidencia de uso transdiagnóstico real de clozapina en la práctica (sin guías internacionales que lo respalden aún) se va a usar para pedir guías formales de uso transdiagnóstico; para tu línea de psiquiatría de precisión es un caso de &#39;la práctica ya es dimensional, la evidencia formal todavía no la alcanza&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.euroneuro.2026.113547" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.113547</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Der Nervenarzt · 2026-08-22 · paper</div>
+          <div class="r10-title">Propuesta interdisciplinaria de definición de psicoterapia en Alemania, orientada a un marco transteórico y transdiagnóstico</div>
+          <div class="r10-line">Herpertz y un grupo interdisciplinario (con participación de pacientes) proponen una definición de psicoterapia en cuatro ejes (modalidad, mecanismo, población, proveedor) explícitamente orientada a permitir psicoterapia transteórica, transdiagnóstica y personalizada dentro del sistema legal-sanitario alemán.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es un ejercicio regulatorio alemán, pero el marco de cuatro ejes es reutilizable como rúbrica docente en AMAUTA/USAMEDIC para enseñar &#39;qué hace psicoterapia a una psicoterapia&#39; de forma independiente de escuela teórica — útil si vas a defender un enfoque transdiagnóstico de tratamiento frente a estudiantes formados solo en categorías DSM.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00115-026-02006-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00115-026-02006-w</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el HiTOP-SR alemán, 3 de cada 4 comparaciones de facetas (sexo/edad/NSE) sí son válidas para comparar grupos — pero 1 de cada 4 no lo es. Usar un instrumento dimensional &#39;validado&#39; no garantiza que cada faceta individual sea comparable entre subgrupos: hay que auditar, no asumir.</li><li>El cluster RDoC del DZPG valida igual de bien en muestra clínica que en no clínica, pero el cluster de Salud General no logra invarianza métrica entre esos mismos grupos: la parte &#39;más simple&#39; del dataset (salud general) resultó ser la más frágil psicométricamente, no la parte psiquiátrica.</li><li>El editorial de JCPP Advances admite algo incómodo: tras años de HiTOP, todavía no existe un puente sistemático entre &#39;este paciente puntúa alto en tal espectro&#39; y &#39;por lo tanto ataca este mecanismo específico en terapia&#39;. La dimensionalidad diagnóstica va años por delante de la dimensionalidad terapéutica.</li><li>1 de cada 5 recetas de clozapina en el mundo ya es fuera de esquizofrenia (mayormente bipolar) — la prescripción transdiagnóstica de psicofármacos de alta complejidad ya ocurre en la práctica clínica global, sin que exista todavía una guía internacional formal que la respalde.</li><li>Dos comentarios independientes en el mismo número de JCPP Advances —uno sobre factor p general, otro sobre redes sintomáticas dinámicas— convergen en que ninguno de los dos marcos solo basta para explicar cómo se forma la psicopatología emergente: severidad general y dinámica de red parecen ser capas complementarias, no modelos rivales.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el HiTOP-SR alemán necesita auditar invarianza faceta por faceta antes de comparar sexo/edad/NSE, ¿qué tan arriesgado es seguir usando instrumentos dimensionales importados sin ese mismo control en poblaciones peruanas heterogéneas (Lima vs. regiones, distintos NSE)?</li><li>¿Vale la pena que HVLH intente replicar el diseño DZPG (CFA multigrupo clínico vs. no clínico) sobre un dataset mínimo propio, aunque sea a menor escala, como primer paso hacia infraestructura RDoC peruana?</li><li>Si la brecha real está entre &#39;dimensión HiTOP&#39; y &#39;mecanismo de cambio en TCC&#39; (como señala el editorial), ¿cómo se enseña eso en Residentado sin que se vuelva otro esquema memorístico más — con un algoritmo, con casos, con ambos?</li><li>Dado que 1 de cada 5 prescripciones de clozapina ya es transdiagnóstica en la práctica, ¿debería el razonamiento clínico que enseñas en AMAUTA anticipar ese uso off-label estructurado, o esperar a que llegue la guía formal?</li><li>¿Conviene presentar en el libro el factor p y las redes sintomáticas como capas complementarias desde el inicio, o hay valor pedagógico en dejar que el lector viva primero la tensión entre ambos marcos antes de reconciliarlos?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG JafloMD: &#39;1 de cada 5 recetas de clozapina no es para esquizofrenia&#39; — dato de prescripción global transdiagnóstica como gancho para hablar de psicofarmacología dimensional en la práctica real.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección metodológica del BMSE: usar el diseño de invarianza de medición faceta-por-faceta del HiTOP-SR alemán (CFA multigrupo ordinal, sexo/edad/NSE) como plantilla explícita para argumentar por qué un HiTOP/RDoC &#39;validado en otro país&#39; no es automáticamente válido en Perú.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/propuesta a HVLH: iniciar una validación local, aunque sea piloto, de un dataset mínimo tipo RDoC/DZPG comparando muestra clínica vs. comunitaria peruana — aprovechando el paper del DZPG como precedente metodológico citable.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase Aprendiz Experto: &#39;Del espectro HiTOP al mecanismo de cambio en TCC&#39; — construir un algoritmo docente a partir del editorial de Stanton et al. para conectar evaluación dimensional con planificación terapéutica en la preparación ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota/comentario breve reaccionando a los dos comentarios gemelos de JCPP Advances (factor p vs. redes sintomáticas): proponer explícitamente que ambos marcos se lean como capas complementarias (severidad general + dinámica temporal), enlazando con tu línea de network theory.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">JCPP Advances</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag ">Der Nervenarzt</span><span class="tag ">PsyArXiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils esearch/esummary/efetch directo, sin MCP de PubMed disponible en este entorno; ventana pdat 2026/08/20-2026/08/23; query base del dominio HiTOP/RDoC/dimensional/transdiagnostic/p-factor/bifactor + query clínica ADHD/autism/neurodevelopment/staging/specifier + query network analysis/computational psychiatry/staging + query por autores clave Kotov/Krueger/Conway/Caspi/Moffitt/Hyman/Cuthbert/Borsboom; varios falsos positivos descartados por desambiguación de nombre o tema no relacionado) · Europe PMC (SRC:PPR, FIRST_PDATE 2026-08-19/2026-08-23, para preprints PsyArXiv/medRxiv/Research Square; halló el preprint HiTOP-SR alemán incluido en top3 y descartó otro preprint especulativo de un solo autor sin datos por baja señal) · Consensus MCP (cross-check conceptual; varios candidatos de alta relevancia temática -Forbes &#39;Rebuilding HiTOP&#39;, Szarpak &#39;Beyond DSM Categories&#39;, Häfeli et al. original- verificados en PubMed y descartados por caer fuera de la ventana de 48-72h, pese a figurar como &#39;2026&#39; en el buscador) · WebSearch (X/Twitter y Reddit r/psychiatry, r/clinicalpsychology, r/cogsci: sin herramienta de búsqueda social en tiempo real disponible en este entorno; no se encontró ni pudo verificarse contenido social nuevo y real de la ventana, por lo que no se incluyó ninguno para evitar fabricación). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 23 de agosto de 2026.</div>
+</div>
+</body>
+</html>
