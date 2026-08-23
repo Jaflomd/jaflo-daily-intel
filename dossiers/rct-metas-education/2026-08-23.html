@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-08-23 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">23 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">96</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Simulation in Healthcare · 2026-08-21 · review</div>
+        <h3 class="r3-title">Entrenamiento de equipos basado en simulación y su efecto en desempeño clínico y desenlaces del paciente: revisión sistemática de estudios controlados</h3>
+        <p class="r3-hook">Revisión sistemática de 18 estudios controlados de entrenamiento de equipos basado en simulación en cuidado agudo posgrado: encuentra beneficios inconsistentes según formato de la intervención y contexto —los beneficios se ven más en hospitales de bajos recursos, mientras que entrenamientos breves rinden poco— y certeza global de la evidencia baja. Para Javier esto es munición directa para su pilar amauta-education y su marca de rigor metodológico: el titular fácil sería &#39;la simulación en equipo funciona&#39;, pero la revisión muestra que la pregunta correcta no es binaria (¿funciona sí/no?) sino de diseño (¿para qué contexto, con qué dosis?). Es el mismo tipo de lectura crítica que quiere instalar en su banco ENAM/Residentado sobre cómo leer SRs con heterogeneidad real en vez de titulares. Úsalo como ancla de una pieza sobre &#39;por qué preguntar si la simulación funciona es la pregunta equivocada&#39; —perfecto para su línea de razonamiento clínico y BMSE aplicada a la lectura crítica de literatura educativa.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/SIH.0000000000000965" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000965</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">American Journal of Lifestyle Medicine · 2026-08-20 · review</div>
+        <h3 class="r3-title">Programas de medicina de estilo de vida en pregrado médico: revisión de alcance</h3>
+        <p class="r3-hook">Revisión de alcance (7674 registros iniciales, 205 estudios incluidos) que mapea programas de medicina de estilo de vida en pregrado médico: encuentra que casi todos se concentran en un solo pilar (nutrición o consumo de sustancias), usan equipos interprofesionales, y —el hallazgo clave— la mayoría solo evalúa niveles 1-2 de Kirkpatrick (satisfacción/conocimiento autorreportado), con outcomes de corto plazo y reporte débil de costos y demografía. Para Javier esto es evidencia directa de un problema que él mismo denuncia en sus libros y contenido: la educación médica diseña intervenciones pero rara vez las evalúa con el rigor que exigiría a un ensayo clínico. Conecta con su pilar amauta-education al diseñar módulos de estilo de vida/autocuidado (kinobody-selfcare) para sus cursos: es el mapa de qué NO replicar (evaluación débil, un solo pilar) y una checklist implícita de qué exigir si él publica algo similar. Úsalo para una pieza sobre &#39;el nivel de evidencia que casi nadie exige a la innovación educativa&#39; —tesis central de su voz de rigor proporcional al claim.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/15598276261477323" target="_blank" rel="noopener">↗ doi.org/10.1177/15598276261477323</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Medicine (Baltimore) · 2026-08-21 · paper</div>
+        <h3 class="r3-title">Inteligencia artificial en educación médica: desempeño de ChatGPT frente a estudiantes de medicina en examen médico</h3>
+        <p class="r3-hook">Estudio comparativo con 41 estudiantes de cuarto año y exámenes de 50 preguntas (medicina preventiva y psiquiatría) frente a ChatGPT 3.5 y 4.0: el promedio estudiantil fue 29.5±5.9 (de 49), mientras que GPT-4.0 con re-prompting llegó a 46 —superando a todos los estudiantes— y ambos modelos tuvieron mayor probabilidad de acertar que los estudiantes en casi todos los escenarios, salvo preguntas difíciles con el primer intento de GPT-3.5. Para Javier esto es un dato directamente accionable para su pilar ai-enhancement y su qbank de USAMEDIC/ENAM/Residentado: es benchmark concreto de qué tan cerca (o lejos) está un LLM de superar a un examinando promedio en preguntas de examen médico tipo banco, con el matiz clave de que el re-prompting cambia sustancialmente el resultado —variable de diseño que él puede instrumentalizar al construir o validar su propio banco de preguntas asistido por IA. También es evidencia con la que calibrar expectativas de estudiantes que usan IA para prepararse: superan a un estudiante promedio, no son infalibles, y la calidad de la pregunta y el prompt importan tanto como el modelo.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/MD.0000000000050323" target="_blank" rel="noopener">↗ doi.org/10.1097/MD.0000000000050323</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Simulation in Healthcare · 2026-08-20 · paper</div>
+          <div class="r10-title">Identificar acuidad y priorización de pacientes: desarrollo de un checklist para evaluación de estudiantes</div>
+          <div class="r10-line">Desarrollo y validación inicial (marco de Kane, Delphi modificado, Angoff) de un checklist de 10 ítems para evaluar priorización de acuidad en simulación con estudiantes de cuarto año; kappa de Cohen excelente (0.872) para confiabilidad entre evaluadores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los marcos de validación tipo Kane (evidencia de scoring y generalización) se volverán el estándar mínimo esperado para cualquier checklist de evaluación nuevo en bancos como el de Javier —replicable directamente en la validación de rúbricas de su qbank ENAM/Residentado antes de publicarlas.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/SIH.0000000000000964" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000964</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Simulation in Healthcare · 2026-08-20 · paper</div>
+          <div class="r10-title">IA en el diseño de simulación: efectividad de una herramienta personalizada de desarrollo de escenarios basada en IA</div>
+          <div class="r10-line">Estudio ciego comparativo: 7 expertos evaluaron 8 escenarios de simulación pediátrica (4 escritos por educadores, 4 por un ChatGPT personalizado) sin diferencias estadísticamente significativas en puntaje, aunque los casos humanos puntuaron más alto en promedio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La brecha entre &#39;no significativo&#39; y &#39;listo para reemplazar humanos&#39; se va a mal-titular en redes sociales educativas; el mensaje real y replicable para AMAUTA es usar IA para el primer borrador de casos clínicos y reservar la revisión experta como control de calidad, no como reemplazo.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/SIH.0000000000000953" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000953</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Education for Primary Care · 2026-08-21 · paper</div>
+          <div class="r10-title">Pacientes simulados con IA para entrenamiento de atención primaria en técnicos médicos de combate</div>
+          <div class="r10-line">Estudio pre-post sin grupo control (n=20) con pacientes simulados por IA en la plataforma SimFlow.ai: mejoras significativas en 10 de 12 dominios de confianza clínica (p&lt;0.002), sin diferencias por demografía; el diseño no permite atribuir causalidad a la IA per se.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a proliferar este diseño pre-post sin control para &#39;validar&#39; herramientas de IA en simulación —útil como prueba de concepto de factibilidad para pilotos de AMAUTA, pero Javier debería exigir (o él mismo aportar) un grupo comparador antes de venderlo como evidencia fuerte en su propio contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/14739879.2026.2714838" target="_blank" rel="noopener">↗ doi.org/10.1080/14739879.2026.2714838</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher · 2026-08-21 · paper</div>
+          <div class="r10-title">Inteligencia artificial en la publicación de educación en profesiones de la salud: análisis de contenido de guías editoriales</div>
+          <div class="r10-line">Análisis de contenido de políticas de IA en 22 revistas de educación en profesiones de la salud, 6 editoriales y COPE: la IA se enmarca predominantemente como riesgo a la integridad científica más que como oportunidad, con 5 temas centrados en gobernanza y supervisión humana.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las políticas de divulgación de uso de IA en manuscritos se van a volver un requisito estándar de envío en 2027; relevante para Javier como investigador RENACYT que publica y usa IA en su flujo de escritura —vale la pena que audite ahora las políticas de las revistas donde suele enviar antes de que se lo exijan retroactivamente.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2712427" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2712427</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Una revisión sistemática de simulación en equipo con 18 estudios controlados encontró más beneficio en hospitales de bajos recursos que en entrenamientos breves de alta gama: el contexto de implementación pesa más que la sofisticación de la simulación misma.</li><li>205 estudios de programas de medicina de estilo de vida en pregrado y casi ninguno mide más allá de satisfacción o conocimiento autorreportado (Kirkpatrick 1-2): la &#39;innovación educativa&#39; en salud sigue evaluándose con el estándar más bajo posible.</li><li>GPT-4.0 con re-prompting superó a TODOS los estudiantes de un examen médico de 50 preguntas —pero el primer intento de GPT-3.5 fue estadísticamente indistinguible del desempeño estudiantil en preguntas difíciles: el &#39;poder&#39; de un LLM depende tanto de la versión como de cuántas veces se le insiste.</li><li>Cuando expertos evaluaron a ciegas escenarios de simulación escritos por IA vs. por educadores humanos, no hubo diferencia estadísticamente significativa —pero la mayoría de los expertos igual recomendó usar revisión humana antes de publicar el caso.</li><li>22 revistas de educación médica y sus editoriales enmarcan la IA sobre todo como amenaza a la integridad científica, no como herramienta: la conversación pública sobre &#39;IA en investigación&#39; va más rápido que las políticas que la regulan.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuánto del &#39;no funciona&#39; que reportan los RCTs educativos es en realidad un problema de dosis/contexto mal especificado, y no de la intervención en sí?</li><li>Si el 80% de los programas de estilo de vida en pregrado solo miden Kirkpatrick 1-2, ¿qué tendría que cambiar en el diseño de un módulo de AMAUTA para llegar a Kirkpatrick 3-4 sin disparar el costo de evaluación?</li><li>¿En qué punto exacto el re-prompting de un LLM deja de ser &#39;usar mejor la herramienta&#39; y empieza a ser optimizar para vencer el benchmark, no para aprender medicina?</li><li>¿Qué política de divulgación de uso de IA en manuscritos le conviene adoptar a Javier de forma proactiva, antes de que una revista se la exija como condición de envío?</li><li>¿Cuál sería el diseño mínimo viable (con grupo control) para que un piloto de pacientes simulados por IA en USAMEDIC pase de &#39;promisorio&#39; a &#39;evidencia publicable&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel: &#39;la pregunta mal hecha en educación médica&#39; — usando la SR de simulación en equipo para enseñar por qué &#39;¿funciona?&#39; es la pregunta equivocada frente a &#39;¿para quién y en qué dosis?&#39;</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Publicación corta o carta al editor comparando el nivel de evidencia (Kirkpatrick) exigido en programas de estilo de vida médica vs. el que él mismo aplicaría en su libro de neurociencia educativa — ancla en la scoping review de Am J Lifestyle Med.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de educación médica de precisión sobre el patrón repetido de estudios pre-post sin control en IA educativa (SimFlow.ai, ChatGPT scenario-writing) — cómo detectarlo y qué preguntar antes de citarlo como evidencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido IG/YT tipo &#39;reto&#39;: tomar 5 preguntas difíciles de su banco ENAM y correrlas por GPT-4 con y sin re-prompting, comparar contra el desempeño histórico de sus alumnos — replica en vivo el estudio de Medicine (Baltimore).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Checklist descargable para AMAUTA basada en el marco de validación de Kane (scoring/generalización) del estudio de Simulation in Healthcare, adaptada a evaluación de preguntas de banco ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Simulation in Healthcare</span><span class="tag ">American Journal of Lifestyle Medicine</span><span class="tag ">Medicine (Baltimore)</span><span class="tag ">Medical Teacher</span><span class="tag ">Education for Primary Care</span><span class="tag highlight">Medical Education</span><span class="tag highlight">Academic Medicine</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (eutils esearch/esummary/efetch, directo) · WebSearch (pubmed.ncbi.nlm.nih.gov, europepmc.org, medrxiv.org). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 23 de agosto de 2026.</div>
+</div>
+</body>
+</html>
