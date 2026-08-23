@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-08-23 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">23 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">42</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">The Lancet Psychiatry · 2026-08-20 · editorial</div>
+        <h3 class="r3-title">De la predicción a la decisión: por qué +100 modelos predictivos de TDAH nunca llegaron a la consulta</h3>
+        <p class="r3-hook">Garcia-Argibay, Faraone, Cortese y Larsson —parte del núcleo duro de la evidencia mundial en TDAH— publican en Lancet Psychiatry un Personal View que nombra el problema real detrás de por qué ninguno de los más de 100 modelos predictivos de TDAH llegó a la práctica clínica: no basta con reportar AUC, hace falta una &#39;decision rule&#39; explícita que traduzca el score en una acción concreta, más target trial emulation para probar esa acción en datos observacionales grandes. Jaflo, esto es munición directa para tu línea TDAH/TEA y para el pilar precision-psychiatry: es el argumento metodológico que te falta para explicarle a un residente por qué &#39;tiene buen AUC&#39; no es sinónimo de &#39;es útil clínicamente&#39; — bájalo directo a un capítulo del libro de psicopatología o a una pieza de contenido sobre por qué la psiquiatría de precisión sigue sin aterrizar en consulta. Úsalo también como filtro de calidad: la próxima vez que te llegue un paper de ML con AUC bonito para TDAH, pregúntate si trae la decision rule — si no la trae, es descriptivo, no accionable.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/s2215-0366(26)00227-0" target="_blank" rel="noopener">↗ doi.org/10.1016/s2215-0366(26)00227-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">bioRxiv (Fair Lab, Univ. Minnesota) · 2026-08-21 · preprint</div>
+        <h3 class="r3-title">Precision Confidence Mapping: cuantificar qué tan segura está tu red funcional individual antes de apuntar el estimulador</h3>
+        <p class="r3-hook">El laboratorio de Damien Fair (referencia mundial en mapeo funcional individualizado, ABCD Study) sube a bioRxiv &#39;Precision Confidence Mapping&#39;: un framework bootstrap que, en vez de asumir que el mapa de redes funcionales individual de un paciente es confiable, calcula explícitamente qué tan segura está cada asignación de red cuando el escaneo clínico es corto y ruidoso — justo el escenario real de cualquier protocolo de neuromodulación fuera de un centro de investigación puro. Jaflo, esto conecta directo con tu línea de neuromodulación y con tu argumento de network theory: el punto no es &#39;tu paciente tiene tal red&#39;, es &#39;con estos datos, qué tan seguro puedo estar de que es esa red antes de apuntar el estimulador ahí&#39; — es la pieza que te falta para el capítulo donde defiendes que la psiquiatría de precisión sin cuantificación de incertidumbre es solo personalización de marketing. Es preprint sin peer review todavía, así que cítalo como framework metodológico emergente, no como estándar de práctica.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.08.17.744952" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.17.744952</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Research Square (preprint) · 2026-08-20 · preprint</div>
+        <h3 class="r3-title">Calibración de riesgo académico que sobrevive el cambio de cohorte: el problema que tiene AMAUTA cada ciclo, resuelto con datos reales</h3>
+        <p class="r3-hook">Un preprint en Research Square construye, sobre el Open University Learning Analytics Dataset, un pipeline de calibración de probabilidad &#39;target-adaptive&#39; que se mantiene confiable cuando cambia el curso y cambia la prevalencia de abandono/riesgo entre cohortes — probado en 28 combinaciones curso-corte con muestras de calibración disjuntas por alumno, exactamente el tipo de validación externa que exige la sección de señales de calidad de este dossier. Jaflo, este es el ítem de educación de precisión del día y aterriza directo en AMAUTA/USAMEDIC: es el problema que tienes cada ciclo —un modelo de riesgo entrenado con la cohorte de marzo no necesariamente calibra bien para la cohorte de agosto— y aquí hay un método concreto, no solo la idea, para corregir ese corrimiento antes de decirle a un alumno &#39;estás en riesgo de no aprobar el ENAM&#39;. Guárdalo como referencia técnica si en algún momento formalizas un sistema de alerta temprana de AMAUTA con datos reales de simulacros.</p>
+        <a class="r3-link" href="https://doi.org/10.21203/rs.3.rs-10648448/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10648448/v1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Child &amp; Adolescent Psychology · 2026-08-21 · review</div>
+          <div class="r10-title">RDoC y depresión juvenil: el eje ambiental que el framework prometía y casi nadie mide</div>
+          <div class="r10-line">Revisión que encuentra que los estudios de depresión juvenil que usan RDoC casi no miden variables ambientales (solo 36% mide inestabilidad económica), dejando el eje ambiente-biología del framework prácticamente vacío en la práctica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a generar presión dentro del propio campo RDoC para exigir medición ambiental estandarizada; es el tipo de crítica que puedes citar cuando defiendas HiTOP/RDoC ante colegas sin romantizarlos — matices útiles para el libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/15374416.2026.2718199" target="_blank" rel="noopener">↗ doi.org/10.1080/15374416.2026.2718199</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Autism and Developmental Disorders · 2026-08-20 · paper</div>
+          <div class="r10-title">Robótica + IA + realidad virtual para enseñar ciencias a niños con TEA: primer cuasi-experimental con analítica de aprendizaje</div>
+          <div class="r10-line">Estudio cuasi-experimental (n=34) con robótica educativa + IA + realidad virtual mejora comprensión de ciencias y compromiso social en niños con TEA en aula regular, con analítica de aprendizaje generada por IA como parte de la evaluación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vas a ver más cuasi-experimentales pequeños de este tipo antes de que aparezcan RCTs grandes; caso concreto de intersección TEA + educación adaptativa para contenido AMAUTA/TEA.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10803-026-07485-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s10803-026-07485-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher · 2026-08-21 · paper</div>
+          <div class="r10-title">22 revistas de educación médica y sus reglas sobre IA: gobernanza, ética y transparencia por sobre todo</div>
+          <div class="r10-line">Análisis de contenido de las guías de 22 revistas de educación médica sobre uso de IA en el proceso editorial: gobernanza responsable, protección de estándares éticos y transparencia son los tres ejes que dominan.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las revistas de educación médica van a converger hacia checklists tipo COPE-AI en los próximos 12 meses; referencia útil si editas o revisas para una revista de educación médica.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159x.2026.2712427" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159x.2026.2712427</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neurological Sciences · 2026-08-21 · review</div>
+          <div class="r10-title">IA + neuroimagen para TEA: la revisión que documenta por qué el campo sigue sin un modelo desplegable</div>
+          <div class="r10-line">Revisión narrativa sobre IA + neuroimagen para diagnóstico de TEA que documenta las limitaciones reales del campo: muestras chicas, poca diversidad poblacional, protocolos heterogéneos y generalización pobre.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Seguirá siendo terreno de reviews de limitaciones más que de modelos desplegables por 2-3 años; contraparte crítica útil cuando alguien te venda un &#39;diagnóstico de TEA por IA&#39; ya listo.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10072-026-09334-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s10072-026-09334-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medicina Clínica · 2026-08-21 · review</div>
+          <div class="r10-title">Cuándo el LLM sí mejora el diagnóstico diferencial (y cuándo no): revisión española sobre razonamiento clínico con IA</div>
+          <div class="r10-line">Revisión narrativa que muestra que los LLM mejoran el diagnóstico diferencial cuando los usan clínicos entrenados en flujos de trabajo estructurados, pero el uso pasivo genera sesgos y la colaboración clínico-IA no siempre supera al LLM solo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a alimentar el debate sobre cuándo delegar vs. supervisar al LLM en razonamiento clínico; aplica directo a cómo entrenas residentes para ENAM/Residentado con apoyo de IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.medcli.2026.107567" target="_blank" rel="noopener">↗ doi.org/10.1016/j.medcli.2026.107567</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (Corea del Sur) · 2026-08-21 · preprint</div>
+          <div class="r10-title">Un LLM &#39;human-in-the-loop&#39; sobre Model Context Protocol que sí conecta historia clínica y literatura para diagnóstico diferencial</div>
+          <div class="r10-line">Preprint surcoreano construye un sistema LLM human-in-the-loop sobre el Model Context Protocol que integra historia clínica electrónica y literatura para proponer diagnósticos diferenciales, resolviendo el problema de que los sistemas actuales interpretan EMR y generan diagnóstico por separado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El MCP se va a volver el estándar de facto para conectar LLMs clínicos a fuentes de datos reales; vale la pena seguirlo de cerca para tu línea de IA aplicada a investigación/educación, incluso como arquitectura de referencia.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.08.18.26359085" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.18.26359085</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open · 2026-08-20 · paper</div>
+          <div class="r10-title">Pacientes simulados con IA generativa en enseñanza de psiquiatría de cuarto año en Aston Medical School</div>
+          <div class="r10-line">Evaluación mixta de pacientes simulados con IA generativa en psiquiatría de cuarto año: los estudiantes lo valoran para preparar OSCE y escenarios de alto riesgo (evaluación de suicidio), pero el compromiso cae si es la primera exposición al tema.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vas a ver más &#39;lessons learned&#39; como este antes que evidencia de eficacia dura; plantilla de implementación si AMAUTA/USAMEDIC evalúa meter pacientes simulados con IA a la enseñanza de psiquiatría.</div>
+          <a class="r10-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13325035/" target="_blank" rel="noopener">↗ pmc.ncbi.nlm.nih.gov/articles/PMC13325035</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Child &amp; Adolescent Psychiatry · 2026-08-21 · paper</div>
+          <div class="r10-title">Cómo varía realmente el manejo del TDAH entre países europeos: encuesta del European ADHD Guidelines Group</div>
+          <div class="r10-line">Encuesta del European ADHD Guidelines Group mapea cómo varía el manejo clínico del TDAH entre países europeos, exponiendo que varias guías nacionales están desactualizadas o simplemente no existen.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a usarse como argumento para armonizar guías europeas de TDAH; comparador útil cuando expliques por qué el manejo de TDAH en Perú difiere tanto según a quién le preguntes.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00787-026-03161-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00787-026-03161-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: CNNI · 2026-08-20 · paper</div>
+          <div class="r10-title">En esquizofrenia, el déficit social en el Trust Game no es &#39;aprender distinto&#39; — es casi no aprender del feedback positivo</div>
+          <div class="r10-line">fMRI con Trust Game y modelo Rescorla-Wagner en 29 pacientes con esquizofrenia vs. 45 controles muestra que el paciente promedio con SZ está mejor explicado por un &#39;modelo nulo&#39; que por un modelo de aprendizaje social real, con tasas de aprendizaje reducidas y peor ajuste conductual.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Evidencia computacional dura para tu línea de network theory/psiquiatría dimensional: el déficit de cognición social en SZ como falla de un parámetro computacional específico, no como síntoma difuso — cítalo frente a descripciones puramente fenomenológicas.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsc.2026.08.003" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsc.2026.08.003</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Education for Primary Care · 2026-08-21 · paper</div>
+          <div class="r10-title">Pacientes simulados con IA para entrenar a técnicos médicos con acceso clínico limitado</div>
+          <div class="r10-line">Evaluación de factibilidad de pacientes simulados con IA (plataforma SimFlow.ai) para entrenar a técnicos médicos de combate británicos con exposición clínica limitada, midiendo confianza clínica pre/post simulación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El modelo &#39;paciente simulado con IA para poblaciones con acceso clínico limitado&#39; se va a replicar en contextos civiles; aplicable directo si AMAUTA quiere ampliar práctica clínica simulada para alumnos de provincia.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/14739879.2026.2714838" target="_blank" rel="noopener">↗ doi.org/10.1080/14739879.2026.2714838</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un AUC alto sin &#39;decision rule&#39; no es psiquiatría de precisión, es estadística bonita: el Personal View de Lancet Psychiatry lo dice explícito para TDAH, y aplica igual a cualquier biomarcador que uses en consulta.</li><li>La incertidumbre del mapa individual también se puede medir: Precision Confidence Mapping bootstrapea la confianza de cada asignación de red antes de apuntar un estimulador — precisión sin cuantificar incertidumbre es solo personalización de marketing.</li><li>En esquizofrenia, el déficit de cognición social a veces no es que aprenden peor del feedback social — es que casi no lo procesan como señal de aprendizaje (el modelo nulo explica mejor su conducta que cualquier modelo de aprendizaje).</li><li>RDoC lleva años prometiendo integrar ambiente y biología, pero en la práctica solo ~36% de los estudios de depresión juvenil que lo usan miden algo tan básico como inestabilidad económica.</li><li>Un modelo de riesgo académico que funciona en marzo puede fallar en agosto si no calibra para el corrimiento de cohorte — el mismo problema que tendría cualquier sistema de alerta temprana de AMAUTA si se entrena una vez y no se recalibra.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué &#39;decision rule&#39; explícita tendría sentido publicar junto a tus propios modelos o heurísticas de estratificación en consulta — qué hace el clínico distinto si el score es alto vs. bajo?</li><li>¿Vale la pena adaptar el enfoque de Precision Confidence Mapping (cuantificar confianza de la asignación) a tus propias lecturas de neuroimagen o EEG en el HVLH, aunque sea de forma cualitativa?</li><li>¿Qué pasaría si aplicas el Trust Game con modelo Rescorla-Wagner a un subgrupo de pacientes con rasgos de espectro autista o TDAH — el &#39;modelo nulo&#39; domina igual, o es específico de esquizofrenia?</li><li>Si AMAUTA/USAMEDIC construyera un sistema de alerta temprana para riesgo de reprobar el ENAM, ¿qué tan distinta sería la calibración entre la cohorte de marzo y la de agosto, y cómo lo medirías?</li><li>¿Qué feedback te daría un grupo de residentes de cuarto año si les metes pacientes simulados con IA para escenarios de riesgo suicida — se parecería al patrón de Aston (útil para OSCE, débil como primera exposición)?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/carrete IG: &#39;Tu AUC no significa nada si no me dices qué hago distinto con el paciente&#39; — usando el framework de decision rules de Lancet Psychiatry ADHD como gancho.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro BMSE: &#39;Precisión sin incertidumbre es marketing&#39; — usando Precision Confidence Mapping como caso ancla para el argumento de que todo score individualizado necesita su propio intervalo de confianza.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper corto o carta al editor proponiendo una decision rule explícita para algún biomarcador o heurística que ya uses en consulta en el HVLH, inspirado en el marco de target trial emulation de Garcia-Argibay et al.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido para AMAUTA: comparar el patrón de Aston (pacientes IA sí sirven para OSCE/alto riesgo, no como primera exposición) con cómo introducirías pacientes simulados con IA en la prep de ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota técnica para colegas: qué es el Model Context Protocol y por qué el sistema human-in-the-loop del preprint coreano es una arquitectura de referencia más sana que un chatbot suelto para diagnóstico diferencial.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">The Lancet Psychiatry</span><span class="tag ">bioRxiv</span><span class="tag ">medRxiv</span><span class="tag ">Research Square (preprint)</span><span class="tag ">Journal of Clinical Child &amp; Adolescent Psychology</span><span class="tag ">Journal of Autism and Developmental Disorders</span><span class="tag ">Medical Teacher</span><span class="tag ">Neurological Sciences</span><span class="tag ">Medicina Clínica</span><span class="tag highlight">BJPsych Open</span><span class="tag ">European Child &amp; Adolescent Psychiatry</span><span class="tag ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</span><span class="tag ">Education for Primary Care</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (PubMed/MEDLINE) · bioRxiv (resolución de DOI) · medRxiv (resolución de DOI) · PMC full text. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 23 de agosto de 2026.</div>
+</div>
+</body>
+</html>
