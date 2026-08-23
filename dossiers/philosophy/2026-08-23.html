@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-08-23 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">23 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">60</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">JMIR Infodemiology — 20 ago 2026 · paper · 2026-08-20</div>
+        <h3 class="r3-title">Multilayered Epistemic Disruption in AI-Driven Health Misinformation: Conceptual Framework and Viewpoint</h3>
+        <p class="r3-hook">Jaflo, Malkoç propone el Multilayered Epistemic Disruption Framework (MEDF): la desinformación de salud generada por IA no ataca la confianza de un solo golpe, sino en cuatro capas simultáneas — discursiva (terminología médica fluida + citas fabricadas como señal de credibilidad), biométrica (deepfakes de voz/rostro de médicos reales: solo ~60% se detectan correctamente y ~80% se perciben idénticos al original), temporal (el &#39;coro sintético&#39;: fuentes aparentemente independientes fabricadas casi al mismo tiempo) y sistémica (erosión acumulada: quienes ven desinformación con frecuencia tienen 1.66 veces más probabilidad de desconfiar de las instituciones de salud). Esto extiende con estructura el &#39;vacío epistémico&#39; que viste ayer en Doctorow y te da algo más útil que la queja genérica: un mapa de qué capa exactamente falla cuando un detector de deepfakes o un prebunking no basta. Te importa directo para tu comité de ética HVLH y para tu protocolo anti-fabricación de contenido: como creador en IG/YouTube, la capa biométrica es tu riesgo real (clonación de tu propia voz/imagen), y el paper te da lenguaje explícito para diseñar una defensa por capas en vez de un solo &#39;verificador de hechos&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/96664" target="_blank" rel="noopener">↗ doi.org/10.2196/96664</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Medical Ethics — 20 ago 2026 · paper · 2026-08-20</div>
+        <h3 class="r3-title">Rethinking epistemic injustice in psychiatric digital phenotyping from the perspective of ignorance</h3>
+        <p class="r3-hook">Jaflo, Yang da vuelta el argumento estándar sobre fenotipado digital en psiquiatría: la injusticia epistémica no viene solo de que el algoritmo &#39;sepa&#39; más que el paciente, sino de tres tipos específicos de ignorancia (fenomenológica, objetiva, estructural) que, bien diseñadas, pueden convertirse en palanca de empoderamiento epistémico del paciente en vez de ser solo un obstáculo a eliminar. Esto es munición de mecanismo directo para tu línea de psiquiatría de precisión (HiTOP/RDoC + digital phenotyping): en vez de tratar los datos pasivos del celular/wearable como un sustituto silencioso del relato del paciente, el marco te obliga a preguntar qué ignorancia estructural específica estás explotando y si el diseño la convierte en poder para el paciente o solo en poder para el clínico/algoritmo. Úsalo para tu libro de psicopatología dimensional: es el argumento que le falta al capítulo de fenotipado digital para no sonar solo tecnooptimista, y es exactamente el tipo de pregunta que tu comité HVLH debería exigir antes de aprobar cualquier herramienta de fenotipado que evalúes o diseñes.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/jme-2025-110858" target="_blank" rel="noopener">↗ doi.org/10.1136/jme-2025-110858</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Medicina Clínica (Barc) — 21 ago 2026 · review · 2026-08-21</div>
+        <h3 class="r3-title">Generative artificial intelligence in clinical reasoning and differential diagnosis in internal medicine</h3>
+        <p class="r3-hook">Jaflo, Corral-Gudino et al. no se quedan en &#39;la IA ayuda o no ayuda&#39; al razonamiento clínico: proponen un framework práctico estratificado por grado de incertidumbre diagnóstica, con un modelo &#39;physician-in-the-loop&#39; donde el LLM amplifica, desafía y hace explícito el razonamiento bajo supervisión humana crítica — y son honestos con el dato incómodo: el uso pasivo genera sesgos, y la colaboración humano-IA no siempre supera al LLM solo. Es la pieza que le faltaba a tu línea de razonamiento clínico + IA-enhancement: no es una postura binaria, es una regla operativa —a qué nivel de incertidumbre diagnóstica consultas al modelo, y cómo auditas si el residente lo usó con criterio o por pereza. Tradúcelo directo en un módulo de AMAUTA/USAMEDIC: en vez de &#39;usa o no uses IA para el ENAM&#39;, un checklist estratificado por incertidumbre que enseñe cuándo el LLM debe desafiar la hipótesis diagnóstica del residente y cuándo debe quedarse callado.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.medcli.2026.107567" target="_blank" rel="noopener">↗ doi.org/10.1016/j.medcli.2026.107567</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS Computational Biology — 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">The perils of omitting omissions when modeling evidence accumulation</div>
+          <div class="r10-line">Leng et al. muestran que descartar los ensayos &#39;sin respuesta&#39; al modelar decisiones bajo presión de tiempo (modelos de acumulación de evidencia tipo drift-diffusion) sesga sistemáticamente los parámetros cognitivos estimados, no es un detalle técnico inocuo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto se vuelve requisito de revisión por pares para cualquier estudio de latencia de decisión clínica que uses en tu línea RENACYT — vale la pena auditar ya tus propios protocolos de tiempo de respuesta diagnóstica antes de que un revisor te lo exija.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pcbi.1014667" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pcbi.1014667</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Bulletin — 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">A First-Person Account: Living with Chronic Epistemic Invalidation</div>
+          <div class="r10-line">Relato en primera persona de vivir con invalidación epistémica crónica —ser descreído sistemáticamente por el sistema de salud— publicado como pieza propia en una revista de primer nivel en psiquiatría.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este formato (relato fenomenológico + marco conceptual explícito) gana más espacio en revistas top de psiquiatría como complemento del dato duro — un molde directo para un capítulo testimonial en tu libro de psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/schbul/sbag029" target="_blank" rel="noopener">↗ doi.org/10.1093/schbul/sbag029</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medicine and Philosophy — 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">Predictors in the Clinic: Predicting Patient Choice and Preference</div>
+          <div class="r10-line">Grill y Campano distinguen elección, tipos de preferencia y preferencias sobre el método de decisión mismo, para argumentar que los &#39;Patient Preference Predictors&#39; con IA no pueden tratar toda preferencia estimada como igualmente legítima de respetar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta taxonomía se vuelve la referencia obligada cuando las directivas anticipadas psiquiátricas empiecen a apoyarse en predictores de preferencia basados en IA — útil ya para tu línea de ética en investigación con IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/jmp/jhag025" target="_blank" rel="noopener">↗ doi.org/10.1093/jmp/jhag025</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Health Care Analysis — 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">Synthetic Medical Data vs. The Four Principles: Ethical Trade-Offs and Zombie Data</div>
+          <div class="r10-line">Friedman y Smajdor muestran que los datos médicos sintéticos generados por IA, vendidos como solución ética &#39;neutral&#39; de privacidad, en realidad chocan con autonomía y beneficencia de los cuatro principios clásicos de bioética.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que tu comité HVLH tendrá que tomar postura pronto sobre &#39;zombie data&#39; en tus propios pipelines de investigación con IA — este paper te da el mapa conceptual antes de que llegue la propuesta concreta.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10728-026-00596-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s10728-026-00596-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica — 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">Cognitive biases, risk perception, and investment decision-making under information asymmetry: A moderated mediation study</div>
+          <div class="r10-line">En 620 inversionistas, los sesgos de anclaje y encuadre predicen peor toma de decisión financiera solo cuando la asimetría de información es alta —con información completa, el sesgo casi no pesa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el mismo diseño de mediación moderada se replica pronto en decisión diagnóstica bajo información incompleta — un template de estudio que tu equipo RENACYT podría adaptar directo a razonamiento clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107632" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107632</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nursing Ethics — 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">Beyond competence: Epistemic agency, epistemic injustice and ethical professional formation in nursing education</div>
+          <div class="r10-line">Antuna-Casal y Rios argumentan que la &#39;competencia&#39; basada en rúbricas y checklists es éticamente incompleta sin &#39;agencia epistémica&#39; —la capacidad de cuestionar supuestos, no solo ejecutar el estándar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta distinción competencia-vs-agencia-epistémica migra a la literatura de educación médica (formato ENAM) en el próximo año — úsala ya como eje de diseño curricular en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/09697330261476248" target="_blank" rel="noopener">↗ doi.org/10.1177/09697330261476248</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Trauma and Acute Care Surgery — 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">Eastern vs. Western trauma guidelines for resuscitative thoracotomy: A comparative analysis of indications, outcomes, and philosophical approaches</div>
+          <div class="r10-line">En 467 pacientes, las guías EAST (prioriza signos de vida) y WTA (prioriza tiempo de paro) priorizan variables distintas pero identifican subgrupos de sobrevivientes casi idénticos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto empuja hacia una guía unificada EAST-WTA — caso de enseñanza perfecto de que dos marcos de decisión &#39;filosóficamente&#39; distintos pueden ser localmente equivalentes si se aplican con disciplina.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/TA.0000000000005166" target="_blank" rel="noopener">↗ doi.org/10.1097/TA.0000000000005166</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Disability and Rehabilitation: Assistive Technology — 22 ago 2026 · paper · 2026-08-22</div>
+          <div class="r10-title">Generative AI as a cognitive assistive technology for adults with dyslexia: the role of anxiety, working memory, and metacognitive regulation</div>
+          <div class="r10-line">En 547 adultos con dislexia, la ansiedad basal predice caídas longitudinales en memoria de trabajo y regulación metacognitiva, y son esas caídas —no la ansiedad directamente— las que reducen el uso adaptativo de IA generativa como apoyo cognitivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que las herramientas de IA asistiva para neurodivergencia empiezan a incorporar &#39;scaffolding&#39; metacognitivo sensible a ansiedad como estándar de diseño — aplicable directo a tu línea TDAH/TEA y a herramientas AMAUTA para aprendices neurodivergentes.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/17483107.2026.2715246" target="_blank" rel="noopener">↗ doi.org/10.1080/17483107.2026.2715246</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biosystems — 22 ago 2026 · paper · 2026-08-22</div>
+          <div class="r10-title">Risk attitude and choice consistency identify robust behavioral profiles in decision-making under risk</div>
+          <div class="r10-line">En 67 adultos sanos, cruzar actitud al riesgo con consistencia de elección revela dos perfiles conductuales reproducibles —uno de mayor variabilidad y menor consistencia, otro casi neutral y estable— como base para análisis neurales de perfiles de decisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice estudios de neuroimagen de seguimiento mapeando estos dos perfiles a dinámicas neurales distintas —metodológicamente cercano a la ambición de perfilado dimensional de tu línea de psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biosystems.2026.105927" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biosystems.2026.105927</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Emergency Radiology — 20 ago 2026 · paper · 2026-08-20</div>
+          <div class="r10-title">Artificial intelligence and the phantom pneumothorax: Clinical reasoning still matters</div>
+          <div class="r10-line">Caso real: una IA de lectura de radiografías marcó un neumotórax falso-positivo tras un implante de marcapasos, pero la discordancia clínico-radiológica (acceso venoso contralateral, estabilidad hemodinámica) evitó una intervención innecesaria.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice más reportes de &#39;falso positivo de IA atrapado por razonamiento clínico&#39; a medida que los servicios de emergencia adoptan triage por IA — caso de enseñanza directo y concreto para un módulo de Competency Lab sobre cuándo anular al algoritmo.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10140-026-02533-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s10140-026-02533-8</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La desinformación de salud por IA no es peligrosa por ser más convincente: ataca cuatro capas de confianza a la vez (discurso, biometría, tiempo, sistema), y parchar solo una (ej. detectores de deepfake) deja intacta toda la cascada restante.</li><li>La &#39;ignorancia&#39; en el fenotipado digital psiquiátrico no es solo un déficit a corregir: bien diseñada, puede ser la palanca misma que empodera al paciente frente al clínico o al algoritmo.</li><li>Omitir los &#39;no-respuesta&#39; al modelar decisiones bajo presión de tiempo no es un detalle técnico menor: sesga sistemáticamente los parámetros cognitivos que se cree estar midiendo.</li><li>Dos guías clínicas que priorizan variables opuestas (signos de vida vs. tiempo de paro) pueden converger en identificar a los mismos sobrevivientes — el marco &#39;correcto&#39; importa menos que aplicarlo con disciplina.</li><li>La ansiedad no reduce el uso de IA como muleta cognitiva por generar dependencia excesiva, sino por erosionar primero la memoria de trabajo y la regulación metacognitiva que permitirían usarla bien.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué capa de la cascada MEDF (discursiva, biométrica, temporal, sistémica) es más vulnerable en tu propio contenido de IG/YouTube, y qué protocolo de verificación la cubre hoy?</li><li>Si el fenotipado digital psiquiátrico puede diseñarse para convertir ignorancia en empoderamiento del paciente, ¿cómo se vería esa misma lógica aplicada a tus propias herramientas de evaluación dimensional (HiTOP/RDoC)?</li><li>¿Cuántos de tus estudios de latencia de decisión clínica están descartando silenciosamente los casos de &#39;no decidió&#39;, y qué sesgo podría estar introduciendo eso en tus hallazgos RENACYT?</li><li>¿En qué punto de incertidumbre diagnóstica debería un residente de AMAUTA/USAMEDIC consultar al LLM, y cómo auditarías si lo hizo por criterio o por pereza?</li><li>¿Qué &#39;ignorancia productiva&#39; —información que deliberadamente no verificas de una IA— usarías como diseño consciente, no como negligencia, en tu propio flujo de investigación con IA?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG/YT &#39;Las 4 capas donde la IA te miente en salud&#39; (MEDF): cómo detectar desinformación médica generada por IA capa por capa, con foco en clonación de voz/imagen de médicos.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/comentario editorial aplicando el marco de &#39;ignorancia productiva&#39; del fenotipado digital psiquiátrico al diseño de una herramienta de evaluación dimensional en tu línea de precision-psychiatry.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de razonamiento clínico centrado en el caso del neumotórax fantasma como ejemplo canónico de &#39;cuándo anular a la IA&#39;, usando el framework de incertidumbre diagnóstica de Medicina Clínica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto para Aprendiz Experto: &#39;agencia epistémica vs. competencia&#39;, usando el paper de educación en enfermería como gancho para preguntar si tus checklists de ENAM producen ejecutores o pensadores.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica para tu equipo RENACYT sobre por qué modelar los &#39;no-respuesta&#39; (omisiones) en estudios de tiempo de decisión clínica, citando el paper de PLoS Computational Biology como precedente.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">JMIR Infodemiology</span><span class="tag ">Journal of Medical Ethics</span><span class="tag ">Medicina Clínica</span><span class="tag ">PLoS Computational Biology</span><span class="tag ">Schizophrenia Bulletin</span><span class="tag ">Journal of Medicine and Philosophy</span><span class="tag ">Health Care Analysis</span><span class="tag ">Acta Psychologica</span><span class="tag ">Nursing Ethics</span><span class="tag ">Journal of Trauma and Acute Care Surgery</span><span class="tag ">Disability and Rehabilitation: Assistive Technology</span><span class="tag ">Biosystems</span><span class="tag ">Emergency Radiology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI E-utilities (esearch+esummary+efetch, pdat 2026/08/20-23) · Crossref (verificación de fecha epub por DOI) · WebSearch/WebFetch (Farnam Street, Substack, X, Reddit, YouTube — sin hallazgos verificables dentro de la ventana de 48h) · Consensus (papers reales pero fuera de ventana temporal, descartados). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 23 de agosto de 2026.</div>
+</div>
+</body>
+</html>
