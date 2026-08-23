@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-08-23 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">23 de agosto de 2026 · 2026-W34 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">121</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">93</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">3</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">The Lancet · 2026-08-22 · review</div>
+        <h3 class="r3-title">Risk of transmission of amyloid β pathology via transfused blood products</h3>
+        <p class="r3-hook">Viewpoint del MRC Prion Unit at UCL (con Zetterberg y Collinge como firmantes) que plantea, apoyado en datos epidemiológicos recientes sobre transmisión de riesgo hemorrágico entre donante y receptor, que la angiopatía amiloide cerebral y la patología amiloide β podrían transmitirse por hemoderivados, igual que ocurrió en casos raros de vCJD por priones. Es Lancet puro, journal de referencia, y cae directo en tu interfaz neuropsiquiátrica secundaria: demencia con un mecanismo iatrogénico inédito que todavía no tiene protocolo de manejo claro. Para tu comité de ética del HVLH es material de vigilancia temprana —qué preguntar antes de que exista guía formal de bancos de sangre— y para tu docencia ENAM/Residentado es un caso de razonamiento por analogía biológica (priones → amiloide β) que vale la pena diseccionar en clase. Úsalo como gancho de contenido sobre cómo la evidencia de seguridad transfusional puede reescribir supuestos que se daban por sentados en neurodegeneración.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S0140-6736(26)00767-1" target="_blank" rel="noopener">↗ doi.org/10.1016/S0140-6736(26)00767-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">The World Journal of Biological Psychiatry · 2026-08-22 · review</div>
+        <h3 class="r3-title">Advances in non-invasive brain stimulation for borderline personality disorder: clinical targets and future directions — an updated narrative review</h3>
+        <p class="r3-hook">Revisión narrativa actualizada que mapea la estimulación no invasiva (rTMS, tDCS) en trastorno límite de personalidad por objetivo clínico: DLPFC derecho mejora impulsividad, DLPFC izquierdo mejora regulación emocional y cognición fría, y la corteza ventrolateral prefrontal derecha emerge como blanco para sensibilidad interpersonal y respuesta al rechazo. Encaja directo en tu pilar de neuromodulación y en tu línea de psiquiatría dimensional: la lateralización por dominio sintomático es exactamente el tipo de mapeo función-síntoma que defiendes frente al enfoque categorial DSM. Para AMAUTA/USAMEDIC es contenido de alto valor porque TLP sigue siendo un vacío terapéutico frecuente en el examen y en la práctica clínica real. Úsalo como base de una clase o hilo sobre &#39;qué corteza estimular según qué síntoma domina en TLP&#39; — con la salvedad honesta que la revisión reporta: evidencia aún preliminar, sin ensayos sham-controlados grandes.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/15622975.2026.2720930" target="_blank" rel="noopener">↗ doi.org/10.1080/15622975.2026.2720930</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">International Review of Psychiatry · 2026-08-22 · review</div>
+        <h3 class="r3-title">Precision medicine for mood disorders in the big data era</h3>
+        <p class="r3-hook">Revisión narrativa del grupo de Psiquiatría de Johns Hopkins que organiza el estado del arte de métodos computacionales en trastornos del ánimo según tres dimensiones — descubrimiento, entrega clínica y diseminación — con los retos y oportunidades de cada una. Es material casi hecho a medida para tu pilar de psiquiatría de precisión y tu línea de IA aplicada a investigación: te da un marco de tres ejes para ordenar cualquier paper de computational psychiatry que te llegue de aquí en adelante, en vez de tratarlos como hallazgos sueltos. Úsalo como columna vertebral de un capítulo de libro sobre medicina de precisión en psiquiatría, o como estructura de una clase para residentes sobre cómo distinguir un hallazgo computacional que ya cambia la práctica de uno que todavía está en fase de descubrimiento.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/09540261.2026.2717216" target="_blank" rel="noopener">↗ doi.org/10.1080/09540261.2026.2717216</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Network Meta-Analysis en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Guías &amp; Consensos en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Meta-Analysis en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En TLP, la estimulación del DLPFC derecho mejora impulsividad y la del DLPFC izquierdo mejora regulación emocional/cognición fría: la lateralización importa tanto como el hecho de estimular (World J Biol Psychiatry, 10.1080/15622975.2026.2720930).</li><li>Adolescentes autistas tienen autoestima significativamente más baja que sus pares no autistas (g=-0.47), y esa autoestima baja se asocia con depresión con efecto grande (r=-0.59): un blanco de intervención concreto y medible, no solo un síntoma secundario (Autism, 10.1177/13623613261433170).</li><li>En consejería sobre ácido valproico en mujeres en edad reproductiva, el problema no es solo la restricción regulatoria: pacientes y cuidadores reportan desempoderamiento por comunicación de riesgo deficiente y perciben los programas de prevención de embarazo como paternalistas (Epilepsia Open, 10.1002/epi4.70342).</li><li>En delirium de UCI, las familias no son solo acompañantes: activamente co-orientan al paciente y son el principal recurso de afrontamiento, mientras gestionan su propio distrés — la intervención psicosocial en delirium debería diseñarse para la díada, no solo para el paciente (Crit Care, 10.1186/s13054-026-06232-1).</li><li>La angiopatía amiloide cerebral y la patología amiloide β podrían transmitirse por hemoderivados, por el mismo mecanismo de siembra proteica que explica la transmisión rara de priones vía transfusión: un mecanismo iatrogénico de demencia que aún no tiene protocolo de banco de sangre (Lancet, 10.1016/S0140-6736(26)00767-1).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la lateralización DLPFC derecho/izquierdo en TLP mapea impulsividad versus regulación emocional, ¿esto es evidencia a favor de tratar el TLP como un perfil de dominios HiTOP/RDoC más que como una categoría única, y cómo se traduce eso a un protocolo clínico real?</li><li>¿Debería la autoestima medirse de rutina en la evaluación clínica de adolescentes autistas, dado que un efecto r=-0.59 con depresión sugiere que es tan predictivo como muchos síntomas &#39;core&#39; que sí se tamizan sistemáticamente?</li><li>¿Cómo se comunica consejería sobre valproico sin caer ni en el paternalismo que denuncian las pacientes ni en minimizar el riesgo teratogénico real — y qué tan trasladable es la evidencia de países de altos ingresos al contexto peruano?</li><li>Si las familias son el principal recurso de afrontamiento en delirium de UCI, ¿qué intervención psicosocial mínima viable podría entrenarse en cuidadores peruanos sin depender de personal especializado escaso?</li><li>¿Qué tan lejos está un banco de sangre latinoamericano de siquiera plantearse la pregunta de riesgo de transmisión de amiloide β, y debería el tamizaje de donantes de alto riesgo (historia de procedimientos neuroquirúrgicos) empezar a discutirse ya?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel: &#39;Un cerebro, dos blancos&#39; — DLPFC derecho vs izquierdo en neuromodulación para TLP, según síntoma dominante (impulsividad vs regulación emocional), con la salvedad de evidencia aún preliminar (World J Biol Psychiatry, 10.1080/15622975.2026.2720930).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de libro de psiquiatría de precisión: usar el marco de tres ejes (descubrimiento / entrega clínica / diseminación) de la revisión de Johns Hopkins como columna vertebral para organizar la evidencia computacional en trastornos del ánimo (Int Rev Psychiatry, 10.1080/09540261.2026.2717216).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Pieza Aprendiz Experto: &#39;La autoestima como síntoma medible&#39; — por qué medir autoestima en adolescentes autistas debería ser rutina, con el dato g=-0.47 y r=-0.59 como ancla (Autism, 10.1177/13623613261433170).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-paper o carta: adaptación de las tres barreras de consejería sobre valproico (desempoderamiento, identidad materna, percepción de paternalismo) al contexto de consulta ambulatoria en Perú, con propuesta de guion de consejería centrado en el paciente (Epilepsia Open, 10.1002/epi4.70342).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase/carrusel para residentes: &#39;¿Puede la sangre transmitir Alzheimer?&#39; — el mecanismo de siembra amiloide β vía hemoderivados explicado con la analogía priónica, como caso de razonamiento clínico por analogía biológica (Lancet, 10.1016/S0140-6736(26)00767-1).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">The Lancet</span><span class="tag ">The World Journal of Biological Psychiatry</span><span class="tag ">International Review of Psychiatry</span><span class="tag ">Autism</span><span class="tag ">Neurological Sciences</span><span class="tag ">Research in Developmental Disabilities</span><span class="tag ">Archives of Suicide Research</span><span class="tag ">Critical Care</span><span class="tag ">Epilepsia Open</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 23 de agosto de 2026.</div>
+</div>
+</body>
+</html>
