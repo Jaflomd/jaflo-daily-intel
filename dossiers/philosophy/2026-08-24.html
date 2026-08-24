@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-08-24 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">24 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">55</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">LessWrong · Richard Ngo — 24 ago 2026 · blog · 2026-08-24</div>
+        <h3 class="r3-title">What just happened? Pragmatism and Pessimization</h3>
+        <p class="r3-hook">Jaflo, Ngo (ex-OpenAI, investigador de alineamiento) propone un mecanismo preciso al que llama &#39;pesimización&#39;: cuando alguien produce sistemáticamente lo contrario de su objetivo declarado —investigadores de &#39;alineamiento&#39; que terminaron acelerando capacidades de IA vía RLHF y &#39;IA constitucional&#39;— el fallo no es mala fe puntual sino razonamiento motivado (justificar el trabajo alineado con el propio incentivo de carrera) sumado a sicofancia comunitaria (nadie critica públicamente a quien tiene poder). Es munición directa para tu comité de ética HVLH: la pregunta no es solo &#39;¿este estudio/colega tiene conflicto de interés declarado?&#39; sino &#39;¿la comunidad que lo rodea tiene un mecanismo real para hacerle fricción, o solo evita incomodarlo?&#39; — exactamente el punto ciego que un comité formal puede blindar y una cultura de silencio no. Úsalo también para tu línea de ai-enhancement: antes de adoptar una herramienta de IA para investigación o docencia porque &#39;ahorra tiempo&#39;, aplica el mismo test — ¿el resultado que estoy produciendo es realmente el que digo perseguir, o estoy racionalizando conveniencia como rigor?</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/yaz8nx4ogZmiqHzt7/what-just-happened-pragmatism-and-pessimization" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/yaz8nx4ogZmiqHzt7/wh…</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Intensive Care — 24 ago 2026 · rct · 2026-08-24</div>
+        <h3 class="r3-title">Physician-revised AI-generated drafts are associated with higher ratings of written explanations in end-of-life care in the intensive care unit</h3>
+        <p class="r3-hook">Jaflo, este estudio de escenarios (45 participantes) comparó explicaciones de fin de vida en UCI escritas por médico solo, por IA sola, y por médico revisando un borrador de IA — y el híbrido &#39;médico revisa borrador de IA&#39; superó a ambos extremos en las tres medidas primarias, con la mayor diferencia no en precisión médica sino en tono empático (aunque los autores son cautos: &#39;la importancia clínica de estas diferencias sigue siendo incierta&#39;). Es evidencia directa y mecanística para tu línea de ai-enhancement aplicada a comunicación clínica: el valor de la IA en conversaciones difíciles (dar un diagnóstico psiquiátrico grave, hablar de contención involuntaria) no está en generar el mensaje sino en destrabar el borrador empático que el clínico bajo presión de tiempo no redacta desde cero. Tradúcelo en un módulo concreto del Competency Lab: entrenar a residentes a usar IA como &#39;primer borrador editable&#39; para comunicación de malas noticias, no como respuesta final, con el mismo cuidado de verificación que exiges en tu regla anti-fabricación de citas.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s40560-026-00930-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s40560-026-00930-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Occupational and Environmental Medicine — 24 ago 2026 · paper · 2026-08-24</div>
+        <h3 class="r3-title">A Bayesian Approach to Exposure Risk Characterization and Medical Surveillance Decision-Making in the U.S. Department of Energy</h3>
+        <p class="r3-hook">Jaflo, el mecanismo aquí es transferible aunque el dominio (exposición ocupacional a mercurio) no lo sea: en vez de un umbral binario de &#39;expuesto/no expuesto&#39;, los autores usan distribuciones de probabilidad posterior por categoría de puesto para priorizar a quién vigilar más de cerca — un marco de estratificación de riesgo bayesiana explícita, no una regla fija. Es el mismo movimiento conceptual que defiendes en psiquiatría de precisión: en vez de un corte diagnóstico categorial (cumple/no cumple criterios DSM), una probabilidad posterior de riesgo (de descompensación, de necesidad de neuromodulación, de trayectoria en el espectro TDAH/TEA) que se actualiza con cada dato nuevo del paciente. Es contenido directo para el capítulo de razonamiento dimensional del BMSE: usa este paper como ejemplo extra-clínico de cómo una organización real (el DOE) ya opera con vigilancia priorizada por probabilidad posterior en vez de umbral fijo, y pregúntale a tus residentes por qué la psiquiatría categorial se resiste a hacer lo mismo.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/JOM.0000000000003866" target="_blank" rel="noopener">↗ doi.org/10.1097/JOM.0000000000003866</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Sociology of Health &amp; Illness — sept 2026 (online 24 ago 2026) · paper · 2026-09</div>
+          <div class="r10-title">Rare Diseases as Epistemic Objects: Exploring the Moral Role of Health Systems</div>
+          <div class="r10-line">A partir de entrevistas a pacientes y profesionales chilenos, propone &#39;justicia decisional&#39; como marco: cuando falta protocolo estandarizado, el sistema de salud se vuelve infraestructura moral que decide por conexiones informales, no por evidencia — relevante para tu comité HVLH y para casos sin guía clara en tu consulta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;justicia decisional&#39; se vuelve un término que empieza a citarse en ética clínica de enfermedades poco frecuentes o poco estudiadas —terreno fértil para que tu comité HVLH lo adopte como criterio explícito antes que llegue tarde, vía un caso mediático de invisibilización sistémica.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/1467-9566.70255" target="_blank" rel="noopener">↗ doi.org/10.1111/1467-9566.70255</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Evaluation in Clinical Practice — ago 2026 · paper · 2026-08</div>
+          <div class="r10-title">Sometimes Less Is More: On Sample Size in Medical Research</div>
+          <div class="r10-line">Indrayan y colegas argumentan que para investigación de mecanismo (no de efecto poblacional), un estudio pequeño pero metodológicamente riguroso rinde más que uno grande y ruidoso — munición directa contra la presión de &#39;muestra grande o no publica&#39; que enfrentas como investigador RENACYT.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este argumento gana tracción en journals de metodología clínica en los próximos meses, y te da cobertura citable para defender diseños de mecanismo (n pequeño, medición profunda) en tus propios protocolos de psiquiatría de precisión frente a revisores que piden poder estadístico poblacional.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jep.70577" target="_blank" rel="noopener">↗ doi.org/10.1111/jep.70577</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Humanities — 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">Like a prism: making sense of coercion in contemporary psychiatry through autoethnography</div>
+          <div class="r10-line">Autoetnografía de un trabajador par con psicosis: la coerción psiquiátrica opera menos por contención física que por presión psicológica informal, y resistir la etiqueta de &#39;paciente crónico&#39; fue clave en su recuperación — dato directo para tu línea de psiquiatría dimensional y humanización de la atención.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: casos como este alimentan el giro hacia modelos de atención trauma-informados como estándar de facto en redes de salud mental progresistas antes de que sea obligación normativa — buen material para tu libro de psicopatología para el mundo, capítulo sobre agencia del paciente.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42629180/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42629180</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advances in Physiology Education — 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">Participation in a Medical Academic Olympiad Is Associated With High Intrinsic Motivation and Positive Perceptions of Academic Outcomes</div>
+          <div class="r10-line">677 estudiantes brasileños en una Olimpiada Médica reportan que la competencia académica (no la nota) fue el motor de motivación intrínseca, consolidación de conocimiento y desarrollo de razonamiento clínico — evidencia a favor de formatos tipo simulacro/torneo en AMAUTA/USAMEDIC más allá del banco de preguntas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: formatos de &#39;olimpiada&#39; o liga competitiva se vuelven una palanca de marketing y retención para academias de preparación ENAM/Residentado en Latinoamérica — un pilar de contenido y producto que AMAUTA podría ocupar antes que la competencia lo estandarice.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42627737/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42627737</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La &#39;pesimización&#39; no es hipocresía: es lo que pasa cuando el incentivo de carrera y el objetivo declarado divergen sin que nadie con poder tenga que rendir cuentas por la brecha — el mismo mecanismo aplica a comités de ética que nunca dicen que no.</li><li>Un borrador de IA revisado por el clínico gana no porque la IA sepa medicina, sino porque libera al médico de la primera versión en blanco de un mensaje empático bajo presión de tiempo — el valor está en la edición, no en la generación.</li><li>Sustituir el umbral diagnóstico fijo por una probabilidad posterior que se actualiza con cada dato nuevo del paciente es el mismo movimiento que ya usa el Departamento de Energía de EE.UU. para decidir a quién vigilar por exposición a mercurio — la psiquiatría categorial es la excepción, no la norma en gestión de riesgo real.</li><li>Cuando falta protocolo estandarizado, el sistema de salud no queda &#39;neutral&#39;: decide igual, solo que por conexiones informales y discrecionalidad — la ausencia de guía es en sí misma una decisión moral tomada por default.</li><li>Un estudio pequeño y profundo sobre mecanismo puede rendir más evidencia útil que uno grande y ruidoso sobre efecto poblacional — la presión por &#39;n grande&#39; a veces mide el diseño de estudio equivocado para la pregunta que realmente importa.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué mecanismo tiene hoy tu comité de ética HVLH para generar fricción real a un colega con poder e incentivos desalineados, más allá de declarar conflictos de interés en papel?</li><li>¿Cuántos de tus residentes usan IA para comunicación de malas noticias como respuesta final en vez de como primer borrador editable — y cómo lo detectarías en una evaluación tipo ENAM?</li><li>¿En qué decisión clínica tuya de esta semana usaste de facto un umbral categorial (cumple/no cumple) cuando una probabilidad posterior actualizable habría capturado mejor la incertidumbre real del caso?</li><li>¿Qué paciente tuyo, sin protocolo estandarizado claro, terminó siendo gestionado por &#39;conexión informal&#39; en vez de por evidencia — y qué te dice eso sobre la infraestructura moral de tu propio sistema de salud?</li><li>¿Podrías defender ante un revisor de journal un diseño de estudio pequeño y mecanístico frente a la exigencia estándar de poder estadístico poblacional, y qué necesitarías documentar para lograrlo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT &#39;El test de la pesimización&#39;: 3 preguntas para saber si un colega (o tú mismo) está produciendo lo opuesto de lo que dice perseguir, usando el caso de Ngo sobre alineamiento en IA como gancho.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo del Competency Lab: &#39;IA como primer borrador, no respuesta final&#39; — protocolo de tres pasos para que residentes usen IA en comunicación de malas noticias, basado en el hallazgo de médico-revisa-borrador-de-IA del estudio de Journal of Intensive Care.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del BMSE sobre razonamiento dimensional: usar el marco bayesiano de vigilancia ocupacional del DOE como ejemplo extra-clínico de estratificación por probabilidad posterior, contrastado con el umbral categorial DSM.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o carta editorial corta proponiendo &#39;justicia decisional&#39; (del paper de Sociology of Health &amp; Illness) como criterio explícito de tu comité HVLH para casos psiquiátricos sin protocolo claro.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Piloto de formato &#39;Olimpiada AMAUTA&#39;: liga competitiva de casos clínicos entre cohortes de USAMEDIC, inspirado en el hallazgo de motivación intrínseca del estudio brasileño de Advances in Physiology Education.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">LessWrong (Richard Ngo)</span><span class="tag ">Journal of Intensive Care</span><span class="tag ">Journal of Occupational and Environmental Medicine</span><span class="tag ">Sociology of Health &amp; Illness</span><span class="tag ">Journal of Evaluation in Clinical Practice</span><span class="tag ">Medical Humanities</span><span class="tag ">Advances in Physiology Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: WebSearch · WebFetch · Consensus · PubMed (eutils) · LessWrong. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 24 de agosto de 2026.</div>
+</div>
+</body>
+</html>
