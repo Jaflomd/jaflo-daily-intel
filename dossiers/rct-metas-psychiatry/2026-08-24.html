@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-08-24 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">24 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">31</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">31</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Medical Internet Research, 18 ago 2026 · systematic review + Bayesian network meta-analysis · meta-analysis · 2026-08-18</div>
+        <h3 class="r3-title">Multimodal Digital Therapeutics Enhanced by Task Design and AI for ADHD Core Symptoms and Executive Functions in Children and Adolescents: Systematic Review and Network Meta-Analysis of Randomized Controlled Trials</h3>
+        <p class="r3-hook">Jaflo, esta network meta-analysis Bayesiana (32 RCTs, 2,819 niños y adolescentes con TDAH de 4 a 17 años) compara 4 modalidades de terapéutica digital —tarea única, dual-task cognitivo-motor, y sus versiones potenciadas con IA— y encuentra que el dual-task cognitivo-motor integrado con IA lidera el ranking SUCRA en todos los outcomes: hiperactividad-impulsividad (SUCRA 92.6%, DM -6.84, IC95% -10.37 a -3.31) y función ejecutiva por BRIEF (SUCRA 84.4%, DM -7.75, IC95% -10.06 a -5.43). Te importa directo para tu línea TDAH/TEA y tu línea de IA aplicada a la investigación: es de las primeras NMA que cuantifica cuánto suma específicamente la IA sobre una intervención digital ya validada, no solo &#39;app vs. no-app&#39;. Úsala en AMAUTA/USAMEDIC como el ejemplo de cabecera para enseñar a leer SUCRA en NMA de intervenciones no farmacológicas, y como candidata de cita en el capítulo de TDAH de tu libro de psicopatología.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/95043" target="_blank" rel="noopener">↗ doi.org/10.2196/95043</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">PLoS One, ago 2026 · análisis secundario de RCT factorial 2×2 · rct · 2026-08-20</div>
+        <h3 class="r3-title">Evaluating the performance of EEG based on ANN to predict the effectiveness of tDCS combined evaluative conditioning on obsession symptoms reduction in contamination OCD patients</h3>
+        <p class="r3-hook">Jaflo, este análisis secundario de un RCT factorial 2×2 (48 de 54 pacientes con TOC de contaminación; tDCS real vs. sham + condicionamiento evaluativo de disgusto en 10 sesiones) entrena una red neuronal feedforward optimizada con Gray Wolf Optimizer sobre EEG pre-intervención y predice el cambio en Y-BOCS con RMSE 0.57±0.4 — es decir, el EEG basal más ANN anticipa quién va a responder a tDCS antes de gastar las 10 sesiones. Es el ejemplo perfecto para tu línea de neuromodulación cruzada con psiquiatría de precisión: no solo mide si tDCS funciona, sino que construye el biomarcador que decide a quién ofrecérsela. Cítalo en el capítulo de neuromodulación del BMSE como caso de &#39;predicción de respuesta&#39; y úsalo de gancho para un post AMAUTA sobre por qué el futuro de la neuromodulación es EEG + ML, no ensayo-y-error.</p>
+        <a class="r3-link" href="https://doi.org/10.1371/journal.pone.0354614" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0354614</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">BMC Psychiatry, 17 ago 2026 · RCT · rct · 2026-08-17</div>
+        <h3 class="r3-title">Neurophysiological and autonomic effects of Cognitive Remediation Therapy in schizophrenia: a randomized controlled EEG-GSR study</h3>
+        <p class="r3-hook">Jaflo, este RCT (57 aleatorizados, 48 completaron: 26 con terapia de remediación cognitiva vs. 22 control, 12 semanas) en esquizofrenia ambulatoria muestra que la CRT no solo mejora memoria de trabajo y reconocimiento emocional, sino que deja huella en biomarcadores duros: amplitud P300 aumentada (F(1,46)=18.72, p&lt;.001, η²p=.29), N200, potencia theta y menor respuesta electrodérmica. Para tu línea de psiquiatría dimensional/de precisión es oro: un RCT chico pero con arquitectura &#39;efecto conductual + mecanismo neurofisiológico&#39; en la misma sesión, el estándar que exiges cuando enseñas a leer biomarcadores en clase. Guárdalo como ejemplo de cómo una intervención no farmacológica también deja firma medible en EEG/GSR, y úsalo para discutir con tus residentes qué significa &#39;evidencia proporcional al claim&#39; con un n=48.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12888-026-08491-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08491-2</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">8</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Translational Psychiatry, 18 ago 2026 · RCT fMRI · rct · 2026-08-18</div>
+          <div class="r10-title">Ketamine&#39;s impact on rumination-related brain dynamics: insights from a randomized controlled fMRI trial</div>
+          <div class="r10-line">Jaflo, este RCT fMRI (75 adultos sanos: placebo-placebo vs. placebo-ketamina vs. lamotrigina-ketamina) muestra que la ketamina reduce agudamente un patrón de co-activación cerebral ligado a la rumiación, efecto que la lamotrigina atenúa parcialmente y que se revierte a las 24h.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se citará como evidencia mecanística de por qué la ketamina &#39;corta&#39; la rumiación rápido pero no de forma sostenida — argumento útil para tu línea de precisión al explicar por qué hacen falta biomarcadores de mantenimiento, no solo de respuesta aguda.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41398-026-04392-w" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04392-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR mHealth and uHealth, 21 ago 2026 · systematic review + meta-analysis · meta-analysis · 2026-08-21</div>
+          <div class="r10-title">Effects of Self-Guided Digital Mindfulness Interventions on the Mental Health of Health Care Workers: Systematic Review and Meta-Analysis of Randomized Controlled Trials</div>
+          <div class="r10-line">Jaflo, esta SR+MA (9 RCTs, 3,088 trabajadores de salud) encuentra que el mindfulness digital autoguiado reduce depresión (SMD -0.44), ansiedad (SMD -0.29) y estrés percibido (SMD -0.42), pero con certeza de evidencia baja a muy baja y adherencia de solo 19-56%.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la citarán en marketing de apps de bienestar para médicos, pero tú la vas a usar al revés — caso de enseñanza AMAUTA sobre por qué un SMD significativo con GRADE bajo no es luz verde clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/74272" target="_blank" rel="noopener">↗ doi.org/10.2196/74272</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS Medicine, ago 2026 · RCT de 3 brazos · rct · 2026-08-20</div>
+          <div class="r10-title">Effect of a digital intervention on mental health symptoms in adults with chronic conditions: A three-arm randomized controlled trial</div>
+          <div class="r10-line">Jaflo, este RCT de 3 brazos (825 adultos, 13 países) muestra que el programa digital eMPower, con o sin apoyo humano, mejora HADS ~2.6-2.9 puntos frente a lista de espera, sin diferencia significativa entre la versión autodirigida y la de apoyo humano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: alimentará el debate de escalabilidad — si el apoyo humano no suma frente al autodirigido, es el argumento que necesitas para defender intervenciones digitales de bajo costo en contextos como AMAUTA/telesalud en Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pmed.1005198" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pmed.1005198</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Addictive Diseases, 18 ago 2026 · systematic review + network meta-analysis · meta-analysis · 2026-08-18</div>
+          <div class="r10-title">Relapse vulnerability across Lesch alcoholism typology: a systematic review and network meta-analysis</div>
+          <div class="r10-line">Jaflo, esta network meta-analysis (23 estudios) sobre tipologías de Lesch en trastorno por uso de alcohol encuentra que la comorbilidad con ansiedad (OR 1.71) y depresión (OR 1.57) predicen más recaída que la historia familiar o el daño cerebral, con heterogeneidad alta (I²=79.7%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: reforzará el argumento de estratificar el tratamiento de recaída por comorbilidad psiquiátrica antes que por tipología de consumo — útil si tocas adicciones en tu marco dimensional HiTOP.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/10550887.2026.2713432" target="_blank" rel="noopener">↗ doi.org/10.1080/10550887.2026.2713432</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Women&#39;s Mental Health, 17 ago 2026 · meta-analysis + genómica funcional · meta-analysis · 2026-08-17</div>
+          <div class="r10-title">Unravelling the biological nexus of smoking and postpartum depression: a meta-analysis and functional genomics approach</div>
+          <div class="r10-line">Jaflo, este meta-análisis (38 estudios) más análisis de genómica funcional muestra que fumar duplica el riesgo de depresión posparto y mapea 17 proteínas hub (AKT1, JUN, CTNNB1, PTEN, EGFR) que conectan el tabaco con las vías biológicas de la PPD.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se citará más por el ángulo mecanístico (genómica funcional) que por el epidemiológico — un ejemplo más para tu línea de precisión de cómo la &#39;ómica&#39; devuelve biología a un dato de salud pública ya conocido.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00737-026-01753-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s00737-026-01753-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience, 17 ago 2026 · systematic review + meta-analysis · meta-analysis · 2026-08-17</div>
+          <div class="r10-title">Cannabis for tic control: a systematic review and meta-analysis of its efficacy in Tourette syndrome management</div>
+          <div class="r10-line">Jaflo, esta SR+MA (8 estudios, 7 en meta-análisis, 306 adultos con Tourette) encuentra que los cannabinoides medicinales reducen significativamente la severidad de tics (YGTSS: DM -13.29, IC95% -21.67 a -4.91) y la urgencia premonitoria (PUTS: DM -4.09).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dado tu foco en neurodivergencia y trastornos del neurodesarrollo, será la cita que uses cuando te pregunten por opciones más allá de antipsicóticos en Tourette — con la salvedad de que la evidencia es de solo 306 pacientes.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroscience.2026.05.044" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroscience.2026.05.044</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health, 19 ago 2026 · rapid review · review · 2026-08-19</div>
+          <div class="r10-title">Generative AI in Youth Mental Health Apps: Rapid Review</div>
+          <div class="r10-line">Jaflo, esta rapid review (5 estudios, apps de salud mental con IA generativa para jóvenes de 11-24 años) reporta buena usabilidad y resultados prometedores en depresión/ansiedad/distrés, pero ningún estudio evaluó daño de forma sistemática y estandarizada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la falta de evaluación de daño será el punto que cites en cualquier charla sobre IA en salud mental juvenil — el vacío regulatorio que tu línea de IA aplicada puede llenar con un protocolo propio.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/90589" target="_blank" rel="noopener">↗ doi.org/10.2196/90589</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Langenbeck&#39;s Archives of Surgery, 17 ago 2026 · systematic review · review · 2026-08-17</div>
+          <div class="r10-title">Lithium-associated hyperparathyroidism: a systematic review of prevalence and surgical outcomes</div>
+          <div class="r10-line">Jaflo, esta revisión sistemática (125 estudios, &gt;5,483 registros) encuentra hipercalcemia en 7.2% e hiperparatiroidismo confirmado en 4.8% de pacientes con litio, con enfermedad multiglandular en 25-83% de los casos quirúrgicos y ~16% de recurrencia a 10 años.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: te servirá como recordatorio clínico duro más que como novedad — el tipo de dato de seguridad que conviene tener a mano al enseñar manejo a largo plazo de litio en tus clases de residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00423-026-04200-5" target="_blank" rel="noopener">↗ doi.org/10.1007/s00423-026-04200-5</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El TDAH digital con IA no gana por ser &#39;más tecnológico&#39;: gana porque el dual-task cognitivo-motor con IA integrada supera a la versión sin IA en SUCRA — la ganancia real está en el diseño de la tarea, no solo en el algoritmo.</li><li>Un EEG basal + red neuronal puede predecir con RMSE 0.57 quién va a responder a tDCS en TOC de contaminación — la neuromodulación de precisión ya no es aspiracional, es un paper de esta semana.</li><li>En esquizofrenia, la remediación cognitiva deja huella en P300 y potencia theta: hasta una terapia no farmacológica tiene firma electrofisiológica medible, no solo cambio conductual autoreportado.</li><li>Ansiedad y depresión comórbidas predicen más recaída en alcoholismo que el daño cerebral o la historia familiar (OR 1.71 y 1.57) — la comorbilidad dimensional gana a la tipología categorial de Lesch.</li><li>Ninguna app de salud mental con IA generativa para jóvenes evaluó daño de forma sistemática y estandarizada: la usabilidad se mide con rigor, la seguridad todavía no.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuánto del efecto de una terapéutica digital para TDAH es la IA y cuánto es simplemente la estructura dual-task — vale la pena diseccionar ese factorial en tu propio contenido AMAUTA?</li><li>Si un EEG basal predice respuesta a tDCS en TOC con ese nivel de precisión, ¿qué biomarcador análogo faltaría validar en TDAH o autismo antes de ofrecer neuromodulación de precisión en tu práctica?</li><li>¿Qué significa &#39;evidencia proporcional al claim&#39; cuando un RCT de n=48 en esquizofrenia trae cuatro biomarcadores electrofisiológicos significativos — pesa más el tamaño muestral o la convergencia de mecanismos?</li><li>¿Deberías empezar a estratificar tu contenido sobre adicciones por comorbilidad ansiosa/depresiva en vez de por tipología de consumo, dado el OR de esta network meta-analysis?</li><li>¿Qué protocolo mínimo de evaluación de daño le exigirías a una app de salud mental con IA generativa antes de recomendarla a tus estudiantes de ENAM/Residentado?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel IG: &#39;La NMA que le puso número a la IA en TDAH — SUCRA explicado en 60 segundos&#39;, usando los datos de la network meta-analysis de terapéutica digital.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post AMAUTA/USAMEDIC: &#39;Cómo leer un modelo EEG+ANN que predice respuesta a tDCS&#39;, tomando el caso del TOC de contaminación como ejercicio de razonamiento clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta o comentario breve proponiendo replicar el diseño &#39;efecto + biomarcador&#39; (P300/theta) del RCT de remediación cognitiva en un protocolo local con pacientes peruanos con esquizofrenia.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología: &#39;Biología del riesgo dimensional&#39;, usando el mapeo de proteínas hub (AKT1, JUN, CTNNB1) del meta-análisis de tabaco y depresión posparto como ejemplo de ómica aplicada a un factor de riesgo ya conocido.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video YouTube: &#39;Cannabis medicinal en Tourette — qué dice la evidencia real (306 pacientes, no una anécdota de TikTok)&#39;, anclado en la SR+MA de esta semana.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">JMIR / JMIR mHealth and uHealth / JMIR Mental Health</span><span class="tag ">PLoS One</span><span class="tag ">PLoS Medicine</span><span class="tag ">Translational Psychiatry</span><span class="tag ">BMC Psychiatry</span><span class="tag ">Journal of Addictive Diseases</span><span class="tag ">Archives of Women&#39;s Mental Health</span><span class="tag ">Neuroscience</span><span class="tag ">Langenbeck&#39;s Archives of Surgery</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities esearch/esummary/efetch) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 24 de agosto de 2026.</div>
+</div>
+</body>
+</html>
