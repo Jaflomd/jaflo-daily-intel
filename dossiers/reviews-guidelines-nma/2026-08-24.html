@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-08-24 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">24 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">78</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Neurological Sciences · 2026-08-21 · review</div>
+        <h3 class="r3-title">AI and neuroimaging in autism spectrum disorder: advances in diagnosis, methodological challenges and future directions</h3>
+        <p class="r3-hook">Revisión que sintetiza los datasets públicos de neuroimagen y los modelos de IA/machine learning usados para el diagnóstico de TEA, y señala con nombre propio las limitaciones metodológicas del campo: muestras pequeñas, poca diversidad poblacional, protocolos de imagen heterogéneos y dependencia de datasets unimodales, con el llamado a IA explicable y validación externa como condición para uso clínico real. Conecta directo con tu línea TDAH/TEA y con tu pilar de IA aplicada a investigación: es un mapa actualizado de qué tan madura (o no) está la IA diagnóstica en autismo, útil como filtro crítico antes de recomendar cualquier herramienta de cribado automatizado a tus alumnos. Para AMAUTA/USAMEDIC es material de clase sobre &#39;IA en diagnóstico psiquiátrico: promesa vs. realidad metodológica&#39;, con ejemplos concretos de qué preguntarle a cualquier paper de IA + neuroimagen que te llegue de aquí en adelante. Úsalo también como ancla para un hilo o carrusel que desmonte el hype de &#39;la IA ya diagnostica autismo&#39; con las limitaciones reales que enumera la revisión.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10072-026-09334-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s10072-026-09334-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Archives of Suicide Research · 2026-08-21 · review</div>
+        <h3 class="r3-title">What Do We Mean by Self-Harm Ideation? A Scoping Review of More Than 30 Years of Evidence</h3>
+        <p class="r3-hook">Revisión de alcance sobre más de 30 años de literatura que muestra que la &#39;ideación de autolesión&#39; rara vez se mide con un instrumento propio: en la mayoría de estudios se cuela dentro de escalas más generales, sobre todo el ítem 9 del PHQ-9 y el ítem 10 del EPDS en muestras perinatales, con uso inconsistente del término y producción concentrada en países de altos ingresos. Es un caso de libro para tu línea de razonamiento clínico: un constructo que se asume medido cuando en realidad está inferido de un ítem prestado de otra escala, exactamente el tipo de trampa conceptual que enseñas a detectar en ENAM/Residentado. Para tu psicopatología dimensional (HiTOP/RDoC) es evidencia de que la ideación de autolesión necesita su propio eje de medición en vez de vivir como subproducto de escalas depresivas. Úsalo como base de una clase o hilo sobre por qué el ítem 9 del PHQ-9 no equivale a preguntar directamente por autolesión, con aplicación inmediata a la evaluación de riesgo en consulta.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/13811118.2026.2718277" target="_blank" rel="noopener">↗ doi.org/10.1080/13811118.2026.2718277</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Eating Disorders · 2026-08-23 · review</div>
+        <h3 class="r3-title">Exploring the dissociation-binge eating relationship in eating disorders: a scoping review</h3>
+        <p class="r3-hook">Revisión de alcance (PRISMA-ScR, 30 estudios) que muestra que la disociación está elevada en trastornos con atracón frente a controles sanos, correlaciona con la severidad del atracón, media la relación entre trauma y atracón, y diferencia subtipos dentro del espectro: la anorexia restrictiva muestra consistentemente menos disociación que la anorexia atracón/purga, la bulimia y el trastorno por atracón. Es el ítem más fresco de la ventana (23 de agosto) y encaja directo en tu psiquiatría dimensional: la disociación funciona aquí como una dimensión transdiagnóstica (más HiTOP que categoría DSM) que atraviesa varios trastornos alimentarios según su intensidad, no como un fenómeno binario presente/ausente. Para tu libro de psicopatología es un ejemplo claro de cómo un proceso transdiagnóstico explica mejor la heterogeneidad clínica que la categoría diagnóstica sola. Úsalo como contenido para un carrusel o clase sobre &#39;la disociación como el hilo oculto detrás del atracón&#39;, con la salvedad honesta de que buena parte de la evidencia es teórica/correlacional, no causal.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/10640266.2026.2718478" target="_blank" rel="noopener">↗ doi.org/10.1080/10640266.2026.2718478</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Global Health · 2026-08-21 · network-meta-analysis</div>
+        <h3 class="r3-title">Comparative neuroprotective effects of antidiabetic medications on Parkinson&#39;s disease risk: a Bayesian network meta-analysis</h3>
+        <p class="r3-hook">NMA bayesiana de 9 cohortes observacionales (712,287 pacientes) que rankea clases de antidiabéticos por riesgo de Parkinson, con hallazgos estratificados por edad y comorbilidad cardiovascular: los SGLT2i rankean con menor riesgo en mayores de 75 años, los GLP-1RA rankean con menor riesgo en menores de 75, y en pacientes con enfermedad cardiovascular la metformina rankea peor que los SGLT2i. Cae directo en tu interfaz neuropsiquiátrica secundaria — un fármaco de uso masivo en diabetes con una señal de neuroprotección específica por edad y perfil cardiovascular, justo el tipo de hallazgo estratificado que le interesa a tu psiquiatría de precisión. Ninguna clase alcanzó significancia estadística global, así que el mensaje real es matizado: no hay &#39;el mejor antidiabético para el cerebro&#39;, hay rankings condicionales según el paciente. Úsalo como ejemplo de clase sobre cómo leer una NMA bayesiana con subgrupos preespecificados sin sobre-vender un ranking que no llegó a significancia global — útil para tu docencia de razonamiento estadístico en residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.7189/jogh.16.04187" target="_blank" rel="noopener">↗ doi.org/10.7189/jogh.16.04187</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">International Journal of Stroke · 2026-08-22 · guideline</div>
+        <h3 class="r3-title">The future of high-dose, high-intensity neurorehabilitation: Consensus-based core recommendations from the fourth Stroke Recovery and Rehabilitation Roundtable</h3>
+        <p class="r3-hook">Consenso de 16 expertos internacionales de la cuarta Stroke Recovery and Rehabilitation Roundtable que concluye que la barrera principal para la rehabilitación de alta dosis/alta intensidad tras ictus ya no es biológica ni de evidencia — es de capacidad de implementación: los modelos de atención convencionales no pueden entregar la dosis necesaria, lo que obliga a modelos híbridos domiciliarios/comunitarios. Encaja en tu foco secundario de neuropsiquiatría (rehabilitación cognitivo-motora post-ictus) y es relevante para tu comité de ética del HVLH como caso de &#39;brecha de implementación&#39;: evidencia sólida que no llega al paciente por barreras de sistema, no de ciencia. Para AMAUTA/USAMEDIC es un contraste útil frente al enfoque habitual de &#39;qué dice la evidencia&#39; hacia &#39;por qué la evidencia no se aplica&#39;, un ángulo poco explotado en la enseñanza de rehabilitación neurológica. Úsalo como gancho para una clase o hilo sobre por qué tener el tratamiento correcto no basta si el sistema no puede entregarlo a la dosis que funciona.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/17474930261483951" target="_blank" rel="noopener">↗ doi.org/10.1177/17474930261483951</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">International Journal of Stroke · 2026-08-22 · guideline</div>
+        <h3 class="r3-title">Telestroke Care in Resource-Limited Settings: A World Stroke Organization (WSO) scientific statement</h3>
+        <p class="r3-hook">Declaración científica de la World Stroke Organization que reconoce explícitamente que la evidencia y recomendaciones actuales de telestroke provienen de países de altos ingresos con modelos intensivos en recursos, y propone componentes esenciales/avanzados adaptables a configuraciones de bajos recursos. Es directamente trasladable a tu contexto peruano: la telepsiquiatría y la teleneurología en el Perú enfrentan exactamente la misma brecha que este documento nombra — recomendaciones diseñadas para sistemas de salud que no son el tuyo. Para tu pilar de IA/tecnología aplicada y tu docencia ENAM/Residentado es un marco listo para adaptar a &#39;qué necesitaría un modelo mínimo viable de teleconsulta neuropsiquiátrica en el sistema de salud peruano&#39;. Úsalo como base de una propuesta de política o de un capítulo sobre implementación de tele-especialidades en contextos de recursos limitados, citando este documento como precedente normativo.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/17474930261480603" target="_blank" rel="noopener">↗ doi.org/10.1177/17474930261480603</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience · 2026-08-22 · meta-analysis</div>
+        <h3 class="r3-title">Diagnostic value of blood p-tau subtypes in Alzheimer&#39;s disease progression and pathology: systematic review and meta-analysis</h3>
+        <p class="r3-hook">Metaanálisis que compara subtipos de p-tau en sangre (p-tau217, p-tau181, p-tau231) para diagnóstico y estadificación de Alzheimer&#39;s, confirmando en análisis head-to-head que p-tau217 supera a p-tau181 en la mayoría de estadios de la enfermedad — excepto justo en deterioro cognitivo mínimo o ausente, donde su rendimiento cae en el punto donde más se necesitaría un biomarcador temprano. Publicado en European Archives of Psychiatry and Clinical Neuroscience, la revista que vive exactamente en tu interfaz neuropsiquiátrica secundaria, con aplicación directa a la demencia como una de tus áreas prioritarias de neuropsiquiatría. Para tu docencia es un caso perfecto de &#39;no todos los biomarcadores del mismo panel son intercambiables&#39;, útil para enseñar lectura crítica de biomarcadores sanguíneos en demencia, un área que va a pesar cada vez más en el examen. Úsalo como base de una pieza de contenido o de clase sobre las limitaciones reales de los biomarcadores sanguíneos de Alzheimer&#39;s justo en la fase donde más importaría detectarlos.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02353-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02353-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">JMIR mHealth and uHealth · 2026-08-21 · meta-analysis</div>
+        <h3 class="r3-title">Effects of Self-Guided Digital Mindfulness Interventions on the Mental Health of Health Care Workers: Systematic Review and Meta-Analysis of Randomized Controlled Trials</h3>
+        <p class="r3-hook">Metaanálisis de ensayos controlados aleatorizados sobre mindfulness digital autoguiado (apps o programas web, sin facilitador humano) para la salud mental de trabajadores de salud, con búsqueda actualizada hasta diciembre de 2025 dentro del proyecto DeLiGHT. Te interesa en dos frentes a la vez: como educador que forma médicos bajo presión de examen (ENAM/Residentado) es evidencia de una intervención escalable y de bajo costo para el malestar de tus propios alumnos y residentes; y como investigador en IA aplicada a salud, es un caso de intervención digital sin terapeuta que sí acumula evidencia RCT seria, a diferencia de tantas apps de bienestar sin respaldo. Úsalo como base para evaluar si vale la pena incorporar una intervención de mindfulness autoguiado dentro de AMAUTA/USAMEDIC como apoyo de bienestar para los alumnos en época de examen, con este metaanálisis como respaldo.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/74272" target="_blank" rel="noopener">↗ doi.org/10.2196/74272</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Los agonistas GLP-1/GIP-GLP-1 (semaglutida y afines) tienen plausibilidad biológica para efectos neuropsiquiátricos (depresión, ansiedad, suicidalidad, conducta de recompensa) según criterios de Bradford Hill, pero la evidencia todavía no alcanza para establecer causalidad en la mayoría de esos desenlaces: la señal existe, la certeza no (Curr Psychiatry Rep, 10.1007/s11920-026-01709-w).</li><li>La &#39;ideación de autolesión&#39; casi nunca se mide con un instrumento propio: en la mayoría de estudios de los últimos 30 años es el ítem 9 del PHQ-9 o el ítem 10 del EPDS haciendo un trabajo para el que no fueron diseñados (Arch Suicide Res, 10.1080/13811118.2026.2718277).</li><li>En trastornos alimentarios, la disociación media la relación entre trauma y atracón — y la anorexia restrictiva es la única presentación del espectro con niveles de disociación consistentemente más bajos que bulimia, atracón/purga y trastorno por atracón (Eating Disorders, 10.1080/10640266.2026.2718478).</li><li>En diabéticos con riesgo de Parkinson, el &#39;mejor&#39; antidiabético para el cerebro depende de la edad: los GLP-1RA rankean con menor riesgo en menores de 75 años, los SGLT2i en mayores de 75 — ninguna clase gana de forma global en 712,287 pacientes analizados (J Glob Health, 10.7189/jogh.16.04187).</li><li>p-tau217 supera a p-tau181 como biomarcador sanguíneo de Alzheimer&#39;s en casi todos los estadios de la enfermedad, excepto justo en el que más importaría detectarlo temprano: deterioro cognitivo mínimo o ausente (Eur Arch Psychiatry Clin Neurosci, 10.1007/s00406-026-02353-4).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la disociación media entre trauma y atracón en trastornos alimentarios, ¿debería tamizarse disociación de rutina en cualquier paciente con atracón, más allá del diagnóstico categorial de TCA?</li><li>¿Cuánto de lo que se reporta como &#39;ideación de autolesión&#39; en tamizajes depresivos peruanos es en realidad solo el ítem 9 del PHQ-9 sin verificación clínica directa, y cuánto cambiaría el dato si se preguntara explícitamente?</li><li>Si los agonistas GLP-1 tienen plausibilidad biológica pero no causalidad establecida para efectos neuropsiquiátricos, ¿qué tan explícito debería ser el consentimiento informado al prescribirlos en pacientes con historia psiquiátrica de base?</li><li>¿Qué tan lejos está el sistema de salud peruano del modelo mínimo viable de telestroke que propone la WSO para contextos de bajos recursos, y podría adaptarse ese mismo marco a teleconsulta neuropsiquiátrica?</li><li>Dado que la barrera para la rehabilitación de alta intensidad post-ictus es de implementación y no de evidencia, ¿qué otras áreas de la psiquiatría (dosis y frecuencia de terapia, por ejemplo) sufren la misma brecha entre lo que funciona y lo que el sistema entrega?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel/Reel: &#39;La disociación como hilo oculto del atracón&#39; — el rol mediador de la disociación entre trauma y atracón en TCA, con la anorexia restrictiva como la excepción del espectro (Eating Disorders, 10.1080/10640266.2026.2718478).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/pieza: &#39;El ítem 9 no es una pregunta sobre autolesión&#39; — cómo la ideación de autolesión se infiere de escalas de depresión en vez de medirse directamente, con aplicación a la práctica clínica en consulta (Arch Suicide Res, 10.1080/13811118.2026.2718277).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de libro de psicopatología: usar la disociación en trastornos alimentarios como ejemplo de constructo transdiagnóstico (HiTOP) que explica heterogeneidad clínica mejor que la categoría diagnóstica DSM.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-paper o carta: modelo mínimo viable de teleconsulta neuropsiquiátrica para el sistema de salud peruano, adaptando el marco de la WSO Scientific Statement sobre telestroke en contextos de bajos recursos (Int J Stroke, 10.1177/17474930261480603).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase para residentes: &#39;IA + neuroimagen en TEA: qué tan madura está realmente&#39; — usando las limitaciones metodológicas de la revisión (muestras pequeñas, datasets unimodales, falta de validación externa) como checklist crítico para leer cualquier paper de IA diagnóstica (Neurol Sci, 10.1007/s10072-026-09334-4).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Neurological Sciences</span><span class="tag ">Archives of Suicide Research</span><span class="tag ">Eating Disorders</span><span class="tag ">Journal of Global Health</span><span class="tag ">International Journal of Stroke</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">JMIR mHealth and uHealth</span><span class="tag ">Current Psychiatry Reports</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC REST API (search, date-filtered) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 24 de agosto de 2026.</div>
+</div>
+</body>
+</html>
