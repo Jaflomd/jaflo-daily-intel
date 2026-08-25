@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-08-25 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">25 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">64</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Reviews Drug Discovery, 24 ago 2026 · review · 2026-08-24</div>
+        <h3 class="r3-title">Towards precision psychiatry: initial foundations and future directions</h3>
+        <p class="r3-hook">Etkin, O&#39;Donnell, Ressler y Manji (McLean/Harvard, Oxford, Yale, Alto Neuroscience) publican en Nature Reviews Drug Discovery el manifiesto más citable del año para &#39;precision psychiatry&#39;: biomarcadores biológicos objetivos (EEG, evaluaciones conductuales objetivas, fMRI, biomarcadores periféricos) reemplazando el diagnóstico puramente sintomático, con ejemplos concretos de subgrupos que sí respondieron en depresión posparto y esquizofrenia. Para Javier esto es munición directa para su libro de psicopatología dimensional: es la prueba de que la industria y la academia top ya asumen que el diagnóstico categorial es un cuello de botella para el desarrollo de fármacos, exactamente el argumento HiTOP/RDoC que él defiende. Puede citarlo como paper ancla en el capítulo de psiquiatría de precisión y usarlo en contenido IG/YT explicando por qué la próxima generación de tratamientos psiquiátricos no vendrá de un DSM más categorial.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41573-026-01509-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s41573-026-01509-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">The Lancet Psychiatry, 24 ago 2026 · meta-analysis · 2026-08-24</div>
+        <h3 class="r3-title">Relapse trajectories and antipsychotic discontinuation in schizophrenia from individual participant data of five trials from the Yale Open Data Access database: a meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis de datos individuales de 5 ensayos de discontinuación de antipsicóticos (417 participantes) identifica dos trayectorias latentes de recaída —rápida y tardía— y muestra que la severidad basal en PANSS, no el hecho de discontinuar el fármaco, predice quién recae rápido: la proporción de recaída rápida no difirió entre discontinuación y continuación. Para Javier es un caso de texto perfecto para AMAUTA/USAMEDIC sobre cómo leer estratificación de riesgo real (latent class mixed models) en vez de asumir causalidad ingenua entre &#39;suspender antipsicótico&#39; y &#39;recaída&#39;, útil para enseñar razonamiento clínico basado en evidencia de cara al Residentado. También alimenta su línea de psiquiatría de precisión: el monitoreo individualizado durante el de-prescribing debe basarse en severidad basal, no en reglas genéricas.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S2215-0366(26)00225-7" target="_blank" rel="noopener">↗ doi.org/10.1016/S2215-0366(26)00225-7</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Medical Teacher, 22 ago 2026 · editorial · 2026-08-22</div>
+        <h3 class="r3-title">Twelve tips for educators supporting learner-centered AI integration in undergraduate medical education</h3>
+        <p class="r3-hook">Doce tips prácticos, organizados sobre el marco IACAI Learner Matrix (niveles intrapersonal, micro y meso), para integrar IA en educación médica de pregrado: alfabetización en IA, evaluación crítica de herramientas, integración en habilidades clínicas, evaluación, co-diseño curricular y bienestar del aprendiz. Es el ítem de educación de precisión garantizado del día: Javier puede tomarlo como checklist directo para auditar o rediseñar cómo AMAUTA/USAMEDIC integra IA en la preparación para ENAM y Residentado, no como gadget suelto sino como currículo estructurado con gobernanza explícita. También sirve como fuente lista para un post o hilo tipo &#39;12 tips para que un educador médico use IA sin volverse dependiente de ella&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/0142159X.2026.2718319" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2718319</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry, 22 ago 2026 · paper · 2026-08-22</div>
+          <div class="r10-title">Machine Learning-Based Discrimination of Treatment-Resistant Schizophrenia Using Structural Brain Imaging: A Multi-Site Proof-of-Concept Study</div>
+          <div class="r10-line">Estudio multi-sitio (Canadá-Japón, n=225) intenta discriminar esquizofrenia resistente al tratamiento de la respondedora solo con features estructurales de RM: AUC de 0.715 en validación cruzada de entrenamiento pero apenas 0.57 en el hold-out con harmonización sin leakage.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de &#39;proof-of-concept honesto&#39; (que reporta la caída de rendimiento por leakage en lugar de esconderla) se vuelve su propio género dentro de precision psychiatry, y que Javier puede usarlo como caso de enseñanza de validación externa/PROBAST en su curso de razonamiento clínico basado en evidencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.08.009" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.08.009</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience &amp; Biobehavioral Reviews, 24 ago 2026 · review · 2026-08-24</div>
+          <div class="r10-title">Theory-Driven Computational Psychiatry and Its Challenges: An Optimistic Outlook</div>
+          <div class="r10-line">Revisión que defiende la psiquiatría computacional frente a las críticas sobre selección e identificabilidad de modelos, argumentando que son debates generales de filosofía de la ciencia y no fallas específicas del campo — encaja directo con la línea de network theory/RDoC de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este paper se convierte en referencia estándar para defender modelos computacionales frente a revisores conservadores durante 2026-2027, y que Javier puede citarlo cuando defienda su enfoque dimensional en revisión por pares.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neubiorev.2026.106923" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106923</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">Genetic liability to addiction underlies comorbid bipolar and substance use disorders</div>
+          <div class="r10-line">El Centre for Precision Psychiatry de Oslo usa GWAS-by-subtraction y trivariate MiXeR para separar la arquitectura genética de &#39;uso de sustancias&#39; vs &#39;trastorno por uso de sustancias&#39; en comorbilidad con bipolar, encontrando que solo el componente de trastorno comparte señal genética con el bipolar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta separación uso-vs-trastorno se replica pronto en TDAH/TEA, y que Javier puede usarla para afinar cómo enseña comorbilidad y riesgo poligénico en su línea dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.08.008" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.08.008</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">A shift toward proteolytic gut fermentation links systemic inflammation to clinical phenotypes in major depressive disorder</div>
+          <div class="r10-line">En 102 pacientes con MDD vs 38 controles, un &#39;biotipo intestino-inmune&#39; (ácidos grasos de cadena corta proteolíticos + inflamación) discrimina MDD con AUC=0.871 y se asocia a mayor severidad y recurrencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el eje microbioma-inflamación-fenotipo va a competir con los biomarcadores de neuroimagen como la vía más barata de estratificar depresión en contextos de recursos limitados — tema para un post o capítulo sobre psiquiatría de precisión &#39;low-cost&#39; aplicable en Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111900" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111900</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">Anterior cingulate cortex sulcal patterns associated with catatonia across schizophrenia and mood disorders</div>
+          <div class="r10-line">En 523 personas (109 con catatonia), la ausencia del surco paracingulado izquierdo —rasgo estructural fijado prenatalmente— se asocia específicamente a catatonia, cruzando esquizofrenia y trastornos del ánimo, independiente del diagnóstico categorial.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este hallazgo alimenta el argumento transdiagnóstico (HiTOP) de tratar la catatonia como dimensión de neurodesarrollo independiente del especificador categorial — línea directa para el libro de psicopatología de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.08.011" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.011</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS ONE, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">An integrated systems biology and machine learning framework for identifying potential biomarkers and pathways in autism spectrum disorder</div>
+          <div class="r10-line">Pipeline de biología de sistemas + machine learning sobre expresión génica en sangre periférica prioriza TLR8 y CASP4 como genes candidato en TEA, validados en un modelo animal (ácido valproico).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos genes inmunes (TLR8/CASP4) entran en paneles de biomarcadores periféricos &#39;baratos&#39; para TEA en 2-3 años, relevante para la línea TDAH/TEA de Javier como posible biomarcador temprano no invasivo.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pone.0355984" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0355984</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Dental Education, 23 ago 2026 · paper · 2026-08-23</div>
+          <div class="r10-title">Role of Large Language Model-Artificial Intelligence in Enhancing Communication Skills in Undergraduate Oral Healthcare Students</div>
+          <div class="r10-line">King&#39;s College London pilotea LLMs con RAG simulando pacientes odontológicos para entrenar habilidades de comunicación en estudiantes preclínicos, con resultados iniciales positivos frente a tutoriales tradicionales con actores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este modelo de &#39;paciente simulado con LLM+RAG&#39; se replica en currículos de entrevista clínica psiquiátrica — Javier podría prototipar una versión para entrenar anamnesis en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/eje.70282" target="_blank" rel="noopener">↗ doi.org/10.1111/eje.70282</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">The Lancet Psychiatry, 20 ago 2026 · editorial · 2026-08-20</div>
+          <div class="r10-title">From prediction to decision: prediction-based decision rules and target trial emulation in ADHD</div>
+          <div class="r10-line">Personal View en Lancet Psychiatry argumenta que más de 100 modelos predictivos de TDAH nunca llegaron a la clínica porque nadie definió reglas de decisión explícitas ligadas al output del modelo, y propone target trial emulation para cerrar esa brecha.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este paper se vuelve lectura obligada para publicar modelos predictivos de TDAH desde ahora, y que Javier puede usarlo como argumento central en su línea TDAH/neurodivergencia sobre por qué un AUC alto no equivale a utilidad clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/S2215-0366(26)00227-0" target="_blank" rel="noopener">↗ doi.org/10.1016/S2215-0366(26)00227-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Child &amp; Adolescent Psychology, 21 ago 2026 · review · 2026-08-21</div>
+          <div class="r10-title">The Research Domain Criteria (RDoC) and Youth Depression - In Context</div>
+          <div class="r10-line">Revisión encuentra que los estudios que usan el marco RDoC en depresión juvenil casi no incorporan variables ambientales (solo 36% mide inestabilidad económica), dejando fuera interacciones biología-ambiente clave.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta crítica empuja una próxima generación de estudios RDoC &#39;ambiental-informados&#39;, matiz que Javier puede usar al enseñar RDoC: no basta con biomarcadores, falta contexto.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/15374416.2026.2718199" target="_blank" rel="noopener">↗ doi.org/10.1080/15374416.2026.2718199</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Education for Primary Care, 21 ago 2026 · paper · 2026-08-21</div>
+          <div class="r10-title">AI patients, real practice: exploring the use of AI-simulated patients to support primary healthcare training for combat medical technicians</div>
+          <div class="r10-line">Pacientes simulados con IA conversacional (plataforma SimFlow.ai) mejoran significativamente la confianza clínica de técnicos médicos militares en 10 de 12 dominios evaluados tras simulaciones controladas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estas plataformas de paciente-IA conversacional se abaratan rápido y se vuelven estándar en entrenamiento de habilidades clínicas fuera de contextos militares — otro caso de uso potencial para simulacros de examen clínico oral en AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/14739879.2026.2714838" target="_blank" rel="noopener">↗ doi.org/10.1080/14739879.2026.2714838</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el meta-análisis de discontinuación de antipsicóticos (Lancet Psychiatry), la recaída rápida NO fue más frecuente en quienes discontinuaron vs. quienes continuaron — el mejor predictor fue la severidad basal, no el fármaco. Cuidado con asumir causalidad simple en de-prescribing.</li><li>El modelo ML para esquizofrenia resistente a tratamiento tuvo un AUC de 0.715 en validación cruzada pero cayó a 0.57 en el hold-out real controlado por leakage: el recordatorio de que validación interna y externa casi nunca dicen lo mismo en neuroimagen psiquiátrica.</li><li>El biotipo intestino-inmune de la depresión mayor (AUC=0.871) no vino de neuroimagen ni de genómica cara: vino de ácidos grasos de cadena corta en heces más dos marcadores inflamatorios séricos — la estratificación barata sigue siendo posible.</li><li>Más de 100 modelos predictivos de TDAH existen y ninguno llegó a uso clínico rutinario: el cuello de botella no es la predicción, es no tener una regla de decisión explícita del tipo &#39;si el score es X, el clínico hace Y&#39;.</li><li>La ausencia del surco paracingulado izquierdo —un rasgo fijado prenatalmente— predice catatonia de forma transdiagnóstica (esquizofrenia y trastornos del ánimo por igual), reforzando que la catatonia podría ser una dimensión de neurodesarrollo independiente del diagnóstico categorial.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué pasaría si en el comité HVLH aplicáramos la lógica de &#39;reglas de decisión basadas en predicción&#39; (Lancet Psychiatry, ADHD) a los modelos que ya se usan para priorizar pacientes, en vez de solo reportar su AUC?</li><li>¿Cuánta de la varianza en respuesta a discontinuación de antipsicóticos en pacientes peruanos se explicaría por severidad basal PANSS, replicando el hallazgo del meta-análisis de datos individuales de Oxford/Imperial?</li><li>¿Sería factible implementar un panel barato de ácidos grasos fecales más dos marcadores inflamatorios (biotipo intestino-inmune) en un contexto de recursos limitados como Perú, comparado con neuroimagen?</li><li>¿Qué tan bien se sostiene la separación &#39;uso de sustancias&#39; vs &#39;trastorno por uso de sustancias&#39; como arquitecturas genéticas distintas al aplicarla a comorbilidad TDAH-consumo de sustancias en adultos jóvenes?</li><li>¿Cómo evaluaríamos si un simulador de paciente con LLM+RAG mejora realmente la anamnesis psiquiátrica en residentes de USAMEDIC, más allá de la confianza autopercibida como en el estudio de técnicos médicos de combate?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;Por qué Nature Reviews Drug Discovery dice que el diagnóstico categorial ya no alcanza para desarrollar fármacos psiquiátricos&#39;, basado en Etkin et al. 2026, conectando con el argumento dimensional del libro.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post corto explicando el caso del meta-análisis de discontinuación de antipsicóticos (Lancet Psychiatry) como ejercicio de razonamiento clínico: &#39;no asumas causalidad, mira la trayectoria latente&#39; — material para clase de razonamiento clínico ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional sobre catatonia como dimensión de neurodesarrollo transdiagnóstica, usando el hallazgo del surco paracingulado (Moyal et al., Schizophrenia Research 2026).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta editorial o paper proponiendo &#39;reglas de decisión basadas en predicción&#39; para modelos de riesgo TDAH/TEA en población peruana, inspirado en el Personal View de Garcia-Argibay et al. (Lancet Psychiatry).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Prototipo AMAUTA: paciente psiquiátrico simulado con LLM+RAG para entrenar entrevista clínica de residentes, inspirado en el piloto de King&#39;s College London (odontología) y el estudio de técnicos médicos de combate.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Reviews Drug Discovery</span><span class="tag highlight">The Lancet Psychiatry</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Schizophrenia Research</span><span class="tag ">PLoS ONE</span><span class="tag ">Medical Teacher</span><span class="tag ">European Journal of Dental Education</span><span class="tag ">Journal of Clinical Child &amp; Adolescent Psychology</span><span class="tag ">Education for Primary Care</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities esearch/esummary/efetch) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 25 de agosto de 2026.</div>
+</div>
+</body>
+</html>
