@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-08-25 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">25 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Schizophrenia Bulletin · 2026-08-20 · paper</div>
+        <h3 class="r3-title">Arquitectura dimensional y de red de la catatonia en esquizofrenia y trastornos del ánimo: evidencia de una muestra grande y fenotipada en profundidad</h3>
+        <p class="r3-hook">Fritze, Volkmer, Lefebvre, Hirjak y colegas evalúan catatonia (Northoff Catatonia Rating Scale + Bush-Francis) en 465 pacientes con espectro esquizofrenia o trastornos del ánimo: 84.1% presenta al menos un signo catatónico y 65.8% tres o más — con síntomas afectivos y de retraimiento como los más frecuentes y las presentaciones motoras severas como excepción, no regla. Concluyen que la catatonia &#39;emerge como síndrome dimensional con manifestaciones subumbral frecuentes&#39;, exigiendo screening sistemático más allá del diagnóstico categórico. Para tu libro de psicopatología dimensional esto es munición directa: la catatonia es el ejemplo clásico de un &#39;síndrome transdiagnóstico&#39; que la nosología categórica subdetecta sistemáticamente por errar el umbral, no por errar la categoría. Úsalo en AMAUTA/USAMEDIC como caso didáctico de por qué el residente que solo busca catatonia florida (estupor, negativismo) en el ENAM se pierde dos de cada tres casos reales — y como argumento para introducir un ítem de screening dimensional de catatonia en tu material de razonamiento clínico.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/schbul/sbag118" target="_blank" rel="noopener">↗ doi.org/10.1093/schbul/sbag118</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience · 2026-08-22 · paper</div>
+        <h3 class="r3-title">Validación psicométrica del RDoC dentro del set de datos mínimo del Centro Alemán de Salud Mental: hacia un estándar armonizado de investigación transdiagnóstica</h3>
+        <p class="r3-hook">Förstner, Böttger y el grupo de expertos del German Center for Mental Health validan psicométricamente los bloques RDoC, salud general y clínico-psicosocial de su &#39;minimum dataset&#39; nacional, con análisis factorial confirmatorio multigrupo en muestras clínicas y no clínicas: ajuste sólido para los clusters RDoC y clínico-psicosocial, con no-invarianza métrica solo en el bloque de salud general. Es la prueba de concepto más concreta que has visto de que un país puede estandarizar RDoC como infraestructura de datos compartida entre centros, no solo como marco teórico de investigación individual. Para tu pilar de psiquiatría de precisión y tu rol en comités de ética (HVLH) esto es un modelo replicable: si Perú (o AMAUTA como red) quisiera construir un dataset mínimo armonizado entre centros para investigación dimensional, esta es la plantilla metodológica — Delphi + CFA multigrupo — que te ahorra reinventar el proceso de validación desde cero.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02315-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02315-w</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">medRxiv (preprint) · 2026-08-22 · preprint</div>
+        <h3 class="r3-title">Benchmarks de evaluación basada en evidencia y clasificación de bipolaridad en más de 11,000 jóvenes del estudio ABCD</h3>
+        <p class="r3-hook">Youngstrom y equipo (UNC) prueban si dos instrumentos breves de manía (PGBI-10M y 7-Up) mantienen propiedades psicométricas útiles en más de 11,000 jóvenes de la cohorte poblacional ABCD, generando puntos de corte clínicos, diferencia mínima importante y cambio confiable — con AUC=0.68 en línea base y 0.77 en seguimiento para el PGBI-10M, notablemente menor que en muestras clínicas puras. Concluyen que estos instrumentos sirven para &#39;triage de referencia en un solo punto temporal&#39;, no para screening universal — una distinción metodológica que casi nadie hace explícita. Para tu línea de IA aplicada a investigación y tu interés en medición basada en evidencia (measurement-based care), esto es el pipeline completo — confiabilidad, modelos de respuesta graduada, benchmarks clínicos, ROC — que podrías replicar con instrumentos dimensionales HiTOP/RDoC en población peruana; y para AMAUTA/USAMEDIC es un recordatorio pedagógico valioso: un AUC decente en cohorte poblacional no equivale a utilidad clínica en consulta, algo que tus estudiantes de residentado necesitan interiorizar antes del ENAM.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.05.06.26352558" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.05.06.26352558</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Assessment · 2026-08-24 · paper</div>
+          <div class="r10-title">La escala de irritabilidad ARI: propiedades psicométricas e invarianza de medición entre muestras clínicas y comunitarias en niños australianos</div>
+          <div class="r10-line">Briers, Sanders, Dadds y Hawes validan el Affective Reactivity Index-versión padres en niños australianos de 4-12 años y usan network analysis para mostrar que los ítems de enojo son los síntomas más centrales de la irritabilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la irritabilidad como dimensión transdiagnóstica central (no solo síntoma de TDAH o trastorno disruptivo) va a ganar peso en tu capítulo de neurodivergencia infantil — este instrumento breve y con red centrada en enojo es candidato directo para tu batería de evaluación dimensional en consulta AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/pas0001498" target="_blank" rel="noopener">↗ doi.org/10.1037/pas0001498</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Autism · 2026-08-20 · paper</div>
+          <div class="r10-title">Desregulación emocional predice síntomas sociales y conductas repetitivas en muestras neurodiversas de autismo</div>
+          <div class="r10-line">McDonald, Cargill, Lynch y colegas muestran en 99 jóvenes (64 autistas) que la disforia y reactividad de la desregulación emocional predicen tanto dificultades de comunicación social como conductas repetitivas, con diferencias entre autistas y no autistas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la desregulación emocional como mecanismo transdiagnóstico compartido entre TEA y otras condiciones va a ser tu puente más citable entre la línea TDAH/TEA y el marco HiTOP/RDoC — úsalo para argumentar que intervenir regulación emocional temprano tiene efecto dimensional amplio, no solo &#39;autismo-específico&#39;, en tu próximo contenido IG/YT sobre neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/13623613261472147" target="_blank" rel="noopener">↗ doi.org/10.1177/13623613261472147</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia (Heidelberg) · 2026-08-24 · paper</div>
+          <div class="r10-title">Correlatos clínicos y neurobiológicos de la discinesia tardía como fenómeno transdiagnóstico en esquizofrenia y trastornos del ánimo</div>
+          <div class="r10-line">Altinok, Volkmer, Fritze y el mismo grupo de Mannheim/Bern encuentran discinesia tardía en 10.6% de esquizofrenia multi-episodio y 7.5% de trastornos del ánimo (n=453), con sexo masculino y mayor psicopatología general PANSS como predictores — la describen como fenómeno transdiagnóstico con fenotipos neurobiológicos distintos por diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este grupo (mismo equipo del paper de catatonia de hoy) está construyendo sistemáticamente un mapa de síndromes motores como dimensiones transdiagnósticas — vale la pena que sigas su producción como línea de referencia directa para el capítulo de neuromodulación y efectos motores del libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41537-026-00796-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41537-026-00796-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">JCPP Advances · 2026-08-21 · editorial</div>
+          <div class="r10-title">Comentario: hacia una comprensión integrada de la psicopatología general — sobre Devine et al. (2026)</div>
+          <div class="r10-line">Wang, Wang y Chan comentan el estudio de Devine et al. (9,344 preadolescentes ABCD) que ligó conectividad funcional en reposo de las redes DMN/atención/saliencia con trayectorias de tres años del factor p, discutiendo qué tan lejos llega hoy el puente entre neuroimagen y factor general de psicopatología.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la conectividad DMN-atención como predictor longitudinal del factor p (no solo correlato transversal) es el tipo de hallazgo que puedes usar para argumentar, en el capítulo de neurociencia educativa, que intervenciones tempranas sobre atención/autorreferencia en la transición a la adolescencia tienen justificación mecanística, no solo correlacional.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jcv2.70163" target="_blank" rel="noopener">↗ doi.org/10.1002/jcv2.70163</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">JCPP Advances · 2026-08-21 · editorial</div>
+          <div class="r10-title">Comentario: comprendiendo la psicopatología emergente a través de redes de síntomas — sobre Häfeli et al. (2026)</div>
+          <div class="r10-line">Kaczkurkin comenta el análisis de red panel longitudinal de Häfeli et al. en 1,186 adolescentes suizos, que identifica preocupación excesiva, insatisfacción corporal y preocupación por el peso como síntomas &#39;puente&#39; que predicen ansiedad, depresión, trastornos alimentarios, psicosis, bipolaridad y TOC un año después.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;preocupación excesiva&#39; e &#39;insatisfacción corporal&#39; como nodos puente transdiagnósticos en adolescentes son un target de prevención más accionable que cualquier diagnóstico categórico individual — candidato fuerte para una idea de contenido IG sobre &#39;qué síntoma vigilar primero&#39; en adolescentes, anclado en network theory de Borsboom.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jcv2.70165" target="_blank" rel="noopener">↗ doi.org/10.1002/jcv2.70165</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Bulletin · 2026-08-20 · editorial</div>
+          <div class="r10-title">Metaestabilidad y estados híbridos de realidad en psicosis emergente: reformulando el estado de riesgo clínico</div>
+          <div class="r10-line">Nuss, Ponnaiah y Calhoun proponen reconceptualizar el &#39;at-risk mental state&#39; no como fase transitoria breve sino como configuración clínica relativamente estable, sostenida por dinámica cerebral metaestable que reorganiza redes balanceando integración y segregación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este reencuadre (ARMS como estado estable de búsqueda de coherencia, no solo antesala de psicosis) va a generar debate sobre staging en psicosis — sígelo porque cuestiona directamente el supuesto lineal de &#39;etapas&#39; que subyace a varios modelos de staging que citas en el libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/schbul/sbag126" target="_blank" rel="noopener">↗ doi.org/10.1093/schbul/sbag126</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 2026-08-24 · paper</div>
+          <div class="r10-title">Disociación como marcador de desregulación emocional en internados psiquiátricos adolescentes, medida con evaluación ecológica momentánea</div>
+          <div class="r10-line">Brunner, Sele, Koenig y Kaess siguen a 48 adolescentes psiquiátricos internados con EMA intensiva de 5 días: la disociación combinada con cortisol elevado predice reducciones posteriores de afecto negativo, sugiriendo que la disociación funciona como mecanismo regulatorio de corto plazo bajo estrés.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la disociación como estrategia regulatoria funcional (no solo síntoma patológico) es un giro conceptual útil para tu material de razonamiento clínico — reformula la pregunta de consulta de &#39;¿por qué se disocia?&#39; a &#39;¿qué está regulando al disociarse?&#39;, más alineado con tu enfoque dimensional/mecanístico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122411" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122411</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Nervous and Mental Disease · 2026-08-24 · editorial</div>
+          <div class="r10-title">Límites clínicos del trauma: marco conceptual mecanístico para navegar comorbilidad y solapamiento diagnóstico en TEPT</div>
+          <div class="r10-line">Abargil, Rubinstein, Harpaz-Rotem y equipo proponen reemplazar el diagnóstico categórico de TEPT (más del 80% con comorbilidad) por cuatro patrones de respuesta mecanísticos: basado en miedo, dominado por duelo, disociativo y de daño moral.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este esquema de cuatro patrones mecanísticos para TEPT es exactamente el tipo de propuesta &#39;a medio camino&#39; entre HiTOP puro y práctica clínica que puedes citar como ejemplo de traducción clínica real de un marco dimensional — útil como plantilla si algún día propones un esquema mecanístico propio para otro cuadro en el libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/NMD.0000000000001885" target="_blank" rel="noopener">↗ doi.org/10.1097/NMD.0000000000001885</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain and Behavior · 2026-08 (online) · paper</div>
+          <div class="r10-title">Relaciones cerebro-conducta en niños con TDAH: redes de EEG en reposo y diferencias por sexo en función ejecutiva y signos neurológicos blandos</div>
+          <div class="r10-line">Kuz, Uçar, Aydın y equipo encuentran, con EEG en reposo, reconfiguraciones de red específicas por sexo en niños con TDAH: niñas con menor conectividad local, niños con déficits del hemisferio derecho, y patrones distintos de &#39;gating&#39; sensorial entre sexos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la heterogeneidad de red por sexo en TDAH es un argumento neurobiológico concreto contra tratar &#39;TDAH&#39; como categoría única en tu línea de neurodivergencia — puede alimentar directamente una idea de contenido sobre por qué el TDAH en niñas se subdiagnostica, ahora con sustrato de red y no solo clínico-fenotípico.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/brb3.71698" target="_blank" rel="noopener">↗ doi.org/10.1002/brb3.71698</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El 84% de pacientes con esquizofrenia o trastorno del ánimo tiene al menos un signo catatónico, pero solo una fracción cumple criterio categórico completo — la catatonia es más un continuo subumbral que un evento binario.</li><li>Alemania ya tiene un &#39;minimum dataset&#39; RDoC validado a nivel nacional para armonizar investigación entre centros de salud mental — la barrera para investigación dimensional a gran escala ya no es solo teórica, es de infraestructura de datos, y ya existe una plantilla metodológica para construirla.</li><li>Un AUC de 0.68-0.77 para detectar bipolaridad con instrumentos breves en cohorte poblacional (vs. clínica) es &#39;bueno para triage, malo para diagnóstico&#39; — la validez de un instrumento cambia con la prevalencia base de la población donde lo usas, no es una propiedad fija del instrumento.</li><li>En redes longitudinales de síntomas adolescentes, los nodos puente más potentes no son síntomas &#39;graves&#39; sino aparentemente banales: preocupación excesiva e insatisfacción corporal predicen seis categorías diagnósticas distintas un año después.</li><li>La disociación con cortisol elevado predice menos afecto negativo después, no más — en el momento, disociarse puede estar &#39;funcionando&#39; como regulación, lo que complica cualquier lectura puramente patológica del síntoma en consulta.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué proporción de tus pacientes con esquizofrenia o trastorno bipolar en consulta presentarían signos catatónicos subumbral si aplicaras un screening dimensional sistemático en vez de buscar solo estupor o negativismo florido?</li><li>Si tuvieras que construir un &#39;minimum dataset&#39; dimensional para investigación en salud mental en Perú (al estilo del Center for Mental Health alemán) ¿qué tres instrumentos HiTOP/RDoC breves elegirías como núcleo no negociable?</li><li>¿Cuál es el punto de corte de utilidad clínica real (no solo AUC) que exigirías a un instrumento dimensional antes de usarlo para triage en AMAUTA — y cambia ese umbral entre población general vs. población que ya busca consulta?</li><li>En tus propios pacientes adolescentes, ¿la preocupación excesiva y la insatisfacción corporal funcionan como síntomas &#39;puente&#39; que anteceden a otros cuadros, o es un patrón que solo aparece en las cohortes suizas estudiadas?</li><li>¿Hay algún paciente reciente donde reformular la disociación como estrategia regulatoria (en vez de solo síntoma) cambiaría tu plan de manejo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel IG: &#39;La catatonia no es lo que crees&#39; — usando el dato de que 84% de pacientes con SCZ o trastorno del ánimo tiene algún signo catatónico, para enseñar screening dimensional vs. búsqueda categórica en el ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología dimensional: &#39;síndromes motores como dimensiones transdiagnósticas&#39; usando en paralelo los papers de catatonia y discinesia tardía del mismo grupo de Mannheim/Bern como caso de estudio de una línea de investigación construida sistemáticamente alrededor de un fenómeno dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o carta editorial: propuesta de un &#39;minimum dataset&#39; dimensional adaptado a Perú/LatAm, inspirado en el German Center for Mental Health, presentando el caso a HVLH o a una red de investigación regional.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido IG/YT: &#39;Preocupación excesiva e insatisfacción corporal: los dos síntomas que predicen casi todo en adolescentes&#39; basado en el network longitudinal de Häfeli et al. y su comentario de Kaczkurkin — gancho fuerte para prevención escolar.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota o hilo técnico para AMAUTA/USAMEDIC sobre la diferencia entre AUC en cohorte poblacional vs. clínica al evaluar instrumentos de screening (usando el paper ABCD de bipolaridad), como corrección de un error común de interpretación en preparación ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Schizophrenia Bulletin</span><span class="tag ">JCPP Advances</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">medRxiv</span><span class="tag ">Psychological Assessment</span><span class="tag ">Autism</span><span class="tag ">Schizophrenia (Heidelberg)</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Journal of Nervous and Mental Disease</span><span class="tag ">Brain and Behavior</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils) · medRxiv API · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 25 de agosto de 2026.</div>
+</div>
+</body>
+</html>
