@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-08-26 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">26 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">97</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Neuroscience &amp; Biobehavioral Reviews · 2026-08-24 · review</div>
+        <h3 class="r3-title">Theory-Driven Computational Psychiatry and Its Challenges: An Optimistic Outlook</h3>
+        <p class="r3-hook">Revisión narrativa que hace un balance honesto de la psiquiatría computacional: reconoce las críticas sobre selección y recuperabilidad de modelos (¿el modelo que &#39;gana&#39; realmente captura el mecanismo, o solo ajusta mejor los datos?) y propone cómo superarlas sin abandonar el programa teórico. Es prácticamente el estado del arte de tu línea de psiquiatría dimensional/network theory: conecta directo con HiTOP y RDoC al insistir en modelos cuantitativos de proceso en vez de categorías DSM. Para tu libro de psicopatología dimensional es la referencia perfecta para el capítulo metodológico — no solo vende la promesa del enfoque computacional, sino que enseña a tus lectores a ser escépticos con el &#39;model selection&#39; antes de creer en un biomarcador. Úsalo también en AMAUTA para enseñar razonamiento clínico basado en modelos, no solo en heurísticas.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106923" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106923</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">The British Journal of Psychiatry · 2026-08-25 · review</div>
+        <h3 class="r3-title">Beyond control in psychiatric research: systematic review and meta-analysis of placebo treatment responses across major psychiatric conditions in citalopram and escitalopram RCTs</h3>
+        <p class="r3-hook">Revisión sistemática y metaanálisis (PROSPERO, PRISMA) en BJPsych que aísla la respuesta a placebo en ensayos con citalopram/escitalopram a través de depresión, ansiedad, TOC y TEPT — cuantificando cuánto del &#39;efecto&#39; que le atribuimos al ISRS es en realidad expectativa y contacto clínico. Esto es evidencia proporcional al claim en su forma más pura, y un golpe directo a la narrativa simplista de &#39;el fármaco funciona porque sí&#39; que tanto criticas. Para AMAUTA/USAMEDIC es material de oro para enseñar interpretación crítica de RCTs psiquiátricos de cara al ENAM/Residentado: cómo leer un brazo placebo no como ruido sino como señal clínica. También alimenta directamente tu voz de &#39;evidencia proporcional al claim&#39; en contenido sobre expectativas de tratamiento con antidepresivos.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10665" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10665</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">American Journal of Medical Genetics Part B: Neuropsychiatric Genetics · 2026-08-25 · review</div>
+        <h3 class="r3-title">The Role of Glutamatergic and Dopaminergic Genes in Resistant Schizophrenia: A Systematic Review</h3>
+        <p class="r3-hook">Revisión sistemática PRISMA de 18 estudios (calidad moderada) que busca marcadores genéticos dopaminérgicos y glutamatérgicos concordantes en esquizofrenia resistente al tratamiento, y termina chocando con el problema de fondo: la definición de &#39;resistencia&#39; varía tanto entre estudios que generalizar es casi imposible. Es un caso de estudio ideal para tu pilar de psiquiatría de precisión — no para vender el biomarcador todavía inexistente, sino para mostrar por qué la estandarización de fenotipos (algo que tu trabajo en psiquiatría dimensional ya viene proponiendo) es el cuello de botella real antes de cualquier genética útil en la práctica. Úsalo en un post o clase sobre &#39;por qué todavía no pedimos genética en esquizofrenia resistente&#39; con argumento metodológico, no solo de costo.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/ajmg.b.70031" target="_blank" rel="noopener">↗ doi.org/10.1002/ajmg.b.70031</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Brain and Behavior · 2026-08 · network-meta-analysis</div>
+        <h3 class="r3-title">Comparative Efficacy and Safety of Treatments for Parkinson&#39;s Disease With Depression: A Systematic Review and Bayesian Model-Based Network Meta-Analysis</h3>
+        <p class="r3-hook">NMA bayesiana (PROSPERO CRD420251245403) sobre 51 RCTs y 5100 pacientes que rankea 42 intervenciones para depresión en Parkinson por SUCRA, con citalopram superando a placebo (SMD -0.99) y comparaciones de seguridad entre agentes con y sin efecto motor. Es exactamente la intersección neurología-psiquiatría que define el foco secundario de este dominio, y un ejemplo perfecto para enseñar cómo leer un ranking bayesiano SUCRA sin caer en el error de tratarlo como jerarquía absoluta. Para tu línea de psiquiatría de precisión, el hallazgo de que el perfil motor podría condicionar la elección de antidepresivo en Parkinson es un gancho concreto: no es &#39;un ISRS para todos&#39;, es estratificación real. Buen material para un carrusel IG explicando SUCRA en 60 segundos usando este NMA como ejemplo.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/brb3.71722" target="_blank" rel="noopener">↗ doi.org/10.1002/brb3.71722</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">BMJ Open · 2026-08-25 · network-meta-analysis</div>
+        <h3 class="r3-title">Current practices in modelling dose-response relationships in network meta-analyses of depression treatments: a meta-research study</h3>
+        <p class="r3-hook">Estudio meta-científico (metodología meta-epidemiológica + PRISMA 2020) que audita cómo los NMA de depresión publicados entre 2020-2025 manejan (o ignoran) la dosis como variable, exponiendo huecos metodológicos sistemáticos en un diseño que la industria y las guías tratan como &#39;gold standard&#39;. Es la contraparte crítica perfecta al NMA de Parkinson-depresión de arriba: antes de citar un ranking SUCRA en clase, hay que saber si el NMA modeló la dosis correctamente o la promedió sin más. Encaja directo con tu pilar de evidencia proporcional al claim y es insumo de alto valor para una clase AMAUTA sobre &#39;cómo detectar un NMA mal construido&#39; — un ángulo poco explotado en la educación médica de precisión que ofreces.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjopen-2026-119511" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2026-119511</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Zeitschrift für Gerontologie und Geriatrie · 2026-08-25 · guideline</div>
+        <h3 class="r3-title">[Multicomponent programs in delirium prevention and delirium management in older adults: Evidence, guideline recommendations and perspectives on delirium-sensitive care]</h3>
+        <p class="r3-hook">Revisión de guía (en alemán, resumen en inglés) que consolida los bundles multicomponente no farmacológicos con mejor evidencia para prevenir y manejar delirium — HELP, ABCDE(F), CHOPS y AKTIVER — apoyándose en dos metaanálisis de 2026, y enmarca el delirium explícitamente como la complicación neuropsiquiátrica más frecuente en adultos mayores. Es contenido de altísimo rendimiento para AMAUTA/USAMEDIC: el delirium es tema recurrente en ENAM/Residentado y este artículo ofrece el &#39;qué hacer&#39; basado en evidencia más que en criterio clínico difuso. También conecta con tu foco secundario en neuropsiquiatría (interfaz neurología-geriatría-psiquiatría) — útil como base de un caso clínico o infografía comparando los cuatro bundles y cuál aplica según el contexto (UCI, sala general, comunidad).</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00391-026-02643-5" target="_blank" rel="noopener">↗ doi.org/10.1007/s00391-026-02643-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Substance Use and Addiction Treatment · 2026-08-25 · guideline</div>
+        <h3 class="r3-title">Expert recommendations for training peer workers to provide non-abstinent recovery support: A real-time Delphi study</h3>
+        <p class="r3-hook">Consenso Delphi en tiempo real (panel de 72 expertos, incluyendo pares certificados y receptores de servicio) que produce recomendaciones formales para entrenar trabajadores pares en apoyo de recuperación no-abstinente, un terreno donde el estigma —incluso entre los propios pares— sigue siendo la barrera principal. Encaja con tu voz directa sin moralina: es evidencia de que la reducción de daños y la recuperación no-abstinente ya tienen consenso experto formal, no son postura ideológica. Puede alimentar contenido o un comentario breve sobre por qué Perú necesita formación estructurada de pares en adicciones, citando esta metodología Delphi como modelo replicable para consensos locales.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.josat.2026.210097" target="_blank" rel="noopener">↗ doi.org/10.1016/j.josat.2026.210097</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Affective Disorders · 2026-08-25 · meta-analysis</div>
+        <h3 class="r3-title">The effects of exercise on episodic memory in patients with depression: a three-level meta-analysis</h3>
+        <p class="r3-hook">Metaanálisis de tres niveles sobre 13 RCTs (1098 pacientes) que encuentra un efecto pequeño-a-moderado del ejercicio sobre la memoria episódica en depresión (g=0.21, IC95% 0.10-0.32), con análisis de moderadores sobre qué tipo/dosis de ejercicio funciona mejor. Es el cruce exacto entre tu pilar de kinobody-selfcare y el tratamiento de la depresión: evidencia cuantitativa, no solo motivacional, de que &#39;muévete&#39; es una intervención cognitiva real aunque modesta. Úsalo para contenido que combine ambos mundos — deja de ser un consejo genérico de bienestar y se vuelve un dato con tamaño de efecto que puedes citar con propiedad frente a colegas o alumnos escépticos del ejercicio como coadyuvante.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122418" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122418</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Dialogues in Clinical Neuroscience · 2026-08-25 · meta-analysis</div>
+        <h3 class="r3-title">Prefrontal-limbic circuit modulation in anxiety disorders: Differential neural effects of psychotherapy versus pharmacotherapy revealed by ALE meta-analysis</h3>
+        <p class="r3-hook">Metaanálisis ALE de neuroimagen (27 estudios, 561 pacientes) que compara los efectos de psicoterapia vs. farmacoterapia sobre circuitos prefrontal-límbicos en trastornos de ansiedad: la psicoterapia se asocia a menor activación prefrontal-estriatal, la farmacoterapia a cambios más focales en el uncus derecho. Es evidencia circuito-a-circuito de que &#39;diferentes caminos, diferentes mecanismos&#39; — el tipo de dato que sostiene empíricamente tu marco de psiquiatría dimensional/network theory frente al modelo de &#39;un trastorno, un tratamiento&#39;. Buen anclaje para una clase o hilo sobre por qué combinar psicoterapia y fármaco no es solo sumar efecto clínico, sino actuar sobre nodos de circuito distintos.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/19585969.2026.2719522" target="_blank" rel="noopener">↗ doi.org/10.1080/19585969.2026.2719522</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of NeuroEngineering and Rehabilitation · 2026-08-24 · meta-analysis</div>
+        <h3 class="r3-title">Brain-computer interface for upper limb functional recovery post-stroke: a meta-analysis of improvement in upper limb motor function and changes in neurophysiological markers</h3>
+        <p class="r3-hook">Metaanálisis sobre interfaces cerebro-computadora (BCI) para recuperación motora de miembro superior post-ictus, con desenlaces tanto funcionales (Fugl-Meyer, ARAT) como neurofisiológicos, y heterogeneidad explícita según fase post-ictus. Cae en tu foco secundario de neuropsiquiatría (interfaz neurología-rehabilitación) y en tu interés por neuromodulación y tecnología aplicada — BCI es, en el fondo, el mismo espíritu que la neuromodulación de circuito que ya sigues en psiquiatría. Útil como ejemplo cross-over para mostrar a tu audiencia que la frontera entre &#39;tech aplicada a psiquiatría&#39; y &#39;tech aplicada a neuro-rehabilitación&#39; es cada vez más porosa.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12984-026-02080-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s12984-026-02080-w</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el NMA bayesiano de depresión en Parkinson, citalopram superó a placebo con SMD -0.99 (IC95% -1.87 a -0.12) entre 42 intervenciones comparadas en 51 RCTs — pero el perfil motor del paciente podría (y debería) condicionar cuál ISRS elegir, no solo la eficacia promedio (Brain and Behavior, 10.1002/brb3.71722).</li><li>Un metaanálisis meta-científico en BMJ Open encontró que la mayoría de los NMA de depresión publicados 2020-2025 no modelan bien la dosis como variable — antes de citar un ranking SUCRA en clase, vale la pena revisar si el estudio siquiera intentó esto (10.1136/bmjopen-2026-119511).</li><li>La evidencia más fuerte para prevenir delirium en adultos mayores sigue siendo no farmacológica: bundles multicomponente como HELP, ABCDE(F), CHOPS y AKTIVER, respaldados por dos metaanálisis de 2026 — nada de eso requiere un fármaco nuevo, requiere protocolo y disciplina de equipo (Z Gerontol Geriatr, 10.1007/s00391-026-02643-5).</li><li>Solo 18 estudios de calidad moderada sostienen la búsqueda de marcadores dopaminérgicos/glutamatérgicos en esquizofrenia resistente, y el problema de fondo no es la genética sino que cada estudio define &#39;resistencia&#39; distinto — la estandarización de fenotipo sigue siendo el cuello de botella (AJMG-B Neuropsychiatric Genetics, 10.1002/ajmg.b.70031).</li><li>El ejercicio mejora la memoria episódica en depresión con un efecto pequeño-a-moderado (g=0.21, IC95% 0.10-0.32) en un metaanálisis de 13 RCTs — modesto pero real, y sin los efectos adversos de escalar dosis de fármaco (J Affect Disord, 10.1016/j.jad.2026.122418).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Los modelos computacionales en psiquiatría ya predicen mejor que los criterios clínicos tradicionales, o el problema de &#39;model selection&#39; que señala esta revisión sigue siendo la barrera real antes de llevarlos a la cama del paciente?</li><li>¿Cuánto del efecto que le atribuimos al ISRS en ansiedad, TOC o TEPT es en realidad respuesta a placebo — y cómo debería eso cambiar el consentimiento informado que damos en consulta?</li><li>¿Deberíamos empezar a individualizar el antidepresivo en Parkinson según el perfil motor del paciente, dado que este NMA muestra diferencias de seguridad entre agentes con y sin efecto motor asociado?</li><li>¿Qué tan replicables son los bundles HELP/ABCDE(F) en un contexto de recursos limitados como el peruano, y qué adaptación de personal/protocolo necesitarían para no quedarse solo en el paper?</li><li>¿Vale la pena pedir un perfil genético dopaminérgico/glutamatérgico en esquizofrenia resistente hoy, o la evidencia (18 estudios, calidad moderada, definiciones heterogéneas) todavía no sostiene su uso en la práctica clínica?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG: &#39;Cómo leer un ranking SUCRA en 60 segundos&#39; usando el NMA bayesiano de tratamientos para depresión en Parkinson como ejemplo paso a paso (Brain and Behavior, 10.1002/brb3.71722).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o reel: &#39;El placebo también trata&#39; — desglosar el hallazgo de BJPsych sobre respuesta a placebo por diagnóstico en ensayos con citalopram/escitalopram para replantear cómo se explica el consentimiento informado con antidepresivos (10.1192/bjp.2026.10665).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o carta breve proponiendo un marco estandarizado de definición de &#39;resistencia&#39; en esquizofrenia, usando como evidencia base la heterogeneidad documentada en la revisión de AJMG-B Neuropsychiatric Genetics (10.1002/ajmg.b.70031).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología dimensional sobre &#39;model selection y recoverability&#39; en psiquiatría computacional, usando la revisión de Neuroscience &amp; Biobehavioral Reviews como columna vertebral metodológica (10.1016/j.neubiorev.2026.106923).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie AMAUTA/USAMEDIC para ENAM: caso clínico de delirium en adulto mayor comparando los cuatro bundles (HELP, ABCDE(F), CHOPS, AKTIVER) y cuándo usar cada uno según el escenario (UCI, sala general, comunidad) (Z Gerontol Geriatr, 10.1007/s00391-026-02643-5).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">The British Journal of Psychiatry</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">American Journal of Medical Genetics Part B: Neuropsychiatric Genetics</span><span class="tag ">Brain and Behavior</span><span class="tag ">BMJ Open</span><span class="tag ">Zeitschrift für Gerontologie und Geriatrie</span><span class="tag ">Journal of Substance Use and Addiction Treatment</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Dialogues in Clinical Neuroscience</span><span class="tag ">Journal of NeuroEngineering and Rehabilitation</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch) · PubMed web (pubmed.ncbi.nlm.nih.gov). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 26 de agosto de 2026.</div>
+</div>
+</body>
+</html>
