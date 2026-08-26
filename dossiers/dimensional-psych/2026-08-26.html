@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-08-26 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">26 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Applied Neuropsychology: Child · 2026-08-25 · paper</div>
+        <h3 class="r3-title">Transiciones longitudinales, predictores de remisión y estructura de red de síntomas en TDAH infantil: seguimiento prospectivo de 4 años</h3>
+        <p class="r3-hook">Durak, Ocakoğlu, Özaydın y Ercan siguen 4 años a 89 niños con TDAH y 82 controles: 32.1% remite, la reducción temprana de inatención (reportada por docentes) predice mejor la remisión que la severidad basal, y aunque la estructura de red de síntomas se mantiene estable en el tiempo, la conectividad global entre nodos aumenta significativamente — un índice compuesto de inatención derivado de la red clasifica persistencia vs. remisión con AUC=0.94 (pendiente de validación externa). Para tu línea TDAH/TEA esto es munición doble: primero, evidencia de que &#39;igual de sintomático&#39; no es lo mismo que &#39;igual de conectado&#39; — un reencuadre útil para explicar a padres en AMAUTA por qué el pronóstico no es solo cuestión de contar síntomas; segundo, un candidato directo a replicar en población peruana como paper propio, dado que el índice de inatención necesita validación externa y tú tienes tanto la cohorte clínica como la línea de IA aplicada a investigación para construirla.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/21622965.2026.2722237" target="_blank" rel="noopener">↗ doi.org/10.1080/21622965.2026.2722237</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neuroscience &amp; Biobehavioral Reviews · 2026-08-24 · review</div>
+        <h3 class="r3-title">Psiquiatría computacional guiada por teoría y sus desafíos: una mirada optimista</h3>
+        <p class="r3-hook">Fisher, Sajid, Convertino y Hohwy responden de frente a la crítica más citada contra la psiquiatría computacional — que no ha cumplido su promesa clínica por problemas de selección e identificabilidad de modelos — argumentando que esos problemas son inherentes al modelado de cualquier sistema complejo en ciencia, no un defecto exclusivo del campo, y trazan una ruta para que la psiquiatría computacional avance reconociendo esos límites en vez de negarlos. Es exactamente el tipo de paper de posición que reencuadra el campo y que tu libro de psicopatología dimensional necesita citar para justificar por qué la psiquiatría de precisión no se reduce a &#39;aplicar modelos bonitos&#39; sino a manejar honestamente su incertidumbre; para tu línea de IA aplicada a investigación es además un mapa de qué objeciones metodológicas tendrás que anticipar si publicas modelos computacionales propios, y un argumento defendible para tus comités de ética (HVLH) sobre cuándo un modelo computacional está listo para informar decisiones clínicas.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106923" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106923</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Cognitive Behaviour Therapy · 2026-08-25 · rct</div>
+        <h3 class="r3-title">Aplicación grupal y online del Protocolo Unificado en Argentina: estudio piloto controlado</h3>
+        <p class="r3-hook">Kaplan, Celleri, Klajner, Cremades y Garay conducen el primer ECA del Protocolo Unificado (tratamiento transdiagnóstico para trastornos emocionales) en formato grupal y online en población argentina (n=39): frente a lista de espera, el grupo tratado mejora significativamente en desregulación emocional, ansiedad, depresión, desesperanza, neuroticismo, afecto negativo/positivo, mindfulness y calidad de vida tras 10 sesiones. Es la traducción clínica más concreta que vas a ver esta semana de un marco dimensional/transdiagnóstico funcionando en un contexto hispanohablante y de recursos limitados — casi un espejo de lo que podrías escalar en AMAUTA como protocolo online grupal para pacientes con comorbilidad ansiedad-depresión, sin necesitar 20 diagnósticos categóricos distintos ni 20 protocolos distintos. Para tu libro es el ejemplo de cierre perfecto del capítulo de traducción clínica: la evidencia de que &#39;tratar el mecanismo transdiagnóstico compartido&#39; no es solo teoría de nosología, es un ECA con outcomes reales en español.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/16506073.2026.2720138" target="_blank" rel="noopener">↗ doi.org/10.1080/16506073.2026.2720138</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Child and Adolescent Psychology · 2026-08-25 · paper</div>
+          <div class="r10-title">Ganancias y obstáculos en el mundo real: impresiones de terapeutas sobre el Protocolo Unificado con adolescentes en la comunidad</div>
+          <div class="r10-line">Mora Ringle, Shaw, Kennedy y equipo entrevistan a 20 terapeutas comunitarios que aplicaron el UP-A y encuentran que funciona bien para ansiedad, tiene relevancia transcultural con ajustes sutiles, pero enfrenta barreras sistémicas de soporte organizacional en salud mental comunitaria.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si escalas el Protocolo Unificado en AMAUTA (como sugiere el ECA argentino de hoy mismo), este estudio cualitativo es tu lista de riesgos de implementación — anticipa que la barrera no será la evidencia clínica sino el soporte organizacional a los terapeutas que lo apliquen.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/15374416.2026.2714517" target="_blank" rel="noopener">↗ doi.org/10.1080/15374416.2026.2714517</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica · 2026-08-25 · paper</div>
+          <div class="r10-title">Asociaciones entre sentido de agencia y síntomas psicóticos en pacientes con esquizofrenia: un análisis de red</div>
+          <div class="r10-line">Chaochao, Yunyun, Meimei y equipo (n=95) muestran mediante red que la avolición es el nodo más central conectando el sentido implícito y explícito de agencia con delirios y alogia en esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: avolición como nodo central (no síntoma negativo secundario) es un candidato de intervención transdiagnóstica que vale la pena seguir — si futuros estudios longitudinales confirman que moverla arrastra al resto de la red, cambia el orden de prioridad terapéutica en psicosis que enseñas en razonamiento clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107703" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107703</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Addiction Research · 2026-08-25 · paper</div>
+          <div class="r10-title">Identificación de objetivos de intervención y prevención para el trastorno por juego en internet: evidencia de análisis de red y simulación de intervenciones</div>
+          <div class="r10-line">Zhao y Zhang usan simulación sobre una red de síntomas de gaming disorder y encuentran que la compulsividad es el mejor blanco para TRATAR, mientras que la pérdida de interés en actividades alternativas es el mejor blanco para PREVENIR recaída — targets distintos según la pregunta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la metodología de &#39;simulación sobre la red&#39; (probar en silico qué nodo mueve más al resto antes de intervenir en la clínica) es una herramienta que tu línea de IA aplicada a investigación podría adoptar directo para priorizar blancos de intervención en TDAH/TEA antes de diseñar un ensayo real.</div>
+          <a class="r10-link" href="https://doi.org/10.1159/ear/acrag002" target="_blank" rel="noopener">↗ doi.org/10.1159/ear/acrag002</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">British Journal of Clinical Psychology · 2026-08-25 · paper</div>
+          <div class="r10-title">Mapeando el TEPT a través del espectro de síntomas: predictores afectivos, de regulación emocional y de trauma acumulado en refugiados sirios</div>
+          <div class="r10-line">Alpay usa regresión cuantílica en 461 refugiados sirios y muestra que el malestar afectivo transdiagnóstico (depresión, ansiedad) es estable en todo el espectro de severidad del TEPT, mientras que las estrategias de regulación emocional cambian de peso según el nivel de síntomas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la lección metodológica — que el &#39;predictor correcto&#39; cambia según dónde estés en el continuo de severidad, no solo en promedio poblacional — es un argumento fuerte a favor de modelos de staging dimensional que puedes citar directo en el capítulo de psiquiatría de precisión del libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/bjc.70094" target="_blank" rel="noopener">↗ doi.org/10.1111/bjc.70094</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Psychotraumatology · 2026-08-24 · paper</div>
+          <div class="r10-title">Propiedades psicométricas de la versión sueca del PTSD Checklist para DSM-5 (PCL-5) en una muestra mixta de trauma</div>
+          <div class="r10-line">Bondjers, Willebrand y Arnberg encuentran que el modelo bifactor ajusta mejor que el modelo DSM-5 estándar para el PCL-5, pero que el instrumento tiene especificidad limitada frente a otros constructos de internalización — no sirve como diagnóstico autónomo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: otro recordatorio pedagógico de que un buen ajuste bifactor no equivale a especificidad diagnóstica — material directo para tu enseñanza AMAUTA/USAMEDIC sobre por qué un screening positivo de TEPT puede estar capturando malestar internalizante general, no TEPT específico.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/20008066.2026.2705788" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2705788</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JCPP Advances · 2026-08-23 · editorial</div>
+          <div class="r10-title">Comentario: crianza y psicopatología transdiagnóstica juvenil — reflexiones sobre Richmond-Rakerd et al. (2026)</div>
+          <div class="r10-line">Trentacosta comenta el estudio de Richmond-Rakerd et al. sobre mecanismos de crianza que atraviesan la psicopatología transdiagnóstica juvenil, situándolo dentro del debate sobre blancos familiares de prevención.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la crianza como mecanismo transdiagnóstico (no factor de riesgo específico de un diagnóstico) es un ángulo que conecta directo con tu intersección TDAH/TEA × contenido para padres — candidato a idea de contenido sobre &#39;qué cambiar en casa cuando el diagnóstico aún no está claro&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jcv2.70164" target="_blank" rel="noopener">↗ doi.org/10.1002/jcv2.70164</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">JCPP Advances · 2026-08-23 · editorial</div>
+          <div class="r10-title">Comentario: el cuerpo avergonzado — sobre Černis et al. (2026) y Martinez et al. (2026)</div>
+          <div class="r10-line">Moussa-Tooks y Chaku comentan dos estudios que muestran que la sensación anómala corporal (incluida la despersonalización) es normativa en la adolescencia pero puede funcionar como marcador transdiagnóstico de riesgo, y que el reporte de psicopatología diverge entre adolescente, cuidador y docente en esa etapa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la experiencia corporal anómala como marcador transdiagnóstico temprano (no solo síntoma disociativo aislado) es un hilo que conecta con tu interés en neurodivergencia y razonamiento clínico — vale la pena rastrear los papers originales de Černis y Martinez cuando se indexen.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jcv2.70166" target="_blank" rel="noopener">↗ doi.org/10.1002/jcv2.70166</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Geriatrics · 2026-08-25 · paper</div>
+          <div class="r10-title">Revelando blancos de intervención: disparidades urbano-rurales en redes de síntomas de depresión-ansiedad en adultos mayores chinos que viven solos</div>
+          <div class="r10-line">He, Sun, Chen y equipo (n=2,477) encuentran que &#39;sentirse triste/deprimido&#39; y &#39;preocupación incontrolable&#39; son los síntomas más centrales en ambos entornos, pero el síntoma central específico de ansiedad difiere entre zona rural (&#39;preocuparse demasiado&#39;) y urbana (&#39;dificultad para relajarse&#39;).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si algún día construyes una red de síntomas en población peruana, este estudio es evidencia de que la centralidad de síntomas no se importa automáticamente de cohortes extranjeras — la geografía y cultura local mueven qué nodo es realmente el &#39;puente&#39; a intervenir.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12877-026-08141-y" target="_blank" rel="noopener">↗ doi.org/10.1186/s12877-026-08141-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Psychotraumatology · 2026-08-24 · paper</div>
+          <div class="r10-title">Diferencias de género en el duelo prolongado: una perspectiva de red sobre interconexiones sintomáticas y deterioro funcional</div>
+          <div class="r10-line">Li, Jiao, Chow y equipo (n=1,093) muestran que &#39;falta de sentido&#39; y &#39;desconexión&#39; son los síntomas más centrales del duelo prolongado en ambos géneros, pero la disrupción de identidad es más central solo en hombres.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: un target de intervención dimensional (trabajar sentido y reconexión antes que síntomas específicos) que además se presta a contenido: &#39;el duelo no se ve igual en hombres y mujeres, y la red lo demuestra&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/20008066.2026.2711483" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2711483</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · 2026-08-24 · preprint</div>
+          <div class="r10-title">Factores transdiagnósticos moldean de forma diferencial elecciones y tiempos de reacción en aprendizaje social evaluativo</div>
+          <div class="r10-line">Sohail, Magda, Said y equipo (n=193) combinan modelos de aprendizaje por refuerzo con medidas transdiagnósticas y encuentran que un factor de evitación social predice mayor aprendizaje de retroalimentación negativa, mientras que un factor de insensibilidad emocional predice menor precisión general y respuestas más rápidas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este es el tipo de pipeline (cuestionario transdiagnóstico + modelo computacional de aprendizaje) que puedes usar como caso aplicado en el capítulo de psiquiatría computacional del libro — todavía preprint, sígelo para ver si sobrevive revisión por pares antes de citarlo como evidencia consolidada.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/svbfw" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/svbfw</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En TDAH infantil, la conectividad global de la red de síntomas AUMENTA en 4 años aunque la estructura se mantenga estable — un niño más &#39;conectado&#39; sintomáticamente no es lo mismo que un niño &#39;igual de enfermo&#39;.</li><li>Un AUC de 0.94 para clasificar persistencia vs. remisión de TDAH con un solo índice de inatención derivado de red suena espectacular hasta notar que aún no tiene validación externa: en la muestra de descubrimiento, los índices de red casi siempre rinden mejor de lo que rendirán después.</li><li>En la red de síntomas del trastorno por juego en internet, el síntoma que conviene TRATAR (compulsividad) no es el mismo que conviene VIGILAR para prevenir recaída (pérdida de interés en actividades alternativas) — la misma red da respuestas distintas según preguntes &#39;qué apago&#39; o &#39;qué evito que se encienda&#39;.</li><li>La psiquiatría computacional lleva años acusada de no cumplir su promesa clínica por problemas de selección e identificabilidad de modelos — pero según el review de esta semana, es el mismo problema que enfrenta cualquier modelado de sistemas complejos en ciencia, no un defecto exclusivo del campo.</li><li>En duelo prolongado, &#39;sin sentido&#39; y &#39;desconexión&#39; son los síntomas más centrales en ambos sexos — pero la disrupción de identidad solo es central en hombres, sugiriendo que el duelo se organiza distinto por género incluso cuando la severidad promedio no difiere tanto.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si aplicaras el índice de inatención derivado de red del estudio turco (AUC=0.94) a tus pacientes con TDAH en consulta, ¿predeciría mejor la persistencia a 4 años que tu juicio clínico actual — y te atreverías a validarlo prospectivamente en tu población?</li><li>¿Qué versión &#39;peruanizada&#39; de la red ansiedad-depresión (urbano vs. rural, según el estudio chino) esperarías encontrar en Lima vs. zonas rurales — los mismos nodos puente (preocupación incontrolable, sueño) u otros específicos de tu contexto?</li><li>¿El Protocolo Unificado grupal/online validado en Argentina es trasplantable directo a AMAUTA, o necesita la &#39;sintonización cultural sutil&#39; que describen los terapeutas comunitarios del estudio cualitativo estadounidense?</li><li>En tus pacientes psicóticos, ¿la avolición funciona como el nodo más central que describe este estudio de sentido de agencia — y si la trabajas primero en terapia, esperarías que arrastre consigo el resto de la red sintomática?</li><li>¿Qué preguntarías distinto en tu anamnesis con un adolescente si trataras la sensación anómala corporal (despersonalización, extrañeza corporal) como marcador transdiagnóstico temprano en vez de un síntoma aislado a explorar solo si el paciente lo menciona espontáneamente?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo IG: &#39;Tu hijo no está peor, su red de síntomas está más conectada&#39; — usando el hallazgo de TDAH longitudinal (conectividad aumenta aunque la estructura no cambia) para explicarle a padres AMAUTA por qué el pronóstico no es solo contar síntomas.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio: validación externa en cohorte peruana/LatAm del índice de inatención derivado de red de Durak et al. (AUC=0.94, sin validación externa aún) — encaja directo con tu línea TDAH + IA aplicada a investigación.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional: &#39;psiquiatría computacional — promesas y objeciones&#39;, usando el review de Fisher/Sajid/Hohwy como columna conceptual y el preprint de aprendizaje social transdiagnóstico (PsyArXiv) como caso aplicado ilustrativo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;el mismo síntoma, dos preguntas distintas&#39; — usando el hallazgo de gaming disorder (qué tratar vs. qué prevenir no es lo mismo en la red) como metáfora aplicable a TDAH/ansiedad en consulta.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota AMAUTA/USAMEDIC para preparación ENAM/Residentado: &#39;el Protocolo Unificado como caso de traducción clínica real de un marco transdiagnóstico&#39; — usando el ECA argentino como evidencia y el estudio cualitativo de barreras comunitarias en EE.UU. como advertencia de implementación.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Applied Neuropsychology: Child</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Cognitive Behaviour Therapy</span><span class="tag ">Journal of Clinical Child and Adolescent Psychology</span><span class="tag ">Acta Psychologica</span><span class="tag ">European Addiction Research</span><span class="tag ">British Journal of Clinical Psychology</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">JCPP Advances</span><span class="tag ">BMC Geriatrics</span><span class="tag ">PsyArXiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils, esearch/esummary/efetch) · PsyArXiv/OSF API · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · medRxiv API · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 26 de agosto de 2026.</div>
+</div>
+</body>
+</html>
