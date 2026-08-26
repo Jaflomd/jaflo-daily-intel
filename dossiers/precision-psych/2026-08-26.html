@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-08-26 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">26 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">71</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">71</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Applied Neuropsychology: Child, 25 ago 2026 · paper · 2026-08-25</div>
+        <h3 class="r3-title">Longitudinal transitions, remission predictors, symptom network structure, and classification accuracy in childhood ADHD: a four-year prospective study</h3>
+        <p class="r3-hook">Estudio prospectivo a 4 años en 171 niños con TDAH: 32.1% remite, 67.9% persiste, y el predictor más fuerte de remisión no es la severidad basal sino la reducción temprana de inatención reportada por docentes, con un índice de red dominado por inatención que clasifica remisión vs. persistencia con AUC=0.94. Para Javier esto es evidencia dura y directamente aplicable a su línea TDAH/TEA y a su marco de network theory: confirma que modelar el TDAH como red de síntomas (no como categoría fija) tiene utilidad predictiva real, no solo teórica. Puede citarlo en su libro de psicopatología dimensional como ejemplo de AUC externo honesto en población pediátrica, y usarlo en AMAUTA/USAMEDIC para enseñar cómo leer clasificación basada en redes sintomáticas de cara al Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/21622965.2026.2722237" target="_blank" rel="noopener">↗ doi.org/10.1080/21622965.2026.2722237</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">JMIR Formative Research, 25 ago 2026 · paper · 2026-08-25</div>
+        <h3 class="r3-title">Individual-Level Modeling of Depressive Symptom Severity Using Smartphone and Wearable Data: Time-Aware 1-Year Study With Feature-Group Contributions</h3>
+        <p class="r3-hook">Estudio N-of-1 a 1 año en 11 pacientes con depresión: los modelos predictivos individualizados con datos de smartphone/wearable superaron el baseline en 8 de 11 personas con modelos lineales y en otras 8 de 11 (parcialmente distintas) con modelos no lineales, con mejoras de hasta 1.23 puntos en PHQ-2 por persona. Para Javier es munición perfecta para su línea de psiquiatría de precisión y fenotipado digital: muestra, en escala pequeña pero con metodología honesta (validación temporal, por persona, no por grupo), que el modelo óptimo de predicción de síntomas cambia de paciente a paciente, el argumento central contra el &#39;un modelo para todos&#39; que defiende en su libro. Puede usarlo como caso de enseñanza de modelos idiográficos vs. nomotéticos en su curso de razonamiento clínico, y como ancla para contenido IG/YT sobre por qué la psiquiatría de precisión real empieza en n=1.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/99204" target="_blank" rel="noopener">↗ doi.org/10.2196/99204</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of General Internal Medicine, 25 ago 2026 · paper · 2026-08-25</div>
+        <h3 class="r3-title">Leveraging Individualized Electronic Health Record Learner Analytics to Improve Resident Inbasket Management</h3>
+        <p class="r3-hook">Programa de coaching que usa analítica individualizada de datos de historia clínica electrónica (tiempos de respuesta, minutos por llamada de paciente) para dar feedback personalizado a residentes: el grupo intervenido redujo el tiempo de respuesta a llamadas de pacientes en 2.2 días (p&lt;0.001) y el tiempo por llamada de 0.99 a 0.74 minutos/día (p=0.03). Es el ítem de educación de precisión garantizado del día y calza directo con el pilar amauta-education de Javier: es un ejemplo real y medible de learning analytics aplicado a formación clínica, con métricas de comportamiento real ligadas a coaching 1:1, no un dashboard genérico. Javier puede tomarlo como modelo replicable para AMAUTA/USAMEDIC: usar datos de desempeño real de los alumnos (tiempos de respuesta, patrones de error en simulacros ENAM) para personalizar el feedback en vez de dar el mismo consejo genérico a todos.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11606-026-10720-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10720-z</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Episode-state-associated and shared intrinsic functional network patterns in bipolar disorder</div>
+          <div class="r10-line">fMRI en reposo de 117 pacientes con trastorno bipolar (37 remitidos, 42 en fase depresiva, 38 en fase maníaca) y 35 controles identifica patrones de conectividad funcional específicos de cada estado del ánimo y otros compartidos, correlacionados con mapas de receptores de neurotransmisores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos mapas estado-específicos se vuelven base de biomarcadores de conectividad para monitoreo de fase en bipolaridad, y que Javier puede citarlo como ejemplo de network theory con neuroimagen real (aún sin validación externa) en su próximo capítulo sobre trastornos del ánimo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122403" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122403</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Autism and Developmental Disorders, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Developmental Trajectories of Autistic Traits in Infants With Autism and/or ADHD Family History: Predictors and Mid-Childhood Outcomes</div>
+          <div class="r10-line">Estudio prospectivo de 384 bebés con antecedente familiar de autismo y/o TDAH identifica 5 trayectorias distintas de rasgos autistas desde la infancia hasta la niñez media, predichas por antecedente familiar y factores socioeconómicos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el modelado multi-trayectoria se vuelve estándar en estudios de riesgo familiar en neurodivergencia, y que Javier puede usarlo para argumentar que &#39;alto riesgo familiar&#39; no es un destino único sino un abanico de trayectorias que la clínica debe diferenciar temprano.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10803-026-07481-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s10803-026-07481-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research, 25 ago 2026 · review · 2026-08-25</div>
+          <div class="r10-title">Wireless Electroencephalography in Research on Children With Developmental Disabilities: Scoping Review</div>
+          <div class="r10-line">Revisión de alcance de 64 estudios (3,103 participantes) sobre EEG inalámbrico en niños con discapacidades del desarrollo (59% TDAH, 31% autismo) encuentra que 86% no valida contra EEG con cable y 80% no especifica umbrales de impedancia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta revisión se cita como referencia para exigir estándares de validación en EEG portátil pediátrico, y que Javier puede usarla en AMAUTA/USAMEDIC como caso de enseñanza de PROBAST aplicado a neurotecnología, no solo a modelos predictivos clásicos.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/84707" target="_blank" rel="noopener">↗ doi.org/10.2196/84707</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLOS One, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">An integrated systems biology and machine learning framework for identifying potential biomarkers and pathways in autism spectrum disorder</div>
+          <div class="r10-line">Biología de sistemas + machine learning identifica TLR8 y CASP4 como biomarcadores candidatos en autismo mediante WGCNA y redes de interacción proteína-proteína, con validación experimental en modelo animal de ácido valproico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que TLR8/CASP4 entran a la lista de candidatos para paneles multi-ómicos de estratificación en autismo en 2-3 años, y que Javier puede mencionarlo como ejemplo de cómo la inmunología conecta con su marco RDoC para TEA.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pone.0355984" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0355984</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">HGG Advances, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Considering social risk alongside genetic risk for bipolar disorder in the All of Us Research Program</div>
+          <div class="r10-line">En 115,275 participantes de All of Us (7,000 con trastorno bipolar), el riesgo poligénico explica solo 0.6-1.9% de varianza según ancestría, mientras estrés percibido (OR=2.05) y experiencias adversas en la infancia (OR=2.68) tienen efectos mayores que el riesgo genético.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este hallazgo alimenta el argumento anti-hype genómico de Javier: la psiquiatría de precisión real en bipolaridad va a depender más de estratificar por riesgo psicosocial medible que por polygenic risk scores solos, útil para su libro y para contenido que desinfle el determinismo genético.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.xhgg.2026.100665" target="_blank" rel="noopener">↗ doi.org/10.1016/j.xhgg.2026.100665</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Concurrent downregulation of TAAR1 and NQO1 in individuals with isolated methamphetamine use: Implications for dopaminergic and oxidative stress-related biology</div>
+          <div class="r10-line">Estudio caso-control muestra downregulación significativa (p&lt;0.001) de TAAR1 y NQO1 en usuarios de metanfetamina, sugiriendo un biomarcador conjunto de disfunción dopaminérgica y estrés oxidativo con potencial en psiquiatría de adicciones de precisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que TAAR1 se consolida como diana farmacológica y biomarcador dual en trastornos por uso de sustancias, un dato que Javier puede archivar para cuando su línea de psiquiatría de precisión cruce con adicciones.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111904" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111904</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine, 25 ago 2026 · review · 2026-08-25</div>
+          <div class="r10-title">Supporting Sound Reasoning in Patient Safety: Mental Models</div>
+          <div class="r10-line">Revisión narrativa traza la evolución de los modelos mentales de seguridad del paciente, del modelo lineal (queso suizo) a sistemas adaptativos complejos (Safety-II), proponiendo un marco integrador para razonamiento clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Safety-II se vuelve lenguaje estándar en programas de residencia para enseñar error médico sin caer en culpabilización individual, y que Javier puede integrarlo a su curso de razonamiento clínico para analizar casos de ENAM/Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10685-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10685-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Formative Research, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Large Language Model-Assisted Thematic Coding in Medical Education Research: Comparative Methodological Study</div>
+          <div class="r10-line">GPT-4o codificó temáticamente un grupo focal de estudiantes de medicina con 96% de acuerdo (κ=0.71) frente a un codebook humano deductivo, aunque solo 31% de los códigos inductivos generados coincidieron con el consenso humano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la codificación asistida por LLM se vuelve estándar para análisis cualitativo rápido en investigación educativa, siempre con codebook deductivo humano como ancla; Javier puede probarlo directamente para acelerar sus propias investigaciones en educación médica de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/85572" target="_blank" rel="noopener">↗ doi.org/10.2196/85572</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Emergency Medicine, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Cognitive strategies in the Emergency Medical Services: proposal for a conceptual integrated framework to explicate clinical reasoning in EMS</div>
+          <div class="r10-line">Propuesta de marco conceptual integrado (modelo SPART + teoría de doble proceso + metacognición supervisora) para explicar el razonamiento clínico en servicios médicos de emergencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este marco SPART se adapta fuera de emergencias hacia razonamiento clínico general en pregrado, y que Javier puede tomar prestados sus componentes de metacognición supervisora para su propio modelo de enseñanza de razonamiento clínico en USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12245-026-01355-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12245-026-01355-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education Online, 25 ago 2026 · review · 2026-08-25</div>
+          <div class="r10-title">Beyond receiving: feedback literacy as a catalyst for resident growth, a scoping review</div>
+          <div class="r10-line">Revisión de alcance de 15 estudios (2015-2024) encuentra que los residentes valoran el feedback pero su involucramiento varía mucho, que solo una intervención apuntó explícitamente a &#39;feedback literacy&#39;, y que ninguna midió impacto a largo plazo en el desempeño clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que &#39;feedback literacy&#39; se vuelve el próximo término de moda en educación médica de precisión, y que Javier tiene aquí la oportunidad de posicionar a AMAUTA como uno de los primeros programas en medir impacto longitudinal real del feedback, no solo satisfacción del alumno.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/10872981.2026.2722433" target="_blank" rel="noopener">↗ doi.org/10.1080/10872981.2026.2722433</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En depresión, el modelo predictivo que mejor funciona no es el mismo de paciente a paciente: en el estudio N-of-1 de JMIR Form Res, 8/11 personas mejoraron con modelos lineales y otras 8/11 (parcialmente distintas) con no lineales — la &#39;mejor arquitectura de ML&#39; es una pregunta empírica por paciente, no una elección de diseño fija.</li><li>El riesgo poligénico para bipolaridad explica menos del 2% de la varianza en All of Us, pero el estrés percibido casi duplica las probabilidades (OR=2.05) — en 2026 seguimos sobrevendiendo la genética y subestimando lo psicosocial en psiquiatría de precisión.</li><li>Un índice de red centrado en inatención predice remisión de TDAH en niños con AUC=0.94, mejor que la severidad basal sola: la estructura de la red de síntomas importa más que su intensidad total.</li><li>86% de los estudios que usan EEG inalámbrico en niños con TDAH/TEA nunca lo validaron contra EEG con cable — el fenotipado digital pediátrico tiene un problema de validación que casi nadie está resolviendo.</li><li>GPT-4o coincide en 96% con codebooks humanos deductivos para codificación cualitativa, pero solo en 31% de los códigos inductivos nuevos — la IA es buena replicando categorías que ya le diste, mala descubriendo categorías nuevas.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el &#39;mejor&#39; modelo predictivo de síntomas depresivos cambia de paciente a paciente, ¿tiene sentido seguir buscando un algoritmo único de fenotipado digital para depresión, o el futuro es literalmente un modelo por persona?</li><li>¿Debería un score de riesgo poligénico para bipolaridad influir en decisiones clínicas cuando el estrés percibido y las experiencias adversas de la infancia predicen más que él?</li><li>¿Qué componente exacto de la reducción temprana de inatención (reportada por docentes, no por padres) hace que sea mejor predictor de remisión de TDAH que la severidad basal: sensibilidad del informante o algo biológico real?</li><li>Si 8 de cada 10 estudios de EEG inalámbrico pediátrico nunca se validan contra el estándar con cable, ¿qué tanto de la literatura de &#39;neurotecnología para TDAH/TEA&#39; descansa sobre datos que nadie verificó?</li><li>¿Puede &#39;feedback literacy&#39; enseñarse igual que una competencia clínica, con currículo explícito y evaluación longitudinal, o es una habilidad metacognitiva que solo se adquiere con exposición repetida y no con una intervención puntual?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;Por qué el mejor algoritmo para predecir tu depresión no es el mismo que el de tu paciente de al lado&#39;, usando el estudio N-of-1 de JMIR Form Res como gancho.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional sobre el &#39;network index&#39; de inatención en TDAH (AUC=0.94) como ejemplo de red de síntomas con utilidad predictiva real, no solo descriptiva.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta al editor o paper corto auditando validación de EEG inalámbrico vs. cableado en literatura o data propia, aprovechando el hueco metodológico que expone la revisión de JMIR.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido AMAUTA/USAMEDIC: &#39;3 formas de medir feedback literacy en tus residentes&#39;, inspirada en la revisión de Medical Education Online, con métricas concretas más allá de la satisfacción del alumno.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Piloto en AMAUTA usando analítica individualizada de desempeño en simulacros ENAM (tiempos de respuesta, patrones de error) para personalizar feedback 1:1, replicando el diseño del estudio de JGIM con residentes.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">JMIR Formative Research</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Journal of Autism and Developmental Disorders</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">PLOS One</span><span class="tag ">HGG Advances</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Applied Neuropsychology: Child</span><span class="tag ">International Journal of Emergency Medicine</span><span class="tag highlight">Medical Education Online</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed vía WebFetch + NCBI E-utilities (MCP de PubMed no disponible en este entorno) · Consensus (descubrimiento inicial de literatura 2026, sin fecha exacta por ítem) · Europe PMC (verificación cruzada, sin cobertura de PMIDs muy recientes). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 26 de agosto de 2026.</div>
+</div>
+</body>
+</html>
