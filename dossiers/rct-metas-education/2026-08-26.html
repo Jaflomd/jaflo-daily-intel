@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-08-26 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">26 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">43</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">43</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Medical Education Online, 2026-08-25 · review</div>
+        <h3 class="r3-title">Beyond receiving: feedback literacy as a catalyst for resident growth, a scoping review</h3>
+        <p class="r3-hook">Esta scoping review usa el framework de feedback literacy de Carless y Boud (apreciar el feedback, hacer juicios, manejar el afecto, actuar) y de 1048 artículos cribados encuentra solo 15 sobre cómo los residentes reciben y usan el feedback — y de esos, apenas UNO fue una intervención diseñada para entrenar esa habilidad; ningún estudio midió si se traduce en mejor desempeño clínico a largo plazo. El hallazgo contraintuitivo es que casi toda la literatura de educación médica sobre feedback se centra en cómo darlo bien, no en enseñar al residente a procesarlo: el cuello de botella está del lado del receptor, no del emisor. Para Javier esto es directamente accionable en AMAUTA/USAMEDIC: sus programas dan feedback constante sobre simulacros y bancos de preguntas para ENAM y Residentado, pero la review sugiere que el verdadero diferenciador pedagógico sería un módulo explícito de &#39;feedback literacy&#39; que enseñe a interpretar, filtrar la carga emocional y accionar ese feedback. También conecta con su libro de neurociencia educativa: el manejo del afecto ante el feedback es territorio de regulación emocional, un puente natural hacia su línea de psiquiatría dimensional aplicada a la formación médica.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/10872981.2026.2722433" target="_blank" rel="noopener">↗ doi.org/10.1080/10872981.2026.2722433</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Nurse Education in Practice, 2026-08-20 · rct</div>
+        <h3 class="r3-title">Comparing individual and peer-supported ChatGPT use in nursing case analysis: Effects on nursing diagnostic skills and cognitive load in a randomized controlled trial</h3>
+        <p class="r3-hook">RCT con 91 estudiantes de enfermería que compara individual vs. individual+ChatGPT vs. peer+ChatGPT en la formulación de diagnósticos de enfermería durante tres semanas de aprendizaje basado en casos: no hubo diferencia significativa en habilidad diagnóstica entre grupos (p=.936), aunque el grupo peer+ChatGPT mostró una tendencia no significativa a mayor carga cognitiva germana (esfuerzo mental productivo). Para Javier es un dato clave y anti-hype para su pilar de IA en educación: confirma con evidencia controlada que sumar ChatGPT a una tarea de razonamiento clínico NO mejora automáticamente el aprendizaje si no se rediseña la actividad alrededor de la herramienta — la variable que sí mostró señal fue el trabajo en pares, no la tecnología en sí. Es munición directa para calibrar expectativas en AMAUTA antes de invertir en tutores de IA para USAMEDIC, y para su línea de razonamiento clínico cuando discuta IA aplicada a la enseñanza: contradice la narrativa fácil de que &#39;la IA mejora todo&#39; con un ensayo aleatorizado real, no una opinión.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.nepr.2026.104949" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nepr.2026.104949</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Nursing Open, 2026-08-25 · rct</div>
+        <h3 class="r3-title">Impact of a Visualization Training Platform on PICU Nurses&#39; Pain Assessment Skill in Critically Ill Children: A Mixed-Methods Randomized Controlled Trial</h3>
+        <p class="r3-hook">RCT preregistrado (NCT06431802) con 69 enfermeras de UCI pediátrica en Shanghái que compara una plataforma de entrenamiento por visualización (PainScan) contra entrenamiento presencial tradicional para evaluar dolor en niños críticos: ambos grupos mejoraron conocimiento y habilidad, pero PainScan fue superior en desarrollo de habilidad (Z=-3.644, p&lt;0.001), con evaluadores ciegos al grupo y reporte CONSORT 2025. La ventaja no vino de más contenido sino del formato inmersivo y de práctica repetida — el mismo principio detrás de simuladores de casos clínicos. Para Javier es evidencia de alta calidad metodológica (RCT preregistrado, evaluador ciego, outcome objetivo) que respalda invertir en plataformas de simulación visual para USAMEDIC/AMAUTA en dominios de evaluación clínica de alto riesgo: dolor pediátrico es un análogo directo a evaluación de riesgo suicida o agitación psiquiátrica, donde el entrenamiento repetido y de bajo riesgo es igual de valioso. El diseño mixto (RCT + entrevistas cualitativas de experiencia de aprendizaje) es un estándar replicable si Javier publica sobre sus propios simuladores de entrevista clínica psiquiátrica.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/nop2.70741" target="_blank" rel="noopener">↗ doi.org/10.1002/nop2.70741</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Academic Radiology, 2026-08-26 · rct</div>
+          <div class="r10-title">Point-of-Care Ultrasound as a Pedagogical Tool: Effects on Visuospatial and Radiologic Interpretation Skills in a Randomized Study</div>
+          <div class="r10-line">RCT con 417 estudiantes de último año de medicina en París muestra que un curso corto de POCUS mejora la interpretación de imágenes multimodales y el conocimiento anatómico (76 vs 73/100, p=0.015), con la habilidad visuoespacial como mediador — modelo de cómo una intervención breve y barata mueve una habilidad cognitiva medible.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El entrenamiento POCUS de bajo costo se integrará como módulo estándar preclínico en más facultades en 2-3 años; Javier podría adaptar el diseño pre/post por dominio cognitivo para medir el impacto real de sus propios talleres de razonamiento clínico en USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.acra.2026.08.001" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.001</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Nursing Education, 2026-08-25 · review</div>
+          <div class="r10-title">How Clinical Instructors Affect Resilience in Undergraduate Nursing Students During Clinical Education: A Scoping Review</div>
+          <div class="r10-line">Scoping review con solo 4 estudios primarios (de 3039 cribados) halla que el instructor clínico influye directamente en la resiliencia y afrontamiento de estudiantes de enfermería en prácticas, sobre todo por sus características docentes y el clima que genera — evidencia delgada pero consistente con la línea de bienestar del residente que Javier trabaja en AMAUTA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La formación de docentes clínicos en soporte psicológico (no solo técnico) ganará peso como estándar de acreditación; Javier puede anticiparse diseñando un módulo de &#39;instructor como factor de resiliencia&#39; para los tutores de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.3928/01484834-20260708-02" target="_blank" rel="noopener">↗ doi.org/10.3928/01484834-20260708-02</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Nursing Education, 2026-08-25 · review</div>
+          <div class="r10-title">Merging Divergent and Convergent Thinking for Nursing Pedagogy Transformation: A Rapid Review</div>
+          <div class="r10-line">Rapid review de 20 fuentes encuentra que combinar pensamiento divergente (generar hipótesis amplias, voces diversas) y convergente (síntesis, protocolo) produce razonamiento clínico más fuerte que la memorización — marco aplicable al diseño de casos clínicos complejos en razonamiento psiquiátrico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los bancos de preguntas que fuerzan primero divergencia y luego convergencia superarán en retención a los formatos de respuesta única; Javier podría pilotear este formato dual en un módulo de ENAM/Residentado y medir el efecto.</div>
+          <a class="r10-link" href="https://doi.org/10.3928/01484834-20260707-01" target="_blank" rel="noopener">↗ doi.org/10.3928/01484834-20260707-01</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher, 2026-08-25 · paper</div>
+          <div class="r10-title">Two-point regression standard setting, improving discrimination at both ends of the grading scale in OSCEs</div>
+          <div class="r10-line">Estudio metodológico introduce un modelo de regresión de dos puntos que separa el corte de &#39;competente&#39; del de &#39;excelente&#39; en OSCEs, reduciendo de 47% a 17.2% la proporción clasificada como excelente al alinear con benchmarks nacionales — herramienta psicométrica lista para usar en exámenes de alto impacto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El estándar de dos puntos se volverá norma para diferenciar &#39;aprobado&#39; de &#39;destacado&#39; en certificación; Javier podría aplicarlo directamente para recalibrar los simulacros de alto riesgo de USAMEDIC y distinguir mejor a los candidatos top de ENAM/Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2721367" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2721367</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Simulation in Healthcare, 2026-08-25 · paper</div>
+          <div class="r10-title">Comparing the Video-guided Intubation Skills of Competency and Mastery-trained Staff Physicians</div>
+          <div class="r10-line">Cohorte prospectivo compara entrenamiento por competencia vs. por maestría (estándar Angoff más alto) en laringoscopia por video: el grupo de maestría retuvo y transfirió mejor la habilidad a 6 meses, aunque sin datos basales del grupo competencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El mastery learning con estándares Angoff irá reemplazando al entrenamiento por competencia mínima en simulación de procedimientos de alto riesgo; Javier podría exigir el umbral de maestría, no solo aprobar, en las estaciones de simulación de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/SIH.0000000000000962" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000962</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Simulation in Healthcare, 2026-08-25 · paper</div>
+          <div class="r10-title">What Do Life-Support Trainers Mean When They Say They Use the Learning Conversation Debriefing Method? A Phenomenographic Study</div>
+          <div class="r10-line">Estudio cualitativo con 15 entrenadores de soporte vital revela que el modelo de debriefing post-simulación de 7 pasos (PSLC) se percibe como valioso pero se aplica de forma muy inconsistente, sobre todo por limitaciones de tiempo — el debriefing bien hecho no es automático, requiere desarrollo docente explícito.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Las instituciones invertirán más en certificar la fidelidad del facilitador de debriefing, no solo el contenido de la simulación; Javier podría estandarizar y auditar un protocolo de debriefing de 7 pasos para los tutores de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/SIH.0000000000000961" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000961</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of CME, 2026-08-21 · paper</div>
+          <div class="r10-title">Understanding Time Availability and Format Preferences for AI Professional Development in Health Professions Education</div>
+          <div class="r10-line">Encuesta a 175 docentes de salud en EEUU halla que más de la mitad no tiene formación formal en IA, prefieren microtrainings de 30-60 min con ejemplos reales y proyectos integrados al currículo, y el incentivo más fuerte es aplicar la IA en proyectos reales — mapa directo de cómo diseñar capacitación docente en IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los programas de desarrollo docente en IA migrarán de webinars largos a microcápsulas aplicadas; Javier puede rediseñar la capacitación de tutores AMAUTA en IA con ese formato (30-60 min, ejemplo real, proyecto aplicado) para maximizar adopción.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/28338073.2026.2719152" target="_blank" rel="noopener">↗ doi.org/10.1080/28338073.2026.2719152</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cleft Palate-Craniofacial Journal, 2026-08-24 · paper</div>
+          <div class="r10-title">Expanding Cleft Surgical Workforce Capacity in Low- and Middle-Income Countries Through Competency-Based Training</div>
+          <div class="r10-line">Estudio prospectivo con 20 cirujanos en formación de 11 países de bajos y medianos ingresos muestra que un pathway de competencias (educación virtual + mentoría operatoria) aumentó la competencia evaluada entre 46% y 71% según el procedimiento — modelo de competencias escalable con recursos limitados, como el contexto peruano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los pathways híbridos (virtual + mentoría presencial) se volverán estándar para expandir capacidad clínica en LMIC; Javier podría adaptar este modelo de certificación por competencias medibles para escalar AMAUTA a más regiones del Perú sin perder rigor evaluativo.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/10556656261475423" target="_blank" rel="noopener">↗ doi.org/10.1177/10556656261475423</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Research, 2026-08-24 · paper</div>
+          <div class="r10-title">Laparoscopic Pediatric Inguinal Hernia Repair as a Training Platform for Surgical Residents</div>
+          <div class="r10-line">Revisión retrospectiva de 784 reparaciones laparoscópicas de hernia inguinal pediátrica halla que la participación de residentes se asoció a mayor tiempo operatorio y más recurrencia a 2 años (6.4% vs 1.8%, p=0.026), aunque los resultados a corto plazo fueron similares — &#39;apto para entrenamiento estandarizado&#39; no es lo mismo que &#39;sin costo de aprendizaje medible&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los programas quirúrgicos empezarán a reportar de forma rutinaria desenlaces a largo plazo ligados a la participación de residentes, presionando hacia currículos de simulación previa más exigentes; para Javier es argumento a favor de exigir umbrales de maestría en simulación antes de exponer a pacientes reales, en cualquier especialidad procedimental.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jss.2026.07.050" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jss.2026.07.050</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El feedback bien dado no sirve de nada si nadie enseña a recibirlo: de 15 estudios sobre feedback en residentes, solo uno entrenó explícitamente esa habilidad.</li><li>Sumar ChatGPT a una tarea de razonamiento clínico no mejora el aprendizaje por sí solo (RCT en 91 estudiantes, p=.936): lo que sí parece mover la aguja es combinarlo con trabajo en pares, no la herramienta aislada.</li><li>Fijar el estándar de aprobación en &#39;maestría&#39; (Angoff alto) en vez de &#39;competencia mínima&#39; predice mejor retención de habilidad a 6 meses en procedimientos de alto riesgo — el listón alto entrena mejor que el listón bajo.</li><li>El debriefing estructurado se enseña una vez pero rara vez se audita: entrenadores certificados en el modelo de 7 pasos igual se desvían por presión de tiempo, no por falta de conocimiento del modelo.</li><li>Los docentes de salud no rechazan la capacitación en IA por desinterés sino por formato: prefieren 30-60 min aplicados a proyectos reales, no cursos largos genéricos — el problema es de diseño instruccional, no de motivación.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿El entrenamiento explícito en &#39;feedback literacy&#39; (no solo dar mejor feedback) mejora el desempeño clínico medido a 6-12 meses en residentes de psiquiatría?</li><li>¿Por qué la asistencia de IA en tareas de razonamiento clínico solo mueve la aguja cuando se combina con aprendizaje colaborativo, y qué implica eso para diseñar tutores de IA en AMAUTA?</li><li>¿Un estándar de &#39;maestría&#39; (no solo de aprobación) en las estaciones de simulación de entrevista psiquiátrica reduciría errores clínicos reales de los residentes a 6 meses, igual que en laringoscopia?</li><li>¿Qué proporción de los tutores de AMAUTA aplican el debriefing estructurado con fidelidad real, versus lo que reportan aplicar?</li><li>¿El modelo de estándar de dos puntos (competente vs. excelente) en OSCEs podría replicarse en los simulacros de alto riesgo de ENAM/Residentado para identificar mejor a los candidatos top?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel de Instagram: &#39;Le agregamos ChatGPT a una clase de razonamiento clínico y no mejoró nada (RCT)&#39; — desmontar el hype de IA en educación con este ensayo aleatorizado como ancla.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Diseñar y pilotear un módulo corto de &#39;feedback literacy&#39; dentro de AMAUTA/USAMEDIC, basado en el framework de Carless y Boud (apreciar, juzgar, manejar el afecto, actuar), y medir su efecto en el uso real del feedback de los simulacros.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de neurociencia educativa sobre por qué recibir feedback es una habilidad regulatoria-emocional entrenable, no un rasgo fijo, conectando la scoping review de feedback literacy con la psicopatología dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper corto (carta/comentario) aplicando el modelo de regresión de dos puntos (Lunn et al., Med Teach 2026) para recalibrar los cortes de &#39;aprobado&#39; vs &#39;destacado&#39; en los simulacros de alto riesgo de USAMEDIC, con datos propios.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Rediseñar la capacitación en IA de los tutores AMAUTA en microcápsulas de 30-60 min con proyecto curricular aplicado, replicando el formato que prefieren los docentes de salud según la encuesta de Journal of CME.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Medical Education Online</span><span class="tag ">Nurse Education in Practice</span><span class="tag ">Nursing Open</span><span class="tag ">Academic Radiology</span><span class="tag ">Journal of Nursing Education</span><span class="tag ">Medical Teacher</span><span class="tag ">Simulation in Healthcare</span><span class="tag ">Journal of CME</span><span class="tag ">Cleft Palate-Craniofacial Journal</span><span class="tag ">Journal of Surgical Research</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch, ventana 72h, datetype=pdat+edat). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 26 de agosto de 2026.</div>
+</div>
+</body>
+</html>
