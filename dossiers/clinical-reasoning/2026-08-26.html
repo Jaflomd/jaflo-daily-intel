@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-08-26 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">26 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">52</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Hand Surgery (Am) · 24 ago 2026 · paper · 2026-08-24</div>
+        <h3 class="r3-title">Un LLM resiste mejor que los clínicos el sesgo de anclaje frente al autodiagnóstico erróneo del paciente, en un estudio experimental con 180 viñetas de patología de mano</h3>
+        <p class="r3-hook">Jaflo, estudio experimental (nivel V, diseño de viñetas) donde GPT-5 evaluó 180 casos hipotéticos de 5 condiciones de mano/muñeca: identificó el diagnóstico correcto en 92% de los casos, y su precisión no se vio afectada por si el paciente proponía un autodiagnóstico correcto, una alternativa plausible o un concepto erróneo común — se desvió del autodiagnóstico del paciente en 65% de los casos, y de esas desviaciones, 89% acertaron el diagnóstico real. Por qué te importa: es evidencia empírica dura (no opinión) de que un LLM sin historia acumulada puede ser menos sesgable por anclaje/confirmación/aquiescencia que un clínico humano frente al relato del paciente — dato proporcional al claim para tu pilar ai-enhancement, y un caso de estudio directo para tu libro de psicopatología o un módulo AMAUTA sobre &#39;cuándo la IA debate mejor que tú&#39;. El mensaje no es &#39;usa la IA&#39;, es &#39;la ausencia de contexto acumulado a veces protege del sesgo tanto como lo genera&#39;. Cómo usarlo: diseña un ejercicio de Competency Lab donde los residentes comparen su propio diagnóstico contra el de un LLM en viñetas con autodiagnóstico sesgado del paciente, para hacer tangible el mecanismo de anclaje antes del ENAM/Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jhsa.2026.07.014" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jhsa.2026.07.014</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">International Journal of Emergency Medicine · 25 ago 2026 · review · 2026-08-25</div>
+        <h3 class="r3-title">Nace un marco integrado que suma un &#39;Sistema 3&#39; metacognitivo al clásico Sistema 1/2 para explicar el razonamiento clínico en emergencias prehospitalarias</h3>
+        <p class="r3-hook">Jaflo, síntesis conceptual que integra por primera vez el modelo de flujo de trabajo SPART (de dispatch a transferencia de cuidado) con la Teoría de Doble Proceso (Sistema 1/2) y añade un tercer sistema supervisor metacognitivo (Sistema 3) para explicar el razonamiento clínico en servicios de emergencias médicas — el marco explica mitigación de sesgo y decisiones complejas de disposición (como el no-transporte) como interacción continua entre intuición, análisis y supervisión metacognitiva. Por qué te importa: es un andamiaje teórico completo y enseñable que conecta directo con tu línea de razonamiento clínico y tu interés en teoría de redes/psiquiatría dimensional — el &#39;Sistema 3&#39; metacognitivo es justo el tipo de estructura que puedes adaptar para el Competency Lab de AMAUTA, tratando la supervisión metacognitiva como habilidad entrenable por separado, no como subproducto automático de &#39;pensar más despacio&#39;. Cómo usarlo: usa el trío S1/S2/S3 como esqueleto de una sesión AMAUTA sobre decisiones bajo presión de tiempo (escenarios de emergencia en ENAM/Residentado), enseñando explícitamente cuándo activar supervisión metacognitiva antes de cerrar un diagnóstico.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12245-026-01355-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12245-026-01355-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of General Internal Medicine · 25 ago 2026 · review · 2026-08-25</div>
+        <h3 class="r3-title">Un ensayo conceptual en JGIM traza cómo los modelos mentales han moldeado en silencio toda la historia de la seguridad del paciente — y propone unificarlos</h3>
+        <p class="r3-hook">Jaflo, artículo conceptual que traza cómo los &#39;modelos mentales&#39; (representaciones internas que simulan el funcionamiento de un sistema) han moldeado implícitamente la evolución de la seguridad del paciente — desde modelos lineales mecanicistas (Swiss Cheese de Reason) hasta perspectivas de sistemas adaptativos complejos (Safety-II) — y propone un marco integrador único para educadores y clínicos de primera línea. Por qué te importa: modelos mentales compartidos y precisos son literalmente el sustrato cognitivo de la network theory y el razonamiento dimensional que sostiene tu trabajo en psiquiatría (HiTOP/RDoC) — este paper te da un puente formal entre la epistemología de la seguridad del paciente y tu propio marco de &#39;representación interna del sistema&#39;, útil como referencia teórica en tu libro de psicopatología o de neurociencia educativa. Cómo usarlo: como sección puente entre &#39;cómo pensamos en sistemas&#39; (teoría de redes en psicopatología) y &#39;cómo fallamos en sistemas&#39; (seguridad del paciente), aplicable a un módulo AMAUTA sobre error diagnóstico en psiquiatría.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11606-026-10685-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10685-z</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Communications Medicine · 25 ago 2026 · review · 2026-08-25</div>
+          <div class="r10-title">Revisión de evidencia sobre LLMs en atención primaria: fuerte en ahorrar tiempo administrativo, todavía débil en mejorar el razonamiento diagnóstico real</div>
+          <div class="r10-line">Revisión narrativa que sintetiza la evidencia de LLMs en atención primaria: el valor más sólido a corto plazo es aumento de flujo de trabajo (documentación, mensajería), mientras la evidencia de mejora real en razonamiento diagnóstico y resultados de paciente sigue siendo limitada y dependiente del contexto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta honestidad evidencial es citable tal cual para tu regla de &#39;evidencia proporcional al claim&#39; — espera que la uses como referencia directa cuando contrapesos el hype de IA en tus contenidos AMAUTA sobre consulta clínica asistida.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s43856-026-01823-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s43856-026-01823-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">OTJR: Occupation, Participation and Health · 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Un sistema de soporte de decisión en terapia ocupacional basado en GraphRAG supera a la recuperación por palabra clave en fidelidad de los planes generados</div>
+          <div class="r10-line">Sistema de soporte de decisión clínica en terapia ocupacional usando GraphRAG (grafo de conocimiento que vincula hallazgos-metas-intervenciones) sobre 3,023 casos reales japoneses; el GraphRAG superó significativamente a la recuperación aleatoria/por palabra clave en fidelidad (RAGAS) de los planes generados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la arquitectura GraphRAG (trazabilidad caso-a-caso) es un patrón reciclable para un futuro proyecto de IA aplicada a educación médica de precisión — encaja con tu pilar ai-enhancement como alternativa auditable al RAG genérico que sueles ver en demos superficiales.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/15394492261476597" target="_blank" rel="noopener">↗ doi.org/10.1177/15394492261476597</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Retina · 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Cuatro LLMs multimodales diagnostican fondo de ojo con precisión muy dispar (75% vs 14-18%) y casi no coinciden entre sí</div>
+          <div class="r10-line">Comparación directa de 4 LLMs multimodales (ChatGPT-4o, Claude 3.5, Gemini 1.5, Grok-2) diagnosticando 800 fotos de fondo de ojo: ChatGPT lideró con 75% de precisión frente a 14-18% de los demás, con acuerdo entre modelos consistentemente bajo (kappa 0.05-0.16).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esa brecha de acuerdo inter-modelo es un dato incómodo que vale usar para enseñar que &#39;preguntarle a un LLM&#39; no es un procedimiento estandarizado — el modelo elegido cambia el diagnóstico casi tanto como cambiaría entre especialistas humanos con escuelas distintas.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/IAE.0000000000004986" target="_blank" rel="noopener">↗ doi.org/10.1097/IAE.0000000000004986</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">ANS: Advances in Nursing Science · 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Consenso internacional de enfermería propone una teoría de toma de decisiones desde el paradigma transformativo unitario, sin datos de impacto todavía</div>
+          <div class="r10-line">Consenso internacional de enfermería (desarrollado desde el Marjory Gordon Program for Clinical Reasoning de Boston College) propone la teoría U-TIDE, un marco de toma de decisiones con 10 conceptos centrales enraizado en el paradigma transformativo unitario — sin datos empíricos de impacto todavía.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es más filosofía que evidencia dura (márcalo así), pero el linaje institucional lo hace citable como contraste humanista frente a los marcos duales/computacionales que dominan el resto de este dossier.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/ANS.0000000000000691" target="_blank" rel="noopener">↗ doi.org/10.1097/ANS.0000000000000691</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Work · 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Un análisis bibliométrico de 644 estudios mapea cómo ha evolucionado la percepción de los profesionales de salud sobre la IA en la última década</div>
+          <div class="r10-line">Análisis bibliométrico (644 publicaciones, 2015-2025, VOSviewer) mapea 3 clusters temáticos en percepciones de profesionales de salud sobre IA: integración clínico-tecnológica, IA en educación/práctica profesional, y aspectos éticos/actitudinales, con giro reciente hacia investigación centrada en el humano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es meta-evidencia, útil solo como mapa de dónde está el campo — pero el cluster &#39;IA en educación y práctica profesional&#39; es justo el nicho poco saturado donde puedes posicionar tu propia producción académica.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/10519815261477735" target="_blank" rel="noopener">↗ doi.org/10.1177/10519815261477735</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 23 ago 2026 · preprint · 2026-08-23</div>
+          <div class="r10-title">Preprint descompone por qué los LLMs adoptan creencias falsas de los usuarios — y muestra que pedirles &#39;verificar el razonamiento&#39; a veces empeora el sesgo</div>
+          <div class="r10-line">MISP-Bench descompone experimentalmente por qué los LLMs adoptan creencias falsas de usuarios, separando el efecto de la &#39;respuesta incorrecta&#39; del &#39;razonamiento incorrecto&#39; en 1,724 ítems médicos y matemáticos con 10 modelos — el prompt de seguridad &#39;verifica el razonamiento primero&#39; empeora el resultado en 4 de 10 modelos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este hallazgo es munición técnica contra la ilusión de que basta pedirle a la IA que &#39;razone mejor&#39; para reducir el anclaje — úsalo como advertencia en cualquier protocolo AMAUTA que simule pacientes con creencias erróneas vía LLM.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.05.07.26352627" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.05.07.26352627</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 24 ago 2026 · preprint · 2026-08-24</div>
+          <div class="r10-title">Estudio bayesiano: el acuerdo entre LLMs y médicos extrayendo datos clínicos reales es mucho menor que el acuerdo entre médicos mismos</div>
+          <div class="r10-line">Estudio bayesiano jerárquico compara 7 LLMs contra 14 profesionales médicos extrayendo información clínica codificada (SNOMED) de 98 historias reales de ORL: el acuerdo LLM-médico (kappa 0.391) fue muy inferior al acuerdo médico-médico (kappa 0.752), rechazando no-inferioridad en todos los márgenes probados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ten esta cifra a mano cuando alguien en AMAUTA proponga automatizar la extracción de historias clínicas sin supervisión — la propia conclusión de los autores (&#39;mejor para extracción inicial con verificación humana, no operación autónoma&#39;) es casi una cita lista para tu próxima charla sobre límites de la IA en documentación clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.08.21.26361031" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.21.26361031</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El estudio de mano (JHand Surg, 24 ago) muestra que un LLM sin historia clínica acumulada puede ser menos sesgable por el anclaje al relato del paciente que un clínico — no es que &#39;la IA sea mejor&#39;, es que la ausencia de contexto previo a veces protege del sesgo tanto como lo genera.</li><li>MISP-Bench revela que decirle a un LLM &#39;verifica tu razonamiento primero&#39; lo empeora en 4 de 10 modelos — la intuición de que &#39;más metacognición explícita = menos sesgo&#39; no se sostiene automáticamente, ni en humanos ni en máquinas.</li><li>El framework EMS (Int J Emerg Med, 25 ago) suma un &#39;Sistema 3&#39; metacognitivo al clásico Sistema 1/2 — la lección accionable es que supervisar el propio razonamiento es una tercera habilidad entrenable por separado, no un subproducto automático de tener más Sistema 2.</li><li>En diagnóstico de fondo de ojo, cuatro LLMs de punta discreparon entre sí más de lo que discreparían cuatro oftalmólogos de escuelas distintas (kappa 0.05-0.16) — la variabilidad algorítmica entre modelos es un sesgo nuevo que ningún checklist clásico de sesgo cognitivo humano contempla todavía.</li><li>La revisión de LLMs en atención primaria (Communications Medicine) dice en voz alta lo que casi nadie repite: hay evidencia sólida de que la IA ahorra tiempo administrativo, pero la evidencia de que mejora el razonamiento diagnóstico real sigue siendo limitada — ahorrar tiempo no es lo mismo que mejorar el juicio clínico.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si un LLM resiste mejor el anclaje al autodiagnóstico del paciente, ¿deberíamos rediseñar el triage para que la primera lectura la haga la IA &#39;a ciegas&#39; del relato del paciente, y el clínico entre recién después?</li><li>¿Qué pasaría si entrenáramos explícitamente un &#39;Sistema 3&#39; metacognitivo en residentes de psiquiatría — sesiones dedicadas solo a supervisar el propio proceso diagnóstico, separadas de enseñar contenido clínico?</li><li>¿La variabilidad entre LLMs multimodales en diagnóstico por imagen (kappa tan bajo) merece ya su propia categoría de &#39;sesgo de herramienta&#39; en la taxonomía de errores diagnósticos, junto a anclaje y cierre prematuro?</li><li>¿Los marcos de razonamiento clínico &#39;humanistas&#39; (como U-TIDE) y los marcos duales/computacionales (Sistema 1/2/3, LLMs) describen fenómenos incompatibles, o niveles distintos de lo mismo que un modelo dimensional podría unificar?</li><li>Si &#39;verificar el razonamiento primero&#39; no siempre reduce el sesgo en LLMs, ¿qué estrategias de debiasing sí funcionan de forma consistente — y podemos probarlas primero en humanos antes de asumir que funcionan igual en máquinas?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT: &#39;Le mostré a un LLM el mismo caso con 3 autodiagnósticos distintos del paciente — esto pasó&#39;, usando el estudio de mano (JHand Surg) como base de un experimento en vivo con casos psiquiátricos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Diseñar un ejercicio del Competency Lab AMAUTA: &#39;Sistema 3 en acción&#39; — sesión donde los residentes practican supervisión metacognitiva explícita sobre sus propios diagnósticos diferenciales, inspirada en el framework EMS.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección corta para el libro de psicopatología: modelos mentales (JGIM) como puente formal entre teoría de redes/HiTOP y epistemología de la seguridad del paciente.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o carta editorial replicando la lógica de MISP-Bench con casos psiquiátricos: ¿los LLMs adoptan creencias erróneas de pacientes sobre su propio diagnóstico (p. ej. autoetiquetarse como &#39;bipolar&#39;) igual que en medicina general?</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido &#39;Auditando al LLM&#39;: cada semana comparar el acuerdo entre 2-3 modelos frente al mismo caso clínico psiquiátrico, usando como plantilla la metodología del estudio de fondo de ojo (kappa de acuerdo).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Hand Surgery (Am)</span><span class="tag ">International Journal of Emergency Medicine</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Communications Medicine</span><span class="tag ">OTJR: Occupation, Participation and Health</span><span class="tag ">Retina</span><span class="tag ">ANS: Advances in Nursing Science</span><span class="tag ">Work</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities) · medRxiv API · Consensus (cross-check). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 26 de agosto de 2026.</div>
+</div>
+</body>
+</html>
