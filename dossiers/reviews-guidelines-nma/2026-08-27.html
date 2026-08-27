@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-08-27 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">27 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">74</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">15</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">The American Journal of Psychiatry · 2026-08-26 · review</div>
+        <h3 class="r3-title">El ensayo RECOVER de estimulación del nervio vago en depresión marcadamente resistente al tratamiento: hallazgos críticos, lecciones aprendidas y direcciones futuras</h3>
+        <p class="r3-hook">Revisión crítica en AJP que resume el ensayo RECOVER (N=493, triple ciego, 12 meses) de VNS adjunta en depresión mayor marcadamente resistente (promedio 13.3 tratamientos fallidos, 17.8 años de episodio actual): el desenlace primario preespecificado no separó grupos, pero múltiples desenlaces secundarios de síntomas, función y calidad de vida sí favorecieron la estimulación activa, y más del 80% de quienes respondieron a los 12 meses mantuvo el beneficio a los 18-24 meses. Es lectura obligada para tu línea de neuromodulación: muestra en carne propia el problema de fijar un desenlace primario binario en poblaciones ultra-resistentes, y por qué la durabilidad a 2 años puede importar más que la señal de respuesta a corto plazo. Para AMAUTA/USAMEDIC es un caso perfecto para enseñar lectura crítica de &#39;ensayo negativo en el desenlace primario pero clínicamente relevante&#39;, un patrón que tus alumnos van a encontrar todo el tiempo en psiquiatría biológica. Úsalo también en contenido sobre por qué la VNS sigue siendo relevante en depresión ultra-resistente pese a la controversia histórica sobre su evidencia.</p>
+        <a class="r3-link" href="https://doi.org/10.1176/appi.ajp.20251339" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.ajp.20251339</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Medical Internet Research · 2026-08-25 · review</div>
+        <h3 class="r3-title">Electroencefalografía inalámbrica en investigación con niños con discapacidades del desarrollo: revisión de alcance</h3>
+        <p class="r3-hook">Revisión de alcance PRISMA-ScR (64 estudios, 3103 participantes, 2005-2025) que mapea por primera vez el uso de EEG inalámbrica en niños con discapacidades del desarrollo -con TDAH (59.4%) y TEA (31.3%) como las condiciones más estudiadas- y expone que el 85.9% de esos estudios nunca validó el dispositivo inalámbrico contra un EEG cableado de referencia. Esto pega directo en tu línea TDAH/TEA/neurodivergencia y en psiquiatría de precisión: antes de vender un &#39;biomarcador EEG portátil&#39; para diagnóstico o monitoreo, hay un vacío metodológico de validación que tú mismo podrías señalar en contenido o en una carta editorial. Para AMAUTA es material perfecto para una clase sobre por qué &#39;el dispositivo es barato y portátil&#39; no equivale a &#39;el dato es válido&#39; -enseña escepticismo tecnológico con data dura, no con opinión-. También conecta con tu pilar de IA/tech aplicada a investigación: los dispositivos de consumo dominan (47.7%) sobre los certificados como médicos (23.1%), un patrón que probablemente se repite en tus propias herramientas de research.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/84707" target="_blank" rel="noopener">↗ doi.org/10.2196/84707</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Neurotherapeutics · 2026-08-25 · review</div>
+        <h3 class="r3-title">Comparación a nivel de dispositivo de sensado y estimulación en neuroestimulación de lazo cerrado implantable para epilepsia</h3>
+        <p class="r3-hook">Revisión técnica del Brain Modulation Lab de MGH/Harvard que compara en profundidad 7 sistemas de neuroestimulación de lazo cerrado implantable para epilepsia farmacorresistente (4 aprobados -NeuroPace RNS, Medtronic Percept PC, Newronika AlphaDBS, PINS G106RS- y 3 en investigación), concluyendo que las diferencias clínicamente más relevantes están en el diseño del sensado -no en los parámetros de estimulación- y que buena parte de la evidencia de DBS adaptativo proviene de trastornos del movimiento, no de epilepsia. Es exactamente tu foco secundario de neuropsiquiatría cruzado con tu pilar de neuromodulación: la epilepsia farmacorresistente y la depresión resistente comparten la misma lógica de &#39;sensar para estimular mejor&#39;, y este review te da el vocabulario técnico (arquitectura de sensado, manejo de artefacto, ancho de banda) para hablar de neuromodulación con rigor en vez de en términos genéricos. Útil como base de un hilo o clase comparando el estado del arte en neuroestimulación de lazo cerrado entre epilepsia y psiquiatría, mostrando hacia dónde va la tecnología que ya sigues de cerca.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neurot.2026.e01051" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neurot.2026.e01051</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Clinical Nursing · 2026-08-24 · network-meta-analysis</div>
+        <h3 class="r3-title">Efectos de intervenciones no farmacológicas sobre la depresión en personas con lesión medular que viven en comunidad: revisión sistemática y meta-análisis en red</h3>
+        <p class="r3-hook">NMA (PROSPERO CRD42022342155, guía PRISMA-NMA) de 32 RCTs y 2200 personas con lesión medular que rankea por SUCRA las intervenciones no farmacológicas para depresión: terapia combinada primero (SUCRA 89.1%), luego ejercicio (76.9%), intervenciones psicológicas (55.5%) y educación en automanejo (44.0%) -pero con certeza CINeMA &#39;muy baja&#39; en todas las comparaciones, algo que los propios autores subrayan como llamado a cautela-. Es un ejemplo perfecto para tu foco secundario en neuropsiquiatría (interfaz neurología-rehabilitación-psiquiatría) y para enseñar en AMAUTA cómo un ranking SUCRA vistoso puede convivir con evidencia de certeza muy baja: la discrepancia entre &#39;quién gana el ranking&#39; y &#39;cuánto confiar en el ranking&#39; es justo lo que tus alumnos suelen pasar por alto. También es material directo para contenido sobre por qué la depresión post-lesión medular necesita manejo combinado (ejercicio + psicoterapia) y no solo psicofármacos, con el dato SUCRA como gancho visual.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/jocn.70523" target="_blank" rel="noopener">↗ doi.org/10.1111/jocn.70523</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Guías &amp; Consensos en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Trauma, Violence, &amp; Abuse · 2026-08-26 · meta-analysis</div>
+        <h3 class="r3-title">Cómo el estatus socioeconómico media la asociación entre experiencias adversas en la infancia y la depresión: un abordaje de modelamiento de ecuaciones estructurales meta-analítico</h3>
+        <p class="r3-hook">Tres MASEM de efectos aleatorios sobre 105 muestras y 755,306 adultos muestran que el ingreso y la educación median parcialmente la vía de ACEs a depresión en adultos (efectos indirectos pequeños pero significativos: ingreso 0.01, educación 0.003), mientras que el empleo no media esa asociación. Para tu línea de psiquiatría dimensional/de precisión es un recordatorio cuantitativo de que &#39;trauma infantil causa depresión&#39; es una simplificación: el mecanismo pasa en parte por vías socioeconómicas medibles, no solo neurobiológicas, algo coherente con un marco de red/HiTOP donde múltiples niveles causales interactúan. Es insumo directo para un capítulo de tu libro de psicopatología dimensional sobre determinantes sociales como parte del modelo causal, no como &#39;factor de confusión&#39; a controlar y olvidar. También sirve para contenido con datos duros frente a audiencias que reducen todo a biología o todo a &#39;trauma&#39; sin cuantificar las vías intermedias.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/15248380261467475" target="_blank" rel="noopener">↗ doi.org/10.1177/15248380261467475</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Brain Injury · 2026-08-25 · meta-analysis</div>
+        <h3 class="r3-title">Alteraciones del poder espectral en EEG de reposo tras traumatismo craneoencefálico: revisión sistemática integral y meta-análisis de moderadores clínicos y relacionados a la lesión</h3>
+        <p class="r3-hook">Metaanálisis PRISMA (24 estudios, 1236 participantes; 14 estudios y 39 tamaños de efecto en el análisis cuantitativo) que encuentra aumento consistente de poder theta tras TCE general (g=0.50, p=0.03) frente a patrones menos consistentes en conmoción relacionada al deporte, con heterogeneidad sustancial y sesgo de publicación reconocidos explícitamente por los autores. Encaja en tu foco secundario de neuropsiquiatría (TCE) y aporta un dato concreto para diferenciar TCE &#39;general&#39; de conmoción deportiva en términos electrofisiológicos, una distinción que casi nunca se hace en discusiones clínicas informales. Puedes usarlo en contenido o clase sobre biomarcadores EEG en TCE como ejemplo de señal real pero heterogénea, útil para enseñar a leer meta-análisis con heterogeneidad &#39;sustancial&#39; sin descartar el hallazgo ni sobrevenderlo.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/02699052.2026.2722231" target="_blank" rel="noopener">↗ doi.org/10.1080/02699052.2026.2722231</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El VNS en depresión ultra-resistente &#39;falló&#39; en su desenlace primario preespecificado, pero mantuvo beneficio en función y calidad de vida a 2 años en más del 80% de quienes respondieron a los 12 meses: el desenlace correcto a medir en resistencia extrema podría no ser la remisión binaria.</li><li>En TOC severo, la ketamina en monoterapia genera respuesta rápida (50-60%) que se disuelve en una semana; combinada con exposición y prevención de respuesta, la remisión se sostiene semanas a meses -actúa como &#39;ventana&#39; para la terapia conductual, no como tratamiento en sí (Psychopharmacology, 2026-08-27).</li><li>El 85.9% de los estudios con EEG inalámbrico en niños con TDAH/TEA nunca validó el dispositivo contra un EEG cableado de referencia: la portabilidad se vendió antes que la validez.</li><li>En depresión post-lesión medular, la terapia combinada domina el ranking SUCRA (89.1%), pero toda la evidencia del NMA es de certeza &#39;muy baja&#39; según CINeMA: ranking alto no equivale a confianza alta.</li><li>El ingreso y la educación median solo una fracción pequeña -pero estadísticamente significativa- de la vía ACEs→depresión en adultos (n=755,306); el empleo, en cambio, no media nada.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuál debería ser el desenlace primario &#39;correcto&#39; en ensayos de neuromodulación para depresión ultra-resistente, si la remisión binaria sistemáticamente no diferencia grupos pese a beneficio funcional real y sostenido?</li><li>¿Debería la fragilidad tratarse como una dimensión de estratificación -y no como criterio de exclusión- al decidir quién accede a terapias anti-amiloide en Alzheimer?</li><li>¿Qué validación mínima (contra EEG cableado de referencia) debería exigirse a un dispositivo EEG de consumo antes de usarlo como biomarcador en investigación de TDAH/TEA?</li><li>Si el ranking SUCRA de un NMA es alto pero la certeza CINeMA es &#39;muy baja&#39; en todas las comparaciones, ¿qué peso real debería tener ese ranking al aconsejar tratamiento en la práctica clínica?</li><li>¿Cómo deberíamos integrar la mediación socioeconómica (ingreso, educación) en modelos clínicos de riesgo de depresión post-ACEs, más allá de &#39;ajustar por SES&#39; como variable de control a descartar?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o carrusel IG explicando por qué el ensayo RECOVER de VNS &#39;falló&#39; en su desenlace primario pero sigue siendo el mejor dato de neuromodulación en depresión ultra-resistente, usando el patrón como gancho para enseñar lectura crítica de ensayos negativos-pero-relevantes.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase AMAUTA sobre SUCRA vs. certeza CINeMA en network meta-analysis, usando el NMA de depresión post-lesión medular como caso: cómo un ranking vistoso puede convivir con evidencia de baja confianza.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta o comentario breve señalando el vacío de validación de EEG inalámbrico en investigación de TDAH/TEA -85.9% sin comparación contra EEG cableado- como llamado a estandarizar el reporte de calidad de señal en este tipo de estudios.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional sobre determinantes sociales como parte del modelo causal ACEs→depresión (no como covariable a &#39;controlar&#39;), usando los MASEM de ingreso/educación/empleo como ancla cuantitativa.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido comparando neuroestimulación de lazo cerrado en epilepsia (RNS, DBS adaptativo) vs. VNS/DBS en depresión resistente: mismo principio de &#39;sensar para estimular mejor&#39;, audiencias distintas, mismo futuro tecnológico.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">The American Journal of Psychiatry</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">Neurotherapeutics</span><span class="tag ">Journal of Clinical Nursing</span><span class="tag ">Trauma, Violence, &amp; Abuse</span><span class="tag ">Brain Injury</span><span class="tag ">Ageing Research Reviews</span><span class="tag ">Psychopharmacology</span><span class="tag ">Journal of Affective Disorders</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch, ventana 2026-08-24 a 2026-08-27). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 27 de agosto de 2026.</div>
+</div>
+</body>
+</html>
