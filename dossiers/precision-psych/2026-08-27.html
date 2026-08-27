@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-08-27 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">27 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">32</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">27</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Reviews Drug Discovery, 24 ago 2026 · review · 2026-08-24</div>
+        <h3 class="r3-title">Towards precision psychiatry: initial foundations and future directions</h3>
+        <p class="r3-hook">Roadmap/revisión de Alex Etkin (fundador de Alto Neuroscience, una de las voces más influyentes en biomarcadores psiquiátricos) publicado en Nature Reviews Drug Discovery, que sintetiza qué biomarcadores tienen tracción clínica real, dónde falla la traducción de biomarcador a fármaco, y qué le falta a la industria para adoptar estratificación real de pacientes. Para Javier es la pieza de referencia del día para su pilar precision-psychiatry y su libro de psicopatología dimensional: le da autoridad citable de primer nivel (no solo especializada) para argumentar que el modelo categorial está siendo reemplazado por estratificación biológica, marcando también qué obstáculos (heterogeneidad, validación externa) debe mencionar para no sonar a hype. Puede usarlo como columna vertebral de un hilo o capítulo sobre &#39;qué es y qué no es psiquiatría de precisión hoy&#39;, y como fuente en AMAUTA/USAMEDIC al enseñar el estado real (no aspiracional) del campo de cara al Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41573-026-01509-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s41573-026-01509-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JAMA Psychiatry, 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">Potential for Genomics to Help Guide Preventive Strategies in Psychiatry</h3>
+        <p class="r3-hook">Publicado en JAMA Psychiatry, este análisis evalúa qué tan realista es usar riesgo poligénico y otras señales genómicas para dirigir prevención (no solo diagnóstico) en psiquiatría, delineando dónde el riesgo genético sí mueve la aguja clínica y dónde sigue siendo insuficiente frente a exposición ambiental y riesgo psicosocial. A Javier le sirve directo para su línea de psiquiatría de precisión y como contrapeso balanceado al escepticismo anti-genómico que ya viene construyendo con hallazgos previos sobre riesgo poligénico bajo en bipolaridad: aquí un journal de máximo nivel discute con honestidad cuándo la genómica SÍ aporta a prevención. Puede citarlo en su libro para la sección de prevención basada en riesgo, y usarlo en contenido IG/YT que compare genómica vs. riesgo psicosocial sin caer en el extremo de &#39;la genética no sirve para nada&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.2583" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.2583</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Surgical Education, 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">Precision Education: How Ready Are Obstetrics and Gynecology Clerkships for the Future of Medical Education?</h3>
+        <p class="r3-hook">Estudio que audita la preparación real (no aspiracional) de las rotaciones clínicas de Ginecología y Obstetricia para migrar hacia un modelo de &#39;educación de precisión&#39; con currículo adaptado al desempeño individual del estudiante, en vez de rotaciones estandarizadas para todos. Es el ítem de educación de precisión garantizado del día y calza directo con el pilar amauta-education de Javier: aunque el contexto clínico es ginecología, el diagnóstico institucional (qué infraestructura, evaluación y feedback faltan para personalizar currículo clínico) es trasladable tal cual a cómo podría auditar qué tan lista está AMAUTA/USAMEDIC para currículos verdaderamente adaptativos, más allá del marketing de &#39;IA personalizada&#39;. Puede usarlo como checklist de honestidad institucional para un post sobre qué le falta a la educación médica peruana para llamarse &#39;de precisión&#39; en serio.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jsurg.2026.104119" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104119</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Translational Psychiatry, 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Exploring serum biomarkers in paediatric psychiatry: the impact of NfL and GFAP</div>
+          <div class="r10-line">Estudio explora los biomarcadores séricos NfL (neurofilamento ligero) y GFAP (proteína ácida fibrilar glial) —prestados de neurología— en psiquiatría pediátrica, buscando señales de daño axonal/glial medibles en sangre que distingan subtipos de presentación psiquiátrica infantil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que NfL/GFAP, ya establecidos en esclerosis múltiple y Alzheimer, empiezan a probarse como biomarcadores transdiagnósticos en psiquiatría infantil en los próximos 2-3 años, y que Javier puede archivarlo para su línea TDAH/TEA como candidato a biomarcador de &#39;daño&#39; medible en vez de solo síntomas reportados.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41398-026-04347-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41398-026-04347-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience and Biobehavioral Reviews, 24 ago 2026 · review · 2026-08-24</div>
+          <div class="r10-title">Theory-Driven Computational Psychiatry and Its Challenges: An Optimistic Outlook</div>
+          <div class="r10-line">Revisión que defiende un optimismo cauto sobre psiquiatría computacional guiada por teoría (no solo por machine learning ciego a mecanismo), mapeando qué retos metodológicos hay que resolver para que los modelos generen biomarcadores clínicamente útiles.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta revisión se cita como argumento a favor de anclar los modelos de IA en teoría mecanística (predictive coding, RDoC) en vez de fuerza bruta de datos, justo la postura que Javier defiende en su marco RDoC/HiTOP.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neubiorev.2026.106923" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106923</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Psychiatry and Clinical Neuroscience, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Exploring sex differences in endocannabinoid system biomarkers and their relationship with antidepressant treatment</div>
+          <div class="r10-line">Estudio explora diferencias por sexo en biomarcadores del sistema endocannabinoide y su relación con la respuesta a tratamiento antidepresivo, apuntando al sexo biológico como variable de estratificación de precisión psiquiátrica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el sexo biológico se consolida como variable de estratificación de primera línea (junto a edad e IMC) en ensayos de respuesta antidepresiva, ejemplo que Javier puede subrayar en su libro como precisión que no requiere multi-ómica cara.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02362-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02362-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Associations between human oxytocin receptor gene promoter DNA methylation and brain structural connectome in panic disorder</div>
+          <div class="r10-line">Estudio conecta la metilación del promotor del gen del receptor de oxitocina con el conectoma estructural cerebral en trastorno de pánico, uniendo epigenética y neuroimagen en un solo marcador candidato.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la epigenética de oxitocina se vuelve pieza recurrente en modelos multimodales de ansiedad/pánico, útil para Javier como ejemplo de integración gen-cerebro en su marco dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122425" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122425</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Digital Health, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">Integrating wearable biosensing with clinical interviews for suicide risk detection in adolescents</div>
+          <div class="r10-line">Estudio integra biosensores wearables con entrevistas clínicas para mejorar la detección de riesgo suicida en adolescentes, combinando señal fisiológica pasiva con juicio clínico activo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este enfoque híbrido (wearable + entrevista) se vuelve el estándar de facto en detección de riesgo suicida adolescente antes que los modelos 100% pasivos, y que Javier puede usarlo en su línea TDAH/TEA/neurodivergencia dado el solapamiento de riesgo suicida en poblaciones neurodivergentes.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/20552076261483391" target="_blank" rel="noopener">↗ doi.org/10.1177/20552076261483391</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">Genetic liability to addiction underlies comorbid bipolar and substance use disorders</div>
+          <div class="r10-line">Estudio de riesgo genético compartido muestra que la comorbilidad entre trastorno bipolar y trastornos por uso de sustancias está subyacida por una carga genética común de adicción, no solo por causalidad clínica en una dirección.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este hallazgo empuja a rediseñar el cribado de comorbilidad en bipolaridad como screening dual (ánimo + adicción) desde el diagnóstico inicial, ángulo que Javier puede usar en su línea de psiquiatría de precisión aplicada a comorbilidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.08.008" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.08.008</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">A shift toward proteolytic gut fermentation links systemic inflammation to clinical phenotypes in major depressive disorder</div>
+          <div class="r10-line">Estudio identifica un giro hacia fermentación proteolítica intestinal como vínculo entre inflamación sistémica y fenotipos clínicos específicos de depresión mayor, sumando el eje intestino-cerebro a la estratificación de MDD.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los perfiles de fermentación intestinal se integran a paneles multi-ómicos de subtipificación de depresión inflamatoria en los próximos años, otro dato para el capítulo de biomarcadores del libro de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111900" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111900</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Clinical Journal of Pain, 27 ago 2026 · paper · 2026-08-27</div>
+          <div class="r10-title">The Role of Stress-related Biomarkers, Immune-inflammatory Pathways, and Genetic Polymorphisms in Cognitive-behavioral Therapies for Chronic Pain</div>
+          <div class="r10-line">Estudio examina cómo biomarcadores de estrés, vías inmuno-inflamatorias y polimorfismos genéticos moderan la respuesta a terapia cognitivo-conductual en dolor crónico, un modelo de predicción de respuesta a psicoterapia y no solo a fármacos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de estratificación biológica de respuesta a psicoterapia se vuelve el próximo frente de la psiquiatría de precisión, y que Javier puede usarlo para argumentar que &#39;precisión&#39; también aplica a terapia hablada, no solo a farmacogenómica.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/AJP.0000000000001415" target="_blank" rel="noopener">↗ doi.org/10.1097/AJP.0000000000001415</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">JAMA Pediatrics, 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">Prenatal Organophosphate Exposure and Autism-Related Traits in Children</div>
+          <div class="r10-line">Estudio en JAMA Pediatrics asocia la exposición prenatal a organofosforados con mayor presencia de rasgos relacionados con autismo en la niñez, sumando un factor ambiental medible a la estratificación de riesgo de TEA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la exposición prenatal a pesticidas organofosforados entra a los modelos de riesgo ambiental multifactorial de TEA junto a antecedente familiar y edad parental, dato útil para la línea TDAH/TEA de Javier al hablar de etiología multifactorial.</div>
+          <a class="r10-link" href="https://doi.org/10.1001/jamapediatrics.2026.3785" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapediatrics.2026.3785</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Child Psychiatry &amp; Human Development, 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Birth Weight and Neurodevelopmental Disorders Across Diagnostic Categories: A Transdiagnostic Analysis</div>
+          <div class="r10-line">Estudio transdiagnóstico examina el peso al nacer como predictor compartido a través de múltiples categorías de trastornos del neurodesarrollo, no solo de un diagnóstico específico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el peso al nacer se consolida como variable transdiagnóstica de riesgo temprano en TDAH/TEA/discapacidad intelectual, reforzando el argumento de Javier de que el neurodesarrollo se estratifica mejor por dimensiones de riesgo compartidas que por categorías DSM separadas.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10578-026-02090-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s10578-026-02090-8</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El biomarcador más citado hoy en JAMA Psychiatry no es un gen nuevo: es el recordatorio de que el riesgo poligénico sigue explicando poco de la varianza en prevención real — la genómica ayuda a priorizar, no a predecir con precisión individual.</li><li>NfL y GFAP, biomarcadores &#39;prestados&#39; de neurología (esclerosis múltiple, Alzheimer), están empezando a probarse en psiquiatría pediátrica: la frontera entre daño neurológico y presentación psiquiátrica se está borrando en el laboratorio antes que en la clínica.</li><li>La respuesta a psicoterapia (CBT) ya tiene su propio panel de biomarcadores de estrés e inflamación: la psiquiatría de precisión dejó de ser sinónimo de farmacogenómica.</li><li>El sexo biológico sigue siendo, biomarcador por biomarcador, una de las variables de estratificación más baratas y subusadas en respuesta a antidepresivos — no hace falta multi-ómica para empezar a personalizar.</li><li>El peso al nacer conecta TDAH, TEA y otras categorías DSM distintas como un solo eje de riesgo transdiagnóstico: el ambiente perinatal compartido explica más que el diagnóstico categorial.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué biomarcador candidato de esta semana (NfL/GFAP, endocannabinoides, oxitocina) llegaría primero a implementación clínica real en el Perú dado el costo y la infraestructura disponible?</li><li>¿Cómo cambiaría el cribado de comorbilidad bipolar-adicciones en tu práctica si asumieras carga genética compartida desde el primer contacto, en vez de tratar cada diagnóstico por separado?</li><li>¿Qué le falta exactamente a AMAUTA/USAMEDIC —según el diagnóstico de &#39;readiness&#39; de la revisión de ginecología— para llamarse honestamente currículo de precisión?</li><li>Si la genómica en psiquiatría preventiva (JAMA Psychiatry) sigue sin superar al riesgo psicosocial medible, ¿qué lugar concreto le das al polygenic risk score en tu próximo capítulo de psicopatología dimensional?</li><li>¿Vale la pena empezar a medir biomarcadores de estrés/inflamación en tus propios pacientes en terapia (no solo en fármacos) para predecir quién responde a CBT vs. quién necesita otro abordaje?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;La psiquiatría de precisión en 2026, según Nature Reviews Drug Discovery: qué es real y qué es hype&#39;, basado en el paper de Etkin.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post comparando el paper de JAMA Psychiatry sobre genómica preventiva con hallazgos previos de riesgo poligénico bajo en bipolaridad: &#39;¿cuándo sí sirve la genética en psiquiatría?&#39;</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional sobre biomarcadores &#39;prestados&#39; de neurología (NfL/GFAP) aplicados a psiquiatría pediátrica.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/paper proponiendo un checklist de &#39;precision education readiness&#39; para currículos clínicos de AMAUTA/USAMEDIC, inspirado en la auditoría de rotaciones de Ginecología.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido sobre estratificación de respuesta a psicoterapia (no solo a fármacos), usando el estudio de biomarcadores de estrés en CBT para dolor crónico como gancho, trasladado a TDAH/TEA.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Reviews Drug Discovery</span><span class="tag highlight">JAMA Psychiatry</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Translational Psychiatry</span><span class="tag ">Neuroscience and Biobehavioral Reviews</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Digital Health</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">The Clinical Journal of Pain</span><span class="tag ">JAMA Pediatrics</span><span class="tag ">Child Psychiatry &amp; Human Development</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/E-utilities (esearch+esummary) · Consensus (contexto/validación). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 27 de agosto de 2026.</div>
+</div>
+</body>
+</html>
