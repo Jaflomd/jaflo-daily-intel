@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-08-27 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">27 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">45</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Diagnosis (Berlin) · Specian Junior FC et al. — 27 ago 2026 · rct · 2026-08-27</div>
+        <h3 class="r3-title">Effects of case revisitation during deliberate reflection on medical students&#39; diagnostic accuracy: a randomized experiment</h3>
+        <p class="r3-hook">Un ensayo aleatorizado con 67 estudiantes de medicina comparó reflexión deliberada CON acceso al caso ya estudiado versus SIN acceso durante el reaprendizaje: restringir el acceso (forzar recuperación desde memoria, sin &#39;espiar&#39; la descripción) mejoró la precisión diagnóstica en enfermedades ya vistas, apoyando la teoría del esfuerzo de recuperación, mientras que permitir el acceso ayudó más en casos de enfermedades adyacentes/relacionadas. La precisión correlacionó con la confianza del estudiante y el recuerdo de datos clave. Esto es oro puro para tu línea de razonamiento clínico y AMAUTA/USAMEDIC: da evidencia experimental concreta de que la mejor forma de reforzar un caso de ENAM/Residentado ya estudiado es re-resolverlo de memoria (retrieval practice), reservando el acceso al material solo para consolidar casos vecinos o variantes. Es un hallazgo accionable directo para rediseñar tus sesiones de repaso de casos clínicos: cuándo cerrar el libro y cuándo dejarlo abierto.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0061" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0061</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">LessWrong · Richard Ngo — 26 ago 2026 · blog · 2026-08-26</div>
+        <h3 class="r3-title">Developing frames</h3>
+        <p class="r3-hook">Richard Ngo propone que los &#39;frames&#39; (marcos interpretativos, como en la ilusión pato-conejo) son clusters de rasgos mentales aprendidos culturalmente, y que el progreso intelectual real no viene de perfeccionar un frame sino de dos mecanismos concretos: (1) &#39;case-based merging&#39; -reconocer que frames aparentemente contradictorios (empirismo vs. racionalismo) son en realidad complementarios en distintos contextos-, y (2) &#39;ontological shifts&#39; revolucionarios -construir un frame nuevo detectando similitudes abstractas con uno existente, un proceso creativo que el bayesianismo no captura bien. Para ti esto nombra con precisión la relación entre HiTOP/RDoC (network theory) y el DSM categorial: no son bandos en guerra sino frames que compiten por explicar la misma realidad clínica, y el salto conceptual que estás intentando en tu libro de psicopatología dimensional es exactamente el tipo de &#39;ontological shift&#39; que describe Ngo. Es material directo para el capítulo teórico de tu libro sobre por qué el cambio de paradigma diagnóstico no es solo acumular evidencia sino reencuadrar la pregunta.</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/feeZKpGZw4GQnHfXj/developing-frames" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/feeZKpGZw4GQnHfXj/de…</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">LessWrong · Zack_M_Davis — 26 ago 2026 · blog · 2026-08-26</div>
+        <h3 class="r3-title">So You Don&#39;t Trust Me?</h3>
+        <p class="r3-hook">Usando el concepto económico de &#39;equilibrios separadores&#39; (separating equilibria), Zack_M_Davis argumenta que afirmar tu propia honestidad es &#39;cheap talk&#39; -cualquier deshonesto puede decir lo mismo-, así que la señal creíble no es la afirmación sino aceptar escrutinio sin defensividad: solo quien no tiene nada que ocultar puede permitirse el costo de ser investigado sin reaccionar. El mecanismo es de incentivos asimétricos: el deshonesto prefiere mezclarse (pooling) con el honesto, y la defensividad ante una acusación es justamente la señal que delata. Esto es directamente aplicable a tu Competency Lab de comunicación y liderazgo: cuando un residente o colega te cuestiona un diagnóstico o una decisión ética (comité HVLH), la forma de generar confianza no es defenderte verbalmente sino modelar apertura total al escrutinio -es un principio de comunicación que puedes enseñar con este marco de teoría de juegos, mucho más convincente que el consejo genérico de &#39;sé transparente&#39;.</p>
+        <a class="r3-link" href="https://www.lesswrong.com/posts/zjgJ9gcMKATFdN48K/so-you-don-t-trust-me" target="_blank" rel="noopener">↗ www.lesswrong.com/posts/zjgJ9gcMKATFdN48K/so…</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychonomic Bulletin &amp; Review · Yin Y, Luo L, Desender K — 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">External incentives change the relation between confidence and epistemic curiosity</div>
+          <div class="r10-line">Dos experimentos muestran que sin incentivos la gente busca preguntas de confianza media, pero con recompensas monetarias por desempeño se vuelca a las preguntas de MENOR confianza para maximizar aprendizaje -el incentivo externo reconfigura la curiosidad epistémica, relevante para cómo diseñas evaluaciones e incentivos en AMAUTA/USAMEDIC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vas a poder rediseñar tus quizzes de ENAM/Residentado con incentivos explícitos por pregunta (no solo puntaje agregado) para empujar a los alumnos a atacar justo sus puntos más débiles en vez de reforzar lo que ya dominan.</div>
+          <a class="r10-link" href="https://doi.org/10.3758/s13423-026-02982-9" target="_blank" rel="noopener">↗ doi.org/10.3758/s13423-026-02982-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine · Dhaliwal G et al. — 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">A Practical Guide to Becoming a Clinical Problem Solving Discussant</div>
+          <div class="r10-line">Guía práctica de Dhaliwal (referente de razonamiento clínico) sobre cómo formarse como discutidor de casos clínicos: observar a discutidores expertos, practicar en bajo riesgo, y balancear explicación concisa con manejo de audiencia; señala explícitamente que &#39;los LLM no pueden formar modelos causales de enfermedad&#39; -mecanismo directo para tus sesiones de razonamiento clínico en vivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es casi un manual de producto para un taller o serie de video AMAUTA sobre &#39;cómo ser discutidor de caso clínico&#39;, con la línea sobre límites de los LLM como gancho de marketing frente a la ansiedad de &#39;la IA reemplaza el razonamiento clínico&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10699-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10699-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Advanced Nursing · Azama KA et al. — 27 ago 2026 · editorial · 2026-08-27</div>
+          <div class="r10-title">Avoiding the &quot;Desert of the Real&quot;: Preserving Evidence-Based Nursing in the Age of AI</div>
+          <div class="r10-line">Usando la teoría de los simulacros de Baudrillard, los autores muestran cómo los resúmenes generados por IA crean &#39;distancia epistémica&#39; entre el clínico y la evidencia primaria -ilustrado con un caso real de citas fabricadas por IA que entraron a una política institucional sin ser detectadas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este marco de &#39;distancia epistémica&#39; te sirve como argumento formal para tu línea de IA en investigación: vas a necesitar un protocolo explícito de verificación de fuente primaria antes de que cualquier output de IA entre a tus propios documentos o guías (HVLH incluido).</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jan.70732" target="_blank" rel="noopener">↗ doi.org/10.1111/jan.70732</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Dermatology · Goldust M et al. — 26 ago 2026 · editorial · 2026-08-26</div>
+          <div class="r10-title">Does Artificial Intelligence Make Dermatologists Less Intelligent?</div>
+          <div class="r10-line">Comentario sobre el riesgo de &#39;cognitive offloading&#39; y sesgo de automatización en dermatología asistida por IA, con foco en cómo la dependencia excesiva erosiona el razonamiento clínico independiente sobre todo en residentes en formación -paralelo directo a tu preocupación por IA en educación médica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Puede convertirse en una charla o post tuyo comparando explícitamente este riesgo en dermatología con el mismo riesgo en psiquiatría/ENAM: cómo diseñar el uso de IA para que sea &#39;andamiaje&#39; y no muleta durante la formación.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/ijd.70647" target="_blank" rel="noopener">↗ doi.org/10.1111/ijd.70647</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Philosophical Transactions A · Löfström H et al. — 27 ago 2026 · review · 2026-08-27</div>
+          <div class="r10-title">Concerning uncertainty — a systematic survey of uncertainty-aware XAI</div>
+          <div class="r10-line">Revisión sistemática que identifica tres enfoques (bayesiano, Monte Carlo, conformal) para incorporar cuantificación de incertidumbre en IA explicable, con evaluación aún fragmentada y centrada en el modelo más que en el usuario -relevante directo para cualquier herramienta de IA diagnóstica que evalúes o construyas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los métodos conformales (distribution-free) van a volverse el estándar de facto para reportar &#39;qué tan seguro es el score&#39; en herramientas de apoyo diagnóstico psiquiátrico con IA -vale la pena que los sigas de cerca para tu línea de psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1098/rsta.2025.0079" target="_blank" rel="noopener">↗ doi.org/10.1098/rsta.2025.0079</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">PNAS · Feng C et al. — 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Interactive representations of power and status signals in learning social hierarchies</div>
+          <div class="r10-line">Estudio de neuroimagen: la corteza prefrontal medial rastrea el estatus (competencia reconocida) y la amígdala rastrea el poder (control sobre resultados de otros) al aprender jerarquías sociales; el estatus sesga hacia aceptar consejo tanto seguro como riesgoso, el poder sesga solo hacia aceptar consejo seguro.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un mecanismo neurocientífico concreto para explicar por qué un residente sigue el consejo &#39;riesgoso&#39; de un mentor de alto estatus académico pero no el de uno de alto poder jerárquico sin prestigio -material para tu línea de liderazgo en educación médica (Competency Lab).</div>
+          <a class="r10-link" href="https://doi.org/10.1073/pnas.2532908123" target="_blank" rel="noopener">↗ doi.org/10.1073/pnas.2532908123</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Emergency Medicine · Dercksen B et al. — 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Cognitive strategies in the Emergency Medical Services: proposal for a conceptual integrated framework to explicate clinical reasoning in EMS</div>
+          <div class="r10-line">Framework integrado que combina el modelo de flujo SPART, la teoría del proceso dual y un sistema metacognitivo supervisor para explicar cómo el personal de emergencias razona bajo presión de tiempo e incertidumbre, incluyendo decisiones complejas de no traslado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este esquema de &#39;supervisión metacognitiva sobre proceso dual&#39; es trasladable tal cual a un módulo de razonamiento clínico bajo presión para ENAM/Residentado (guardia, triaje), no solo a EMS -vale la pena adaptarlo como caso de enseñanza.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12245-026-01355-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12245-026-01355-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Teaching and Learning in Medicine · Gelber J et al. — 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">The Future of Healthcare Leadership Education: A Consensus Vision and Research Agenda from an International Working Group</div>
+          <div class="r10-line">Un grupo de trabajo internacional identifica consenso sobre dominios de competencia en liderazgo sanitario pero señala implementación fragmentada, y recomienda currículos longitudinales que incluyan &#39;followership&#39; y pensamiento sistémico, con competencias estandarizadas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Da marco de referencia y lenguaje &#39;de consenso internacional&#39; para posicionar el componente de liderazgo de AMAUTA/USAMEDIC como alineado a la agenda global, no como iniciativa aislada -útil para propuestas o alianzas académicas.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/10401334.2026.2718968" target="_blank" rel="noopener">↗ doi.org/10.1080/10401334.2026.2718968</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Journal of Hand Surgery · Jaarsma EH et al. — 24 ago 2026 · paper · 2026-08-24</div>
+          <div class="r10-title">Can Large Language Models Preserve Diagnostic Accuracy Despite Patient Self-Diagnosis and Framing Bias in Hypothetical Upper-Extremity Scenarios?</div>
+          <div class="r10-line">Con 180 viñetas, GPT-5 identificó el diagnóstico correcto en 92% de los casos e ignoró apropiadamente el autodiagnóstico erróneo del paciente en 89%, sugiriendo menor susceptibilidad al sesgo de anclaje/confirmación que los clínicos humanos frente al mismo framing engañoso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vas a ver más estudios comparando directamente el sesgo de anclaje humano vs. IA por especialidad -un ángulo fuerte para tu línea de razonamiento clínico: usar la IA como &#39;espejo&#39; para enseñar a residentes a detectar su propio anclaje ante el relato del paciente.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jhsa.2026.07.014" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jhsa.2026.07.014</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Dr Stoic Wisdom (Substack) — 26 ago 2026 · blog · 2026-08-26</div>
+          <div class="r10-title">The 5 Most Important Skills for Real Confidence</div>
+          <div class="r10-line">Cinco habilidades prácticas (decidir con información incompleta, tolerar la incomodidad social, honrar compromisos propios, procesar crítica sin colapso de identidad, recuperarse rápido del fracaso) como mecanismo conductual de confianza -evidencia acumulada, no afirmación psicológica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es contenido directo y ya empaquetado para un post o reel de Instagram tuyo sobre &#39;de dónde sale la confianza clínica real&#39; en un residente, conectando con self-care/kinobody y con el manejo de la incertidumbre diagnóstica.</div>
+          <a class="r10-link" href="https://drstoicwisdom.substack.com/p/the-5-most-important-skills-for-real" target="_blank" rel="noopener">↗ drstoicwisdom.substack.com/p/the-5-most-impo…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El progreso conceptual real no perfecciona un marco, lo reemplaza: HiTOP/RDoC y el DSM categorial no compiten por &#39;quién tiene más evidencia&#39; sino por qué pregunta hacen mejor (Ngo, LessWrong).</li><li>La defensividad ante una acusación es la señal, no la excusa: en un equilibrio separador, solo quien tiene algo que ocultar necesita desalentar el escrutinio (Zack_M_Davis).</li><li>Restringir el acceso al material durante el repaso (forzar recuperación desde memoria) mejora más la precisión diagnóstica en casos ya vistos que permitir &#39;espiar&#39; la respuesta (Specian Junior et al., RCT).</li><li>El incentivo monetario no solo motiva más, cambia QUÉ preguntas persigues: sin premio la gente busca confianza media, con premio busca justo su punto más débil (Yin et al.).</li><li>GPT-5 ignoró el autodiagnóstico erróneo del paciente en 89% de los casos -la IA puede ser menos susceptible al sesgo de anclaje que el clínico humano frente al mismo relato manipulador (Jaarsma et al.).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué &#39;frame&#39; domina hoy tu enseñanza del diagnóstico psiquiátrico -categorial o dimensional- y qué evidencia necesitarías ver para forzar un salto ontológico real, no solo un ajuste de criterios?</li><li>¿Tus sesiones de repaso ENAM/Residentado cierran el material antes de que el alumno reintente el caso, o lo dejan abierto todo el tiempo -y estás perdiendo la ganancia del esfuerzo de recuperación?</li><li>¿Qué política o guía dentro de HVLH o AMAUTA se apoya hoy en un resumen generado por IA sin que nadie haya vuelto a la fuente primaria?</li><li>Si comparas tu propio umbral de confianza al aceptar consejo de un mentor de alto estatus académico versus uno de alto poder jerárquico, ¿reconoces el sesgo que describe el estudio de PNAS?</li><li>¿Dónde en tu currículo de razonamiento clínico enseñas explícitamente &#39;supervisión metacognitiva&#39; como habilidad separada del conocimiento clínico de base, tal como propone el framework EMS?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/reel AMAUTA: &#39;Cierra el libro o no&#39; -qué dice la evidencia (RCT) sobre cuándo el repaso con material abierto ayuda y cuándo perjudica la retención diagnóstica.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de tu libro de psicopatología dimensional sobre &#39;frames&#39; de Ngo: por qué HiTOP/RDoC vs. DSM no es un debate de evidencia sino de marco interpretativo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Taller de comunicación/liderazgo (Competency Lab) basado en &#39;equilibrios separadores&#39;: cómo generar confianza aceptando escrutinio en vez de defenderte verbalmente.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio: replicar el diseño de anclaje/framing bias de Jaarsma et al. pero con residentes de psiquiatría y presentación de síntomas contaminada por el propio relato/autodiagnóstico del paciente.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Protocolo interno HVLH/AMAUTA de verificación de fuente primaria antes de incorporar cualquier resumen o cita generada por IA a un documento institucional, inspirado en el caso de &#39;Desert of the Real&#39;.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">LessWrong</span><span class="tag ">Psychonomic Bulletin &amp; Review</span><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Journal of Advanced Nursing</span><span class="tag ">International Journal of Dermatology</span><span class="tag ">Philosophical Transactions A</span><span class="tag ">PNAS</span><span class="tag ">International Journal of Emergency Medicine</span><span class="tag ">Teaching and Learning in Medicine</span><span class="tag ">The Journal of Hand Surgery</span><span class="tag ">Substack (Dr Stoic Wisdom)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: LessWrong · Substack · PubMed/NCBI eutils. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 27 de agosto de 2026.</div>
+</div>
+</body>
+</html>
