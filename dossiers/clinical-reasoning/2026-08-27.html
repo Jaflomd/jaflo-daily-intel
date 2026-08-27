@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-08-27 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">27 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">73</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Diagnosis (Berlin) · 27 ago 2026 · paper · 2026-08-27</div>
+        <h3 class="r3-title">Un experimento aleatorizado muestra que restringir el acceso al caso durante la reflexión deliberada mejora la precisión en enfermedades ya estudiadas, pero perjudica la transferencia a enfermedades vecinas</h3>
+        <p class="r3-hook">Jaflo, experimento aleatorizado de dos brazos con 67 estudiantes de medicina brasileños que compara la reflexión deliberada (DR) con y sin acceso al caso escrito durante la fase de comparación de hipótesis diagnósticas. Resultado contraintuitivo: restringir el acceso al caso (forzar recuperación activa desde la memoria) mejoró la precisión 15 días después para enfermedades ya estudiadas, pero fue la condición CON acceso al caso la que mejoró la transferencia a enfermedades adyacentes no vistas antes — hay un trade-off real entre consolidación y transferencia, no un &#39;más esfuerzo siempre es mejor&#39;. Por qué te importa: es evidencia empírica dura y directamente accionable para el diseño instruccional del Competency Lab de AMAUTA — te dice que la estrategia óptima de reflexión deliberada depende del objetivo (fijar contenido ya visto para el ENAM vs. entrenar transferencia para el Residentado), no es una receta única. Cómo usarlo: rediseña los ejercicios de reflexión deliberada de AMAUTA en dos modalidades explícitas — &#39;modo consolidación&#39; (sin reconsultar el caso, para temas ya cubiertos) y &#39;modo transferencia&#39; (con reconsulta permitida, para casos de dominios afines poco practicados) — y comunica esta distinción a los residentes como parte de la meta-estrategia de estudio.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0061" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0061</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Imaging Informatics in Medicine · 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">El VLM más preciso en imágenes torácicas acierta el diagnóstico por un razonamiento erróneo casi 1 de cada 5 veces, y su confianza expresada no coincide con su precisión real</h3>
+        <p class="r3-hook">Jaflo, evaluación de 13 modelos de visión-lenguaje (GPT, Gemini, Claude, Grok, Mistral y open-weights) en 100 casos torácicos complejos, con dos radiólogos calificando cada justificación (rationale) por errores de razonamiento (alucinación, hallazgo faltante, detalle incorrecto). El mejor modelo (Gemini 3.0 Pro) igualó a los radiólogos torácicos en precisión (57.0% vs 57.3%), pero de sus respuestas CORRECTAS, casi 1 de cada 5 se apoyaba en razonamiento alucinado o incompleto — y su confianza expresada excedió sistemáticamente su precisión observada (error de calibración de 18.2 puntos, la brecha se ampliaba con más confianza). Por qué te importa: es la prueba metodológica más limpia hasta ahora de que &#39;acertar la respuesta&#39; y &#39;razonar bien&#39; son cosas distintas y disociables en un LLM — exactamente el tipo de dato duro que sostiene tu regla de evidencia proporcional al claim frente al hype de IA, y un caso de estudio perfecto para tu línea ai-enhancement sobre por qué la salida correcta de un modelo no garantiza que su proceso sea auditable. Cómo usarlo: usa esta metodología (calificar el razonamiento, no solo la respuesta final) como plantilla para un módulo AMAUTA o un paper propio que audite el razonamiento de LLMs en casos psiquiátricos, separando &#39;diagnóstico correcto por buen proceso&#39; de &#39;diagnóstico correcto por casualidad&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10278-026-02217-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s10278-026-02217-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">IEEE Journal of Biomedical and Health Informatics · 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">Un nuevo framework de IA detecta y corrige activamente el exceso de confianza de los LLMs en predicciones clínicas de UCI, mejorando la calibración sin sacrificar precisión</h3>
+        <p class="r3-hook">Jaflo, propuesta técnica (GuardMLLM) que ataca directamente el problema de sobreconfianza de los LLMs en razonamiento clínico sobre historias clínicas electrónicas multimodales de UCI: combina modelado temporal de datos estructurados con un &#39;detector de sobreconfianza multi-indicador&#39; y calibración por temperatura, verificado en dos bases públicas grandes (MIMIC-IV, eICU-CRD), mejorando tanto la predicción de mortalidad/estancia como la calibración de confianza del modelo. Por qué te importa: es evidencia de que la sobreconfianza de los LLMs en razonamiento clínico no es un problema irresoluble sino un objetivo de ingeniería activo — te da un ejemplo técnico concreto y citable de &#39;cómo se ve una solución real&#39; (no solo un diagnóstico del problema) para tu pilar ai-enhancement e IA aplicada a investigación, útil si terminas colaborando o asesorando proyectos de IA en salud mental que necesiten manejar la sobreconfianza de un modelo como riesgo de seguridad. Cómo usarlo: cita este framework como ejemplo de &#39;debiasing algorítmico&#39; cuando expliques en AMAUTA o en redes que la solución a la sobreconfianza de la IA no es &#39;no usarla&#39;, sino diseñar capas explícitas de detección y calibración — el mismo principio que le pedirías a un residente que practique metacognición explícita.</p>
+        <a class="r3-link" href="https://doi.org/10.1109/JBHI.2026.3727471" target="_blank" rel="noopener">↗ doi.org/10.1109/JBHI.2026.3727471</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Dermatology · 26 ago 2026 · editorial · 2026-08-26</div>
+          <div class="r10-title">Editorial en dermatología advierte que la IA puede debilitar el razonamiento clínico independiente por &#39;cognitive offloading&#39; y sesgo de automatización, sobre todo en residentes</div>
+          <div class="r10-line">Editorial breve que nombra explícitamente el riesgo de &#39;cognitive offloading&#39; y sesgo de automatización por uso excesivo de IA en dermatología, con foco en trainees, y propone la IA como &#39;socio cognitivo&#39; en vez de reemplazo del juicio médico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: sin datos propios, este editorial es puro posicionamiento — pero el término &#39;cognitive offloading&#39; te sirve como etiqueta lista para nombrar en AMAUTA el riesgo específico que ya vienes advirtiendo sobre el uso de IA por residentes sin supervisión metacognitiva.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/ijd.70647" target="_blank" rel="noopener">↗ doi.org/10.1111/ijd.70647</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Updates in Surgery · 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Tres LLMs reproducen las decisiones de una junta multidisciplinaria de cáncer de tiroides con 88-93% de recomendaciones clínicamente aceptables, ChatGPT a la cabeza</div>
+          <div class="r10-line">Comparación directa de ChatGPT GPT-5.5, Meta AI y DeepSeek frente a 100 casos reales de junta de tumores de tiroides: ChatGPT logró 69% de concordancia completa con la decisión del comité (93% clínicamente aceptable), superando a los otros dos modelos con significancia estadística.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la brecha de calidad entre modelos (69% vs 53% de concordancia completa) es otro dato para tu argumento de que &#39;usar IA&#39; no es intercambiable entre modelos — útil como ejemplo cuantitativo en cualquier contenido AMAUTA sobre elegir herramienta de IA con criterio, no por conveniencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s13304-026-02822-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s13304-026-02822-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">NPJ Digital Medicine · 24 ago 2026 · editorial · 2026-08-24</div>
+          <div class="r10-title">Artículo de perspectiva propone modernizar los estándares de reporte científico para blindar la interpretación humana y de IA de la investigación biomédica contra errores de generalización</div>
+          <div class="r10-line">Perspectiva que argumenta que, con la IA actuando cada vez más como &#39;primer intérprete&#39; de investigación biomédica para audiencias no especializadas, la ciencia misma debe modernizar sus estándares de reporte para reducir errores interpretativos y sesgo de generalización que distorsionan decisiones clínicas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: conecta directo con tu meta RENACYT y tu trabajo en investigación — vale la pena revisar qué estándar de reporte concreto proponen, porque podría ser un criterio a exigir (o adoptar tú mismo) en tus propios papers para reducir el riesgo de que un LLM o un lector no especialista &#39;malinterprete&#39; tus hallazgos en redes.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41746-026-03160-w" target="_blank" rel="noopener">↗ doi.org/10.1038/s41746-026-03160-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Pediatric Nursing · 26 ago 2026 · review · 2026-08-26</div>
+          <div class="r10-title">Nuevo modelo conceptual reformula el razonamiento clínico en enfermería pediátrica como juicio situado, familiar y comunicativo — no solo resolución individual de problemas</div>
+          <div class="r10-line">Marco conceptual de cuatro dimensiones (fenomenológico-clínica, dialógico-relacional, sociotécnico-crítica, lingüístico-epistémica) para enseñar razonamiento clínico pediátrico como proceso situado y centrado en familia, no como resolución individual de problemas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es marco puramente conceptual (sin datos de impacto), pero la dimensión &#39;lingüístico-epistémica&#39; — hacer el razonamiento visible y verbalizable — es exactamente el tipo de andamiaje enseñable que podrías adaptar para hacer explícito el razonamiento clínico en escenarios psiquiátricos familiares dentro de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pedn.2026.08.035" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pedn.2026.08.035</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Oral Rehabilitation · 26 ago 2026 · review · 2026-08-26</div>
+          <div class="r10-title">Revisión narrativa propone un marco de cinco dominios para explicar por qué el error diagnóstico en trastornos temporomandibulares produce sobretratamiento iatrogénico</div>
+          <div class="r10-line">Marco de cinco dominios interactuantes (déficits educativos, reduccionismo estructural, sobreinterpretación oclusal, fragmentación del sistema, disonancia ética) que explica cómo el error diagnóstico en TMD escala hasta procedimientos irreversibles innecesarios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el esqueleto de 5 dominios (educativo → cognitivo → sistémico → ético) es una estructura genérica de &#39;cómo el error diagnóstico se vuelve daño iatrogénico&#39; que podrías trasplantar como ejercicio de análisis de caso a psiquiatría — por ejemplo, cómo un diagnóstico erróneo de TDAH o bipolaridad escala a sobretratamiento por las mismas cinco vías.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/joor.70294" target="_blank" rel="noopener">↗ doi.org/10.1111/joor.70294</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Emergency Medicine Journal · 24 ago 2026 · review · 2026-08-24</div>
+          <div class="r10-title">Revisión sistemática mapea qué factores realmente influyen en la decisión de un paramédico de trasladar o no a un niño agudamente enfermo</div>
+          <div class="r10-line">Revisión sistemática de 10 estudios sobre decisiones de traslado/no-traslado pediátrico prehospitalario: la decisión está moldeada por sistema de salud, presentación clínica y percepción de riesgo/experiencia del paramédico, sin evidencia que respalde con claridad ni el traslado obligatorio ni el no-traslado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la conclusión de que &#39;ni la conveyance ni la no-conveyance tienen evidencia clara de seguridad&#39; es un buen ejemplo de decisión clínica bajo incertidumbre genuina (no solo sesgo cognitivo) — útil para distinguir en AMAUTA entre &#39;error por sesgo&#39; y &#39;error por ausencia real de evidencia&#39;, una distinción que casi nunca se enseña por separado.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/emermed-2026-216046" target="_blank" rel="noopener">↗ doi.org/10.1136/emermed-2026-216046</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Cardiovascular Imaging · 26 ago 2026 · review · 2026-08-26</div>
+          <div class="r10-title">Revisión reformula el flujo de trabajo de ecocardiografía en torno a la interpretación integral por IA, con el sonografista pasando de medir a verificar</div>
+          <div class="r10-line">Revisión sobre cómo la IA está transformando la ecocardiografía de medición manual secuencial a interpretación integral automatizada que &#39;refleja el razonamiento clínico del experto&#39;, con el sonografista evolucionando de medidor a verificador — y advierte explícitamente sobre el riesgo de sesgo de automatización en entornos de alto volumen.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el giro de rol &#39;de medidor a verificador&#39; es el mismo giro que le espera a cualquier clínico que dependa de IA para razonamiento diagnóstico — un paralelo directo y citable para explicar en contenido AMAUTA qué significa &#39;supervisar&#39; en vez de &#39;ejecutar&#39; cuando la IA hace el primer pase.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s44348-026-00087-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s44348-026-00087-4</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En reflexión deliberada, restringir el acceso al caso mejora la retención de lo ya estudiado, pero es permitir la reconsulta lo que mejora la transferencia a casos vecinos (Diagnosis, 27 ago) — no existe una única &#39;mejor forma&#39; de reflexionar, depende de si el objetivo es fijar o transferir.</li><li>El mejor VLM en imágenes torácicas empató a los radiólogos en precisión, pero casi 1 de cada 5 de sus respuestas correctas se apoyaba en razonamiento alucinado (J Imaging Inform Med, 26 ago) — acertar la respuesta y razonar bien son cosas distintas y disociables, en máquinas y probablemente en humanos.</li><li>GuardMLLM (IEEE JBHI, 26 ago) demuestra que la sobreconfianza de un LLM se puede detectar y corregir con un módulo dedicado — la lección accionable es que calibrar la confianza es una tarea de ingeniería separada de mejorar la precisión, no un subproducto automático de &#39;un mejor modelo&#39;.</li><li>La revisión de ecocardiografía por IA (J Cardiovasc Imaging, 26 ago) nombra el giro de rol que se viene para cualquier clínico apoyado en IA: de &#39;medir/decidir&#39; a &#39;verificar&#39; — y advierte que ese mismo cambio de rol es el terreno fértil para el sesgo de automatización en volumen alto.</li><li>La revisión de traslados pediátricos prehospitalarios (Emerg Med J, 24 ago) concluye que ni el traslado obligatorio ni el no-traslado tienen evidencia clara de seguridad — un recordatorio de que no todo error clínico es sesgo cognitivo corregible; a veces es incertidumbre real sin respuesta correcta conocida.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si restringir vs. permitir el acceso al caso durante la reflexión deliberada cambia qué se aprende mejor (consolidación vs. transferencia), ¿deberíamos rediseñar el Competency Lab de AMAUTA con dos modos explícitos según el objetivo de cada sesión?</li><li>¿Cuánto del &#39;razonamiento alucinado detrás de una respuesta correcta&#39; que muestran los VLMs en imágenes torácicas también ocurre en residentes que aciertan un diagnóstico psiquiátrico por reconocimiento de patrón superficial, sin justificación sólida?</li><li>Si un framework como GuardMLLM puede detectar y corregir la sobreconfianza de un LLM de forma automática, ¿existe un equivalente entrenable para que un clínico humano detecte su propia sobreconfianza en tiempo real, antes de cerrar un diagnóstico?</li><li>¿El giro de &#39;medidor a verificador&#39; que describe la revisión de ecocardiografía por IA aplica igual de bien a la entrevista psiquiátrica asistida por IA, o la naturaleza narrativa/dimensional del diagnóstico psiquiátrico exige un rol distinto para el clínico?</li><li>¿Cuántas de las decisiones clínicas que enseñamos como &#39;requieren buen juicio&#39; son en realidad zonas de incertidumbre genuina sin evidencia suficiente (como el traslado pediátrico prehospitalario), y cuántas son errores de sesgo corregible — y estamos enseñando esa distinción explícitamente?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT: &#39;Le pedí a la IA que justificara su diagnóstico correcto — y su razonamiento estaba mal 1 de cada 5 veces&#39;, usando el estudio de VLMs torácicos como gancho para hablar de por qué acertar no es lo mismo que razonar bien.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Rediseñar el ejercicio de reflexión deliberada del Competency Lab AMAUTA en &#39;modo consolidación&#39; (sin reconsulta) y &#39;modo transferencia&#39; (con reconsulta), inspirado directamente en el experimento aleatorizado de Diagnosis.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección o capítulo corto para el libro de psicopatología: usar el marco de 5 dominios del error diagnóstico en TMD (educativo-cognitivo-sistémico-ético) como plantilla genérica para analizar cómo un error diagnóstico psiquiátrico escala a sobretratamiento.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o carta editorial: replicar la metodología de calificación de &#39;razonamiento correcto vs. respuesta correcta&#39; del estudio de VLMs torácicos en un set de casos psiquiátricos, auditando si los LLMs psiquiátricos aciertan el diagnóstico por el motivo correcto.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido &#39;De medidor a verificador&#39;: usar el paralelo de la ecocardiografía asistida por IA para explicar a residentes qué cambia realmente en su rol clínico cuando delegan el primer pase diagnóstico a un modelo.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">Journal of Imaging Informatics in Medicine</span><span class="tag ">IEEE Journal of Biomedical and Health Informatics</span><span class="tag ">International Journal of Dermatology</span><span class="tag ">Updates in Surgery</span><span class="tag ">NPJ Digital Medicine</span><span class="tag ">Journal of Pediatric Nursing</span><span class="tag ">Journal of Oral Rehabilitation</span><span class="tag ">Emergency Medicine Journal</span><span class="tag ">Journal of Cardiovascular Imaging</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities) · Consensus (cross-check) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 27 de agosto de 2026.</div>
+</div>
+</body>
+</html>
