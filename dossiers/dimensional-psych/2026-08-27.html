@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-08-27 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">27 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">132</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">48</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Affective Disorders · 2026-08-26 · paper</div>
+        <h3 class="r3-title">Análisis de red del vínculo entre síntomas depresivos y riesgo de conducta suicida a tres años: un estudio prospectivo nacional</h3>
+        <p class="r3-hook">Scheer, Nejar, Sánchez-Rico, Blanco, Olfson, Fayad, Limosin y Hoertel combinan un análisis de red (Ising) con modelos cross-lagged sobre la cohorte nacional NESARC (n=3,485 con episodio depresivo mayor, seguimiento a 3 años, 102 intentos de suicidio): la ideación suicida en el seguimiento es el síntoma-puente más fuerte hacia el intento, pero lo verdaderamente accionable es que el desvalimiento (worthlessness) predice ideación suicida y pensamientos de muerte con una magnitud 7-8 veces mayor que la culpa — hallazgo que replica en dos análisis de sensibilidad. Para tu línea de psicopatología dimensional/network theory esto es el ejemplo de manual de &#39;red + panel longitudinal&#39; que puedes citar en el libro para mostrar cómo la teoría de redes vuelve accionable la palabra clínica exacta a targetear en terapia (desvalimiento, no culpa genérica), y para razonamiento clínico es un cambio de pregunta en la anamnesis de riesgo suicida: dejar de preguntar solo por culpa y anclar la exploración en devaluación del yo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122423" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122423</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">The Lancet Psychiatry · 2026-08-26 · rct</div>
+        <h3 class="r3-title">Open Dialogue versus tratamiento habitual para adultos en crisis en servicios de salud mental en Inglaterra (ensayo ODDESSI): un ensayo multicéntrico aleatorizado por conglomerados</h3>
+        <p class="r3-hook">Pilling, Craig, Clarke y un consorcio de cinco NHS Trusts británicos ponen a prueba Open Dialogue —modelo de atención transdiagnóstico centrado en la persona y su red social, sin anclarse a un diagnóstico categórico— frente a tratamiento habitual en 494 adultos en crisis (32 conglomerados, seguimiento 2 años): no hubo diferencia en tiempo hasta recaída (el outcome primario), pero Open Dialogue redujo significativamente hospitalización psiquiátrica y re-derivación a crisis, y mejoró recuperación auto-reportada y satisfacción, sin señales de seguridad. Es la traducción clínica más grande y mejor diseñada que vas a ver esta semana de un modelo de atención genuinamente transdiagnóstico funcionando a escala de sistema de salud —justo el tipo de evidencia que necesitas para el capítulo de traducción clínica del libro, y un contraejemplo útil para AMAUTA/USAMEDIC: un modelo transdiagnóstico puede no cambiar el outcome &#39;duro&#39; (recaída) y aun así justificarse por reducir uso de cama e mejorar experiencia del paciente, una distinción que vale la pena enseñar explícitamente.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S2215-0366(26)00229-4" target="_blank" rel="noopener">↗ doi.org/10.1016/S2215-0366(26)00229-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">The American Journal of Psychiatry · 2026-08-26 · paper</div>
+        <h3 class="r3-title">Plasticidad del giro dentado hipocampal y su asociación con la mejoría clínica dimensional a través de cuatro intervenciones para depresión</h3>
+        <p class="r3-hook">Takamiya, Ueda, Kamiya y equipo japonés siguen a 450 participantes (269 con depresión mayor tratados con TCC, farmacoterapia, rTMS o TEC) y encuentran que el volumen del giro dentado hipocampal aumenta con el tratamiento —mayormente impulsado por la TEC— y que ese cambio se correlaciona específicamente con la mejoría en la dimensión de síntomas depresivos nucleares, sin asociación con ansiedad, síntomas somáticos, insomnio ni ninguna dimensión cognitiva. La conclusión honesta de los autores es que la plasticidad del giro dentado NO es un mecanismo compartido entre las cuatro intervenciones, sino algo específico de la TEC — exactamente el tipo de hallazgo dimensional-específico (no genérico) que tu capítulo de psiquiatría de precisión necesita: un biomarcador que predice mejoría en UNA dimensión de síntomas y no en otras es un argumento empírico directo a favor de tratar dimensiones, no diagnósticos, y de no asumir que todo tratamiento antidepresivo &#39;funciona igual por dentro&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1176/appi.ajp.20251330" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.ajp.20251330</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Assessment · 2026-08-24 · paper</div>
+          <div class="r10-title">El Affective Reactivity Index en niños australianos: propiedades psicométricas e invarianza de medición en muestras clínicas y comunitarias</div>
+          <div class="r10-line">Briers, Sanders, Northam, Dadds y Hawes validan el ARI-Parent en 1,371 niños comunitarios y 299 clínicos (4-12 años) y, vía análisis de red psicométrico, identifican &#39;se enoja frecuentemente&#39; y &#39;pierde la paciencia fácilmente&#39; como los ítems más centrales de la irritabilidad transdiagnóstica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la irritabilidad como rasgo transdiagnóstico con un instrumento breve y ya validado en población anglosajona (adaptable) es candidato directo para tu línea TDAH/TEA — útil como screening temprano en AMAUTA antes de que el cuadro cristalice en un diagnóstico categórico específico.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/pas0001498" target="_blank" rel="noopener">↗ doi.org/10.1037/pas0001498</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Interpersonal Violence · 2026-08-25 · paper</div>
+          <div class="r10-title">Asociaciones cross-lagged longitudinales entre depresión, ansiedad y síntomas somáticos en adolescentes con victimización por bullying: evidencia multinivel de análisis por variable y por síntoma</div>
+          <div class="r10-line">Liu, Wang, Zhang, Lv y Liu siguen a 1,108 adolescentes (549 con bullying, 559 sin) durante 3 olas y muestran que en víctimas de bullying la depresión precede a la ansiedad y lo somático al inicio, pero después la ansiedad pasa a ser el motor dominante — un patrón temporal distinto al de no-víctimas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la organización temporal de síntomas cambia según el contexto etiológico (bullying vs. no bullying), no solo según severidad — argumento fuerte para no tratar &#39;depresión adolescente&#39; como una entidad uniforme y otro caso para el capítulo de staging dimensional del libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/08862605261462514" target="_blank" rel="noopener">↗ doi.org/10.1177/08862605261462514</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 2026-08-24 · paper</div>
+          <div class="r10-title">Disociación como marcador de desregulación emocional: un examen en pacientes psiquiátricos adolescentes hospitalizados mediante evaluación ecológica momentánea</div>
+          <div class="r10-line">Brunner, Sele, Koenig, Mürner-Lavanchy, Bjureberg, Kaess y Cavelti usan EMA (12 evaluaciones/día × 5 días) en 48 adolescentes hospitalizados y encuentran que disociación y afecto negativo co-ocurren, y que disociación + cortisol elevado predice MENOR afecto negativo posterior — apoyo parcial a la disociación como regulador emocional de corto plazo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si la disociación amortigua el afecto negativo a corto plazo vía cortisol, entender ese mecanismo cambiaría cómo enseñas la disociación en razonamiento clínico — no como síntoma aislado sino como estrategia regulatoria transdiagnóstica con una firma biológica medible.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122411" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122411</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · 2026-08-25 · preprint</div>
+          <div class="r10-title">Factores Bayes de inclusión para independencia condicional en modelado de redes latentes</div>
+          <div class="r10-line">Ozkan desarrolla un modelo de red latente bayesiano (BLNM) que calcula factores Bayes de inclusión para cada arista de la red, resolviendo el problema de que los métodos actuales (penalización, tests de significancia) no distinguen &#39;ausencia de evidencia&#39; de &#39;evidencia de ausencia&#39; al estimar redes psicométricas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta es exactamente la clase de reencuadre metodológico que tu libro de psicopatología dimensional necesita citar en el capítulo de network theory — sigue este preprint hacia revisión por pares; si se sostiene, cambia el estándar de qué cuenta como &#39;arista confirmada&#39; en cualquier red de síntomas que cites de aquí en adelante.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/b5uyp_v2" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/b5uyp_v2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · 2026-08-25 · preprint</div>
+          <div class="r10-title">Rasgos latentes no-normales y estimación de parámetros en el modelo bifactor de respuesta graduada</div>
+          <div class="r10-line">Li, Cao, Kim y Ma muestran mediante simulación que la no-normalidad del factor general en modelos bifactor (el tipo de modelo detrás del factor p y HiTOP) sesga específicamente las estimaciones del factor general, mientras que los estimadores MAP de rasgo latente son más estables que los de máxima verosimilitud pese a la mala especificación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: material técnico de bajo perfil pero alto impacto — si algún día publicas o revisas un modelo bifactor propio (HiTOP-BBS peruano, por ejemplo), este es el paper a citar para justificar por qué usar MAP y no MLE al estimar el factor p en muestras clínicas reales, donde la normalidad rara vez se sostiene.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/tfy8r_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/tfy8r_v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience &amp; Biobehavioral Reviews · 2026-08-26 · meta-analysis</div>
+          <div class="r10-title">Metaanálisis de actividad cerebral funcional durante el procesamiento de valencia en trastorno por juego en internet y trastorno de juego patológico</div>
+          <div class="r10-line">Yeo, Potenza y Tolomeo metaanalizan 56 estudios fMRI (952 con IGD, 469 con juego patológico) y encuentran convergencia compartida en cabeza del caudado entre ambos trastornos, pero también diferencias sustanciales en criterios diagnósticos y paradigmas entre las dos literaturas que impiden concluir especificidad neurobiológica real.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el hallazgo más útil no es la neuroimagen sino la advertencia metodológica — sin criterios diagnósticos armonizados entre &#39;adicciones conductuales&#39; distintas, cualquier comparación transdiagnóstica (incluida la tuya, si trabajas neurodivergencia + uso problemático de pantallas) hereda ese mismo problema de comparabilidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neubiorev.2026.106934" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106934</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Assessment · 2026-08-25 · paper</div>
+          <div class="r10-title">Desarrollo y validación del Digital Mentalizing Questionnaire: un autoinforme multidimensional para redes sociales en línea</div>
+          <div class="r10-line">Rahmani Malek-Abad y Abedi desarrollan y validan (3 estudios, N total=994) el DMQ, un instrumento de 5 factores para mentalización digital, y muestran que se asocia negativamente con indicadores transdiagnósticos de psicopatología.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: un instrumento nicho pero con gancho de contenido inmediato — la mentalización digital (leer estados mentales propios/ajenos mediado por pantalla) conecta directo con tu línea de IA aplicada + neurodivergencia, sobre todo para pacientes TEA cuya interacción social ocurre cada vez más en digital antes que presencial.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/10731911261477186" target="_blank" rel="noopener">↗ doi.org/10.1177/10731911261477186</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Patient-Reported Outcomes · 2026-08-25 · editorial</div>
+          <div class="r10-title">Fatiga: evalúala y abórdala</div>
+          <div class="r10-line">Kuut, Knoop, van Oers y Haverman argumentan que la fatiga severa —altamente prevalente y transdiagnóstica a través de condiciones médicas— rara vez se discute sistemáticamente en consulta pese a existir tratamientos genéricos efectivos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: pieza corta pero con gancho pedagógico directo para AMAUTA/USAMEDIC — la fatiga como síntoma transdiagnóstico infra-preguntado en la anamnesis, con la ventaja de que ya hay protocolos de manejo listos, no hay que inventar nada.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s41687-026-01188-w" target="_blank" rel="noopener">↗ doi.org/10.1186/s41687-026-01188-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia (Heidelberg) · 2026-08-24 · paper</div>
+          <div class="r10-title">Correlatos clínicos y neurobiológicos de la discinesia tardía en trastornos del espectro esquizofrénico y trastornos del ánimo</div>
+          <div class="r10-line">Altinok, Volkmer, Fritze y equipo (n=453, cohorte bicéntrica) muestran que la discinesia tardía es un fenómeno transdiagnóstico presente tanto en espectro esquizofrénico como en trastornos del ánimo, pero con un fenotipo neurobiológico distinto (menor superficie cortical paracentral) específicamente en el espectro esquizofrénico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: evidencia neurobiológica concreta de que un mismo síndrome motor iatrogénico no es &#39;igual por dentro&#39; según el diagnóstico categórico de base — otro ladrillo empírico para el argumento de que la categoría diagnóstica sigue aportando información incluso dentro de un marco dimensional, útil para matizar el capítulo del libro que no quieres que suene anti-DSM ingenuo.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41537-026-00796-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41537-026-00796-1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En riesgo suicida, la palabra clínica que predice ideación suicida y pensamientos de muerte con 7-8 veces más fuerza que la culpa es el desvalimiento (worthlessness) — dos afectos que en la entrevista clínica se preguntan casi igual pero que la red de síntomas trata como jerárquicamente muy distintos.</li><li>Open Dialogue, el modelo transdiagnóstico de atención en crisis más estudiado hasta ahora a escala de sistema de salud (n=494, 5 NHS Trusts), no redujo la recaída — pero sí redujo hospitalización y mejoró la experiencia del paciente: un modelo puede justificarse sin ganar en el outcome &#39;duro&#39; que todos asumen que debería ganar.</li><li>La plasticidad del giro dentado hipocampal aumenta con el tratamiento antidepresivo, pero solo se correlaciona con la mejoría de síntomas depresivos NUCLEARES, no con ansiedad, somático, insomnio ni cognición — y el efecto está casi enteramente impulsado por la TEC, no por TCC, farmacoterapia o rTMS: &#39;antidepresivo&#39; no es un mecanismo único.</li><li>Un mismo síndrome motor iatrogénico (discinesia tardía) es transdiagnóstico en prevalencia (aparece en esquizofrenia Y en trastornos del ánimo) pero NO en neurobiología (correlato cortical distinto solo en espectro esquizofrénico) — dimensional en superficie, categórico en mecanismo, en el mismo estudio.</li><li>La irritabilidad infantil colapsa, en análisis de red psicométrico en 1,670 niños, a un solo clúster de sintomatología cuyos ítems más centrales son literalmente &#39;se enoja fácil&#39; y &#39;pierde la paciencia fácil&#39; — la red confirma lo más obvio, pero confirmarlo psicométricamente es lo que lo vuelve citable.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>En tu próxima evaluación de riesgo suicida, ¿reemplazarías la pregunta estándar sobre culpa por una exploración explícita del desvalimiento/devaluación del yo, dado que la red de síntomas de Scheer et al. lo señala como 7-8 veces más predictivo?</li><li>¿El modelo Open Dialogue —o una versión adaptada culturalmente— sería viable como protocolo de crisis dentro de AMAUTA, sabiendo que su ganancia real está en reducir hospitalización y mejorar experiencia, no en prevenir la recaída?</li><li>Si la plasticidad del giro dentado solo se asocia a mejoría en TEC y no en TCC/farmacoterapia/rTMS, ¿qué le dirías a un paciente que pregunta &#39;por qué funciona&#39; un tratamiento cuyo mecanismo biológico dimensional-específico todavía no puedes demostrarle con las otras opciones?</li><li>¿Usarías el ARI-Parent (o una adaptación) como screening de irritabilidad transdiagnóstica en tu consulta infantil antes de decidir si el cuadro apunta a TDAH, TEA o trastorno oposicionista — o seguirías esperando a que el diagnóstico categórico se defina primero?</li><li>¿Qué le preguntarías distinto a un paciente con discinesia tardía y espectro esquizofrénico vs. uno con discinesia tardía y trastorno del ánimo, si asumes que —según este estudio— el mecanismo neurobiológico detrás del mismo síntoma motor no es el mismo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;No es culpa, es desvalimiento&#39; — usando el hallazgo de la red de síntomas depresivos (worthlessness 7-8x más predictivo que guilt para ideación suicida) como cambio de pregunta clínica accionable en la entrevista de riesgo.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional sobre network theory aplicada: usar el paper de Scheer et al. (red + cross-lagged) como caso empírico ancla y el preprint de Ozkan (factores Bayes de inclusión en redes latentes) como la actualización metodológica que hay que citar para no quedar desactualizado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota AMAUTA/USAMEDIC para ENAM/Residentado: &#39;un mismo síntoma, dos mecanismos&#39; — usando la discinesia tardía transdiagnóstica (misma prevalencia, distinta neurobiología entre espectro esquizofrénico y trastornos del ánimo) como caso de examen sobre por qué la categoría diagnóstica sigue importando dentro de un marco dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o carta editorial: comentario sobre el ensayo ODDESSI conectando sus resultados matizados (sin efecto en recaída, sí en hospitalización) con la discusión de qué outcome debería ser el primario en ensayos de modelos de atención transdiagnósticos — relevante para tu línea de precisión + ROI clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel IG: &#39;La fatiga que nadie pregunta en consulta&#39; — usando el editorial de Kuut et al. sobre fatiga como síntoma transdiagnóstico infra-evaluado, con gancho práctico (2-3 preguntas de screening que sí existen y nadie usa).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Affective Disorders</span><span class="tag highlight">The Lancet Psychiatry</span><span class="tag highlight">The American Journal of Psychiatry</span><span class="tag ">Psychological Assessment</span><span class="tag ">Journal of Interpersonal Violence</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Assessment</span><span class="tag ">Journal of Patient-Reported Outcomes</span><span class="tag ">Schizophrenia (Heidelberg)</span><span class="tag ">PsyArXiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils, esearch/esummary/efetch) · PsyArXiv/OSF API · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 27 de agosto de 2026.</div>
+</div>
+</body>
+</html>
