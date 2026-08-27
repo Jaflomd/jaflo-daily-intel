@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-08-27 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">27 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">31</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">31</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Diagnosis (Berlin, Germany), 27 ago 2026 · rct · 2026-08-27</div>
+        <h3 class="r3-title">Effects of case revisitation during deliberate reflection on medical students&#39; diagnostic accuracy: a randomized experiment</h3>
+        <p class="r3-hook">Experimento aleatorizado que compara reflexión deliberada estándar sobre un caso clínico vs. una variante que agrega &#39;revisitación del caso&#39; (volver a mirar los datos originales antes de reflexionar) sobre la precisión diagnóstica de estudiantes de medicina. Le importa directamente a Javier porque cae en el centro de su línea de razonamiento clínico: es evidencia experimental fresca sobre un micro-diseño instruccional (no solo &#39;reflexionar&#39;, sino cómo estructurar esa reflexión) que puede probar si mejora la detección de sesgos diagnósticos. Es un candidato inmediato para pilotear en un módulo de razonamiento clínico de USAMEDIC/ENAM-Residentado: agregar un paso explícito de &#39;volver a los datos crudos&#39; antes de que el alumno cierre su hipótesis diagnóstica, y medir si baja el anclaje o el cierre prematuro en los simulacros.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0061" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0061</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">PLoS ONE, 26 ago 2026 · meta-analysis · 2026-08-26</div>
+        <h3 class="r3-title">Global prevalence of impostor phenomenon in medical students: A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis global que cuantifica la prevalencia del fenómeno del impostor en estudiantes de medicina, cruzando psiquiatría/psicopatología con educación médica. A Javier le pega en dos frentes a la vez: su libro de psicopatología (el impostor como fenómeno dimensional ligado a ansiedad/autoestima, no una categoría aislada) y su rol formando médicos para ENAM/Residentado, donde el impostor syndrome es un predictor conocido de burnout y de bajo desempeño en exámenes de alto riesgo. Puede usarlo como gancho de contenido IG/YT (&#39;la mayoría de tus compañeros preparándose para el ENAM se sienten impostores — esto dice la evidencia global&#39;) y como justificación basada en datos para integrar screening/apoyo psicológico dentro de los cursos AMAUTA.</p>
+        <a class="r3-link" href="https://doi.org/10.1371/journal.pone.0351713" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0351713</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">JMIR Formative Research, 25 ago 2026 · paper · 2026-08-25</div>
+        <h3 class="r3-title">Large Language Model-Assisted Thematic Coding in Medical Education Research: Comparative Methodological Study</h3>
+        <p class="r3-hook">Estudio metodológico que compara a GPT-4o contra codificación humana en análisis cualitativo (focus groups de estudiantes de medicina): acuerdo bajo (31.4%) cuando la IA genera códigos inductivos de cero, pero muy alto (96%) cuando solo aplica un libro de códigos ya construido por humanos. Esto es oro para la línea de &#39;IA en investigación&#39; de Javier como investigador RENACYT: le da evidencia concreta de dónde SÍ delegar en LLM (aplicar un codebook ya validado, ahorrando horas de research assistant) y dónde NO (la fase inductiva de crear categorías nuevas todavía necesita ojo humano). Usable ya mismo como referencia metodológica si está corriendo o asesorando estudios cualitativos en educación médica, y como contenido sobre límites reales (no hype) de la IA en su propio pipeline de investigación.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/85572" target="_blank" rel="noopener">↗ doi.org/10.2196/85572</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Anatomy, 26 ago 2026 · review · 2026-08-26</div>
+          <div class="r10-title">Using Ultrasound to Learn Anatomy: A Systematic Review of Visuospatial and Psychomotor Skill Outcomes in Medical Students</div>
+          <div class="r10-line">Revisión sistemática que sintetiza si enseñar anatomía con ecografía mejora habilidades visuoespaciales y psicomotoras reales en estudiantes de medicina, no solo satisfacción.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En 12-18 meses esto empuja a más escuelas (y a bancos tipo USAMEDIC) a meter ecografía point-of-care como módulo transversal de anatomía, no como electivo aislado.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/ca.70146" target="_blank" rel="noopener">↗ doi.org/10.1002/ca.70146</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neonatology, 26 ago 2026 · rct · 2026-08-26</div>
+          <div class="r10-title">Telemedicine consultation in Neonatal Resuscitation: A Randomized Cross-Over Simulation Study</div>
+          <div class="r10-line">RCT cruzado en simulación que evalúa si la teleconsulta en tiempo real mejora el desempeño del equipo durante reanimación neonatal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a servir de evidencia para justificar telementoring en residentados de zonas alejadas del Perú (pediatría/neonatología), un caso de uso directo para el pilar de escalabilidad educativa de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1159/neo/adsag002" target="_blank" rel="noopener">↗ doi.org/10.1159/neo/adsag002</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Kardiologia Polska, 26 ago 2026 · rct · 2026-08-26</div>
+          <div class="r10-title">Structured educational program for healthcare professionals improves outcomes of atrial fibrillation management: Polish subgroup analysis of the STEEER-AF cluster-randomized trial</div>
+          <div class="r10-line">Subanálisis de un ensayo cluster-aleatorizado grande: educación estructurada a profesionales de salud casi duplicó la adherencia a guías de manejo de fibrilación auricular (53.1% vs 26.9%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es munición fuerte para vender educación médica continua basada en evidencia (Kirkpatrick 3, cambio de conducta clínica real) frente a clientes/instituciones que solo piden &#39;capacitaciones&#39; genéricas.</div>
+          <a class="r10-link" href="https://doi.org/10.33963/v.phj.114470" target="_blank" rel="noopener">↗ doi.org/10.33963/v.phj.114470</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Surgical Endoscopy, 24 ago 2026 · rct · 2026-08-24</div>
+          <div class="r10-title">Smart glasses-assisted telementoring in inguinal hernia repair: a new frontier in surgical training?</div>
+          <div class="r10-line">Piloto aleatorizado (45 cirugías, 3 brazos) donde el mentoring remoto vía smart glasses igualó al mentoring presencial en precisión quirúrgica, con tiempos operatorios algo más largos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Anticipa una ola de &#39;telementoring wearable&#39; en cirugía de bajo-mediano riesgo como puente para residentados con poca supervisión presencial disponible.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00464-026-13255-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00464-026-13255-w</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El impostor syndrome en medicina no es anécdota de redes sociales: hay meta-análisis global reciente cuantificándolo como problema estructural de la formación médica, no un rasgo individual raro.</li><li>Un LLM aplicando un codebook cualitativo ya hecho por humanos llega a 96% de acuerdo interobservador; el mismo LLM generando categorías desde cero cae a 31%. La frontera útil de la IA en research está en la fase de aplicación, no en la de creación de constructos.</li><li>&#39;Reflexionar sobre el caso&#39; no es un bloque homogéneo: agregar un paso explícito de volver a los datos crudos antes de cerrar el diagnóstico cambia la precisión diagnóstica medida experimentalmente, no solo la sensación de haber reflexionado.</li><li>Educación médica continua bien diseñada casi duplicó la adherencia a guías clínicas en un ensayo cluster-aleatorizado real (53% vs 27%) — la CME con outcomes duros sigue siendo rentable en evidencia, aunque esté de moda dudar de su ROI.</li><li>El mentoring remoto vía wearables (smart glasses) ya empata al mentoring presencial en precisión de pasos quirúrgicos clave en un piloto controlado; el costo no está en la calidad del feedback sino en el tiempo operatorio.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué pasaría si el banco de casos de razonamiento clínico de USAMEDIC/ENAM incluyera un paso obligatorio de &#39;revisitación de datos crudos&#39; antes de que el alumno bloquee su hipótesis diagnóstica?</li><li>¿Cuánto del impostor syndrome que reportan los alumnos de AMAUTA es rasgo dimensional de ansiedad/perfeccionismo vs. una respuesta razonable a un sistema de evaluación de alto riesgo (ENAM) mal calibrado?</li><li>¿Dónde exactamente en su propio pipeline de investigación (RENACYT) le conviene a Javier delegar codificación cualitativa a un LLM con codebook fijo, y dónde sigue necesitando el ojo humano para construir las categorías?</li><li>¿Vale la pena pilotear telementoring vía smart glasses o similar en alguna rotación quirúrgica de residentado con poca supervisión presencial, tomando el diseño de 3 brazos del estudio de hernia inguinal como plantilla?</li><li>Si la educación estructurada casi duplica la adherencia a guías en cardiología, ¿qué versión de eso podría aplicarse a la adherencia a guías de manejo psiquiátrico (p.ej. TDAH/TEA) entre médicos generales en Perú?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel: &#39;El impostor syndrome en medicina, explicado con el meta-análisis global más reciente&#39; — conectar con el capítulo de ansiedad/autoestima del libro de psicopatología.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video corto: &#39;Dónde SÍ y dónde NO usar ChatGPT/GPT-4o para codificar tus entrevistas de investigación cualitativa&#39;, basado en el estudio de acuerdo 31% vs 96%.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-experimento piloto en un curso USAMEDIC: agregar &#39;revisitación de datos&#39; como paso obligatorio en la discusión de casos y medir si baja el cierre diagnóstico prematuro.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección de neurociencia educativa sobre por qué la estructura de la reflexión (no solo su presencia) determina el aprendizaje en razonamiento clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comparar, con datos propios de AMAUTA, si un programa estructurado de educación continua sobre guías clínicas (al estilo STEEER-AF) mejora adherencia real en egresados que rinden ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">PLoS ONE</span><span class="tag ">Clinical Anatomy</span><span class="tag ">Neonatology</span><span class="tag ">Kardiologia Polska</span><span class="tag ">Surgical Endoscopy</span><span class="tag ">JMIR Formative Research</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch) · Europe PMC · WebSearch (medRxiv, PubMed). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 27 de agosto de 2026.</div>
+</div>
+</body>
+</html>
