@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-08-28 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">28 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">86</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychopharmacology · 2026-08-27 · review</div>
+        <h3 class="r3-title">Eficacia y tolerabilidad de la ketamina en el trastorno obsesivo-compulsivo moderado a severo: revisión sistemática</h3>
+        <p class="r3-hook">Revisión sistemática PRISMA (15 estudios, 118 participantes: 3 ECA, 4 abiertos, 8 reportes de caso) sobre ketamina para OCD moderado-severo resistente, donde 40-60% de pacientes no responde a ISRS + TCC. La ketamina IV monodosis (0.5 mg/kg) logra respuesta antiobsesiva rápida (50-60%) pero transitoria (~1 semana), salvo que se combine con exposición y prevención de respuesta (ERP), donde la remisión se sostiene semanas a meses -un efecto sinérgico-; la vía intranasal tuvo alto rechazo por miedo a contaminación, y se detectó una señal de disforia e ideación suicida de inicio tardío (24-48h post-infusión). Para tu psicopatología dimensional y tu línea de psiquiatría de precisión es un caso de manual de &#39;aumentación farmaco-conductual&#39; -modulador glutamatérgico rápido + terapia basada en exposición-, y un tema potente para AMAUTA sobre lectura crítica de evidencia heterogénea (n=118, mezcla de diseños) que igual cambia la práctica. También es referencia directa para el capítulo de OCD refractario de tu libro de psicopatología.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00213-026-07155-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s00213-026-07155-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">CNS Drugs · 2026-08-26 · review</div>
+        <h3 class="r3-title">Farmacoterapias de próxima generación para trastornos del ánimo unipolares: artículo líder sobre desarrollo de fármacos en fase II/III</h3>
+        <p class="r3-hook">Leading article en CNS Drugs que mapea el pipeline completo de fase II/III para depresión unipolar tras la aprobación de esketamina y brexanolona en 2019: moduladores glutamatérgicos/GABA, moduladores de canales iónicos, psicodélicos y otros mecanismos, con cerca de 24 fármacos nombrados (ALTO-100, BHV-7000, COMP360, GM-1020, SEP-363856, XEN1101 entre otros) en ensayos activos patrocinados por industria en EE.UU. en los últimos 3 años. Es la foto más actualizada del giro post-monoaminérgico en psiquiatría, exactamente tu línea de psiquiatría de precisión: te da el mapa de mecanismos para pensar qué endofenotipo (HiTOP/RDoC) podría estratificar respuesta a cada clase, en vez de tratar &#39;depresión&#39; como bloque único. Para AMAUTA/USAMEDIC es una clase lista sobre &#39;más allá del ISRS&#39; con nombres de fármacos que tus alumnos van a empezar a ver en literatura y exámenes en 1-2 años, y una fuente directa de referencias para el capítulo de farmacología del ánimo de tu libro.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s40263-026-01330-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s40263-026-01330-8</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Parkinson&#39;s Disease · 2026-08-26 · review</div>
+        <h3 class="r3-title">Estimulación cerebral profunda de baja vs. alta frecuencia para síntomas motores en enfermedad de Parkinson: revisión sistemática y meta-análisis de ECA</h3>
+        <p class="r3-hook">Revisión sistemática y meta-análisis de 15 ECA (416 participantes, búsqueda hasta noviembre-2025) que compara DBS de baja vs alta frecuencia en síntomas motores de Parkinson: sin diferencia global, pero el subanálisis sugiere mayor mejoría con alta frecuencia en pacientes con enfermedad de curso más corto. Es tu foco secundario de neuropsiquiatría cruzado directo con tu pilar de neuromodulación: mismo problema que sigues en depresión resistente (VNS/TMS/DBS) -qué parámetro de estimulación importa y para qué subgrupo- pero en el terreno mejor establecido de trastornos del movimiento, lo que te da un contraste útil de cuánta señal de parámetro hay cuando la indicación SÍ está madura frente a las señales más débiles en neuromodulación psiquiátrica. Para AMAUTA es material ideal para enseñar meta-análisis con heterogeneidad clínica real (edad, duración de enfermedad) sin jerga estadística abstracta.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/1877718x261481663" target="_blank" rel="noopener">↗ doi.org/10.1177/1877718x261481663</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Epileptic Disorders · 2026-08-25 · network-meta-analysis</div>
+        <h3 class="r3-title">Efecto de los fármacos antiepilépticos sobre la exposición a anticonceptivos orales combinados: revisión sistemática y meta-análisis en red</h3>
+        <p class="r3-hook">Revisión sistemática y NMA registrada en PROSPERO (CRD42024513792, PRISMA 2015/2020) con 17 estudios y 399 personas que compara 15 fármacos antiepilépticos (FAE) según cuánto reducen la exposición (AUC) a los componentes hormonales de anticonceptivos orales combinados, resolviendo recomendaciones hasta ahora contradictorias -sobre todo para inductores débiles del CYP3A4-. Es exactamente tu foco secundario de neuropsiquiatría (epilepsia) con aplicación clínica inmediata: cualquier paciente en edad fértil con epilepsia y comorbilidad psiquiátrica en tu consulta necesita este ranking para elegir FAE sin comprometer la anticoncepción, un tema que casi nunca se enseña con este nivel de rigor comparativo. Para AMAUTA/USAMEDIC es un ejemplo ideal de NMA aplicada a interacción farmacocinética (no solo eficacia), con un desenlace duro (AUC) fácil de explicar a residentes, y aporta vocabulario de riesgo de sesgo (herramienta PKclin) para tu módulo de lectura crítica de farmacocinética.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/epd2.70373" target="_blank" rel="noopener">↗ doi.org/10.1002/epd2.70373</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">BMJ Open · 2026-08-25 · network-meta-analysis</div>
+        <h3 class="r3-title">Prácticas actuales para modelar relaciones dosis-respuesta en meta-análisis en red de tratamientos para depresión: estudio de meta-investigación</h3>
+        <p class="r3-hook">Estudio de meta-investigación (metodología alineada a PRISMA 2020) que revisa cómo los NMA de depresión publicados entre 2020-2025 manejan la dosis del antidepresivo evaluado, e identifica vacíos metodológicos sistemáticos en cómo se incorpora la información dosis-respuesta a la síntesis de evidencia. Es lectura de fondo sobre CÓMO leer y enseñar un NMA, no solo sobre lo que concluye: te da criterios concretos para auditar la próxima red de depresión que cites en contenido o clase -¿modelaron dosis como categórica o continua? ¿usaron splines?-, algo que conecta con tu escepticismo metodológico y tu pilar de IA aplicada a investigación (evaluación automatizada de calidad de síntesis). Para AMAUTA es material perfecto para una clase de &#39;cómo leer un NMA sin que te vendan humo con el ranking SUCRA&#39;, con ejemplos reales de vacíos de reporte documentados en el estudio.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjopen-2026-119511" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2026-119511</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Zeitschrift für Gerontologie und Geriatrie · 2026-08-25 · guideline</div>
+        <h3 class="r3-title">Programas multicomponente en la prevención y manejo del delirium en adultos mayores: evidencia, recomendaciones de guía y perspectivas de cuidado sensible al delirium</h3>
+        <p class="r3-hook">Revisión que resume la guía alemana S3 &#39;Delirium en la vejez&#39;, que recomienda con fuerza -apoyada en dos meta-análisis de 2026- los programas multicomponente no farmacológicos (movilización temprana, reorientación cognitiva, higiene de sueño, manejo del dolor, nutrición/hidratación, tamizaje, involucramiento familiar; modelos HELP, ABCDEF, CHOPS, AKTIVER), que redujeron la incidencia de delirium en 44% y acortaron su duración; las estrategias farmacológicas mostraron beneficio inconsistente, con dexmedetomidina como única excepción perioperatoria. Encaja directo en tu foco secundario de neuropsiquiatría: el delirium es la complicación neuropsiquiátrica más frecuente en adultos mayores, y esta guía te da el paquete de intervención con la evidencia más sólida a la fecha, útil para AMAUTA/USAMEDIC como contraste &#39;bundle no farmacológico robusto vs farmacología decepcionante&#39; -un patrón que se repite en psiquiatría geriátrica-. También es referencia directa para el capítulo de psicogeriatría de tu libro de psicopatología, con el nombre exacto de los bundles citables.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00391-026-02643-5" target="_blank" rel="noopener">↗ doi.org/10.1007/s00391-026-02643-5</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">British Journal of Psychiatry · 2026-08-25 · meta-analysis</div>
+        <h3 class="r3-title">Más allá del control: revisión sistemática y meta-análisis de las respuestas al placebo en trastornos psiquiátricos mayores en ECA de citalopram y escitalopram</h3>
+        <p class="r3-hook">Meta-análisis registrado en PROSPERO (más de 80 ECA con citalopram/escitalopram) que cuantifica con tamaño de efecto Cohen&#39;s d el efecto placebo en depresión, ansiedad, OCD y TEPT, y explora qué características de diseño se correlacionan con una respuesta placebo más alta. Le importa directo a tu psiquiatría dimensional: si el placebo responde distinto según el trastorno (categórico DSM) pero probablemente de forma más continua según dimensiones de gravedad/cronicidad, esto es munición empírica para argumentar HiTOP/RDoC frente al diseño de ensayos por categoría diagnóstica. Para AMAUTA es un tema perfecto para desmontar el mito de &#39;el placebo es ruido constante&#39;: aquí se ve como una variable con predictores identificables que hay que modelar, no descartar -material directo para tu módulo de lectura crítica de ECA.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10665" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10665</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">American Journal of Drug and Alcohol Abuse · 2026-08-26 · meta-analysis</div>
+        <h3 class="r3-title">Naltrexona de liberación prolongada vs. buprenorfina-naloxona para el trastorno por uso de opioides: revisión sistemática y meta-análisis de ECA</h3>
+        <p class="r3-hook">Meta-análisis con certeza GRADE (5 ECA, 1043 pacientes) que compara naltrexona XR vs buprenorfina-naloxona para trastorno por uso de opioides: la naltrexona tuvo peor inicio de tratamiento (OR 0.27; IC95% 0.12-0.64; I²=67.6%) -el cuello de botella conocido de requerir desintoxicación previa- pero retención similar (I²=0%) y menor proporción de muestras urinarias positivas a opioides una vez iniciado el tratamiento. Es un dato accionable para tu línea de razonamiento clínico aplicado a trastornos por uso de sustancias: mismo cuerpo de evidencia, dos historias distintas según mires inicio de tratamiento (favorece buprenorfina-naloxona) o eficacia post-inicio (favorece naltrexona XR). Para AMAUTA es ejemplo perfecto de &#39;el desenlace que reportas cambia la conclusión&#39;, y una buena base para una pregunta tipo ENAM sobre trade-offs de elección de terapia asistida por medicamentos según el perfil del paciente.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/00952990.2026.2717745" target="_blank" rel="noopener">↗ doi.org/10.1080/00952990.2026.2717745</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Affective Disorders · 2026-08-26 · meta-analysis</div>
+        <h3 class="r3-title">Efectividad de las intervenciones de mindfulness para síntomas depresivos en jóvenes: revisión sistemática y meta-análisis</h3>
+        <p class="r3-hook">Meta-análisis (28 estudios, 25 en el pooling, participantes de 14-27 años) que confirma que las intervenciones de mindfulness reducen síntomas depresivos frente a control, con efecto pequeño (Hedges&#39; g=-0.32, p&lt;.001) y sin que el tipo de intervención de mindfulness modere el resultado -heterogeneidad moderada pero efecto consistente entre poblaciones y formatos-. Conecta con tu línea de neurodivergencia/TDAH-TEA y con contenido AMAUTA sobre adolescentes: un efecto pequeño pero consistente es justo el tipo de evidencia que hay que saber comunicar sin sobrevender (&#39;funciona, pero no es panacea&#39;), terreno fértil para hablar de mindfulness como complemento -no sustituto- del tratamiento basado en evidencia en depresión juvenil. Para tu pilar de contenido/documentación es un dato con buen gancho para IG/YT.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122420" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122420</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En OCD refractario, la ketamina monodosis sola pierde su efecto en ~1 semana -pero combinada con ERP, la remisión se sostiene meses: el fármaco abre la ventana, la terapia conductual la cierra.</li><li>En Parkinson, la frecuencia de estimulación DBS solo marca diferencia en pacientes con enfermedad de curso corto -recordatorio de que &#39;parámetro óptimo&#39; casi siempre es &#39;óptimo para qué subgrupo&#39;, no un valor universal.</li><li>El efecto placebo en ECA con citalopram/escitalopram no es ruido de fondo constante: varía por trastorno y por características del diseño del ensayo, y ese patrón se puede modelar -y hasta anticipar- para leer críticamente cualquier ECA psiquiátrico.</li><li>Para trastorno por uso de opioides, naltrexona XR y buprenorfina-naloxona &#39;empatan&#39; en retención pero cuentan historias opuestas según el desenlace: buprenorfina-naloxona gana en inicio de tratamiento, naltrexona XR en eficacia post-inicio -la elección real depende de qué barrera del paciente pesa más.</li><li>La mayoría de NMA de depresión publicados 2020-2025 todavía no modela bien la dosis del antidepresivo comparado -un vacío metodológico que puede estar distorsionando en silencio los rankings SUCRA que tanto se citan.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿En qué subgrupo de OCD refractario (severidad, comorbilidad, respuesta previa a ISRS) el protocolo ketamina+ERP tiene mejor relación riesgo-beneficio dado el signal de disforia/ideación suicida a las 24-48h?</li><li>¿Cuál de los ~24 fármacos en fase II/III para trastornos del ánimo unipolares (glutamatérgicos, psicodélicos, moduladores de canal iónico) tiene el mecanismo más alineado con un fenotipo HiTOP específico en vez de &#39;depresión&#39; como categoría única?</li><li>¿Debería la elección de fármaco antiepiléptico en mujeres en edad fértil con comorbilidad psiquiátrica priorizarse por el ranking de interacción con anticonceptivos (NMA) antes que por eficacia antiepiléptica pura, cuando ambas son clínicamente relevantes?</li><li>¿Qué tan trasladable es el bundle no farmacológico de la guía alemana S3 de delirium (HELP/ABCDEF/CHOPS/AKTIVER) a un sistema de salud con menos recursos de enfermería especializada, como el peruano?</li><li>Si el efecto placebo varía sistemáticamente por trastorno y diseño de ensayo, ¿cuánto de la &#39;crisis de replicación&#39; en psicofarmacología es en realidad una crisis de modelamiento de placebo mal especificado?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo IG comparando la curva de recaída vs remisión sostenida de una sola dosis de ketamina en OCD (sola) vs ketamina+ERP, usando el estudio de Psychopharmacology como gancho visual.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase AMAUTA/USAMEDIC: &#39;Cómo leer un NMA sin que te vendan humo con SUCRA&#39;, basada en los vacíos metodológicos que documenta el meta-research de BMJ Open sobre dosis-respuesta en NMA de depresión.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta editorial o comentario breve proponiendo que las guías de prescripción de antiepilépticos en mujeres en edad fértil incorporen explícitamente el ranking NMA de interacción con anticonceptivos orales combinados (Epileptic Disorders).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología sobre &#39;el placebo como variable, no como ruido&#39;, usando el meta-análisis de BJPsych sobre respuesta placebo en citalopram/escitalopram a través de trastornos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video educativo comparando el pipeline de próxima generación de fármacos para depresión (glutamatérgicos, psicodélicos, canales iónicos) con nombres reales de moléculas en fase II/III: &#39;lo que viene después del ISRS&#39;.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychopharmacology</span><span class="tag ">CNS Drugs</span><span class="tag ">Journal of Parkinson&#39;s Disease</span><span class="tag ">Epileptic Disorders</span><span class="tag ">BMJ Open</span><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">American Journal of Drug and Alcohol Abuse</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Zeitschrift für Gerontologie und Geriatrie</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (PubMed) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 28 de agosto de 2026.</div>
+</div>
+</body>
+</html>
