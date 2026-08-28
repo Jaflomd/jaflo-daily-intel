@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-08-28 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">28 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">57</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Medical Teacher, 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">Evaluating hybrid human-LLM coding workflows for qualitative research in medical education: A generalizability study</h3>
+        <p class="r3-hook">Estudio de generalizability theory que compara tres LLMs comerciales (GPT-5.2, Claude Opus 4.5, Gemini 3-Flash Preview) codificando 741 extractos cualitativos contra el consenso humano en un análisis de políticas de IA en 146 escuelas de medicina de EE.UU.: la codificación secuencial-independiente iguala a la humana (β=-0.14, p=0.326), pero el procesamiento en lote la degrada (β=-0.41, p=0.007), y simular 1-2 humanos + 2 o más LLMs alcanza niveles de acuerdo comparables al consenso humano puro. Le importa a Javier porque, como investigador RENACYT que corre estudios cualitativos (comités de ética HVLH, evaluación de programas AMAUTA), esto le da un protocolo metodológico verificado —codificación secuencial, nunca en lote— para delegar codificación deductiva a LLMs sin sacrificar rigor y sin depender solo de research assistants. Cómo usarlo: adoptar el diseño de D-study como plantilla para validar su propio pipeline humano-LLM antes de publicar cualquier análisis cualitativo asistido por IA.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/0142159X.2026.2721362" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2721362</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Imaging Informatics in Medicine, 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">Generating Image-Based Multiple-Choice Questions with Multimodal Large Language Models: Expert and Psychometric Evaluation</h3>
+        <p class="r3-hook">GPT-4o y o3 generaron preguntas de opción múltiple a partir de radiografías reconociendo correctamente solo 1 de cada 4 imágenes sin apoyo clínico (24%), pero en el subconjunto de ítems que sí lograron generar bien, los de o3 discriminaron mejor entre alumnos fuertes y débiles que las preguntas escritas por docentes (p ajustada=0.009), sin diferencias significativas en distractores no funcionales. Le pega directo al corazón operativo de USAMEDIC/AMAUTA: la fábrica de bancos de preguntas para ENAM y Residentado, donde la calidad psicométrica de cada ítem basado en imagen (radiología, dermatología, patología) es un cuello de botella real de producción. Cómo usarlo: pilotear un flujo de &#39;generación asistida + verificación experta obligatoria + medición de discriminación item-total&#39; antes de publicar cualquier pregunta de imagen nueva en el banco, en vez de confiar solo en la revisión cualitativa de los redactores.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10278-026-02225-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s10278-026-02225-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Academic Radiology, 26 ago 2026 · rct · 2026-08-26</div>
+        <h3 class="r3-title">Point-of-Care Ultrasound as a Pedagogical Tool: Effects on Visuospatial and Radiologic Interpretation Skills in a Randomized Study</h3>
+        <p class="r3-hook">Ensayo aleatorizado grande (417 estudiantes de último año) que midió si un curso corto de ecografía point-of-care (tres sesiones prácticas de medio día) mejora la interpretación de imágenes transversales, con mejora estadísticamente significativa aunque modesta (76 vs. 73/100, p=0.015) en conocimiento anatómico y orientación espacial. Le importa a Javier porque es evidencia de nivel 2-3 de Kirkpatrick (habilidad medida, no solo satisfacción) sobre un formato de entrenamiento corto y replicable, justo el tipo de micro-módulo que podría insertarse en un curso USAMEDIC de imagenología o razonamiento clínico sin inflar la carga horaria. Cómo usarlo: tomar el diseño &#39;3 sesiones medio día + test pre/post de 5 dominios cognitivos&#39; como plantilla mínima viable si AMAUTA quiere ofrecer un módulo de ecografía clínica dentro de su oferta de preparación para Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.acra.2026.08.001" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.001</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Microbiology &amp; Biology Education, mayo 2026 (indexado en PubMed el 27 ago 2026) · paper · 2026-08-27</div>
+          <div class="r10-title">Automated scoring of student videos in medical education: a comparison between a large language model and expert evaluation</div>
+          <div class="r10-line">Comparó Gemini 2.5 Pro contra un docente experto calificando 139 videos de estudiantes de medicina en medicina basada en evidencia, y encontró que el mismo modelo sobreestima (+25.7 pts) o subestima (-8.5 pts) el puntaje según si el prompt es &#39;solo rúbrica&#39; o &#39;estilo crítico experto&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En 6-12 meses esto se vuelve la referencia obligada para cualquiera que use IA para calificar entregas en video o presentaciones orales en AMAUTA: el prompt no es un detalle menor, define si el sesgo favorece o castiga al alumno.</div>
+          <a class="r10-link" href="https://doi.org/10.1128/jmbe.00010-26" target="_blank" rel="noopener">↗ doi.org/10.1128/jmbe.00010-26</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Surgery Today, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">A Rasch-based analysis comparing the performance of updated multimodal large language models and surgeons on the Japanese surgical specialist examination</div>
+          <div class="r10-line">Análisis Rasch que compara cuatro LLMs multimodales (GPT-4.1, Claude Opus 4, Gemini 2.5 Pro, o3 Pro) contra cirujanos reales en el examen japonés de especialista quirúrgico: todos los modelos quedan por debajo de los cirujanos (habilidad relativa -1.29 a -0.74), sobre todo en ítems basados en imagen.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Alimenta el argumento —útil para su libro o contenido— de que ningún LLM actual está listo para &#39;aprobar&#39; un examen tipo ENAM sin supervisión, aunque sí sirve para generar y calibrar bancos de ítems de imagen si cada pregunta se valida psicométricamente.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00595-026-03472-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s00595-026-03472-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Simulation in Healthcare, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Comparing the Video-guided Intubation Skills of Competency and Mastery-trained Staff Physicians</div>
+          <div class="r10-line">Comparación simulada (n=8 vs. 8) entre médicos entrenados a estándar de &#39;competencia&#39; vs. &#39;maestría&#39; en laringoscopia por video: los entrenados a maestría retuvieron y transfirieron mejor la habilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza el argumento de mastery learning (fijar el estándar por desempeño, no por horas) para rediseñar talleres de destrezas de USAMEDIC hacia checkpoints de dominio; con n=8 por brazo hay que tratarlo como señal preliminar, no evidencia definitiva.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/sih.0000000000000962" target="_blank" rel="noopener">↗ doi.org/10.1097/sih.0000000000000962</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education Online, 25 ago 2026 · review · 2026-08-25</div>
+          <div class="r10-title">Beyond receiving: feedback literacy as a catalyst for resident growth, a scoping review</div>
+          <div class="r10-line">Scoping review (15 de 1048 estudios cribados) que usa el marco de Carless y Boud para mostrar que los residentes valoran el feedback pero varían mucho en cómo lo usan realmente para aprender.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Empuja el diseño de programas de feedback en AMAUTA/USAMEDIC hacia enseñar explícitamente &#39;cómo usar el feedback&#39; (feedback literacy) como destreza separada, no asumir que dar buen feedback basta si el alumno no sabe procesarlo.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/10872981.2026.2722433" target="_blank" rel="noopener">↗ doi.org/10.1080/10872981.2026.2722433</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Leveraging Individualized Electronic Health Record Learner Analytics to Improve Resident Inbasket Management</div>
+          <div class="r10-line">Coaching con analítica individualizada de historia clínica electrónica (modelo R2C2) redujo 2.2 días el tiempo de respuesta de residentes en su bandeja de tareas (p&lt;0.001), pero no cambió significativamente el burnout percibido ni la confianza.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un caso de manual de &#39;mejora la métrica dura, no mueve la percepción subjetiva&#39; —evidencia útil para justificar medir Kirkpatrick 3-4 real (comportamiento), no solo autopercepción, en cualquier intervención de bienestar/eficiencia que AMAUTA ofrezca a residentes.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10720-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10720-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Anatomical Sciences Education, 25 ago 2026 · paper · 2026-08-25</div>
+          <div class="r10-title">Analysis of anatomy questions in China&#39;s National Medical Licensing Examination (2010-2023): Content distribution characteristics and cognitive level evolution trends</div>
+          <div class="r10-line">Análisis de 374 preguntas de anatomía del examen nacional de licenciatura médica de China (2010-2023) muestra un giro sostenido hacia niveles cognitivos más altos de Bloom (aplicación/análisis), no solo memorización.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un espejo metodológico directamente replicable para auditar el banco de anatomía/ciencias básicas de USAMEDIC/ENAM: correr el mismo análisis por niveles de Bloom sobre 10+ años de reactivos propios revelaría si el banco está sobrecargado de memorización frente a la tendencia global.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/ase.70338" target="_blank" rel="noopener">↗ doi.org/10.1002/ase.70338</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Precision Education: How Ready Are Obstetrics and Gynecology Clerkships for the Future of Medical Education?</div>
+          <div class="r10-line">Encuesta a 95 directores de clerkship de Ginecología-Obstetricia en EE.UU. (69.3% de respuesta) muestra que solo 6% usa asistentes de enseñanza con IA y ~24% materiales generados automáticamente, con barreras grandes aún para la &#39;educación de precisión&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Confirma que el mercado real de precision education en clínica va muy por detrás del discurso —ventana concreta para que Javier posicione a AMAUTA como early adopter regional visible, usando generación automatizada de materiales y horarios flexibles como primeros pasos de bajo costo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104119" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104119</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El mismo LLM (Gemini 2.5 Pro) puede sobreestimar el desempeño de un estudiante en +25 puntos o subestimarlo en -8 puntos calificando el mismo video, solo cambiando el prompt: el &#39;sesgo de la IA&#39; no es fijo, es una decisión de diseño de quien evalúa.</li><li>Los LLMs concuerdan más entre sí (κ hasta 0.75) de lo que los humanos concuerdan entre ellos (κ=0.42) codificando el mismo texto cualitativo: consistencia de la IA no es lo mismo que acertar como lo haría un experto humano.</li><li>Una IA que genera preguntas de opción múltiple a partir de imágenes reconoce correctamente solo 1 de cada 4 radiografías sin contexto clínico, pero cuando el ítem sí se genera bien, discrimina mejor entre alumnos fuertes y débiles que una pregunta escrita por un docente.</li><li>Mejorar un indicador duro (2.2 días menos de demora en bandeja de tareas) no mueve automáticamente el burnout percibido: eficiencia objetiva y bienestar subjetivo son variables distintas que hay que medir por separado, no asumir que una arrastra a la otra.</li><li>Ningún LLM multimodal actual, ni el más nuevo, le gana a un cirujano real en su propio examen de especialidad, pero todos fallan en el mismo punto —ítems con imagen—, información útil sobre dónde sí conviene la supervisión humana obligatoria.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué pasaría si el banco de ítems de imagen (radiología, dermatología, patología) de USAMEDIC corriera primero por un ciclo de generación IA + verificación experta + medición de discriminación item-total antes de publicarse, en vez de solo revisión cualitativa?</li><li>¿Cuál sería el prompt &#39;calibrado&#39; (ni rúbrica pura ni crítico puro) que Javier necesitaría diseñar y validar si algún día usa IA para calificar presentaciones en video de estudiantes de AMAUTA?</li><li>Si aplicara el mismo análisis de niveles de Bloom del estudio chino de anatomía a 10 años de reactivos propios de ENAM/Residentado, ¿el banco de USAMEDIC estaría sobrecargado de memorización o ya inclinado a razonamiento aplicado?</li><li>¿Vale la pena pilotear el protocolo de codificación secuencial-independiente humano+LLM (2 LLMs + 1-2 humanos) del estudio de generalizability theory en el próximo análisis cualitativo que corra para un comité de ética o evaluación de programa?</li><li>¿Qué tan realista es que AMAUTA se posicione como early adopter regional de &#39;precision education&#39; (materiales generados automáticamente, horarios flexibles) antes que el resto de escuelas de medicina en Perú/Latam, dado que en EE.UU. la adopción real todavía es baja (6% con asistentes IA)?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post: &#39;Le pedí a la misma IA calificar el mismo video de dos formas distintas — y el puntaje cambió 33 puntos&#39;, explicando el estudio de sesgo de prompt en calificación automatizada.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica propia: correr un mini D-study (generalizability theory) sobre el propio pipeline humano-LLM de codificación cualitativa de HVLH/AMAUTA antes de publicar cualquier análisis con IA.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de neurociencia educativa sobre &#39;feedback literacy&#39; como destreza enseñable, separada de simplemente dar buen feedback, usando el marco Carless &amp; Boud del scoping review.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Auditoría interna (paper corto o white paper AMAUTA): aplicar la taxonomía de Bloom al banco de preguntas de anatomía/ciencias básicas de USAMEDIC, replicando la metodología del estudio chino de licenciatura médica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido IG/YT: &#39;Ningún ChatGPT le gana todavía a un cirujano en su propio examen&#39; — usar el estudio Rasch de LLMs vs. cirujanos japoneses para hablar de límites reales de la IA en medicina, sin hype.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Medical Teacher</span><span class="tag ">Journal of Imaging Informatics in Medicine</span><span class="tag ">Academic Radiology</span><span class="tag ">Surgery Today</span><span class="tag ">Journal of Microbiology &amp; Biology Education</span><span class="tag ">Simulation in Healthcare</span><span class="tag highlight">Medical Education Online</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Anatomical Sciences Education</span><span class="tag ">Journal of Surgical Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (búsqueda avanzada vía web, filtro de fechas) · Europe PMC REST API (metadata/DOI/abstract) · medRxiv (colección medical-education) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 28 de agosto de 2026.</div>
+</div>
+</body>
+</html>
