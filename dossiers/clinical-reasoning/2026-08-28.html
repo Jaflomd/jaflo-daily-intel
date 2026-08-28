@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-08-28 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">28 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">50</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of General Internal Medicine · 26 ago 2026 · review · 2026-08-26</div>
+        <h3 class="r3-title">Guía práctica de JGIM para formar discussants de Clinical Problem Solving: el razonamiento en voz alta, no el acierto, es el objetivo de enseñanza</h3>
+        <p class="r3-hook">Jaflo, guía práctica en JGIM dirigida a formar profesores como discussants de Clinical Problem Solving (CPS) — el formato clásico donde un experto razona en voz alta ante un caso desconocido. El marco no prioriza &#39;acertar el diagnóstico&#39; sino hacer explícitas las habilidades de razonamiento analítico y el manejo cognitivo de la incertidumbre diagnóstica, con la integración humana (compasión, responsabilidad profesional) como componente que la IA todavía no reemplaza. Por qué te importa: es casi un manual operativo para el Competency Lab de AMAUTA — te da la estructura pedagógica exacta (qué modelar, qué preguntas hacer, cómo verbalizar la incertidumbre) para entrenar a tus propios discussants de razonamiento clínico en USAMEDIC, en vez de improvisar el formato caso a caso. Cómo usarlo: adapta este marco como protocolo de entrenamiento para los tutores del Competency Lab — una rúbrica de &#39;cómo ser un buen discussant&#39; que puedes aplicar literal en las sesiones de razonamiento clínico de ENAM/Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11606-026-10699-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10699-7</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Health Science Reports · 26 ago 2026 · review · 2026-08-26</div>
+        <h3 class="r3-title">Revisión narrativa en neurocirugía separa con cifras lo que la IA ya rinde (AUC &gt;0.90, +15% pronóstico) de lo que todavía no puede: decidir sola</h3>
+        <p class="r3-hook">Revisión narrativa en Health Science Reports que sintetiza el estado real de la IA en la toma de decisiones neuroquirúrgicas: reporta capacidades concretas (AUC superior a 0.90 en clasificación de tumores, mejoras pronósticas de hasta 15% sobre métodos tradicionales) pero concluye, con esas mismas cifras como evidencia, que la IA todavía no está lista para decisión autónoma y rinde mejor como herramienta asistiva cuando sus límites se comunican con claridad. Por qué te importa: es exactamente el tipo de evidencia proporcional al claim que necesitas para tu pilar ai-enhancement — cifras duras de dónde la IA sí rinde (clasificación, pronóstico) y dónde el límite decisional es explícito, un contraejemplo calibrado frente al hype de &#39;la IA ya diagnostica sola&#39; que circula en redes. Cómo usarlo: cita las cifras concretas (AUC, % de mejora pronóstica) como ejemplo de cómo comunicar el rol de la IA en razonamiento clínico sin caer ni en el hype ni en el rechazo — un guión replicable para contenido AMAUTA o para tu línea de psiquiatría de precisión con IA.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/hsr2.73117" target="_blank" rel="noopener">↗ doi.org/10.1002/hsr2.73117</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">BMC Medical Ethics · 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">Doce médicos entrevistados sobre IA en electrocardiografía no temen que la herramienta se equivoque: temen no saber quién responde cuando lo hace</h3>
+        <p class="r3-hook">Estudio cualitativo en BMC Medical Ethics con 12 médicos entrevistados sobre integrar electrocardiografía potenciada por IA en su práctica clínica: reconocen mejoras en precisión y eficiencia diagnóstica, pero levantan tres preocupaciones concretas — sobredependencia automatizada, quién responde cuando la IA se equivoca, y qué hacer con hallazgos incidentales que la herramienta genera sin que nadie los pidió. Por qué te importa: son datos primarios, no especulación, sobre exactamente el riesgo que vienes advirtiendo en tu línea ai-enhancement — el &#39;cognitive offloading&#39; y la difusión de responsabilidad cuando un clínico delega la lectura de una señal biológica a un modelo, algo directamente trasladable a cómo un psiquiatra podría delegar la lectura de una escala o un patrón sintomático dimensional a una IA. Cómo usarlo: usa las tres preocupaciones textuales de los médicos entrevistados (sobredependencia, accountability, hallazgos incidentales) como los tres ejes de una discusión AMAUTA o un hilo sobre &#39;qué preguntarle a cualquier herramienta de IA clínica antes de confiar en ella&#39;, extrapolando de ECG a psiquiatría de precisión.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12910-026-01572-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12910-026-01572-7</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">2</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Nursing · 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Un entrenamiento por simulación sube el puntaje autorreportado de toma de decisiones clínicas de 58 enfermeras experimentadas, pero no mide desempeño real</div>
+          <div class="r10-line">Ensayo pre-post con 58 enfermeras experimentadas muestra que un entrenamiento estructurado por simulación subió su puntaje autorreportado de toma de decisiones clínicas (CDMNS) de 136.85 a 152.22, aunque la medición es autorreporte, no desempeño observado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el diseño (simulación + medición pre-post con instrumento validado) es reutilizable como piloto para el Competency Lab de AMAUTA, pero para que cuente como evidencia dura de mejora en razonamiento necesitaría reemplazar el autorreporte por desempeño observado en casos estandarizados — exactamente la brecha metodológica que tú mismo podrías cerrar en un estudio propio.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jocn.70526" target="_blank" rel="noopener">↗ doi.org/10.1111/jocn.70526</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">NEJM Evidence · 25 ago 2026 · editorial · 2026-08-25</div>
+          <div class="r10-title">NEJM Evidence publica un nuevo caso de Morning Report que modela en vivo el razonamiento colaborativo ante un lactante con episodios de falta de respuesta</div>
+          <div class="r10-line">Nuevo caso de la serie Morning Report (un lactante de 6 meses con episodios de falta de respuesta y cianosis) modela en vivo el razonamiento colaborativo entre médicos en formación y un experto que va estrechando el diferencial paso a paso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: publicado la misma semana que la guía de JGIM sobre cómo ser un buen discussant de CPS — juntos son el par ideal para replicar el formato completo (caso vivo + guía de facilitación) como plantilla reproducible de sesión semanal del Competency Lab, sin diseñar el formato desde cero.</div>
+          <a class="r10-link" href="https://doi.org/10.1056/EVIDmr2500143" target="_blank" rel="noopener">↗ doi.org/10.1056/EVIDmr2500143</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La guía de JGIM es clara: un buen discussant de CPS no busca acertar el diagnóstico, busca hacer visible el proceso de llegar a él — la métrica de éxito al enseñar razonamiento clínico no debería ser &#39;¿acertó?&#39; sino &#39;¿el razonamiento quedó verbalizado y auditable?&#39;.</li><li>En neurocirugía, la IA ya iguala o supera benchmarks duros (AUC &gt;0.90) sin que eso signifique que puede decidir sola — precisión y autonomía decisional son ejes distintos, y confundirlos es el error de comunicación más común sobre IA clínica.</li><li>Los médicos que ya usan IA en ECG no temen que la herramienta se equivoque — temen no saber quién responde cuando se equivoca y qué hacer con lo que la IA encontró sin que nadie lo pidiera.</li><li>Subir un puntaje autorreportado de toma de decisiones clínicas tras un entrenamiento no prueba que el razonamiento real mejoró — es el mismo problema de calibración vs. precisión que ves en los LLMs, aplicado esta vez a humanos.</li><li>Dos publicaciones de la misma semana (guía de facilitación + caso vivo) sugieren que el formato &#39;razonar en voz alta ante un caso desconocido&#39; sigue siendo, en 2026, el estándar no superado para enseñar razonamiento clínico — ni la IA lo ha reemplazado.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué rúbrica usarías para calificar a un discussant del Competency Lab de AMAUTA: la estructura de la guía JGIM tal cual, o una propia adaptada a psiquiatría dimensional?</li><li>Si la IA en neurocirugía &#39;no está lista para decisión autónoma&#39; pero sí rinde en clasificación y pronóstico, ¿dónde trazas esa misma línea para una IA aplicada a diagnóstico dimensional en psiquiatría (HiTOP/RDoC)?</li><li>¿Cómo diseñarías un protocolo de rendición de cuentas cuando un modelo de IA señala un patrón sintomático incidental que ningún clínico pidió evaluar?</li><li>¿Qué instrumento usarías para medir razonamiento clínico real —no autorreportado— en un piloto de simulación del Competency Lab?</li><li>¿Vale la pena convertir el caso del lactante de NEJM Evidence en un ejercicio de CPS adaptado a un caso psiquiátrico equivalente, con el mismo formato de estrechamiento progresivo del diferencial?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel comparando las tres preocupaciones de los médicos entrevistados sobre IA en ECG (sobredependencia, accountability, hallazgos incidentales) con los riesgos equivalentes de usar IA para escalas o síntomas psiquiátricos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Publicación en Instagram/YouTube &#39;Cómo ser un buen discussant de razonamiento clínico&#39;, basada en la guía de JGIM y adaptada a residentes de psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio propio: reemplazar el autorreporte del estudio de enfermería (CDMNS) por una medición objetiva de desempeño diagnóstico en un piloto del Competency Lab — la brecha metodológica queda identificada.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Nota para el libro de educación médica/neurociencia educativa: usar el contraste &#39;AUC alto vs. autonomía decisional baja&#39; de la revisión de neurocirugía como ejemplo pedagógico de por qué precisión no es lo mismo que confiabilidad decisional.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Sesión piloto del Competency Lab que replica el par caso NEJM Evidence + guía de facilitación JGIM como plantilla reproducible semanal.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Health Science Reports</span><span class="tag ">BMC Medical Ethics</span><span class="tag ">Journal of Clinical Nursing</span><span class="tag highlight">NEJM Evidence</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch) · WebSearch (medRxiv, Reddit r/medicine y r/residency, X/Twitter). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 28 de agosto de 2026.</div>
+</div>
+</body>
+</html>
