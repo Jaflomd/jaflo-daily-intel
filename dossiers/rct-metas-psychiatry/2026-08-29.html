@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-08-29 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">29 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">84</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">The Lancet Psychiatry, 26 ago 2026 (online ahead of print) · rct · 2026-08-26</div>
+        <h3 class="r3-title">Open Dialogue versus treatment as usual for adults presenting in crisis to mental health services in England (the ODDESSI Trial): a multisite cluster-randomised trial</h3>
+        <p class="r3-hook">El ensayo ODDESSI (cluster-RCT, 30 clusters, N=494, 5 trusts del NHS) comparó Open Dialogue -un modelo transdiagnóstico centrado en la red social del paciente en crisis- contra tratamiento habitual: el outcome primario (tiempo a recaída) no se diferenció (HR 0.95, IC 0.67-1.32), pero Open Dialogue redujo significativamente la admisión psiquiátrica y el re-ingreso a servicios de crisis, y mejoró recuperación auto-reportada, calidad de vida y satisfacción, sin señales de seguridad. Le importa a Javier porque Open Dialogue es literalmente su marco dimensional/de red aplicado a la organización de un sistema de crisis -no clasifica al paciente en un diagnóstico categorial sino que trabaja la red completa-, y porque repite el patrón de RECOVER-VNS de ayer: un outcome primario negativo que esconde una historia clínica y de sistema real. Puede usarlo en AMAUTA/USAMEDIC como caso recurrente de enseñanza sobre lectura crítica de outcomes compuestos, y como ancla empírica en el capítulo de su libro de psicopatología dedicado a modelos de atención en crisis fuera del binario diagnóstico.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S2215-0366(26)00229-4" target="_blank" rel="noopener">↗ doi.org/10.1016/S2215-0366(26)00229-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JAMA Psychiatry, 26 ago 2026 (online ahead of print) · paper · 2026-08-26</div>
+        <h3 class="r3-title">Glucagon-Like Peptide 1 Receptor Agonists, Mortality, and Cardiovascular Outcomes in Serious Mental Illness</h3>
+        <p class="r3-hook">Emulación de ensayo objetivo con datos federados de TriNetX (764,115 pares por propensity score, 195,184 con enfermedad mental grave) encontró que iniciar un agonista GLP-1 en vez de un inhibidor SGLT2 se asoció con menor mortalidad a 4 años en esquizofrenia, bipolar y depresión mayor (HR 0.76, IC 0.74-0.78), con beneficio absoluto mayor que en población sin enfermedad mental grave, consistente en subgrupos y ya visible al año. Le importa a Javier porque ataca directamente la brecha de mortalidad cardiovascular que acorta la vida de sus pacientes con enfermedad mental grave -el problema que su línea de psiquiatría de precisión busca resolver con datos, no solo con síntomas- y porque es un ejemplo de manual de target trial emulation con big data real-world, el tipo de diseño causal-observacional que puede enseñar en AMAUTA/USAMEDIC para preparar residentes en lectura de evidencia no-RCT. Puede convertirlo en contenido IG/YT sobre por qué el psiquiatra debe pensar en salud cardiometabólica como parte del tratamiento psiquiátrico, no como comorbilidad aparte.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.2574" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.2574</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Australian &amp; New Zealand Journal of Psychiatry, 27 ago 2026 (online ahead of print) · rct · 2026-08-27</div>
+        <h3 class="r3-title">Brief online parent-led early intervention for childhood autism: A randomised-controlled trial</h3>
+        <p class="r3-hook">RCT (N=100, niños 2-5 años con autismo nivel 2/3) evaluó ParentWorks-Spectrum, una intervención breve por telesalud (12-15 sesiones) que integra regulación conductual/emocional del niño, comunicación social y salud mental/trabajo en equipo parental: hubo mejoras moderadas a grandes en problemas de conducta, intensidad conductual (Eyberg) y rasgos autistas (SRS-2), mantenidas a 3 meses y sin diferencia entre madres y padres. Le importa a Javier porque es su línea TDAH/TEA/neurodivergencia en estado puro -intervención escalable, tele-entregada, que trata el sistema padre-hijo en vez de solo síntomas nucleares del niño- y encaja con su interés en ROI/leverage: mucho efecto por poca dosis de contacto clínico. Puede usarlo como contenido IG/YT sobre intervención temprana en autismo vía telesalud, o como ejemplo en su libro de psicopatología dimensional del argumento de que optimizar el entorno parental es una vía de tratamiento tan válida como intervenir directamente en el niño.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/00048674261477988" target="_blank" rel="noopener">↗ doi.org/10.1177/00048674261477988</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">The British Journal of Psychiatry, 28 ago 2026 (online ahead of print) · rct · 2026-08-28</div>
+          <div class="r10-title">Evaluation of the efficacy of support groups in the metaverse for Ukrainian refugees: randomised clinical trial</div>
+          <div class="r10-line">RCT de 3 brazos (N=156) en refugiados ucranianos en Rumanía halla que los grupos de apoyo presenciales superan a los grupos en realidad virtual con avatar (metaverso) en soporte social percibido y reducción de ansiedad, con el brazo VR mostrando efectos pequeños y no significativos y atenuados al seguimiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es munición útil contra el hype de &#39;la IA/VR reemplaza la terapia grupal&#39; -Javier puede usarlo en su línea de IA aplicada a salud mental para argumentar que la inmersión tecnológica necesita mejor retención y diseño trauma-informado antes de escalar, no solo justificarse por novedad.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10755" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10755</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychopharmacology, 27 ago 2026 (online ahead of print) · review · 2026-08-27</div>
+          <div class="r10-title">Efficacy and tolerability of ketamine in moderate to severe obsessive-compulsive disorder: a systematic review</div>
+          <div class="r10-line">Revisión sistemática PRISMA (15 estudios, 118 pacientes, 3 RCTs) halla que ketamina IV monoterapia produce respuesta anti-obsesiva rápida (50-60%) pero transitoria en TOC moderado-severo resistente, mientras combinarla con exposición y prevención de respuesta (ERP) sostiene la remisión semanas a meses, con una señal de disforia/ideación suicida diferida a 24-48h.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esto empuja hacia protocolos de &#39;ketamina + ERP programada&#39; como estándar de facto en TOC resistente -Javier puede anclarlo en su línea de psiquiatría de precisión como ejemplo de por qué la farmacología sin terapia conductual desperdicia la ventana de neuroplasticidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00213-026-07155-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s00213-026-07155-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 26 ago 2026 (online ahead of print) · meta-analysis · 2026-08-26</div>
+          <div class="r10-title">Effectiveness of mindfulness interventions for depressive symptoms in young people: A systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-análisis (28 estudios, 25 en el pooling, jóvenes de 14-27 años) halla que las intervenciones de mindfulness reducen síntomas depresivos con un efecto pequeño pero consistente (Hedges&#39; g=-0.32, p&lt;.001), sin que el tipo de intervención module el resultado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Con un efecto tan modesto, es material perfecto para enseñar en AMAUTA/USAMEDIC a leer &#39;efecto pequeño pero real&#39; sin caer en el hype del mindfulness ni en el nihilismo terapéutico -buena pieza de contenido sobre expectativas realistas de intervenciones psicosociales escalables.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122420" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122420</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica, 27 ago 2026 (online ahead of print) · meta-analysis · 2026-08-27</div>
+          <div class="r10-title">Verbal fluency in individuals with attention deficit-hyperactivity disorder (ADHD): A meta-analysis</div>
+          <div class="r10-line">Meta-análisis (16 estudios, 1167 participantes, 4-55 años) confirma déficits de tamaño medio en fluidez verbal fonémica (g=-0.44) y semántica (g=-0.51) en TDAH a lo largo de la vida, moderados por sexo pero no por edad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Javier puede usar esto para argumentar que la evaluación neuropsicológica de función ejecutiva -no solo escalas conductuales- debería integrarse en el diagnóstico dimensional de TDAH, en línea directa con su marco HiTOP/RDoC y como contenido educativo sobre neuropsicología del TDAH.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107638" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107638</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Child Psychology and Psychiatry, 28 ago 2026 (online ahead of print) · paper · 2026-08-28</div>
+          <div class="r10-title">Multimethod examination of change in autistic preschoolers&#39; emotion dysregulation in the context of parenting stress intervention</div>
+          <div class="r10-line">Análisis secundario de un RCT (N=117) muestra que reducir el estrés parental (vía MBSR o psicoeducación) predice menos desregulación emocional reportada por los padres en preescolares autistas, mientras la desregulación observada de forma independiente se mantuvo relativamente estable.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esta disociación entre reporte parental y observación directa es un gancho metodológico para Javier sobre los límites de las medidas por proxy en TEA -puede anclarlo en su libro de psicopatología dimensional o en un módulo AMAUTA sobre qué mide realmente cada instrumento.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jcpp.70226" target="_blank" rel="noopener">↗ doi.org/10.1111/jcpp.70226</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychotherapy and Psychosomatics, 27 ago 2026 (online ahead of print) · paper · 2026-08-27</div>
+          <div class="r10-title">The impact of Trauma-Focused Cognitive Behaviour Therapy for psychosis on post-traumatic stress symptoms in daily life: ESM outcomes of the STAR Trial</div>
+          <div class="r10-line">Análisis secundario del ensayo STAR (N=153, psicosis + TEPT) usando Experience Sampling Methodology no replicó en el momento a momento la reducción de síntomas de TEPT que sí mostró el ensayo original con escalas retrospectivas, aunque sí hubo mejoras en hiperactivación, cogniciones negativas y evitación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La discordancia entre medidas ecológicas momentáneas y escalas retrospectivas va a volverse un tema central en la próxima década de metodología psiquiátrica -Javier puede usarlo como caso de razonamiento clínico/metodológico sobre por qué el instrumento que eliges cambia la conclusión que obtienes.</div>
+          <a class="r10-link" href="https://doi.org/10.1159/pps/aemag010" target="_blank" rel="noopener">↗ doi.org/10.1159/pps/aemag010</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Social Psychiatry, 28 ago 2026 (online ahead of print) · meta-analysis · 2026-08-28</div>
+          <div class="r10-title">Parental Problematic Alcohol Use (PPAU): A Burden for Life?-Exposure to PPAU and Anxiety and Depression in Adulthood: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">Meta-análisis (29 estudios) halla que la exposición infantil al uso problemático de alcohol parental se asocia con 73% más riesgo de ansiedad y 65% más riesgo de depresión en la adultez (SMD 0.37 y 0.29), atenuado pero significativo tras ajustar por otras adversidades.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Javier puede usar esta cifra como gancho de contenido sobre adversidad infantil y trayectorias psicopatológicas dimensionales -conecta con su interés en marcos transdiagnósticos de riesgo acumulado más que en causalidad lineal &#39;alcoholismo parental → trastorno X&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/00207640261478546" target="_blank" rel="noopener">↗ doi.org/10.1177/00207640261478546</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Depression and Anxiety, 27 ago 2026 · rct · 2026-08-27</div>
+          <div class="r10-title">Depression, Nutritional Status, and Substance P/NK-1R Biomarkers in Dysmenorrhea: A Randomized Crossover Trial</div>
+          <div class="r10-line">Ensayo cruzado exploratorio pequeño (N=30 con dismenorrea, 10 controles) halla que los niveles séricos de Sustancia P varían por fase de tratamiento (NSAID vs. dexametasona+aprepitant) y que la variabilidad de SP fue mayor en participantes con depresión/ansiedad/estrés moderados, aunque las autoras marcan los hallazgos como preliminares por el tamaño de subgrupo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Con n tan bajo esto es hipótesis-generador, no accionable todavía -útil solo como semilla de discusión sobre biomarcadores neuropéptidos compartidos entre dolor y distrés psicológico, algo que Javier podría mencionar de pasada en su línea de psiquiatría de precisión, sin sobreinterpretarlo.</div>
+          <a class="r10-link" href="https://doi.org/10.1155/da/9538518" target="_blank" rel="noopener">↗ doi.org/10.1155/da/9538518</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research, 26 ago 2026 · review · 2026-08-26</div>
+          <div class="r10-title">AI-Based Approaches to Refugee Mental Health Care: Systematic Integrative Review</div>
+          <div class="r10-line">Revisión integrativa PROSPERO (23 estudios de 2726 cribados) clasifica el uso de IA en salud mental de refugiados en tres funciones -detección/predicción/clasificación (65%), intervención/soporte clínico (17%) e información sintetizada (22%)- y señala sesgo, falta de contexto cultural y sobre-dependencia como límites clave.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es mapa útil, no evidencia de eficacia -Javier puede usarlo como punto de partida para su línea de IA en investigación/educación, especialmente para pensar qué categoría de aplicación de IA vale la pena piloter en contextos de salud mental con recursos limitados como Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/101857" target="_blank" rel="noopener">↗ doi.org/10.2196/101857</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Cochrane Database of Systematic Reviews, 26 ago 2026 · meta-analysis · 2026-08-26</div>
+          <div class="r10-title">Electronic cigarettes for smoking cessation</div>
+          <div class="r10-line">Actualización de la revisión Cochrane viva (80 RCTs, 29,861 participantes) halla evidencia de alta certeza de que los cigarrillos electrónicos con nicotina aumentan las tasas de abstinencia tabáquica frente a terapia de reemplazo de nicotina (RR 1.61, IC 1.23-2.12), con tasas similares de eventos adversos serios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El uso de sustancias es parte del espectro psiquiátrico de Javier -puede usar esta actualización Cochrane como referencia dura y actualizada cada vez que un paciente o estudiante pregunte por vapeo como herramienta de cesación, en vez de responder desde el prejuicio o desde evidencia vieja.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/14651858.CD010216.pub11" target="_blank" rel="noopener">↗ doi.org/10.1002/14651858.CD010216.pub11</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En ODDESSI, Open Dialogue no cambió el tiempo a recaída (el outcome primario) pero sí redujo camas de hospitalización aguda y reingresos a crisis: un resultado &#39;negativo&#39; en el papel que en la operación real de un sistema de salud es un éxito.</li><li>Los agonistas GLP-1 no solo tratan diabetes/obesidad: en pacientes con esquizofrenia, bipolar o depresión mayor la reducción de mortalidad fue mayor que en población general -la brecha de mortalidad cardiovascular psiquiátrica podría cerrarse con un fármaco que casi ningún psiquiatra prescribe hoy.</li><li>La ketamina en TOC resistente funciona rápido pero no dura: su valor real parece ser abrir una ventana de 24-72h para hacer ERP intensiva, no ser tratamiento por sí sola.</li><li>En preescolares autistas, bajar el estrés parental cambia lo que el padre reporta sobre la desregulación del hijo, pero no necesariamente lo que un observador externo registra -el &#39;efecto&#39; a veces vive más en la percepción del cuidador que en la conducta observable del niño.</li><li>Las medidas de síntoma &#39;en el momento&#39; (ESM) y las escalas retrospectivas de fin de tratamiento pueden contar historias distintas del mismo ensayo: la terapia trauma-focalizada en psicosis mejoró la escala clínica de TEPT pero no se replicó igual de claro en el reporte diario.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debería un servicio de crisis medir éxito por reducción de camas/reingresos en vez de por remisión sintomática pura, como sugiere ODDESSI?</li><li>¿Qué tan pronto debería un psiquiatra considerar un agonista GLP-1 como parte del manejo cardiometabólico de un paciente con esquizofrenia o bipolar, más allá del control de peso?</li><li>¿Debería la ketamina en TOC resistente prescribirse siempre acoplada a un protocolo de ERP programado en las 24-72h posteriores, en vez de como monoterapia aislada?</li><li>¿Qué instrumento debería priorizarse al medir desregulación emocional en TEA -el reporte parental, la observación directa, o tratarlos como constructos distintos que responden a preguntas distintas?</li><li>Si las medidas ecológicas momentáneas y las escalas retrospectivas no siempre coinciden, ¿qué tratamiento &#39;funciona&#39; realmente cuando ambas fuentes discrepan?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/hilo IG comparando ODDESSI (crisis) con RECOVER-VNS de ayer bajo el mismo gancho: &#39;el ensayo que no ganó su outcome primario pero sí cambió el sistema&#39; -serie recurrente sobre lectura crítica de resultados compuestos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto explicando por qué los agonistas GLP-1 podrían ser el próximo fármaco lógico en el manejo integral de la enfermedad mental grave, apuntado a cerrar la brecha de mortalidad cardiovascular.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica o hilo académico sobre ESM vs. escalas retrospectivas usando el caso STAR (TF-CBTp en psicosis+TEPT) como ejemplo de discordancia de medidas, para su línea de razonamiento clínico/metodológico.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional usando ODDESSI y el estudio de desregulación emocional en TEA como dos ejemplos de que &#39;qué mides&#39; determina &#39;qué encuentras&#39; en psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Infografía o carrusel AMAUTA/USAMEDIC sobre &#39;ketamina + ERP programada&#39; en TOC resistente como caso de ventana terapéutica, material de enseñanza para ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">The Lancet Psychiatry</span><span class="tag highlight">JAMA Psychiatry</span><span class="tag highlight">The British Journal of Psychiatry</span><span class="tag ">Psychopharmacology</span><span class="tag ">Australian &amp; New Zealand Journal of Psychiatry</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Journal of Child Psychology and Psychiatry</span><span class="tag ">Psychotherapy and Psychosomatics</span><span class="tag ">Acta Psychologica</span><span class="tag ">International Journal of Social Psychiatry</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag highlight">Cochrane Database of Systematic Reviews</span><span class="tag ">Depression and Anxiety</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 29 de agosto de 2026.</div>
+</div>
+</body>
+</html>
