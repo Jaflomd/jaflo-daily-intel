@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-08-29 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">29 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">44</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">38</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Diagnosis (Berlin), 27 ago 2026 · rct · 2026-08-27</div>
+        <h3 class="r3-title">Effects of case revisitation during deliberate reflection on medical students&#39; diagnostic accuracy: a randomized experiment</h3>
+        <p class="r3-hook">Experimento aleatorizado con 67 estudiantes de un programa brasileño de seis años: cuando la reflexión deliberada sobre un caso restringe el acceso a la información original, mejora la precisión diagnóstica en la MISMA enfermedad ya estudiada (OR=1.77); cuando se permite reabrir el caso, mejora la transferencia a enfermedades adyacentes (OR=0.56). Le importa a Javier porque es evidencia de nivel 2-3 de Kirkpatrick directamente sobre razonamiento clínico —su línea viva y el corazón de su libro de BMSE/razonamiento dimensional— y le da un mecanismo empírico, no intuitivo, para diseñar ejercicios de práctica deliberada. Cómo usarlo: en los bancos de casos de USAMEDIC/AMAUTA, decidir a propósito si un ejercicio de repaso &#39;cierra&#39; el caso (para consolidar la misma entidad, útil antes de ENAM) o lo deja abierto (para entrenar transferencia entre diagnósticos parecidos, útil para Residentado).</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0061" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0061</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Frontiers in Medicine (Lausanne), 2026 · rct · 2026-08-27</div>
+        <h3 class="r3-title">Visual cueing and adaptive learning for teaching thyroid eye disease diagnostic assessment to ophthalmology residents</h3>
+        <p class="r3-hook">Ensayo aleatorizado piloto con 45 residentes de oftalmología asignados a tres brazos (revisión estática de casos, sistema de aprendizaje adaptativo, o atlas de pistas visuales) para calificar actividad de enfermedad tiroidea ocular: el atlas de pistas visuales ganó en precisión inmediata (84.7% vs. 64.7%, p&lt;0.001) y el sistema adaptativo ganó en retención a dos semanas (74.0% vs. 56.0%, p&lt;0.001). Le importa a Javier porque es evidencia directa en su línea BOOST de feedback/evaluación —exactamente el tipo de diseño replicable para bancos de imágenes clínicas (dermatología, semiología del examen mental) en USAMEDIC. Cómo usarlo: si el objetivo es rendir bien el día del examen, priorizar herramientas tipo &#39;atlas de pistas visuales&#39;; si el objetivo es que el residente retenga la destreza semanas después, invertir en el sistema adaptativo, aunque cueste más construirlo.</p>
+        <a class="r3-link" href="https://doi.org/10.3389/fmed.2026.1934529" target="_blank" rel="noopener">↗ doi.org/10.3389/fmed.2026.1934529</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Clinical Anatomy, 26 ago 2026 · review · 2026-08-26</div>
+        <h3 class="r3-title">Using Ultrasound to Learn Anatomy: A Systematic Review of Visuospatial and Psychomotor Skill Outcomes in Medical Students</h3>
+        <p class="r3-hook">Revisión sistemática PRISMA de 21 estudios (2,665 participantes) sobre el uso de ecografía point-of-care para enseñar anatomía: 57% de los estudios muestra mejoras significativas en destrezas psicomotoras, pero la interpretación de imágenes mejora en 83% de los estudios relevantes —un efecto mucho más consistente que la mejora en examen físico (57%). Le importa a Javier porque complementa —con síntesis de literatura, no un solo ensayo— el caso de negocio para meter un módulo de POCUS en el currículo de imagenología de USAMEDIC, dándole el argumento de que el retorno más confiable de ese entrenamiento es &#39;leer mejor la imagen&#39;, no necesariamente &#39;examinar mejor al paciente&#39;. Cómo usarlo: si AMAUTA lanza un módulo corto de ecografía, medir primero interpretación de imagen (donde el efecto es más robusto) antes de prometer mejoras en destreza de examen físico.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/ca.70146" target="_blank" rel="noopener">↗ doi.org/10.1002/ca.70146</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Supportive &amp; Palliative Care, 28 ago 2026 · review · 2026-08-28</div>
+          <div class="r10-title">Gamification, game-based learning and serious games in palliative care education: systematic review</div>
+          <div class="r10-line">Revisión sistemática de 9 estudios (de 255 identificados) sobre juegos y gamificación en educación de cuidados paliativos: los juegos funcionan como complemento seguro para practicar conversaciones difíciles, no como reemplazo de la enseñanza regular.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En los próximos meses empuja a más programas a adoptar mini-simulaciones de rol de bajo costo para entrenar conversaciones difíciles —un formato que AMAUTA podría adaptar para estaciones de comunicación en salud mental (revelar diagnóstico, discutir riesgo suicida).</div>
+          <a class="r10-link" href="https://doi.org/10.1136/spcare-2025-006005" target="_blank" rel="noopener">↗ doi.org/10.1136/spcare-2025-006005</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Applied Clinical Informatics, 28 ago 2026 · paper · 2026-08-28</div>
+          <div class="r10-title">A Comparative Analysis of Large Language Model Performance on USMLE Step 1-Style Allergy/Immunology Questions: Evaluating Correctness and Consistency</div>
+          <div class="r10-line">Comparó Gemini 2.5, Grok 4 y ChatGPT-5 sobre 35 preguntas estilo USMLE Step 1 de alergia/inmunología (15 corridas por modelo): Gemini y Grok rondan 80% de aciertos, ChatGPT 74%, y los tres pierden precisión cuando el prompt combina varios ítems en vez de uno solo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Confirma para el banco de reactivos de USAMEDIC que ningún LLM es un validador confiable sin revisión experta, y que hacer una pregunta a la vez —no en lote— importa tanto como qué modelo se use.</div>
+          <a class="r10-link" href="https://doi.org/10.1055/a-2946-7393" target="_blank" rel="noopener">↗ doi.org/10.1055/a-2946-7393</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine, 27 ago 2026 · paper · 2026-08-27</div>
+          <div class="r10-title">Group decision-making in medical school competency committees: a multi-institutional ethnographic study</div>
+          <div class="r10-line">Estudio etnográfico en 7 escuelas de medicina de EE.UU. (20 reuniones de comité, 242 estudiantes) muestra que los comités de competencias siguen procesos por pasos similares, pero con reglas de fondo muy distintas entre instituciones al decidir promoción.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Alimenta el argumento de que un comité de progreso tipo AMAUTA necesita procedimientos explícitos y auditables, no solo &#39;buen juicio&#39;, si va a defender decisiones de promoción ante reclamos.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag268" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag268</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, 27 ago 2026 · paper · 2026-08-27</div>
+          <div class="r10-title">Understanding Barriers to EPA Microassessment Completion Among Low-Assessment-Completion Surgical Faculty and Residents: A Two-Cohort Qualitative Study</div>
+          <div class="r10-line">Estudio cualitativo en dos programas de cirugía general: residentes y docentes con baja tasa de microevaluaciones EPA confunden feedback formativo con evaluación formal de entrustment, y la plataforma usada cambia quién inicia la evaluación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es evidencia útil para rediseñar cualquier sistema de microfeedback de AMAUTA: separar explícitamente en la interfaz &#39;feedback rápido&#39; de &#39;evaluación que cuenta&#39;, porque no se puede asumir que el residente distingue uno de otro.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104116" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104116</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 28 ago 2026 · paper · 2026-08-28</div>
+          <div class="r10-title">Integrating generative AI into physiotherapy education: students&#39; use, perceptions, and generative AI literacy following curricular adaptations: a repeated cross-sectional programme evaluation</div>
+          <div class="r10-line">Evaluación de programa en fisioterapia (Suecia): el uso diario de IA generativa subió de 13% a 57% entre 2024 y 2025, y tras ajustes curriculares los estudiantes de semestre 3 tienen alfabetización en IA mucho más alta que los de semestre 1 (d=1.0).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En 12 meses la &#39;alfabetización en IA&#39; se va a exigir como competencia explícita y medible en el currículo —algo que Javier podría anticipar metiendo un módulo formal de IA responsable en AMAUTA antes que sea obligatorio.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-10256-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-10256-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, 28 ago 2026 · paper · 2026-08-28</div>
+          <div class="r10-title">Are Urology Residents Losing Autonomy? A National Analysis of ACGME Case Log Data from 2013 to 2023</div>
+          <div class="r10-line">Análisis retrospectivo de 3,391 residentes de urología en EE.UU. (2013-2023): el volumen de casos subió (1,243 → 1,404.6) pero la autonomía quirúrgica reportada cayó de 92% a 85%, con brechas por sexo del residente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es munición para su línea de educación médica de precisión: &#39;más casos&#39; no equivale a &#39;más autonomía formativa&#39;, y el Residentado peruano debería medir autonomía real, no solo volumen, como indicador de calidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104130" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104130</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Restringir el acceso al caso durante la reflexión deliberada mejora más la retención de la MISMA enfermedad ya estudiada, pero dejarlo abierto mejora más la transferencia a enfermedades parecidas: el mismo ejercicio de repaso produce aprendizaje distinto según se cierre o abra el acceso a la información (RCT brasileño, PMID 42644626).</li><li>Un atlas simple de &#39;pistas visuales&#39; superó a un sistema adaptativo de aprendizaje en precisión inmediata, pero el sistema adaptativo ganó en retención a dos semanas: la herramienta &#39;más simple&#39; no es la peor, depende de si el objetivo es rendir hoy o recordar en un mes.</li><li>En la revisión sistemática de ecografía para enseñar anatomía, el mismo entrenamiento mejora la interpretación de imágenes en 83% de los estudios pero el examen físico solo en 57%: un programa de POCUS no rinde igual en todas las destrezas que promete mejorar.</li><li>Los LLMs pierden precisión en preguntas tipo USMLE simplemente por combinar varios ítems en un mismo prompt en vez de uno por uno: el formato de la pregunta, no solo el modelo elegido, decide si la IA &#39;sabe&#39; o no.</li><li>En comités de competencias de 7 escuelas de medicina de EE.UU., el proceso de decisión se parece entre instituciones, pero las reglas de fondo (qué cuenta, quién vota) varían tanto que la misma evidencia de un estudiante podría llevar a decisiones distintas de promoción según la escuela.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿El protocolo de &#39;reflexión deliberada con acceso restringido vs. abierto&#39; del RCT brasileño se replica igual en razonamiento diagnóstico psiquiátrico, donde la &#39;enfermedad adyacente&#39; es una comorbilidad dimensional y no una entidad discreta?</li><li>¿Se podría construir un atlas de pistas visuales, como el usado para enfermedad tiroidea ocular, para semiología del examen mental o para lectura de perfiles dimensionales HiTOP en el banco de USAMEDIC?</li><li>¿Qué pasaría si se corriera el mismo diseño de comparación de LLMs (pregunta única vs. prompt combinado) sobre el banco de reactivos de psiquiatría de ENAM/Residentado de AMAUTA?</li><li>¿Cuánto de la caída de autonomía quirúrgica reportada en urología (92%→85% en 10 años) se replica en procedimientos psiquiátricos supervisados —TEC, entrevistas complejas— dentro del Residentado peruano?</li><li>¿Vale la pena adaptar el diseño de gamificación de conversaciones difíciles usado en paliativos para entrenar conversaciones difíciles en psiquiatría, como revelar un diagnóstico de TEA/TDAH a un adulto?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel IG explicando el hallazgo del RCT de reflexión deliberada (cerrar vs. abrir el caso al repasar) como técnica de estudio concreta para residentes que preparan ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto comparando cómo Gemini, Grok y ChatGPT fallan distinto en preguntas tipo USMLE cuando se combinan varios ítems en un prompt — gancho de credibilidad sobre &#39;no confíes ciegamente en la IA para estudiar&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-estudio interno de AMAUTA replicando el diseño &#39;atlas de pistas visuales vs. sistema adaptativo&#39; pero aplicado a semiología psiquiátrica o lectura de escalas dimensionales.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección para el libro de neurociencia educativa/BMSE sobre &#39;reflexión deliberada con acceso restringido vs. abierto&#39; como mecanismo de consolidación vs. transferencia, citando el RCT brasileño como evidencia empírica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/hilo sobre la brecha entre &#39;feedback formativo&#39; y &#39;evaluación que cuenta&#39; (hallazgo del estudio de EPA) aplicado a cómo AMAUTA comunica retroalimentación en sus simulacros de examen.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">Frontiers in Medicine</span><span class="tag ">Clinical Anatomy</span><span class="tag ">BMJ Supportive &amp; Palliative Care</span><span class="tag ">Applied Clinical Informatics</span><span class="tag highlight">Academic Medicine</span><span class="tag ">Journal of Surgical Education</span><span class="tag highlight">BMC Medical Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch, ventana 2026-08-26 a 2026-08-29) · medRxiv (colección medical-education) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 29 de agosto de 2026.</div>
+</div>
+</body>
+</html>
