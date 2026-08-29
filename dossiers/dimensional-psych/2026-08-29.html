@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-08-29 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">29 de agosto de 2026 · 2026-W35 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">15</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">15</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Child Psychiatry and Human Development · 2026-08-26 · paper</div>
+        <h3 class="r3-title">Peso al nacer y trastornos del neurodesarrollo a través de categorías diagnósticas: estudio caso-control basado en registro clínico en Noruega</h3>
+        <p class="r3-hook">Barak, Kolskår, Dahl y el equipo de NORMENT/Oslo cruzan registros clínicos noruegos (720 casos, 98,716 controles) y muestran que por cada 100g menos de peso al nacer sube el riesgo de CUALQUIER diagnóstico de neurodesarrollo (discapacidad intelectual OR=8.27, autismo, TDAH) y —el dato realmente dimensional— de tener múltiples diagnósticos concurrentes, sin que el peso alto muestre una asociación equivalente en sentido contrario. Para tu línea TDAH/TEA y tu proyecto de psicopatología dimensional esto es munición directa: el bajo peso al nacer funciona como marcador de vulnerabilidad transdiagnóstica que atraviesa las fronteras categoriales del DSM, evidencia de que TEA, TDAH y discapacidad intelectual no son cajas separadas sino desenlaces de un mismo continuo de riesgo perinatal — dato concreto para el capítulo del libro sobre etiología compartida del neurodesarrollo, y argumento para enseñar en AMAUTA por qué el screening perinatal debería alertar sobre &#39;riesgo de neurodesarrollo&#39; en general y no solo gatillar sospecha de un diagnóstico puntual.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10578-026-02090-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s10578-026-02090-8</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">International Review of Psychiatry · 2026-08-27 · review</div>
+        <h3 class="r3-title">Psiquiatría de precisión en la práctica clínica: qué es clínicamente accionable, qué es prometedor y qué sigue siendo experimental</h3>
+        <p class="r3-hook">Torales, O&#39;Higgins, Barrios y equipo paraguayo-brasileño proponen un marco de cuatro criterios (validez, replicación externa, utilidad, accionabilidad) y clasifican el arsenal de la psiquiatría de precisión en tres cajas: ya accionable hoy (evaluación estructurada y measurement-based care, monitoreo terapéutico de fármacos, farmacogenética selecta), prometedor pero no listo (fenotipado digital, apoyo de IA, neuroimagen) y puramente experimental (puntajes de riesgo poligénico, predicción automatizada), señalando la validación externa insuficiente como la barrera transversal. Para tu pilar de psiquiatría de precisión y tu proyecto de IA aplicada a investigación/educación esto es el mapa que necesitas para no vender humo en AMAUTA: te da el lenguaje exacto para enseñar la diferencia entre &#39;esto ya cambia tu consulta mañana&#39; (measurement-based care) y &#39;esto todavía es promesa&#39; (poligénico, IA), y es una cita actual y directa para el capítulo del libro que argumenta que la psiquiatría de precisión sin estructura dimensional detrás (HiTOP/RDoC) es solo biomarcadores sueltos sin marco.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/09540261.2026.2722686" target="_blank" rel="noopener">↗ doi.org/10.1080/09540261.2026.2722686</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Molecular Psychiatry · 2026-08-27 · paper</div>
+        <h3 class="r3-title">El dimorfismo sexual del metabolismo catecolaminérgico del mesencéfalo revelado por RM sensible a neuromelanina</h3>
+        <p class="r3-hook">Raeder, Karim, Bertocci y el equipo de Mary Phillips en Pittsburgh introducen una normalización basada en residuales (no en ratios) para RM sensible a neuromelanina en 101 adultos de una muestra TRANSDIAGNÓSTICA, y muestran que el método estándar de la técnica es ciego a diferencias de sexo reales en sustancia negra, área tegmental ventral y locus coeruleus — diferencias que solo emergen con el método nuevo, porque la propia región usada como referencia para normalizar no es invariante entre sexos. Para tu psiquiatría de precisión y tu línea de neuromodulación esto es una lección metodológica directa y citable: un biomarcador candidato a &#39;objetivo terapéutico&#39; puede estar sistemáticamente sesgado si la referencia de normalización no se valida por subgrupo, algo que puedes usar en razonamiento clínico y en AMAUTA como ejemplo de por qué &#39;biomarcador validado&#39; no siempre significa &#39;biomarcador generalizable a ambos sexos&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03841-8" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03841-8</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · 2026-08-27 · paper</div>
+          <div class="r10-title">Un giro hacia la fermentación proteolítica intestinal vincula la inflamación sistémica con fenotipos clínicos en el trastorno depresivo mayor</div>
+          <div class="r10-line">Niu, Luo, Almulla, Maes y equipo comparan 102 pacientes con TDM y 38 controles y describen un &#39;biotipo intestino-inmune&#39; (ácidos grasos de cadena ramificada elevados + depleción de los protectores) que clasifica casos con AUC=0.871 y correlaciona con severidad, síntomas físicos y recurrencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este tipo de biotipo metabólico-inmune es exactamente el material que tu psiquiatría de precisión necesita para argumentar que &#39;depresión&#39; es un cajón con al menos un subtipo inflamatorio-intestinal identificable — espera más réplicas de Maes/Almulla en otras cohortes en los próximos meses.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111900" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111900</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 2026-08-28 · paper</div>
+          <div class="r10-title">Imagen in vivo de la densidad sináptica en adultos con trastorno del espectro autista libres de psicofármacos</div>
+          <div class="r10-line">Yokokura, Yamasue y equipo japonés no encuentran diferencia de densidad sináptica ([¹¹C]UCB-J PET) entre 20 adultos autistas sin medicación y 21 controles, pero sí una correlación dentro del grupo autista entre densidad sináptica temporal izquierda y severidad de conductas restringidas/repetitivas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el nulo a nivel de grupo pero positivo a nivel de dimensión sintomática es un caso de libro de texto para tu línea TEA — la señal biológica está en el síntoma dimensional (RRB), no en la etiqueta diagnóstica, listo para llevar tal cual a AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03812-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03812-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica · 2026-08-28 · paper</div>
+          <div class="r10-title">Aprendizaje estadístico y habilidad rítmica en el trastorno por déficit de atención/hiperactividad</div>
+          <div class="r10-line">Van der Wulp, Struiksma y Wijnen comparan 41 personas con TDAH vs 118 neurotípicos en aprendizaje estadístico de lenguaje artificial y habilidad rítmica vía EEG, y encuentran que la variabilidad individual supera con creces el efecto de grupo diagnóstico, sin diferencias significativas por diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: otro nulo por categoría diagnóstica que refuerza tu argumento dimensional — cuando &#39;TDAH sí/no&#39; no separa el aprendizaje estadístico pero la variabilidad individual sí importa, el mensaje para AMAUTA es dimensionar la función cognitiva evaluada, no asumir que el diagnóstico categorial la predice.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107622" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107622</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">JBI Evidence Synthesis · 2026-08-27 · review</div>
+          <div class="r10-title">Consejería grupal comparada con intervenciones no farmacológicas alternativas y cuidado estándar para el TDAH subumbral en niños y adolescentes: protocolo de revisión sistemática</div>
+          <div class="r10-line">Li, Wang, Kantor y equipo registran el protocolo de una revisión sistemática sobre consejería grupal para TDAH SUBUMBRAL (por debajo del punto de corte diagnóstico) en niños/adolescentes, población que describen como funcionalmente afectada pero sistemáticamente subidentificada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vale la pena ponerle alerta a este protocolo (aún sin resultados) — cuando se publique en 6-12 meses vas a tener evidencia sintetizada sobre el argumento de &#39;specifier subumbral&#39; que quieres meter en el libro y en AMAUTA para el TDAH que no cruza el corte del DSM pero sí afecta función.</div>
+          <a class="r10-link" href="https://doi.org/10.11124/JBIES-25-00440" target="_blank" rel="noopener">↗ doi.org/10.11124/JBIES-25-00440</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El bajo peso al nacer predice mejor &#39;cuántos diagnósticos de neurodesarrollo tendrá un niño&#39; que cuál diagnóstico específico tendrá — la comorbilidad, no la categoría, parece ser lo heredable del riesgo perinatal (Barak et al.).</li><li>De los tres pilares de la psiquiatría de precisión que ya puedes usar hoy en consulta según Torales et al., ninguno es genético ni de IA: son evaluación estructurada, monitoreo terapéutico de fármacos y farmacogenética selecta — lo poligénico y lo automatizado siguen siendo promesa.</li><li>Un biomarcador de neuroimagen puede estar sesgado por sexo sin que lo notes, si la región que usas como &#39;referencia neutral&#39; para normalizar en realidad no es neutral entre sexos (hallazgo del paper de RM de neuromelanina).</li><li>En autismo, la densidad sináptica no distingue &#39;autista de no autista&#39; — pero sí distingue &#39;más o menos conducta restringida/repetitiva&#39; dentro del grupo autista: la dimensión gana donde la categoría pierde.</li><li>El TDAH subumbral —el que no cruza el corte del DSM— está tan subidentificado que todavía no existe revisión sistemática publicada sobre qué hacer con él clínicamente; apenas se está registrando el protocolo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos empezar a registrar &#39;riesgo de neurodesarrollo transdiagnóstico&#39; en vez de derivar directo a sospecha de TEA o TDAH cuando hay antecedente de bajo peso al nacer?</li><li>De los biomarcadores que ya usas o podrías usar en consulta, ¿cuáles pasarían el filtro de validez + replicación externa + utilidad + accionabilidad de Torales et al., y cuáles son en realidad más promesa que práctica?</li><li>Si una técnica de neuroimagen no ha sido validada por sexo, ¿qué tan confiable es cualquier hallazgo que reporte sobre una población mixta?</li><li>¿La severidad de conductas restringidas/repetitivas en TEA debería monitorearse como dimensión independiente del diagnóstico categorial, con su propio biomarcador candidato?</li><li>¿Qué haces hoy, en consulta o en AMAUTA, con un paciente pediátrico con síntomas de TDAH claros que no cruza el punto de corte diagnóstico — y qué cambiaría si tuvieras evidencia sintetizada sobre consejería grupal para ese subumbral?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel IG: &#39;Los 3 biomarcadores de psiquiatría de precisión que YA puedes usar hoy (y los 3 que todavía no)&#39;, basado en el marco de accionabilidad de Torales et al. 2026 — gancho directo para AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional sobre &#39;comorbilidad como fenotipo&#39;, usando el dato de bajo peso al nacer y riesgo de diagnósticos múltiples (Barak et al.) como caso ancla de por qué las categorías DSM colapsan bajo etiología compartida.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video: &#39;Por qué un biomarcador de neuroimagen te puede mentir según el sexo del paciente&#39;, usando el hallazgo de normalización residual en RM de neuromelanina para enseñar a leer críticamente un paper de biomarcadores.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario/paper corto proponiendo un checklist de &#39;validación por subgrupo demográfico&#39; para candidatos a biomarcador en psiquiatría, inspirado directamente en el problema metodológico del paper de RM de neuromelanina.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido para USAMEDIC/ENAM: caso clínico de TDAH subumbral (paciente que no cruza el corte DSM pero tiene disfunción académica/social) para enseñar razonamiento clínico dimensional en el residentado, anclado en el protocolo JBI recién registrado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Child Psychiatry and Human Development</span><span class="tag ">International Review of Psychiatry</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Acta Psychologica</span><span class="tag ">JBI Evidence Synthesis</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch, ventana 2026-08-26 a 2026-08-29) · WebSearch sobre Europe PMC, medRxiv, PsyArXiv, X/Twitter y Reddit (r/psychiatry, r/clinicalpsychology, r/cogsci) — sin ítems nuevos verificables dentro de la ventana. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 29 de agosto de 2026.</div>
+</div>
+</body>
+</html>
