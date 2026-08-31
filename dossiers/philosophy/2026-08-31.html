@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-08-31 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">31 de agosto de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Diagnosis (Berlin) · Specian Junior FC, Aliscantes Silva Brito JB, Mamede S, Goulart Campos BA, Santos TM, Mazzo A, Cecilio-Fernandes D — 27 ago 2026 · rct · 2026-08-27</div>
+        <h3 class="r3-title">Effects of case revisitation during deliberate reflection on medical students&#39; diagnostic accuracy: a randomized experiment</h3>
+        <p class="r3-hook">Experimento aleatorizado con 67 estudiantes de medicina (UNICAMP/PUC-Campinas) que compara reflexión deliberada (DR) con y sin acceso al caso escrito durante la comparación de hipótesis diagnósticas, y mide desempeño 15 días después en casos ya estudiados vs. casos &#39;vecinos&#39; nuevos. El mecanismo es limpio: restringir el acceso al caso (forzar recuperación desde memoria) mejoró la exactitud en enfermedades ya estudiadas, mientras que permitir revisitar el caso mejoró la transferencia a enfermedades adyacentes — es decir, el mismo método de enseñanza produce efectos opuestos según el objetivo (retención vs. transferencia). Le importa a Javier porque es exactamente el tipo de mecanismo estructural, no consejo genérico de &#39;repasa más&#39;, que necesita para AMAUTA/USAMEDIC: la preparación para ENAM/Residentado exige tanto retener protocolos ya vistos como generalizar a diagnósticos diferenciales nuevos, y este estudio da una regla operativa para decidir cuándo restringir y cuándo permitir el acceso al caso durante la práctica reflexiva. Cómo usarlo: diseñar dos variantes explícitas del módulo de casos clínicos en AMAUTA — &#39;modo retención&#39; (sin reconsulta) para temas ya cubiertos y &#39;modo transferencia&#39; (con reconsulta) para diagnósticos diferenciales nuevos — en vez de un único formato de repaso para todo.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0061" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0061</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience · Martiadis V, Raffone F, Atripaldi D, Pessina E, Cattaneo CI, Testa S, Iaccarino C, d&#39;Andrea G, Cavallotto C, Olivola M, Dell&#39;Osso B — 29 ago 2026 · paper · 2026-08-29</div>
+        <h3 class="r3-title">Esketamine-based treatment, depression-specific metacognitive training, and their combination in treatment-resistant depression: 6-month trajectories of depressive symptoms and rumination in a multicenter observational study</h3>
+        <p class="r3-hook">Estudio observacional multicéntrico (46 pacientes con depresión resistente al tratamiento, seguimiento a 6 meses) que compara esketamina intranasal sola, entrenamiento metacognitivo específico para depresión (D-MCT) solo, y la combinación de ambos: la respuesta en MADRS fue de apenas 33% con esketamina sola y 33% con D-MCT solo, pero saltó a 92% (completers) con la combinación — y la rumiación (RRS) también bajó más solo en el grupo combinado. El mecanismo es que el fármaco y el entrenamiento metacognitivo no compiten sino que atacan procesos distintos (síntomas vs. rumiación cognitiva-afectiva), algo directamente relevante para la línea de psiquiatría dimensional y de precisión de Javier (HiTOP/RDoC, network theory) porque sugiere que la rumiación es un objetivo transdiagnóstico separable que merece su propio brazo de tratamiento, no un epifenómeno que &#39;se arregla solo&#39; al mejorar el ánimo. Cómo usarlo: incorporar el hallazgo (limitaciones incluidas: no aleatorizado, etiqueta abierta, n modesto) como caso ejemplo en el libro de psicopatología para ilustrar por qué la psiquiatría de precisión necesita medir y tratar mecanismos cognitivos (rumiación) por separado de la respuesta sintomática global.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02361-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02361-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Cross-Cultural Gerontology · Akfirat ON, Türkoğlu İD — 27 ago 2026 · paper · 2026-08-27</div>
+        <h3 class="r3-title">Wise Aging as Public Recognition in Türkiye: Civic-embedded Wisdom as a Cultural Recognition Pathway</h3>
+        <p class="r3-hook">Análisis biográfico cualitativo de seis figuras públicas turcas que propone &#39;Civic-Embedded Wisdom&#39; (CEW): un marco donde la sabiduría no es solo una capacidad interna (cognitiva, socio-emocional, reflexiva-metacognitiva) sino que se vuelve socialmente reconocida solo cuando se expresa a través de cuatro rutas culturalmente marcadas — servicio cívico sostenido, ideales modernizadores/razón pública, igualdad y dignidad humana, y custodia intelectual de la cultura. Le importa a Javier porque nombra con estructura algo que vive en carne propia como educador médico con marca pública (AMAUTA/USAMEDIC), investigador RENACYT y miembro de comité de ética (HVLH): la autoridad epistémica no basta por sí sola, se legitima públicamente a través de rutas específicas y culturalmente situadas, no de forma automática por competencia técnica. Cómo usarlo: usar el marco CEW como lente para auditar su propia estrategia de contenido (Instagram/YouTube) y posicionamiento público — ¿qué &#39;ruta cultural peruana&#39; (servicio cívico, custodia del conocimiento, mentoría) está construyendo intencionalmente vs. cuál asume que se da sola por publicar papers?</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10823-026-09596-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s10823-026-09596-7</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Trials · Swanson L, Rask B, Persson J, Graner P, Bengtsson J, Bodén R, Cernvall M, Sällström U, Tyrberg MJ, Moritz S, Cervenka S — 28 ago 2026 · paper · 2026-08-28</div>
+          <div class="r10-title">Metacognitive Training for Negative Symptoms (MCT-Minus) in schizophrenia: study protocol for a pragmatic randomized controlled trial</div>
+          <div class="r10-line">Protocolo de RCT pragmático (n=90, Suecia) que adapta el entrenamiento metacognitivo (MCT) a síntomas negativos de esquizofrenia, apuntando al mecanismo de creencias derrotistas + déficits metacognitivos, con resonancia magnética y análisis de mediación incluidos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si el mecanismo (mejor funcionamiento reflexivo + menos estigma internalizado) se confirma, se convertirá en plantilla que Javier podrá citar para argumentar, dentro de su línea dimensional (HiTOP/RDoC), que los síntomas negativos transdiagnósticos (anhedonia, avolición) responden mejor a intervenciones metacognitivas específicas que a psicoeducación genérica.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s13063-026-09879-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s13063-026-09879-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Epidemiology · Nieto-Gutierrez W, Moler-Zapata S, Medina-Ramirez SA, Isern de Val S — 30 ago 2026 · review · 2026-08-30</div>
+          <div class="r10-title">Risk-of-bias tools for causal inference using real-world evidence vary in their coverage of stages of study generation and core bias domains: a rapid scoping review</div>
+          <div class="r10-line">Revisión rápida (con coautoría del Instituto Nacional de Ciencias Neurológicas de Lima) de 11 herramientas de riesgo de sesgo para inferencia causal en real-world evidence, que encuentra que ninguna cubre bien la etapa de &#39;presentación de resultados&#39; — el punto ciego más común entre todas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dado que Javier evalúa evidencia a diario para RENACYT y para enseñar lectura crítica en AMAUTA, esta tabla de 11 herramientas terminará como checklist de cabecera en sus cursos de razonamiento clínico basado en evidencia, con un puente natural hacia coautoría peruana ya existente.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jclinepi.2026.112486" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jclinepi.2026.112486</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Therapeutic Innovation &amp; Regulatory Science · He J, Hong T, Giffin A, Zhang R, Ma Y (FDA/CDER) — 30 ago 2026 · paper · 2026-08-30</div>
+          <div class="r10-title">Precision-Based Sample Size Determination: Implications for Decision-Making</div>
+          <div class="r10-line">Bioestadísticos de la FDA cuantifican por primera vez que un diseño de muestra &#39;basado en precisión&#39; (más barato, menos participantes) puede esconder una potencia estadística real de apenas ~50% cuando el margen de precisión coincide con el umbral nulo — la eficiencia aparente en la toma de decisiones puede ser una ilusión estadística.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este hallazgo se volverá argumento citable contra diseños de muestra reducida en estudios educativos/clínicos de bajo presupuesto (el tipo que corre AMAUTA/USAMEDIC), obligando a declarar explícitamente el trade-off precisión-vs-poder antes de diseñar un estudio.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s43441-026-01039-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s43441-026-01039-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">What Is Stoicism (Substack) · Allan John — 30 ago 2026 · blog · 2026-08-30</div>
+          <div class="r10-title">Sunday Snippets: August 30th, 2026 — Learning For Life</div>
+          <div class="r10-line">Newsletter estoica que destila de Pierre Hadot un mecanismo concreto contra la tentación — &#39;preparación en vez de fuerza de voluntad&#39;: planear con anticipación el &#39;momento antes de uno más&#39; en lugar de confiar en resistir en caliente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede adaptar este micro-framework (preparación anticipada vs. autocontrol heroico) como herramienta operacionalizable de self-care para su pilar kinobody-selfcare, mucho más aplicable en guardia que &#39;ten disciplina&#39;.</div>
+          <a class="r10-link" href="https://whatisstoicism.substack.com/p/sunday-snippets-august-30th-2026" target="_blank" rel="noopener">↗ whatisstoicism.substack.com/p/sunday-snippet…</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En reflexión deliberada, restringir el acceso al caso mejora el recuerdo de lo YA estudiado, pero fue permitir revisarlo lo que ayudó a transferir el razonamiento a enfermedades &#39;vecinas&#39; no estudiadas: la misma técnica produce efectos opuestos según el objetivo.</li><li>Ni la esketamina ni el entrenamiento metacognitivo solos superaron 33% de respuesta a 6 meses en depresión resistente — combinados llegaron a 92%: el mecanismo farmacológico y el cognitivo no compiten, se potencian porque atacan procesos distintos.</li><li>De 11 herramientas de riesgo de sesgo para evidencia del mundo real, ninguna cubre bien la etapa de &#39;presentación de resultados&#39; — el sesgo más fácil de cometer (cómo se cuentan los hallazgos) es el menos auditado de todos.</li><li>Un diseño de muestra &#39;basado en precisión&#39; que parece más eficiente (menos participantes, menos costo) puede esconder una potencia estadística real de apenas 50%: la eficiencia aparente en decisiones puede ser una ilusión estadística.</li><li>Según el estudio turco de sabiduría cívica, la sabiduría no es solo una capacidad interna: se vuelve &#39;sabiduría&#39; pública solo cuando se expresa a través de una ruta cultural reconocible (servicio cívico, custodia intelectual) — la percepción de sabiduría es tan social como cognitiva.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿El patrón &#39;revisitación restringida mejora retención, revisitación libre mejora transferencia&#39; se replica en razonamiento diagnóstico psiquiátrico, donde los &#39;casos vecinos&#39; son fenotipos dimensionales y no categorías discretas?</li><li>¿La combinación MCT + esketamina reduce específicamente la rumiación transdiagnóstica de forma que generalice a otros fenotipos HiTOP más allá de la depresión resistente?</li><li>¿Cuántas de las guías de &#39;razonamiento clínico basado en evidencia&#39; que usa AMAUTA/USAMEDIC cubren la etapa de &#39;presentación de resultados&#39; que el scoping review identificó como el punto ciego más común?</li><li>Si se midiera con el mismo rigor del estudio de la FDA, ¿cuántos estudios educativos de bajo presupuesto en medicina peruana están subpotenciados sin que sus autores lo sepan?</li><li>¿Tiene el Perú un equivalente identificable de &#39;sabiduría cívica&#39; (CEW) — qué marcadores culturales validarían públicamente la autoridad epistémica de un médico-investigador como Javier ante sus pares y su audiencia?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto para IG/YouTube: &#39;Por qué revisar el caso te ayuda a generalizar pero te distrae de memorizar&#39; — usando el hallazgo de revisitación restringida vs. libre como gancho para explicar cuándo usar cada estrategia de estudio en ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología: la rumiación como mecanismo transdiagnóstico que responde mejor a metacognitive training + fármaco combinados que a cualquiera solo — ejemplo del estudio esketamina + D-MCT.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta editorial o mini-paper propio: aplicar el checklist de 11 herramientas de riesgo de sesgo del scoping review a los estudios que AMAUTA/USAMEDIC usa como evidencia de eficacia educativa, aprovechando el puente con coautoría peruana (INCN Lima) ya existente en el paper original.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido para Competency Lab: micro-framework &#39;preparación vs. fuerza de voluntad&#39; (Hadot, vía Sunday Snippets) aplicado a self-care de residentes en guardia — planear el &#39;momento antes de uno más&#39; en vez de exigir autocontrol en caliente.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Ensayo o ponencia: adaptar el marco &#39;Civic-Embedded Wisdom&#39; turco para preguntar qué hace que un educador médico peruano sea percibido públicamente como &#39;sabio&#39; — conecta directamente con la marca AMAUTA y el comité de ética HVLH.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Trials</span><span class="tag ">Journal of Clinical Epidemiology</span><span class="tag ">Therapeutic Innovation &amp; Regulatory Science</span><span class="tag ">Journal of Cross-Cultural Gerontology</span><span class="tag ">What Is Stoicism (Substack)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI E-utilities · Substack (whatisstoicism.substack.com) · WebSearch (Farnam Street, Reddit, X, YouTube, Aeon/Psyche, Big Think — sin hallazgos verificables dentro de la ventana de 48-72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 31 de agosto de 2026.</div>
+</div>
+</body>
+</html>
