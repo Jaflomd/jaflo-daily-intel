@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-08-31 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">31 de agosto de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">BMJ, 28 ago 2026 · review · 2026-08-28</div>
+        <h3 class="r3-title">Schizophrenia: advances in pathophysiology, management, and precision medicine</h3>
+        <p class="r3-hook">Revisión clínica en BMJ que propone reconsiderar la esquizofrenia desde la medicina de precisión dirigida por mecanismo, en vez de como una categoría clínica única definida solo por criterios operacionales — el primer paso, dice, es acumular biomarcadores objetivos que permitan estratificar pacientes por sus características biológicas reales. Para Javier es munición de alto perfil (BMJ, no una revista de nicho) para su argumento dimensional de siempre: que el DSM/CIE como categorías puras bloquea el desarrollo de tratamiento, justo lo que sostiene con HiTOP/RDoC y network theory en su libro de psicopatología. Puede citarlo directamente en el capítulo de psiquiatría de precisión como el &#39;estado del arte según medicina general&#39;, no solo desde su propio nicho dimensional, y usarlo en clase para mostrar que el mainstream clínico ya está convergiendo hacia su marco.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmj-2026-635470" target="_blank" rel="noopener">↗ doi.org/10.1136/bmj-2026-635470</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Schizophrenia Research, 28 ago 2026 · paper · 2026-08-28</div>
+        <h3 class="r3-title">Baseline inflammatory profile is associated with short-term antipsychotic-induced weight gain in first-episode psychosis: results from the OPTiMiSE study</h3>
+        <p class="r3-hook">Análisis secundario del ensayo multicéntrico OPTiMiSE (208 pacientes con primer episodio psicótico, todos tratados con amisulprida durante 4 semanas): ningún biomarcador inflamatorio individual predijo la ganancia de peso tras corrección por comparaciones múltiples, pero un patrón proteómico multivariado (niveles basales bajos de TNF-α, TNF-β, IL-7, IL-12p40, IL-15, IL-16, IL-17, GM-CSF e IFN-γ) sí se asoció con mayor aumento de peso (β=0.50, p=0.017). Para Javier es un caso de estudio perfecto de predicción de respuesta a tratamiento hecho bien — con diseño casi-experimental limpio (mismo fármaco, muestra quasi-naïve) — y a la vez una lección metodológica exacta para su pilar precision-psychiatry: &#39;no significativo tras corrección&#39; no es lo mismo que &#39;no hay señal&#39;, la señal puede vivir solo en el patrón conjunto. Puede llevarlo directo a su enseñanza de razonamiento en investigación/bioestadística como ejemplo de por qué el análisis multivariado (PCA dispersa) rescata información que el análisis marcador-por-marcador pierde.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.schres.2026.08.022" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.022</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Surgical Education, 26 ago 2026 · paper · 2026-08-26</div>
+        <h3 class="r3-title">Precision Education: How Ready Are Obstetrics and Gynecology Clerkships for the Future of Medical Education?</h3>
+        <p class="r3-hook">Encuesta a 95 directores de clerkship de obstetricia y ginecología en EE.UU. (69.3% de tasa de respuesta) sobre adopción real de &#39;precision education&#39;: solo 6% usa asistentes de enseñanza con IA, 17% usa realidad aumentada, y casi una cuarta parte (24%) ya usa materiales de enseñanza autogenerados — con barreras identificadas (sistemas de calificación entre ellas) que frenan el resto. Para Javier es el dato duro que necesita para su pilar amauta-education: literalmente usan el término &#39;precision education&#39; que él usa para AMAUTA/USAMEDIC, con una línea base cuantitativa de cuán atrás está la mayoría de los programas médicos en adopción de IA educativa. Puede usarlo como benchmark competitivo — &#39;el 94% de los programas todavía no usa un asistente de IA&#39; — para justificar frente a colegas o instituciones por qué invertir ahora en tutoría con IA para ENAM/Residentado es ventaja de mover primero, y como mapa de barreras a anticipar (evaluación, no solo tecnología).</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jsurg.2026.104119" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104119</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Autism Research, 30 ago 2026 · paper · 2026-08-30</div>
+          <div class="r10-title">Sex and Cognitive Ability-Based Stratification of Social Attention in Autism</div>
+          <div class="r10-line">Estudio longitudinal del consorcio ABC-CT (niños autistas y neurotípicos, 6-11 años, eye-tracking en 4 momentos) encuentra que la reducción de atención social en autismo es cerca del doble en niñas autistas que en niños autistas (relativo a sus pares neurotípicos del mismo sexo), y mayor también en niños con CI&lt;85 — sexo y CI funcionan como variables reales de estratificación, no ruido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que sexo y CI pasan de covariables de ajuste a criterios obligatorios de estratificación en ensayos de autismo, argumento que Javier puede usar en su línea TDAH/TEA para cuestionar diseños que tratan el espectro autista como grupo homogéneo.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/aur.70356" target="_blank" rel="noopener">↗ doi.org/10.1002/aur.70356</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 30 ago 2026 · meta-analysis · 2026-08-30</div>
+          <div class="r10-title">Retinal electrophysiology in mood disorders: Toward clinically relevant biomarkers. A systematic review and meta-analysis</div>
+          <div class="r10-line">Revisión sistemática y metaanálisis (32 estudios, n=1334; 5 en el metaanálisis cuantitativo) encuentra amplitudes reducidas y tiempos implícitos prolongados en electrorretinografía en trastornos del ánimo, con prolongación significativa del tiempo implícito de onda b en depresión mayor (g=0.23) como candidato a biomarcador periférico objetivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la ERG se explora como biomarcador de bajo costo para el diagnóstico diferencial unipolar/bipolar en los próximos años, dato que Javier puede citar en precision-psychiatry como alternativa barata a biomarcadores de neuroimagen u ómicas.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122424" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122424</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">FASEB Journal, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Bioinformatics Analysis of the Diagnostic Value of Copper and Zinc Metabolism-Related Genes in Major Depressive Disorder: An In Silico Multi-Cohort Study</div>
+          <div class="r10-line">Estudio bioinformático multi-cohorte (una cohorte de entrenamiento, dos de validación externa) identifica tres genes de metabolismo de cobre/zinc (MT1A, MT2A, SLC30A1) cuyo modelo combinado alcanza AUC=0.88 en entrenamiento y 0.81/0.78 en las dos validaciones externas para diagnóstico de depresión mayor.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este panel de 3 genes se prueba como apoyo diagnóstico complementario en estudios prospectivos de MDD, ejemplo que Javier puede usar para enseñar validación externa correcta frente a modelos de una sola cohorte.</div>
+          <a class="r10-link" href="https://doi.org/10.1096/fj.202603506R" target="_blank" rel="noopener">↗ doi.org/10.1096/fj.202603506R</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Psychopharmacology and Neuroscience, 31 ago 2026 · review · 2026-08-31</div>
+          <div class="r10-title">Treatment-resistant Depression in the Post-ketamine Era: Unmet Needs beyond Rapid Response</div>
+          <div class="r10-line">Revisión clínica argumenta que, tras la ketamina/esketamina, el problema central en depresión resistente ya no es lograr respuesta rápida sino su durabilidad, prevención de recaída, selección de pacientes y la ausencia persistente de biomarcadores predictivos útiles.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la próxima ola de investigación en depresión resistente se centra en predictores de durabilidad más que en nuevos fármacos rápidos, marco útil para que Javier enseñe por qué &#39;responder rápido&#39; no equivale a &#39;estar resuelto&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.9758/cpn.26.1487" target="_blank" rel="noopener">↗ doi.org/10.9758/cpn.26.1487</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Psychopharmacology and Neuroscience, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Serum Wnt Pathway Regulators in Adolescents with Suicidal Behavior Disorder and Nonsuicidal Self-injury Disorder: A Case-control Study</div>
+          <div class="r10-line">Estudio caso-control en adolescentes (n=121: conducta suicida, autolesión no suicida y control) encuentra niveles séricos elevados de Porcupine y Notum (vía Wnt/β-catenina) en ambos grupos clínicos frente a control, independientemente del uso de psicofármacos, sin correlación con severidad de síntomas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Porcupine/Notum se investigan como biomarcadores transdiagnósticos de riesgo autolesivo (más que de severidad) en adolescentes, línea que Javier puede vigilar para su trabajo en comités de ética (HVLH) sobre biomarcadores de riesgo suicida en menores.</div>
+          <a class="r10-link" href="https://doi.org/10.9758/cpn.26.1419" target="_blank" rel="noopener">↗ doi.org/10.9758/cpn.26.1419</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Psychopharmacology and Neuroscience, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Neuroimmune Links to White-matter Microstructure in Medication-naïve Children with Tic Disorder: A Mediation Analysis</div>
+          <div class="r10-line">Estudio con DTI en niños con tic disorder sin medicación (n=21) vs. controles (n=26) encuentra menor anisotropía fraccional y mayor difusividad radial en múltiples tractos, correlacionada con severidad de tics (ρ=0.61) y mediada por citocinas proinflamatorias circulantes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que DTI + citocinas se propone como biomarcador compuesto de severidad en trastornos de tics, transferible a la línea TDAH/TEA de Javier como ejemplo de neuroinflamación como mecanismo convergente en neurodesarrollo.</div>
+          <a class="r10-link" href="https://doi.org/10.9758/cpn.25.1376" target="_blank" rel="noopener">↗ doi.org/10.9758/cpn.25.1376</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Microbiology &amp; Biology Education, 27 ago 2026 · paper · 2026-08-27</div>
+          <div class="r10-title">Partnering with AI to create joy-centered personalized learning in a post-pandemic world</div>
+          <div class="r10-line">Artículo de &#39;tips &amp; tools&#39; describe un método de aprendizaje personalizado centrado en el bienestar implementado con prompts estructurados de LLMs en cursos universitarios de biología: normalizar la incertidumbre, priorizar el crecimiento sobre la perfección, y aplanar la jerarquía de aula.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estas &#39;librerías de prompts&#39; pedagógicas se estandarizan primero en ciencias básicas universitarias que en medicina, oportunidad para que Javier adapte el marco a AMAUTA/USAMEDIC antes que la competencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1128/jmbe.00107-26" target="_blank" rel="noopener">↗ doi.org/10.1128/jmbe.00107-26</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry, 30 ago 2026 · paper · 2026-08-30</div>
+          <div class="r10-title">Gut microbiota and blood biomarkers as correlating factors in patients with postoperative delirium: analysis of three prospective observational studies</div>
+          <div class="r10-line">Cohorte prospectiva en adultos ≥65 años de cirugía ortopédica electiva encuentra asociaciones entre microbiota intestinal, el metabolito IPA y Tau plasmática solo en pacientes con delirium postoperatorio, pero los clasificadores de machine learning apenas superaron el azar (AUC&gt;50%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este hallazgo se cita más como evidencia mecanística del eje intestino-cerebro que como herramienta predictiva lista para uso, ejemplo útil para que Javier enseñe a distinguir &#39;AUC reportado&#39; de &#39;AUC clínicamente útil&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03825-8" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03825-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Neural Engineering, 28 ago 2026 · paper · 2026-08-28</div>
+          <div class="r10-title">MEG resting state alpha and beta band functional connectivity in male children with autism and sensory processing dysfunction</div>
+          <div class="r10-line">Estudio de conectividad funcional por MEG en reposo (bandas alfa y beta) en niños varones con autismo y disfunción de procesamiento sensorial, sumando fenotipado neurofisiológico objetivo dentro del espectro autista (resumen basado en título; abstract completo no disponible aún en PubMed al momento de esta revisión).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos mapas de conectividad MEG alimentan intentos de subtipificar el autismo por perfil sensorial-neurofisiológico, línea que Javier puede vigilar para TDAH/TEA en cuanto se publique el detalle completo.</div>
+          <a class="r10-link" href="https://doi.org/10.1088/1741-2552/ae93fb" target="_blank" rel="noopener">↗ doi.org/10.1088/1741-2552/ae93fb</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En OPTiMiSE ningún biomarcador individual predijo la ganancia de peso por antipsicóticos tras corregir por comparaciones múltiples — pero el patrón multivariado sí: en biomarcadores de precisión psiquiátrica, buscar &#39;la molécula&#39; suele ser la pregunta equivocada; la señal vive en el patrón conjunto.</li><li>La reducción de atención social en autismo no es uniforme: en niñas autistas es el doble de marcada (vs. sus pares) que en niños autistas — la sobrerrepresentación histórica de varones en las cohortes de investigación puede haber subestimado el fenotipo femenino durante años.</li><li>Solo 6% de los clerkships de ObGyn en EE.UU. usa asistentes de enseñanza con IA, pero 24% ya usa materiales autogenerados: la adopción de IA en educación médica no es lineal, primero se automatiza el contenido y solo después (mucho después) la interacción.</li><li>Un AUC &#39;estadísticamente reportado&#39; puede ser clínicamente inútil: en el estudio de delirium postoperatorio los clasificadores de ML apenas superaron el azar (AUC&gt;50%) — sin punto de corte ni calibración, ese número es casi ruido con intervalo de confianza.</li><li>La ketamina resolvió &#39;qué tan rápido&#39; responde la depresión resistente, pero no &#39;qué tan bien&#39;: velocidad de respuesta y calidad de remisión son ejes distintos que rara vez se miden juntos, y eso puede esconder fracasos funcionales bajo el disfraz de &#39;respuesta clínica&#39;.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debería la estratificación por sexo y CI ser obligatoria (no solo covariable de ajuste) en todo ensayo clínico de autismo, dado que el efecto en niñas es el doble que en niños?</li><li>¿Cuánto del &#39;biomarcador objetivo&#39; que pide la psiquiatría de precisión (revisión BMJ) es realmente accionable hoy en un contexto peruano con acceso limitado a farmacogenómica y neuroimagen?</li><li>¿Qué panel mínimo de biomarcadores periféricos (ERG, inflamatorios, microbiota) podría integrarse en un protocolo de estratificación de depresión resistente, replicable con recursos limitados?</li><li>¿Cómo debería un comité de ética como HVLH evaluar el uso futuro de biomarcadores de riesgo suicida (Porcupine/Notum) en adolescentes cuando no correlacionan con la severidad clínica actual?</li><li>Si solo 6% de los programas médicos usa IA como asistente de enseñanza, ¿qué ventaja real obtiene AMAUTA/USAMEDIC al adoptarla ahora frente a esperar a que madure la evidencia?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel: &#39;Lo que la psiquiatría de precisión ya puede hacer vs. lo que todavía es promesa&#39;, basado en la revisión de esquizofrenia de BMJ, contrastado con el dato de adopción real de &#39;precision education&#39; en ObGyn.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto explicando por qué un biomarcador &#39;no significativo individualmente&#39; (caso OPTiMiSE) puede ser clínicamente relevante en patrón multivariado — gancho de alfabetización estadística para residentes.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica o carta al editor comparando el reporte de AUC del estudio de delirium postoperatorio (microbiota/Tau, AUC apenas &gt;50%) vs. el modelo Cu/Zn en MDD con validación externa real, como ejercicio didáctico de &#39;AUC bien reportado vs. mal reportado&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología dimensional sobre &#39;sexo y CI como variables de estratificación, no ruido&#39;, usando el estudio ABC-CT de atención social en autismo como caso ancla.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG adaptando el framework de &#39;joy-centered personalized learning&#39; con IA (normalizar incertidumbre, priorizar crecimiento sobre perfección, aplanar jerarquía) a la preparación ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">BMJ</span><span class="tag ">Schizophrenia Research</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Autism Research</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">FASEB Journal</span><span class="tag ">Clinical Psychopharmacology and Neuroscience</span><span class="tag ">Journal of Microbiology &amp; Biology Education</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Journal of Neural Engineering</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (E-utilities esearch/esummary/efetch) · Europe PMC REST API · WebSearch (medRxiv, PsyArXiv, general web). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 31 de agosto de 2026.</div>
+</div>
+</body>
+</html>
