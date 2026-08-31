@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-08-31 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">31 de agosto de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">118</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">118</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">BMJ · 2026-08-28 · review</div>
+        <h3 class="r3-title">Schizophrenia: advances in pathophysiology, management, and precision medicine</h3>
+        <p class="r3-hook">Revisión clínica integral en BMJ que resume avances en fisiopatología, manejo y medicina de precisión en esquizofrenia, argumentando que la heterogeneidad biológica detrás de un diagnóstico definido solo por criterios operacionales clínicos exige reconceptualizar el trastorno desde estratificación biológica de pacientes, no un tratamiento único para todos. Conecta directo con tu línea de psiquiatría de precisión y con la crítica dimensional (HiTOP/RDoC) que sostienes: la &#39;esquizofrenia&#39; como categoría única es precisamente el tipo de constructo que tu libro de psicopatología para el mundo busca desmontar a favor de dimensiones biológicamente ancladas. Para AMAUTA/USAMEDIC es una revisión de referencia -BMJ, alto nivel de autoridad clínica- para actualizar el módulo de psicosis con el estado del arte 2026, incluyendo neuromodulación y salud digital como fronteras terapéuticas emergentes. Aporta también contenido de alto nivel para IG/YT sobre por qué la esquizofrenia no es una sola enfermedad, con el respaldo de una fuente de máxima autoridad clínica.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmj-2026-635470" target="_blank" rel="noopener">↗ doi.org/10.1136/bmj-2026-635470</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">MedScience · 2026-08-29 · review</div>
+        <h3 class="r3-title">Mechanism and progress of deep brain stimulation in the treatment of neurological and psychiatric disorders</h3>
+        <p class="r3-hook">Revisión que sintetiza mecanismos y avances de la estimulación cerebral profunda (DBS) en trastornos neurológicos y psiquiátricos -Parkinson, distonía, temblor esencial, epilepsia, TOC, depresión, Alzheimer y Tourette-, distinguiendo las indicaciones ya aprobadas por la FDA (Parkinson, distonía, temblor esencial, TOC, epilepsia) de las que siguen en investigación. Es una síntesis directa de tu línea de neuromodulación, y al cubrir en el mismo marco mecanístico indicaciones neurológicas y psiquiátricas, encaja con el foco secundario de neuropsiquiatría de este dominio -la interfaz movimiento-cognición-ánimo que atraviesas en interconsulta. Para tu libro de psicopatología es material útil para el capítulo de intervenciones somáticas, mostrando qué tan lejos está aún la DBS psiquiátrica de convertirse en indicación aprobada más allá de TOC. Para AMAUTA/USAMEDIC es una revisión-mapa ideal para enseñar neuromodulación de forma comparada entre especialidades, un ángulo que rara vez se enseña de forma integrada.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11684-026-1231-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s11684-026-1231-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">British Journal of Psychiatry · 2026-08-28 · review</div>
+        <h3 class="r3-title">Bridging gaps in ADHD care globally: lessons from the NHS England independent taskforce report</h3>
+        <p class="r3-hook">Análisis crítico en el British Journal of Psychiatry del informe final del taskforce independiente comisionado por el NHS inglés sobre TDAH, que documenta subdiagnóstico persistente, tiempos de espera crecientes y fragmentación de la atención, y evalúa fortalezas y vacíos de sus recomendaciones -enfoque needs-led cruzando salud, educación, empleo y sistema de justicia, pero con financiamiento incierto y poca consistencia diagnóstica-. Es lectura obligada para tu línea TDAH/TEA/neurodivergencia: aunque el contexto es el NHS, el patrón -subdiagnóstico, listas de espera, fragmentación entre sistemas- es trasladable casi 1:1 al escenario peruano que enfrentas en consulta y en AMAUTA. Para USAMEDIC es un caso de estudio de reforma sistémica de servicios de TDAH útil para enseñar razonamiento de salud pública además del razonamiento clínico individual. También es insumo directo para contenido IG/YT sobre por qué el TDAH sigue subatendido incluso en sistemas de salud con recursos, un tema con gancho alto para tu audiencia.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10757" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10757</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Network Meta-Analysis en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Cerebrovascular Diseases · 2026-08-28 · guideline</div>
+        <h3 class="r3-title">Contextualized Clinical Practice Guidelines for Post-Stroke Motor Rehabilitation in India: Framework and Endorsement for Implementation</h3>
+        <p class="r3-hook">Guía de práctica clínica contextualizada para rehabilitación motora post-ictus en India, desarrollada con metodología mixta -scoping review, grupos focales y síntesis sistemática de guías- que identificó vías de rehabilitación fragmentadas, sin sistema de referencia estandarizado, y redujo 60 preguntas clínicas a 9 preguntas PICO priorizadas con recomendaciones clasificadas por fuerza de evidencia y factibilidad de implementación. Para tu foco secundario de neuropsiquiatría es relevante más allá de lo motor: el ictus es terreno constante de interconsulta neurología-psiquiatría -depresión post-ictus, deterioro cognitivo vascular, apatía- y esta guía documenta cómo se construye una recomendación contextual cuando la evidencia internacional no encaja directamente en el sistema de salud local, un problema que también enfrentas al adaptar guías internacionales al contexto peruano. Es un caso metodológico útil para AMAUTA/USAMEDIC sobre cómo se gradúa una recomendación por evidencia más factibilidad, no solo por evidencia pura.</p>
+        <a class="r3-link" href="https://doi.org/10.1159/ced/accag013" target="_blank" rel="noopener">↗ doi.org/10.1159/ced/accag013</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">International Journal of Clinical Pharmacy · 2026-08-28 · guideline</div>
+        <h3 class="r3-title">Developing a core competency framework for psychiatric pharmacists: a Europe-wide e-Delphi consensus study conducted by the European Society of Clinical Pharmacy Mental Health Special Interest Group</h3>
+        <p class="r3-hook">Consenso Delphi paneuropeo del grupo de interés en salud mental de la Sociedad Europea de Farmacia Clínica (ESCP) que define por primera vez un marco de competencias clínicas y no clínicas para farmacéuticos psiquiátricos -investigación, educación, liderazgo y gestión incluidos-, ante la ausencia previa de consenso sobre qué debe saber y hacer un especialista en farmacia psiquiátrica. Conecta con tu trabajo en comités de ética (HVLH) y con la calidad de la prescripción psiquiátrica que supervisas en la práctica clínica: un marco de competencias explícito para farmacia psiquiátrica es una pieza que suele faltar en la formación médica y que impacta directamente la seguridad de la prescripción combinada. Para AMAUTA/USAMEDIC es contenido poco explorado -la interfaz médico-farmacéutico en psiquiatría- que puede diferenciar tu oferta educativa frente a la competencia centrada solo en razonamiento diagnóstico.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11096-026-02213-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s11096-026-02213-0</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Depression and Anxiety · 2026-08-29 · meta-analysis</div>
+        <h3 class="r3-title">The Therapeutic Effect of Electroconvulsive Therapy on Depressive Patients of Different Ages: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Revisión sistemática y meta-análisis (15 estudios, 1617 pacientes con TDM) que compara la mejoría sintomática tras terapia electroconvulsiva (TEC) entre distintos grupos etarios, usando HAMD, MADRS, HAMA y MMSE como desenlaces, con el objetivo explícito de habilitar planes de tratamiento más precisos y personalizados según edad. Es evidencia de síntesis directamente aplicable a tu línea de psiquiatría de precisión: estratificar la respuesta a TEC por edad -no tratarla como una intervención uniforme- es exactamente el tipo de personalización basada en evidencia que argumentas en tu trabajo. Para tu práctica clínica es relevante en la toma de decisión sobre TEC en pacientes mayores frente a jóvenes, y para AMAUTA/USAMEDIC es un meta-análisis bien acotado y con desenlaces estandarizados, útil para enseñar lectura crítica de meta-análisis con modelos de efectos fijos vs. aleatorios.</p>
+        <a class="r3-link" href="https://doi.org/10.1155/da/4345722" target="_blank" rel="noopener">↗ doi.org/10.1155/da/4345722</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Clinical Child and Family Psychology Review · 2026-08-29 · meta-analysis</div>
+        <h3 class="r3-title">Kids These Days! A Cross-Temporal Meta-Analysis of Changes in Emotional and Behavioral Problems of Population-Based Samples Over the Past Decades</h3>
+        <p class="r3-hook">Meta-análisis transtemporal (175 estudios, N=418,528, datos de 1981 a 2019, usando el Child Behavior Checklist) que pone a prueba la creencia extendida de que los problemas de salud mental en jóvenes aumentan generación tras generación, encontrando que el burden sintomático global no cambió tanto como se asume, con patrones distintos por dominio específico, edad, sexo y región. Esto es oro para tu psiquiatría dimensional: es exactamente el tipo de dato cuantitativo -tendencias de síntomas subclínicos en población general, no solo casos clínicos- que sostiene un enfoque dimensional (HiTOP/network theory) sobre el categórico, y desafía una narrativa popular con evidencia dura en vez de intuición. Para tu libro de psicopatología para el mundo es un contrapeso empírico directo al discurso de &#39;crisis generacional de salud mental&#39; que domina medios, y para contenido IG/YT es un ángulo de alto interés -desmontar con datos una creencia que casi todos dan por sentada-.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10567-026-00574-6" target="_blank" rel="noopener">↗ doi.org/10.1007/s10567-026-00574-6</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Pediatric Nursing · 2026-08-28 · meta-analysis</div>
+        <h3 class="r3-title">Efficacy of trauma-informed care interventions on post-traumatic stress disorder symptoms in adolescents: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática y meta-análisis (15 estudios, ECAs y cuasi-experimentales, adolescentes de 12 a 18 años) que evalúa la eficacia de intervenciones de cuidado informado en trauma (trauma-informed care) para reducir síntomas de estrés postraumático, usando diferencia de medias estandarizada como desenlace. Es síntesis accionable para tu línea de trauma y neurodivergencia en población infanto-juvenil: cuantifica si un enfoque que se ha vuelto casi un estándar de facto -&#39;ser trauma-informed&#39;- tiene respaldo de eficacia real y de qué magnitud, algo que rara vez se audita con rigor de meta-análisis. Para AMAUTA/USAMEDIC es material directo para preguntas de manejo de PTSD en adolescentes, y para tu práctica clínica ayuda a calibrar expectativas de efecto cuando implementas o recomiendas marcos trauma-informed en vez de tratarlos como axioma sin evidencia cuantificada.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pedn.2026.08.047" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pedn.2026.08.047</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La revisión de esquizofrenia en BMJ sostiene que &#39;esquizofrenia&#39; como diagnóstico único frena el desarrollo de fármacos nuevos: la heterogeneidad biológica bajo un mismo criterio operacional es el obstáculo, no la falta de dianas terapéuticas.</li><li>El meta-análisis transtemporal de 4 décadas (Child Behavior Checklist, N&gt;418,000) no encuentra el aumento generalizado de problemas emocionales/conductuales en jóvenes que asume el discurso popular: el patrón varía por dominio específico, no es un incremento uniforme.</li><li>La guía de rehabilitación post-ictus en India tuvo que reducir 60 preguntas clínicas a solo 9 preguntas PICO priorizadas: la mayor parte del trabajo de una guía contextualizada no es generar evidencia nueva, es decidir qué preguntas realmente importa responder primero.</li><li>El marco de competencias para farmacéuticos psiquiátricos (consenso ESCP) revela que hasta ahora no existía ni siquiera acuerdo básico sobre qué debe saber hacer un farmacéutico especializado en psiquiatría, un vacío formativo silencioso con impacto directo en seguridad de prescripción.</li><li>En DBS, las únicas indicaciones psiquiátricas aprobadas por la FDA siguen siendo TOC y epilepsia: depresión, Alzheimer y Tourette continúan en investigación pese al entusiasmo mediático sobre neuromodulación psiquiátrica.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la heterogeneidad biológica es el obstáculo real para nuevos fármacos en esquizofrenia, ¿qué tan lejos está la psiquiatría de precisión de tener biomarcadores de estratificación usables en tu propia práctica clínica, y no solo en investigación?</li><li>¿Deberías incorporar el hallazgo del meta-análisis transtemporal -que el burden sintomático juvenil global no aumentó tanto como se cree- como contrapeso explícito en tu discurso público sobre salud mental infanto-juvenil?</li><li>¿Qué preguntas PICO priorizarías tú si tuvieras que construir una guía contextualizada para TDAH o TEA en el sistema de salud peruano, siguiendo el modelo metodológico usado en la guía post-ictus de India?</li><li>¿Existe en tu entorno un equivalente al marco de competencias de farmacia psiquiátrica, o la interfaz médico-farmacéutico sigue siendo informal y no estandarizada en tu práctica y en AMAUTA?</li><li>Dado que solo TOC y epilepsia tienen aprobación FDA para DBS psiquiátrica, ¿cómo comunicas a pacientes con depresión resistente el estado real -no el mediático- de la neuromodulación como opción?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT &#39;La esquizofrenia no es una sola enfermedad&#39;, usando la revisión BMJ de precisión en esquizofrenia como base para explicar heterogeneidad biológica y psiquiatría de precisión a audiencia general.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase AMAUTA/USAMEDIC comparando indicaciones aprobadas vs. en investigación de DBS entre neurología y psiquiatría, usando la revisión de MedScience como mapa curricular.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología para el mundo con el meta-análisis transtemporal (Child Behavior Checklist, 4 décadas) como evidencia dura contra la narrativa de &#39;crisis generacional&#39; en salud mental juvenil.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario/perspectiva proponiendo una guía contextualizada de TDAH/TEA para el sistema peruano, inspirada en la metodología mixta (scoping review + grupos focales + síntesis PICO) de la guía post-ictus india.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido IG/YT sobre el informe del taskforce de TDAH del NHS inglés, comparando subdiagnóstico y fragmentación de servicios con la realidad peruana que ves en consulta y en AMAUTA.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">BMJ</span><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">MedScience</span><span class="tag ">Depression and Anxiety</span><span class="tag ">Clinical Child and Family Psychology Review</span><span class="tag ">Journal of Pediatric Nursing</span><span class="tag ">Cerebrovascular Diseases</span><span class="tag ">International Journal of Clinical Pharmacy</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC REST API (PubMed/MEDLINE). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 31 de agosto de 2026.</div>
+</div>
+</body>
+</html>
