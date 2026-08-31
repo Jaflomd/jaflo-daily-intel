@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-08-31 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">31 de agosto de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">259</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">PsyArXiv (preprint, in press en Journal of Psychopathology and Clinical Science) · 2026-08-27 · preprint</div>
+        <h3 class="r3-title">Mapeo del financiamiento federal de EE.UU. para problemas de salud mental (2020-2024) sobre la Hierarchical Taxonomy of Psychopathology: Registered Report</h3>
+        <p class="r3-hook">Phillips, Berman, Hyatt, Rose, Olino, Lynam y Miller usan HiTOP como esquema de clasificación para codificar TODAS las subvenciones de investigación otorgadas por cuatro institutos de NIH enfocados en psicopatología (incluye NIMH, NIDA y NIAAA) entre 2020 y 2024 — y, en un estudio piloto previo al análisis principal, validan que un LLM puede hacer esa clasificación de forma confiable. El hallazgo: el espectro de Externalización Desinhibida recibió más financiamiento que todos los demás espectros juntos (casi enteramente por investigación en consumo de sustancias vía NIDA/NIAAA), mientras que Internalización, Autismo, Trastorno del Pensamiento y Distanciamiento (Detachment) se llevaron el grueso del dinero de NIMH, y Externalización Antagonista y Somatoforme quedaron casi sin fondos. Para tu libro de psicopatología dimensional esto es un dato durísimo y citable: es la primera caracterización empírica de cómo el dinero de investigación psiquiátrica ya se organiza en dimensiones HiTOP aunque la práctica clínica siga hablando en categorías DSM — y el método (Registered Report + LLM validado para codificar miles de grants) es un ejemplo directo y reproducible para tu pilar de IA aplicada a investigación, perfecto para mostrar en AMAUTA cómo diseñar un estudio de clasificación asistida por IA con validación previa antes de escalar.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/kcszy_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/kcszy_v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Clinical Psychopharmacology and Neuroscience · 2026-08-31 · paper</div>
+        <h3 class="r3-title">Predictores de la severidad de síntomas somáticos en pacientes psiquiátricos adultos ambulatorios: estudio transversal de variabilidad de la frecuencia cardiaca y QEEG</h3>
+        <p class="r3-hook">Kim, Han y Kim (Chung-Ang University) estudian a 103 pacientes ambulatorios (55 con depresión mayor, 48 con TDAH) combinando cuestionarios clínicos, variabilidad de frecuencia cardiaca (HRV) y QEEG para predecir la severidad de síntomas somáticos, y su modelo final explica el 49.4% de la varianza — con el trastorno del sueño, el sexo femenino y los síntomas depresivos como predictores clínicos principales, más una contribución incremental de menor HRV total y menor coherencia beta frontal/frontoparietal en el QEEG. El dato clave para ti: el diagnóstico categorial (depresión vs. TDAH) NO predijo la severidad somática (p=0.124) — los autores lo dicen explícito, &#39;el rol limitado del diagnóstico categorial apoya un marco dimensional&#39;. Es exactamente la evidencia empírica dura que necesitas para el capítulo del libro sobre por qué comparar diagnósticos DSM en vez de dimensiones fisiológicas continuas pierde poder predictivo real, y como la muestra incluye 48 pacientes con TDAH te sirve directo para tu línea TDAH y tu pilar de neuromodulación/psiquiatría de precisión (HRV y QEEG como biomarcadores transdiagnósticos de distrés somático, no como marcadores de una sola etiqueta).</p>
+        <a class="r3-link" href="https://doi.org/10.9758/cpn.25.1358" target="_blank" rel="noopener">↗ doi.org/10.9758/cpn.25.1358</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Brain, Behavior, and Immunity · 2026-08-30 · paper</div>
+        <h3 class="r3-title">Mecanismo espacial de poda sináptica de la microglía del núcleo accumbens en la regulación diferencial de conductas tipo-TEPT y tipo-depresión</h3>
+        <p class="r3-hook">Zhao, Tian, Hu y equipo del Instituto de Psicología de la Academia China de Ciencias muestran en un modelo de rata (estrés prolongado + shock) que la microglía del núcleo accumbens genera conductas tipo-TEPT y tipo-depresión mediante poda sináptica inhibitoria en subregiones distintas (core vs. shell), con firmas moleculares opuestas (&#39;eat me&#39; vía Mertk arriba en una subregión, &#39;find me&#39; vía Cx3cr1 abajo en la otra); depletar la microglía en cada subregión alivia selectivamente la conducta correspondiente, y la minociclina (moduladora de microglía) revierte ambas. Los propios autores enmarcan el hallazgo como identificación de blancos para &#39;intervenciones transdiagnósticas&#39; basadas en inmunomodulación. Para tu psicopatología dimensional esto te da algo que casi nunca se consigue: un sustrato neuroinmune mecanístico, a nivel de circuito y molécula, de por qué TEPT y depresión se solapan tanto (comparten microglía y región cerebral) aunque el DSM los separe limpiamente — material citable para el capítulo de validez biológica del solapamiento dimensional, y relevante para tu línea de neuromodulación como blanco terapéutico. Ojo: es preclínico (rata), así que en AMAUTA úsalo como &#39;mecanismo plausible que todavía no cruza a clínica&#39;, no como evidencia lista para consulta.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.bbi.2026.106985" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.106985</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">5</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica · 2026-08-28 · paper</div>
+          <div class="r10-title">Aprendizaje estadístico y habilidad rítmica en TDAH: las diferencias individuales pesan más que las diferencias de grupo</div>
+          <div class="r10-line">Van der Wulp, Struiksma y Wijnen encuentran evidencia bayesiana de que NO hay diferencias TDAH-vs-neurotípico en aprendizaje estadístico, ritmo o memoria de trabajo (n=41 vs 118) — la variabilidad individual domina sobre la etiqueta categorial, y los propios autores piden un abordaje dimensional del TDAH.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este tipo de resultado nulo bien reportado (evidencia bayesiana de ausencia de efecto de grupo) es munición directa para tu línea TDAH — cítalo cuando alguien asuma que &#39;TDAH sí/no&#39; predice rendimiento cognitivo mejor que las diferencias individuales continuas.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107622" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107622</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Neuropsychopharmacology · 2026-08-28 · paper</div>
+          <div class="r10-title">Resultados a largo plazo de las trayectorias de uso de estimulantes en TDAH infantil</div>
+          <div class="r10-line">Van der Plas y equipo de la cohorte holandesa NeuroIMAGE agrupan a 324 niños con TDAH en tres trayectorias de estimulantes y siguen a 143 hasta la adultez (&gt;12 años): sin diferencias en 50 de 51 resultados funcionales adultos, salvo rasgos callous-unemotional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: espera que este hallazgo (ausencia de efecto a largo plazo de la trayectoria de estimulantes sobre la mayoría de dominios funcionales) alimente el debate sobre qué estás realmente tratando cuando medicas TDAH en la infancia — útil para AMAUTA como contrapeso a discursos alarmistas sobre estimulantes, con la cautela metodológica de que los grupos pudieron diferir desde el inicio.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.euroneuro.2026.113861" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.113861</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Contemporary Clinical Trials · 2026-08-29 · paper</div>
+          <div class="r10-title">Entrenamiento breve de mindfulness en atención primaria para veteranos con distrés psicológico: protocolo de ECA híbrido tipo I</div>
+          <div class="r10-line">Bergen-Cico y equipo publican el protocolo de un ECA híbrido de efectividad-implementación (n=300, 3 sedes VA) comparando mindfulness transdiagnóstico grupal contra un comparador activo de resolución de problemas transdiagnóstico, con distrés total (DASS-21) como outcome primario y mediadores transdiagnósticos (regulación emocional, flexibilidad psicológica) como aims secundarios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable [protocolo, aún sin resultados]: en 2-3 años vas a tener datos de efectividad real-world de tratar &#39;distrés psicológico&#39; como una sola dimensión en vez de PTSD/depresión/ansiedad por separado — anótalo para tu argumento de tratamiento transdiagnóstico escalable en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.cct.2026.108451" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cct.2026.108451</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 2026-08-27 · preprint</div>
+          <div class="r10-title">Oxitocina intranasal modula la red de saliencia social en hombres adultos con autismo</div>
+          <div class="r10-line">Renström, Prinsen, Alaerts y Choe muestran por primera vez en humanos autistas la existencia de una red de saliencia social homóloga a la descrita en roedores, y que la conectividad basal del circuito amígdala-somatosensorial predice la respuesta a oxitocina — candidato a biomarcador de respuesta al tratamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este circuito (no el diagnóstico de autismo en sí) es el tipo de blanco que va a definir quién responde a oxitocina en TEA — relevante para tu pilar de psiquiatría de precisión, aunque el análisis es retrospectivo sobre un ensayo ya publicado y falta replicación prospectiva.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.08.24.26361211" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.24.26361211</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Developmental Medicine and Child Neurology · 2026-08-30 · editorial</div>
+          <div class="r10-title">Medición de calidad de vida y otros resultados en condiciones genéticas del neurodesarrollo: la importancia de la validez de contenido y los abordajes transdiagnósticos</div>
+          <div class="r10-line">Ludwig (Kennedy Krieger Institute) publica un comentario/editorial en DMCN argumentando por validez de contenido y abordajes transdiagnósticos al medir calidad de vida en condiciones genéticas del neurodesarrollo — no se pudo acceder al texto completo (comentario de autora única, sin abstract público en PubMed), así que trátalo como pista a seguir, no como hallazgo verificado en detalle.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vale la pena que consigas el texto completo tú mismo antes de citarlo — el título solo ya conecta directo con tu línea TEA/TDAH y con cómo mides &#39;resultado&#39; más allá del diagnóstico categorial en poblaciones de neurodesarrollo.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/dmcn.70496" target="_blank" rel="noopener">↗ doi.org/10.1111/dmcn.70496</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El dinero de investigación psiquiátrica de NIH ya se reparte por dimensiones HiTOP, no por diagnósticos DSM — y el espectro de Externalización Desinhibida (básicamente consumo de sustancias) se lleva más financiamiento que todos los demás espectros combinados (Phillips et al.).</li><li>En 103 pacientes psiquiátricos ambulatorios, el diagnóstico categorial (depresión vs. TDAH) no predijo la severidad de síntomas somáticos — pero el sueño, el sexo y biomarcadores continuos (HRV, coherencia QEEG) sí, explicando casi la mitad de la varianza (Kim et al.).</li><li>TEPT y depresión pueden compartir el mismo tipo celular (microglía) en el mismo núcleo cerebral (accumbens), pero con firmas moleculares de poda sináptica opuestas según la subregión — un mapa biológico literal de por qué estos dos diagnósticos se solapan tanto (Zhao et al.).</li><li>En una muestra de 41 adultos con TDAH vs. 118 neurotípicos, la evidencia bayesiana no encontró diferencias de grupo en aprendizaje estadístico, ritmo ni memoria de trabajo — la varianza individual domina sobre la etiqueta diagnóstica (van der Wulp et al.).</li><li>Seguir a niños con TDAH más de 12 años después de distintas trayectorias de uso de estimulantes no mostró diferencias en 50 de 51 resultados adultos — la trayectoria de tratamiento en la infancia predijo mucho menos de lo que uno esperaría sobre el funcionamiento en la adultez (van der Plas et al.).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el financiamiento de NIH ya se organiza por espectros HiTOP en la práctica (aunque nadie lo llame así), ¿qué te dice eso sobre el desfase entre cómo se financia la ciencia psiquiátrica y cómo todavía se enseña y se factura la práctica clínica?</li><li>En tu consulta, ¿cuánto peso le das al diagnóstico categorial (MDD vs. TDAH, por ejemplo) frente a marcadores continuos (sueño, HRV, síntomas depresivos) cuando un paciente llega con quejas somáticas sin explicación médica clara?</li><li>Si TEPT y depresión comparten mecanismo microglial en el núcleo accumbens en el modelo animal, ¿deberíamos estar pensando en inmunomoduladores como blanco transdiagnóstico en comorbilidad TEPT-depresión resistente, o es prematuro extrapolar de rata a clínica?</li><li>¿Qué tanto de tu conversación clínica sobre &#39;niño con TDAH, cognitivamente distinto&#39; descansa en diferencias de grupo que la evidencia bayesiana reciente no está encontrando, versus en la variabilidad individual real de cada paciente?</li><li>Si la trayectoria de estimulantes en la infancia predice tan poco del funcionamiento adulto (excepto rasgos callous-unemotional), ¿qué deberías estar midiendo y siguiendo en tus pacientes con TDAH infantil que sí prediga el curso a 10+ años?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel: &#39;El dinero de la ciencia psiquiátrica ya piensa en dimensiones, no en diagnósticos DSM&#39; — usando el mapeo de financiamiento NIH a HiTOP como gancho de dato duro y contraintuitivo.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección o nota del libro de psicopatología dimensional citando el estudio de síntomas somáticos (Kim et al.) como caso ancla de &#39;el diagnóstico categorial no predice, las dimensiones fisiológicas sí&#39; — con el dato exacto de varianza explicada (49.4%) y el p=0.124 del diagnóstico categorial.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video para AMAUTA/USAMEDIC: &#39;Cómo un LLM clasificó miles de subvenciones de NIH en dimensiones HiTOP&#39; — usa el Registered Report de Phillips et al. como caso didáctico de metodología de IA aplicada a investigación, incluyendo el paso de validación piloto antes de escalar.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o carta breve reaccionando al mecanismo de poda sináptica microglial TEPT-depresión (Zhao et al.), conectándolo con evidencia clínica existente de comorbilidad TEPT-depresión resistente al tratamiento — plantear si hay razón para pensar en inmunomodulación como blanco transdiagnóstico futuro.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Caso clínico/contenido para USAMEDIC/ENAM: paciente con TDAH y quejas somáticas sin causa médica clara, usando el marco de Kim et al. (sueño + HRV + QEEG por encima del diagnóstico categorial) para enseñar razonamiento clínico dimensional en distrés somático.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">PsyArXiv</span><span class="tag ">Clinical Psychopharmacology and Neuroscience</span><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">Acta Psychologica</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag ">Contemporary Clinical Trials</span><span class="tag ">medRxiv</span><span class="tag ">Developmental Medicine and Child Neurology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch directo, ventana 2026-08-28 a 2026-08-31, 8 queries combinando HiTOP/RDoC/transdiagnostic/p-factor/bifactor/network analysis/staging/nosology/internalizing-externalizing/ADHD-autism-dimensional; 32 PMIDs únicos revisados) · medRxiv API (colección completa 2026-08-27 a 2026-08-31, 127 preprints escaneados, 7 en categoría psychiatry-and-clinical-psychology revisados en detalle) · OSF/PsyArXiv API (100 preprints más recientes escaneados por keyword HiTOP/RDoC/transdiagnostic/dimensional/ADHD/autism/computational psychiatry) · WebSearch sobre PubMed, Europe PMC, Nature Mental Health, ResearchGate, Reddit (r/psychiatry, r/clinicalpsychology) y trabajo de figuras clave (Borsboom, Kotov, Krueger) — varios hallazgos descartados por caer fuera de la ventana de 48-72h tras verificar fecha exacta (p. ej. JMIR Reddit-HiTOP de enero 2026, Borsboom et al. JAMA Psychiatry de enero 2026, Nature Mental Health de febrero 2026) · Consensus MCP no disponible esta corrida (cuota mensual agotada). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 31 de agosto de 2026.</div>
+</div>
+</body>
+</html>
