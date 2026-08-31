@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-08-31 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">31 de agosto de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">50</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">32</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Clinical Psychopharmacology and Neuroscience, 31 ago 2026 · meta-analysis · 2026-08-31</div>
+        <h3 class="r3-title">Comparative Efficacy of Interventions for the Prevention and Treatment of Postpartum Depression: A Bayesian Network Meta-analysis</h3>
+        <p class="r3-hook">NMA bayesiana con 54 estudios y 7438 participantes: ningún fármaco superó al placebo de forma robusta para el TRATAMIENTO de depresión posparto, pero trazodona (-1.6, ICr 95%: -2.7 a -0.41) y difenhidramina (-1.4, ICr 95%: -2.5 a -0.20) mostraron señal superior a placebo en PREVENCIÓN, aunque basada en ensayos pequeños e ICr amplios. Le importa a Javier porque es el ejemplo perfecto de &#39;evidencia proporcional al claim&#39; que predica en AMAUTA/USAMEDIC: un resultado de &#39;no superioridad robusta&#39; es un hallazgo real y útil, no un fracaso del estudio, y encaja directo en el capítulo perinatal de su libro de psicopatología. Puede usarlo para enseñar lectura crítica de NMA bayesianas (ICr, ranking de tratamientos) de cara al ENAM/Residentado, y como contenido que corrija la sobre-simplificación de &#39;qué antidepresivo usar en el posparto&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.9758/cpn.26.1404" target="_blank" rel="noopener">↗ doi.org/10.9758/cpn.26.1404</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Affective Disorders, 30 ago 2026 (online ahead of print) · meta-analysis · 2026-08-30</div>
+        <h3 class="r3-title">Retinal electrophysiology in mood disorders: Toward clinically relevant biomarkers. A systematic review and meta-analysis</h3>
+        <p class="r3-hook">SR+MA (PROSPERO CRD1234381) de 32 estudios (n=1334) sobre electrorretinografía (ERG) en trastornos del ánimo: halla amplitudes reducidas y tiempos implícitos prolongados en TDM y TB, con una prolongación significativa del tiempo implícito de la onda-b en condiciones escotópicas mixtas en TDM (g=0.23, IC 95%: 0.00-0.46); alta heterogeneidad y utilidad clínica aún no establecida. Le importa a Javier porque cae directo en su línea de psiquiatría de precisión (HiTOP/RDoC): la retina como &#39;ventana&#39; no invasiva al cerebro es exactamente el tipo de outcome objetivable, más allá de la escala clínica, que busca para BMSE y su libro de psicopatología dimensional. Puede convertirlo en contenido IG/YT sobre el futuro (todavía inmaduro) de los biomarcadores oculares en psiquiatría, dejando claro que aún no reemplaza el diagnóstico clínico.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122424" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122424</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Clinical Psychopharmacology and Neuroscience, 31 ago 2026 · meta-analysis · 2026-08-31</div>
+        <h3 class="r3-title">A Meta-analysis of Randomized Controlled Trials of Functional Magnetic Resonance Imaging Neurofeedback for Training of Attention and Related Cognitive Functions</h3>
+        <p class="r3-hook">Meta-análisis de 5 RCTs (n=214, edad media 16.8 años) sobre neurofeedback guiado por fMRI para inatención: sin diferencia significativa vs. control en el outcome primario (SMD=0.17, IC 95%: -0.15 a 0.49, p=0.30) ni en vigilancia, inhibición o velocidad de procesamiento, con heterogeneidad alta en las secundarias (I² hasta 90%). Le importa a Javier porque toca directo su línea TDAH/neurodivergencia: es evidencia de que el neurofeedback fMRI, pese al hype comercial de clínicas privadas, todavía no tiene sustento robusto. Puede usarlo en AMAUTA/USAMEDIC como caso de enseñanza sobre &#39;evidencia proporcional al claim&#39; al abordar tratamientos no farmacológicos de TDAH, y como contenido IG/YT que desmonte promesas de neurotecnología sin respaldo suficiente.</p>
+        <a class="r3-link" href="https://doi.org/10.9758/cpn.26.1405" target="_blank" rel="noopener">↗ doi.org/10.9758/cpn.26.1405</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">The British Journal of Psychiatry, 28 ago 2026 (online ahead of print) · rct · 2026-08-28</div>
+          <div class="r10-title">Evaluation of the efficacy of support groups in the metaverse for Ukrainian refugees: randomised clinical trial</div>
+          <div class="r10-line">RCT de 3 brazos (n=156) en refugiados ucranianos halla que los grupos de apoyo presenciales superan a los grupos en realidad virtual/metaverso en soporte social percibido y reducción de ansiedad, aunque la RV fue factible de implementar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usar este dato como contrapeso empírico al hype de IA/RV en salud mental para su línea de IA aplicada: el mensaje de contenido es &#39;la tecnología inmersiva es viable pero aún no reemplaza lo presencial&#39;, útil para un post sobre límites reales de la telepsiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10755" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10755</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Autism Research, 30 ago 2026 (online ahead of print, ensayo preliminar) · rct · 2026-08-30</div>
+          <div class="r10-title">Interval-Based Aerobic Exercise and Behavioral Intervention for Sleep Disturbances in Children With Autism Spectrum Disorder: A Randomized Controlled Trial</div>
+          <div class="r10-line">RCT preliminar (n=28, NCT07381504) en niños con TEA: ejercicio aeróbico por intervalos + educación conductual a los padres mejora la eficiencia del sueño (g=0.89, p=0.026) y reduce respuestas perseverativas de atención frente a solo educación conductual.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: con TDAH/TEA como pilar de Javier, este hallazgo (piloto, muestra chica) puede anclar un tema de contenido sobre manejo no farmacológico del sueño en TEA, y vale la pena seguir el registro NCT07381504 para el ensayo confirmatorio con muestra mayor.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/aur.70361" target="_blank" rel="noopener">↗ doi.org/10.1002/aur.70361</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 30 ago 2026 (online ahead of print) · meta-analysis · 2026-08-30</div>
+          <div class="r10-title">Antidepressant effects of facial botulinum toxin a injections: Insights from randomized controlled trials</div>
+          <div class="r10-line">SR+MA (PROSPERO CRD420261277524) de 8 RCTs (n=636) halla que la inyección facial de toxina botulínica A reduce síntomas depresivos (SMD=-0.81) con eficacia comparable a sertralina (SMD=-0.23) y sin efectos sistémicos relevantes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto se viraliza en redes de estética mezclado con psiquiatría: buen gancho de contenido IG/YT para Javier (&#39;el botox como antidepresivo, qué dice la evidencia real&#39;) y aporta a su interés en alternativas no clásicas dentro de la psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122443" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122443</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Child and Family Psychology Review, 29 ago 2026 (online ahead of print) · meta-analysis · 2026-08-29</div>
+          <div class="r10-title">Kids These Days! A Cross-Temporal Meta-Analysis of Changes in Emotional and Behavioral Problems of Population-Based Samples Over the Past Decades</div>
+          <div class="r10-line">Meta-análisis transtemporal masivo (k=175 estudios, N=418,528 jóvenes, 1981-2019, Child Behavior Checklist) no halla aumento global del malestar emocional/conductual juvenil en 4 décadas, solo cambios de composición por dominio (menos externalizante, más ansiedad/depresión adolescente según padres); no incluye el periodo post-COVID.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: munición directa para el libro de psicopatología dimensional de Javier — desmonta con datos duros la narrativa de &#39;crisis de salud mental juvenil sin precedentes&#39;, ideal para un hilo o capítulo que contraste percepción vs. evidencia, aclarando siempre el vacío post-COVID.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10567-026-00574-6" target="_blank" rel="noopener">↗ doi.org/10.1007/s10567-026-00574-6</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry, 29 ago 2026 (online ahead of print) · review · 2026-08-29</div>
+          <div class="r10-title">Spatial lipidomics of the human brain: systematic review of current state and future perspectives</div>
+          <div class="r10-line">Revisión sistemática de 34 estudios de espectrometría de masas por imagen mapea perfiles lipídicos espaciales en cerebro humano (Alzheimer, esquizofrenia, esclerosis múltiple), identificando heterogeneidad metodológica que aún limita su aplicación clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto alimenta la línea de psiquiatría de precisión de Javier como &#39;estado del arte&#39; de biomarcadores emergentes — más como radar de investigación (posible cita en trabajo propio) que como contenido inmediato, dado lo técnico y preliminar del campo.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03793-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03793-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Psychiatry and Clinical Neuroscience, 29 ago 2026 (online ahead of print) · paper · 2026-08-29</div>
+          <div class="r10-title">Association between antidepressant use and the risk of type 2 diabetes: a multi-stage Mendelian randomization study</div>
+          <div class="r10-line">Estudio de aleatorización mendeliana en datasets GWAS de gran tamaño halla asociación causal modesta entre uso genético de citalopram (OR 1.05, IC 95%: 1.01-1.09) y sertralina (OR 1.02, IC 95%: 1.01-1.04) con mayor riesgo de diabetes tipo 2.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato de bajo impacto absoluto pero alto valor para la línea de psiquiatría de precisión farmacológica de Javier — útil como perla clínica en AMAUTA sobre monitoreo metabólico diferenciado por molécula de ISRS, no solo por clase de fármaco.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02369-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02369-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychology, 29 ago 2026 (online ahead of print) · rct · 2026-08-29</div>
+          <div class="r10-title">The Impact of Mindfulness as a Session-Introduction on Symptoms and Alliance in Individual Cognitive-Behavioral Therapy With Children and Adolescents: A Randomized Controlled Trial</div>
+          <div class="r10-line">RCT registrado (NCT04034576) en psicoterapia ambulatoria infanto-juvenil (11-19 años, TCC individual) halla que introducir mindfulness al inicio de cada sesión mejora la alianza terapéutica percibida por el paciente y reduce síntomas frente a no usar introducción estructurada, sin superar a la relajación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usarlo en AMAUTA/USAMEDIC como ejemplo práctico y de bajo costo para mejorar la alianza terapéutica en TCC con adolescentes, con la cautela de que no superó al grupo de relajación.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jclp.70216" target="_blank" rel="noopener">↗ doi.org/10.1002/jclp.70216</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Autism and Developmental Disorders, 28 ago 2026 (online ahead of print) · review · 2026-08-28</div>
+          <div class="r10-title">Use of Electroconvulsive Therapy for Catatonia in Down Syndrome Regression Disorder: A Systematic Review, Case Series, and Analysis</div>
+          <div class="r10-line">Análisis combinado (serie de 5 casos de Vanderbilt + revisión sistemática de 22 pacientes adicionales, total 27) muestra reducción significativa de catatonia (escala BFCRS, β=-13.00, p&lt;0.001) con TEC en trastorno de regresión de síndrome de Down, sin eventos adversos severos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: nicho pero potente cruce de dos líneas de Javier (neuromodulación + neurodivergencia) — buen material para un caso clínico ilustrativo en su libro de psicopatología o para AMAUTA sobre indicaciones poco conocidas de TEC en discapacidad intelectual.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10803-026-07500-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s10803-026-07500-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Social Psychiatry, 28 ago 2026 (online ahead of print) · meta-analysis · 2026-08-28</div>
+          <div class="r10-title">Parental Problematic Alcohol Use (PPAU): A Burden for Life?-Exposure to PPAU and Anxiety and Depression in Adulthood: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">SR+MA de 29 estudios halla que la exposición infantil al consumo problemático de alcohol de los padres se asocia a 73% más riesgo de ansiedad (SMD=0.37) y 65% más riesgo de depresión (SMD=0.29) en la adultez.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto es más una perla de tamizaje clínico que un tema de contenido viral: útil para que Javier lo mencione al enseñar anamnesis de adversidad temprana de cara al ENAM/Residentado, como factor de riesgo ahora cuantificado.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/00207640261478546" target="_blank" rel="noopener">↗ doi.org/10.1177/00207640261478546</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El neurofeedback por fMRI para atención, pese al marketing de clínicas privadas, no muestra superioridad sobre control en el meta-análisis más reciente (SMD 0.17, IC amplio) — costo alto no es sinónimo de evidencia alta.</li><li>En la NMA de depresión posparto, ningún fármaco superó al placebo de forma robusta para tratamiento activo; trazodona y difenhidramina solo mostraron señal en prevención, con intervalos creíbles muy amplios — cautela antes de extrapolar a la práctica.</li><li>El botox facial (toxina botulínica A) tuvo eficacia antidepresiva comparable a sertralina en un meta-análisis de 8 RCTs (SMD -0.81) — un mecanismo no farmacológico central (hipótesis de feedback facial) que sigue sin explicación definitiva.</li><li>El malestar emocional/conductual juvenil global NO ha aumentado en 40 años según el meta-análisis transtemporal más grande hasta la fecha (N=418,528) — lo que cambió fue la composición por dominio, no la magnitud total (y el estudio no cubre el post-COVID).</li><li>La exposición a consumo problemático de alcohol parental en la infancia eleva 73% el riesgo de ansiedad adulta — un dato de anamnesis que rara vez se pregunta explícitamente en consulta.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos dejar de recomendar neurofeedback por fMRI para TDAH fuera de contextos de investigación, dado que el meta-análisis más reciente no muestra superioridad sobre control?</li><li>Si el botox facial iguala a sertralina en depresión leve-moderada según este meta-análisis, ¿qué lugar debería ocupar en un algoritmo de tratamiento para pacientes intolerantes a ISRS?</li><li>¿Cómo deberíamos ajustar la elección de ISRS si citalopram y sertralina muestran señales causales (aunque modestas) de mayor riesgo de diabetes tipo 2 en este estudio de aleatorización mendeliana?</li><li>¿Qué implica para la narrativa de &#39;crisis de salud mental juvenil&#39; que el malestar global no haya aumentado en 40 años, solo su composición por dominio?</li><li>¿Está lista la retina como biomarcador objetivo en trastornos del ánimo para uso clínico diferencial (unipolar vs. bipolar), o seguimos en fase de investigación?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/reel IG/YT: &#39;Botox como antidepresivo — qué dice la evidencia real&#39;, usando el meta-análisis de 8 RCTs (SMD -0.81) para separar el titular viral del dato clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Hilo o sección para el libro de psicopatología para el mundo comparando el mito de la &#39;crisis de salud mental juvenil sin precedentes&#39; contra el meta-análisis transtemporal de 418,528 jóvenes.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o pasaje en BMSE sobre biomarcadores objetivos emergentes en psiquiatría dimensional (ERG retiniano, lipidómica espacial) como ejemplo de outcomes más allá de la escala clínica.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o carta breve (paper) sobre la necesidad de monitoreo metabólico diferenciado por molécula de ISRS, a partir del estudio de aleatorización mendeliana citalopram/sertralina-T2D.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre lectura crítica de NMA bayesianas (intervalos creíbles, ranking de tratamientos) usando el caso de depresión posparto como ejercicio práctico para ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Affective Disorders</span><span class="tag highlight">The British Journal of Psychiatry</span><span class="tag ">Clinical Psychopharmacology and Neuroscience</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Autism Research</span><span class="tag ">Journal of Autism and Developmental Disorders</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Journal of Clinical Psychology</span><span class="tag ">International Journal of Social Psychiatry</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI E-utilities (esearch+esummary+efetch, date_from=2026-08-28, date_to=2026-08-31, datetype=pdat) · WebSearch (medRxiv/PsyArXiv, verificación cruzada). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 31 de agosto de 2026.</div>
+</div>
+</body>
+</html>
