@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-08-31 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">31 de agosto de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">83</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">68</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Diagnosis (Berlin, Germany), 27 ago 2026 · rct · 2026-08-27</div>
+        <h3 class="r3-title">Effects of case revisitation during deliberate reflection on medical students&#39; diagnostic accuracy: a randomized experiment</h3>
+        <p class="r3-hook">Un experimento aleatorizado con 67 estudiantes brasileños encontró que revisar un caso 15 días después SIN volver a leer la descripción original mejora la retención del diagnóstico ya estudiado, pero revisarlo CON acceso al caso original mejora la transferencia a enfermedades adyacentes nuevas. Para AMAUTA/USAMEDIC esto es oro directo: el diseño del banco de preguntas y de los repasos de ENAM/Residentado debería diferenciar explícitamente &#39;sesiones de retención&#39; (sin material) de &#39;sesiones de transferencia&#39; (con material), en vez de tratar todo repaso como equivalente. Úsalo para argumentar (con dato, no intuición) un rediseño de la cadencia de repaso espaciado en el Competency Lab.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0061" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0061</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">International Journal of Emergency Medicine, 25 ago 2026 · paper · 2026-08-25</div>
+        <h3 class="r3-title">Cognitive strategies in the Emergency Medical Services: proposal for a conceptual integrated framework to explicate clinical reasoning in EMS</h3>
+        <p class="r3-hook">Propone integrar el modelo operacional SPART (qué hace el proveedor de EMS) con la Teoría de Doble Proceso y un tercer sistema supervisor metacognitivo (&#39;System 3&#39;) que decide cuándo cambiar entre pensamiento intuitivo y analítico. Es exactamente el tipo de armazón formal que tu línea de razonamiento clínico y tu libro de razonamiento dimensional (BMSE) necesitan: no basta con nombrar Sistema 1/2, hace falta un mecanismo explícito de supervisión que puedas enseñar y evaluar en el Competency Lab. Es transferible casi 1:1 a guardias de psiquiatría de urgencias, donde la presión temporal y la incertidumbre diagnóstica son análogas a EMS.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12245-026-01355-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12245-026-01355-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">NEJM Evidence, publicado online 25 ago 2026 (número de sep 2026) · paper · 2026-08-25</div>
+        <h3 class="r3-title">A 6-Month-Old Infant with Episodes of Unresponsiveness (Morning Report)</h3>
+        <p class="r3-hook">La nueva sección &#39;Morning Report&#39; de NEJM Evidence reconstruye el razonamiento clínico en vivo: presenta el caso, invita a construir un illness script y refina el diferencial a medida que llega nueva información, igual que un residente pensando en voz alta. Es el formato que puedes clonar para contenido IG/YouTube de AMAUTA: casos reales (anonimizados, vía comité HVLH) donde el espectador construye el illness script contigo antes de revelar el diagnóstico. También es un modelo de prosa para los casos clínicos de tu libro de psicopatología para el mundo — mostrar el proceso, no solo el resultado.</p>
+        <a class="r3-link" href="https://doi.org/10.1056/EVIDmr2500143" target="_blank" rel="noopener">↗ doi.org/10.1056/EVIDmr2500143</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Dermatology, 26 ago 2026 · editorial · 2026-08-26</div>
+          <div class="r10-title">Does Artificial Intelligence Make Dermatologists Less Intelligent?</div>
+          <div class="r10-line">Comentario (sin datos propios) que advierte sobre cognitive offloading y automation bias por uso de IA, sobre todo en formación — encaja directo con tu pilar ai-enhancement.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En 6-12 meses vas a ver el primer estudio empírico que mida cognitive offloading en residentes de psiquiatría con uso de IA diagnóstica; esta pieza de opinión es la que va a citarse como el planteamiento original del problema.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/ijd.70647" target="_blank" rel="noopener">↗ doi.org/10.1111/ijd.70647</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Health Science Reports, 27 ago 2026 · review · 2026-08-27</div>
+          <div class="r10-title">Beyond the Black Box: Is Artificial Intelligence Ready to Reshape Neurosurgical Decision-Making? A Narrative Review</div>
+          <div class="r10-line">Revisión narrativa: la IA en neurocirugía ya alcanza AUC&gt;0.90 en imagen diagnóstica, pero la falta de transparencia (&#39;black box&#39;) sigue frenando su adopción como algo más que herramienta &#39;aumentativa&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El framing &#39;IA aumentativa, no autónoma&#39; se va a volver el consenso estándar en cualquier especialidad de alto riesgo — útil como plantilla retórica para cómo posicionas la IA en tus propios talleres de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/hsr2.73117" target="_blank" rel="noopener">↗ doi.org/10.1002/hsr2.73117</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Updates in Surgery, 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Assessing the performance of three large language models in thyroid cancer tumour board decision-making</div>
+          <div class="r10-line">Compara tres LLMs contra decisiones reales de junta multidisciplinaria de cáncer de tiroides; mide dónde la IA converge y diverge del consenso humano en decisión terapéutica, no solo diagnóstica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vas a ver este tipo de comparación LLM-vs-junta replicarse en psiquiatría (p. ej. decisiones de neuromodulación o cambio de línea de tratamiento) dentro del próximo año.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s13304-026-02822-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s13304-026-02822-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Medical Ethics, 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Physicians&#39; perspectives on artificial intelligence in electrocardiography in clinical practice: a qualitative study</div>
+          <div class="r10-line">Estudio cualitativo: los médicos confían más en la IA cuando pueden entender su razonamiento (explicabilidad) que cuando esta simplemente reporta mayor precisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La explicabilidad, no la precisión bruta, va a ser el eje de venta de las próximas herramientas de IA clínica — un argumento que te sirve para tu propio discurso sobre IA en investigación/educación.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12910-026-01572-7" target="_blank" rel="noopener">↗ doi.org/10.1186/s12910-026-01572-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Heart Journal – Digital Health, ago 2026 · meta-analysis · 2026-08-01</div>
+          <div class="r10-title">Artificial intelligence-based ECG as a triage tool for acute myocardial infarction: a diagnostic systematic review and meta-analysis</div>
+          <div class="r10-line">Metaanálisis diagnóstico de IA-ECG como triaje de IAM: cuantifica sensibilidad/especificidad agregadas frente a la lectura convencional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los metaanálisis diagnósticos de IA-triaje se van a volver el estándar de evidencia exigido antes de integrar cualquier herramienta de cribado algorítmico en protocolos de urgencias, psiquiátricas incluidas (p. ej. cribado de riesgo suicida).</div>
+          <a class="r10-link" href="https://doi.org/10.1093/ehjdh/ztag075" target="_blank" rel="noopener">↗ doi.org/10.1093/ehjdh/ztag075</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Retina and Vitreous, 27 ago 2026 · paper · 2026-08-27</div>
+          <div class="r10-title">Misdiagnosis of uveal melanoma and other intraocular malignancies in enucleated eyes: a 28-year national review</div>
+          <div class="r10-line">Revisión nacional de 28 años: el error diagnóstico en entidades raras (melanoma uveal) persiste pese al volumen acumulado de casos — el error de baja frecuencia no se &#39;entrena&#39; con exposición general.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a alimentar el argumento de que la formación en &#39;red flags&#39; de baja frecuencia necesita práctica deliberada específica, no solo volumen clínico — aplicable a tu discurso sobre entidades psiquiátricas infrecuentes (p. ej. catatonia, síndromes genéticos con fenotipo psiquiátrico).</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40942-026-00927-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s40942-026-00927-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Imaging Informatics in Medicine, 26 ago 2026 · paper · 2026-08-26</div>
+          <div class="r10-title">Do Accuracy Gains Reflect Genuine Visual Understanding? A Multi-Model Evaluation of Vision-Language Models in Thoracic Imaging</div>
+          <div class="r10-line">Evalúa si las ganancias de precisión de modelos visión-lenguaje en radiografía de tórax reflejan comprensión visual real o atajos estadísticos — pregunta de validez, no solo de accuracy.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esta pregunta (&#39;¿la IA realmente entiende o solo atina?&#39;) se va a trasladar directo al debate sobre IA en reconocimiento de patrones psicopatológicos (p. ej. análisis de voz/video en depresión) en los próximos 12-18 meses.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10278-026-02217-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s10278-026-02217-2</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La &#39;dificultad deseable&#39; en el repaso no es universal: revisar sin material ayuda a retener lo ya visto, pero revisar CON material ayuda a transferir a casos nuevos — el objetivo del repaso (retener vs. transferir) debería decidir el formato, no al revés (42644626).</li><li>Enseñar Sistema 1/2 sin enseñar el &#39;System 3&#39; metacognitivo que decide CUÁNDO cambiar de sistema deja la mitad del trabajo sin hacer — el debiasing real vive en la supervisión, no en nombrar el sesgo (42642726).</li><li>El riesgo de la IA en el razonamiento clínico no es que reemplace el juicio: es el cognitive offloading silencioso del residente que deja de ejercitar el reconocimiento de patrones porque el modelo ya se lo da resuelto (42649567).</li><li>28 años de datos nacionales no eliminan el error diagnóstico en entidades raras — el volumen de exposición general no sustituye la práctica deliberada en &#39;red flags&#39; de baja frecuencia (42665844).</li><li>Los médicos confían más en la IA cuando pueden seguir su razonamiento que cuando esta reporta mejor precisión estadística — la confianza clínica es epistemológica antes que numérica (42649493).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cómo rediseñar los repasos de AMAUTA/USAMEDIC para separar explícitamente sesiones de retención (sin material) de sesiones de transferencia (con material), según el hallazgo de revisitación de casos?</li><li>¿El armazón SPART + Doble Proceso + System 3 metacognitivo de EMS es adaptable como estructura formal para enseñar razonamiento en guardias de psiquiatría de urgencias?</li><li>¿Qué heurísticas está perdiendo (sin notarlo) el residente que delega a la IA cada diferencial, y cómo lo mides en el Competency Lab?</li><li>¿Se puede construir un &#39;Morning Report&#39; en video, estilo NEJM Evidence, con casos reales de HVLH que pase el filtro ético de confidencialidad?</li><li>¿Qué tan generalizable es el hallazgo de deliberate reflection (n=67, Brasil) a residentes peruanos con currícula y carga horaria distintas — vale la pena replicarlo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie IG/YouTube &#39;Morning Report&#39; con casos reales de psiquiatría: el espectador construye el illness script en vivo antes de revelar el diagnóstico, clonando el formato de NEJM Evidence.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio: replicar el diseño de revisitación de casos en deliberate reflection (42644626) con residentes peruanos preparando ENAM/Residentado, midiendo retención vs. transferencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo explicando el &#39;System 3&#39; metacognitivo del paper de EMS aplicado a decisiones psiquiátricas bajo presión de guardia.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección en el libro de razonamiento dimensional (BMSE) sobre cognitive offloading e IA como &#39;socio cognitivo&#39; — no reemplazo — del razonamiento clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Encuesta/debate para AMAUTA: &#39;¿la IA te hace mejor o más flojo diagnosticando?&#39;, apoyada en el comentario de dermatología sobre automation bias.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Diagnosis (Berlin, Germany)</span><span class="tag ">International Journal of Emergency Medicine</span><span class="tag highlight">NEJM Evidence</span><span class="tag ">International Journal of Dermatology</span><span class="tag ">Health Science Reports</span><span class="tag ">Updates in Surgery</span><span class="tag ">BMC Medical Ethics</span><span class="tag ">European Heart Journal – Digital Health</span><span class="tag ">International Journal of Retina and Vitreous</span><span class="tag ">Journal of Imaging Informatics in Medicine</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch) · medRxiv/bioRxiv API · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 31 de agosto de 2026.</div>
+</div>
+</body>
+</html>
