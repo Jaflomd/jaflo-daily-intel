@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-01 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">1 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">210</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">PsyArXiv (preprint) · 2026-08-31 · preprint</div>
+        <h3 class="r3-title">Repensando las diferencias grupales en redes de psicopatología: una perspectiva lenta-rápida sobre contexto y activación de síntomas</h3>
+        <p class="r3-hook">Park, Denny Borsboom (el fundador de network theory) y equipo (Lees, Elsenburg, Lunansky, Stronks, Bollen, Nicolaou, Vasconcelos) usan una cohorte de 23,689 adultos de Ámsterdam para atacar un problema metodológico central de tu línea de network psychopathology: cuando comparas redes de síntomas depresivos entre grupos con distinto nivel socioeconómico y un Network Comparison Test estándar no encuentra diferencia en la ESTRUCTURA de la red, eso NO significa que los sistemas de síntomas sean iguales — solo significa que no se detectó diferencia en cómo interactúan los síntomas entre sí. Con modelos Ising separan esa interacción de la ACTIVACIÓN de cada síntoma (qué tan fácil es que aparezca dado el contexto), y muestran que el grupo con más carga socioeconómica/psicosocial persistente (&#39;Slow Risk Load&#39;) tiene activación más alta en 8 de 9 síntomas del PHQ-9 aunque la red de interacciones se vea casi igual entre grupos. Para tu libro esto es un correctivo metodológico directo: es exactamente el tipo de interpretación superficial (&#39;no hay diferencia de red → los grupos son psicopatológicamente equivalentes&#39;) que circula en la literatura de network analysis, y te da un marco (rápido = síntomas, lento = contexto persistente) para el capítulo de metodología de network psychopathology y para enseñar en AMAUTA lectura crítica de estudios de comparación de redes.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/u8wf5_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/u8wf5_v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">medRxiv (preprint) · 2026-08-31 · preprint</div>
+        <h3 class="r3-title">Análisis de aprendizaje automático del fenotipo autista respalda un continuo de cuatro dimensiones con tres subtipos superpuestos</h3>
+        <p class="r3-hook">Quigley, Gardiner, McDaid y O&#39;Donnell (Ulster University) analizan el dataset fenotípico SPARK completo (n=36,710 personas autistas: historia médica, SCQ, RBS-R) comparando factor analysis clásico, modelos de mezcla gaussiana y un Variational Autoencoder (VAE, red neuronal generativa) para modelar la estructura del autismo — el VAE reconstruye datos no vistos con ~4 veces mejor precisión que factor analysis y ~8 veces mejor que Gaussian Mixture Models. El resultado: 4 dimensiones latentes estables (visualizables como perfil tipo radar-plot por persona) y, dentro de ese espacio 4D, 3 subtipos que se superponen — ni categorías discretas puras ni continuo unidimensional puro, sino ambas cosas a la vez, con implicaciones directas para diagnóstico personalizado. Esto pega directo en tu línea TEA/neurodivergencia y en tu pilar de IA aplicada a investigación: es un caso de manual de cómo un método de deep learning supera a la psicometría clásica para capturar heterogeneidad dimensional en una muestra masiva, y el hallazgo &#39;continuo Y subtipos a la vez&#39; es justo lo que necesitas citar cuando te pregunten si el autismo &#39;es dimensional o categorial&#39; — la evidencia más reciente dice que no es una cosa u otra.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.08.27.26361561" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.27.26361561</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">CNS Neuroscience &amp; Therapeutics · 2026-09-01 · paper</div>
+        <h3 class="r3-title">Decodificando subtipos transdiagnósticos en trastornos emocionales</h3>
+        <p class="r3-hook">Wu, Wang, Teng, Lu y equipo toman conectividad funcional en reposo de 261 pacientes con trastornos emocionales (ansiedad, depresión mayor, TEPT) y 201 controles sanos, y usan factorización de matrices no-negativas (NMF) para descomponer la heterogeneidad en 5 redes funcionales representativas que definen 5 subtipos clínicos con perfiles distintos — desde uno de &#39;ansiedad/depresión mixta con vigilancia somática&#39; (ligado a conexión sensoriomotor-atención dorsal) hasta uno &#39;centrado en ansiedad&#39; con firma de default mode network. Es exactamente el tipo de validación empírica transdiagnóstica-con-neuroimagen que necesitas para el libro: biomarcadores de conectividad que cruzan las fronteras categoriales ansiedad/depresión/TEPT, que los propios autores enmarcan como &#39;biomarcadores transdiagnósticos críticos para psiquiatría de precisión&#39; — directo para tu pilar de precision-psychiatry y como contraste con el enfoque puramente categorial que todavía domina el DSM en estos tres diagnósticos.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/cns.71122" target="_blank" rel="noopener">↗ doi.org/10.1002/cns.71122</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain and Behavior · 2026-09-01 · review</div>
+          <div class="r10-title">Aburrimiento en los trastornos psiquiátricos: ¿otro constructo dimensional?</div>
+          <div class="r10-line">Gurrieri, Gambini, Sità, Pescini y equipo sintetizan evidencia neurofisiológica, de neuroimagen y clínica mostrando que el aburrimiento patológico (desregulación atencional/motivacional, con firma de default mode network y alfa EEG elevado) cruza categorías diagnósticas — TDAH, trastornos del ánimo, espectro autista — y proponen tratarlo como constructo dimensional propio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: candidato natural para una sección corta del libro sobre &#39;síntomas transdiagnósticos poco estudiados&#39; — el aburrimiento patológico en TDAH es un ángulo de contenido casi virgen que puedes ocupar en IG/YT antes que otros divulgadores en español.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/brb3.71718" target="_blank" rel="noopener">↗ doi.org/10.1002/brb3.71718</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Comprehensive Psychiatry · 2026-08-27 · paper</div>
+          <div class="r10-title">Lentitud obsesiva como fenómeno transdiagnóstico: correlatos clínicos en TOC y trastornos de ansiedad</div>
+          <div class="r10-line">Sousa de Oliveira, de Menezes y Fontenelle muestran en 80 pacientes (TOC n=50, ansiedad social n=30) que el diagnóstico categorial de TOC NO predijo la severidad de lentitud obsesiva — sí lo hicieron signos catatónicos &#39;blandos&#39; y rasgos de perfeccionismo (PID-5), replicando casi al pie de la letra el patrón de ayer (Kim et al., síntomas somáticos): la dimensión gana a la categoría.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dos días seguidos con el mismo patrón (&#39;la dimensión gana a la categoría&#39;) empiezan a formar una serie que puedes usar como hilo conductor recurrente del libro — vale la pena abrir un documento donde acumules estos casos a medida que aparecen.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.comppsych.2026.152743" target="_blank" rel="noopener">↗ doi.org/10.1016/j.comppsych.2026.152743</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · 2026-08-31 · preprint</div>
+          <div class="r10-title">Hacia la personalización de una intervención digital para uso de cannabis y atracones concurrentes: un análisis de red idiográfico</div>
+          <div class="r10-line">Lampe, Ghosh, Kaveladze, Borodovsky, Budney y Jacobson comparan redes de síntomas idiográficas (por persona) contra un modelo nomotético (de grupo) en 30 adultos con uso de cannabis y atracones concurrentes, con seguimiento ecológico momentáneo de 28 días: el modelo idiográfico ajustó mejor los datos de cada persona (n=29 evaluables) que el modelo grupal, con correspondencia promedio casi nula entre las vías idiográficas y la nomotética (r=.06).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: munición para argumentar en AMAUTA que &#39;la red promedio del grupo&#39; no basta para decisiones clínicas individuales — apunta hacia intervenciones just-in-time personalizadas como siguiente paso lógico de una psiquiatría de precisión basada en redes.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/pge27_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/pge27_v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Structure and Function · 2026-08-29 · paper</div>
+          <div class="r10-title">Alteraciones estructurales en la corteza auditiva temprana en trastorno límite de la personalidad con alucinaciones auditivas verbales</div>
+          <div class="r10-line">Prieult, Otte, Schmitgen, Koc y equipo encuentran diferencias estructurales (grosor cortical, giro, volumen de sustancia gris) en regiones frontotemporales de procesamiento auditivo entre pacientes con TLP con y sin historia de alucinaciones auditivas verbales (n=20 vs 27) frente a controles sanos — evidencia de que el espectro de psicoticismo/thought disorder tiene un correlato estructural que cruza la frontera categorial esquizofrenia-TLP.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: espera más estudios de &#39;alucinaciones auditivas transdiagnósticas&#39; en los próximos meses — encaja directo en el spectrum de psicoticismo de HiTOP y es útil para tu línea de razonamiento clínico cuando un paciente con TLP reporta voces y el residente asume automáticamente diagnóstico diferencial de esquizofrenia.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00429-026-03162-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s00429-026-03162-0</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un test de comparación de redes que no encuentra diferencia estructural entre grupos NO significa que sus sistemas de síntomas sean iguales — la interacción entre síntomas puede ser idéntica mientras la facilidad de activación de cada síntoma es muy distinta según el contexto socioeconómico (Park, Borsboom et al., n=23,689).</li><li>El autismo, modelado con un autoencoder variacional sobre 36,710 personas, no es &#39;continuo&#39; NI &#39;categorial&#39; — es un espacio de 4 dimensiones estables dentro del cual existen 3 subtipos que se superponen, con un método de deep learning que superó 4-8x a la psicometría clásica en reconstruir la estructura (Quigley et al.).</li><li>La lentitud obsesiva no la predice el diagnóstico de TOC — la predicen signos catatónicos &#39;blandos&#39; y rasgos de perfeccionismo, el mismo patrón de &#39;la dimensión gana a la categoría&#39; que se repitió por segundo día consecutivo en este dominio (Sousa de Oliveira et al.).</li><li>En un ensayo piloto de cannabis + atracones, el modelo de red específico de cada persona (idiográfico) ajustó mejor que el modelo promedio de grupo para los 29 participantes analizables — la correspondencia entre las vías idiográficas y la vía &#39;típica&#39; del grupo fue casi nula (r=.06) (Lampe et al.).</li><li>Las alucinaciones auditivas verbales tienen una firma estructural en la corteza auditiva que aparece en TLP, no solo en esquizofrenia — otro dato de que el espectro de psicoticismo de HiTOP cruza fronteras diagnósticas que la práctica clínica todavía trata como límites duros (Prieult et al.).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si un network comparison test no detecta diferencia de estructura entre dos grupos de pacientes, ¿cuántas veces lo has interpretado (o visto interpretarlo) como &#39;los grupos son psicopatológicamente equivalentes&#39; sin preguntarte si lo que realmente cambia con el contexto es la activación de los síntomas, no su interacción?</li><li>Si el autismo se modela mejor como 4 dimensiones con 3 subtipos superpuestos que como una sola cosa continua o categorial, ¿qué implicaría eso para cómo comunicas el diagnóstico a familias que llegan pidiendo un &#39;sí o no&#39; binario?</li><li>¿Cuántos pacientes con TOC en tu consulta tienen lentitud obsesiva marcada que atribuyes automáticamente a la severidad del TOC, cuando la evidencia más reciente sugiere mirar signos catatónicos blandos y perfeccionismo como predictores independientes?</li><li>Si el modelo de red idiográfico de un paciente casi no se parece al modelo promedio del grupo (r=.06 de correspondencia), ¿qué tan defendible es seguir diseñando intervenciones transdiagnósticas basadas en redes de grupo en lugar de invertir en evaluación momentánea individualizada, al menos en tus pacientes con comorbilidad más compleja?</li><li>La próxima vez que un paciente con TLP reporte escuchar voces, ¿tu primer reflejo es descartar psicosis franca, o consideras que el espectro de psicoticismo dimensional predice que esto puede compartir el mismo sustrato estructural que en esquizofrenia sin que el paciente esté &#39;cambiando de diagnóstico&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel: &#39;Comparar redes de síntomas entre grupos y no encontrar diferencia NO significa lo que crees&#39; — usando el marco lento-rápido de Park y Borsboom como gancho metodológico contraintuitivo para tu audiencia de investigadores en formación.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro (capítulo de metodología de network psychopathology) que use el estudio de Park/Borsboom como caso ancla para enseñar la diferencia entre &#39;interacción entre síntomas&#39; y &#39;activación de síntomas&#39; en modelos Ising, con el dato exacto (8 de 9 síntomas del PHQ-9 con activación diferencial por Slow Risk Load).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video para AMAUTA/USAMEDIC: &#39;Un autoencoder venció a la psicometría clásica prediciendo la estructura del autismo&#39; — usa el estudio de Quigley et al. (VAE vs. factor analysis vs. Gaussian Mixture Models, n=36,710) como caso didáctico de IA aplicada a investigación en psicopatología dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o carta breve reaccionando al hallazgo de lentitud obsesiva transdiagnóstica (Sousa de Oliveira et al.), conectándolo con el patrón ya visto ayer en síntomas somáticos (Kim et al.) — plantear si vale la pena documentar formalmente esta serie de &#39;la dimensión gana a la categoría&#39; que se está acumulando semana a semana en el dominio.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Caso clínico/contenido para USAMEDIC/ENAM: paciente con TLP que reporta alucinaciones auditivas verbales, usando el hallazgo estructural de Prieult et al. para enseñar que el espectro de psicoticismo dimensional (HiTOP) predice hallazgos compartidos entre TLP y esquizofrenia, en vez de forzar un diagnóstico diferencial categorial rígido.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">PsyArXiv</span><span class="tag ">medRxiv</span><span class="tag ">CNS Neuroscience &amp; Therapeutics</span><span class="tag ">Brain and Behavior</span><span class="tag ">Comprehensive Psychiatry</span><span class="tag ">Brain Structure and Function</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch directo): dos búsquedas por datetype=pdat (2026-08-29 a 2026-09-01, terminos HiTOP/RDoC/transdiagnostic/p-factor/bifactor/network psychopathology + network analysis/computational psychiatry/staging/specifier/biotype) que devolvieron 67 y 18 IDs, más dos búsquedas por datetype=edat (fecha real de entrada a PubMed, mismo rango) que devolvieron 100 y 21 IDs — en total ~90 PMIDs únicos cribados por título; DOIs verificados cruzando cada candidato fuerte contra Europe PMC (varios DOI de PubMed esummary/efetch resultaron incorrectos/desalineados y se corrigieron con la fuente cruzada, p. ej. PMID 42644771, 42014469, 42246963, 41308733) · Filtro de recencia real: se descartaron ~10 candidatos con término HiTOP/RDoC/transdiagnostic en título/abstract cuya firstPublicationDate real (Europe PMC) resultó ser de mayo-julio 2026 o antes, aunque PubMed los indexara recién ahora bajo pdat=septiembre 2026 (retraso de asignación a número impreso) — se prioriza fecha real de aparición sobre fecha de edición · medRxiv API (colección completa 2026-08-27 a 2026-09-01, 312 preprints escaneados, 21 en categoría psychiatry-and-clinical-psychology revisados en detalle) · OSF/PsyArXiv API (100 preprints más recientes desde 2026-08-27 escaneados por keyword HiTOP/RDoC/transdiagnostic/dimensional/autism/ADHD/neurodivergence; 2 candidatos fuertes con detalle de contribuidores verificado vía API de contributors, incluyendo autoría de Denny Borsboom) · Consensus MCP: 20 resultados relevantes a HiTOP/RDoC recuperados, pero todos verificados vía Crossref con fecha real de publicación entre mayo y junio 2026 — descartados por estar fuera de la ventana de 48-72h (probable número temático de Journal of Psychopathology and Clinical Science ya cubierto en semanas previas) · WebSearch sobre Reddit (r/psychiatry, r/clinicalpsychology) y figuras clave (Borsboom, Kotov, Krueger) para agosto 2026: sin resultados verificables dentro de la ventana; acceso directo a Reddit bloqueado (HTTP 403) y PubMed web bloqueado por verificación de cookies, por lo que la señal social/X para hoy no pudo confirmarse y se excluye en vez de arriesgar fabricación. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 1 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
