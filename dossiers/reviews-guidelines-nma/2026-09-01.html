@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-01 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">1 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">130</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">130</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">American Journal of Psychiatry · 2026-09-01 · review</div>
+        <h3 class="r3-title">New Horizons in the Development of Treatments for Substance Use Disorders</h3>
+        <p class="r3-hook">Revisión-guía en el American Journal of Psychiatry (Mariani &amp; Levin, Columbia/NYSPI) que mapea las brechas terapéuticas en trastornos por uso de sustancias: hay fármacos aprobados por la FDA para alcohol, nicotina y opioides, pero ninguno para cannabis, cocaína o metanfetamina, y los tratamientos conductuales siguen limitados en efectividad y acceso. Para tu línea de adicciones y tu trabajo en comités de ética (HVLH) es una hoja de ruta útil: el vacío farmacológico en estimulantes es justo donde nuevas moléculas, tecnologías digitales y modelos de entrega de tratamiento están emergiendo. Para AMAUTA/USAMEDIC es material de referencia de máxima autoridad -AJP- para actualizar el módulo de adicciones con el estado real, no el mediático, de la farmacoterapia. Y para contenido IG/YT es un ángulo directo: por qué todavía no hay una &#39;pastilla para la cocaína&#39;, explicado desde la revista más prestigiosa de psiquiatría.</p>
+        <a class="r3-link" href="https://doi.org/10.1176/appi.ajp.20260362" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.ajp.20260362</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychogeriatrics · 2026-09 · review · 2026-09-01</div>
+        <h3 class="r3-title">Toward Precision Neuropsychiatry of Dementia: Neuropsychiatric Symptoms as Multidimensional Clinical Phenotypes</h3>
+        <p class="r3-hook">Revisión que propone un marco de &#39;neuropsiquiatría de precisión&#39; para reencuadrar los síntomas neuropsiquiátricos de la demencia (apatía, agitación, psicosis, depresión, sueño) no como complicaciones conductuales secundarias sino como fenotipos clínicos multidimensionales que cruzan neurodegeneración, envejecimiento biológico, redes cerebrales, contexto psicosocial y carga del cuidador. Es la pieza más alineada del dossier de hoy con tu propio proyecto: estratificar por biología, función y contexto en lugar de por etiqueta sintomática es el mismo argumento dimensional (HiTOP/RDoC) que sostienes para tu libro de psicopatología para el mundo, aplicado aquí a la interfaz neurología-psiquiatría que define el foco secundario de este dominio. Para AMAUTA/USAMEDIC es un modelo listo para enseñar cómo un mismo síntoma -agitación, por ejemplo- puede tener mecanismos completamente distintos según el paciente, y es referencia directa si terminas escribiendo el capítulo de demencias de tu libro.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/psyg.70209" target="_blank" rel="noopener">↗ doi.org/10.1111/psyg.70209</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Movement Disorders Clinical Practice · 2026-09-01 · review</div>
+        <h3 class="r3-title">Lower Urinary Tract Symptoms as Diagnostic Clues in Parkinsonism: A Practical Framework for Neurologists</h3>
+        <p class="r3-hook">Revisión narrativa dirigida a neurólogos que reencuadra los síntomas del tracto urinario inferior (LUTS) como pistas diagnósticas -no solo comorbilidad- en el espectro parkinsoniano: retención urinaria temprana sugiere atrofia multisistémica, la nocturia en Parkinson es multifactorial, y advierte que los antimuscarínicos usados para tratarla cargan riesgo compuesto de deterioro cognitivo, delirium y caídas en esta población. Para tu foco secundario de neuropsiquiatría es oro de interconsulta: el LUTS es justo el tipo de síntoma &#39;no psiquiátrico&#39; que termina en tu consulta cuando el antimuscarínico prescrito por otro especialista precipita un delirium o empeora la cognición de un paciente con parkinsonismo. Para AMAUTA/USAMEDIC es un caso claro de razonamiento clínico transdisciplinario, y para tu práctica es una alerta prescriptiva concreta para la próxima consulta por incontinencia en un paciente con Parkinson.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/mdc3.70780" target="_blank" rel="noopener">↗ doi.org/10.1002/mdc3.70780</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Sleep Medicine Reviews · 2026-08-27 · network-meta-analysis</div>
+        <h3 class="r3-title">Sleep-modulating pharmacological interventions for delirium prevention: a systematic review and a network meta-analysis of randomized controlled trials</h3>
+        <p class="r3-hook">Network meta-analysis (33 ensayos, 5045 pacientes) que compara intervenciones farmacológicas moduladoras del sueño para prevenir delirium: melatonina y agonistas de melatonina redujeron el riesgo (RR 0.77, IC95% 0.64-0.92), suvorexant también (RR 0.51), pero el midazolam-benzodiazepinas no mostró reducción significativa (RR 1.64) -certeza de evidencia baja a moderada-. Es el tipo de síntesis que necesitas para tu foco secundario de neuropsiquiatría: el delirium es terreno diario de interconsulta, y esta NMA da un ranking basado en evidencia para argumentar por qué priorizar melatonina/suvorexant sobre benzodiazepinas en profilaxis. Para AMAUTA/USAMEDIC es un ejemplo perfecto de cómo leer una NMA -SUCRA, certeza GRADE, comparaciones indirectas- con implicancia prescriptiva inmediata y contraintuitiva, porque el reflejo habitual de sedar es precisamente el que menos evidencia tiene a favor.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.smrv.2026.102365" target="_blank" rel="noopener">↗ doi.org/10.1016/j.smrv.2026.102365</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Medicine (Baltimore) · 2026-08-28 · network-meta-analysis</div>
+        <h3 class="r3-title">Effectiveness of different exercise therapies in patients with schizophrenia: A systematic review and network meta-analysis</h3>
+        <p class="r3-hook">Network meta-analysis (30 ECAs, 2628 pacientes, 9 tipos de ejercicio) que rankea terapias de ejercicio para esquizofrenia: ejercicio aeróbico combinado con tai chi redujo más los síntomas totales (SUCRA 88.2%), yoga fue superior para síntomas negativos y positivos, y tai chi para el funcionamiento. Publicada en una revista de tier modesto y con evidencia limitada por heterogeneidad y muestras pequeñas, pero es una síntesis real y accionable: el &#39;green prescription&#39; como coadyuvante en esquizofrenia ahora tiene un ranking comparativo, no solo la evidencia genérica de &#39;el ejercicio ayuda&#39;. Para AMAUTA/USAMEDIC sirve para enseñar intervenciones no farmacológicas en psicosis con jerarquía de evidencia, y para tu línea de contenido es un ángulo accesible -qué tipo específico de ejercicio, no solo &#39;haz ejercicio&#39;- para pacientes y cuidadores.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/MD.0000000000050203" target="_blank" rel="noopener">↗ doi.org/10.1097/MD.0000000000050203</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Epileptic Disorders · 2026-08-25 · network-meta-analysis</div>
+        <h3 class="r3-title">The effect of antiseizure medications on the exposure to combined oral contraceptives: A systematic review and network meta-analysis</h3>
+        <p class="r3-hook">Network meta-analysis (17 estudios, 399 personas, 15 antiepilépticos) que compara cuánto reduce cada fármaco la exposición a anticonceptivos orales combinados: brivaracetam redujo más el etinilestradiol que levetiracetam, y lamotrigina y topiramato en dosis bajas también mostraron efectos relevantes -las recomendaciones actuales podrían subestimar el riesgo con los anticonceptivos más nuevos-. Es directamente aplicable a tu prescripción: lamotrigina, topiramato y valproato son estabilizadores del ánimo de uso constante en mujeres en edad reproductiva, y esta NMA da una jerarquía de riesgo de falla anticonceptiva por fármaco que rara vez se discute con este nivel de detalle en psiquiatría. Para AMAUTA/USAMEDIC es un ejemplo poco explorado de psiquiatría de precisión aplicada a farmacocinética y género, útil para preguntas de manejo de trastorno bipolar en mujeres.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/epd2.70373" target="_blank" rel="noopener">↗ doi.org/10.1002/epd2.70373</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">American Journal of Medicine · 2026-08-27 · guideline</div>
+        <h3 class="r3-title">Guidelines for Prevention and Management of Complications of Injection Drug Use - A WikiGuidelines Group Consensus Statement</h3>
+        <p class="r3-hook">Consenso del grupo WikiGuidelines -que usa un método dicotómico poco común: solo emite recomendación firme cuando hay ECAs suficientes, y en su ausencia ofrece una revisión clínica en vez de forzar una recomendación- sobre prevención y manejo de complicaciones en personas que se inyectan drogas: terapia con agonistas opioides para trastorno por uso de opioides, mirtazapina para trastorno por uso de anfetaminas, manejo de contingencias para trastorno por estimulantes en general, y equipos de cuidado de uso de sustancias en hospitalización mejoran desenlaces. Conecta con tu línea de adicciones y con tu trabajo en comités de ética (HVLH): la metodología misma -separar lo que la evidencia realmente sostiene de la opinión experta disfrazada de recomendación- es un caso de estudio de honestidad epistémica en guías clínicas, útil para enseñar lectura crítica de guías en AMAUTA/USAMEDIC. La recomendación de mirtazapina para anfetaminas es además un dato prescriptivo poco conocido y de aplicación directa en tu consulta.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.amjmed.2026.07.049" target="_blank" rel="noopener">↗ doi.org/10.1016/j.amjmed.2026.07.049</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Asia-Pacific Psychiatry · 2026-09 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Prevalence and Incidence of Dementia for Schizophrenia and Other Primary Psychotic Disorders: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Meta-análisis que cuantifica la prevalencia de demencia en personas con esquizofrenia u otros trastornos psicóticos primarios: 24.3% en adultos mayores (IC95% 20.5-28.5%), con heterogeneidad alta (I²=84.7%) explicada por tipo de prevalencia, entorno, región y edad. Es evidencia directa para tu foco secundario de neuropsiquiatría en la intersección esquizofrenia-demencia, un cruce que rara vez se cuantifica y que tiene implicancia clínica inmediata: vigilancia cognitiva sistemática en pacientes psicóticos que envejecen, no solo control de síntomas positivos. Para tu libro de psicopatología es un dato que complica la narrativa categórica de &#39;esquizofrenia&#39; como diagnóstico estático -una cuarta parte de estos pacientes mayores desarrolla demencia-, lo que refuerza tu argumento dimensional sobre trayectorias biológicas divergentes bajo una misma etiqueta. Para AMAUTA/USAMEDIC es una cifra concreta y citable para preguntas de comorbilidad en psicosis y envejecimiento.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/appy.70033" target="_blank" rel="noopener">↗ doi.org/10.1111/appy.70033</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Asia-Pacific Psychiatry · 2026-09 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Global Prevalence of Cognitive Frailty in Community-Dwelling Older Adults: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Meta-análisis de 66 estudios (127,556 participantes) que estima la prevalencia global de fragilidad cognitiva -coexistencia de fragilidad física y deterioro cognitivo sin demencia- en adultos mayores en comunidad: 12.2% (IC95% 9.4-15.7%), mayor en países de ingreso medio-alto y en estudios posteriores a 2021, con posible subestimación por sesgo de publicación. Es relevante para tu foco secundario de neuropsiquiatría porque la fragilidad cognitiva es explícitamente una condición potencialmente reversible -a diferencia de la demencia establecida-, lo que la convierte en una ventana de intervención de precisión antes de que el deterioro sea irreversible. Para AMAUTA/USAMEDIC es un concepto todavía poco enseñado en el currículo médico peruano -fragilidad cognitiva como entidad distinta de demencia- y un buen gancho para contenido sobre detección temprana en la interfaz geriatría-psiquiatría.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/appy.70032" target="_blank" rel="noopener">↗ doi.org/10.1111/appy.70032</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Lancet Public Health · 2026-09 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Domain-specific physical activity levels and risk of dementia: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis en Lancet Public Health (74 estudios, más de 4.2 millones de participantes) que muestra que el efecto protector de la actividad física sobre el riesgo de demencia depende del dominio: la actividad de tiempo libre y doméstica reduce el riesgo (RR 0.76 y 0.85), pero la actividad ocupacional y de traslado se asocian a mayor riesgo (RR 1.20 y 1.10) -con certeza de evidencia de muy baja a baja-. Es un hallazgo contraintuitivo con aplicación directa en consejería preventiva: &#39;haz ejercicio&#39; no es un mensaje uniforme, el tipo y contexto del movimiento importa, algo trasladable directamente a tu práctica clínica y a contenido IG/YT desmontando el consejo genérico de actividad física en prevención de demencia. Para tu línea de psiquiatría de precisión es evidencia de que incluso una intervención tan &#39;simple&#39; como el ejercicio necesita estratificación por dominio y contexto, no una receta única.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S2468-2667(26)00142-8" target="_blank" rel="noopener">↗ doi.org/10.1016/S2468-2667(26)00142-8</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El midazolam-benzodiazepinas no redujo el riesgo de delirium en la NMA de Sleep Medicine Reviews (RR 1.64, no significativo), mientras que melatonina (RR 0.77) y suvorexant (RR 0.51) sí lo hicieron: el reflejo prescriptivo habitual para sedar es, en profilaxis de delirium, el que menos evidencia tiene a favor.</li><li>Una cuarta parte (24.3%) de los adultos mayores con esquizofrenia u otro trastorno psicótico primario desarrolla demencia, según el meta-análisis de Asia-Pacific Psychiatry, una comorbilidad que rara vez se vigila activamente en el seguimiento psiquiátrico habitual.</li><li>En el meta-análisis de Lancet Public Health, la actividad física ocupacional y de traslado se asociaron a MAYOR riesgo de demencia (RR 1.20 y 1.10), lo opuesto al mensaje de salud pública de &#39;muévete más&#39; sin distinguir el dominio de esa actividad.</li><li>Brivaracetam reduce más la exposición a etinilestradiol que levetiracetam en dosis estándar, según la NMA de Epileptic Disorders: la elección de antiepiléptico/estabilizador del ánimo en una paciente con anticoncepción oral combinada no es intercambiable dentro de la misma clase.</li><li>El consenso WikiGuidelines sobre uso de drogas inyectables recomienda mirtazapina específicamente para trastorno por uso de anfetaminas, un uso off-label de un antidepresivo que rara vez se discute en el manejo estándar de estimulantes.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si adoptas el marco de &#39;neuropsiquiatría de precisión&#39; de Psychogeriatrics para reencuadrar la agitación y la apatía en demencia como fenotipos multidimensionales, ¿cómo cambiaría tu abordaje diagnóstico frente al enfoque sintomático tradicional que probablemente usas hoy?</li><li>¿Con qué frecuencia estás monitoreando activamente el riesgo de demencia en tus pacientes psicóticos que envejecen, sabiendo que 1 de cada 4 podría desarrollarla según la evidencia de hoy?</li><li>¿Deberías revisar sistemáticamente qué anticonceptivo oral combinado usan tus pacientes bajo lamotrigina, topiramato o valproato, dado el riesgo diferencial de falla anticonceptiva que muestra la NMA de hoy?</li><li>¿Cómo comunicarías a un paciente con Parkinson y síntomas urinarios que el antimuscarínico recetado por otro especialista podría estar empeorando su cognición, sin socavar la relación con ese especialista?</li><li>Si el mensaje de salud pública &#39;haz más actividad física para prevenir demencia&#39; es en realidad dependiente del dominio -protector en tiempo libre, dañino en lo ocupacional-, ¿cómo simplificarías ese matiz para contenido de audiencia general sin perder precisión?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT: &#39;Las benzodiazepinas no previenen el delirium (y la melatonina sí)&#39;, usando la NMA de Sleep Medicine Reviews como evidencia contraintuitiva para desmontar un reflejo prescriptivo común.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase AMAUTA/USAMEDIC sobre neuropsiquiatría de precisión en demencia, usando el marco de Psychogeriatrics para enseñar estratificación biológica-funcional-contextual de síntomas neuropsiquiátricos más allá de la etiqueta BPSD.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología para el mundo sobre la comorbilidad esquizofrenia-demencia como evidencia de trayectorias biológicas divergentes bajo un mismo diagnóstico categórico, anclada en el meta-análisis de Asia-Pacific Psychiatry.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota clínica corta proponiendo un checklist de revisión de interacciones antiepiléptico-anticonceptivo en mujeres bajo estabilizadores del ánimo, a partir de la NMA de Epileptic Disorders.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT desmontando el mensaje genérico de &#39;actividad física previene demencia&#39;, mostrando con el meta-análisis de Lancet Public Health que el dominio de la actividad (ocio vs. trabajo) determina si protege o daña.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">American Journal of Psychiatry</span><span class="tag ">Psychogeriatrics</span><span class="tag ">Movement Disorders Clinical Practice</span><span class="tag ">Sleep Medicine Reviews</span><span class="tag ">Medicine (Baltimore)</span><span class="tag ">Epileptic Disorders</span><span class="tag ">American Journal of Medicine</span><span class="tag ">Asia-Pacific Psychiatry</span><span class="tag ">Lancet Public Health</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (E-utilities: esearch/esummary/efetch, datetype=pdat) · WebSearch (verificación cruzada de guías/consensos) · Consensus MCP (descubrimiento inicial). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 1 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
