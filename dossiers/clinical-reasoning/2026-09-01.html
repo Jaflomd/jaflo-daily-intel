@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-09-01 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">1 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">92</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Pediatric Surgery International, 31 ago 2026 · paper · 2026-08-31</div>
+        <h3 class="r3-title">Are artificial intelligence systems ready for pediatric surgical decision-making? A comparative evaluation of large language models versus pediatric surgeons</h3>
+        <p class="r3-hook">Un estudio comparó 5 LLMs (ChatGPT, Claude Sonnet 4.6, Gemini, DeepSeek-V3, Perplexity) contra dos cirujanos pediátricos expertos en 50 escenarios guiados por guías clínicas (150 decisiones totales): el cirujano humano acertó 144/150, pero Claude logró diagnóstico perfecto (50/50) e igualó o superó al referente humano en esa dimensión específica, aunque los errores de los modelos se concentraron en investigación y tratamiento, no en diagnóstico puro. Para tu pilar ai-enhancement esto es evidencia dura y matizada: la IA ya iguala el razonamiento diagnóstico humano en escenarios bien estructurados, pero sigue fallando en el paso siguiente (qué pedir, qué tratar), justo donde el juicio clínico experto compensa. Úsalo en AMAUTA/Competency Lab para enseñar un mapa de responsabilidad compartida humano-IA con datos: dónde delegar (generación de diferencial) y dónde no (plan terapéutico final).</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00383-026-06612-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s00383-026-06612-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">L&#39;Encéphale, 31 ago 2026 · paper · 2026-08-31</div>
+        <h3 class="r3-title">A script concordance test to implement 2024 HAS ADHD guidelines in primary care</h3>
+        <p class="r3-hook">Un grupo francés desarrolló y validó un Script Concordance Test (SCT) de razonamiento clínico específico para el manejo del TDAH según las nuevas guías HAS 2024, con 25 expertos evaluando 72 ítems (43 retenidos) y concordancia sustancial entre jueces (W de Kendall = 0.67). Es prácticamente un plano de construcción para tu línea TDAH/TEA y para AMAUTA/USAMEDIC: un SCT mide exactamente el razonamiento probabilístico bajo incertidumbre que el ENAM y el Residentado deberían evaluar en psiquiatría, y aquí tienes el blueprint metodológico completo (panel de expertos, ítems tipo viñeta, análisis de concordancia) ya validado y transferible. Los propios autores señalan que &#39;no existe una evaluación estandarizada&#39; para este rol — la oportunidad es construirla tú, en español, para razonamiento dimensional (HiTOP/RDoC) en tu Competency Lab.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.encep.2026.06.003" target="_blank" rel="noopener">↗ doi.org/10.1016/j.encep.2026.06.003</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Allergy and Clinical Immunology: In Practice, 31 ago 2026 · paper · 2026-08-31</div>
+        <h3 class="r3-title">Comparison of artificial intelligence and multidisciplinary team assessment for evaluating biologic decisions in severe uncontrolled asthma</h3>
+        <p class="r3-hook">Un estudio de cohorte retrospectivo en 114 pacientes con asma grave no controlada comparó las decisiones de biológicos de un comité multidisciplinario contra las recomendaciones de 5 LLMs (ChatGPT, Gemini, Copilot, Perplexity, DeepSeek): el acuerdo IA-comité fue pobre (kappa 0.14-0.21) y el acuerdo entre los propios modelos de IA fue débil-moderado (kappa 0.35-0.59), con errores frecuentes en todos. Es el contrapeso perfecto al estudio de cirugía pediátrica de arriba y un dato clave para tu pilar ai-enhancement: la fiabilidad de la IA en razonamiento clínico NO es uniforme, colapsa en decisiones complejas y multifactoriales (elegir QUÉ biológico) donde el juicio experto colegiado sigue siendo insustituible. Para tu contenido sobre IA en medicina, compara este caso con el de cirugía pediátrica para enseñar &#39;cuándo confiar en la IA y cuándo no&#39; con evidencia de ambos lados, no con hype genérico.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jaip.2026.07.049" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jaip.2026.07.049</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine, 31 ago 2026 · editorial · 2026-08-31</div>
+          <div class="r10-title">Ask-Audit-Apply: A Framework for Clinical Reasoning with Artificial Intelligence</div>
+          <div class="r10-line">JGIM propone &#39;Ask-Audit-Apply&#39;, un framework de 3 pasos para razonar clínicamente con apoyo de IA sin caer en sesgo de automatización ni difusión de responsabilidad — el tipo de armazón enseñable que buscas para el Competency Lab.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este framework se va a citar como referencia en currículos de IA clínica en 2027; adóptalo ahora en AMAUTA antes de que se vuelva genérico y pierdas el ángulo de ser pionero en enseñarlo en español.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10741-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10741-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Alert and Oriented: Translating Vignette-Based Reasoning Pedagogy into an Open-Access Podcast for Early Learners</div>
+          <div class="r10-line">Un podcast estudiantil de razonamiento clínico basado en viñetas (Alert and Oriented) ya acumula 59 episodios y 23,655 descargas en 40 países — prueba de que el formato &#39;construye el diferencial conmigo&#39; escala como contenido educativo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Más escuelas de medicina van a lanzar su propio podcast de razonamiento clínico institucional en los próximos meses; AMAUTA podría adelantarse con una versión en español enfocada en ENAM/Residentado antes de que el nicho se sature.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10775-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10775-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Heart Journal - Digital Health, 29 ago 2026 · meta-analysis · 2026-08-29</div>
+          <div class="r10-title">Artificial intelligence-based ECG as a triage tool for acute myocardial infarction: a diagnostic systematic review and meta-analysis</div>
+          <div class="r10-line">Metaanálisis muestra que el ECG con IA mejora el triage diagnóstico de infarto agudo, sobre todo en presentaciones sin elevación del ST donde la lectura convencional falla más — un caso donde la IA sí añade valor real al razonamiento bajo presión de tiempo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esto empuja a que los protocolos de triage en emergencia adopten IA-ECG como estándar en 12-18 meses; cítalo como contraejemplo positivo frente al caso de asma-biológicos de arriba.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/ehjdh/ztag075" target="_blank" rel="noopener">↗ doi.org/10.1093/ehjdh/ztag075</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Retina and Vitreous, 27 ago 2026 · paper · 2026-08-27</div>
+          <div class="r10-title">Misdiagnosis of uveal melanoma and other intraocular malignancies in enucleated eyes: a 28-year national review</div>
+          <div class="r10-line">Revisión de 28 años en Suecia encuentra que 2.7% de los ojos enucleados por sospecha de cáncer no tenían malignidad confirmada, y la hemorragia intraocular fue el principal &#39;mimicker&#39; — un caso de libro de cierre prematuro con consecuencia irreversible.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es material perfecto de &#39;illness script negativo&#39; (qué NO es) para tu libro de psicopatología para el mundo: enseña por qué el diagnóstico por patrón visual sin segundo lector sistemático falla de forma predecible.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40942-026-00927-x" target="_blank" rel="noopener">↗ doi.org/10.1186/s40942-026-00927-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Evaluation in Clinical Practice, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Clinical Decision-Making and Guideline Alignment Among Brazilian Physical Therapists: Evidence From Standardized Carpal Tunnel Syndrome Vignettes</div>
+          <div class="r10-line">Fisioterapeutas brasileños alinearon sus decisiones clínicas con las guías de túnel carpiano solo en 46.2% de los casos evaluados por viñetas estandarizadas, pese a conocer las guías — brecha conocimiento-práctica medida, no asumida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es transferible a psiquiatría: conocer la guía no predice seguirla, así que tus materiales AMAUTA deberían medir aplicación en viñetas, no solo recuerdo de contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jep.70575" target="_blank" rel="noopener">↗ doi.org/10.1111/jep.70575</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine, 31 ago 2026 · editorial · 2026-08-31</div>
+          <div class="r10-title">Historical Thinking in the Clinic</div>
+          <div class="r10-line">Editorial en JGIM argumenta que métodos de historiadores (lectura profunda, análisis textual crítico) pueden ser herramientas de razonamiento clínico, especialmente para detectar lo que se pierde en los resúmenes clínicos generados por IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es una idea todavía nicho que encaja con tu voz de escritor de libros: podrías ser de los primeros en español en argumentar &#39;leer como historiador&#39; como técnica de debiasing frente al resumen automatizado por IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10759-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10759-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Nursing Management, 30 ago 2026 · review · 2026-08-30</div>
+          <div class="r10-title">Factors Influencing Clinical Reasoning Among Clinical Nurses: An Integrative Review Using the Decision-Making Ecology Model</div>
+          <div class="r10-line">Revisión integrativa organiza 55 factores que influyen el razonamiento clínico de enfermeras en 4 dominios del modelo de Ecología de la Toma de Decisiones (decisor, caso, organización, entorno externo).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este marco de 4 dominios es adaptable como checklist de auditoría en AMAUTA — úsalo para diagnosticar POR QUÉ falla el razonamiento de un estudiante, no solo QUE falló.</div>
+          <a class="r10-link" href="https://doi.org/10.1155/jonm/6956575" target="_blank" rel="noopener">↗ doi.org/10.1155/jonm/6956575</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Pediatric Surgery International, 29 ago 2026 · review · 2026-08-29</div>
+          <div class="r10-title">Advancing hirschsprung disease diagnosis: a systematic review of the development and application of artificial intelligence in histopathological analysis</div>
+          <div class="r10-line">Revisión sistemática de 13 estudios muestra que el deep learning reduce el tiempo diagnóstico de enfermedad de Hirschsprung en 50-95% frente a la lectura histopatológica convencional, aunque el 69% de los estudios tiene alto riesgo de sesgo metodológico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Úsalo para enseñar lectura crítica de papers de IA diagnóstica en tu Competency Lab: la ganancia de velocidad es real pero la evidencia todavía es frágil, no solo el número bonito.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00383-026-06576-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s00383-026-06576-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Applied Laboratory Medicine, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Single High-Sensitivity Cardiac Troponin Measurement to Rule-out/Rule-in Myocardial Infarction in the Emergency Department</div>
+          <div class="r10-line">Nuevo ensayo point-of-care de troponina de alta sensibilidad permite descartar/confirmar infarto con una sola medición en urgencias, reduciendo el tiempo de decisión bajo presión de tiempo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Espera que protocolos de &#39;rule-out en 1 hora&#39; se vuelvan estándar en más países; es un buen paralelo para enseñar cómo la psiquiatría de urgencias podría beneficiarse de herramientas point-of-care análogas en crisis.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/jalm/jfag130" target="_blank" rel="noopener">↗ doi.org/10.1093/jalm/jfag130</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cardiovascular Ultrasound, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">The diagnostic accuracy of left ventricular ejection fraction assessment between visual and artificial intelligence-based algorithms on bedside ultrasound</div>
+          <div class="r10-line">En evaluación de fracción de eyección a pie de cama, el ojo clínico experto (ICC 0.97) superó al algoritmo de IA (ICC 0.84) frente al ecocardiograma de referencia — un dato contraintuitivo frente a la narrativa de &#39;la IA siempre gana&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este hallazgo va a alimentar el debate sobre cuándo la pericia entrenada (Sistema 1 experto) sigue siendo superior a la IA; es munición directa para un post o hilo sobre los límites reales del reemplazo de la intuición clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12947-026-00377-3" target="_blank" rel="noopener">↗ doi.org/10.1186/s12947-026-00377-3</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La IA no falla parejo: en cirugía pediátrica estructurada iguala o supera al experto (Claude: 50/50 en diagnóstico), pero en decisiones complejas de biológicos para asma grave su acuerdo con el comité humano es pobre (κ=0.14-0.21). La pregunta correcta no es &#39;¿la IA razona bien?&#39; sino &#39;¿en qué tipo de decisión razona bien?&#39;.</li><li>Conocer la guía no es aplicarla: fisioterapeutas brasileños que sí conocían las guías de túnel carpiano solo las siguieron en 46.2% de los casos ante viñetas estandarizadas — la brecha conocimiento-práctica es medible, no un lugar común.</li><li>El ojo clínico entrenado todavía le gana a la IA en tareas específicas: en fracción de eyección a pie de cama, la evaluación visual experta tuvo mejor concordancia con el ecocardiograma (ICC 0.97) que el algoritmo de IA (ICC 0.84).</li><li>2.7% de los ojos removidos por sospecha de cáncer intraocular en 28 años de registro sueco no tenían malignidad — la hemorragia intraocular fue el &#39;mimicker&#39; más frecuente, un caso de cierre prematuro con consecuencia quirúrgica irreversible.</li><li>Un Script Concordance Test para TDAH ya demuestra que se puede medir razonamiento clínico específico de una condición con solo 43 ítems y 25 expertos (W=0.67) — la barrera para construir tu propia herramienta de certificación en español es metodológica, no conceptual.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿En qué tipo específico de decisión clínica (diagnóstica estructurada vs. terapéutica compleja) deberíamos confiar más en la IA que en el comité humano — y cómo se lo explicas a un residente sin caer en &#39;la IA siempre acierta&#39; ni en &#39;la IA nunca sirve&#39;?</li><li>Si el 46% de alineación con guías se repite en psiquiatría (no solo en fisioterapia), ¿qué proporción de tus estudiantes de AMAUTA conoce el protocolo de TDAH pero no lo aplicaría bien ante una viñeta real?</li><li>¿Qué perdemos exactamente cuando un resumen clínico generado por IA reemplaza la &#39;lectura profunda&#39; del caso — y es medible con las mismas herramientas de un Script Concordance Test?</li><li>¿Cómo se vería un SCT de razonamiento dimensional (HiTOP/RDoC) construido con la misma metodología que el de TDAH-HAS, pero para diagnóstico diferencial transdiagnóstico en tu Competency Lab?</li><li>¿Qué pasaría si aplicaras el framework Ask-Audit-Apply con tus propios residentes que usan IA para preparar el ENAM — cuánto cambia su tasa de error si auditan explícitamente cada sugerencia antes de aplicarla?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel comparando el caso de cirugía pediátrica (IA gana) vs. asma-biológicos (IA pierde) para enseñar &#39;cuándo confiar en la IA&#39; con datos duros de ambos lados.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Diseñar un Script Concordance Test de razonamiento dimensional (HiTOP/RDoC) para AMAUTA/Competency Lab, replicando la metodología validada del SCT-TDAH francés (panel de expertos + W de Kendall).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología para el mundo sobre &#39;lectura profunda como debiasing&#39;: tomar el argumento de &#39;Historical Thinking in the Clinic&#39; y aplicarlo a la entrevista psiquiátrica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Episodio o serie estilo &#39;Alert and Oriented&#39; pero en español para ENAM/Residentado: construir el diferencial en vivo con el oyente antes de revelar el diagnóstico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Adoptar y enseñar el framework Ask-Audit-Apply como protocolo oficial de uso de IA en el Competency Lab, con métricas de auditoría antes/después.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Pediatric Surgery International</span><span class="tag ">L&#39;Encéphale</span><span class="tag ">Journal of Allergy and Clinical Immunology: In Practice</span><span class="tag ">European Heart Journal - Digital Health</span><span class="tag ">International Journal of Retina and Vitreous</span><span class="tag ">Journal of Evaluation in Clinical Practice</span><span class="tag ">Journal of Nursing Management</span><span class="tag ">Journal of Applied Laboratory Medicine</span><span class="tag ">Cardiovascular Ultrasound</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities, esearch/esummary/efetch) · Crossref (verificación de DOI y fecha de publicación) · Consensus MCP (descubrimiento inicial; varios candidatos descartados por estar fuera de la ventana de 48-72h) · WebSearch (medRxiv, ImproveDx — sin hallazgos nuevos dentro de la ventana). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 1 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
