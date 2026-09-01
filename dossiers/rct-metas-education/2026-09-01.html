@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-01 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">1 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">123</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">70</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Physical Therapy Education, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Meta-analytic Review of Flipped Classrooms in Health Professions Education</h3>
+        <p class="r3-hook">Meta-análisis de 124 estudios y 23,326 observaciones en educación de profesiones de salud: las secciones con clase invertida (flipped) obtuvieron en promedio 5.44 puntos porcentuales más en exámenes que las secciones con clase magistral tradicional (evidencia muy baja calidad), y 0.47 puntos más en aprendizaje autorreportado (evidencia baja calidad). El moderador clave que explicó la variación entre estudios fue si el diseño incluía práctica de recuperación (retrieval practice) adicional tras la sesión invertida. Le importa a Javier porque AMAUTA/USAMEDIC ya usa formato de clases invertidas para preparar ENAM/Residentado, y este meta-análisis le da evidencia de que el beneficio real no viene de &#39;invertir la clase&#39; per se sino de agregar retrieval practice explícito después — algo auditable y barato de implementar, no una reforma curricular completa. Cómo usarlo: revisar si los módulos invertidos de AMAUTA ya cierran cada sesión con preguntas de recuperación espaciada, y si no, agregarlas como la palanca de mayor ROI antes de rediseñar el formato completo.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/JTE.0000000000000435" target="_blank" rel="noopener">↗ doi.org/10.1097/JTE.0000000000000435</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Medical Teacher, sep 2026 · rct · 2026-09-01</div>
+        <h3 class="r3-title">Augmented reality enhances competency-based training in simulated vaginal birth: A multicenter randomized controlled trial</h3>
+        <p class="r3-hook">RCT multicéntrico (Chile y Colombia, 401 estudiantes de medicina y obstetricia) con evaluadores ciegos: entrenar con realidad aumentada (AR) antes de la simulación de alta fidelidad de parto vaginal duplicó la proporción de estudiantes que alcanzó el umbral mínimo de competencia (12.8% vs 6.2%, RR 2.23) y subió los puntajes DOPS frente a la preparación tradicional con texto/video. Le importa a Javier porque es evidencia de alto nivel (RCT multicéntrico, no piloto de una sola institución) de que la pre-simulación en AR es una forma escalable y barata de mejorar el rendimiento en destrezas críticas antes del simulador caro — exactamente el tipo de apalancamiento tecnológico que busca para escalar AMAUTA/USAMEDIC sin depender de simuladores de alta fidelidad costosos por sede. Cómo usarlo: diseñar un módulo de pre-simulación en AR o video 360° para las destrezas de mayor riesgo del Residentado (p. ej. evaluación de riesgo suicida, manejo de crisis) antes de la práctica presencial, replicando el diseño &#39;AR primero, simulación de alta fidelidad después&#39; de este ensayo.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/0142159X.2026.2630982" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2630982</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Surgical Education, sep 2026 · rct · 2026-09-01</div>
+        <h3 class="r3-title">Enhancing Clinical Reasoning in Surgical Education: A Randomized Crossover Trial on AI-Generated Individual Feedback for Key Feature Question-Based Online Assignments</h3>
+        <p class="r3-hook">RCT cruzado en estudiantes de medicina alemanes de 4to año: una app con preguntas diarias tipo &#39;key feature&#39; (razonamiento clínico) dio feedback personalizado por IA a un grupo y feedback genérico al otro. En el examen final no hubo diferencia entre tipos de feedback (p=0.454), pero la intensidad de uso de la app sí predijo una mejora significativa y sostenida en el tiempo (p&lt;0.001 en la interacción). Le importa a Javier directo en su línea de IA aplicada a educación + razonamiento clínico + bancos de preguntas para ENAM/Residentado: sugiere que invertir en &#39;IA que personaliza el feedback&#39; puede tener menos ROI que simplemente lograr que el estudiante use el banco de preguntas con más frecuencia e intensidad. Cómo usarlo: en el banco de preguntas de AMAUTA, priorizar mecánicas que suban la frecuencia de uso (notificaciones diarias, rachas, recordatorios tipo key-feature alineados al temario) antes que invertir en generar feedback personalizado por IA, y testear esto con el mismo diseño cruzado en una cohorte propia.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jsurg.2026.104068" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104068</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today, sep 2026 · meta-analysis · 2026-09-01</div>
+          <div class="r10-title">Game-based learning in undergraduate nursing education: A systematic review and meta-analysis</div>
+          <div class="r10-line">SR+meta-análisis PRISMA 2020 de 35 estudios en enfermería de pregrado confirma que el aprendizaje basado en juegos mejora desenlaces cognitivos, afectivos y psicomotores frente a métodos tradicionales, aunque con heterogeneidad sustancial entre estudios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a seguir acumulándose evidencia meta-analítica de gamificación por profesión de salud en los próximos meses; le conviene a Javier documentar qué elementos de juego usa exactamente en AMAUTA para poder comparar sus propios resultados contra esta síntesis cuando la publique.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107124" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107124</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today, sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Empowering healthcare students in online interprofessional learning through virtual reality educational technology: A randomised controlled cross-over trial</div>
+          <div class="r10-line">RCT cruzado multicéntrico (Hong Kong, China continental, Corea, Tailandia; 102 estudiantes de salud) halló que el aprendizaje interprofesional en VR superó al basado en casos tradicionales en habilidades interprofesionales, compromiso online y empoderamiento del estudiante, con efecto sostenido tras el cruce.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El patrón &#39;VR &gt; case-based&#39; para engagement en cohortes internacionales remotas es trasladable a USAMEDIC si Javier arma cohortes mixtas entre países; vale la pena vigilar si aparece una réplica en español o LatAm en los próximos meses.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107134" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107134</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">ATS Scholar, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Virtual reality simulation for tracheostomy emergencies: a randomized educational intervention</div>
+          <div class="r10-line">RCT pequeño (19 fellows de cuidados críticos) mostró que el entrenamiento en VR inmersiva para emergencias de traqueostomía fue no inferior a la discusión en grupo pequeño con experto, con alta aceptación del alumnado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Con una muestra tan chica el hallazgo real es &#39;VR es viable, no necesariamente superior&#39;; es evidencia defendible de que la VR puede reemplazar (no solo complementar) sesiones con experto en temas de bajo volumen de casos, algo replicable en AMAUTA para destrezas psiquiátricas poco frecuentes en la práctica clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/atsscholar/aapag023" target="_blank" rel="noopener">↗ doi.org/10.1093/atsscholar/aapag023</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Ultrasound Quarterly, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Lecture-First Versus Practical-First Teaching Strategies in Cardiovascular Ultrasound Education: A Randomized Comparison of Undergraduate Performance</div>
+          <div class="r10-line">RCT en 54 estudiantes de ciencias radiológicas: dar la clase teórica ANTES de la práctica produjo mejor desempeño global (d=0.72) y en destrezas prácticas (d=0.85) que invertir el orden, aunque el conocimiento teórico salió igual en ambos grupos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Contradice la moda de &#39;práctica primero&#39;/aprendizaje por descubrimiento; si se replica en otras destrezas procedimentales, es argumento directo para que AMAUTA mantenga la secuencia teoría-antes-de-práctica en sus talleres en vez de invertir el orden por tendencia pedagógica.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/RUQ.0000000000000750" target="_blank" rel="noopener">↗ doi.org/10.1097/RUQ.0000000000000750</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Radiology, sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Low-Cost homemade Agar-Based phantoms for Ultrasound-Guided procedure Training: A randomized educational trial</div>
+          <div class="r10-line">Ensayo aleatorizado pequeño (23 residentes) mostró que phantoms caseros de agar de bajo costo son no inferiores a modelos comerciales para mejorar confianza y desempeño en procedimientos guiados por ultrasonido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este tipo de &#39;simulación low-cost validada&#39; es exactamente el tipo de evidencia que justifica que AMAUTA construya sus propios modelos de práctica baratos para destrezas de Residentado en vez de comprar simuladores comerciales costosos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ejrad.2026.112934" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ejrad.2026.112934</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Learning from Experience: A Systematic Review of Early Multi-Institutional EPA Studies Across U.S. Medical Specialties</div>
+          <div class="r10-line">SR de solo 5 estudios multi-institucionales de EE.UU. (de 121 cribados) sobre implementación de Entrustable Professional Activities (EPAs) halló que es factible pero con barreras consistentes: compromiso variable de docentes, fricción de flujo de trabajo y sesgo por evaluación voluntaria.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La escasez de estudios multi-institucionales robustos en EPAs (solo 5 de 121 cribados) es una brecha que Javier podría explotar como investigador RENACYT si decide correr un estudio propio de evaluación de EPAs/entrustment en Residentado peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104082" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104082</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Individualized Learning Plans in Residency Training: Lessons for Surgical Education From a Cross-Specialty Scoping Review</div>
+          <div class="r10-line">Scoping review de 26 estudios sobre planes de aprendizaje individualizados (ILPs) en residencia halló que mejoran confianza y aprendizaje autodirigido, pero con implementación inconsistente y evidencia débil de impacto en desenlaces de pacientes; cirugía está subrepresentada en la literatura.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Da hueco editorial para que Javier proponga (paper o capítulo) un marco de ILP aplicado a Residentado de psiquiatría, un área tan subrepresentada como cirugía en esta síntesis.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104064" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104064</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">The Implementation of Competency-Based Medical Education in Surgical Training: A Scoping Review</div>
+          <div class="r10-line">Scoping review de 70 estudios (2001-2023) sobre implementación de CBME en cirugía halló que casi ningún programa cumple los 5 componentes nucleares de CBME (marco de Van Melle 2019) a la vez, con programas canadienses y europeos más completos que los de EE.UU.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El checklist de 5 componentes CBME de Van Melle es una herramienta lista para que Javier audite qué tan CBME es realmente el currículo de Residentado que prepara AMAUTA, más allá de llamarlo así de nombre.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104056" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104056</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nursing &amp; Health Sciences, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Nurses&#39; and Nursing Students&#39; Experiences With Generative Artificial Intelligence in Educational and Clinical Settings: A Scoping Review</div>
+          <div class="r10-line">Scoping review de 20 estudios, con marco de teoría del comportamiento planeado, sobre experiencias de enfermeras y estudiantes con IA generativa halló percepciones mayormente positivas pero mixtas en estudiantes, con actitudes y normas percibidas como determinantes clave de la intención de uso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El marco de teoría del comportamiento planeado es un lente que Javier podría tomar prestado para introducir IA en AMAUTA — no basta con que la herramienta funcione, hay que trabajar la actitud y norma percibida del estudiante para que la adopte de verdad.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/nhs.70403" target="_blank" rel="noopener">↗ doi.org/10.1111/nhs.70403</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advances in Physiology Education, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Exploring flipped classrooms in undergraduate anatomy and physiology courses: a systematic review</div>
+          <div class="r10-line">SR de 11 estudios sobre flipped classroom en cursos de anatomía y fisiología de pregrado halló mejoras en desempeño académico (10/11 estudios) y satisfacción (10/11), aunque con tamaños de efecto bajos y sin grupos de comparación aleatorizados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Complementa el meta-análisis del top 3: confirma que el efecto positivo del flipped classroom es consistente incluso en cursos básicos de ciencias, lo que refuerza que AMAUTA puede extender el formato invertido más allá de temas clínicos hacia fundamentos.</div>
+          <a class="r10-link" href="https://doi.org/10.1152/advan.00223.2025" target="_blank" rel="noopener">↗ doi.org/10.1152/advan.00223.2025</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El meta-análisis de flipped classroom encontró que el tamaño del efecto en exámenes (+5.44 %pt) depende sobre todo de si se agrega retrieval practice extra tras la sesión: invertir la clase sin práctica de recuperación adicional deja la mayor parte del beneficio sobre la mesa (PMID 40699140).</li><li>En el RCT alemán de feedback por IA en razonamiento clínico, el TIPO de feedback (personalizado vs genérico) no cambió el examen final, pero la INTENSIDAD de uso de la app sí — la dosis de práctica importa más que la sofisticación del feedback (PMID 42413233).</li><li>En el RCT de ultrasonido cardiovascular, dar la teoría ANTES de la práctica ganó a la secuencia inversa (d=0.72 en desempeño global): la moda de &#39;práctica primero&#39; no se sostuvo en este diseño controlado (PMID 42335321).</li><li>Phantoms caseros de agar, prácticamente sin costo, fueron no inferiores a modelos comerciales para destrezas de punción guiada por ultrasonido: la simulación de alta fidelidad cara no siempre es necesaria para mejorar desempeño (PMID 42144013).</li><li>La revisión de CBME en cirugía halló que de 70 estudios en 22 años, casi ninguno cumple los 5 componentes nucleares de CBME a la vez: la mayoría de programas &#39;CBME&#39; lo son de nombre, no de diseño completo (PMID 42361455).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el retrieval practice extra es el verdadero motor del efecto del flipped classroom, ¿los módulos invertidos de AMAUTA ya incluyen suficiente práctica de recuperación después de cada sesión, o solo invierten el orden sin agregarla?</li><li>¿El hallazgo de que la intensidad de uso importa más que el tipo de feedback se replica en preguntas de razonamiento clínico dimensional (HiTOP/RDoC), o el feedback personalizado sí pesa más cuando el razonamiento no es binario?</li><li>¿La secuencia &#39;teoría antes de práctica&#39; que ganó en ultrasonido se sostiene también para destrezas de entrevista clínica psiquiátrica, donde el role-play suele valorarse como punto de partida y no como cierre?</li><li>¿Qué tan replicable es el modelo de AR pre-simulación (que duplicó el umbral de competencia en parto simulado) para destrezas críticas de psiquiatría de alto riesgo, como evaluación de riesgo suicida?</li><li>Si casi ningún programa cumple los 5 componentes de CBME de Van Melle, ¿cuántos de esos 5 cumple realmente el currículo de Residentado que prepara AMAUTA, auditado con el mismo checklist?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo IG explicando por qué &#39;invertir la clase&#39; sin retrieval practice extra desperdicia buena parte del efecto, citando el dato exacto del meta-análisis (PMID 40699140).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio propio (línea RENACYT) auditando el currículo de Residentado de psiquiatría con el checklist de 5 componentes CBME de Van Melle, replicando la metodología del scoping review de cirugía (PMID 42361455).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto sobre el hallazgo &#39;dosis de práctica &gt; sofisticación del feedback&#39; del RCT alemán, aplicado a cómo estudiar para ENAM: usa el banco todos los días, no busques el feedback perfecto.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Nota para el capítulo de educación médica de precisión (o neurociencia educativa) sobre el marco de teoría del comportamiento planeado aplicado a adopción de IA por estudiantes, citando la scoping review de enfermería (PMID 42551863).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post comparando phantoms caseros de agar vs simuladores comerciales para destrezas procedimentales, con gancho de &#39;simulación de alta fidelidad barata&#39; aplicable a cursos AMAUTA con presupuesto limitado (PMID 42144013).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Physical Therapy Education</span><span class="tag ">Medical Teacher</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Nurse Education Today</span><span class="tag ">ATS Scholar</span><span class="tag ">Ultrasound Quarterly</span><span class="tag ">European Journal of Radiology</span><span class="tag ">Nursing &amp; Health Sciences</span><span class="tag ">Advances in Physiology Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch, datetype=pdat, ventana 72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 1 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
