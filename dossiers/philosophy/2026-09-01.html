@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-01 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">1 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">16</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">16</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Fundamental &amp; Clinical Pharmacology · Lega JC, Provencher S, Falissard B, Locher C, Roustit M, Gougeon A, Boussageon R, Chevret S — 1 sep 2026 · editorial · 2026-09-01</div>
+        <h3 class="r3-title">Redefining Regulatory Proof: The End of the Two-Trial Paradigm</h3>
+        <p class="r3-hook">La FDA reemplazó la exigencia clásica de dos ensayos pivotales independientes por uno solo como estándar por defecto de aprobación, y los autores nombran con precisión el mecanismo del cambio: se pasa de un modelo de &#39;validación por replicación&#39; a uno de &#39;suficiencia por coherencia&#39;, donde la plausibilidad previa queda informal y la potencia estadística real no compensada puede inflar falsos positivos — la réplica no es redundancia estadística, es la salvaguarda estructural que sostiene la validez externa. Le importa a Javier porque es exactamente el tipo de cambio en la &#39;arquitectura de la prueba&#39; que como investigador RENACYT Distinguido necesita poder diseccionar y enseñar en AMAUTA/USAMEDIC: sus alumnos de ENAM/Residentado necesitan entender que &#39;un solo ensayo grande y bien diseñado&#39; no es automáticamente sinónimo de evidencia sólida, y que la plausibilidad previa (un marco bayesiano informal, cercano a cómo él ya piensa en HiTOP/RDoC) debería pesar más cuando la replicación se recorta. Cómo usarlo: convertirlo en caso de estudio actual y citable para un módulo de lectura crítica de evidencia en AMAUTA, y como argumento propio al diseñar o evaluar estudios de su línea de investigación que dependan de estándares regulatorios cambiantes.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/fcp.70110" target="_blank" rel="noopener">↗ doi.org/10.1111/fcp.70110</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Sociology of Health &amp; Illness · Lange A, Lipp B — 1 sep 2026 · paper · 2026-09-01</div>
+        <h3 class="r3-title">Vigilant Algorithms and the Contagion of Risk in Automated Opioid Risk Assessment</h3>
+        <p class="r3-hook">Estudio etnográfico multisitio sobre NarxCare, el sistema algorítmico de puntaje de riesgo de opioides más usado en EE.UU.: el mecanismo que describen es que el score opera mediante &#39;múltiples opacidades&#39; — presenta un número único, autoritativo pero no examinable, que amalgama sobredosis, riesgo legal y daño social — y que por una lógica de &#39;contagio&#39;, el médico que prescribe queda atado al score de su propio paciente, volviéndose él mismo sujeto de riesgo institucional. Los clínicos responden rechazando, anticipando o domesticando el score, pero no logran evadirlo del todo. Le importa a Javier porque es un caso de estudio perfecto sobre cómo una herramienta de IA aplicada a decisiones clínicas puede reconfigurar la autoridad epistémica del médico sin resolver realmente la incertidumbre — tema central de su línea de IA aplicada a investigación/educación y de su rol en el comité de ética HVLH, donde la automatización opaca del juicio clínico es justo el tipo de caso que debe poder auditar. Cómo usarlo: llevarlo como material de discusión a HVLH o convertirlo en la base de una ponencia/paper sobre gobernanza de IA clínica, trasladando la pregunta a algoritmos de riesgo psiquiátrico (p. ej. riesgo suicida): ¿qué pasa cuando el score de tu paciente se convierte en tu propio riesgo profesional?</p>
+        <a class="r3-link" href="https://doi.org/10.1111/1467-9566.70248" target="_blank" rel="noopener">↗ doi.org/10.1111/1467-9566.70248</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">New Directions for Youth Development · Ofosu-Asare Y, Nally RA — 29 ago 2026 · paper · 2026-08-29</div>
+        <h3 class="r3-title">Designing Epistemic Friction: Architecture and Protocols for Trickster AI in Leadership Education</h3>
+        <p class="r3-hook">En vez de optimizar la IA generativa para dar respuestas cómodas, este diseño para educación de liderazgo instrumentaliza deliberadamente la &#39;fricción epistémica&#39; mediante un sistema de cinco capas (política pedagógica, lógica cultural, motor de contradicción, programador de ruptura, capa de evidencia-debrief) y cuatro protocolos concretos: clínica de contradicción, estudio de rechazo, dispositivo de demora y simulación de responsabilidad relacional. El mecanismo es forzar al estudiante a sostener la incomodidad de estar equivocado antes de permitirle resolverla. Le importa a Javier porque es un framework ESTRUCTURAL (no un consejo genérico de &#39;sé humilde&#39;) directamente trasplantable a su Competency Lab (razonamiento, comunicación, self-care) y a AMAUTA: enseñar razonamiento clínico bajo incertidumbre exige entrenar la tolerancia a la fricción cognitiva, no evitarla, y este paper da un vocabulario operativo (motor de contradicción, dispositivo de demora) para diseñar ejercicios de aula que hagan exactamente eso. Cómo usarlo: adaptar el &#39;dispositivo de demora&#39; y la &#39;clínica de contradicción&#39; como ejercicios concretos de un módulo de razonamiento clínico en AMAUTA, donde el residente deba sostener dos hipótesis diagnósticas contradictorias antes de que se le permita resolver el caso.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/yd.70072" target="_blank" rel="noopener">↗ doi.org/10.1002/yd.70072</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Sociology of Health &amp; Illness · Schöngut-Grollmus N, Steverlynck D, Manríquez-Castillo F, Rojas-Navarro S — 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Rare Diseases as Epistemic Objects: Exploring the Moral Role of Health Systems</div>
+          <div class="r10-line">Entrevistas narrativas con pacientes y profesionales chilenos muestran que, sin protocolos estandarizados, el manejo de enfermedades raras se vuelve discrecional e informal, y los autores acuñan &#39;justicia decisional&#39; para preguntar si esa discrecionalidad se reparte de forma justa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el concepto de &#39;justicia decisional&#39; (¿quién decide cuando no hay protocolo, y con qué apoyo institucional?) le da a Javier un ángulo transferible a fenotipos psiquiátricos dimensionales atípicos (TDAH/TEA sin presentación prototípica), donde existe el mismo vacío de protocolo — y podría anclar un argumento para su próximo libro sobre la necesidad de guías clínicas dimensionales explícitas.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/1467-9566.70255" target="_blank" rel="noopener">↗ doi.org/10.1111/1467-9566.70255</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Sociology of Health &amp; Illness · Skovgaard AL, Elmengaard B, Christiansen DH, Høybye MT — 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Making Decisions or Enacting Shoulder Care? Challenging Assumptions About Matters of Concern in the Orthopaedic Shoulder Clinic</div>
+          <div class="r10-line">Trabajo etnográfico en clínicas de hombro danesas argumenta que el modelo idealizado de toma de decisión compartida (SDM) no capta cómo médicos y pacientes realmente negocian duda y esperanza en &#39;modo subjuntivo&#39; antes de aceptar un tratamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el &#39;modo subjuntivo&#39; (proponer sin cerrar) le da a Javier un contraargumento pragmatista útil para enseñar comunicación clínica en AMAUTA — más realista que el guion protocolar de SDM que suelen memorizar los cursos ENAM, y adaptable como técnica enseñable de su Competency Lab.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/1467-9566.70249" target="_blank" rel="noopener">↗ doi.org/10.1111/1467-9566.70249</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">ctexp.substack.com (Substack) · Du Hongwei — 31 ago 2026 · blog · 2026-08-31</div>
+          <div class="r10-title">What Really Widens the Cognitive Gap Is Cognitive Self-Immunity</div>
+          <div class="r10-line">Ensayo que redefine la fuerza cognitiva no como cuánto sabes sino como tu disposición a cambiar de opinión ante evidencia contraria, y muestra que ciencia, mercados competitivos y democracia comparten el mismo mecanismo: no dependen de actores infalibles, sino de sistemas que exponen y corrigen errores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede adoptar la pregunta operativa del ensayo — &#39;¿qué evidencia te haría cambiar de opinión?&#39; — como filtro rápido de humildad epistémica antes de publicar una postura fuerte en Instagram/YouTube o de defenderla en el comité de ética HVLH.</div>
+          <a class="r10-link" href="https://ctexp.substack.com/p/what-really-widens-the-cognitive" target="_blank" rel="noopener">↗ ctexp.substack.com/p/what-really-widens-the-…</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Nursing Scholarship · Williams JR, Burton CW, Grant GG, Hatcher A, Villegas N, Sheffield-Abdullah K — 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">A Decision-Making Framework for Selecting Intimate Partner Violence Measures in Health Research</div>
+          <div class="r10-line">Framework de seis dominios (propósito, poblaciones, tipo de violencia, marco temporal, contexto, método de recolección) para elegir instrumentos de medición en investigación de violencia de pareja, construido por consenso a partir de revisiones sistemáticas existentes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: aunque el tema no es su línea directa, el METAMÉTODO —un checklist de dominios explícitos para elegir entre instrumentos que compiten— es transferible tal cual a cómo Javier selecciona escalas HiTOP/RDoC para sus propios estudios RENACYT de psiquiatría dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jnu.70120" target="_blank" rel="noopener">↗ doi.org/10.1111/jnu.70120</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La FDA reemplazó la exigencia de dos ensayos pivotales por uno solo: pasó de un modelo de &#39;validación por replicación&#39; a uno de &#39;suficiencia por coherencia&#39; — la réplica no es redundancia estadística, es la salvaguarda estructural que sostiene la validez externa.</li><li>NarxCare, el sistema de puntaje de riesgo de opioides más usado en EE.UU., amalgama sobredosis, riesgo legal y daño social en un solo número no auditable — y por &#39;contagio&#39;, el médico que prescribe queda atado al score de su paciente, volviéndose él mismo sujeto de riesgo.</li><li>Un diseño educativo de IA para líderes propone lo opuesto a la IA cómoda: un &#39;motor de contradicción&#39; y un &#39;dispositivo de demora&#39; que fuerzan fricción epistémica deliberada antes de resolver un dilema — la incomodidad como mecanismo de aprendizaje, no como falla de diseño.</li><li>En enfermedades raras sin protocolo estandarizado, la decisión clínica se vuelve discrecional e informal — los autores acuñan &#39;justicia decisional&#39; para preguntar si esa discrecionalidad se reparte de forma justa entre pacientes y profesionales, o si castiga a quien no tiene red de contactos.</li><li>Un ensayo filosófico plantea que la fuerza cognitiva real no es cuánto sabes, sino tu disposición a cambiar de opinión: ciencia, mercados y democracia funcionan no porque sus actores sean infalibles, sino porque sus errores pueden ser expuestos y corregidos.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la FDA acepta un solo ensayo pivotal como estándar, ¿qué papel debería jugar la &#39;plausibilidad previa&#39; (un marco HiTOP/RDoC informal) en decidir cuánta evidencia adicional exigir antes de adoptar un hallazgo psiquiátrico en la práctica?</li><li>¿Existe ya, o debería existir, un &#39;NarxCare psiquiátrico&#39; (score algorítmico de riesgo suicida o de prescripción) que ate la reputación del psiquiatra al score de su paciente — y cómo se auditaría esa opacidad en el contexto peruano?</li><li>¿Puede adaptarse el &#39;motor de contradicción&#39; del diseño de IA para liderazgo a un ejercicio de razonamiento clínico en AMAUTA, donde el residente deba sostener dos diagnósticos diferenciales contradictorios antes de resolver el caso?</li><li>¿La ausencia de protocolos estandarizados en fenotipos psiquiátricos dimensionales atípicos (TDAH/TEA con presentación no prototípica) genera el mismo tipo de &#39;discrecionalidad injusta&#39; que documenta el estudio de enfermedades raras chileno?</li><li>¿Qué evidencia haría que Javier cambiara públicamente de postura en alguna de sus líneas activas (psiquiatría de precisión, IA en educación) — y estaría dispuesto a nombrarla explícitamente en su contenido, siguiendo el mecanismo de &#39;cognitive self-immunity&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto IG/YouTube: &#39;La FDA acaba de aceptar UN solo ensayo en vez de dos — esto es lo que significa para cómo lees un paper&#39;, usando el fin del two-trial paradigm como gancho de alfabetización en evidencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Ensayo o carta editorial: aplicar el concepto de &#39;justicia decisional&#39; (enfermedades raras) a fenotipos psiquiátricos dimensionales sin protocolo claro (TDAH/TEA atípico), coescribible desde el ángulo RENACYT.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie para Competency Lab basada en los cuatro protocolos del &#39;Trickster AI&#39; (clínica de contradicción, dispositivo de demora) adaptados como ejercicios de razonamiento clínico y comunicación para residentes de AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología: usar el caso NarxCare como ejemplo de cómo un algoritmo de riesgo puede reconfigurar —sin resolver— la autoridad epistémica del clínico, aplicado a herramientas de riesgo en psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post o hilo sobre el &#39;modo subjuntivo&#39; de la toma de decisión compartida (estudio de la clínica de hombro danesa) como técnica de comunicación más honesta que el guion protocolar de SDM enseñado en cursos ENAM.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Fundamental &amp; Clinical Pharmacology</span><span class="tag ">Sociology of Health &amp; Illness</span><span class="tag ">New Directions for Youth Development</span><span class="tag ">Journal of Nursing Scholarship</span><span class="tag ">ctexp.substack.com (Substack)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC / PubMed E-utilities (API) · Consensus (búsqueda académica) · WebSearch (Substack, Farnam Street, Reddit, X, YouTube, Psychology Today, Big Think, Aeon/Psyche — sin hallazgos verificables adicionales dentro de la ventana 48-72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 1 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
