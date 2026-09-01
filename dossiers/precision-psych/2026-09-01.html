@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-01 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">1 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Biomedical Engineering, 31 ago 2026 · paper · 2026-08-31</div>
+        <h3 class="r3-title">Developmental deviations of association-network structural connectivity in youths with ADHD predict symptom and treatment outcomes</h3>
+        <p class="r3-hook">Estudio en dos cohortes independientes (6,687 típicos + 1,114 con TDAH en la cohorte de desarrollo longitudinal; 355+477 en la cohorte de replicación) que cuantifica desviaciones individuales de la trayectoria normativa de conectividad estructural de sustancia blanca: las desviaciones se concentran en el extremo asociativo del eje sensoriomotor-asociación, se reducen con la edad en paralelo a la mejora sintomática, y —el dato más fuerte— la desviación basal predijo la respuesta a 12 semanas de atomoxetina pero NO de metilfenidato. Para Javier esto es oro puro en su línea TDAH/TEA: es de los primeros biomarcadores de neuroimagen con poder predictivo fármaco-específico (no solo diagnóstico), publicado en una revista de altísimo perfil (Nature Biomedical Engineering). Puede citarlo en su libro de psicopatología y en clase como el ejemplo canónico de por qué &#39;biomarcador de TDAH&#39; es una categoría demasiado amplia — el biomarcador correcto es &#39;biomarcador de respuesta a X fármaco&#39;, un matiz clave para su enseñanza de razonamiento clínico y psiquiatría de precisión.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41551-026-01779-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41551-026-01779-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Academic Medicine, 31 ago 2026 · editorial · 2026-08-31</div>
+        <h3 class="r3-title">Precision education in the era of AI: promise, pitfalls, and the data divide</h3>
+        <p class="r3-hook">Comentario en Academic Medicine que usa literalmente el término &#39;precision education&#39; y advierte de tres problemas concretos: la &#39;brecha digital&#39; (instituciones con historias clínicas electrónicas sofisticadas dan mejor feedback de precisión que centros con menos recursos), la generalización limitada de modelos de IA entrenados en un entorno clínico específico, y la pregunta de quién define qué es una &#39;exposición clínica adecuada&#39; cuando todo se cuantifica. Para Javier es material directo para AMAUTA/USAMEDIC: nombra exactamente los riesgos que su propio negocio de educación de precisión debe anticipar al construir feedback con IA para preparar ENAM/Residentado en un sistema de salud peruano con infraestructura de datos muy distinta a la de EE.UU. Puede usarlo para un post o clase crítica sobre por qué &#39;personalización con IA&#39; sin datos de calidad local puede ampliar —no cerrar— la brecha educativa entre quienes se preparan con buenos recursos y quienes no.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/acamed/wvag278" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag278</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">CNS Neuroscience &amp; Therapeutics, sep 2026 · paper · 2026-09-01</div>
+        <h3 class="r3-title">Decoding Transdiagnostic Subtypes in Emotional Disorders</h3>
+        <p class="r3-hook">Usando factorización de matrices no negativas sobre conectividad funcional en reposo de 261 pacientes con trastornos emocionales (ansiedad, depresión mayor, TEPT) y 201 controles, el estudio identifica 5 redes funcionales representativas que definen 5 subtipos clínicos transdiagnósticos —desde &#39;ansiedad-depresión mixta&#39; hasta &#39;depresión pura&#39;— cada uno con firma de conectividad distinta e independiente del diagnóstico categorial de origen. Para Javier esto es evidencia de neuroimagen dura, concreta y reciente que opera exactamente el argumento que sostiene con HiTOP/RDoC y network theory: que las categorías DSM esconden subtipos biológicamente distinguibles que cruzan fronteras diagnósticas. Puede incorporarlo directamente al capítulo de psicopatología dimensional de su libro como ejemplo de &#39;transdiagnóstico&#39; llevado a datos de conectividad real, y usarlo en clase para mostrar que la evidencia ya no es solo teórica sino de imagen funcional con subtipos reproducibles.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/cns.71122" target="_blank" rel="noopener">↗ doi.org/10.1002/cns.71122</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Predicting transition to psychiatric disorders in clinical high-risk for psychosis subjects using machine learning and facial features</div>
+          <div class="r10-line">En 50 pacientes en alto riesgo clínico de psicosis (cohorte SSAPP), un modelo de ML sobre dinámica facial extraída de video (OpenFace) predijo la transición a cualquier trastorno psiquiátrico con F1=72% y sensibilidad de 78% para transiciones psicóticas, superando a marcadores basados en unidades de acción facial.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los biomarcadores de video facial se prueban como capa de cribado barata antes de paneles de neuroimagen/ómicas en programas de alto riesgo, un ejemplo que Javier puede citar como &#39;fenotipado digital bien hecho&#39; con sus límites honestos (n=50, falta validación externa).</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.06.001" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.06.001</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Global Open Science, sep 2026 · editorial · 2026-09-01</div>
+          <div class="r10-title">Does Biological Subtyping of Brain Structure in Schizophrenia Bring Us Personalized Psychiatry?</div>
+          <div class="r10-line">Comentario editorial que cuestiona de frente si la subtipificación biológica de la estructura cerebral en esquizofrenia realmente se traduce en psiquiatría personalizada útil en la clínica, o si sigue siendo descripción sin impacto en decisiones de tratamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de escepticismo &#39;subtipo biológico vs. utilidad clínica real&#39; se vuelve la crítica estándar en la conversación de precisión psiquiátrica, cita útil para que Javier temple el entusiasmo cuando enseñe psiquiatría de precisión junto a hallazgos como el de TDAH de esta semana.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsgos.2026.100771" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsgos.2026.100771</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Pharmacogenetics and Genomics, 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Knowledge and perspectives on pharmacogenomic-guided antidepressant treatment among psychiatrists and primary care practitioners</div>
+          <div class="r10-line">Encuesta en EE.UU. a psiquiatras (n=36) y médicos de atención primaria (n=11) muestra que ambos grupos apoyan el testing farmacogenómico multigénico para antidepresivos, pero ninguno tiene el conocimiento práctico para pedirlo o interpretarlo bien.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la brecha ya no es de evidencia sino de alfabetización clínica en farmacogenómica — oportunidad directa para que Javier posicione un módulo de farmacogenómica psiquiátrica en AMAUTA/USAMEDIC que llene exactamente ese vacío.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/FPC.0000000000000608" target="_blank" rel="noopener">↗ doi.org/10.1097/FPC.0000000000000608</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychogeriatrics, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Toward Precision Neuropsychiatry of Dementia: Neuropsychiatric Symptoms as Multidimensional Clinical Phenotypes</div>
+          <div class="r10-line">Revisión propone tratar los síntomas neuropsiquiátricos de la demencia (apatía, agitación, psicosis, depresión) como fenotipos clínicos multidimensionales estratificados por biología, red neural, envejecimiento y contexto psicosocial, no como &#39;complicaciones conductuales&#39; secundarias.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el marco &#39;neuropsiquiatría de precisión&#39; se extiende de la demencia a otros trastornos geriátricos, plantilla que Javier puede generalizar para enseñar estratificación en cualquier síndrome, no solo demencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/psyg.70209" target="_blank" rel="noopener">↗ doi.org/10.1111/psyg.70209</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuropsychopharmacology Reports, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Digital and Biomarker-Based Monitoring for Schizophrenia-Treatment Adherence</div>
+          <div class="r10-line">Revisión narrativa (76 artículos) sobre monitoreo de adherencia antipsicótica: píldoras digitales superan 95% de detección, y wearables más biomarcadores basados en aptámeros permiten ajustar el tratamiento en tiempo real según el perfil real de adherencia del paciente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el sensado no invasivo por aptámeros es la próxima frontera de wearables psiquiátricos, línea que Javier puede vigilar para su pilar ai-enhancement + precision-psychiatry, clave en esquizofrenia donde la no-adherencia dispara recaídas.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/npr2.70156" target="_blank" rel="noopener">↗ doi.org/10.1002/npr2.70156</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychiatric Clinics of North America, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Towards Human-Centered Digital Health Interventions</div>
+          <div class="r10-line">Artículo argumenta que las intervenciones digitales de salud mental deben evaluarse no solo por eficacia clínica sino por preservar dignidad, autonomía y alianza terapéutica, y pide investigación mecanística sobre qué hace que el compromiso con la tecnología realmente funcione.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los criterios &#39;human-centered&#39; se vuelven requisito de publicación para apps de salud mental con IA, argumento que Javier puede usar para criticar herramientas que optimizan enganche sin cuidar la relación terapéutica.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.psc.2025.10.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.psc.2025.10.004</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Global Open Science, jun-sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Early Adversity Imprints Multisystem Biological Aging: A Longitudinal Study of Adversity Dimensions and Aging Phenotypes Across Adolescence</div>
+          <div class="r10-line">Estudio longitudinal de 6 años (n=225, 9-13 años) encuentra que privación (bajo apoyo parental) y amenaza (trauma) generan firmas biológicas de envejecimiento distintas (metabólico-celular vs. neuroendocrino), y solo el fenotipo de amenaza predijo psicopatología 6 años después.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el embedding biológico específico por dimensión de adversidad (amenaza vs. privación) se vuelve estándar para diseñar intervención temprana, reforzando el argumento RDoC de Javier de que &#39;trauma&#39; no es una variable única sino dimensiones con biología distinta.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsgos.2026.100782" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsgos.2026.100782</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Complete blood count-derived inflammatory markers and symptom phenotypes in schizophrenia spectrum disorders: A hierarchical clustering analysis</div>
+          <div class="r10-line">Clustering jerárquico en 454 pacientes con esquizofrenia identifica 3 fenotipos sintomáticos (positivo/excitado, negativo/desorganizado/depresivo, balanceado) con perfiles inflamatorios de hemograma completo distintos y reproducibles (NLR, MLR, SII, SIRI, AISI).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la estratificación por índices inflamatorios de hemograma se prueba como triage barato pre-tratamiento en contextos de recursos limitados — altamente citable para Javier en Perú, donde un hemograma es accesible pero un panel de citocinas no.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.06.015" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.06.015</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Individualized Learning Plans in Residency Training: Lessons for Surgical Education From a Cross-Specialty Scoping Review</div>
+          <div class="r10-line">Revisión de alcance (26 estudios) sobre planes de aprendizaje individualizados en residencia médica: aunque son obligatorios y alineados con educación por competencias, la implementación es inconsistente — barreras clave son fijar metas (92%), falta de plataformas de seguimiento (71%) y poca participación docente (35%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los planes individualizados con seguimiento tecnológico (no solo papel) se vuelven diferenciador competitivo en programas de posgrado — mapa de barreras que Javier puede usar directamente para diseñar el componente de plan individualizado de AMAUTA/USAMEDIC sin repetir los mismos errores.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104064" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104064</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Korean Journal of Medical Education, 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Perceived training needs and barriers among Korean residents: a cross-sectional survey for competency-based education</div>
+          <div class="r10-line">Encuesta a 117 residentes coreanos muestra que las necesidades educativas cambian claramente por año de residencia —de habilidades clínicas básicas y manejo del estrés en años junior a metodología de investigación y escritura académica en años senior— con fuerte preferencia por formatos online.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el currículo por etapa (año de residencia) se vuelve el estándar esperado en posgrado médico, evidencia que Javier puede citar para justificar que AMAUTA/USAMEDIC segmente contenido de ENAM/Residentado por etapa del aprendiz en vez de un currículo único.</div>
+          <a class="r10-link" href="https://doi.org/10.3946/kjme.2026.160" target="_blank" rel="noopener">↗ doi.org/10.3946/kjme.2026.160</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El biomarcador de conectividad en TDAH predijo respuesta a atomoxetina pero NO a metilfenidato: el mismo biomarcador no sirve para todos los fármacos de la misma indicación — &#39;biomarcador de tratamiento&#39; no es un concepto genérico, es fármaco-específico.</li><li>En el estudio de adversidad temprana, solo el fenotipo de &#39;amenaza&#39; (trauma) predijo psicopatología 6 años después; la &#39;privación&#39; (bajo apoyo parental) generó envejecimiento biológico igual de real pero sin ese vínculo predictivo — no toda huella biológica de estrés es igualmente patógena.</li><li>Con un hemograma completo de rutina —barato, disponible en cualquier hospital público— se distinguen 3 fenotipos clínicos reproducibles de esquizofrenia: la psiquiatría de precisión no siempre necesita ómicas caras, a veces necesita mirar mejor lo que ya se pide.</li><li>Psiquiatras y médicos de atención primaria coinciden en apoyar el testing farmacogenómico multigénico, pero ninguno de los dos grupos sabe realmente cómo pedirlo o interpretarlo: el cuello de botella de la precisión hoy no es la evidencia, es la alfabetización clínica.</li><li>Los planes de aprendizaje individualizados llevan años siendo obligatorios en la formación médica de posgrado, pero solo 35% de los programas logra participación docente real: personalizar el aprendizaje falla más por falta de mentores comprometidos que por falta de tecnología.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si un biomarcador de conectividad predice respuesta a atomoxetina pero no a metilfenidato en TDAH, ¿deberíamos exigir &#39;biomarcador + fármaco&#39; como unidad mínima de evidencia en vez de &#39;biomarcador de TDAH&#39; a secas?</li><li>¿Cuánto de la resistencia al testing farmacogenómico en psiquiatría es realmente falta de evidencia, y cuánto es simplemente que nadie enseñó a los clínicos a pedirlo e interpretarlo?</li><li>Si la subtipificación biológica de la esquizofrenia todavía no demuestra utilidad clínica clara (como cuestiona el comentario en Biological Psychiatry: Global Open Science), ¿en qué punto exacto un hallazgo de neuroimagen deja de ser &#39;interesante&#39; y se vuelve &#39;accionable&#39;?</li><li>¿Debería un plan de estudio para el ENAM/Residentado cambiar de contenido según la etapa del candidato, tal como piden los residentes coreanos, o la preparación estandarizada sigue siendo más eficiente a escala?</li><li>Si un hemograma de rutina ya distingue fenotipos clínicos de esquizofrenia, ¿por qué seguimos enseñando que la psiquiatría de precisión requiere necesariamente ómicas costosas y no disponibles en el sistema público peruano?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel comparando el biomarcador de conectividad en TDAH (atomoxetina sí, metilfenidato no) con la narrativa simplista de &#39;el TDAH se trata igual para todos&#39; — gancho: &#39;un biomarcador no es un biomarcador, es un biomarcador-para-un-fármaco&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología usando los 5 subtipos transdiagnósticos de conectividad funcional de trastornos emocionales como evidencia de imagen cerebral concreta para el argumento HiTOP/dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta editorial o paper proponiendo un panel de fenotipado barato (hemograma + cuestionario clínico) para estratificar esquizofrenia en contextos de bajos recursos como Perú, inspirado en el clustering por hemograma de esta semana.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Diseñar el &#39;plan de aprendizaje individualizado&#39; de AMAUTA/USAMEDIC usando el mapa de barreras del scoping review de residencia (metas, plataforma de seguimiento, participación docente) como checklist de lo que no hay que repetir.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido &#39;psiquiatría de precisión sin plata&#39;: cada semana un hallazgo que logra estratificación clínica con herramientas baratas (hemograma, video facial, encuesta) en vez de ómicas caras, arrancando con los papers de esta semana.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Biomedical Engineering</span><span class="tag highlight">Academic Medicine</span><span class="tag ">CNS Neuroscience &amp; Therapeutics</span><span class="tag ">Schizophrenia Research</span><span class="tag ">Biological Psychiatry: Global Open Science</span><span class="tag ">Pharmacogenetics and Genomics</span><span class="tag ">Psychogeriatrics</span><span class="tag ">Neuropsychopharmacology Reports</span><span class="tag ">Psychiatric Clinics of North America</span><span class="tag ">Journal of Surgical Education</span><span class="tag highlight">Korean Journal of Medical Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities, esearch/esummary/efetch) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 1 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
