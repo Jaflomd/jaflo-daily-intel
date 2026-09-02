@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-02 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">2 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">163</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Schizophrenia Research · 2026-09-01 · review</div>
+        <h3 class="r3-title">Síntomas negativos en la Hierarchical Taxonomy of Psychopathology: nosología, etiología y fisiopatología</h3>
+        <p class="r3-hook">Williams, Freilich, Cowan, Docherty, Jonas, Martin y Kotov —Kotov es uno de los arquitectos originales de HiTOP— revisan dónde deberían ubicarse los síntomas negativos dentro del modelo: el HiTOP original los puso en el espectro de psicoticismo/thought disorder junto a síntomas positivos y desorganización, pero la evidencia factorial acumulada desde entonces (y publicaciones recientes del propio consorcio HiTOP) sugiere que en realidad quedan mejor explicados por el espectro de detachment, junto a rasgos evitativos y esquizoides. Para tu libro esto es oro epistemológico: es el propio consorcio HiTOP corrigiéndose a sí mismo con nueva evidencia, el ejemplo perfecto de que un modelo &#39;basado en consenso de evidencia&#39; sigue siendo un organismo vivo y no un dogma cerrado — úsalo en el capítulo introductorio sobre la naturaleza revisable de HiTOP. Clínicamente también importa: si detachment (no psicoticismo) es el espectro correcto para negativos, cambia cómo interpretas negativos aislados sin síntomas positivos en un paciente — más cerca de un fenotipo de personalidad esquizoide/evitativa que de un pródromo psicótico.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.schres.2026.05.012" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.05.012</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Clinical Psychology &amp; Psychotherapy · 2026-09-01 · paper</div>
+        <h3 class="r3-title">La validez incremental de las dimensiones transdiagnósticas de personalidad y psicopatología al predecir desenlaces psicológicos importantes</h3>
+        <p class="r3-hook">Dowgwillo, Kopitz, Cao, Stein y Blais usan 685 pacientes ambulatorios de un centro médico académico para comparar, cara a cara, cuánto predicen las categorías diagnósticas versus siete dimensiones transdiagnósticas (miedo/malestar, antagonismo narcisista, apego, pensamiento flexible, somatización, afrontamiento externo, ira/agresión) sobre cinco desenlaces clínicos: las categorías diagnósticas SOLAS solo predijeron dolor (R²=0.08) y fallaron en ideación suicida, funcionamiento cognitivo, funcionamiento psicosocial y calidad de vida — al añadir las dimensiones, los cinco modelos se volvieron significativos, con incrementos de varianza explicada de hasta ΔR²=0.55 en funcionamiento psicosocial y ΔR²=0.41 en ideación suicida. Es exactamente el dato numérico que necesitas para el argumento central del libro y para AMAUTA: no es que lo dimensional sea &#39;más elegante&#39; teóricamente, es que la categoría diagnóstica sola predice casi nada de lo que le importa al clínico, y la dimensión sí. Úsalo como el ancla cuantitativa cuando alguien te pida evidencia dura de por qué migrar de DSM puro a evaluación dimensional cambia la práctica, no solo el papel.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/cpp.70329" target="_blank" rel="noopener">↗ doi.org/10.1002/cpp.70329</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">European Neuropsychopharmacology · 2026-09-01 · paper</div>
+        <h3 class="r3-title">Arquitectura genética de rasgos externalizing e internalizing en población general y su vínculo con condiciones psiquiátricas y bienestar</h3>
+        <p class="r3-hook">Šakić, Klein, Roth Mota, Goossens, Hulshoff Pol, de Rooij, Franke y Bralten construyen un modelo genómico de dos factores (externalizing/internalizing) combinando 13 GWAS poblacionales (n entre 64,000 y 1,200,000) con structural equation modeling genómico, encontrando 184 loci genome-wide significativos para externalizing y 31 para internalizing, con 52 genes nuevos para externalizing y 18 para internalizing — y el dato que más te sirve: externalizing correlaciona genéticamente con TDAH y trastornos por uso de sustancias, mientras internalizing correlaciona con TOC y anorexia, con solapamiento de ambos con TEPT, depresión mayor, esquizofrenia y ansiedad. Es evidencia genética dura, a nivel poblacional no clínico, de que las dos dimensiones amplias de HiTOP (externalizing/internalizing) tienen arquitectura biológica propia y parcialmente compartida — directo para tu pilar de psiquiatría de precisión y tu línea TDAH: la próxima vez que alguien pregunte si el TDAH &#39;es genéticamente lo mismo&#39; que un trastorno por uso de sustancias, esta es la respuesta con loci y genes nombrados, no una intuición dimensional.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.euroneuro.2026.113546" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.113546</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 2026-09-01 · review</div>
+          <div class="r10-title">Alteraciones multimodales de microglía y vía de la kinurenina a través del espectro afectivo-psicótico: revisión sistemática de patrones, heterogeneidad e implicaciones dimensionales</div>
+          <div class="r10-line">Nussbaumer, Guest, Schiltz y equipo sintetizan estudios de TSPO-PET, LCR y postmortem en depresión, bipolar y esquizofrenia y concluyen que las alteraciones de microglía y kinurenina se explican mejor por subgrupos biológicos y dimensiones sintomáticas que por el diagnóstico categorial — otro llamado directo a fenotipado dimensional, esta vez desde inmunopsiquiatría, un ángulo que aún no has cubierto en el libro.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la inmunopsiquiatría transdiagnóstica va a acumular evidencia rápido en los próximos meses — vale la pena abrir una sección específica en el libro para &#39;biomarcadores inmunes across-spectrum&#39; antes de que el ángulo se sature de contenido genérico en español.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03614-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03614-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Psychiatry and Clinical Neuroscience · 2026-09-01 · paper</div>
+          <div class="r10-title">Experiencias anómalas del self en biotipos de psicosis</div>
+          <div class="r10-line">Sobrino-Conde, Arjona-Valladares y equipo clasifican 113 pacientes psicóticos en dos biotipos transdiagnósticos (déficit cognitivo severo vs. moderado) y muestran que el biotipo con déficit cognitivo severo tiene puntajes de experiencias anómalas del self mucho más altos en el IPASE — otro caso de subtipado data-driven que cruza fronteras diagnósticas dentro del espectro de psicosis.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los &#39;biotipos&#39; (clusters con validez externa, no solo estadística) van a ser el siguiente paso natural después de HiTOP en la conversación de nosología — un tema bueno para una mesa redonda o comité HVLH sobre hasta dónde llevar la dimensionalidad antes de perder utilidad clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02257-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02257-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Expert Review of Neurotherapeutics · 2026-09-01 · review</div>
+          <div class="r10-title">Disfunción del sueño y del ritmo circadiano como motores transdiagnósticos de la psicosis: un marco mecanístico unificado</div>
+          <div class="r10-line">D&#39;Ambrosio, Cavallotti, Del Giudice, Dibenedetto y D&#39;Agostino reencuadran el sueño/circadiano no como epifenómeno sino como vía mecanística causal hacia la psicosis, con perfiles temporales distintos según diagnóstico (horas-días en psicosis por sustancias, años en esquizofrenia) — proponen evaluación de sueño rutinaria como variable de estratificación transdiagnóstica desde las etapas clínicas más tempranas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: contenido de alto rendimiento para razonamiento clínico en AMAUTA/USAMEDIC — el timing del insomnio como pista diagnóstica diferencial (agudo=sustancias, insidioso=esquizofrenia) es una perla de examen ENAM/Residentado casi lista para usar.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/14737175.2026.2718395" target="_blank" rel="noopener">↗ doi.org/10.1080/14737175.2026.2718395</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">American Journal of Medical Genetics Part B: Neuropsychiatric Genetics · 2026-09-01 · paper</div>
+          <div class="r10-title">Un marco global de armonización prospectiva para suicidalidad, anhedonia y síntomas obsesivo-compulsivos en estudios de genética psiquiátrica</div>
+          <div class="r10-line">Diaz-Zuluaga y un consorcio de 15 países (Américas, África, Asia) dentro del NIMH Ancestral Population Network describen el protocolo para recolectar fenotipos dimensionales armonizados (suicidalidad, anhedonia, síntomas obsesivo-compulsivos) en hasta 27,500 personas de ancestrías diversas y subrepresentadas para genética psiquiátrica transdiagnóstica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: infraestructura como esta abre la puerta a que cohortes latinoamericanas (incluida peruana) entren en genética dimensional global — vale la pena rastrear si hay un nodo o colaboración regional a la que tu línea de investigación RENACYT podría sumarse.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/ajmg.b.70019" target="_blank" rel="noopener">↗ doi.org/10.1002/ajmg.b.70019</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Neuropsychopharmacology · 2026-09-01 · paper</div>
+          <div class="r10-title">Disfunción social e integridad funcional de la red neuronal por defecto en trastornos neuropsiquiátricos: estudio de replicación y generalización cross-diagnóstico</div>
+          <div class="r10-line">Braak, Mennes, Su y equipo replican y extienden a depresión mayor un hallazgo previo en esquizofrenia y Alzheimer: la disfunción social se asocia con menor conectividad de la default mode network en corteza prefrontal dorsomedial, consolidando un marcador neurobiológico transdiagnóstico replicado (no solo un hallazgo aislado) para disfunción social.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es de los pocos hallazgos de neuroimagen transdiagnóstica con replicación real cross-estudio — candidato fuerte para citar como ejemplo de &#39;esto sí replica&#39; en tu pilar de psiquiatría de precisión, en contraste con la mayoría de biomarcadores que no sobreviven un segundo estudio.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.euroneuro.2026.112847" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.112847</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuropsychological Rehabilitation · 2026-09-01 · paper</div>
+          <div class="r10-title">El programa RENEW y el entrenamiento transdiagnóstico de manejo de metas por telesalud en neurología ambulatoria</div>
+          <div class="r10-line">Willment, Weizenbaum, Kim y equipo evalúan 28 meses de un programa transdiagnóstico de rehabilitación neuropsicológica (Goal Management Training) por telesalud en 371 pacientes, con mejoras estadísticamente significativas pre-post en ánimo, ansiedad, autoeficacia cognitiva y calidad de vida — traducción clínica real de un marco transdiagnóstico a escala, no un piloto de laboratorio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: modelo de programa replicable para AMAUTA/USAMEDIC o incluso para un servicio de telesalud propio — la lección de que &#39;monitorear sin devolver valor al paciente es una oportunidad terapéutica perdida&#39; es una frase citable para tu propio diseño de programas.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/09602011.2026.2725703" target="_blank" rel="noopener">↗ doi.org/10.1080/09602011.2026.2725703</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 2026-09-01 · paper</div>
+          <div class="r10-title">Una evaluación transdiagnóstica de perfiles temperamentales adultos y su interacción con adversidades de la infancia en trastornos psiquiátricos mayores</div>
+          <div class="r10-line">Dayalamurthy, Balachander y el consorcio cVEDA/ADBS-CBM analizan 1,162 personas (afectados, familiares de primer grado, controles) de familias con esquizofrenia, bipolaridad, TOC o trastorno por uso de alcohol, y encuentran que un modelo de temperamento + adversidad infantil predice bien TUA/bipolar/TOC (AUC 0.82/0.74/0.75) en una cohorte externa, pero falla casi al azar en esquizofrenia (AUC 0.53).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: munición metodológica importante para el libro — un ejemplo empírico claro de que lo transdiagnóstico NO es universalmente aplicable, útil para matizar el entusiasmo dimensional sin caer en el extremo categorial.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122460" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122460</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience and Biobehavioral Reviews · 2026-09-01 · review</div>
+          <div class="r10-title">Del psychache a la neuroplasticidad: un modelo unificado de rescate-reparación de la acción antisuicida de la ketamina</div>
+          <div class="r10-line">Domany y Solomon-Shashua proponen un modelo de dos fases para el efecto antisuicida de la ketamina —rescate agudo (minutos, vía glutamato/habénula lateral/red de saliencia) y reparación estructural (horas-días, vía adenosina/sinaptogénesis)— tratando la suicidalidad como dimensión parcialmente separable de la depresión, no como su simple correlato.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la separación suicidalidad-vs-depresión como dianas neurobiológicas distintas va a ganar tracción en psiquiatría de precisión y neuromodulación — encaja con tu pilar de neuromodulación para pensar la ketamina/esketamina no solo como &#39;antidepresivo rápido&#39; sino como intervención dimensional específica.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neubiorev.2026.106804" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106804</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience and Biobehavioral Reviews · 2026-09-01 · review</div>
+          <div class="r10-title">Efectos del trauma infantil sobre función ejecutiva, impulsividad, rumiación y preocupación: una revisión paraguas</div>
+          <div class="r10-line">Höfels, Frost, Prestwich y O&#39;Connor sintetizan 22 revisiones sistemáticas/metaanálisis (639 estudios primarios) y confirman que el trauma infantil daña función ejecutiva (memoria de trabajo, velocidad de procesamiento), impulsividad y rumiación/preocupación de forma transdiagnóstica, independiente del estatus clínico — factores de riesgo modificables consistentes a través de diagnósticos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: buena revisión-ancla para justificar intervenciones transdiagnósticas centradas en función ejecutiva y regulación cognitiva en pacientes con historia de trauma, sin necesidad de esperar un diagnóstico categorial específico para intervenir.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neubiorev.2026.106818" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106818</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Youth and Adolescence · 2026-09-01 · paper</div>
+          <div class="r10-title">Intolerancia al malestar, ansiedad social y síntomas depresivos en adolescentes: evidencia de modelos de panel cruzado con intercepto aleatorio y de redes de panel cruzado</div>
+          <div class="r10-line">Tian, Chen, Wang y equipo siguen a 1,378 adolescentes chinos durante tres olas y muestran, combinando RI-CLPM y network analysis de panel cruzado, que la intolerancia al malestar no es solo una vulnerabilidad unidireccional: también es predicha por ansiedad social y depresión, y media su asociación longitudinal — con miedo a la evaluación negativa y fatiga como los nodos más influyentes de la red a través del tiempo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: buen ejemplo metodológico para enseñar en AMAUTA la diferencia entre &#39;factor de riesgo transdiagnóstico&#39; (marco tradicional) y &#39;nodo de red con influencia bidireccional en el tiempo&#39; (marco de network psychopathology) usando el mismo dataset.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10964-026-02391-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s10964-026-02391-0</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En 685 pacientes ambulatorios, las categorías diagnósticas SOLAS solo predijeron uno de cinco desenlaces clínicos (dolor, R²=0.08) — al agregar dimensiones transdiagnósticas, la varianza explicada subió hasta ΔR²=0.55 en funcionamiento psicosocial y ΔR²=0.41 en ideación suicida (Dowgwillo et al.).</li><li>El propio consorcio HiTOP está revisando su propia estructura: la evidencia factorial más reciente sugiere que los síntomas negativos no pertenecen al espectro de psicoticismo (donde HiTOP los puso originalmente) sino al de detachment, junto a rasgos evitativos y esquizoides (Williams, Kotov et al.).</li><li>Un modelo genómico con 13 GWAS y hasta 1.2 millones de personas encontró 184 loci para el factor genético &#39;externalizing&#39; (que correlaciona con TDAH y uso de sustancias) y 31 para &#39;internalizing&#39; (que correlaciona con TOC y anorexia) — arquitectura genética propia para las dos dimensiones amplias de HiTOP (Šakić et al.).</li><li>Un modelo de temperamento + adversidad infantil predijo bien trastorno por uso de alcohol, bipolaridad y TOC (AUC 0.82/0.74/0.75) en una cohorte externa, pero fue casi aleatorio para predecir esquizofrenia (AUC 0.53) — lo transdiagnóstico tiene límites de especificidad que conviene enseñar, no solo celebrar (Dayalamurthy et al.).</li><li>La disfunción social en esquizofrenia, Alzheimer y ahora también depresión mayor comparte el mismo marcador replicado: menor conectividad de la default mode network en corteza prefrontal dorsomedial — de los pocos hallazgos de neuroimagen transdiagnóstica que sobreviven una replicación real (Braak et al.).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si en tu consulta las categorías diagnósticas casi no predicen funcionamiento psicosocial, calidad de vida ni ideación suicida, pero las dimensiones transdiagnósticas sí explican hasta la mitad de esa varianza, ¿qué tanto de tu evaluación clínica actual sigue anclada en la etiqueta categorial en vez de medir estas dimensiones de forma directa?</li><li>Si el propio consorcio HiTOP está revisando dónde van los síntomas negativos (¿psicoticismo o detachment?), ¿cómo le explicas a un residente que un modelo &#39;basado en consenso de evidencia&#39; siga en revisión activa — y por qué eso es una fortaleza científica y no una debilidad del marco?</li><li>¿Cuántos pacientes con TDAH en tu consulta comparten un correlato genético de &#39;externalizing&#39; con el trastorno por uso de sustancias que nunca se discute explícitamente en la evaluación diagnóstica categorial estándar?</li><li>Si un modelo de temperamento predice bien uso de alcohol, bipolaridad y TOC pero falla casi al azar en esquizofrenia, ¿dónde trazas tú la línea entre aplicar un marco transdiagnóstico con criterio y aplicarlo de forma ciega solo porque &#39;suena más moderno&#39; que el categorial?</li><li>Si el sueño/circadiano se reencuadra como motor causal (no epifenómeno) de la psicosis, con un curso agudo en psicosis por sustancias y uno insidioso en esquizofrenia, ¿estás usando el timing del insomnio como pista de diagnóstico diferencial en tu razonamiento clínico, o sigue siendo una pregunta secundaria de la anamnesis?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post: &#39;Las categorías del DSM casi no predicen nada — esto sí&#39; usando el dato numérico de Dowgwillo et al. (categorías: R²=0.08 en el mejor caso; dimensiones: hasta ΔR²=0.55) como gancho directo para audiencia de AMAUTA/USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro (capítulo introductorio sobre epistemología de HiTOP) que use el caso Williams/Kotov et al. — la reubicación de síntomas negativos de psicoticismo a detachment — como ejemplo vivo de que HiTOP es un modelo activamente revisable, no un dogma cerrado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video para tu línea TDAH/neurodivergencia y pilar de psiquiatría de precisión: &#39;El TDAH y el uso de sustancias comparten arquitectura genética&#39; usando el hallazgo de Šakić et al. (184 loci externalizing, correlación genética con TDAH) con los genes y loci nombrados.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o carta breve señalando el patrón de especificidad diferencial del modelo temperamento+ACEs (Dayalamurthy et al.: predice bien TUA/bipolar/TOC pero no esquizofrenia) como evidencia de que lo transdiagnóstico no es universalmente aplicable — aporte a la discusión metodológica activa del campo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Caso clínico para USAMEDIC/ENAM sobre razonamiento diagnóstico diferencial usando el marco de D&#39;Ambrosio et al.: el timing del insomnio (agudo en psicosis por sustancias vs. insidioso en esquizofrenia) como pista clínica temprana dentro de un marco transdiagnóstico de sueño-psicosis.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Schizophrenia Research</span><span class="tag ">Clinical Psychology &amp; Psychotherapy</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Expert Review of Neurotherapeutics</span><span class="tag ">American Journal of Medical Genetics Part B</span><span class="tag ">Neuropsychological Rehabilitation</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Neuroscience and Biobehavioral Reviews</span><span class="tag ">Journal of Youth and Adolescence</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils, date_from=2026-08-27, date_to=2026-09-02, datetype=pdat) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch (medRxiv, PsyArXiv/OSF, PubMed). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 2 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
