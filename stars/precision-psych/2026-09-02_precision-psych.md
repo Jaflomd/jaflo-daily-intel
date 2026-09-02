@@ -1,0 +1,71 @@
+# ⭐ 🧬 Psiquiatría & Educación de Precisión — 2026-09-02
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/precision-psych/2026-09-02.html
+
+## 🏆 Top 3
+- [ ] **Closed-loop transcranial alternating current stimulation (tACS) reduces cue reactivity and improves inhibitory control in methamphetamine use disorder with frequency and timing specificity** — _Molecular Psychiatry, 1 sep 2026 (online ahead of print) · paper_ — [doi.org/10.1038/s41380-026-03846-3](https://doi.org/10.1038/s41380-026-03846-3) <!--star:precision-psych|2026-09-02|t3-1-->
+  > Un sistema de tACS guiado por un biomarcador de reactividad a la señal-clave (cue reactivity) ajusta en tiempo real la frecuencia y el timing de la estimulación, y logra mejorar el control inhibitorio en trastorno por uso de metanfetamina con especificidad — no cualquier frecuencia ni cualquier momento funciona igual. Esto le importa directo a Javier porque es el tipo de evidencia de circuito cerrado biomarcador→neuromodulación que valida su tesis de psiquiatría computacional/de precisión más allá del hype: el 'cuándo' estimular es tan medible como el 'qué' estimular. El modelo es trasladable conceptualmente de adicciones a impulsividad en TDAH adulto o desregulación en TEA, su línea viva de neurodivergencia. Puede usarlo como ejemplo citable en el capítulo de neuromodulación de su libro de psicopatología, o como gancho de contenido IG/YT sobre la diferencia entre neuromodulación de precisión real y 'neurofeedback wellness' sin biomarcador guía.
+- [ ] **Comparative Effectiveness of Pharmacogenomics for Treatment of Depression** — _Journal of Clinical Psychopharmacology, sep-oct 2026 (epub 10 ago 2026) · rct_ — [doi.org/10.1097/JCP.0000000000002175](https://doi.org/10.1097/JCP.0000000000002175) <!--star:precision-psych|2026-09-02|t3-2-->
+  > RCT (N=201, Massachusetts General/Harvard) que compara testeo farmacogenómico combinatorio (GeneSight) + tratamiento guiado por guías vs. tratamiento guiado por guías solo, a 12 meses, en depresión mayor: ambos brazos mejoran de forma similar en bienestar. A Javier le importa porque la farmacogenómica es un pilar central de su línea de psiquiatría de precisión, y este es uno de los pocos ensayos aleatorizados bien controlados (no solo estudios observacionales o casos) que pone a prueba directamente si el test comercial más promocionado añade valor incremental real sobre buena práctica clínica guiada — un matiz necesario frente al hype comercial de PGx. Le sirve como contrapeso basado en evidencia para su docencia de razonamiento clínico (ENAM/Residentado) y para templar expectativas en su propio comité de ética e investigación RENACYT sobre qué constituye 'precisión' verificada vs. vendida. Es material directo para un post crítico: 'PGx en depresión: qué dice el ensayo que nadie promociona'.
+- [ ] **Closing the Feedback Loop: The Feed Protocol for AI-Driven Curricular Reform in Surgical Residency** — _Journal of Surgical Education, sep 2026 (epub 1 jul 2026) · paper_ — [doi.org/10.1016/j.jsurg.2026.104042](https://doi.org/10.1016/j.jsurg.2026.104042) <!--star:precision-psych|2026-09-02|t3-3-->
+  > El protocolo FEED usa un LLM para analizar en menos de 60 segundos cientos de reportes de 'áreas de respuesta incorrecta' del examen ABSITE de 16 residentes de cirugía, categorizarlos en 8 dominios y generar un 'Faculty Action Roadmap' con objetivos de aprendizaje específicos por brecha — de currículo estático a educación de precisión en tiempo real. Esto es casi un plano operativo para AMAUTA/USAMEDIC: el mismo pipeline de prompt-engineering aplicado a bancos de preguntas falladas de simulacros ENAM/Residentado podría generar rutas de refuerzo automatizadas por cohorte de estudiantes, sin depender de análisis manual. Garantiza el ítem de educación de precisión que su línea amauta-education necesita en el top 3, con un caso de uso concreto y replicable (no solo promesa de IA genérica). Cómo usarlo: piloto interno con el banco de preguntas de USAMEDIC, replicando la secuencia maestra de prompts del FEED Protocol para producir un roadmap de remediación por tema antes del próximo simulacro.
+
+## 📡 Radar (10)
+- [ ] **Temporal Dynamics of Reward Dysfunction in Psychiatric Disorders: Memory-Derived Value, Incentive Salience, Hedonic Impact, and Value Updating** — _Biological Psychiatry: Global Open Science, jul 2026 (eCollection sep 2026) · review_ — [doi.org/10.1016/j.bpsgos.2026.100786](https://doi.org/10.1016/j.bpsgos.2026.100786) <!--star:precision-psych|2026-09-02|t10-1-->
+  > Propone un marco transdiagnóstico que separa memoria de recompensa episódica, saliencia incentiva, impacto hedónico y actualización de valor como procesos disociables en depresión, esquizofrenia, bipolaridad y adicción, no un solo 'circuito roto'.
+  > 🔮 Encaja directo con su agenda HiTOP/RDoC/network theory: Javier probablemente lo use como armazón conceptual para el capítulo de motivación/anhedonia de su libro de psicopatología dimensional.
+- [ ] **A Critical Synthesis of Machine Learning in Autism Spectrum Disorder Genomic Research: From Transcriptomics to Microbiome** — _Medeniyet Medical Journal, 2 sep 2026 (online ahead of print) · review_ — [doi.org/10.4274/MMJ.galenos.2026.69259](https://doi.org/10.4274/MMJ.galenos.2026.69259) <!--star:precision-psych|2026-09-02|t10-2-->
+  > Revisión crítica de ML en genómica de TEA que advierte que un AUC reportado de 1.00 en varios estudios es señal de sobreajuste, mientras el mejor modelo genómico realmente validado ronda AUC≈0.73.
+  > 🔮 Munición directa para su línea TDAH/TEA y su docencia de razonamiento clínico: buen caso de enseñanza sobre 'AUC perfecto = red flag' para residentes de AMAUTA.
+- [ ] **Roadmap for Mental Health Treatment Utilizing Pharmacogenomic Testing: Case Report** — _Clinical Case Reports, 26 ago 2026 (eCollection sep 2026) · paper_ — [doi.org/10.1002/ccr3.72904](https://doi.org/10.1002/ccr3.72904) <!--star:precision-psych|2026-09-02|t10-3-->
+  > Caso clínico que ilustra un uso paso a paso del testeo farmacogenómico para reducir prescripción por ensayo-error en depresión.
+  > 🔮 Material corto para un post IG ('un caso, una decisión basada en PGx') que complementa —con matiz clínico real— el RCT de PGx del top 3.
+- [ ] **Best practices for using biological data in psychological research** — _Journal of Mood and Anxiety Disorders, 29 jul 2026 (eCollection sep 2026) · paper_ — [doi.org/10.1016/j.xjmad.2026.100197](https://doi.org/10.1016/j.xjmad.2026.100197) <!--star:precision-psych|2026-09-02|t10-4-->
+  > Consorcio internacional de trauma/PTSD propone estándares mínimos (pre-registro, control de confusores, poder estadístico) para reportar datos biológicos en investigación psicológica.
+  > 🔮 Javier podría convertirlo en checklist de lectura crítica para enseñar a residentes a distinguir biomarcador validado de biomarcador de titular — antídoto directo contra el hype de precisión.
+- [ ] **Progression to Dementia in Very Late-Onset Schizophrenia-Like Psychosis Stratified by Alzheimer's Disease and Lewy Body Disease Biomarkers: A Retrospective Cohort Study** — _Psychogeriatrics, sep 2026 · paper_ — [doi.org/10.1111/psyg.70205](https://doi.org/10.1111/psyg.70205) <!--star:precision-psych|2026-09-02|t10-5-->
+  > Cohorte retrospectiva que estratifica psicosis de inicio muy tardío por biomarcadores de Alzheimer y cuerpos de Lewy para predecir progresión a demencia.
+  > 🔮 Ángulo de contenido posible: 'cuándo la psicosis tardía es en realidad un pródromo de demencia' — estratificación biológica aplicada a un fenotipo límite que le interesa a Javier.
+- [ ] **Optimizing Ketamine Infusion Therapy for Treatment-Resistant Bipolar Depression: Commentary on Zhou et al. (2023)** — _Bipolar Disorders, sep 2026 · editorial_ — [doi.org/10.1111/bdi.70177](https://doi.org/10.1111/bdi.70177) <!--star:precision-psych|2026-09-02|t10-6-->
+  > Comentario que contextualiza evidencia real-world de ketamina IV repetida en depresión bipolar resistente y marca prioridades de seguridad para la fase de continuación.
+  > 🔮 Insumo directo para su línea de neuromodulación/farmacología de precisión: probable mención en contenido sobre 'más allá de la respuesta rápida' en depresión resistente.
+- [ ] **Leveraging pretrained vision transformers for classifying alcohol use disorder using raw resting-state EEG** — _NeuroImage: Reports, 1 ago 2026 (eCollection sep 2026) · paper_ — [doi.org/10.1016/j.ynirp.2026.100388](https://doi.org/10.1016/j.ynirp.2026.100388) <!--star:precision-psych|2026-09-02|t10-7-->
+  > Usa transformers preentrenados sobre EEG crudo de reposo para clasificar trastorno por uso de alcohol, sin extracción manual de features espectrales.
+  > 🔮 Ejemplo citable de 'IA aplicada con datos reales' (no genérica) para su radar de herramientas de psiquiatría computacional.
+- [ ] **Cognitive profiles of patients with enlarged lateral ventricles and cognitive impairment among patients with schizophrenia** — _Schizophrenia Research: Cognition, 25 jul 2026 (eCollection sep 2026) · paper_ — [doi.org/10.1016/j.scog.2026.100455](https://doi.org/10.1016/j.scog.2026.100455) <!--star:precision-psych|2026-09-02|t10-8-->
+  > Compara perfiles cognitivos de pacientes con esquizofrenia según agrandamiento ventricular, un subtipo neuroanatómico con implicancias de estratificación.
+  > 🔮 Evidencia de apoyo (no protagonista) para su tesis de 'biotypes' en esquizofrenia — candidato de nota al pie en el capítulo de subtipificación biológica.
+- [ ] **Leveraging Natural Language Processing and Structured Scoring to Evaluate Operative Note Quality in Surgical Training** — _Journal of Surgical Education, sep 2026 (epub 16 jun 2026) · paper_ — [doi.org/10.1016/j.jsurg.2026.104022](https://doi.org/10.1016/j.jsurg.2026.104022) <!--star:precision-psych|2026-09-02|t10-9-->
+  > Combina NLP con una rúbrica estructurada (SAFE-OR) para evaluar calidad de notas operatorias de residentes vs. adjuntos, ajustando por severidad del evaluador.
+  > 🔮 Pipeline traducible a evaluación automatizada de notas SOAP/historias de residentes de psiquiatría en AMAUTA — feedback de precisión sobre razonamiento clínico escrito.
+- [ ] **Application Effectiveness Analysis of Artificial Intelligence-assisted Teaching in Standardized Training for Medical Imaging Residents** — _Academic Radiology, sep 2026 (epub 11 jul 2026) · paper_ — [doi.org/10.1016/j.acra.2026.06.022](https://doi.org/10.1016/j.acra.2026.06.022) <!--star:precision-psych|2026-09-02|t10-10-->
+  > Mide con outcomes duros la efectividad de enseñanza asistida por IA en entrenamiento estandarizado de residentes de imagenología.
+  > 🔮 Comparador cross-especialidad para su tesis de que la IA en educación médica funciona cuando se mide con resultados, no con satisfacción — dato más para AMAUTA/USAMEDIC.
+
+---
+
+## 💎 Perlas del día
+- En el RCT de farmacogenómica (PGx+guía vs. guía sola) ambos brazos mejoran igual de bien en bienestar a 12 meses: el test comercial más promocionado en depresión no garantiza por sí solo mejor resultado sin un uso clínico deliberado del reporte.
+- Un AUC reportado de 1.00 en modelos de ML sobre genómica de TEA no es un logro, es casi siempre sobreajuste — el modelo mejor validado del campo llega apenas a AUC≈0.73.
+- El 'biotipo' ventricular en esquizofrenia no es solo un hallazgo de imagen: se asocia a perfiles cognitivos distintos, así que la estratificación por neuroanatomía podría anticipar qué pacientes necesitan rehabilitación cognitiva más agresiva.
+- Cerrar el loop biomarcador→estimulación (tACS guiado por reactividad a la señal-clave) no es solo neurotecnología cara: mejora el control inhibitorio con especificidad de frecuencia y timing — el 'cuándo' estimular importa tanto como el 'cómo'.
+- Un protocolo con LLM (FEED) analizó en menos de 60 segundos cientos de datos de examen de residentes y generó un roadmap de remediación: el cuello de botella en educación de precisión ya no es el análisis, es el diseño del prompt y la validación del outcome.
+
+## ❓ Preguntas del día
+- ¿Cuánto del 'beneficio' reportado de los tests farmacogenómicos comerciales en depresión es efecto de la atención clínica extra que generan vs. señal genética real?
+- ¿Puede el modelo de circuito cerrado biomarcador→tACS trasladarse de adicciones a impulsividad en TDAH adulto?
+- ¿Qué tan replicable es la estratificación ventricular-cognitiva en esquizofrenia fuera de cohortes japonesas, y sirve para decidir intensidad de rehabilitación cognitiva?
+- ¿Cómo se vería un 'FEED Protocol' adaptado a bancos de preguntas ENAM/Residentado — qué tan rápido podría AMAUTA generar rutas de refuerzo por cohorte?
+- ¿Qué mínimos metodológicos del paper de 'best practices' en datos biológicos le faltan a la mayoría de estudios de biomarcadores psiquiátricos citados en docencia?
+
+## 💡 Ideas del día
+- (content) Post IG/YT: 'PGx en depresión: qué dice el ensayo que nadie promociona' — desmontar el hype comercial de GeneSight con el RCT N=201 del top 3.
+- (content) Reel/hilo: 'AUC=1.00 es una alerta roja, no un logro' usando el caso de ML en TEA como ejemplo de enseñanza de razonamiento clínico basado en evidencia.
+- (content) Piloto AMAUTA: adaptar el FEED Protocol (LLM + reportes de examen fallado) a los bancos de preguntas de simulacros ENAM para generar rutas de refuerzo automatizadas por cohorte.
+- (book) Capítulo del libro de psicopatología dimensional: usar el marco temporal de disfunción de recompensa (memoria–saliencia–impacto hedónico–actualización de valor) como armazón transdiagnóstico para motivación/anhedonia.
+- (paper) Carta/paper corto: propuesta de estandarización mínima para reportar biomarcadores en estudios psiquiátricos peruanos, citando el paper de 'best practices' como referencia metodológica.
+
+---
+_Fuentes: PubMed (NCBI eutils, esearch/esummary/efetch) · Consensus (meta-búsqueda Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch (medRxiv/PsyArXiv, control de novedad). Atribución a PubMed por sus términos de uso._

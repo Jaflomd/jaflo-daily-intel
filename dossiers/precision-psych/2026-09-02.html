@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-02 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">2 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">219</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">56</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Molecular Psychiatry, 1 sep 2026 (online ahead of print) · paper · 2026-09-01</div>
+        <h3 class="r3-title">Closed-loop transcranial alternating current stimulation (tACS) reduces cue reactivity and improves inhibitory control in methamphetamine use disorder with frequency and timing specificity</h3>
+        <p class="r3-hook">Un sistema de tACS guiado por un biomarcador de reactividad a la señal-clave (cue reactivity) ajusta en tiempo real la frecuencia y el timing de la estimulación, y logra mejorar el control inhibitorio en trastorno por uso de metanfetamina con especificidad — no cualquier frecuencia ni cualquier momento funciona igual. Esto le importa directo a Javier porque es el tipo de evidencia de circuito cerrado biomarcador→neuromodulación que valida su tesis de psiquiatría computacional/de precisión más allá del hype: el &#39;cuándo&#39; estimular es tan medible como el &#39;qué&#39; estimular. El modelo es trasladable conceptualmente de adicciones a impulsividad en TDAH adulto o desregulación en TEA, su línea viva de neurodivergencia. Puede usarlo como ejemplo citable en el capítulo de neuromodulación de su libro de psicopatología, o como gancho de contenido IG/YT sobre la diferencia entre neuromodulación de precisión real y &#39;neurofeedback wellness&#39; sin biomarcador guía.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03846-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03846-3</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Clinical Psychopharmacology, sep-oct 2026 (epub 10 ago 2026) · rct · 2026-08-10</div>
+        <h3 class="r3-title">Comparative Effectiveness of Pharmacogenomics for Treatment of Depression</h3>
+        <p class="r3-hook">RCT (N=201, Massachusetts General/Harvard) que compara testeo farmacogenómico combinatorio (GeneSight) + tratamiento guiado por guías vs. tratamiento guiado por guías solo, a 12 meses, en depresión mayor: ambos brazos mejoran de forma similar en bienestar. A Javier le importa porque la farmacogenómica es un pilar central de su línea de psiquiatría de precisión, y este es uno de los pocos ensayos aleatorizados bien controlados (no solo estudios observacionales o casos) que pone a prueba directamente si el test comercial más promocionado añade valor incremental real sobre buena práctica clínica guiada — un matiz necesario frente al hype comercial de PGx. Le sirve como contrapeso basado en evidencia para su docencia de razonamiento clínico (ENAM/Residentado) y para templar expectativas en su propio comité de ética e investigación RENACYT sobre qué constituye &#39;precisión&#39; verificada vs. vendida. Es material directo para un post crítico: &#39;PGx en depresión: qué dice el ensayo que nadie promociona&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/JCP.0000000000002175" target="_blank" rel="noopener">↗ doi.org/10.1097/JCP.0000000000002175</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Surgical Education, sep 2026 (epub 1 jul 2026) · paper · 2026-07-01</div>
+        <h3 class="r3-title">Closing the Feedback Loop: The Feed Protocol for AI-Driven Curricular Reform in Surgical Residency</h3>
+        <p class="r3-hook">El protocolo FEED usa un LLM para analizar en menos de 60 segundos cientos de reportes de &#39;áreas de respuesta incorrecta&#39; del examen ABSITE de 16 residentes de cirugía, categorizarlos en 8 dominios y generar un &#39;Faculty Action Roadmap&#39; con objetivos de aprendizaje específicos por brecha — de currículo estático a educación de precisión en tiempo real. Esto es casi un plano operativo para AMAUTA/USAMEDIC: el mismo pipeline de prompt-engineering aplicado a bancos de preguntas falladas de simulacros ENAM/Residentado podría generar rutas de refuerzo automatizadas por cohorte de estudiantes, sin depender de análisis manual. Garantiza el ítem de educación de precisión que su línea amauta-education necesita en el top 3, con un caso de uso concreto y replicable (no solo promesa de IA genérica). Cómo usarlo: piloto interno con el banco de preguntas de USAMEDIC, replicando la secuencia maestra de prompts del FEED Protocol para producir un roadmap de remediación por tema antes del próximo simulacro.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jsurg.2026.104042" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104042</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Global Open Science, jul 2026 (eCollection sep 2026) · review · 2026-07-04</div>
+          <div class="r10-title">Temporal Dynamics of Reward Dysfunction in Psychiatric Disorders: Memory-Derived Value, Incentive Salience, Hedonic Impact, and Value Updating</div>
+          <div class="r10-line">Propone un marco transdiagnóstico que separa memoria de recompensa episódica, saliencia incentiva, impacto hedónico y actualización de valor como procesos disociables en depresión, esquizofrenia, bipolaridad y adicción, no un solo &#39;circuito roto&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Encaja directo con su agenda HiTOP/RDoC/network theory: Javier probablemente lo use como armazón conceptual para el capítulo de motivación/anhedonia de su libro de psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsgos.2026.100786" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsgos.2026.100786</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medeniyet Medical Journal, 2 sep 2026 (online ahead of print) · review · 2026-09-02</div>
+          <div class="r10-title">A Critical Synthesis of Machine Learning in Autism Spectrum Disorder Genomic Research: From Transcriptomics to Microbiome</div>
+          <div class="r10-line">Revisión crítica de ML en genómica de TEA que advierte que un AUC reportado de 1.00 en varios estudios es señal de sobreajuste, mientras el mejor modelo genómico realmente validado ronda AUC≈0.73.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Munición directa para su línea TDAH/TEA y su docencia de razonamiento clínico: buen caso de enseñanza sobre &#39;AUC perfecto = red flag&#39; para residentes de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.4274/MMJ.galenos.2026.69259" target="_blank" rel="noopener">↗ doi.org/10.4274/MMJ.galenos.2026.69259</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Case Reports, 26 ago 2026 (eCollection sep 2026) · paper · 2026-08-26</div>
+          <div class="r10-title">Roadmap for Mental Health Treatment Utilizing Pharmacogenomic Testing: Case Report</div>
+          <div class="r10-line">Caso clínico que ilustra un uso paso a paso del testeo farmacogenómico para reducir prescripción por ensayo-error en depresión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Material corto para un post IG (&#39;un caso, una decisión basada en PGx&#39;) que complementa —con matiz clínico real— el RCT de PGx del top 3.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/ccr3.72904" target="_blank" rel="noopener">↗ doi.org/10.1002/ccr3.72904</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Mood and Anxiety Disorders, 29 jul 2026 (eCollection sep 2026) · paper · 2026-07-29</div>
+          <div class="r10-title">Best practices for using biological data in psychological research</div>
+          <div class="r10-line">Consorcio internacional de trauma/PTSD propone estándares mínimos (pre-registro, control de confusores, poder estadístico) para reportar datos biológicos en investigación psicológica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Javier podría convertirlo en checklist de lectura crítica para enseñar a residentes a distinguir biomarcador validado de biomarcador de titular — antídoto directo contra el hype de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.xjmad.2026.100197" target="_blank" rel="noopener">↗ doi.org/10.1016/j.xjmad.2026.100197</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychogeriatrics, sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Progression to Dementia in Very Late-Onset Schizophrenia-Like Psychosis Stratified by Alzheimer&#39;s Disease and Lewy Body Disease Biomarkers: A Retrospective Cohort Study</div>
+          <div class="r10-line">Cohorte retrospectiva que estratifica psicosis de inicio muy tardío por biomarcadores de Alzheimer y cuerpos de Lewy para predecir progresión a demencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Ángulo de contenido posible: &#39;cuándo la psicosis tardía es en realidad un pródromo de demencia&#39; — estratificación biológica aplicada a un fenotipo límite que le interesa a Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/psyg.70205" target="_blank" rel="noopener">↗ doi.org/10.1111/psyg.70205</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Bipolar Disorders, sep 2026 · editorial · 2026-09-01</div>
+          <div class="r10-title">Optimizing Ketamine Infusion Therapy for Treatment-Resistant Bipolar Depression: Commentary on Zhou et al. (2023)</div>
+          <div class="r10-line">Comentario que contextualiza evidencia real-world de ketamina IV repetida en depresión bipolar resistente y marca prioridades de seguridad para la fase de continuación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Insumo directo para su línea de neuromodulación/farmacología de precisión: probable mención en contenido sobre &#39;más allá de la respuesta rápida&#39; en depresión resistente.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/bdi.70177" target="_blank" rel="noopener">↗ doi.org/10.1111/bdi.70177</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">NeuroImage: Reports, 1 ago 2026 (eCollection sep 2026) · paper · 2026-08-01</div>
+          <div class="r10-title">Leveraging pretrained vision transformers for classifying alcohol use disorder using raw resting-state EEG</div>
+          <div class="r10-line">Usa transformers preentrenados sobre EEG crudo de reposo para clasificar trastorno por uso de alcohol, sin extracción manual de features espectrales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Ejemplo citable de &#39;IA aplicada con datos reales&#39; (no genérica) para su radar de herramientas de psiquiatría computacional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ynirp.2026.100388" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ynirp.2026.100388</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research: Cognition, 25 jul 2026 (eCollection sep 2026) · paper · 2026-07-25</div>
+          <div class="r10-title">Cognitive profiles of patients with enlarged lateral ventricles and cognitive impairment among patients with schizophrenia</div>
+          <div class="r10-line">Compara perfiles cognitivos de pacientes con esquizofrenia según agrandamiento ventricular, un subtipo neuroanatómico con implicancias de estratificación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Evidencia de apoyo (no protagonista) para su tesis de &#39;biotypes&#39; en esquizofrenia — candidato de nota al pie en el capítulo de subtipificación biológica.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.scog.2026.100455" target="_blank" rel="noopener">↗ doi.org/10.1016/j.scog.2026.100455</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, sep 2026 (epub 16 jun 2026) · paper · 2026-06-16</div>
+          <div class="r10-title">Leveraging Natural Language Processing and Structured Scoring to Evaluate Operative Note Quality in Surgical Training</div>
+          <div class="r10-line">Combina NLP con una rúbrica estructurada (SAFE-OR) para evaluar calidad de notas operatorias de residentes vs. adjuntos, ajustando por severidad del evaluador.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Pipeline traducible a evaluación automatizada de notas SOAP/historias de residentes de psiquiatría en AMAUTA — feedback de precisión sobre razonamiento clínico escrito.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104022" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104022</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Academic Radiology, sep 2026 (epub 11 jul 2026) · paper · 2026-07-11</div>
+          <div class="r10-title">Application Effectiveness Analysis of Artificial Intelligence-assisted Teaching in Standardized Training for Medical Imaging Residents</div>
+          <div class="r10-line">Mide con outcomes duros la efectividad de enseñanza asistida por IA en entrenamiento estandarizado de residentes de imagenología.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Comparador cross-especialidad para su tesis de que la IA en educación médica funciona cuando se mide con resultados, no con satisfacción — dato más para AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.acra.2026.06.022" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.06.022</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el RCT de farmacogenómica (PGx+guía vs. guía sola) ambos brazos mejoran igual de bien en bienestar a 12 meses: el test comercial más promocionado en depresión no garantiza por sí solo mejor resultado sin un uso clínico deliberado del reporte.</li><li>Un AUC reportado de 1.00 en modelos de ML sobre genómica de TEA no es un logro, es casi siempre sobreajuste — el modelo mejor validado del campo llega apenas a AUC≈0.73.</li><li>El &#39;biotipo&#39; ventricular en esquizofrenia no es solo un hallazgo de imagen: se asocia a perfiles cognitivos distintos, así que la estratificación por neuroanatomía podría anticipar qué pacientes necesitan rehabilitación cognitiva más agresiva.</li><li>Cerrar el loop biomarcador→estimulación (tACS guiado por reactividad a la señal-clave) no es solo neurotecnología cara: mejora el control inhibitorio con especificidad de frecuencia y timing — el &#39;cuándo&#39; estimular importa tanto como el &#39;cómo&#39;.</li><li>Un protocolo con LLM (FEED) analizó en menos de 60 segundos cientos de datos de examen de residentes y generó un roadmap de remediación: el cuello de botella en educación de precisión ya no es el análisis, es el diseño del prompt y la validación del outcome.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuánto del &#39;beneficio&#39; reportado de los tests farmacogenómicos comerciales en depresión es efecto de la atención clínica extra que generan vs. señal genética real?</li><li>¿Puede el modelo de circuito cerrado biomarcador→tACS trasladarse de adicciones a impulsividad en TDAH adulto?</li><li>¿Qué tan replicable es la estratificación ventricular-cognitiva en esquizofrenia fuera de cohortes japonesas, y sirve para decidir intensidad de rehabilitación cognitiva?</li><li>¿Cómo se vería un &#39;FEED Protocol&#39; adaptado a bancos de preguntas ENAM/Residentado — qué tan rápido podría AMAUTA generar rutas de refuerzo por cohorte?</li><li>¿Qué mínimos metodológicos del paper de &#39;best practices&#39; en datos biológicos le faltan a la mayoría de estudios de biomarcadores psiquiátricos citados en docencia?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT: &#39;PGx en depresión: qué dice el ensayo que nadie promociona&#39; — desmontar el hype comercial de GeneSight con el RCT N=201 del top 3.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo: &#39;AUC=1.00 es una alerta roja, no un logro&#39; usando el caso de ML en TEA como ejemplo de enseñanza de razonamiento clínico basado en evidencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Piloto AMAUTA: adaptar el FEED Protocol (LLM + reportes de examen fallado) a los bancos de preguntas de simulacros ENAM para generar rutas de refuerzo automatizadas por cohorte.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional: usar el marco temporal de disfunción de recompensa (memoria–saliencia–impacto hedónico–actualización de valor) como armazón transdiagnóstico para motivación/anhedonia.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/paper corto: propuesta de estandarización mínima para reportar biomarcadores en estudios psiquiátricos peruanos, citando el paper de &#39;best practices&#39; como referencia metodológica.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Journal of Clinical Psychopharmacology</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Biological Psychiatry: Global Open Science</span><span class="tag ">Medeniyet Medical Journal</span><span class="tag ">Clinical Case Reports</span><span class="tag ">Journal of Mood and Anxiety Disorders</span><span class="tag ">Psychogeriatrics</span><span class="tag ">Bipolar Disorders</span><span class="tag ">NeuroImage: Reports</span><span class="tag ">Schizophrenia Research: Cognition</span><span class="tag ">Academic Radiology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils, esearch/esummary/efetch) · Consensus (meta-búsqueda Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch (medRxiv/PsyArXiv, control de novedad). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 2 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
