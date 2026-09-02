@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-09-02 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">2 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">42</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">37</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">The Lancet Psychiatry, 1 sep 2026 · editorial · 2026-09-01</div>
+        <h3 class="r3-title">AI scribe functions in psychiatric practice: clinical oversight, consent, and regulation</h3>
+        <p class="r3-hook">Roth y Ayers publican en Lancet Psychiatry una disección quirúrgica de qué hacen realmente los &#39;AI scribes&#39; en consulta psiquiátrica: separan tres operaciones que hoy se venden como una sola caja negra — narrativa clínica (historia de la enfermedad actual), observación clínica (examen mental) y razonamiento diagnóstico (evaluación y plan) — y muestran que cada una tiene un modo de falla distinto y exige supervisión distinta. Para ti esto es oro puro: como psiquiatra que piensa en clave dimensional (HiTOP/RDoC), el examen mental &#39;no narrado&#39; y la formulación diagnóstica son justo los puntos donde un scribe puede alucinar sin que nadie lo note, y el paper te da vocabulario clínico-legal (consentimiento, responsabilidad) para tu línea de IA + psiquiatría. Úsalo como columna vertebral de un hilo AMAUTA/redes (&#39;3 cosas que tu IA scribe hace sin que lo sepas&#39;) o cítalo si escribes sobre regulación de IA clínica en psiquiatría para tu próximo capítulo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/s2215-0366(26)00201-4" target="_blank" rel="noopener">↗ doi.org/10.1016/s2215-0366(26)00201-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">medRxiv (preprint), 31 ago 2026 · preprint · 2026-08-31</div>
+        <h3 class="r3-title">Novel Entropy-Based Framework for Quantifying Dynamic Epistemic Uncertainty in Clinical Medicine</h3>
+        <p class="r3-hook">Un grupo japonés mide matemáticamente la incertidumbre epistémica de un LLM clínico razonando en tiempo real: usan entropía de Shannon + mapeo geométrico (ISOMAP) para visualizar cómo la &#39;confianza&#39; del modelo sube o baja caso a caso, y en su piloto en escenarios de emergencia muestran que un caso limpio (infarto cerebeloso) tiene entropía que decae monótonamente (2.15→1.74) mientras que uno ambiguo (neumotórax espontáneo) queda atrapado con entropía alta (~2.41) — literalmente se puede ver cuándo la IA está adivinando. Es la contraparte cuantitativa perfecta a tu interés en dual-process: una métrica objetiva de cierre prematuro o sesgo de automatización, algo que hasta ahora describías solo cualitativamente al hablar de IA y psiquiatría de precisión. Para tu pilar ai-enhancement, es el tipo de dato duro con mecanismo para argumentar en AMAUTA por qué la calibración de la IA — no solo su accuracy — debería enseñarse, y da pie a una nota técnica-pero-accesible sobre &#39;cómo saber si tu IA está inventando&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.08.27.26361497" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.27.26361497</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Diagnosis (Berlin), 2 sep 2026 · paper · 2026-09-02</div>
+        <h3 class="r3-title">Methods to measure clinicians&#39; diagnostic calibration: an appraisal for real world application</h3>
+        <p class="r3-hook">Bradford, Singh y colegas —Singh es referente mundial en error diagnóstico— proponen medir no solo si el clínico acertó, sino la brecha entre lo que cree haber hecho bien y lo que realmente hizo: calibración como proceso, no solo como resultado, capturando &#39;decisiones clínicamente significativas&#39; río arriba del diagnóstico final. Esto conecta directo con tu marco dimensional: la calibración es exactamente la habilidad metacognitiva que separa al experto del novato, y el paper te da vocabulario metodológico (proceso vs. resultado, factores contextuales) para diseñar evaluaciones de calibración en tu Competency Lab de AMAUTA, más allá de la pregunta de opción múltiple del ENAM. Es material de referencia directo si escribes sobre evaluación de razonamiento clínico en tu libro de educación médica de precisión.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0039" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0039</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine, 1 sep 2026 · editorial · 2026-09-01</div>
+          <div class="r10-title">Paging the algorithm: applying the Best Available Human principle to graduate medical education</div>
+          <div class="r10-line">Adaptan el estándar &#39;Best Available Human&#39; de Ethan Mollick a la residencia médica: usar IA solo cuando supera al mejor humano disponible, con verificación estructurada en instrucción clínica, razonamiento diagnóstico e historia clínica — un framework listo para adaptar en tu Competency Lab.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este marco (o uno casi idéntico) va a aparecer citado en currículos de IA médica en 2027; adáptalo tú primero en español antes de que se vuelva el &#39;Ask-Audit-Apply&#39; de esta semana.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag119" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag119</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine, 1 sep 2026 · editorial · 2026-09-01</div>
+          <div class="r10-title">Generative artificial intelligence-assisted learning and the rise of pseudo-competence in medical trainees</div>
+          <div class="r10-line">Ding y Weng nombran el riesgo que probablemente ya intuyes viendo a tus alumnos de USAMEDIC: la IA generativa puede producir sensación de dominio (&#39;pseudo-competencia&#39;) que no se traduce en razonamiento clínico real bajo presión de examen.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>&#39;Pseudo-competencia&#39; se va a volver un término de battle-cry en educación médica en 2027; puedes anclar tu marca siendo quien lo tradujo y operacionalizó primero para el ENAM/Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag146" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag146</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 1 sep 2026 · preprint · 2026-09-01</div>
+          <div class="r10-title">Applying a Cognitive Diagnostic Model to Assess Clinical Reasoning: Q-Matrix Development and Known-Groups Validity Evidence from a Nationwide Medical Examination</div>
+          <div class="r10-line">Con 5,586 estudiantes coreanos y un examen nacional, construyen y validan una matriz-Q de 7 atributos cognitivos (modelo DINA) que separa con buen ajuste (RMSEA=0.044) el dominio de razonamiento clínico entre años de formación — blueprint metodológico transferible.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Metodologías así (CDM + Q-matrix) van a reemplazar el simple % de aciertos en exámenes de certificación en 3-5 años; guárdalo si algún día perfilas psicometría de razonamiento dimensional en tus propios exámenes AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10412698/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10412698/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">ACR Open Rheumatology, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Humanoid Colleagues and the Rheumatology Workforce: Preparing for a New Era</div>
+          <div class="r10-line">Un grupo de reumatología propone gobernanza para cuando lleguen robots humanoides a la clínica — los tratan como &#39;residentes&#39; que avanzan por etapas de supervisión, nunca con autoridad diagnóstica final.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es prematuro para robots físicos en psiquiatría, pero el marco de gobernanza anticipatoria por etapas es reciclable para pensar la autonomía progresiva de un agente de IA en tu propia práctica o en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/acr2.90128" target="_blank" rel="noopener">↗ doi.org/10.1002/acr2.90128</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 1 sep 2026 · preprint · 2026-09-01</div>
+          <div class="r10-title">An intentional dual track curriculum model proposal to address technical readiness and concerns in healthcare AI education</div>
+          <div class="r10-line">Encuestan a 389 estudiantes de primer año: la familiaridad con IA predice actitudes positivas, pero las preocupaciones éticas (53-82% de prevalencia) no bajan con más exposición — son dos ejes independientes que piden currículos separados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Vas a necesitar dos pistas curriculares en AMAUTA (alfabetización técnica en IA + ética/gobernanza) en vez de una sola clase de &#39;IA en medicina&#39; — este paper te da el argumento empírico para justificarlo.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10484875/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10484875/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Rhode Island Medical Journal, 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Synthesis Across Disciplines: Creating Integrated Clinical Vignettes for Pre-clerkship Medical Training</div>
+          <div class="r10-line">Un proyecto liderado por estudiantes integra viñetas clínicas entre anatomía, histología y patología en el pre-clínico, con mejoras significativas en confianza autorreportada en casi todos los bloques — modelo de bajo costo para razonamiento clínico temprano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este tipo de viñeta integrada entre materias es lo que le falta al ENAM tradicional; podrías pilotear una versión dimensional (psiquiatría + neurociencia) en tu próximo módulo AMAUTA.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42647842/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42647842</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine, 1 sep 2026 · editorial · 2026-09-01</div>
+          <div class="r10-title">The 3D framework for clinical image-based teaching</div>
+          <div class="r10-line">Una &#39;AM Last Page&#39; propone un framework de 3 pasos para enseñar razonamiento diagnóstico y examen físico a partir de imágenes clínicas, buscando profundizar inteligencia visual y aprendizaje autodirigido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un formato de una página, perfecto para adaptar directo a un carrusel de Instagram de AMAUTA esta semana sin mucho trabajo adicional.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag180" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag180</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Educator, 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Development of Metacognitive Strategies to Improve Performance in High-Complexity Clinical Tasks Among Nursing Students: An Experimental Study</div>
+          <div class="r10-line">Un experimento controlado muestra que entrenar metacognición reduce la carga mental percibida (NASA-TLX) y sube el desempeño en simulaciones de alta complejidad, con el efecto sostenido a los 8 días — evidencia de que la metacognición se entrena.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Aunque es en enfermería, el diseño (metacognición + simulación de alta carga, medición a 8 días) es replicable tal cual en tu Competency Lab para razonamiento clínico en psiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/nne.0000000000002305" target="_blank" rel="noopener">↗ doi.org/10.1097/nne.0000000000002305</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine, 1 sep 2026 · editorial · 2026-09-01</div>
+          <div class="r10-title">Ethical considerations for the use of stress in clinical education</div>
+          <div class="r10-line">Plantea el dilema de usar estrés deliberado (simulacros de alta presión) como herramienta pedagógica para entrenar razonamiento bajo presión, sin cruzar la línea hacia el daño psicológico al estudiante.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este debate te toca directo por tu línea de neurodivergencia — vas a necesitar postura explícita sobre estrés pedagógico y TDAH/TEA en tus propios simulacros AMAUTA antes de que se vuelva queja de alumnos.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag145" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag145</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Academic Medicine, 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Designing a digital education track for medical residents using the Four Component Instructional Design model</div>
+          <div class="r10-line">Documentan 5 años de un programa de residencia que enseña a producir contenido digital (podcasts, infografías, hilos) con el modelo instruccional 4C/ID, con métricas reales de alcance (hasta 542,400 impresiones) y calidad evaluada por pares.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es casi un manual de operaciones para tu pilar content-documentation — podrías adaptar su estructura de bootcamp + sesiones mensuales para formar &#39;creadores AMAUTA&#39; que multipliquen tu presencia en IG/YouTube.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/acamed/wvag055" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag055</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La entropía de Shannon de un LLM razonando en un caso ambiguo se queda &#39;atascada&#39; alta (~2.41) en vez de bajar: la IA no solo se equivoca, es matemáticamente medible cuando está adivinando, y aun así no lo dice.</li><li>Separar el &#39;AI scribe&#39; en sus tres funciones (narrar, observar, razonar) no es semántica: cada una falla distinto, así que auditar solo la nota final deja pasar errores de razonamiento invisibles en el texto.</li><li>La calibración diagnóstica no es &#39;saber si acertaste&#39;: es la brecha entre lo que crees haber hecho bien y lo que realmente hiciste, y esa brecha se mide mejor en el proceso que en el resultado final.</li><li>Entrenar metacognición explícita (no solo repetir simulacros) baja la carga mental percibida y sube el desempeño, con el efecto persistiendo 8 días después sin refuerzo: la metacognición se entrena como una habilidad discreta.</li><li>Las preocupaciones éticas de los estudiantes sobre IA no bajan con más exposición a la herramienta: familiaridad y ética son ejes independientes, así que &#39;usarla más&#39; no resuelve el miedo, hay que enseñarlo aparte.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cómo se vería una métrica de &#39;entropía de razonamiento&#39; aplicada a tus propios residentes en una viñeta HiTOP, no solo a un LLM?</li><li>Si separas examen mental, historia e impresión diagnóstica como operaciones distintas de un AI scribe psiquiátrico, ¿cuál de las tres confiarías menos a una IA hoy mismo?</li><li>¿Qué &#39;decisión clínicamente significativa río arriba del diagnóstico final&#39; mide peor el ENAM actual, y cómo la incorporarías a un ítem tipo Q-matrix?</li><li>¿Existe ya evidencia de &#39;pseudo-competencia&#39; inducida por IA en tus propios alumnos de USAMEDIC, o es solo una sospecha sin medir todavía?</li><li>¿Dónde trazas tú la línea entre estrés pedagógico útil y daño psicológico al entrenar razonamiento bajo presión en alumnos neurodivergentes?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo de Instagram/YouTube: &#39;3 cosas que tu AI scribe psiquiátrico hace mal sin que lo notes&#39;, basado en Roth &amp; Ayers (Lancet Psychiatry) — historia, examen mental y razonamiento como fallas distintas.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección corta en tu libro de educación médica de precisión sobre &#39;pseudo-competencia inducida por IA&#39; en preparación ENAM/Residentado, citando Ding &amp; Weng.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o carta al editor proponiendo una matriz-Q dimensional (HiTOP) para evaluar razonamiento clínico en psiquiatría, inspirado en el modelo DINA de Na S.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Piloto de Competency Lab: entrenar metacognición explícita en simulacros de alta carga (inspirado en Mayor-Silva et al.) y medir NASA-TLX + desempeño a los 8 días en tus alumnos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Diseñar un mini-bootcamp AMAUTA de &#39;creadores de contenido médico&#39; inspirado en el 4C/ID de Trivedi et al., para escalar tu pilar content-documentation con residentes/alumnos.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">The Lancet Psychiatry</span><span class="tag ">medRxiv</span><span class="tag ">Diagnosis</span><span class="tag highlight">Academic Medicine</span><span class="tag ">Research Square</span><span class="tag ">ACR Open Rheumatology</span><span class="tag ">Rhode Island Medical Journal</span><span class="tag ">Nurse Educator</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC · PubMed · medRxiv · Research Square · Semantic Scholar · Consensus · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 2 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
