@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-02 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">2 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">35</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">25</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Cranio-Maxillo-Facial Surgery, 1 sep 2026 · rct · 2026-09-01</div>
+        <h3 class="r3-title">Engagement is not encoding: Outcome alignment determines the effectiveness of mixed reality in medical education</h3>
+        <p class="r3-hook">RCT con 46 estudiantes de medicina y odontología (Alemania) que compara una sesión de anatomía clínica en realidad mixta contra enseñanza tradicional guionizada: en la prueba de recuerdo de conocimiento, el grupo control superó de forma significativa al grupo de realidad mixta (p = 0.008), aunque los estudiantes de RM reportaron mayor cambio en su capacidad de dar feedback crítico. Le importa a Javier porque AMAUTA/USAMEDIC evalúa constantemente cuánta tecnología inmersiva (video interactivo, simulación, eventualmente XR) vale la pena para preparar ENAM/Residentado, y este ensayo es evidencia directa contra el supuesto &#39;más inmersivo = más aprendizaje&#39;: el compromiso subjetivo (engagement) no predijo mejor codificación de memoria. Cómo usarlo: antes de invertir en formatos inmersivos para los bancos AMAUTA, exigir que el formato esté alineado al outcome que se mide — si el objetivo es recuerdo factual de alto rendimiento para ENAM, un guion tradicional bien diseñado puede rendir más que la tecnología cara.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jcms.2026.104618" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jcms.2026.104618</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Medical Imaging and Radiation Sciences, 1 sep 2026 · rct · 2026-09-01</div>
+        <h3 class="r3-title">Enhancing medical imaging teaching on scoliosis: efficacy of learning method integrating 3D printing and artificial intelligence technologies</h3>
+        <p class="r3-hook">RCT con 36 estudiantes de imagenología médica en China (18 vs. 18): el grupo que combinó enseñanza tradicional con modelos impresos en 3D y software de IA obtuvo notas significativamente más altas tanto en conocimiento teórico (91.01 ± 4.48 vs. 82.49 ± 4.08) como en análisis de casos de imagen (90.24 ± 4.77 vs. 80.61 ± 6.33, p &lt; 0.001 en ambos). Le importa a Javier porque conecta directamente con su línea de IA aplicada a educación y con el diseño de preguntas de imagenología del banco ENAM/Residentado de AMAUTA/USAMEDIC: es un modelo replicable de bajo costo (modelo 3D o su equivalente digital + herramienta de IA) con una ganancia de casi 10 puntos porcentuales en análisis de casos, justo el tipo de pregunta que más pesa en exámenes de imagen. Cómo usarlo: pilotar un módulo AMAUTA de imagenología (radiografías/TC de columna u otro tema de alto rendimiento en ENAM) que combine visualización 3D digital con retroalimentación asistida por IA, midiendo antes/después con el mismo diseño de grupo control que este ensayo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jmir.2026.102500" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jmir.2026.102500</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Nurse Education Today, 1 sep 2026 · rct · 2026-09-01</div>
+        <h3 class="r3-title">Fostering reflective thinking and nursing students&#39; competence in pressure injury care through immersive virtual reality: a randomized controlled trial</h3>
+        <p class="r3-hook">RCT doble ciego con 93 estudiantes de enfermería (España, 47 vs. 46): la realidad virtual inmersiva mejoró de forma significativa el pensamiento reflexivo (ciclo de Gibbs, sobre todo en las etapas de &#39;Emoción&#39; y &#39;Conclusión&#39;) y las habilidades prácticas (p &lt; 0.001), pero no hubo diferencia en la ganancia de conocimiento teórico (p = 0.202) frente a la enseñanza convencional. Le importa a Javier porque es la contracara exacta del hallazgo de RM en anatomía de este mismo radar: la tecnología inmersiva no mejora el conocimiento por sí sola, pero sí puede mejorar específicamente la reflexión y la habilidad práctica cuando el outcome está bien alineado — un matiz directamente aplicable a su línea de razonamiento clínico y a cómo diseña casos clínicos reflexivos en AMAUTA. Cómo usarlo: reservar simulación/RV inmersiva en AMAUTA para módulos de razonamiento clínico reflexivo tipo ciclo de Gibbs sobre casos ENAM, y no gastar ese recurso en memorización pura de contenido, donde el texto o video tradicional ya alcanza el mismo efecto.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.nedt.2026.107125" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107125</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Stomatology, Oral and Maxillofacial Surgery, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Virtual reality delivers comparable insights to traditional techniques in maxillofacial trauma education</div>
+          <div class="r10-line">RCT con 141 estudiantes de medicina (Francia) sin diferencia significativa en precisión diagnóstica entre visualización 3D en RV vs. estándar (p = 0.41), pero 91% reportó alta satisfacción y dos tercios identificó lesiones adicionales solo visibles en RV.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que en los próximos meses los estudios de RV en anatomía compleja dejarán de medir solo &#39;precisión diagnóstica global&#39; y empezarán a medir &#39;detección de hallazgos sutiles&#39;, el terreno donde la RV sí muestra ventaja — un ángulo que AMAUTA podría anticipar en preguntas ENAM de imagenología compleja.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jormas.2026.102772" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jormas.2026.102772</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Educator, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">An enhanced 4A-based stress-management intervention for nursing students: a randomized controlled comparison with a mobile self-help program</div>
+          <div class="r10-line">RCT con 105 estudiantes de enfermería: la intervención presencial de manejo de estrés (modelo 4A con enseñanza entre pares) redujo más el estrés clínico y elevó más la autoeficacia clínica que un programa de autoayuda vía app móvil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los programas de soporte/bienestar para residentes que Javier diseñe alrededor de ENAM/Residentado ganarán más tracción con un componente de facilitación humana (peer-teaching) que delegando todo a apps de autoayuda.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/NNE.0000000000002177" target="_blank" rel="noopener">↗ doi.org/10.1097/NNE.0000000000002177</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Korean Journal of Medical Education, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Residents&#39; perceptions of interprofessional education and collaboration in clinical settings and implications for medical education: a scoping review</div>
+          <div class="r10-line">Scoping review de 10 estudios sobre percepciones de residentes hacia la educación interprofesional: hay tensión entre barreras culturales y la necesidad de un currículo IPE longitudinal y formal, con simulación como método propuesto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable anticipa que los programas de residentado empezarán a exigir módulos IPE obligatorios con simulación — un espacio donde AMAUTA podría diferenciarse ofreciendo contenido temprano sobre colaboración interprofesional.</div>
+          <a class="r10-link" href="https://doi.org/10.3946/kjme.2026.208" target="_blank" rel="noopener">↗ doi.org/10.3946/kjme.2026.208</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advances in Physiology Education, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Diagnostic instruments in extended curriculum programs: a scoping review</div>
+          <div class="r10-line">Scoping review de 9 estudios sobre instrumentos diagnósticos usados para admisión y soporte académico temprano en programas de currículo extendido, con evidencia fragmentada sobre validez y equidad cultural.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los datos de desempeño que ya genera el banco de preguntas AMAUTA/USAMEDIC podrían formalizarse como instrumento diagnóstico validado para predecir riesgo de bajo puntaje ENAM, si Javier corre el análisis psicométrico.</div>
+          <a class="r10-link" href="https://doi.org/10.1152/advan.00076.2026" target="_blank" rel="noopener">↗ doi.org/10.1152/advan.00076.2026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">The application of electroencephalography in health professions education: a scoping review with suggestions for surgical training</div>
+          <div class="r10-line">Scoping review de 38 estudios mapea el uso de EEG en educación de profesiones de salud (sobre todo cirugía laparoscópica) para predecir desempeño, carga cognitiva y fatiga.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el EEG seguirá siendo nicho y costoso para currículos como AMAUTA en el corto plazo, pero el concepto de &#39;carga cognitiva medible&#39; ya es aplicable con proxies más baratos (tiempo de respuesta, patrones de error) en los bancos de preguntas.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104041" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104041</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">British Journal of Anaesthesia, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Eye-tracking technology applied to regional anaesthesia task performance, safety and skill acquisition: a scoping review</div>
+          <div class="r10-line">Scoping review de 14 estudios halla que el eye-tracking distingue patrones de mirada entre expertos y novatos en anestesia regional, pero aún no se correlaciona con medidas validadas de competencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el eye-tracking tardará años en volverse accionable para currículos de residentado; no es prioridad de inversión inmediata para AMAUTA, pero vale monitorearlo como tendencia de evaluación de habilidades procedimentales.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bja.2026.04.068" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bja.2026.04.068</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Generative artificial intelligence in undergraduate paediatric nursing education: a scoping review of current applications and ethical considerations</div>
+          <div class="r10-line">Scoping review de 6 estudios (Asia/Medio Oriente) sobre IA generativa en enfermería pediátrica de pregrado halla mejoras en engagement y feedback personalizado, pero con evidencia preliminar, diseños pequeños y poca medición de competencia real.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que se repetirá el mismo patrón en medicina: la IA generativa gana adopción rápida en feedback personalizado antes de tener evidencia robusta de transferencia a competencia clínica — ventana de oportunidad y de riesgo para las herramientas de IA que Javier use en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107157" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107157</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Metacognition within undergraduate nursing education: a scoping review</div>
+          <div class="r10-line">Scoping review de 46 estudios (1992-2024) mapea cómo se define y mide la metacognición en enfermería de pregrado, hallando definiciones inconsistentes y escasa investigación experimental.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la falta de consenso en medir metacognición es una oportunidad para que Javier defina un estándar propio de &#39;metacognición aplicada a ENAM&#39; dentro de AMAUTA, con datos reales del banco de preguntas en vez de escalas autorreportadas.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107144" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107144</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Currents in Pharmacy Teaching &amp; Learning, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Use of arts &amp; humanities in pharmacy education to develop humanistic skills: a scoping review</div>
+          <div class="r10-line">Scoping review de 48 artículos halla que práctica reflexiva, aprendizaje basado en literatura y teatro/drama desarrollan empatía y competencia cultural en educación de farmacia, aunque con evidencia mayormente autorreportada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice bajo impacto directo en las líneas duras de Javier (ENAM/Residentado), pero el ángulo de &#39;narrativa + reflexión para empatía&#39; es reciclable para contenido IG/YT sobre humanismo médico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.cptl.2026.102684" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cptl.2026.102684</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Teacher, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Health advocacy training in undergraduate medical education over 20 years: a scoping review</div>
+          <div class="r10-line">Scoping review de 32 estudios (2003-2025) sobre defensa de la salud (health advocacy) en pregrado médico halla que solo 56% de programas define competencias medibles y que la evaluación rara vez pasa del nivel 2 de Kirkpatrick (conocimiento).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la defensa de la salud seguirá siendo currículo oculto mal evaluado; bajo interés inmediato para AMAUTA salvo que ENAM empiece a incluir ítems de abogacía/salud pública, tendencia a vigilar en 2-3 años.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/0142159X.2026.2649963" target="_blank" rel="noopener">↗ doi.org/10.1080/0142159X.2026.2649963</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El realismo tecnológico no es lo mismo que aprendizaje: en el RCT de realidad mixta en anatomía, el grupo con enseñanza tradicional guionizada recordó más conocimiento que el grupo inmersivo (p = 0.008), aunque el grupo de RM cambió más su percepción crítica del método.</li><li>Combinar impresión 3D + IA no es solo marketing: en el RCT de imagenología de escoliosis, la mejora en análisis de casos fue de casi 10 puntos sobre 100 (90.24 vs. 80.61, p &lt; 0.001) — suficiente para mover una nota de aprobado a destacado.</li><li>La realidad virtual mejora reflexión y habilidad, no memoria per se: en el ensayo de RV para cuidado de heridas por presión, habilidades y pensamiento reflexivo mejoraron significativamente, pero el conocimiento teórico no difirió entre grupos (p = 0.202).</li><li>El manejo de estrés funciona mejor con un humano cerca: la intervención de estrés con enseñanza entre pares superó a una app de autoayuda móvil en autoeficacia clínica, aun usando el mismo marco 4A.</li><li>Solo 56% de los programas de defensa de la salud en medicina define competencias medibles — la mayoría de la &#39;educación en advocacy&#39; se evalúa apenas en el nivel de conocimiento (Kirkpatrick 2), casi nunca en cambio de comportamiento.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Los módulos de AMAUTA que usan tecnología inmersiva (video interactivo, simulación) están alineados a lo que realmente miden sus evaluaciones (recuerdo factual vs. habilidad), o se paga el costo de la interactividad sin ganancia de aprendizaje medible?</li><li>¿Qué preguntas del banco ENAM/Residentado de imagenología podrían rediseñarse combinando modelos 3D (o su versión digital) con retroalimentación asistida por IA, replicando el salto de ~10 puntos porcentuales del RCT de escoliosis?</li><li>¿Vale la pena introducir un componente de pensamiento reflexivo estilo ciclo de Gibbs en los casos clínicos de razonamiento clínico de AMAUTA, dado que la reflexión mejora con simulación inmersiva incluso cuando el conocimiento puro no cambia?</li><li>¿El soporte de bienestar/manejo de estrés que AMAUTA ofrece o podría ofrecer a residentes en preparación para ENAM debería tener un componente de facilitación humana obligatorio, en vez de delegarse solo a apps?</li><li>¿Qué pasaría si Javier tratara los datos de desempeño del banco de preguntas AMAUTA como un instrumento diagnóstico validado (al estilo de los &#39;diagnostic instruments&#39; de currículo extendido) para predecir tempranamente qué estudiantes están en riesgo de bajo puntaje ENAM?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT: &#39;La realidad mixta no te hace aprender más rápido&#39; — usar el RCT de anatomía en RM (el grupo control superó en recuerdo) para desmontar el mito de que más inmersión es igual a más aprendizaje, conectando con las decisiones de tecnología de AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Piloto AMAUTA: módulo de imagenología ENAM (radiografías/TC de columna u otro tema de alto peso) con modelo 3D digital + asistente de IA, midiendo antes/después con el mismo diseño 18 vs. 18 del RCT de escoliosis para validarlo internamente.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de neurociencia educativa sobre &#39;engagement no es encoding&#39;: por qué la interactividad y el compromiso subjetivo del estudiante no predicen memoria objetiva, usando el RCT de RM en anatomía como caso ancla.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o carta editorial: replicar el enfoque de &#39;diagnostic instruments en extended curriculum programs&#39; usando los datos longitudinales del banco de preguntas AMAUTA/USAMEDIC como instrumento diagnóstico validado de riesgo ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido sobre &#39;ciclo de Gibbs aplicado a razonamiento clínico&#39; en simulación y casos ENAM, inspirada en que la RV inmersiva mejoró específicamente las etapas de &#39;Emoción&#39; y &#39;Conclusión&#39; del ciclo reflexivo.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Nurse Education Today</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Medical Teacher</span><span class="tag ">Journal of Cranio-Maxillo-Facial Surgery</span><span class="tag highlight">Korean Journal of Medical Education</span><span class="tag ">Advances in Physiology Education</span><span class="tag ">British Journal of Anaesthesia</span><span class="tag ">Journal of Medical Imaging and Radiation Sciences</span><span class="tag ">Nurse Educator</span><span class="tag ">Journal of Stomatology, Oral and Maxillofacial Surgery</span><span class="tag ">Currents in Pharmacy Teaching &amp; Learning</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (E-utilities esearch/esummary/efetch, pdat 2026-08-30 a 2026-09-02) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv, cross-check). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 2 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
