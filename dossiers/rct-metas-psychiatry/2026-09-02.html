@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-02 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">2 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">72</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">BMC Psychiatry, 31 ago 2026 · rct · 2026-08-31</div>
+        <h3 class="r3-title">Inhibitory neurotransmission in frontostriatal circuitry: implications for psychomotor and vegetative symptoms in depressive episodes</h3>
+        <p class="r3-hook">Análisis secundario de un RCT (n=42, depresión uni/bipolar) que combina rTMS con espectroscopia de RM (MEGA-PRESS) y PET con [11C]flumazenil halla que los niveles de GABA y la disponibilidad de receptores GABA-A en la corteza cingulada anterior dorsal se asocian específicamente con retardo psicomotor y síntomas vegetativos (sueño, apetito), no con la depresión en general. Le importa a Javier porque es el ejemplo de manual de su línea de psiquiatría de precisión (HiTOP/RDoC): confirma que &#39;depresión&#39; no es una entidad única sino un espacio dimensional donde un subfenotipo melancólico tiene firma neuroquímica propia, justo el argumento central de su libro de psicopatología para el mundo. Además cruza neuromodulación (rTMS) con biomarcador de imagen, combo que puede convertir en caso de enseñanza AMAUTA/USAMEDIC sobre cómo la neuroimagen empieza a guiar selección de tratamiento en depresión resistente.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12888-026-08573-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08573-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Affective Disorders, 30 ago 2026 · meta-analysis · 2026-08-30</div>
+        <h3 class="r3-title">Retinal electrophysiology in mood disorders: Toward clinically relevant biomarkers. A systematic review and meta-analysis</h3>
+        <p class="r3-hook">SR+MA (32 estudios, n=1334; PROSPERO 1234381) sobre electrorretinografía (ERG) en trastornos del ánimo halla que la depresión mayor se asocia con prolongación del tiempo implícito de la onda b bajo condiciones escotópicas mixtas (g=0.23), postulando la retina como ventana accesible y barata al cerebro para diferenciar depresión unipolar de bipolar. Le importa a Javier porque es psiquiatría de precisión en su forma más literal: un biomarcador objetivo, no invasivo y potencialmente escalable para un error diagnóstico que él enseña constantemente en AMAUTA/USAMEDIC (etiquetar como depresión unipolar lo que en realidad es un primer episodio bipolar). Puede usarlo como perla de contenido IG/YT (&#39;tu retina podría decir si es depresión o bipolar antes que tu psiquiatra&#39;) y como cita de apoyo en el capítulo de biomarcadores de su libro de psicopatología dimensional.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122424" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122424</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Research Square (preprint), 1 sep 2026 · preprint · 2026-09-01</div>
+        <h3 class="r3-title">Connectomic disturbances in ADHD: A systematic review of MRI-based global and nodal topology</h3>
+        <p class="r3-hook">Meta-análisis (preprint) de 31 datasets de RM (2181 participantes combinados: 459 vs. 460 en redes estructurales, 975 vs. 1287 en funcionales) halla que el TDAH se asocia con eficiencia global reducida en redes estructurales cerebrales (Hedge&#39;s g=-0.31) medida con teoría de grafos, con alteraciones exploratorias en caudado, putamen, corteza orbitofrontal y precúneo, mientras las redes funcionales no muestran alteración global significativa. Le importa a Javier porque conecta directamente dos de sus líneas más activas: TDAH/neurodivergencia y psiquiatría dimensional basada en network theory, literalmente el lenguaje &#39;network-level organization&#39; que usa RDoC. Aunque es preprint y debe citarse con esa salvedad, es material fresco para BMSE o para un módulo AMAUTA sobre cómo la conectómica reemplaza el modelo de &#39;lesión focal&#39; en TDAH por uno de integración de red comprometida.</p>
+        <a class="r3-link" href="https://doi.org/10.21203/rs.3.rs-10721620/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10721620/v1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Human Psychopharmacology, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">The Impact of Citicoline/Phosphatidylserine Supplementation on Cognitive Performance and Executive Functions in Mental Disorders: A Systematic Review of Controlled Trials</div>
+          <div class="r10-line">SR de 11 estudios controlados (10 RCTs) halla que la suplementación con citicolina/fosfatidilserina mejora atención e impulsividad en 3 de 5 estudios pediátricos con TDAH, con resultados mixtos en trastornos del ánimo, uso de sustancias y esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usar esto como contenido de &#39;suplementos con evidencia real vs. moda&#39; para su línea TDAH — cauteloso pero no descartable, ideal para desactivar tanto el hype como el nihilismo sobre nutracéuticos en neurodesarrollo.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/hup.70058" target="_blank" rel="noopener">↗ doi.org/10.1002/hup.70058</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Basic &amp; Clinical Pharmacology &amp; Toxicology, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Deprescription of Psychotropics in Children and Adolescents: Systematic Review of Guidelines and Development of a Deprescribing Algorithm</div>
+          <div class="r10-line">SR de guías clínicas (1390 registros cribados) sobre deprescripción de psicofármacos en niños/adolescentes no halla ninguna guía formal que cumpla criterios metodológicos estrictos (AGREE II), y deriva un algoritmo propio de deprescripción a partir de la mejor evidencia disponible (antidepresivos, estimulantes).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vacío que Javier puede capitalizar directo en AMAUTA/USAMEDIC — un módulo o incluso una idea de paper propio sobre &#39;cuándo y cómo deprescribir en TDAH pediátrico&#39;, tema con demanda clínica real y casi sin guías formales.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/bcpt.70278" target="_blank" rel="noopener">↗ doi.org/10.1111/bcpt.70278</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuropsychopharmacology Reports, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Is Aripiprazole an Effective Adjunct to Reduce Metabolic Adverse Effects Caused by Clozapine in Patients With Schizophrenia-A Systematic Review</div>
+          <div class="r10-line">SR (8 estudios de 52 cribados) sobre aripiprazol adjunto para reducir efectos metabólicos de clozapina en esquizofrenia halla mejoras en LDL/colesterol total y peso corporal, pero cambios inconsistentes en glucosa y circunferencia de cintura.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que es una perla de manejo clínico directo para el capítulo de psicosis del libro de psicopatología de Javier: evidencia moderada pero accionable para el síndrome metabólico por clozapina, problema que todo residente enfrenta y pocas guías resuelven con claridad.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/npr2.70149" target="_blank" rel="noopener">↗ doi.org/10.1002/npr2.70149</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Public Health (Oxford), 1 sep 2026 · meta-analysis · 2026-09-01</div>
+          <div class="r10-title">School-based psychosocial interventions for refugee and conflict-affected adolescents in Middle Eastern countries: a systematic review and meta-analysis</div>
+          <div class="r10-line">SR+MA (9 estudios, adolescentes refugiados sirios/palestinos/afganos) halla reducciones significativas en síntomas de TEPT (SMD=-0.63) y dificultades emocionales-conductuales (SMD=-3.47) tras intervenciones psicosociales escolares, sin efecto significativo en depresión/ansiedad frente a control.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede usarlo como argumento de escalabilidad para su interés en salud mental de precisión aplicada a poblaciones vulnerables — contenido sobre por qué la intervención escolar es el vehículo más costo-efectivo para TEPT en contextos de desplazamiento, relevante para su trabajo en comités de ética (HVLH).</div>
+          <a class="r10-link" href="https://doi.org/10.1093/pubmed/fdag057" target="_blank" rel="noopener">↗ doi.org/10.1093/pubmed/fdag057</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">American Psychologist, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+          <div class="r10-title">A systematic review and meta-analysis of the associations between structural, interpersonal, and individual stigma and health outcomes for transgender and nonbinary people</div>
+          <div class="r10-line">Meta-análisis masivo (1871 tamaños de efecto, 225 reportes, 121,240 participantes) halla que el estigma estructural, interpersonal e individual predice peor salud mental (r=-.25), bienestar, salud física, ideación suicida y uso de sustancias en personas trans/no binarias, con efectos mediados en cadena.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usar el modelo de ecuaciones estructurales como ejemplo pedagógico de cómo el estigma no es un factor de riesgo aislado sino una cascada causal — encaja con su razonamiento clínico dimensional y puede anclar un módulo AMAUTA sobre determinantes sociales medibles cuantitativamente.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/amp0001630" target="_blank" rel="noopener">↗ doi.org/10.1037/amp0001630</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Bipolar Disorders, 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Cortical Thickness in Middle and Older Aged Adults With Bipolar Disorder Across Six International Sites</div>
+          <div class="r10-line">Estudio multicéntrico (6 sitios, consorcio GAGE-BD; n=308 con trastorno bipolar vs. 287 controles, 40-70 años) halla menor grosor cortical en corteza prefrontal ventral y dorsal en adultos mayores con bipolaridad, asociado a la edad y a uso de litio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato de neuroimagen que Javier puede citar en su línea de psiquiatría de precisión geriátrica — el litio como posible factor protector de grosor cortical es un ángulo de contenido o de discusión de journal club para AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/bdi.70166" target="_blank" rel="noopener">↗ doi.org/10.1111/bdi.70166</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain, Behavior, and Immunity, 31 ago 2026 · meta-analysis · 2026-08-31</div>
+          <div class="r10-title">A systematic review and meta-analysis of the therapeutic role of short-chain fatty acids in modulating depression: bridging the gut-brain axis</div>
+          <div class="r10-line">SR+MA sobre ácidos grasos de cadena corta (SCFA) en depresión halla evidencia mixta: correlaciona niveles fecales de SCFA con severidad depresiva y evalúa intervenciones (probióticos, trasplante fecal, estimulación vagal transcutánea) sobre el eje intestino-cerebro con resultados inconsistentes entre estudios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usar esto como caso de &#39;evidencia proporcional al claim&#39; — el eje intestino-cerebro está de moda en redes pero esta síntesis muestra que aún no hay señal robusta, contenido perfecto para desmontar hype con datos reales.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbi.2026.106987" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.106987</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 30 ago 2026 · meta-analysis · 2026-08-30</div>
+          <div class="r10-title">Antidepressant effects of facial botulinum toxin a injections: Insights from randomized controlled trials</div>
+          <div class="r10-line">SR+MA de 8 RCTs (n=636) halla que la inyección facial de toxina botulínica tipo A reduce significativamente síntomas depresivos frente a control (SMD=-0.81) y muestra eficacia comparable a sertralina, con protocolo glabelar estándar efectivo pero dosis pan-facial alta sin diferencia significativa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: gancho de contenido IG/YT de alto potencial viral para Javier (&#39;el bótox como antidepresivo, en serio&#39;) que a la vez sirve para enseñar lectura crítica de meta-análisis pequeños y heterogéneos antes de creer un titular llamativo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122443" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122443</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Hippocampus, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">The Role of Hippocampal Interneuron Migration in Neurodevelopmental Disorders: A Systematic Review</div>
+          <div class="r10-line">SR (29 de 1459 artículos cribados, PRISMA) sobre migración de interneuronas hipocampales en trastornos del neurodesarrollo halla asociación clara entre déficits de migración (GABAérgicas, parvalbúmina, somatostatina) y presentación clínica, con notable ausencia de estudios que consideren diferencias por sexo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usar el vacío de sexo/género como gancho de investigación propia dentro de su línea TDAH/TEA — &#39;sabemos que las interneuronas fallan distinto por trastorno, pero casi nadie mira si fallan distinto por sexo&#39;, tema con potencial de paper o de capítulo en su libro de psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/hipo.70121" target="_blank" rel="noopener">↗ doi.org/10.1002/hipo.70121</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint), 1 sep 2026 · preprint · 2026-09-01</div>
+          <div class="r10-title">From Womb to Brain: A Systematic Review of the Impact of Prenatal Maternal Anxiety on Paediatric Brain Structure and Function</div>
+          <div class="r10-line">SR (preprint; 12 estudios, 1082 díadas madre-hijo) halla que la ansiedad materna prenatal se asocia consistentemente con variación en el desarrollo fronto-límbico infantil (amígdala, hipocampo, fascículo uncinado), con periodo sensible en el segundo-tercer trimestre.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: material de precisión perinatal para Javier — no establece causalidad ni indica qué intervención usar, pero es evidencia temprana que puede anclar contenido sobre por qué tamizar y tratar ansiedad materna prenatal es también prevención de neurodesarrollo, línea afín a TDAH/TEA desde su origen más temprano.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/c7snx_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/c7snx_v1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El biomarcador retiniano (ERG) que diferencia depresión unipolar de bipolar ya tiene meta-análisis con PROSPERO registrado — la retina como ventana barata al cerebro dejó de ser especulación.</li><li>En TDAH, la eficiencia global de las redes estructurales cerebrales está reducida (g=-0.31) pero las redes funcionales no muestran alteración global — el problema parece estar en el cableado, no solo en la actividad.</li><li>La inyección facial de toxina botulínica redujo síntomas depresivos con un tamaño de efecto similar a sertralina (SMD=-0.81 vs. -0.23) en 8 RCTs — pero el protocolo pan-facial de alta dosis no mostró ventaja sobre el glabelar estándar, más dosis no es más efecto.</li><li>No existe ninguna guía formal de deprescripción de psicofármacos en niños y adolescentes que cumpla criterios metodológicos estrictos (AGREE II) — el algoritmo más citado en este SR tuvo que ser construido ad hoc por los propios revisores.</li><li>El estigma hacia personas trans/no binarias no actúa como factor de riesgo aislado: el modelo causal muestra que el estigma estructural empeora la salud mental primero envenenando las relaciones interpersonales, y solo después el bienestar individual — es una cascada, no un evento.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el retardo psicomotor y los síntomas vegetativos en depresión tienen firma GABAérgica propia, ¿deberíamos seleccionar candidatos a rTMS por perfil de síntomas melancólicos y no solo por &#39;depresión resistente&#39; genérica?</li><li>¿Qué tan lejos estamos de que un ERG de consultorio (barato, no invasivo) reemplace meses de seguimiento clínico para diferenciar un primer episodio depresivo unipolar de uno bipolar?</li><li>Si la eficiencia de red estructural está reducida en TDAH pero la funcional no, ¿qué nos dice eso sobre por qué las intervenciones cognitivas (que entrenan función) mejoran síntomas sin necesariamente &#39;reparar&#39; la arquitectura de base?</li><li>¿Deberíamos reevaluar sistemáticamente a los 12 meses a todo niño con TDAH bajo estimulantes para decidir deprescripción, dado que ninguna guía formal lo estandariza hoy?</li><li>¿Cambia en algo la práctica clínica saber que el litio se asocia con mayor grosor cortical prefrontal en bipolaridad de inicio tardío, o seguimos indicándolo/evitándolo por los mismos criterios de siempre?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/video IG-YT: &#39;El bótox que trata la depresión (no es broma, es meta-análisis)&#39; usando el SR+MA de toxina botulínica facial (SMD=-0.81) como gancho, cerrando con la lección de leer el tamaño de muestra antes de creer el titular.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o pasaje del libro de psicopatología dimensional sobre biomarcadores objetivos en trastornos del ánimo, usando el meta-análisis de electrorretinografía como caso ejemplar de &#39;psiquiatría de precisión&#39; aplicable ya, no a futuro.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre deprescripción de psicofármacos en pediatría, construyendo un algoritmo docente propio a partir del vacío de guías formales identificado en el SR — oportunidad de posicionar a Javier como referente en un tema sin consenso.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o carta breve (paper) proponiendo estratificar por sexo el estudio de migración de interneuronas hipocampales en TDAH/TEA, a partir del vacío identificado en el SR de Hippocampus.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido IG/YT o sección de BMSE sobre conectómica en TDAH (&#39;el TDAH no es falta de disciplina, es una red con menos eficiencia global&#39;) usando el meta-análisis de topología MRI como evidencia visual.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">BMC Psychiatry</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Human Psychopharmacology</span><span class="tag ">Basic &amp; Clinical Pharmacology &amp; Toxicology</span><span class="tag ">Neuropsychopharmacology Reports</span><span class="tag ">Journal of Public Health (Oxford)</span><span class="tag ">American Psychologist</span><span class="tag ">Bipolar Disorders</span><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">Hippocampus</span><span class="tag ">Research Square (preprint)</span><span class="tag ">PsyArXiv (preprint)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC REST API (europepmc.org) — FIRST_PDATE:[2026-08-30 TO 2026-09-02], PUB_TYPE filtrado a Meta-Analysis/Systematic Review/Randomized Controlled Trial, más query de boost (ADHD/autismo/neuromodulación/precisión) y query NMA/SR textual; verificación de DOI, journal, fecha y abstract completo por PMID/EXT_ID · Europe PMC REST API — búsqueda de preprints (Research Square, PsyArXiv) para ítems sin PMID. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 2 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
