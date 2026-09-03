@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-03 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">3 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JAMA Psychiatry, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Pharmacological Interventions for Weight Reduction in Patients With Schizophrenia Treated With Antipsychotics: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">Systematic review y network meta-analysis en JAMA Psychiatry (95 RCTs, N=5898, 39 intervenciones) que ordena por primera vez con certeza CINeMA qué fármacos realmente reducen el peso ganado por antipsicóticos: semaglutida (-10.98 kg), liraglutida (-5.43 kg), topiramato (-3.95 kg), metformina (-3.86 kg) y exenatida (-2.97 kg) superan a placebo, con metformina y semaglutida cruzando el umbral de cambio clínicamente relevante (≥5% del peso). Le importa a Javier porque es el tipo de evidencia que puede volcar directo a su capítulo de psicosis del libro de psicopatología para el mundo y a un módulo AMAUTA/USAMEDIC de manejo metabólico en esquizofrenia — reemplaza el &#39;dale metformina y ya&#39; por un ranking jerárquico que un residente puede aplicar hoy. También es material perfecto de razonamiento clínico: enseñar a leer una NMA y traducirla en algoritmo de decisión, no solo en tabla de journal club.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1814" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1814</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JAMA Psychiatry, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Neurometabolites and Antipsychotic Response in Psychosis: A Mega-Analysis</h3>
+        <p class="r3-hook">Mega-análisis en JAMA Psychiatry con datos individuales de 1189 participantes de 18 estudios de espectroscopia por RM que halla que los no-respondedores a antipsicóticos tienen glutamato+glutamina, colina y mio-inositol frontales elevados frente a respondedores, con la elevación de mio-inositol marcando específicamente resistencia al tratamiento (no solo no-respuesta temprana). Le importa a Javier porque es el ejemplo más limpio de psiquiatría de precisión de la semana: un biomarcador neuroquímico medible que podría, antes de agotar dos o tres antipsicóticos, señalar quién necesita clozapina o una vía glutamatérgica/antiinflamatoria en vez de otro ensayo-error con D2. Encaja directo con su línea HiTOP/RDoC (biología dimensional del no-respondedor, no la categoría &#39;esquizofrenia resistente&#39;) y es cita fuerte para el capítulo de biomarcadores de su libro de psicopatología dimensional, además de contenido AMAUTA sobre cuándo sospechar resistencia real desde la neuroquímica.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1674" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1674</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Molecular Psychiatry, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Nutraceuticals and phytoceuticals for the treatment of major depressive disorder: a systematic review and network meta-analysis</h3>
+        <p class="r3-hook">Network meta-análisis en Molecular Psychiatry (163 estudios, n=15,757, 137 combinaciones de compuestos) sobre nutracéuticos/fitocéuticos para depresión mayor halla que, tras filtrar por bajo riesgo de sesgo y ≥2 RCTs, solo EPA (SMD=-1.67), vitamina D3 (SMD=-1.59) y extracto de hipérico ZE117 (SMD=-1.02) mantienen señal robusta — y que los tamaños de efecto más grandes se asocian sistemáticamente con puntajes AMSTAR más bajos (peor calidad metodológica), con confianza en la evidencia baja a muy baja en general. Le importa a Javier porque es la prueba estadística exacta de su mantra &#39;evidencia proporcional al claim&#39;: cuantifica cómo el hype de suplementos se infla justo donde la metodología es más débil, dato que puede convertir en contenido IG/YT de alto impacto para desmontar mitos nutricionales en psiquiatría sin caer en el nihilismo (EPA sí tiene señal real). También es material directo para un módulo AMAUTA sobre lectura crítica de meta-análisis y sesgo de publicación.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03759-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03759-1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JAMA Psychiatry, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Gastrointestinal Interoception and Relapse in Anorexia Nervosa</div>
+          <div class="r10-line">Ensayo cruzado (JAMA Psychiatry, n=62 con anorexia nerviosa restrictiva y peso restaurado vs. 57 controles) halla que la interocepción gastrointestinal alterada —menor precisión, priors rígidos, aprendizaje asimétrico— predice recaída y severidad de síntomas a 6 meses.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede citarlo como caso de manual de psiquiatría computacional/dimensional para su libro — un biomarcador conductual-computacional que anticipa recaída antes de señales clínicas obvias, ideal para un módulo AMAUTA sobre trastornos de conducta alimentaria de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1301" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1301</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Child: Care, Health and Development, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Exploring Immersive Virtual Reality as an Approach to Improve School Participation-Related Constructs in Children With ADHD</div>
+          <div class="r10-line">RCT (n=92 niños con TDAH de 7-12 años) halla que un programa de realidad virtual inmersiva dos veces por semana durante 8 semanas mejora con tamaño de efecto grande (d=0.98) la participación escolar frente a control sin intervención adicional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: gancho de contenido AMAUTA/IG sobre tecnología aplicada a TDAH más allá de la farmacoterapia — Javier puede mostrar que &#39;participación escolar&#39; es un outcome medible y modificable, no solo síntomas nucleares del DSM.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/cch.70328" target="_blank" rel="noopener">↗ doi.org/10.1111/cch.70328</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Family Process, 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">The Stigmatization of Caregivers of Children With Attention-Deficit/Hyperactivity Disorder: A Systematic Review</div>
+          <div class="r10-line">SR (PRISMA, PROSPERO CRD42024527305; 15 estudios de 4136 cribados) halla que el estigma afiliado en cuidadores de niños con TDAH se asocia consistentemente con más depresión, ansiedad y distrés parental, pero solo un estudio de intervención cumplió criterios de inclusión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede capitalizar el vacío casi total de intervenciones para reducir estigma en cuidadores de TDAH — línea de investigación propia o módulo AMAUTA sobre &#39;el paciente invisible&#39; en TDAH pediátrico: el cuidador.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/famp.70179" target="_blank" rel="noopener">↗ doi.org/10.1111/famp.70179</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Asia-Pacific Psychiatry, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+          <div class="r10-title">Prevalence and Incidence of Dementia for Schizophrenia and Other Primary Psychotic Disorders: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">SR+MA halla una prevalencia agrupada de demencia de 24.3% (IC95%: 20.5-28.5%, I²=84.7%) en adultos mayores con trastornos psicóticos primarios, con incidencia muy heterogénea entre estudios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato útil para Javier en psiquiatría geriátrica de precisión — argumento para tamizaje cognitivo sistemático en esquizofrenia de larga evolución, tema con poco desarrollo en guías locales que puede anclar contenido o journal club AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/appy.70033" target="_blank" rel="noopener">↗ doi.org/10.1111/appy.70033</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Neuropsychopharmacology, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Weight and metabolic changes in patients with schizophrenia treated with paliperidone palmitate 6-month formulation versus paliperidone palmitate 3-month formulation: a post-hoc analysis</div>
+          <div class="r10-line">Análisis post-hoc de un RCT fase 3 (paliperidona palmitato 6 meses vs. 3 meses en esquizofrenia) halla menor ganancia de peso y perfil lipídico más favorable con la formulación de 6 meses, efecto más marcado en pacientes jóvenes (18-25 años) y con sobrepeso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usarlo como perla de manejo clínico directo — al elegir inyectable de acción prolongada en pacientes jóvenes con riesgo metabólico, la formulación de 6 meses no es solo comodidad de adherencia sino también una ventaja metabólica medible.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/ijnp/pyag042" target="_blank" rel="noopener">↗ doi.org/10.1093/ijnp/pyag042</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Neuropsychopharmacology, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Effects of lavender oil preparation silexan on different symptoms of major depression - results from a randomized, controlled trial</div>
+          <div class="r10-line">RCT (n=498) con análisis por ítem del MADRS halla que silexan (aceite de lavanda) supera a placebo en 5 de 9 síntomas nucleares de depresión mayor (tristeza, apetito, concentración, lasitud), con perfil comparable a sertralina.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: contenido de &#39;fitoterapia con evidencia real&#39; para la línea de Javier de evidencia proporcional al claim — silexan no es un genérico &#39;natural que ayuda con todo&#39;, tiene un RCT grande y análisis fino por síntoma que vale mostrar en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/ijnp/pyag041" target="_blank" rel="noopener">↗ doi.org/10.1093/ijnp/pyag041</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Liver International, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Naltrexone Is Superior to Placebo for Abstinence and Craving Reduction in Alcohol-Associated Cirrhosis: NAL-CI Trial</div>
+          <div class="r10-line">RCT NAL-CI (n=100) halla que naltrexona triplica la abstinencia a 12 semanas frente a placebo (64% vs. 22%, OR=10.86) en pacientes con cirrosis compensada por alcohol y trastorno por uso de alcohol, sin señales de hepatotoxicidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usarlo para cerrar un vacío de manejo real: naltrexona sigue subprescrita en hepatología por miedo a hepatotoxicidad, y este RCT da evidencia dura para el abordaje conjunto psiquiatría-hepatología del paciente con AUD y cirrosis.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/liv.70845" target="_blank" rel="noopener">↗ doi.org/10.1111/liv.70845</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">American Psychologist, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+          <div class="r10-title">Broadening conceptualizations of trauma among transgender and gender-diverse populations: A meta-analysis of gender minority stress and posttraumatic stress symptoms</div>
+          <div class="r10-line">Meta-análisis (13 fuentes, 10 muestras) halla asociaciones moderadas entre estresores de minoría de género distales (rechazo r=.39, violencia r=.36, discriminación r=.25) y síntomas de estrés postraumático en personas transgénero y de género diverso.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede usarlo para su trabajo en comités de ética (HVLH) y su línea de psiquiatría dimensional — el TEPT en poblaciones TGD tiene un patrón causal específico (rechazo/violencia como motores principales) que debería informar el diagnóstico diferencial y el abordaje afirmativo, no solo la sensibilización general.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/amp0001615" target="_blank" rel="noopener">↗ doi.org/10.1037/amp0001615</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Internet-Delivered Cognitive Behavioral Therapy for Fathers With Postnatal Depression: Randomized Controlled Trial of DadBooster</div>
+          <div class="r10-line">RCT (n=50) del programa DadBooster —TCC online para depresión posparto en padres— halla reducción significativa de síntomas depresivos (72% vs. 40% en lista de espera) y remisión diagnóstica en la mayoría de los tratados, primer programa digital diseñado específicamente para padres.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier puede usarlo como gancho de contenido IG/YT poco explotado —&#39;la depresión posparto también es de los padres, y ya hay tratamiento digital probado&#39;— y como referencia para pensar programas digitales AMAUTA de bajo costo en poblaciones subatendidas.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/94541" target="_blank" rel="noopener">↗ doi.org/10.2196/94541</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Psychology &amp; Psychotherapy, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+          <div class="r10-title">Imagery Interventions and Cognitive-Behavioural Therapy for Psychological Complaints Related to Bullying: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">Meta-análisis (23 estudios) sobre TCC e intervenciones de imaginería en víctimas de bullying halla que el efecto inicial sobre síntomas internalizantes (g=0.72) se derrumba a g=0.26 y deja de ser significativo tras ajustar por sesgo de publicación, mientras el efecto sobre autopercepción y afrontamiento se mantiene robusto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ejemplo perfecto para enseñar sesgo de publicación en AMAUTA/USAMEDIC — Javier puede mostrar cómo un meta-análisis &#39;positivo&#39; se desinfla al ajustar por sesgo, y que el hallazgo sólido real aquí es sobre autopercepción/afrontamiento, no sobre síntomas internalizantes.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/cpp.70330" target="_blank" rel="noopener">↗ doi.org/10.1002/cpp.70330</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En la NMA de JAMA Psychiatry sobre peso y antipsicóticos, semaglutida (-10.98 kg) casi duplica el efecto de liraglutida (-5.43 kg) pese a ser ambos agonistas GLP-1 — la molécula específica dentro de una misma clase farmacológica importa tanto como la clase.</li><li>El mio-inositol frontal elevado marca específicamente resistencia al tratamiento antipsicótico (no solo no-respuesta temprana), lo que sugiere que &#39;resistente&#39; y &#39;no respondedor&#39; podrían ser fenotipos neuroquímicamente distintos, no un continuo.</li><li>En el NMA de nutracéuticos para depresión, los tamaños de efecto más grandes se correlacionaron con los puntajes de calidad metodológica más bajos — una correlación negativa que debería ser la primera pregunta ante cualquier suplemento con SMD &#39;demasiado bueno&#39;.</li><li>La formulación de paliperidona palmitato de 6 meses no solo mejora adherencia por menos inyecciones: en el post-hoc muestra menos ganancia de peso que la de 3 meses, con la ventaja más marcada en pacientes jóvenes de 18-25 años.</li><li>En anorexia nerviosa con peso restaurado, la recaída a 6 meses se predijo mejor por priors computacionales rígidos y sesgo de respuesta interoceptiva que por la severidad clínica reportada — el cerebro &#39;sigue esperando&#39; señales de hambre incluso cuando el cuerpo ya no las necesita.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si semaglutida y metformina cruzan el umbral de cambio clínicamente relevante en el manejo del peso inducido por antipsicóticos, ¿deberíamos coprescribirlas desde el inicio en pacientes de alto riesgo metabólico, en vez de esperar a que el aumento de peso ya sea clínicamente significativo?</li><li>¿Deberíamos pedir espectroscopia por RM (glutamato, mio-inositol) antes de declarar &#39;resistencia al tratamiento&#39; en psicosis, o seguimos definiendo resistencia solo por número de ensayos fallidos?</li><li>Si solo EPA, vitamina D3 y ZE117 sobreviven el filtro de calidad metodológica en el NMA de nutracéuticos para depresión, ¿qué tanto de la recomendación clínica actual de &#39;omega-3 para todos&#39; está sostenida realmente por evidencia robusta?</li><li>¿Cambia en algo la elección de inyectable de acción prolongada en un paciente joven con sobrepeso saber que la formulación de 6 meses de paliperidona tiene ventaja metabólica sobre la de 3 meses, o seguimos eligiendo solo por preferencia de frecuencia de dosis?</li><li>Si el rechazo y la violencia explican más varianza en el TEPT de personas trans/no binarias que la discriminación general, ¿deberíamos evaluar específicamente experiencias de rechazo/violencia en la anamnesis, en vez de preguntar solo por &#39;discriminación&#39; de forma genérica?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/video IG-YT: &#39;Qué fármaco realmente baja el peso que sube el antipsicótico&#39; usando el ranking de la NMA de JAMA Psychiatry (semaglutida, metformina, topiramato) como infografía comparativa, cerrando con cómo elegir según perfil del paciente.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o pasaje del libro de psicopatología dimensional sobre el mio-inositol y glutamato frontal como biomarcadores de no-respuesta/resistencia en psicosis, usando el mega-análisis de JAMA Psychiatry como caso ejemplar de psiquiatría de precisión ya aplicable en investigación.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre lectura crítica de meta-análisis usando en paralelo el NMA de nutracéuticos para depresión (efecto grande = calidad baja) y el meta-análisis de bullying (el efecto se cae tras ajustar sesgo de publicación) como par de casos didácticos.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o carta breve (paper) proponiendo una línea de investigación sobre intervenciones para reducir estigma en cuidadores de niños con TDAH, a partir del vacío casi total identificado en el SR de Family Process (solo 1 estudio de intervención de 15 incluidos).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido IG/YT sobre DadBooster y la depresión posparto paterna (&#39;el padre también se deprime, y ya hay tratamiento digital probado&#39;) usando el RCT de JMIR como evidencia, conectando con la línea de IA/tecnología aplicada a salud mental de Javier.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JAMA Psychiatry</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">International Journal of Neuropsychopharmacology</span><span class="tag ">Asia-Pacific Psychiatry</span><span class="tag ">Liver International</span><span class="tag ">American Psychologist</span><span class="tag ">Family Process</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">Clinical Psychology &amp; Psychotherapy</span><span class="tag ">Child: Care, Health and Development</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC REST API (europepmc.org) — FIRST_PDATE:[2026-08-31 TO 2026-09-03], PUB_TYPE filtrado a Meta-Analysis/Systematic Review/Randomized Controlled Trial, query base del dominio (psychiatry/depression/anxiety/bipolar/schizophrenia/ADHD/autism/OCD/PTSD) + query NMA/SR textual + query boost (ADHD/autismo/neuromodulación/precisión) + queries específicas ADHD/autismo y neuromodulación (TMS/tDCS/ECT/DBS) · Verificación de DOI, journal, fecha, autores y abstract completo por PMID vía Europe PMC resultType=core. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 3 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
