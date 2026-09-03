@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-03 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">3 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">157</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">107</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Trends in Cognitive Sciences · 2026-09-01 · review</div>
+        <h3 class="r3-title">Neurocomputational mechanisms underlying cognitive flexibility: a translational perspective</h3>
+        <p class="r3-hook">Trends in Cognitive Sciences sintetiza el trabajo conductual, neural y computacional reciente sobre cómo el cerebro infiere y actualiza &#39;reglas&#39; cuando el entorno cambia -circuitos prefronto-corticales que codifican representaciones estructuradas comparables entre roedores y humanos-, y traza explícitamente el puente hacia disrupciones de la flexibilidad cognitiva en esquizofrenia. Para tu línea de psiquiatría dimensional (HiTOP/RDoC/network theory) es exactamente el tipo de evidencia que necesitas: un modelo computacional transdiagnóstico de un mecanismo (flexibilidad/rigidez cognitiva) en vez de una categoría diagnóstica cerrada. Es material de referencia de primer nivel para el capítulo de psicopatología dimensional de tu libro, y para AMAUTA/USAMEDIC como ejemplo de cómo un mismo circuito prefrontal se lee distinto según el marco (síntoma categorial vs. dimensión computacional). Ángulo de contenido: &#39;la rigidez cognitiva no es solo un síntoma de esquizofrenia, es un mecanismo que se puede medir y modelar&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.tics.2026.08.003" target="_blank" rel="noopener">↗ doi.org/10.1016/j.tics.2026.08.003</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychiatric Quarterly · 2026-09-02 · review</div>
+        <h3 class="r3-title">Systematic Review of rTMS and dTMS in Treatment-Resistant Obsessive-Compulsive Disorder: Target- and Phenotype-Specific Outcomes</h3>
+        <p class="r3-hook">Revisión sistemática (PROSPERO CRD420251003027, 27 artículos/23 estudios) que evalúa rTMS y dTMS en TOC resistente al tratamiento y encuentra que la certeza GRADE varía radicalmente según el blanco anatómico: dTMS en mPFC/ACC y targets prefrontales (OFC/DLPFC) tienen certeza moderada respaldada por ECAs, mientras SMA solo cuenta con evidencia abierta no controlada; además identifica predictores de respuesta (Y-BOCS basal alto, genotipo SLC6A4, hiperactivación amigdalina). Para tu línea de neuromodulación es la pieza perfecta para enseñar que &#39;neuromodulación para TOC&#39; no es una sola intervención sino un menú con certezas muy distintas según el blanco -material directo para AMAUTA/USAMEDIC sobre cómo leer certeza GRADE por subgrupo, no solo del estudio completo-. Conecta también con psiquiatría de precisión: los predictores genéticos y de neuroimagen apuntan hacia selección de pacientes, no hacia &#39;un TMS para todos&#39;. Para contenido: un hilo sobre &#39;por qué preguntar solo si el paciente hizo TMS no basta, hay que preguntar dónde&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11126-026-10309-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s11126-026-10309-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Clinical Neurology · 2026-09 · review · 2026-09-01</div>
+        <h3 class="r3-title">Treatment of Functional Neurological Disorders</h3>
+        <p class="r3-hook">Revisión narrativa autoritativa (autor único, neurólogo) que resume el estado actual del tratamiento del trastorno neurológico funcional (FND) -fisioterapia, TCC, abordajes multidisciplinarios y neuromodulación- y nombra sin rodeos los problemas del campo: medidas de desenlace heterogéneas, seguimiento a largo plazo escaso, ausencia de biomarcadores validados y acceso limitado a atención especializada. Para tu foco secundario en neuropsiquiatría -la interfaz neurología-psiquiatría que distingue este dominio del de Alta Evidencia- es la actualización de referencia sobre una condición históricamente desatendida y frecuentemente mal etiquetada como &#39;psicógena&#39; sin más. Útil para el capítulo de neuropsiquiatría de tu libro y para contenido que combata el estigma diagnóstico de FND: &#39;no es fingir, es una disfunción de red real con tratamiento basado en evidencia, aunque todavía incompleto&#39;. También sirve como referencia rápida para razonamiento clínico en interconsulta neurología-psiquiatría.</p>
+        <a class="r3-link" href="https://doi.org/10.3988/jcn.2026.0223" target="_blank" rel="noopener">↗ doi.org/10.3988/jcn.2026.0223</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JAMA Psychiatry · 2026-09-01 · network-meta-analysis</div>
+        <h3 class="r3-title">Pharmacological Interventions for Weight Reduction in Patients With Schizophrenia Treated With Antipsychotics: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">NMA frecuentista (95 estudios, 39 intervenciones, N=5898) sobre reducción de peso en esquizofrenia tratada con antipsicóticos: semaglutida (-10.98 kg), liraglutida (-5.43 kg), topiramato (-3.95 kg), metformina (-3.86 kg) y exenatida (-2.97 kg) muestran las mayores reducciones, con certeza CINeMA MODERADA -no baja, algo inusual en psicofarmacología- y sin señales relevantes de eventos adversos gastrointestinales o abandono diferencial. Para tu línea de psiquiatría de precisión es evidencia de primer nivel para estratificar el manejo cardiometabólico del paciente con esquizofrenia según certeza real, no según qué fármaco está de moda -aripiprazol, por ejemplo, mostró efecto pero con certeza muy baja-. Para AMAUTA/USAMEDIC es un caso ideal para enseñar CINeMA (el equivalente de GRADE para NMA) con un problema clínico que tus estudiantes van a enfrentar todos los días en el manejo integral del paciente psiquiátrico. Ángulo de contenido: &#39;semaglutida en esquizofrenia no es una moda, tiene la certeza de evidencia más alta del ranking&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1814" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1814</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">CNS Neuroscience &amp; Therapeutics · 2026-09 · guideline · 2026-09-01</div>
+        <h3 class="r3-title">Mild Cognitive Impairment Diagnosis and Care Algorithms and the Role of Digital Interventions: Expert Consensus</h3>
+        <p class="r3-hook">Consenso de expertos del ASian Clinical Expert group on Neurocognitive Disorders (ASCEND) que entrega dos algoritmos nuevos para el diagnóstico y manejo del deterioro cognitivo leve (MCI): el eje central no es un fármaco sino un abordaje multidominio -optimizar salud metabólica, riesgo cerebrovascular, corregir pérdida auditiva/visual, tratar depresión, estimulación cognitiva y conexión social-, con intervenciones digitales cada vez más centrales para evaluación y auto-manejo. Para tu foco secundario en neuropsiquiatría y tu trabajo en educación médica es un algoritmo listo para enseñar en AMAUTA/USAMEDIC sobre MCI en atención primaria, un tema que se pregunta mucho en ENAM/Residentado y que suele reducirse erróneamente a &#39;pedir una resonancia y esperar&#39;. También conecta con tu línea de IA aplicada: el consenso valida explícitamente el rol de herramientas digitales de evaluación cognitiva y auto-manejo, no como gadget sino como parte del algoritmo formal. Contenido posible: &#39;lo que de verdad cambia el curso de un MCI no es un fármaco, son 6 factores modificables -y aquí está el algoritmo&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/cns.71085" target="_blank" rel="noopener">↗ doi.org/10.1002/cns.71085</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Alzheimer&#39;s &amp; Dementia · 2026-09 · guideline · 2026-09-01</div>
+        <h3 class="r3-title">A strategic pathway for the ethical development of AI tools in dementia care</h3>
+        <p class="r3-hook">Consenso de expertos del Alzheimer&#39;s Association Innovation Roundtable que propone un framework ético de 6 pasos para el desarrollo de herramientas de IA en demencia -fundamentos éticos, involucramiento de stakeholders, co-diseño, evaluación de impacto, ciclos iterativos de retroalimentación, y educación/alfabetización digital-, con checklist práctico de implementación y balance explícito entre riesgo de despliegue prematuro vs. riesgo de demora dañina. Para tu línea de IA aplicada a investigación y educación médica es un framework directamente transferible más allá de demencia: la misma lógica de co-diseño y evaluación de impacto aplica a cualquier herramienta de IA que uses o desarrolles en investigación psiquiátrica o en AMAUTA/USAMEDIC. Para tu comité de ética (HVLH) es una referencia normativa concreta y reciente, publicada por un body de autoridad (Alzheimer&#39;s Association), útil para discutir protocolos de IA en poblaciones vulnerables (pacientes con deterioro cognitivo). Ángulo de contenido/paper: adaptar este framework de 6 pasos como checklist propio para evaluar herramientas de IA en tu práctica de investigación.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/alz.71805" target="_blank" rel="noopener">↗ doi.org/10.1002/alz.71805</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Journal of Pediatrics · 2026-09-02 · meta-analysis</div>
+        <h3 class="r3-title">Acute exercise for anxiety reduction in children and adolescents: a meta-analysis of developmental, contextual, and modality-specific effects</h3>
+        <p class="r3-hook">Metaanálisis (12 estudios, 739 participantes, certeza GRADE moderada) sobre el efecto inmediato de una sola sesión de ejercicio en ansiedad de estado en niños y adolescentes: el efecto global es significativo (SMD=-0.77) pero MUCHO mayor en adolescentes de 13-18 años (SMD=-2.97) que en niños más chicos, y depende de modalidad (aeróbico, multimodal) y de cuánta autonomía situacional tiene el participante. Para tu pilar kinobody-selfcare y tu línea de evidencia proporcional al claim es un dato accionable y barato de comunicar: una sola sesión de ejercicio ya reduce ansiedad medible, pero el efecto no es uniforme por edad -algo que se pierde en el discurso genérico de &#39;el ejercicio ayuda a la ansiedad&#39;-. Para contenido dirigido a padres o a tu línea TDAH/TEA (población con alta comorbilidad ansiosa) es un ángulo simple y respaldado por evidencia real: &#39;una caminata antes del examen sí ayuda, pero ayuda más si tu hijo es adolescente que si es niño&#39;. Buen ejemplo pedagógico para AMAUTA sobre heterogeneidad (I²=94.9%) y por qué hay que mirar subgrupos, no solo el efecto global.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00431-026-07371-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s00431-026-07371-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Applied Gerontology · 2026-09-02 · meta-analysis</div>
+        <h3 class="r3-title">Caregiver Burden and Associated Factors Among Family Caregivers of People With Dementia in Rural and Remote Areas: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Metaanálisis (PROSPERO CRD420261277658, 12 estudios, 1416 cuidadores) sobre carga del cuidador familiar de personas con demencia en zonas rurales/remotas: puntajes de Zarit Burden elevados (45.19/88 en la versión de 22 ítems), asociados a síntomas conductuales y psicológicos de la demencia (r=0.44), peor salud mental del cuidador (r=0.48) y mayor duración del cuidado (r=0.29) -aunque con certeza baja a muy baja-. Para tu foco secundario en neuropsiquiatría y el contexto peruano es evidencia directa y cuantificada de un problema que en zonas rurales del Perú probablemente es peor que en los estudios incluidos (mayoritariamente de contextos con más recursos): la carga del cuidador no es un tema &#39;blando&#39;, tiene números y correlatos medibles. Útil para AMAUTA/USAMEDIC como caso de discusión sobre cómo la certeza baja-muy baja de la evidencia no invalida el hallazgo, solo obliga a comunicarlo con cautela. Ángulo de contenido: &#39;cuidar a un familiar con demencia en zona rural tiene un costo medible en salud mental del cuidador, y la evidencia lo confirma aunque sea escasa&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/07334648261483301" target="_blank" rel="noopener">↗ doi.org/10.1177/07334648261483301</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">International Journal of Stroke · 2026-09-02 · meta-analysis</div>
+        <h3 class="r3-title">Remote Ischemic Conditioning in the Acute Treatment of Ischemic and Hemorrhagic Stroke: A Systematic Review and Meta-Analysis of Randomized Controlled Trials</h3>
+        <p class="r3-hook">Metaanálisis (PROSPERO CRD42024549594, 35 ECA, 6304 pacientes) sobre condicionamiento isquémico remoto (RIC) -ciclos breves de isquemia/reperfusión en una extremidad, de bajo costo y no invasivo- en ictus isquémico y hemorrágico agudo: mejores desenlaces funcionales (mRS, NIHSS) cuando el RIC se inició MÁS de 24h después del evento (no antes) y con protocolo bilateral sostenido más de 7 días, aunque la mayoría de estudios provienen de China y hay heterogeneidad metodológica relevante. Para tu foco secundario en neuropsiquiatría (ictus como parte de la interfaz neurología-psiquiatría) y tu interés en ROI/leverage en salud es un ejemplo notable de intervención escalable y de bajo costo con evidencia real de beneficio funcional, relevante para pensar cómo democratizar neuroprotección en sistemas de salud con recursos limitados como el peruano. Contrainuitivo y útil para contenido: &#39;la intervención de bajo costo funcionó mejor empezando DESPUÉS de 24h, no antes -contra la intuición de que en ictus todo lo temprano es mejor&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/17474930261487798" target="_blank" rel="noopener">↗ doi.org/10.1177/17474930261487798</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el NMA de JAMA Psychiatry sobre reducción de peso en esquizofrenia, semaglutida (-10.98kg) y metformina (-3.86kg) alcanzaron certeza CINeMA MODERADA -no baja-, algo raro en psicofarmacología: la crítica habitual de &#39;poca evidencia&#39; no aplica aquí.</li><li>En TOC resistente, la certeza de rTMS/dTMS cambia radicalmente según el blanco anatómico: dTMS en mPFC/ACC y targets prefrontales tienen certeza moderada respaldada por ECAs, mientras SMA solo tiene evidencia abierta no controlada -elegir &#39;neuromodulación&#39; sin especificar el blanco es casi tan vago como elegir &#39;un antidepresivo&#39;.</li><li>El consenso ASCEND de deterioro cognitivo leve prioriza intervenciones NO farmacológicas modificables (salud metabólica, audición/visión, depresión, ejercicio cognitivo) antes que fármacos -la mayoría del manejo real de MCI ocurre fuera de la receta.</li><li>El ejercicio agudo (una sola sesión) reduce ansiedad de estado en adolescentes de 13-18 años con un tamaño de efecto grande (SMD=-2.97), mucho mayor que en niños más pequeños -la &#39;dosis&#39; de autonomía situacional importa tanto como el ejercicio en sí.</li><li>En el metaanálisis de condicionamiento isquémico remoto (RIC) para ictus, los mejores desenlaces se dieron iniciando el protocolo MÁS de 24h después del evento, no antes -contradice la intuición de que en neuroprotección todo lo temprano es mejor.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debería incorporarse el ranking de certeza de agentes para peso (semaglutida, metformina) al protocolo estándar de seguimiento metabólico de tus pacientes con antipsicóticos, en vez de decidir caso por caso sin ese ranking?</li><li>¿Qué porcentaje de tus pacientes con TOC resistente a tratamiento tiene acceso real a dTMS con target prefrontal específico, versus rTMS genérico sin definir blanco anatómico?</li><li>En el algoritmo ASCEND de MCI, ¿qué tan sistemáticamente se evalúan hoy en el Perú los factores modificables (audición, visión, salud metabólica) antes de pasar a manejo farmacológico o a pedir neuroimagen?</li><li>¿Cómo se traduce el framework ético de 6 pasos de la Alzheimer&#39;s Association para IA en demencia a las herramientas de IA que ya usas en investigación y en AMAUTA/USAMEDIC -falta algún paso en tu propio proceso?</li><li>Dado que el ejercicio agudo reduce más la ansiedad en adolescentes que en niños pequeños, ¿cómo debería diferenciarse por edad la prescripción de actividad física como intervención de baja intensidad, tanto en consulta como en contenido para padres?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/carrete IG: &#39;El fármaco con más evidencia para bajar de peso en esquizofrenia no es el que más se receta&#39;, usando los números exactos del NMA de JAMA Psychiatry (semaglutida -11kg, metformina -3.9kg, certeza CINeMA).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre cómo leer certeza GRADE/CINeMA por SUBGRUPO (no solo del estudio completo), usando el ejemplo del rTMS/dTMS en TOC resistente donde la certeza cambia radicalmente según el target anatómico.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional: usar el review de Trends in Cognitive Sciences sobre mecanismos neurocomputacionales de flexibilidad cognitiva como puente entre modelos animales y la fenomenología de la rigidez cognitiva en esquizofrenia.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota/paper corto proponiendo cómo aplicar el framework ético de 6 pasos de la Alzheimer&#39;s Association (co-diseño, evaluación de impacto, alfabetización digital) a herramientas de IA en investigación psiquiátrica, no solo en demencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido para AMAUTA: &#39;FND no es fingir&#39; basado en el review de J Clin Neurol sobre tratamiento del trastorno neurológico funcional -TCC, fisioterapia y neuromodulación como líneas de manejo reales, con vacíos honestos (sin biomarcadores validados).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Trends in Cognitive Sciences</span><span class="tag ">Psychiatric Quarterly</span><span class="tag ">Journal of Clinical Neurology</span><span class="tag highlight">JAMA Psychiatry</span><span class="tag ">CNS Neuroscience &amp; Therapeutics</span><span class="tag ">Alzheimer&#39;s &amp; Dementia</span><span class="tag ">Journal of Applied Gerontology</span><span class="tag ">International Journal of Stroke</span><span class="tag ">European Journal of Pediatrics</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch, date_from=2026-08-31, date_to=2026-09-03, datetype=pdat). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 3 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
