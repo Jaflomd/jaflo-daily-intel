@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-03 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">3 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">89</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Biological Psychiatry · 2026-09-01 · paper</div>
+        <h3 class="r3-title">Una red cerebral común de recuperación del procesamiento emocional a través de cuatro trastornos psiquiátricos</h3>
+        <p class="r3-hook">Liu, Xu, Zhao y equipo mapean, con neuroimagen funcional de 652 personas más validación longitudinal en 213 pacientes, 208 coordenadas de activación cerebral asociadas a la recuperación del procesamiento emocional inducida por fármacos en depresión mayor, bipolar, ansiedad y trastorno por uso de sustancias — y encuentran que esas 208 coordenadas, pese a venir de 4 diagnósticos distintos, convergen en UNA sola red común anclada en ínsula bilateral y putamen. Para tu pilar de neuromodulación y psiquiatría de precisión esto es evidencia del tipo que necesitas: no solo &#39;los síntomas covarían&#39; (la lógica habitual de HiTOP/network) sino que el sustrato neuronal del CAMBIO terapéutico también converge across-diagnosis, y esa red se generaliza a electroconvulsivoterapia pero no a psicoterapia — un dato accionable para decidir qué intervención biológica probar cuando el fármaco no mueve la aguja emocional. Úsalo en el libro como ejemplo de &#39;diana transdiagnóstica de tratamiento&#39; (no solo de estructura) y como contenido de neuromodulación para IG/YT: la ansiedad, la depresión, el bipolar y el TUS mejoran emocionalmente por la misma red cerebral.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.biopsych.2026.01.019" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.01.019</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychological Medicine · 2026-09-03 · paper</div>
+        <h3 class="r3-title">La acumulación de evidencia durante el procesamiento social autorreferencial capta funcionamiento social y dimensiones de psicopatología en una muestra transdiagnóstica</h3>
+        <p class="r3-hook">Lasagna, Kemp, Tso y equipo (Ohio State/Michigan) usan modelos de difusión de decisión —modelado computacional, no solo puntajes de escalas— en 111 personas de 14 a 30 años con niveles variables de psicosis, ansiedad social y rasgos autistas, para descomponer en sus componentes la percepción de una mirada dirigida a uno mismo; encuentran que la eficiencia de &#39;acumulación de evidencia&#39; durante ese procesamiento social se asocia con peor cognición social y, de forma más modesta, con más síntomas de psicosis y ansiedad social — pero NO con rasgos autistas, una disociación fina que vale la pena anotar. Para tu pilar de IA aplicada a investigación y tu línea TDAH/TEA es un ejemplo directo de psiquiatría computacional aplicada a un marco transdiagnóstico: en vez de preguntar &#39;cuánto psicoticismo tiene&#39;, preguntas &#39;cuánto tarda en acumular evidencia social&#39;, una medida de proceso, no de síntoma, candidata a marcador de mecanismo para tu próximo capítulo sobre computational psychiatry. La disociación autismo-negativo es además el tipo de hallazgo que afina el diagnóstico diferencial entre TEA y psicosis/ansiedad social cuando el cuadro social es ambiguo en consulta.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S003329172610573X" target="_blank" rel="noopener">↗ doi.org/10.1017/S003329172610573X</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of the American Academy of Child and Adolescent Psychiatry · 2026-09 · paper · 2026-09-01</div>
+        <h3 class="r3-title">Un examen prospectivo de la validez predictiva de tres evaluaciones transdiagnósticas de riesgo de conducta suicida: Psychache, la Teoría Interpersonal del Suicidio y Razones para Vivir</h3>
+        <p class="r3-hook">Paul, Brent y equipo (Pittsburgh) siguen a 652 jóvenes de 12 a 24 años con ideación o conducta suicida y comparan tres marcos transdiagnósticos de riesgo suicida —Psychache, la Teoría Interpersonal del Suicidio (pertenencia frustrada, carga percibida, capacidad adquirida) y Razones para Vivir— frente a los predictores clínicos estándar: los tres marcos predicen intento suicida futuro con AUROC de 0.81 a 0.83, casi igual que edad+sexo+historia+un test computarizado adaptativo (AUROC 0.84), y tras ajustar por ese test solo la &#39;capacidad adquirida para conducta suicida&#39; sigue prediciendo. Para AMAUTA/USAMEDIC y tu línea de razonamiento clínico esto es material directo para ENAM/Residentado: son tres marcos TRANSDIAGNÓSTICOS —no atados a un diagnóstico categorial— con validez predictiva casi tan buena como la historia clínica completa, y cada uno señala un blanco terapéutico modificable distinto (dolor psíquico, desconexión social, tolerancia al daño autoinfligido) que puedes enseñar como algoritmo de evaluación de riesgo suicida transdiagnóstico en vez del checklist categorial habitual.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jaac.2025.11.010" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jaac.2025.11.010</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Global Open Science · 2026-07-04 · review</div>
+          <div class="r10-title">Dinámica temporal de la disfunción de recompensa en trastornos psiquiátricos: valor derivado de la memoria, saliencia incentiva, impacto hedónico y actualización de valor</div>
+          <div class="r10-line">Zou, Yang, Zhang y equipo proponen un marco temporal unificado de la disfunción de recompensa —memoria de valor, saliencia incentiva, impacto hedónico, actualización de valor— y muestran que depresión, esquizofrenia, bipolaridad y adicción no comparten &#39;un&#39; defecto de recompensa sino perfiles distintos de qué proceso temporal falla, un refinamiento directo del constructo RDoC de sistemas positivos de valencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este marco temporal de recompensa se va a convertir en plantilla de referencia para diseñar estudios computacionales de recompensa en tu pilar de psiquiatría de precisión — vale la pena mapear a tus pacientes según qué eslabón del ciclo (memoria, saliencia, hedonia, actualización) falla, en vez de asumir &#39;anhedonia&#39; como constructo único.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsgos.2026.100786" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsgos.2026.100786</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research · 2026-09 · paper · 2026-09-01</div>
+          <div class="r10-title">Predicción de la transición a trastornos psiquiátricos en sujetos de alto riesgo clínico de psicosis usando aprendizaje automático y rasgos faciales</div>
+          <div class="r10-line">Loch, Gattaz y equipo (São Paulo/Mount Sinai) extraen dinámica facial de video con OpenFace en 50 personas en alto riesgo clínico de psicosis (CHR) y logran predecir con machine learning quién transiciona a CUALQUIER trastorno psiquiátrico —no solo psicosis— con balanced accuracy de 71%, tratando el CHR como estado de riesgo transdiagnóstico y no solo prodrómico de esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los biomarcadores conductuales de bajo costo (video, voz, actigrafía) van a competir con los biomarcadores moleculares en staging transdiagnóstico en 2-3 años — contenido fuerte para tu pilar de psiquiatría de precisión sobre biomarcadores que sí escalan a consulta real en países sin presupuesto para neuroimagen o genética.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.06.001" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.06.001</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cyberpsychology, Behavior, and Social Networking · 2026-09 · paper · 2026-09-01</div>
+          <div class="r10-title">El uso pasivo de redes sociales se asocia con vulnerabilidad al retiro social (&#39;hikikomori&#39;) en adultos jóvenes autistas y con TDAH</div>
+          <div class="r10-line">Brosnan y Gavin (Bath) muestran en 101 jóvenes autistas o con TDAH que el uso PASIVO de redes sociales (no el tiempo total online) se asocia con vulnerabilidad a &#39;hikikomori&#39; (retiro social), y que los autistas reportan más vulnerabilidad que los TDAH, impulsada por aislamiento físico y dificultades de socialización.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el eje &#39;uso pasivo vs. activo&#39; de redes va a reemplazar al &#39;tiempo total de pantalla&#39; como variable clínica relevante en tu línea TDAH/TEA — pregunta de screening lista para anamnesis o contenido IG: no cuánto tiempo, sino si scrollea sin interactuar.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/21522715261468861" target="_blank" rel="noopener">↗ doi.org/10.1177/21522715261468861</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioral Sleep Medicine · 2026-09/10 · paper · 2026-09-01</div>
+          <div class="r10-title">Optimizando una intervención transdiagnóstica de sueño y ritmo circadiano para adultos jóvenes autistas: estudio cualitativo con marco de ciencia de la implementación</div>
+          <div class="r10-line">Lenker, Harvey (creadora de TranS-C) y equipo entrevistan a 20 adultos autistas, 20 cuidadores y 20 clínicos para adaptar la intervención transdiagnóstica de sueño y ritmo circadiano (TranS-C) a autismo, confirmando que el sueño en TEA es multidimensional (regularidad, alertness, continuidad) y no se resuelve con higiene del sueño genérica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: TranS-C adaptado a autismo va camino a volverse el protocolo de referencia para un programa de sueño en tu línea TDAH/TEA — conecta con el sueño/circadiano como motor transdiagnóstico que ya venías rastreando: se está consolidando como diana transdiagnóstica transversal, no solo comórbida.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/15402002.2026.2658806" target="_blank" rel="noopener">↗ doi.org/10.1080/15402002.2026.2658806</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Drug and Alcohol Dependence Reports · 2026-07-14 · paper</div>
+          <div class="r10-title">Asignación individualizada a abstinencia alcohólica de corto plazo: estudio de laboratorio humano de prueba de concepto usando dimensiones de psicopatología</div>
+          <div class="r10-line">Argyriou, Cyders y equipo (Indiana) usan dimensiones de psicopatología y rasgos individuales —no diagnóstico categorial— para estimar una regla personalizada de a quién conviene asignar abstinencia alcohólica de corto plazo antes de que la reinstauración de consumo escale en vez de reducirse, con reglas de mayor granularidad superando a las de talla única.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la &#39;asignación individualizada basada en dimensiones&#39; —precisión aplicada a decisiones conductuales simples, no solo a fármacos— va a extenderse rápido de adicciones a otras intervenciones breves; ejemplo replicable para tu pilar de psiquiatría de precisión más allá de biomarcadores caros.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.dadr.2026.100462" target="_blank" rel="noopener">↗ doi.org/10.1016/j.dadr.2026.100462</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Global Open Science · 2026-06-24 · paper</div>
+          <div class="r10-title">La adversidad temprana imprime el envejecimiento biológico multisistema: estudio longitudinal de dimensiones de adversidad y fenotipos de envejecimiento a través de la adolescencia</div>
+          <div class="r10-line">Antonacci, Gotlib y equipo (Stanford) siguen a 225 niños durante 6 años y muestran que amenaza y privación —dos dimensiones de adversidad temprana, no &#39;trauma&#39; genérico— producen perfiles biológicos de envejecimiento distintos, y que solo el perfil ligado a amenaza (cortisol, pubertad adelantada) predice psicopatología transdiagnóstica en la adolescencia tardía.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la distinción amenaza-vs-privación se va a volver estándar para evaluar adversidad infantil en investigación dimensional — mejor que preguntar &#39;¿hubo trauma?&#39; es preguntar &#39;de qué tipo&#39;, algo directamente enseñable en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsgos.2026.100782" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsgos.2026.100782</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Personality Disorders: Theory, Research, and Treatment · 2026-09 · paper · 2026-09-01</div>
+          <div class="r10-title">Una investigación de métodos mixtos sobre el sentimiento de vacío interior en adultos jóvenes de la comunidad</div>
+          <div class="r10-line">Bogaerts, Eggermont y Hopwood identifican en 737 jóvenes de la comunidad una estructura de tres factores del &#39;vacío interior&#39; (vacío en sí, ausencia de conexión, falta de sentido) transdiagnóstica y asociada a autolesión y trastornos alimentarios, incluso fuera de población clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;vacío interior&#39; se está perfilando como dimensión transdiagnóstica propia —más allá de ser síntoma de TLP— que probablemente aparezca en futuras revisiones de HiTOP; vale la pena incluirla como dimensión evaluable explícita en tu marco, no solo como ítem aislado del TLP.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/per0000776" target="_blank" rel="noopener">↗ doi.org/10.1037/per0000776</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Der Nervenarzt · 2026-09-01 · editorial</div>
+          <div class="r10-title">Epidemiología de la agresión y la violencia en trastornos mentales y el enfoque del TRR 379</div>
+          <div class="r10-line">Habel, Herpertz, Reif y el consorcio alemán TRR 379 presentan su hoja de ruta para mapear &#39;biosignaturas&#39; multidimensionales de agresión en trastornos mentales siguiendo explícitamente el marco RDoC (genética, hormonas, circuitos, conducta) para diseñar prevención e intervención a medida según el perfil biológico, no según el diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vas a poder citar al TRR 379 como el ejemplo institucional más grande de &#39;RDoC aplicado a un solo fenómeno transdiagnóstico&#39; (agresión) cuando alguien pregunte cómo se ve RDoC en la práctica más allá del NIMH — vale la pena seguir sus primeras publicaciones empíricas en los próximos meses.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00115-026-02005-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s00115-026-02005-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychology · 2026-09 · paper · 2026-09-01</div>
+          <div class="r10-title">Examinando la medición y validez de la Escala de Dificultades en la Regulación Emocional y sus formas cortas</div>
+          <div class="r10-line">Faulkenberry, Hicks y Byllesby comparan las 5 versiones de la escala DERS (regulación emocional) en 618 estudiantes y encuentran que el modelo bifactor DERS-18 es el que mejor ajusta, pero que se relaciona solo con psicopatología internalizing —casi nada con externalizing— pese a presentarse como constructo transdiagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este hallazgo va a generar debate metodológico sobre si &#39;desregulación emocional&#39; merece seguir tratándose como constructo transdiagnóstico único o si hay que dividirlo por polaridad internalizing/externalizing — buen material para una nota crítica breve en el libro sobre constructos que en realidad no son tan transdiagnósticos como se asume.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jclp.70170" target="_blank" rel="noopener">↗ doi.org/10.1002/jclp.70170</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders · 2026-09-01 · paper</div>
+          <div class="r10-title">La intolerancia a la incertidumbre predice trayectorias independientes y conjuntas de síntomas de ansiedad y depresión en adolescentes: estudio longitudinal de tres olas</div>
+          <div class="r10-line">Ye, Fan y equipo siguen a 2,076 adolescentes chinos durante tres olas y muestran que la intolerancia a la incertidumbre predice tanto las trayectorias independientes como conjuntas de ansiedad y depresión, identificando perfiles de riesgo, vulnerabilidad y resiliencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la intolerancia a la incertidumbre se sigue consolidando como uno de los mejores candidatos a factor transdiagnóstico temprano y modificable en adolescentes — encaja con contenido de screening preventivo para AMAUTA/USAMEDIC dirigido a población adolescente.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121842" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121842</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Cuatro diagnósticos distintos (depresión, bipolar, ansiedad, trastorno por uso de sustancias) mejoran emocionalmente por la MISMA red cerebral (ínsula bilateral + putamen) tras farmacoterapia — esa red se generaliza a electroconvulsivoterapia pero no a psicoterapia (Liu et al., Biological Psychiatry).</li><li>En jóvenes con psicosis, ansiedad social y autismo, la velocidad de &#39;acumular evidencia social&#39; al mirar una cara se asocia con psicosis y ansiedad social — pero no con rasgos autistas, una disociación computacional fina entre tres cuadros que suelen confundirse en consulta (Lasagna/Tso et al., Psychological Medicine).</li><li>Tres marcos transdiagnósticos de riesgo suicida (Psychache, Teoría Interpersonal del Suicidio, Razones para Vivir) predicen intento suicida futuro casi tan bien (AUROC 0.81-0.83) como toda la evaluación clínica estándar (AUROC 0.84) — y cada uno señala una diana de tratamiento distinta (Paul/Brent et al., JAACAP).</li><li>La desregulación emocional medida con el DERS-18 (el modelo bifactor mejor ajustado) se asocia con psicopatología internalizing pero casi nada con externalizing — un supuesto &#39;constructo transdiagnóstico&#39; que en los datos se comporta más como internalizing-específico (Faulkenberry et al.).</li><li>En autismo y TDAH no es el tiempo total en redes sociales lo que predice vulnerabilidad a aislamiento tipo hikikomori, sino específicamente el uso PASIVO (scrollear sin interactuar) — y los autistas muestran más vulnerabilidad que los TDAH (Brosnan &amp; Gavin).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si cuatro diagnósticos distintos comparten la misma red de recuperación emocional tras fármacos (pero no tras psicoterapia), ¿qué tan seguido eliges entre farmacoterapia, neuromodulación y psicoterapia pensando en la red-diana en vez de en el diagnóstico categorial del paciente?</li><li>Si la &#39;acumulación de evidencia social&#39; distingue psicosis y ansiedad social del autismo (que no muestra el mismo patrón), ¿qué otras medidas de proceso computacional —más allá de escalas de síntomas— podrías incorporar a tu razonamiento clínico diferencial en casos ambiguos de TEA vs. psicosis incipiente?</li><li>Si tres marcos transdiagnósticos de riesgo suicida predicen casi tan bien como la evaluación clínica completa, ¿tu protocolo de riesgo suicida en consulta o en AMAUTA/USAMEDIC nombra explícitamente cuál de esos mecanismos modificables (dolor psíquico, desconexión, capacidad adquirida) está más activo en cada paciente, o se queda en &#39;riesgo alto/bajo&#39;?</li><li>Si el vacío interior tiene una estructura propia de tres factores (vacío, desconexión, falta de sentido) y aparece fuera del TLP, ¿lo evalúas como dimensión transdiagnóstica independiente en tu anamnesis, o solo lo registras cuando ya hay puesto un diagnóstico de personalidad?</li><li>Si la privación y la amenaza en la infancia dejan huellas biológicas de envejecimiento distintas, y solo la de amenaza predice psicopatología años después, ¿tu historia de adversidad infantil distingue entre tipos de adversidad o la registras como una sola casilla de &#39;trauma sí/no&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post: &#39;La misma red cerebral mejora la depresión, el bipolar, la ansiedad y las adicciones&#39; usando el hallazgo de Liu et al. (ínsula+putamen, 4 diagnósticos, N=652+213) para el pilar de neuromodulación.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro sobre &#39;riesgo suicida transdiagnóstico&#39; que use el marco de Paul/Brent et al. (Psychache, Teoría Interpersonal, Razones para Vivir) como algoritmo clínico alternativo al checklist categorial de riesgo suicida.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video para tu línea TDAH/TEA sobre &#39;uso pasivo de redes sociales y aislamiento tipo hikikomori&#39; usando a Brosnan &amp; Gavin, con la pregunta de screening lista: no cuánto tiempo, sino si scrollea sin interactuar.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o carta breve señalando que el DERS-18 (Faulkenberry et al.) predice casi solo internalizing y casi nada externalizing — aporte a la discusión metodológica sobre qué tan transdiagnósticos son en realidad ciertos constructos populares.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Caso clínico USAMEDIC/ENAM de diagnóstico diferencial TEA vs. psicosis incipiente vs. ansiedad social usando la disociación computacional de Lasagna/Tso et al. (acumulación de evidencia social) como marco de razonamiento clínico.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Biological Psychiatry</span><span class="tag ">Psychological Medicine</span><span class="tag ">Journal of the American Academy of Child and Adolescent Psychiatry</span><span class="tag ">Biological Psychiatry: Global Open Science</span><span class="tag ">Schizophrenia Research</span><span class="tag ">Cyberpsychology, Behavior, and Social Networking</span><span class="tag ">Behavioral Sleep Medicine</span><span class="tag ">Drug and Alcohol Dependence Reports</span><span class="tag ">Personality Disorders: Theory, Research, and Treatment</span><span class="tag ">Der Nervenarzt</span><span class="tag ">Journal of Clinical Psychology</span><span class="tag ">Journal of Affective Disorders</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities eutils, date_from=2026-08-31, date_to=2026-09-03, datetype=pdat) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · WebSearch (PubMed, Europe PMC, medRxiv, PsyArXiv/OSF, X/Twitter). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 3 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
