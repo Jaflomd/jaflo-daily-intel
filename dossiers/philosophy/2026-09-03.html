@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-03 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">3 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Research Square (preprint) · Zaichenko V — 2 sep 2026 · preprint · 2026-09-02</div>
+        <h3 class="r3-title">Information, Classification, and Epistemic Adequacy in Medicine</h3>
+        <p class="r3-hook">Explica cómo todo sistema de clasificación clínica (usa ICD-11 y el diagnóstico psiquiátrico como ejemplo central) convierte estados clínicos continuos en categorías discretas, y propone medir la &#39;adecuación epistémica&#39; de esa conversión con el concepto de longitud de descripción mínima de Kolmogorov (MDL): una clasificación es epistémicamente adecuada cuando comprime sin perder las distinciones clínicamente relevantes; cuando las pierde, el daño no es solo estadístico sino ético, porque la obligación médica de no dañar tiene un componente epistémico. Le importa a Javier porque le da el lenguaje formal exacto —no metafórico— que necesita para argumentar por qué HiTOP/RDoC son más adecuados epistémicamente que las categorías DSM/ICD en su libro de psicopatología dimensional: no es una preferencia teórica, es que ICD-11 pierde información clínica que un modelo dimensional preserva, y eso es medible. Cómo usarlo: usar el marco de &#39;pérdida de distinciones clínicamente relevantes por compresión categorial&#39; como argumento central de un capítulo o de una serie de contenido explicando por qué diagnosticar dimensionalmente (TDAH/TEA atípico) no es más complicado, es más fiel a la información real del paciente.</p>
+        <a class="r3-link" href="https://doi.org/10.21203/rs.3.rs-10756402/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10756402/v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">medRxiv (preprint) · Yano Y, Shintani E, Arita S, et al. — 31 ago 2026 · preprint · 2026-08-31</div>
+        <h3 class="r3-title">Novel Entropy-Based Framework for Quantifying Dynamic Epistemic Uncertainty in Clinical Medicine</h3>
+        <p class="r3-hook">Equipo japonés propone un framework de circuito cerrado multiagente que cuantifica la incertidumbre epistémica dinámica de un LLM clínico mientras razona, combinando entropía de Shannon con reducción de dimensionalidad ISOMAP para proyectar el estado de razonamiento en un mapa 2D calibrado; probado en escenarios de emergencia, muestra progresión suave en casos claros pero inestabilidad de trayectoria y conflictos de ranking en casos ambiguos o de triaje. Le importa a Javier porque es una herramienta concreta —no solo el principio &#39;usa la IA con cuidado&#39;— para hacer auditable el razonamiento de una IA clínica en tiempo real, justo lo que su línea de IA aplicada a investigación/educación necesita para enseñar a residentes de AMAUTA/USAMEDIC a detectar cuándo un modelo está improvisando en vez de razonando con evidencia. Cómo usarlo: adaptar el principio —no la matemática completa, sino &#39;visualizar la trayectoria de confianza, no solo la respuesta final&#39;— como ejercicio de aula: mostrar un caso ambiguo resuelto por IA y pedir a los residentes que señalen dónde la trayectoria se volvió inestable.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.08.27.26361497" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.27.26361497</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Psychology of Sport and Exercise · Bergauer AE, Wolf SA, Schittenhelm A, Wergin VV — 1 sep 2026 · review · 2026-09-01</div>
+        <h3 class="r3-title">&quot;We Know What We Don&#39;t Know&quot;: A Reflexive Synthesis of Research and Lay Knowledge Regarding Group Decision-Making in Mountaineering</h3>
+        <p class="r3-hook">Revisión sistemática de 107 artículos sobre montañismo —dominio de alto riesgo, sin margen para el error— que sintetiza seis capas que determinan si un grupo decide bien o mal: factores que sustentan la decisión, autenticidad, influencias sociales (pensamiento grupal, polarización grupal), presiones externas, nivel de habilidad y condiciones ambientales, desmontando el supuesto ingenuo de que &#39;el grupo decide mejor que el individuo&#39;. Le importa a Javier porque le da una checklist estructural, no genérica, para auditar sus propios espacios de decisión colectiva de alto riesgo —el comité de ética HVLH, las decisiones de manejo compartidas en psiquiatría de precisión— donde el pensamiento grupal puede estar contaminando el resultado sin que nadie lo note. Cómo usarlo: convertir las seis capas en un checklist de auditoría rápida para las sesiones del comité HVLH, revisando explícitamente si hay presión externa o polarización antes de cerrar una decisión clínica o ética compleja.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.psychsport.2026.103257" target="_blank" rel="noopener">↗ doi.org/10.1016/j.psychsport.2026.103257</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">CBE—Life Sciences Education · Bremers EK, Clark N, Halmo SM, et al. — 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Metacognitive Milestones: A Longitudinal View of How Life Science Students Develop Metacognition Across Their College Years</div>
+          <div class="r10-line">Entrevistas anuales a estudiantes de ciencias a lo largo de la carrera mapean etapas concretas del desarrollo metacognitivo, incluyendo el momento en que empiezan a usar sus propias evaluaciones para ajustar sus planes de estudio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede usar estas etapas como rúbrica de progreso metacognitivo en AMAUTA, reemplazando &#39;aprobado/desaprobado&#39; por &#39;en qué etapa metacognitiva está este residente&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1187/cbe.25-11-0241" target="_blank" rel="noopener">↗ doi.org/10.1187/cbe.25-11-0241</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">CBE—Life Sciences Education · Halmo SM, Asuagbor A, Farooq AB, et al. — 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Life Science Students&#39; Perceptions of Risk Associated with Social Metacognition</div>
+          <div class="r10-line">Estudio cualitativo con grabaciones de grupo y entrevistas muestra que evaluar el razonamiento de un compañero se percibe como socialmente riesgoso, y que los estudiantes usan estrategias de cortesía (hedging) para suavizar esa evaluación cuando temen dañar la dinámica grupal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: para AMAUTA esto explica por qué el feedback entre pares en simulacros clínicos suele ser tibio — Javier podría diseñar protocolos que despersonalicen la crítica del razonamiento clínico ajeno.</div>
+          <a class="r10-link" href="https://doi.org/10.1187/cbe.26-01-0002" target="_blank" rel="noopener">↗ doi.org/10.1187/cbe.26-01-0002</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLOS Mental Health · Riedl D, Delamain H, Fonagy P, et al. — 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Can we trust this short scale? Validation of a Brief Self-Report Measure of Epistemic Trust, Mistrust and Credulity (ETMCQ-R-6) in a sample of the U.K. general population</div>
+          <div class="r10-line">Validan una versión corta de 6 ítems de la escala de confianza epistémica (ETMCQ-R), con estructura de tres factores (confianza, desconfianza, credulidad) confirmada en 515 adultos del Reino Unido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: una escala corta y validada de confianza epistémica es una herramienta práctica que Javier podría incorporar a investigación o docencia dimensional para medir cómo los pacientes procesan la información clínica que reciben.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pmen.0000591" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pmen.0000591</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine · Lypson ML — 31 ago 2026 · editorial · 2026-08-31</div>
+          <div class="r10-title">A Heuristic for Generalist Leadership in Times of Volatility, Uncertainty, Complexity, and Ambiguity (VUCA)</div>
+          <div class="r10-line">Editorial propone una heurística de liderazgo &#39;generalista&#39; específica para navegar entornos de Volatilidad, Incertidumbre, Complejidad y Ambigüedad (VUCA) en medicina interna.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: encaja directo con el pilar de liderazgo del Competency Lab — Javier podría adaptar la heurística VUCA como marco explícito para enseñar a residentes de AMAUTA a decidir cuando la evidencia es incompleta.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10772-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10772-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research in Psychotherapy: Psychopathology, Process and Outcome · Tilkidzhieva E, Gullo S, Fiegl J, et al. — 31 ago 2026 · paper · 2026-08-31</div>
+          <div class="r10-title">Relational skills and self-awareness outcomes in psychotherapy trainees</div>
+          <div class="r10-line">Estudio con 105 psicoterapeutas en formación identifica cuatro estilos relacionales (Cálido, Cauteloso, Directivo, Intenso) y muestra que el estilo Cauteloso se asocia a mayor costo emocional de la autoconciencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier podría mapear estos cuatro estilos sobre sus propios residentes de psiquiatría para personalizar cómo entrena autoconciencia clínica sin generar el costo emocional que sufren los cautelosos.</div>
+          <a class="r10-link" href="https://doi.org/10.4081/ripppo.2026.898" target="_blank" rel="noopener">↗ doi.org/10.4081/ripppo.2026.898</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Gerontologist · Calabrese L, Brigiano M, Quartarone M, et al. — 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">The right to be heard: exploring epistemic injustice in dementia care. A qualitative study</div>
+          <div class="r10-line">Entrevistas con 15 personas con demencia documentan cómo la injusticia epistémica —ser descartado como interlocutor creíble— las margina progresivamente en consultas médicas y en la familia, y cómo muchas normalizan ese silenciamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede extender el marco de injusticia epistémica a TDAH/TEA atípico en adultos, donde el paciente neurodivergente enfrenta el mismo descarte de credibilidad — contenido potente para su línea de neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/geront/gnag219" target="_blank" rel="noopener">↗ doi.org/10.1093/geront/gnag219</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Preprints.org (preprint) · Temara S — 1 sep 2026 · preprint · 2026-09-01</div>
+          <div class="r10-title">Beyond the Prompt: Protecting Critical Thinking in the Age of AI</div>
+          <div class="r10-line">Ensayo argumenta que el pensamiento crítico no es solo &#39;encontrar la respuesta&#39; sino cuestionar supuestos, sopesar evidencia y detectar sesgo, y que esa habilidad se vuelve más urgente, no menos, mientras el contenido generado por IA se vuelve ubicuo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es material de apoyo directo para justificar por qué AMAUTA necesita enseñar pensamiento crítico como habilidad separada de &#39;saber usar el prompt correcto&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.20944/preprints202609.0016.v1" target="_blank" rel="noopener">↗ doi.org/10.20944/preprints202609.0016.v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Risk Analysis · Weber MS, Lee CM, Kosson DS — 1 sep 2026 · review · 2026-09-01</div>
+          <div class="r10-title">Communicating Risk in the Age of Misinformation: Empirical Frameworks for Understanding Stakeholder Trust</div>
+          <div class="r10-line">Revisión sistemática identifica tres roles de la confianza del público en comunicación de riesgo (resultado de la transparencia, predictor de aceptación tecnológica, mecanismo que media credibilidad y cumplimiento) en entornos saturados de desinformación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: aplicable directo a cómo Javier comunica en Instagram/YouTube temas polémicos (TDAH, neuromodulación, IA en psiquiatría) — tratar a la audiencia como socia en la incertidumbre predice más confianza sostenida que proyectar certeza.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/risa.70337" target="_blank" rel="noopener">↗ doi.org/10.1111/risa.70337</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Sociology of Health &amp; Illness · Schöngut-Grollmus N, Steverlynck D, Manríquez-Castillo F, Rojas-Navarro S — 1 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Rare Diseases as Epistemic Objects: Exploring the Moral Role of Health Systems</div>
+          <div class="r10-line">Entrevistas con pacientes y profesionales chilenos de enfermedades raras muestran que sin protocolos estandarizados la decisión clínica se vuelve informal y moralmente compleja, dependiendo de redes personales más que de evidencia; los autores proponen el marco de &#39;justicia decisional&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el concepto de &#39;justicia decisional&#39; en fenotipos sin protocolo claro es aplicable a TDAH/TEA atípico en adultos — Javier podría usarlo para nombrar por qué la psiquiatría de precisión necesita infraestructura, no solo buena voluntad clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/1467-9566.70255" target="_blank" rel="noopener">↗ doi.org/10.1111/1467-9566.70255</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · Feliu A — 31 ago 2026 · preprint · 2026-08-31</div>
+          <div class="r10-title">Lowering the Barrier Without Lowering the Bar: Generative AI, Scientific Judgment, and Responsibility in Behavioral Health</div>
+          <div class="r10-line">Ensayo argumenta que la IA generativa en salud conductual multiplica outputs plausibles más rápido de lo que se pueden evaluar, separando la fluidez de la forma del respaldo evidencial real, y propone que la pregunta correcta es &#39;para qué tareas específicas es apropiada&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede citar &#39;la fluidez supera al respaldo evidencial&#39; como advertencia concreta en su línea de IA aplicada a investigación, especialmente para residentes de AMAUTA tentados a redactar discusión de resultados con IA sin verificar la evidencia citada.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/wkp5u_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/wkp5u_v1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Una clasificación diagnóstica no es neutra: comprimir información clínica en categorías (ICD-11) puede violar la obligación de &#39;no dañar&#39; si borra distinciones que importan — la adecuación epistémica de un sistema de clasificación es medible con teoría de la información (MDL), no solo debatible filosóficamente.</li><li>Evaluar el razonamiento de un compañero de equipo se siente socialmente arriesgado — por eso el feedback entre pares en clínica suele ser más suave de lo que la situación exige, no por falta de criterio sino por miedo a dañar el vínculo.</li><li>El montañismo de alta montaña —donde el error mata— revela que &#39;el grupo decide mejor&#39; es un mito: seis capas (presión externa, pensamiento grupal, habilidad, autenticidad, factores de apoyo, condiciones ambientales) determinan si una decisión colectiva es buena o catastrófica.</li><li>Cuando una enfermedad o fenotipo no tiene protocolo estandarizado, la decisión clínica se vuelve &#39;informal, discrecional y moralmente compleja&#39; y depende de redes personales — eso no es un fallo del clínico individual, es un vacío de infraestructura moral del sistema.</li><li>La IA generativa en salud conductual multiplica outputs plausibles más rápido de lo que se pueden evaluar: la fluidez de la forma ya no es proxy de respaldo evidencial, y la pregunta correcta no es &#39;¿usarla?&#39; sino &#39;¿para qué tarea específica es apropiada?&#39;.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Podría Javier aplicar el marco de &#39;adecuación epistémica&#39; (MDL) para argumentar, con matemática de por medio, por qué HiTOP pierde menos información clínica que el DSM-5-TR/ICD-11 en fenotipos TDAH/TEA atípicos?</li><li>¿El comité de ética HVLH está protegido contra pensamiento grupal y presión externa, o necesita un checklist explícito de las &#39;seis capas&#39; de decisión grupal validadas en contextos de alto riesgo como el montañismo?</li><li>¿Los cuatro estilos relacionales de psicoterapeutas en formación (Cálido, Cauteloso, Directivo, Intenso) se replican en residentes de psiquiatría de USAMEDIC, y predicen quién sufre más costo emocional al entrenar autoconciencia clínica?</li><li>¿Cómo se manifiesta la injusticia epistémica —ser descartado como interlocutor creíble— en pacientes adultos con TDAH/TEA atípico dentro de la consulta psiquiátrica peruana?</li><li>¿Necesita la psiquiatría de precisión de Javier su propio marco de &#39;justicia decisional&#39; para fenotipos atípicos sin protocolo claro, en vez de dejar la decisión a la discrecionalidad individual del clínico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video IG/YouTube explicando por qué &#39;el grupo decide mejor&#39; es un mito, usando las seis capas de decisión grupal del montañismo aplicadas a un comité clínico o de ética.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional formalizando con el marco de &#39;adecuación epistémica&#39; (MDL) por qué HiTOP pierde menos información clínica que las categorías DSM/ICD-11 en fenotipos atípicos.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper o carta editorial aplicando &#39;justicia decisional&#39; (enfermedades raras) e &#39;injusticia epistémica&#39; (demencia) al manejo de TDAH/TEA atípico en adultos sin protocolo estandarizado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Checklist de auditoría rápida para las sesiones del comité HVLH basado en las seis capas de decisión grupal, revisando presión externa y pensamiento grupal antes de cerrar una decisión.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de Competency Lab sobre &#39;fluidez vs. respaldo evidencial&#39; en IA generativa, alertando a residentes de AMAUTA sobre citar evidencia no verificada al redactar con IA.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Research Square (preprint)</span><span class="tag ">medRxiv (preprint)</span><span class="tag ">Psychology of Sport and Exercise</span><span class="tag ">CBE—Life Sciences Education</span><span class="tag ">PLOS Mental Health</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Research in Psychotherapy: Psychopathology, Process and Outcome</span><span class="tag ">The Gerontologist</span><span class="tag ">Preprints.org (preprint)</span><span class="tag ">Risk Analysis</span><span class="tag ">Sociology of Health &amp; Illness</span><span class="tag ">PsyArXiv (preprint)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed / Europe PMC (E-utilities API, búsqueda por fecha de publicación 2026-08-31 a 2026-09-03) · medRxiv (preprint) · Research Square (preprint) · PsyArXiv (preprint) · Preprints.org (preprint) · Consensus (búsqueda académica — varios candidatos descartados tras verificar que su fecha real de publicación caía fuera de la ventana 48-72h) · WebSearch (Substack, Farnam Street, X/Twitter, Reddit r/mentalmodels, r/LessWrong, r/philosophy, YouTube — sin hallazgos con fecha de publicación verificable dentro de la ventana). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 3 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
