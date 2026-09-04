@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-04 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">4 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Human Behaviour · Haubrock PJ, Kouba A, Soto I, et al. — 3 sep 2026 · editorial · 2026-09-03</div>
+        <h3 class="r3-title">How contemporary academic structures constrain scientific creativity and hold back early-career researchers</h3>
+        <p class="r3-hook">Un colectivo internacional de investigadores tempranos argumenta que los sistemas científicos actuales —ciclos de financiamiento cortos, revisión por pares aversa al riesgo, precariedad laboral— crean un incentivo racional para la conformidad sobre la creatividad, y que esto no es un problema de &#39;falta de talento&#39; sino de arquitectura institucional: los mismos mecanismos que evalúan producción también castigan la investigación conceptualmente arriesgada. Le importa a Javier directamente porque él mismo es investigador RENACYT Distinguido evaluando y siendo evaluado dentro de ese sistema, y porque su psiquiatría dimensional (HiTOP/RDoC) es exactamente el tipo de propuesta conceptualmente arriesgada que estas estructuras tienden a penalizar frente al DSM/ICD categorial más &#39;seguro&#39; de publicar. Cómo usarlo: usar el argumento estructural —no es falta de mérito individual, es diseño institucional— como marco para un post o capítulo sobre por qué le cuesta más publicar y financiar ideas dimensionales, y como argumento para rediseñar cómo AMAUTA evalúa a los residentes-investigadores que está formando.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41562-026-02575-5" target="_blank" rel="noopener">↗ doi.org/10.1038/s41562-026-02575-5</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Studies in History and Philosophy of Science · Nichele J — 3 sep 2026 · paper · 2026-09-03</div>
+        <h3 class="r3-title">Science as living collective memory: a Bergsonian framework for scientific rationality</h3>
+        <p class="r3-hook">Nichele propone entender la racionalidad científica como una práctica de &#39;memoria colectiva viva&#39; (apoyándose en Bergson y en los marcos sociales de Halbwachs), con tres operaciones concretas —conservación, reconstrucción y olvido selectivo— y usa el debate Kuhn-Popper como caso de prueba: el progreso científico no es acumulación pura ni ruptura pura, sino reorganización regulada de un pasado compartido. Le importa a Javier porque le da un mecanismo formal, no metafórico, para su propio argumento de que mover la psiquiatría de categorías (DSM/ICD) a dimensiones (HiTOP/RDoC) no es &#39;romper&#39; con la tradición clínica sino reconstruir selectivamente qué partes del conocimiento acumulado siguen siendo clínicamente útiles y cuáles hay que dejar de conservar. Cómo usarlo: adoptar el trío conservación/reconstrucción/olvido selectivo como estructura explícita de un capítulo de su libro de psicopatología dimensional, mostrando qué conserva, qué reconstruye y qué descarta del canon categorial.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.shpsa.2026.102215" target="_blank" rel="noopener">↗ doi.org/10.1016/j.shpsa.2026.102215</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">The American Surgeon (editorial) · Jung E, Dyke C — 3 sep 2026 · editorial · 2026-09-03</div>
+        <h3 class="r3-title">I Might Be Wrong: The Role of Intellectual Humility in Debiasing Surgical Education</h3>
+        <p class="r3-hook">Editorial que nombra con precisión los sesgos cognitivos que atrapan a los residentes quirúrgicos —anclaje, sesgo de confirmación, exceso de confianza, cierre prematuro, momentum diagnóstico— y propone &#39;reflection scaffolding&#39; (andamiaje de reflexión estructurado) e intervenciones concretas para instalar humildad intelectual como contrapeso, no como virtud abstracta sino como práctica entrenable. Le importa a Javier porque es exactamente el vocabulario de mecanismo que necesita para su línea de razonamiento clínico y su Competency Lab (pilar de razonamiento): estos mismos sesgos —cierre prematuro, momentum diagnóstico— son los que quiere enseñar a detectar a los residentes de AMAUTA/USAMEDIC que preparan ENAM y Residentado, donde el costo de un cierre prematuro es un diagnóstico psiquiátrico equivocado. Cómo usarlo: adaptar el &#39;reflection scaffolding&#39; quirúrgico como ejercicio de aula en razonamiento clínico psiquiátrico —pausar antes del cierre diagnóstico y nombrar en voz alta qué sesgo podría estar operando.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/00031348261487664" target="_blank" rel="noopener">↗ doi.org/10.1177/00031348261487664</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Journal of Medical Humanities · Das D — 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">Teaching Epistemic Reflexivity in Medical Education: Reading Michel Foucault and Amitav Ghosh as Pedagogical Interventions</div>
+          <div class="r10-line">Propone usar textos literarios (Foucault, Ghosh) para que estudiantes de medicina examinen cómo se construye, autoriza e institucionaliza el conocimiento clínico, como preparación explícita para la medicina algorítmica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier podría pilotar un módulo de &#39;lectura crítica&#39; en AMAUTA que use textos fuera de la medicina para entrenar exactamente la reflexividad epistémica que necesita un residente que va a trabajar junto a IA clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10912-026-10060-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s10912-026-10060-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">New Directions for Student Leadership · Ofosu-Asare Y, Nally RA — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">The Trickster Turn: Decolonial Epistemology for AI in Leadership Education</div>
+          <div class="r10-line">Argumenta que la IA generativa en educación de liderazgo arriesga producir &#39;sujetos de liderazgo fluidos y complacientes&#39; que estrechan la indagación ética, y propone una &#39;IA embaucadora&#39; que usa contradicción y negación para forzar ruptura crítica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: un contrapunto útil para el pilar de comunicación/liderazgo del Competency Lab — Javier podría usar la idea de &#39;liderazgo a través de la ruptura&#39; para diseñar ejercicios que resistan la complacencia que la IA generativa induce en el pensamiento de sus residentes.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/yd.70071" target="_blank" rel="noopener">↗ doi.org/10.1002/yd.70071</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">New Directions for Student Leadership · Dozier V, Molina SC — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Leading From the Precipice: How Academic Deans Are Navigating Artificial Intelligence in Higher Education</div>
+          <div class="r10-line">Estudio cualitativo con siete decanos asociados muestra adopción desigual de IA, guía institucional limitada y preocupaciones persistentes sobre integridad académica, equidad y sesgo; recomienda gobernanza sensible al contexto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: un espejo directo para cómo AMAUTA/USAMEDIC debería estructurar su propia política institucional de IA — Javier puede usar estos hallazgos como checklist de qué NO improvisar al integrar IA en la educación médica que dirige.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/yd.70077" target="_blank" rel="noopener">↗ doi.org/10.1002/yd.70077</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine · Desjardins G, Jain V, Simonson MG, McQuade CN — 3 sep 2026 · rct · 2026-09-03</div>
+          <div class="r10-title">Physician Ratings and Adoption of AI-Generated e-Consultation Advice: A Randomized Clinical Vignette Study</div>
+          <div class="r10-line">Estudio aleatorizado: médicos internistas calificaron alto (4.2-4.7/5) y adoptaron con frecuencia las recomendaciones generadas por IA en la práctica clínica, sin importar si sabían que eran de IA o de un humano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato duro para la línea de IA en investigación/educación de Javier — si el etiquetado &#39;generado por IA&#39; no cambia la confianza clínica, el problema de la deferencia epistémica a la IA es más urgente de lo que el discurso de &#39;usar la IA con cautela&#39; asume.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10777-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10777-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Science Monitor · Adıgüzel M — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Accuracy, Self-Reported Confidence, and Overconfidence of Large Language Models in Endodontics</div>
+          <div class="r10-line">Comparando ChatGPT, Claude y Gemini en 123 preguntas de endodoncia: Gemini fue el más preciso (90.2%) pero también el más sobreconfiado (9.8% de respuestas), mientras Claude no mostró exceso de confianza; concluye que la precisión sola no basta para evaluar confiabilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: Javier puede replicar este diseño de auditoría (precisión vs. confianza autoreportada) con preguntas de psiquiatría dimensional para decidir con evidencia, no intuición, qué modelo recomendar a sus residentes de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.12659/MSM.954052" target="_blank" rel="noopener">↗ doi.org/10.12659/MSM.954052</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Thoracic Research and Practice · Karan U, Elbek O — 4 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">Reply: Artificial Intelligence in Respiratory Medicine — Epistemic Authority, Trust and Responsibility in Practice and in Training</div>
+          <div class="r10-line">Réplica editorial sobre cómo la IA clínica reconfigura la autoridad epistémica, la confianza y la responsabilidad tanto en la práctica como en la formación médica — mismo debate que respiratorio, aplicado a psiquiatría.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: aunque es de otra subespecialidad, el marco &#39;autoridad epistémica + responsabilidad en el entrenamiento&#39; es transferible tal cual a cómo Javier define el rol de la IA en la formación de residentes de psiquiatría en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.4274/ThoracResPract.2026.2026-8-21" target="_blank" rel="noopener">↗ doi.org/10.4274/ThoracResPract.2026.2026-8-21</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El exceso de confianza no es uniforme entre modelos de IA: en el mismo test, Gemini fue simultáneamente el más preciso y el más sobreconfiado, mientras Claude fue el menos sobreconfiado — la precisión y la calibración de confianza son dos ejes independientes que hay que auditar por separado, no asumir que van juntos.</li><li>Etiquetar una recomendación clínica como &#39;generada por IA&#39; no cambió cuánto los médicos internistas confiaron en ella ni la adoptaron — la deferencia epistémica a la IA ya no depende de saber que es IA, lo cual vuelve obsoleto el consejo genérico de &#39;usa la IA con cautela&#39;.</li><li>El &#39;cierre prematuro&#39; y el &#39;momentum diagnóstico&#39; —seguir con el primer diagnóstico solo porque ya se avanzó en esa dirección— son sesgos nombrados y entrenables en educación quirúrgica; la humildad intelectual funciona mejor como andamiaje de reflexión estructurado (pausar y nombrar el sesgo en voz alta) que como virtud abstracta que se predica.</li><li>La creatividad científica no se pierde por falta de talento individual sino por diseño institucional: ciclos de financiamiento cortos y evaluación aversa al riesgo crean un incentivo racional para jugar seguro — lo cual implica que reformar la creatividad requiere rediseñar incentivos, no dar charlas motivacionales sobre &#39;pensar distinto&#39;.</li><li>Pensar el conocimiento científico como &#39;memoria colectiva viva&#39; con tres operaciones —conservar, reconstruir, olvidar selectivamente— da un lenguaje preciso para defender que cambiar de marco diagnóstico (categorial a dimensional) no es traicionar la tradición clínica, sino ejercer exactamente la función que la ciencia siempre ha cumplido.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué porcentaje de los diagnósticos que Javier y su equipo revisan en comités como HVLH muestran señales de &#39;momentum diagnóstico&#39; —persistencia en la primera impresión pese a evidencia nueva— y podría medirse sistemáticamente?</li><li>Si el etiquetado &#39;generado por IA&#39; no reduce la confianza clínica en sus recomendaciones, ¿qué mecanismo alternativo (no la etiqueta) podría realmente calibrar cuánto debería confiar un residente en una sugerencia de IA?</li><li>¿Qué partes del canon categorial (DSM/ICD) debería la psiquiatría dimensional &#39;conservar&#39; explícitamente en vez de descartar por completo, siguiendo el marco de conservación/reconstrucción/olvido selectivo?</li><li>¿Cómo se vería un &#39;reflection scaffolding&#39; —andamiaje de reflexión estructurado— adaptado específicamente al cierre diagnóstico en psiquiatría, donde los sesgos de anclaje operan distinto que en cirugía?</li><li>¿Qué estructuras institucionales concretas de AMAUTA/USAMEDIC recompensan hoy la conformidad sobre la investigación conceptualmente arriesgada en sus residentes, y cuáles podrían rediseñarse primero?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido &#39;Sesgos con nombre&#39;: un post/reel por sesgo quirúrgico (anclaje, cierre prematuro, momentum diagnóstico) traducido a un caso psiquiátrico real, con el andamiaje de reflexión como cierre.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional estructurado explícitamente como conservación/reconstrucción/olvido selectivo del canon DSM/ICD, citando el marco Bergsoniano de Nichele.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Diseñar un mini-estudio tipo Desjardins et al. (vignettes aleatorizadas) con residentes de AMAUTA: ¿cambia la confianza clínica si la recomendación se etiqueta &#39;de IA&#39; vs. &#39;de un residente senior&#39;?</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/carrusel: &#39;Por qué a las ideas arriesgadas les cuesta más publicarse&#39; usando el argumento estructural de Nature Human Behaviour, conectado a su propia experiencia RENACYT con la psiquiatría dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper corto proponiendo una escala de auditoría precisión-vs-confianza (al estilo del estudio de LLMs en endodoncia) aplicada a modelos de IA usados en razonamiento clínico psiquiátrico.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Human Behaviour</span><span class="tag ">Studies in History and Philosophy of Science</span><span class="tag ">The American Surgeon</span><span class="tag ">The Journal of Medical Humanities</span><span class="tag ">New Directions for Student Leadership</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Medical Science Monitor</span><span class="tag ">Thoracic Research and Practice</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI eutils · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 4 de septiembre de 2026.</div>
+</div>
+</body>
+</html>

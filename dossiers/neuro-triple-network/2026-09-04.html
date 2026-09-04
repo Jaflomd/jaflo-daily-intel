@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-09-04 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">4 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">bioRxiv (preprint) · 01 sep 2026 · preprint · 2026-09-01</div>
+        <h3 class="r3-title">Assessing specificity testing in Lesion Network Mapping</h3>
+        <p class="r3-hook">Martijn van den Heuvel, Isabel Libedinsky, Jonathan Repple y Luca Cocchi -pesos pesados de la conectómica- destripan la &#39;prueba de especificidad&#39; del lesion network mapping (LNM), el método que traduce lesiones focales a circuitos causales vía conectomas normativos: muestran que sensitivity testing, specificity testing, case-control LNM y permutación de etiquetas son variantes de la misma operación matemática sobre la matriz de conectividad, lo que explica por qué mapas de LNM de condiciones clínicamente no relacionadas terminan pareciéndose sospechosamente. Para tu estándar de &#39;evidencia proporcional al claim&#39; esto es oro puro: es exactamente el tipo de auditoría metodológica que enseñas en AMAUTA/USAMEDIC para que tus alumnos no confundan un mapa bonito con causalidad. Úsalo como caso de clase sobre cómo leer críticamente neuroimagen &#39;causal&#39; antes de citarla en tu libro de psicopatología dimensional, y como advertencia directa si en tu propia investigación usas LNM para justificar targets de neuromodulación.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.08.26.746668" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.26.746668</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Molecular Psychiatry · 02 sep 2026 · paper · 2026-09-02</div>
+        <h3 class="r3-title">Striatal dopaminergic function and cortical functional connectivity in 22q11.2 deletion syndrome: an integrative multimodal 18F-DOPA PET and MRI study</h3>
+        <p class="r3-hook">El grupo de Oliver Howes y Rob McCutcheon combina PET con 18F-DOPA y rs-fMRI en 22q11DS -el mayor factor de riesgo genético conocido para esquizofrenia- y encuentra que mayor síntesis de dopamina estriatal se asocia a conectividad funcional MÁS parecida a controles sanos (85% de precisión combinando ambas medidas), sugiriendo que la disconectividad podría ser compensatoria y no puramente patogénica. Esto es munición directa para tu psiquiatría de precisión: es el tipo de puente mecanismo-genética-red-clínica que exiges antes de aceptar un biomarcador, y complica la narrativa simplista de &#39;más disconectividad = peor&#39;. Puedes usarlo en tu journal club o en un capítulo sobre psiquiatría de precisión para ilustrar por qué un hallazgo de red necesita el ancla de un mecanismo molecular (aquí, dopamina) antes de convertirse en target terapéutico.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03839-2" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03839-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">European Psychiatry (congreso) · 04 sep 2026 · editorial · 2026-09-04</div>
+        <h3 class="r3-title">Robust prediction of irritability from brain functional connectivity in a transdiagnostic psychiatric sample of children and adolescents</h3>
+        <p class="r3-hook">Con 1,143 niños y adolescentes del Healthy Brain Network (ADHD, depresión, ansiedad, TEA) y validación externa en una cohorte clínica independiente de depresión, este equipo usa connectome-based predictive modeling para mostrar que la irritabilidad -síntoma transdiagnóstico clásico- tiene una firma de conectividad funcional que generaliza across diagnósticos y se replica externamente. Es precisamente la evidencia dimensional (HiTOP/RDoC) que necesitas para tu línea TDAH/TEA/neurodivergencia: un síntoma, no una categoría, con un circuito predictivo robusto detrás. Como es un resumen de congreso (no el paper completo aún), trátalo como señal temprana de alta calidad -tamaño de muestra grande y validación externa- para tu radar de contenido AMAUTA sobre irritabilidad transdiagnóstica en la práctica clínica pediátrica.</p>
+        <a class="r3-link" href="https://europepmc.org/article/PMC/PMC13441579" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13441579</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">CNS Neuroscience &amp; Therapeutics · 01 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Decoding Transdiagnostic Subtypes in Emotional Disorders</div>
+          <div class="r10-line">En 261 pacientes con trastornos emocionales (ansiedad, depresión, TEPT) y 201 controles, factorización de matrices no negativas sobre conectividad de reposo identifica 5 subtipos con firmas de red distintas -DMN, tálamo-cortical, sensoriomotor-atención- que cruzan las categorías diagnósticas del DSM.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esto alimenta directamente tu narrativa de psiquiatría dimensional para el libro de psicopatología: en 12-18 meses vas a ver más papers de &#39;subtipos transdiagnósticos por red&#39; compitiendo con HiTOP como marco de estratificación, y te conviene posicionarte citando este tipo de evidencia temprano en tus clases AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/cns.71122" target="_blank" rel="noopener">↗ doi.org/10.1002/cns.71122</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (congreso) · 04 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">From Lesions to Networks: Defining the Causal Circuitry of Obsessive-Compulsive Disorder</div>
+          <div class="r10-line">Mapeo de 123 casos de TOC lesional (40 con imágenes trazables) contra un conectoma normativo de 1,000 sujetos converge en corteza orbitofrontal y ganglios basales, y ese circuito &#39;lesional&#39; se solapa con targets aprobados de TMS/DBS y con conectividad de casos idiopáticos de TOC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Léelo junto al ítem #1 de tu top3 sobre especificidad de LNM: si el método resiste el escrutinio metodológico, este circuito OFC-ganglios basales se va a consolidar como el target de referencia para neuromodulación de precisión en TOC en los próximos 2-3 años.</div>
+          <a class="r10-link" href="https://europepmc.org/article/PMC/PMC13443758" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13443758</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (congreso) · 04 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">Aperiodic Subthalamic Dynamics Distinguish Rest from Affective Processing: Implications for Adaptive DBS</div>
+          <div class="r10-line">Registros intracraneales del núcleo subtalámico durante DBS por Parkinson muestran que el componente aperiódico de la señal (el exponente 1/f, marcador de balance excitación-inhibición) se distingue entre reposo y procesamiento afectivo, más allá de las oscilaciones clásicas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El balance E/I aperiódico se va a volver el próximo biomarcador de moda para DBS adaptativo cerrado en trastornos afectivos y OCD -vale la pena que lo sigas de cerca para tu línea de neuromodulación de precisión antes de que se sature la literatura.</div>
+          <a class="r10-link" href="https://europepmc.org/article/PMC/PMC13442361" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13442361</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry · 02 sep 2026 · paper · 2026-09-02</div>
+          <div class="r10-title">Heterogeneous structural brain signatures of methamphetamine and ketamine use disorders revealed by normative modeling</div>
+          <div class="r10-line">Modelado normativo de materia gris en 1,209 controles sanos revela que las desviaciones extremas en usuarios de metanfetamina y ketamina (n=278) se concentran de forma heterogénea en regiones de la red por defecto, y esas desviaciones individuales -no el promedio de grupo- clasifican el riesgo de trastorno por uso de sustancias, replicado en sitio externo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El modelado normativo (norm-modeling) va a desplazar al análisis de grupo clásico como estándar para &#39;psiquiatría de precisión basada en desviación individual&#39; -un argumento fuerte para tu línea de IA aplicada a investigación si buscas un método reproducible y ya validado externamente.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03859-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03859-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">IEEE Transactions on Biomedical Engineering · 01 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Multiplex Community Detection for Subgroup Identification Within Functional Connectivity Networks</div>
+          <div class="r10-line">Nuevo método de detección de comunidades multiplex sobre redes de conectividad funcional multisujeto, pensado explícitamente para identificar subgrupos homogéneos dentro de trastornos psicóticos heterogéneos -una alternativa a ICA/IVA para estratificación basada en datos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un paper de método, no de hallazgo clínico, pero este tipo de herramienta es la que termina destrabando los subtipos de red que tu línea de psiquiatría de precisión necesita -vale la pena tenerlo en el radar si algún alumno de investigación busca tema de tesis en neuroimagen computacional.</div>
+          <a class="r10-link" href="https://doi.org/10.1109/tbme.2025.3647427" target="_blank" rel="noopener">↗ doi.org/10.1109/tbme.2025.3647427</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (congreso) · 04 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">The Evolution of Deep Brain Stimulation in Psychiatry: Historical Targets and Network Expansion</div>
+          <div class="r10-line">Revisión histórica de cómo la DBS psiquiátrica pasó de targets focales (cápsula interna anterior en TOC) a un enfoque centrado en redes -cápsula/estriado ventral, núcleo accumbens, núcleo subtalámico- integrando neuroimagen funcional y electrofisiología.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es divulgación de congreso más que dato nuevo, pero sirve como resumen ejecutivo si necesitas una diapositiva de contexto histórico para una clase AMAUTA sobre neuromodulación -el giro &#39;de foco a red&#39; es justo el framing que conecta con tu narrativa de precisión.</div>
+          <a class="r10-link" href="https://europepmc.org/article/PMC/PMC13445094" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13445094</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">CNS Neuroscience &amp; Therapeutics · 01 sep 2026 · paper · 2026-09-01</div>
+          <div class="r10-title">Disrupted Functional Network Organization in Crohn&#39;s Disease: Interoceptive Alterations Linked to Anxiety</div>
+          <div class="r10-line">En 97 pacientes con enfermedad de Crohn, alteraciones en topología de red (rich-club, gradientes jerárquicos) se asocian a interocepción alterada y ansiedad, aportando otro caso de disconectividad de red mediada por señales viscerales -eco directo del papel de la ínsula anterior en el triple network.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El eje intestino-cerebro vía interocepción va a seguir apareciendo como mecanismo candidato para ansiedad comórbida en enfermedad inflamatoria -tema aprovechable si conectas tu línea de psiquiatría dimensional con medicina psicosomática en un capítulo de libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/cns.71113" target="_blank" rel="noopener">↗ doi.org/10.1002/cns.71113</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (congreso) · 04 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">The Impact of Comorbid Anxiety and Depression on qEEG in Adults with Attention-Deficit Hyperactivity Disease</div>
+          <div class="r10-line">En 51 adultos con TDAH (58.8% con ansiedad/depresión comórbida), qEEG muestra asimetría de alfa frontal y razón theta/beta distintas según comorbilidad -candidato a biomarcador diferencial, aunque con muestra pequeña y diseño retrospectivo de un solo sitio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Con esa muestra chica no es para citar como definitivo, pero si preparas contenido AMAUTA sobre diagnóstico diferencial de TDAH adulto con comorbilidad, es un gancho legítimo para explicar por qué el TDAH &#39;puro&#39; es cada vez más la excepción que la regla clínica.</div>
+          <a class="r10-link" href="https://europepmc.org/article/PMC/PMC13445088" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13445088</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (congreso) · 04 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">Deep transcranial magnetic stimulation in the treatment of OCD: Comparison of treatment with Double-Cone and H7 coil</div>
+          <div class="r10-line">Comparación clínica de las dos bobinas de dTMS aprobadas por la FDA para TOC (H7 de BrainsWay vs. Double-Cone de MagVenture), que difieren en potencia electromagnética sobre las estructuras del circuito córtico-estriado-tálamo-cortical implicado en el trastorno.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Detalle técnico de interés si algún día armas o recomiendas un protocolo de neuromodulación para TOC refractario -la elección de bobina no es trivial y este tipo de comparación termina siendo la referencia práctica que se cita en guías clínicas.</div>
+          <a class="r10-link" href="https://europepmc.org/article/PMC/PMC13441847" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13441847</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (congreso) · 04 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">Changes of frontostriatal connectivity in resting-state fMRI of alcohol use disorder patients</div>
+          <div class="r10-line">En 66 pacientes varones con trastorno por uso de alcohol vs. 43 controles, conectividad frontoestriatal alterada se correlaciona con déficits cognitivos (MCCB) y medidas de craving/dependencia (AUDIT, OCDS, AUQ).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Otro caso de disconectividad fronto-estriatal transdiagnóstica (adicciones, TDAH, impulsividad) -útil como comparación cruzada si preparas contenido sobre cómo el mismo circuito de control ejecutivo falla de forma similar en cuadros clínicamente distintos.</div>
+          <a class="r10-link" href="https://europepmc.org/article/PMC/PMC13442666" target="_blank" rel="noopener">↗ europepmc.org/article/PMC/PMC13442666</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La &#39;prueba de especificidad&#39; del lesion network mapping no es un chequeo independiente: es la misma operación matemática repetida con otro nombre -por eso mapas de trastornos no relacionados terminan pareciéndose. Antes de citar un &#39;circuito causal&#39; vía LNM, pregunta qué variante de esa prueba usaron.</li><li>En 22q11.2 deletion syndrome, más dopamina estriatal predijo conectividad MÁS parecida a la de controles sanos -la disconectividad podría ser compensación, no solo daño. El reflejo de &#39;más disconectividad = peor pronóstico&#39; no siempre aplica.</li><li>Un síntoma transdiagnóstico (irritabilidad) predicho por conectividad funcional y validado en cohorte externa vale más, epistémicamente, que diez papers de un diagnóstico DSM con n=30 sin replicación -el tamaño de muestra y la validación externa importan más que el nombre del trastorno.</li><li>El exponente aperiódico 1/f de la señal subtalámica -no las oscilaciones clásicas- distingue reposo de procesamiento afectivo: el ruido de fondo de la señal puede llevar más información de balance excitación-inhibición que el pico oscilatorio que todos miran.</li><li>El modelado normativo (comparar cada individuo contra una curva poblacional, no contra el promedio de un grupo control) está reemplazando la comparación de grupos clásica en neuroimagen de adicciones -y ya se replica en sitios externos, algo que el análisis de grupo rara vez logra.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuántos de los circuitos &#39;causales&#39; que citas en clase sobrevivirían la prueba de especificidad de LNM que critican van den Heuvel y Cocchi -y vale la pena rehacer esa auditoría antes del próximo BMSE?</li><li>Si la disconectividad en 22q11DS puede ser compensatoria, ¿qué otros hallazgos de red en tu línea de psiquiatría de precisión podrían estar interpretando una compensación como patología?</li><li>¿La firma de conectividad de irritabilidad transdiagnóstica (N=1,143 + validación externa) es suficientemente robusta para justificar un módulo específico sobre irritabilidad en tu currículo AMAUTA de TDAH/TEA, separado del síntoma nuclear de cada diagnóstico?</li><li>¿Qué pasaría si reemplazaras el promedio de grupo por modelado normativo individual en algún dataset propio de investigación -encontrarías la misma heterogeneidad extrema que se ve en metanfetamina/ketamina?</li><li>¿Vale la pena introducir el concepto de &#39;componente aperiódico&#39; (1/f) como marcador de balance E/I en tus clases de neurociencia educativa, antes de que se vuelva jerga saturada en neuromodulación de precisión?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel para IG explicando por qué &#39;especificidad&#39; en lesion network mapping no es lo que la mayoría cree que es -usa el paper de van den Heuvel/Cocchi como gancho de alfabetización en neuroimagen crítica para tus seguidores clínicos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase AMAUTA/USAMEDIC sobre &#39;disconectividad compensatoria vs. patológica&#39; usando el caso 22q11DS como ejemplo de por qué un hallazgo de red necesita ancla molecular antes de convertirse en biomarcador de examen.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología dimensional sobre irritabilidad como síntoma transdiagnóstico con firma de red propia -cruza el paper de N=1,143 con tu marco HiTOP/RDoC.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota corta o carta al editor proponiendo qué variante de prueba de especificidad de LNM debería exigirse como mínimo metodológico en papers de neuromodulación dirigida por circuito -aprovechando el momentum del preprint de esta semana.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video comparando el exponente aperiódico 1/f como biomarcador emergente de balance E/I en DBS adaptativo frente a las oscilaciones clásicas -contenido de frontera para audiencia de neuromodulación/psiquiatría de precisión.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">CNS Neuroscience &amp; Therapeutics</span><span class="tag ">European Psychiatry</span><span class="tag ">IEEE Transactions on Biomedical Engineering</span><span class="tag ">bioRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (PubMed/MEDLINE, filtro FIRST_PDATE 2026-09-01 a 2026-09-04) · Europe PMC preprints (bioRxiv/medRxiv, SRC:PPR) · Consensus (triaje inicial, sin filtro de fecha exacta). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 4 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
