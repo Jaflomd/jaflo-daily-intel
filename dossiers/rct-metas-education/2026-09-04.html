@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-04 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">4 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JMIR Medical Education, 3 sep 2026 · rct · 2026-09-03</div>
+        <h3 class="r3-title">Scaffolded AI-Supported Problem-Based Learning for Medical Interns: Exploratory Retrospectively Registered Randomized Controlled Evaluation With a Voluntary Feasibility Follow-Up</h3>
+        <p class="r3-hook">RCT (MAPLE-CR) que compara un sistema de aprendizaje basado en problemas andamiado por IA contra autoestudio en internos de medicina para practicar razonamiento clínico: el grupo con IA obtuvo puntajes de posttest más altos, con una mejora mediana de 6.60 puntos sobre control. Le importa a Javier porque toca directo su línea de razonamiento clínico y su apuesta por IA aplicada a educación: es evidencia de que un tutor de IA estructurado (no solo &#39;chatear con GPT&#39;) puede sustituir parcialmente la capacidad limitada de facilitadores humanos en la práctica deliberada de casos. Cómo usarlo: es el paper de referencia para argumentar (con RCT, no solo promesa) el diseño de un módulo de PBL asistido por IA dentro de los bancos de razonamiento clínico de USAMEDIC/AMAUTA, citando el tamaño de mejora como benchmark.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/95039" target="_blank" rel="noopener">↗ doi.org/10.2196/95039</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of General Internal Medicine, 3 sep 2026 · rct · 2026-09-03</div>
+        <h3 class="r3-title">Artificial Intelligence-Based Simulation to Improve Code Status Discussions Among Internal Medicine Residents: A Pilot Randomized Trial</h3>
+        <p class="r3-hook">Ensayo piloto aleatorizado con residentes de medicina interna que entrenaron conversaciones de código de estado (code status) con un simulador de paciente estandarizado potenciado por IA (ChatMD): desempeño numéricamente mayor que control (72.5% vs 66.0%), aunque sin significancia estadística por tratarse de un piloto. Le importa a Javier porque es simulación conversacional con IA aplicada a una habilidad de comunicación clínica de alto riesgo, justo el tipo de evidencia temprana (todavía sin potencia) que necesita citar con cautela proporcional al claim al hablar de IA en educación médica — mostrar que &#39;funciona en la dirección esperada, aún no confirmado&#39; es un matiz que valora en su voz directa. Cómo usarlo: usarlo como ejemplo de diseño (paciente estandarizado + IA) replicable para entrenar comunicación de malas noticias o consentimiento informado en los cursos de residentado, dejando explícito que el tamaño muestral piloto no permite conclusión fuerte.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11606-026-10761-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10761-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Seminars in Ophthalmology, 3 sep 2026 · review · 2026-09-03</div>
+        <h3 class="r3-title">The Role of Artificial Intelligence in Teaching Ophthalmology Skills: A Systematic Review</h3>
+        <p class="r3-hook">Revisión sistemática de 7 estudios sobre IA aplicada a enseñanza de destrezas en oftalmología: los alumnos tutorados por IA lograron mayores ganancias que la instrucción basada en clase magistral para reconocimiento de patología, con tamaños de efecto entre 0.82 y 2.3. Le importa a Javier porque es evidencia de nivel de síntesis (no un solo estudio) que respalda cuantitativamente su apuesta por IA en educación médica de precisión, y da un rango de tamaño de efecto citable para defender inversión en tutores de IA fuera de radiología/patología (su terreno natural de reconocimiento de patrones). Cómo usarlo: como cita ancla al argumentar en contenido o en el libro de neurociencia educativa que la IA-tutor mueve más la aguja en tareas de reconocimiento visual/patrón que en habilidades blandas, coherente con lo que ya viene viendo en otros dominios de reconocimiento clínico.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/08820538.2026.2725232" target="_blank" rel="noopener">↗ doi.org/10.1080/08820538.2026.2725232</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports, 3 sep 2026 · rct · 2026-09-03</div>
+          <div class="r10-title">Effect of repeated exposure to an identical multi-user virtual reality anaphylaxis scenario on paramedic trainee performance: a randomized controlled trial</div>
+          <div class="r10-line">RCT en paramédicos: la exposición repetida al mismo escenario VR de anafilaxia mejoró el desempeño guiado por checklist (42.6 vs 31.1 puntos) frente a exposición única — relevante para Javier porque cuantifica el efecto de la repetición deliberada, un principio central de su enfoque de práctica deliberada en bancos de destrezas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: en 12-18 meses vas a ver a los simuladores de destrezas clínicas empezar a vender &#39;dosis de repetición&#39; como métrica de diseño curricular, no solo horas de simulación — vale la pena que AMAUTA se adelante y lo use como argumento de venta.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-69133-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-69133-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Laryngoscope, 1 sep 2026 · rct · 2026-09-01</div>
+          <div class="r10-title">Impact of Intraoperative Patient-Specific 3D-Printed Temporal Bones: A Randomized Controlled Trial</div>
+          <div class="r10-line">RCT que evalúa modelos de hueso temporal impresos en 3D específicos del paciente para práctica quirúrgica intraoperatoria — un caso más de tecnología educativa de bajo costo con evaluación controlada, línea replicable para bancos de destrezas quirúrgicas de precisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la impresión 3D específica de paciente va a convertirse en un estándar de práctica pre-quirúrgica en subespecialidades de alto riesgo (otología, neurocirugía) antes de expandirse a currículos generales de pregrado.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/lary.70887" target="_blank" rel="noopener">↗ doi.org/10.1002/lary.70887</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Radiography, 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">Virtual reality based mammography training in radiography education: learning outcomes and student confidence</div>
+          <div class="r10-line">Entrenamiento en mamografía con realidad virtual mostró mejora pre-post grande en puntaje de evaluación (17.64 a 75.73) y mayor confianza autopercibida, aunque el diseño reportado no deja claro un grupo control robusto — dato útil pero de menor certeza que los RCT de arriba, bandera de cautela para Javier al citarlo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: sin brazo control claro este hallazgo se va a citar de más en redes como &#39;la VR funciona&#39; — probable que en 6 meses aparezca un RCT propiamente controlado sobre el mismo entrenamiento que temple el entusiasmo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.radi.2026.103544" target="_blank" rel="noopener">↗ doi.org/10.1016/j.radi.2026.103544</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El RCT de PBL con IA (MAPLE-CR) mostró ganancia mediana de 6.60 puntos sobre autoestudio — la IA como tutor de razonamiento clínico ya tiene evidencia experimental, no solo promesa de producto.</li><li>En la simulación de code status con IA, la diferencia (72.5% vs 66.0%) fue en la dirección esperada pero NO significativa: un recordatorio contraintuitivo de que &#39;piloto positivo&#39; no es lo mismo que &#39;funciona&#39;.</li><li>Los tamaños de efecto de IA-tutor en destrezas de oftalmología (0.82–2.3) son enormes para estándares educativos — sugiere que el terreno donde la IA-tutor rinde más es reconocimiento de patrones visuales, no habilidades relacionales.</li><li>La repetición del MISMO escenario VR (no escenarios variados) fue lo que mejoró el desempeño en el RCT de anafilaxia en paramédicos — contraintuitivo frente a la intuición de que &#39;variar el caso&#39; enseña más.</li><li>El estudio de VR en mamografía reporta un salto pre-post gigante (17.64→75.73) sin diseño controlado claro: un caso de libro de por qué separar &#39;mejora dentro del grupo&#39; de &#39;superioridad frente a control&#39;.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Un tutor de IA estructurado tipo MAPLE-CR podría integrarse a los bancos de razonamiento clínico de USAMEDIC para casos de psiquiatría dimensional, o el dominio (síntomas subjetivos, HiTOP) es demasiado distinto al de casos médicos generales para replicar la ganancia de 6.60 puntos?</li><li>¿Por qué la IA-tutor rinde con tamaños de efecto tan grandes en oftalmología (reconocimiento visual) pero apenas roza significancia en code status discussions (comunicación)? ¿Es un patrón generalizable a otras destrezas &#39;blandas&#39; en el currículo de Javier?</li><li>Si la repetición del mismo escenario VR supera a la exposición única en paramédicos, ¿el diseño actual de las prácticas de destrezas en el residentado peruano está sub-dosificando repetición al priorizar variedad de casos?</li><li>¿Qué pasaría si se corriera el RCT de ChatMD (code status) con potencia adecuada — el efecto observado (72.5% vs 66.0%) sobreviviría o se diluiría, como ya pasó en otros pilotos de IA conversacional en educación médica?</li><li>¿Vale la pena que AMAUTA invierta en modelos 3D impresos específicos de paciente para destrezas quirúrgicas de alto rendimiento en el Residentado, dado que la evidencia de hoy (Laryngoscope) es de un solo RCT y una subespecialidad (otología)?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT: &#39;La IA como tutor de razonamiento clínico ya tiene su primer RCT (MAPLE-CR) — esto es lo que cambia y lo que todavía no&#39; con el dato de 6.60 puntos de ganancia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel explicando por qué un resultado &#39;positivo pero no significativo&#39; (code status con IA) NO es lo mismo que &#39;la IA funciona&#39;, usando el ejemplo del piloto de ChatMD para enseñar lectura crítica de evidencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Nota de capítulo para el libro de neurociencia educativa: sección sobre por qué la repetición del mismo escenario (no la variedad) mostró mayor ganancia en el RCT de VR de paramédicos — vínculo con consolidación de memoria procedimental.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-paper o carta al editor proponiendo replicar el diseño de MAPLE-CR (PBL andamiado por IA) en un banco de casos de psiquiatría dimensional/HiTOP para medir si la ganancia se sostiene en dominios menos algorítmicos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido comparativo: tabla de tamaños de efecto de IA-tutor por tipo de destreza (visual/patrón vs comunicación vs razonamiento clínico) usando los 3 papers de hoy como semilla, para argumentar dónde invertir primero en AMAUTA.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Seminars in Ophthalmology</span><span class="tag ">Scientific Reports</span><span class="tag ">The Laryngoscope</span><span class="tag ">Radiography</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (esearch/esummary/efetch) · PubMed search UI (WebFetch). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 4 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
