@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-04 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">4 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">168</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">168</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Traumatic Stress · 2026-09-04 · review</div>
+        <h3 class="r3-title">A scoping review of the longitudinal association between posttraumatic stress disorder and cardiometabolic health in military populations</h3>
+        <p class="r3-hook">Scoping review (18 estudios, mayoritariamente veteranos de EE.UU.) sobre la asociación longitudinal entre TEPT y salud cardiometabólica: el hallazgo más consistente es que el TEPT predice hipertensión arterial en el tiempo, mientras que la evidencia sobre lípidos, glucosa y marcadores inflamatorios es mixta o nula -y casi no hay estudios que prueben la dirección inversa (cardiometabólico → TEPT). Para tu voz de &#39;evidencia proporcional al claim&#39; es un caso perfecto para separar lo que sí está sólido (TEPT-hipertensión) de lo que se repite como verdad asumida (TEPT-inflamación) sin respaldo longitudinal real. Conecta con tu línea de psiquiatría dimensional/de precisión: el estrés postraumático como constructo con efectos cardiometabólicos específicos y medibles, no un rótulo difuso. Útil para AMAUTA/USAMEDIC como ejemplo de cómo leer un scoping review (mapea el terreno, no cierra la pregunta) y para contenido: &#39;lo único que el TEPT predice con evidencia consistente en el tiempo es la hipertensión -el resto es más ruido que señal, todavía&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/jts.70123" target="_blank" rel="noopener">↗ doi.org/10.1002/jts.70123</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neuroscience and Biobehavioral Reviews · 2026-09-03 · review</div>
+        <h3 class="r3-title">Addressing fusiform gyrus dysfunction in schizophrenia, theory of mind, and implications for antipsychotics&#39; response and resistance: A systematic review and critical appraisal</h3>
+        <p class="r3-hook">Revisión sistemática PRISMA (86 estudios fMRI de 2765 cribados) sobre disfunción del giro fusiforme (FG) en esquizofrenia: el FG emerge como un nodo dinámico y sensible al estado clínico -pacientes que responden a antipsicóticos muestran normalización parcial de su conectividad, mientras que los resistentes al tratamiento mantienen hipoactivación persistente asociada a síntomas negativos y déficits cognitivos-, todo ligado a fallas en Teoría de la Mente (ToM). Para tu línea de psiquiatría dimensional y de precisión es exactamente el tipo de biomarcador de ESTADO (no de rasgo fijo) que necesitas para argumentar que &#39;resistencia al tratamiento&#39; tiene un correlato neural medible y potencialmente monitoreable, no solo una etiqueta clínica. Para el capítulo de psicopatología dimensional de tu libro es material de referencia sobre cómo un circuito específico (FG) conecta síntomas negativos, cognición social y respuesta a fármacos en un solo marco. Ángulo de contenido/AMAUTA: &#39;la resistencia a los antipsicóticos podría verse en una resonancia antes de definirse solo por fracaso clínico -el giro fusiforme no se &#39;normaliza&#39; en quienes no responden&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106938" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106938</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Psychological Medicine · 2026-09-03 · review</div>
+        <h3 class="r3-title">Applications and outcomes of virtual reality in inpatient psychiatry: A systematic review</h3>
+        <p class="r3-hook">Revisión sistemática (PROSPERO CRD42023446524, 37 estudios, N=1004) sobre uso de realidad virtual (RV) en hospitalización psiquiátrica -históricamente estudiada solo en ambulatorio-: la RV se usó sobre todo para TCC/exposición (35%) y evaluación (24%), resultó factible, aceptable y segura para pacientes y personal, con las mejoras más consistentes en síntomas de ansiedad más que en desenlaces cognitivos o fisiológicos; las barreras principales fueron técnicas y de recursos, no de aceptación clínica. Para tu línea de IA aplicada a investigación y educación es evidencia temprana pero real de que la tecnología inmersiva ya funciona dentro del hospital psiquiátrico, no solo en consulta externa -relevante si evalúas herramientas digitales para AMAUTA/USAMEDIC o para tu propia práctica clínica. Para tu comité de ética (HVLH) es un caso concreto para discutir consentimiento y supervisión de tecnología inmersiva en pacientes hospitalizados, población más vulnerable que la ambulatoria. Contenido: &#39;la realidad virtual ya se usa dentro del pabellón psiquiátrico, y funciona mejor de lo que el estigma tecnológico sugiere -aunque todavía con evidencia preliminar&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726105662" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105662</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Molecular Psychiatry · 2026-09-01 · network-meta-analysis</div>
+        <h3 class="r3-title">Nutraceuticals and phytoceuticals for the treatment of major depressive disorder: a systematic review and network meta-analysis</h3>
+        <p class="r3-hook">NMA de gran escala (163 estudios, n=15,757, 137 combinaciones de compuestos) sobre nutracéuticos/fitocéuticos en depresión mayor: ácido eicosapentaenoico (SMD=-1.67), vitamina D3 (SMD=-1.59) y extracto de hierba de San Juan ZE117 (SMD=-1.02) mostraron tamaños de efecto &#39;más grandes de lo esperado/poco realistas&#39; frente a placebo -pero una meta-regresión reveló que a MAYOR tamaño de efecto, MENOR puntaje AMSTAR (peor calidad metodológica), con confianza en la evidencia baja a muy baja para todo el set. Para tu voz de &#39;evidencia proporcional al claim&#39; es el ejemplo perfecto para desarmar el discurso de &#39;lo natural funciona mejor&#39;: los compuestos con resultados más espectaculares son justamente los respaldados por los estudios más débiles. Para AMAUTA/USAMEDIC es un caso ideal para enseñar meta-regresión de calidad metodológica vs. tamaño de efecto, algo que rara vez se explica bien en pregrado. Ángulo de contenido: &#39;cuanto más increíble parece el efecto de un suplemento para la depresión, más probable es que el estudio detrás sea de mala calidad -aquí está la correlación exacta, no la sospecha&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03759-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03759-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">The Journal of Clinical Psychiatry · 2026-08-31 · network-meta-analysis</div>
+        <h3 class="r3-title">Pharmacotherapies for Co-Occurring Stimulant Use Disorder and Attention-Deficit/Hyperactivity Disorder: A Network Meta-Analysis</h3>
+        <p class="r3-hook">NMA (6 estudios elegibles de 4152 cribados) sobre farmacoterapia en adultos con trastorno por uso de estimulantes (TUE) Y TDAH concurrentes: dosis altas de sales mixtas de anfetamina (80mg) y de metilfenidato (180mg) mostraron el mejor desempeño -MAS 80mg con la mayor abstinencia continua (OR=8.45) y MPH 180mg con la mayor reducción de severidad TDAH (SMD=-0.59)-, con perfiles de seguridad comparables a placebo. Para tu línea TDAH/TEA es evidencia directa y poco común sobre una población doblemente estigmatizada y subestudiada -pacientes con TUE y TDAH comórbidos-, donde el temor habitual a &#39;dar estimulantes a alguien con historia de uso de sustancias&#39; choca con datos que sugieren lo contrario en dosis optimizadas. Para AMAUTA/USAMEDIC es un caso clínico de alto rendimiento para ENAM/Residentado: comorbilidad TUE-TDAH y por qué la dosis (no solo la molécula) es la variable que más importa en el ranking. Ángulo de contenido: &#39;en TUE + TDAH comórbidos, la dosis más alta de estimulante -no la más baja por miedo al abuso- fue la que mejor funcionó en este ranking, con seguridad similar a placebo&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.4088/JCP.26r16478" target="_blank" rel="noopener">↗ doi.org/10.4088/JCP.26r16478</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">iScience · 2026-08-24 · network-meta-analysis</div>
+        <h3 class="r3-title">Comparative effectiveness of multiple interventions for Alzheimer&#39;s disease on ABC syndromes and QoL: A Bayesian network meta-analysis</h3>
+        <p class="r3-hook">NMA bayesiana (91 ECA, 12,242 participantes) que compara cinco intervenciones en Alzheimer -farmacoterapia, fotobiomodulación (PBM), terapia cognitiva, terapia de ejercicio y rTMS- sobre los síndromes ABC (actividades de vida diaria, síntomas conductuales/psicológicos, cognición) y calidad de vida: PBM y rTMS ganan en cognición, farmacoterapia y terapia cognitiva ganan en actividades de vida diaria, y terapia cognitiva más ejercicio ganan en calidad de vida -ninguna intervención domina en todos los dominios. Para tu foco secundario en neuropsiquiatría y tu línea de neuromodulación es un mapa útil de qué neuromodulación (rTMS, PBM) realmente aporta en demencia y en qué dominio específico, en vez de tratarla como una intervención genérica. Para AMAUTA/USAMEDIC y psiquiatría de precisión es un argumento visual claro contra el &#39;una intervención para todo&#39;: el manejo de Alzheimer necesita combinar ejes según qué síndrome ABC predomina en cada paciente. Ángulo de contenido: &#39;no existe la mejor intervención para Alzheimer -existe la mejor para cognición, otra para autonomía y otra para calidad de vida, y este ranking bayesiano las separa&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.isci.2026.117250" target="_blank" rel="noopener">↗ doi.org/10.1016/j.isci.2026.117250</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">World Journal of Surgery · 2026-08-31 · guideline</div>
+        <h3 class="r3-title">Explosive Weapons Trauma Care Collective (EXTRACCT) Blast Injury Clinical Practice Guideline: Traumatic Brain Injury From Blast and Penetrating Mechanisms in Settings With Variable Resource Availability</h3>
+        <p class="r3-hook">Guía de práctica clínica del EXTRACCT (metodología AGREE II, consenso multidisciplinario) para TCE por mecanismos de explosión/penetrantes, con recomendaciones ESTRATIFICADAS por nivel de recursos disponibles -desde TC sin contraste como imagen primaria y terapia hiperosmolar de primera línea, hasta protocolos de neuromonitoreo no invasivo cuando no hay PIC invasiva disponible-. Para tu foco secundario en neuropsiquiatría (TCE está explícito en el alcance de este dominio) y tu interés en ROI/leverage en salud es la primera guía que aborda TCE grave para contextos con infraestructura neuroquirúrgica limitada o ausente, directamente aplicable a discusiones sobre manejo de trauma craneoencefálico fuera de Lima. Las secuelas neuropsiquiátricas del TCE por explosión (deterioro cognitivo, TEPT, cambios conductuales) son justamente la interfaz que distingue este dominio del de Alta Evidencia. Ángulo de contenido/AMAUTA: &#39;esta guía asume que no vas a tener un TC de última generación ni monitoreo de PIC invasivo -y aun así te dice qué hacer, estratificado por lo que sí tienes&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/wjs.70522" target="_blank" rel="noopener">↗ doi.org/10.1002/wjs.70522</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Chest (American College of Chest Physicians) · 2026-09-02 · guideline</div>
+        <h3 class="r3-title">Tobacco Treatment in the Inpatient Setting: An American College of Chest Physicians Clinical Practice Guideline</h3>
+        <p class="r3-hook">Guía ACCP (GRADE, proceso Delphi modificado, 142 estudios de 9330 cribados) sobre tratamiento del tabaquismo durante la hospitalización: propone un enfoque poblacional &#39;opt-out&#39; -ofrecer consejería y farmacoterapia a todo paciente fumador salvo que decline explícitamente- con 8 recomendaciones, ninguna respaldada por evidencia de certeza alta específica para el contexto hospitalario (4 moderada, 2 baja, 2 muy baja más consenso experto). Para tu práctica clínica es directamente aplicable: la prevalencia de tabaquismo en pacientes psiquiátricos hospitalizados es de las más altas de cualquier población clínica, y esta guía da un protocolo concreto -farmacoterapia, consejería, seguimiento post-alta- que rara vez se sistematiza en pabellones de psiquiatría. Para AMAUTA/USAMEDIC es también un buen ejemplo de cómo comunicar honestamente una guía sin evidencia de alta certeza: 8 recomendaciones fuertes construidas sobre certeza mayormente baja-moderada, sin pretender más de lo que hay. Ángulo de contenido: &#39;la hospitalización es la ventana de oportunidad más subutilizada para tratar el tabaquismo en pacientes psiquiátricos -y ya existe un protocolo opt-out para hacerlo&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.chest.2026.08.038" target="_blank" rel="noopener">↗ doi.org/10.1016/j.chest.2026.08.038</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Epidemiology and Psychiatric Sciences · 2026-09-04 · meta-analysis</div>
+        <h3 class="r3-title">Risk of mortality and complications in people with depressive disorder and co-occurring diabetes mellitus: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Metaanálisis (PROSPERO CRD42024595145, 26 estudios, nueve regiones geográficas) sobre pacientes con depresión Y diabetes vs. diabetes sola: mayor mortalidad por cualquier causa (RR=1.30), mortalidad cardiovascular específica (RR=1.15) y complicaciones globales (RR=1.28) -con complicaciones metabólicas particularmente elevadas (RR=1.63) y cardiovasculares (RR=1.20)-, pero sorprendentemente MENOR riesgo de retinopatía (RR=0.84), un patrón no uniforme que contradice el relato simplista de &#39;todo empeora&#39;. Para tu línea de psiquiatría de precisión y evidencia proporcional al claim es un dato cuantificado exacto para argumentar por qué el cribado metabólico en pacientes deprimidos no es opcional -no es una asociación vaga, son número concretos por tipo de complicación-. Útil para AMAUTA/USAMEDIC como ejemplo de por qué hay que leer las complicaciones desagregadas y no solo el resultado global. Ángulo de contenido: &#39;depresión + diabetes no aumenta el riesgo de todo por igual: dispara las complicaciones metabólicas y cardiovasculares (+63% y +20%) pero no la retinopatía -los números importan más que la intuición&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S2045796026100882" target="_blank" rel="noopener">↗ doi.org/10.1017/S2045796026100882</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neurological Sciences · 2026-09-02 · meta-analysis</div>
+        <h3 class="r3-title">The prevalence of frontotemporal dementia: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Metaanálisis (21 estudios, más de 38.6 millones de personas analizadas) que estima la prevalencia global de demencia frontotemporal (DFT) -causa líder de demencia de inicio temprano (&lt;65 años)- en 30 casos por 100,000 habitantes, pero con heterogeneidad EXTREMA (I²=100%) y sin diferencias significativas por región geográfica, solo por rango etario. Para tu foco secundario en neuropsiquiatría es el primer benchmark reciente de prevalencia global de DFT, útil para AMAUTA/USAMEDIC como referencia rápida en el diagnóstico diferencial de demencia de inicio temprano en el ENAM/Residentado. También es un caso pedagógico perfecto sobre los límites de un &#39;número global&#39;: con I²=100%, la cifra de 30/100,000 es casi inútil sin desagregar por contexto -y los propios autores señalan la falta de datos en regiones subrepresentadas, categoría donde cae el Perú. Ángulo de contenido/AMAUTA: &#39;cuando un metaanálisis reporta I²=100%, el número promedio que titula el paper es casi lo menos importante del estudio -y aquí tienes un ejemplo real para enseñarlo&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10072-026-09371-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s10072-026-09371-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Schizophrenia Research · 2026-09-03 · meta-analysis</div>
+        <h3 class="r3-title">Visual dysfunction and psychosis: A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática con metaanálisis exploratorio (56 estudios; metaanálisis primario sobre 12 estimaciones transversales) que encuentra que la disfunción visual -alteraciones retinianas, oculomotoras, electrofisiológicas y de procesamiento visual de orden superior- se asocia con mayores probabilidades de desenlaces relacionados con psicosis (OR=1.98, IC95% 1.35-2.90), aunque la evidencia longitudinal es heterogénea y la dirección causal sigue sin resolverse. Para tu línea de psiquiatría dimensional (HiTOP/RDoC) es un marcador transdiagnóstico prometedor: el procesamiento visual como ventana a circuitos alterados en psicosis, medible de forma objetiva y no dependiente solo del autorreporte. Para el capítulo de psicopatología dimensional de tu libro es evidencia de que &#39;ver mal&#39; en sentido literal (no metafórico) puede ser parte del fenotipo de la psicosis, un ángulo poco explorado en la enseñanza clásica de síntomas positivos/negativos. Ángulo de contenido: &#39;la disfunción visual no es un hallazgo incidental en psicosis -está asociada casi al doble de probabilidad de desenlaces psicóticos, aunque todavía no sabemos qué causa qué&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.schres.2026.08.032" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.032</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el NMA de nutracéuticos para depresión (Molecular Psychiatry), a MAYOR tamaño de efecto reportado, MENOR calidad metodológica del estudio (meta-regresión con puntaje AMSTAR): los compuestos con resultados más espectaculares (EPA, vitamina D3, hierba de San Juan) son justo los peor respaldados metodológicamente.</li><li>En el NMA de TUE+TDAH comórbidos, las dosis MÁS ALTAS de estimulantes (MAS 80mg, MPH 180mg) -no las más bajas por precaución- fueron las que mejor funcionaron, con seguridad comparable a placebo, contradiciendo el reflejo clínico de &#39;menos dosis en paciente con historia de uso de sustancias&#39;.</li><li>En depresión + diabetes comórbidas, el riesgo no sube parejo: +63% en complicaciones metabólicas y +20% en cardiovasculares, pero -16% en retinopatía (RR=0.84) frente a diabetes sola -un patrón desagregado que se pierde si solo se mira el riesgo global de complicaciones.</li><li>El metaanálisis de prevalencia de demencia frontotemporal (38.6 millones de personas, 21 estudios) reporta I²=100%: heterogeneidad total, lo que vuelve al número global (30/100,000) casi inservible sin desagregar por contexto -incluyendo regiones subrepresentadas como el Perú.</li><li>En la NMA bayesiana de Alzheimer, ninguna intervención gana en todo: fotobiomodulación y rTMS lideran en cognición, farmacoterapia y terapia cognitiva en actividades de vida diaria, y terapia cognitiva + ejercicio en calidad de vida -el manejo óptimo es combinado, no una sola intervención estrella.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Dada la evidencia de baja/muy baja certeza para nutracéuticos en depresión (con los efectos más grandes ligados a los estudios de peor calidad), ¿cómo deberías responder cuando un paciente o alumno pregunta específicamente por omega-3 o vitamina D como &#39;alternativa natural&#39;?</li><li>Si las dosis más altas de estimulantes muestran mejor perfil riesgo-beneficio en TUE+TDAH comórbido según este NMA, ¿qué tan sistemáticamente se está subdosificando por miedo al abuso en la práctica real que ves en supervisión clínica?</li><li>¿Qué tan protocolizado está hoy el tratamiento del tabaquismo en los pabellones de hospitalización psiquiátrica que conoces, frente al enfoque &#39;opt-out&#39; que propone la guía ACCP?</li><li>¿El modelo de recomendaciones estratificadas por nivel de recursos del EXTRACCT para TCE por explosión podría adaptarse como plantilla para protocolos de trauma craneoencefálico en regiones del Perú con acceso limitado a neurocirugía?</li><li>Si la disfunción del giro fusiforme se normaliza parcialmente solo en quienes responden a antipsicóticos, ¿qué tan lejos está (en términos prácticos, no solo de investigación) usar un marcador de conectividad como este para anticipar resistencia al tratamiento en vez de esperar el fracaso clínico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/carrete IG-YT: &#39;Los suplementos con el efecto más espectacular contra la depresión (EPA, vitamina D3) son los que tienen la evidencia MENOS confiable&#39; -usando la meta-regresión AMSTAR del NMA de Molecular Psychiatry.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre lectura crítica de NMA con P-scores y dosis-respuesta, usando el caso real del NMA de estimulantes en TUE+TDAH comórbido (por qué la dosis alta ganó, no la molécula).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota corta o paper proponiendo cómo adaptar el modelo de recomendaciones estratificadas por recursos del EXTRACCT (TCE por explosión) a protocolos de trauma craneoencefálico en regiones del Perú con neurocirugía limitada.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional: usar la disfunción del giro fusiforme (ToM, normalización parcial con respuesta a antipsicóticos, persistencia en resistencia) como ejemplo de biomarcador de estado en esquizofrenia.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido/consulta: pieza sobre por qué el cribado metabólico es obligatorio en pacientes con depresión, usando los números exactos del metaanálisis de depresión+diabetes (RR=1.30 mortalidad, RR=1.63 complicaciones metabólicas).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Traumatic Stress</span><span class="tag ">Neuroscience and Biobehavioral Reviews</span><span class="tag ">Psychological Medicine</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">The Journal of Clinical Psychiatry</span><span class="tag ">iScience</span><span class="tag ">World Journal of Surgery</span><span class="tag ">Chest</span><span class="tag ">Epidemiology and Psychiatric Sciences</span><span class="tag ">Neurological Sciences</span><span class="tag ">Schizophrenia Research</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch, filtrado por fecha de publicación [pdat] y fecha de indexación real en PubMed [edat/entrez] para excluir ítems con reimpresión tardía; ventana efectiva 2026-08-24 a 2026-09-04, priorizando 2026-09-01 a 2026-09-04). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 4 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
