@@ -1,0 +1,62 @@
+# ⭐ ♟️ Modelos Mentales & Filosofía — 2026-09-05
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/philosophy/2026-09-05.html
+
+## 🏆 Top 3
+- [ ] **Aging as a Continuation of Development: A Hypothesis and Framework** — _Perspectives on Psychological Science · Fernandez FX, Burke SN, Nadel L — 3 sep 2026 · paper_ — [doi.org/10.1177/17456916261469175](https://doi.org/10.1177/17456916261469175) <!--star:philosophy|2026-09-05|t3-1-->
+  > Un equipo de la Universidad de Arizona propone reencuadrar el envejecimiento cognitivo no como declive compensatorio sino como continuación programada del desarrollo: una reasignación evolutivamente conservada de plasticidad desde circuitos hipocampales hacia corticales, que sacrifica codificación rápida de detalles nuevos a cambio de integración semántica, coherencia narrativa y sabiduría — distinguiendo explícitamente este proceso normal de trayectorias patológicas como el Alzheimer. Le importa a Javier porque es exactamente el tipo de argumento dimensional (continuum funcional, no categoría binaria normal/patológico) que sostiene su psiquiatría dimensional HiTOP/RDoC, y porque reformula un constructo que enseña en su libro de neurociencia educativa: la 'reserva cognitiva' de docentes y residentes mayores deja de ser un parche compensatorio y pasa a ser una fase madurativa con función propia. Cómo usarlo: como argumento central de un capítulo o contenido IG/YT sobre 'el mito del declive', y como ejemplo pedagógico en AMAUTA de razonamiento dimensional aplicado a memoria y envejecimiento.
+- [ ] **When deliberation becomes inefficient** — _Acta Psychologica · Polin BA, Benisaac E, Aharon I — 4 sep 2026 · paper_ — [doi.org/10.1016/j.actpsy.2026.107733](https://doi.org/10.1016/j.actpsy.2026.107733) <!--star:philosophy|2026-09-05|t3-2-->
+  > Este estudio desafía la premisa de que más deliberación siempre mejora las decisiones: en elecciones de bajo riesgo donde deliberar más no puede cambiar el resultado, es el pensamiento experiencial —no la reflexión racional— el que predice que la persona siga enganchada al problema más tiempo del necesario. Le importa a Javier directamente en su línea de razonamiento clínico: a residentes de ENAM/Residentado se les enseña casi siempre que 'pensar más es decidir mejor', pero este hallazgo marca un umbral real donde deliberar deja de aportar señal y se vuelve ruido disfrazado de rigor, algo central para su Competency Lab de razonamiento. Cómo usarlo: diseñar un módulo AMAUTA sobre 'cuándo dejar de pensar' — entrenar a los residentes a reconocer decisiones de bajo-stakes donde la sobre-deliberación no mejora el juicio clínico, solo consume tiempo y confianza.
+- [ ] **Already Counter-Inductive: Feyerabend, Phenomenologically Inspired Methods, and the Unrealized Epistemological Potential of Qualitative Health Research** — _Qualitative Health Research · Sibeoni J — 4 sep 2026 · paper_ — [doi.org/10.1177/10497323261473799](https://doi.org/10.1177/10497323261473799) <!--star:philosophy|2026-09-05|t3-3-->
+  > El autor recupera el contra-inductivismo de Feyerabend —proponer deliberadamente teorías que contradicen la evidencia aceptada para exponer los límites del paradigma dominante— y argumenta que los métodos fenomenológicos en investigación cualitativa de salud ya operan así, sin explotar todavía su potencial epistemológico pleno. Le importa a Javier porque, como investigador RENACYT que empuja marcos dimensionales (HiTOP/RDoC) contra el paradigma categorial DSM/ICD, el contra-inductivismo de Feyerabend es literalmente la lógica filosófica formal de su propio programa de investigación: proponer un marco que 'contradice' el consenso categorial no es herejía metodológica, es contra-inducción legítima. Cómo usarlo: citarlo en la introducción metodológica de su libro de psicopatología o de un paper, como justificación filosófica explícita del giro dimensional frente a la ortodoxia categorial.
+
+## 📡 Radar (10)
+- [ ] **Visceral states and social transmission bias** — _Acta Psychologica · Shreya, Sandhu H, Mundi HS, Javed AF, Choudhry S — 4 sep 2026 · paper_ — [doi.org/10.1016/j.actpsy.2026.107752](https://doi.org/10.1016/j.actpsy.2026.107752) <!--star:philosophy|2026-09-05|t10-1-->
+  > Estados viscerales como el hambre degradan el juicio independiente y aumentan la dependencia del juicio ajeno en decisiones financieras, sin relación aparente con comida.
+  > 🔮 Predicción Fable: este mecanismo migrará pronto a la literatura de error diagnóstico por fatiga de guardia, dándole a Javier un ángulo nuevo para su línea de razonamiento clínico bajo presión.
+- [ ] **How will I know if you really like me? Assessing the role of appearance, behavior, and reciprocity for metaliking accuracy** — _Journal of Personality and Social Psychology · Bruns J, Bleckmann E, Niemeyer LM, Back MD, Nestler S — 3 sep 2026 · paper_ — [doi.org/10.1037/pspp0000611](https://doi.org/10.1037/pspp0000611) <!--star:philosophy|2026-09-05|t10-2-->
+  > Las personas juzgan bien cuánto agradan en general pero fallan al estimar el agrado específico hacia ellas, apoyándose demasiado en supuestos de reciprocidad — un sesgo de metacognición social.
+  > 🔮 Predicción Fable: se integrará en frameworks de comunicación de liderazgo como advertencia contra sobreinterpretar señales sociales — material directo para el pilar de comunicación de su Competency Lab.
+- [ ] **Virtues and Narratives in Medicine: An Analysis and Collection of Virtue-Illustrating Stories in Medical Journals** — _Journal of Medical Humanities · Kaldjian LC, Bettendorf BA, Jotterand F — 2 sep 2026 · paper_ — [doi.org/10.1007/s10912-026-10057-y](https://doi.org/10.1007/s10912-026-10057-y) <!--star:philosophy|2026-09-05|t10-3-->
+  > Identifica 12 virtudes médicas nucleares (humildad, sabiduría práctica, coraje, benevolencia...) a partir de un análisis narrativo de historias clínicas publicadas.
+  > 🔮 Predicción Fable: se volverá material base para rúbricas de ética médica narrativa evaluables — Javier podría adaptarlo como marco de 'virtudes evaluables' en AMAUTA/USAMEDIC.
+- [ ] **Institutional Confirmation Bias in Refugee Health Governance: Why Emergency Templates Persist Despite Evidence of Chronic Harm** — _Journal of Immigrant and Minority Health · Milani A, Mazzocco K — 3 sep 2026 · paper_ — [doi.org/10.1007/s10903-026-01979-9](https://doi.org/10.1007/s10903-026-01979-9) <!--star:philosophy|2026-09-05|t10-4-->
+  > Las plantillas de 'modo emergencia' persisten en sistemas de salud para refugiados no por falta de evidencia sino por sesgo de confirmación institucional que blinda el statu quo del daño crónico.
+  > 🔮 Predicción Fable: el marco de 'sesgo de confirmación institucional' se extenderá a analizar por qué los servicios de salud mental resisten adoptar marcos dimensionales pese a la evidencia — paralelo directo al obstáculo de la psiquiatría dimensional.
+- [ ] **Metacognition and executive functioning as predictors of functional independence in community-dwelling older adults: a systematic review with bibliometric mapping** — _Aging, Neuropsychology, and Cognition · Landinez Martinez D, Montoya Londoño DM, Gutierrez de Blume AP — 4 sep 2026 · review_ — [doi.org/10.1080/13825585.2026.2727870](https://doi.org/10.1080/13825585.2026.2727870) <!--star:philosophy|2026-09-05|t10-5-->
+  > La función ejecutiva predice consistentemente la independencia funcional en adultos mayores, pero la contribución específica de la metacognición sigue subestudiada.
+  > 🔮 Predicción Fable: abrirá una línea de entrenamiento metacognitivo (no solo ejecutivo) para preservar autonomía en el envejecimiento — territorio fértil para su línea de precisión psiquiátrica en geropsiquiatría.
+- [ ] **EXPRESS: Rigged Clocks and Cognitive Performance: Task-specific Effects and the Potential Role of Manipulation Suspicion** — _Quarterly Journal of Experimental Psychology · Utegaliyev N, von Castell C — 4 sep 2026 · paper_ — [doi.org/10.1177/17470218261488691](https://doi.org/10.1177/17470218261488691) <!--star:philosophy|2026-09-05|t10-6-->
+  > Relojes manipulados para correr más rápido o más lento no mejoran el desempeño cognitivo de forma consistente: la demanda de la tarea pesa más que la velocidad percibida del tiempo, y la sospecha de manipulación interfiere.
+  > 🔮 Predicción Fable: cuestionará el uso ingenuo de 'presión de tiempo artificial' en simulacros tipo ENAM como técnica de mejora de desempeño.
+- [ ] **Beyond Trauma-Informed Care: Addressing Moral Injury as the Missing Organizational Imperative** — _Workplace Health & Safety · Lacsa JEM — 4 sep 2026 · editorial_ — [doi.org/10.1177/21650799261486440](https://doi.org/10.1177/21650799261486440) <!--star:philosophy|2026-09-05|t10-7-->
+  > Propone que la lesión moral (moral injury) —el daño de actuar contra los propios valores por presión institucional— necesita una respuesta organizacional distinta del cuidado informado en trauma, no un subtipo del mismo.
+  > 🔮 Predicción Fable: el concepto de 'moral injury' ganará tracción frente al burnout clásico en discusiones de salud mental médica — relevante directamente para el pilar self-care/kinobody y los comités de ética HVLH de Javier.
+
+---
+
+## 💎 Perlas del día
+- Deliberar más no siempre decide mejor: en elecciones de bajo riesgo, el sistema experiencial —no el racional— es el que te mantiene enganchado más tiempo sin mejorar el resultado (Polin et al., 2026).
+- El envejecimiento cognitivo 'normal' podría no ser declive sino una reasignación programada de plasticidad hacia sabiduría semántica — el mismo mecanismo que distingue envejecer bien de demenciar (Fernandez et al., 2026).
+- El contra-inductivismo de Feyerabend —proponer deliberadamente lo contrario del consenso para exponer sus límites— es, sin saberlo, el método que ya usan los investigadores cualitativos fenomenológicos en salud (Sibeoni, 2026).
+- El hambre no solo te hace elegir peor: te hace confiar más en el juicio ajeno que en el propio, incluso en decisiones financieras sin relación con comida (Shreya et al., 2026).
+- Un sistema de salud puede rechazar evidencia de daño crónico no por ignorancia sino por sesgo de confirmación institucional que protege sus propias plantillas de 'emergencia' (Milani & Mazzocco, 2026).
+
+## ❓ Preguntas del día
+- ¿En qué punto exacto del razonamiento clínico la deliberación adicional deja de aportar señal y empieza a ser ruido experiencial disfrazado de rigor?
+- ¿La 'reserva cognitiva' que se estudia en residentes y docentes mayores es realmente reserva, o es la reasignación adaptativa de plasticidad que describe el marco de Fernandez et al.?
+- ¿Puede el contra-inductivismo de Feyerabend formalizarse como criterio metodológico explícito para justificar publicar marcos dimensionales (HiTOP/RDoC) frente a revisores anclados en DSM/ICD?
+- ¿Cuánto del sesgo de confirmación institucional que bloquea marcos dimensionales en psiquiatría opera por el mismo mecanismo documentado en gobernanza de salud para refugiados?
+- ¿La fatiga de guardia degrada el juicio diagnóstico independiente por el mismo mecanismo visceral que hace confiar más en el juicio ajeno al decidir con hambre?
+
+## 💡 Ideas del día
+- (content) Video IG/YT: 'El mito del declive cognitivo' — usar el marco de Fernandez et al. (aging-as-development) para explicar por qué la sabiduría clínica de un médico de 60 años no es a pesar del envejecimiento sino gracias a él.
+- (content) Post/hilo: 'Cuándo dejar de pensar' — el hallazgo de Polin et al. sobre deliberación ineficiente aplicado a decisiones de bajo riesgo en la práctica clínica diaria.
+- (book) Capítulo metodológico para el libro de psicopatología: usar a Feyerabend y el contra-inductivismo como justificación filosófica explícita del giro dimensional frente al DSM/ICD.
+- (paper) Carta editorial o paper corto: proponer que el sesgo de confirmación institucional (Milani & Mazzocco) es también el mecanismo que frena la adopción de HiTOP/RDoC en servicios de salud mental latinoamericanos.
+- (content) Módulo AMAUTA/USAMEDIC: rúbrica de las 12 virtudes médicas de Kaldjian et al. como marco evaluable de humanismo clínico en la preparación ENAM/Residentado.
+
+---
+_Fuentes: PubMed. Atribución a PubMed por sus términos de uso._
