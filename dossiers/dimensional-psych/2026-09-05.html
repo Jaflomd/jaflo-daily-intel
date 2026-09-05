@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-05 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">5 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">PsyArXiv (preprint) · 2026-09-04 · preprint</div>
+        <h3 class="r3-title">Disociación computacional de depresión y ansiedad mediante el error de predicción de recompensa: un modelo bifactorial de la dinámica del ánimo</h3>
+        <p class="r3-hook">Wang, Xu y equipo corren un modelo computacional del ánimo momento a momento en una tarea de apuestas con 2.043 participantes en cinco experimentos, separan mediante modelado bifactorial los componentes específicos de depresión y ansiedad, y encuentran una disociación limpia: la depresión se asocia a hiposensibilidad del ánimo al error de predicción de recompensa (RPE) —fluctuaciones amortiguadas, replicado en pacientes con trastornos afectivos—, mientras que la ansiedad se asocia a hipersensibilidad —fluctuaciones exageradas— en población no clínica, con el componente compartido depresión/ansiedad ligado a menor línea base afectiva y mayor aversión al riesgo. Para tu libro de psicopatología dimensional esto es material de peso: es una disociación computacional limpia de dos dimensiones que HiTOP agrupa bajo &#39;internalizing&#39; pero que aquí muestran mecanismos de aprendizaje por refuerzo opuestos, no solo covarianza de síntomas — el tipo de evidencia mecanística que separa &#39;dimensional como estadística&#39; de &#39;dimensional como biología computacional&#39;. Úsalo en el capítulo de psiquiatría computacional y como contenido de precision-psychiatry: &#39;tu ansiedad y tu depresión no son polos opuestos del ánimo, son direcciones opuestas de sensibilidad cerebral a la recompensa&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/z6s2r_v3" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/z6s2r_v3</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+        <h3 class="r3-title">Subtipos transdiagnósticos derivados de EEG mapean a dimensiones distintas de cerebro-conducta mediante modelado normativo</h3>
+        <p class="r3-hook">Tabbal, Hassan y equipo (resumen del congreso EPA 2026) aplican modelado normativo a un dataset EEG multisitio de 1.701 participantes —controles, TDAH, TEA, ansiedad y trastornos del aprendizaje—, calculan 1.957 características electrofisiológicas por persona, cuantifican desviaciones individuales respecto a trayectorias normativas (al estilo Marquand et al. 2016) y agrupan esas desviaciones en subtipos transdiagnósticos con perfiles cerebro-conducta distintos que cruzan las categorías DSM. Es la traducción biológica de HiTOP que tu pilar de precision-psychiatry necesita, y pega directo con tu línea TDAH/TEA: en vez de diagnosticar por categoría, el paciente cae en un subtipo electrofisiológico que describe mejor su perfil conductual que su etiqueta DSM. Para AMAUTA/USAMEDIC es un caso ideal para enseñar el &#39;normative modeling&#39; como la siguiente generación de biomarcador transdiagnóstico, y para tu línea de neuromodulación es candidato directo a guiar targets de estimulación por subtipo, no por diagnóstico.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/j.eurpsy.2026.10256" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10256</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Psychological Medicine · 2026-09-03 · paper</div>
+        <h3 class="r3-title">La acumulación de evidencia durante la percepción de la mirada dirigida a uno mismo predice funcionamiento social y psicopatología a través de psicosis, ansiedad social y autismo</h3>
+        <p class="r3-hook">Lasagna, Tso y equipo publican en Psychological Medicine un estudio en 111 personas (14-30 años) con niveles variables de psicosis, ansiedad social y rasgos autistas, usan modelos de difusión (drift diffusion) para descomponer computacionalmente la percepción de la mirada dirigida a uno mismo, y muestran que la acumulación de evidencia deficiente durante esa percepción se asocia con peor cognición social y, en menor medida, con funcionamiento social y síntomas psicóticos/ansiosos — a través de las tres condiciones clínicas, no dentro de cada diagnóstico por separado. Para tu línea TDAH/TEA y tu marco dimensional esto es un mecanismo transdiagnóstico concreto (no solo covarianza de síntomas) que conecta psicosis, ansiedad social y autismo vía un parámetro computacional medible con una tarea de 15-20 minutos. Es material directo para tu capítulo de razonamiento clínico y evaluación dimensional: un test computacional de percepción social podría reemplazar preguntas de entrevista para estratificar disfunción social transdiagnóstica en consulta.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/s003329172610573x" target="_blank" rel="noopener">↗ doi.org/10.1017/s003329172610573x</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Predicción robusta de irritabilidad a partir de conectividad funcional cerebral en una muestra psiquiátrica transdiagnóstica infantojuvenil</div>
+          <div class="r10-line">Liu, Zhang y equipo predicen irritabilidad transdiagnóstica (TDAH, depresión, ansiedad, TEA) a partir de conectividad funcional en reposo en 1.143 niños/adolescentes del Healthy Brain Network, validado en una cohorte externa de depresión con un clasificador SVM.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la irritabilidad como biomarcador de conectividad transdiagnóstico se va a convertir en tu ejemplo de cabecera para explicar TDAH/TEA con comorbilidad afectiva sin apoyarte en el diagnóstico categorial — material listo para un video AMAUTA sobre &#39;la irritabilidad como dimensión, no como síntoma de un solo trastorno&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10253" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10253</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · editorial</div>
+          <div class="r10-title">Psiquiatría de precisión: integración de datos para una atención de salud mental personalizada</div>
+          <div class="r10-line">Bouayed Abdelmoula y Abdelmoula (EPA 2026) revisan cómo la integración de datos ómicos, neuroimagen, fenotipado digital y metadatos/paradata está permitiendo reclasificar trastornos neurodesarrollo/neurodegenerativos y predecir respuesta a tratamiento (litio en bipolar) más allá del diagnóstico DSM.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este resumen te da el mapa de referencias (litio en bipolar, estratificación de riesgo en esquizofrenia) para armar la introducción del capítulo de psiquiatría de precisión del libro con ejemplos ya validados, no solo promesas.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.11110" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.11110</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Constelaciones transdiagnósticas en los síndromes de microdeleción 2p15-p16.1</div>
+          <div class="r10-line">Rehman, Carr y equipo (EPA 2026) proponen un modelo de &#39;constelación fenotípica&#39; transdiagnóstica para el síndrome de microdeleción 2p15-p16.1 —autismo, TOC, tics, desregulación emocional e inflexibilidad cognitiva conviviendo en el mismo paciente— en vez de comorbilidad aditiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los síndromes genéticos de microdeleción van a ser el terreno de prueba más limpio para HiTOP/RDoC porque la etiología ya se conoce — útil como ejemplo del capítulo de fundamento genético cuando hables de TEA con comorbilidad compleja.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.11261" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.11261</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Diferenciando depresión mayor de trastorno bipolar: modelo dimensional DSM-5 y características psicóticas relacionadas con la depresión</div>
+          <div class="r10-line">Carvalho, Gama-Marques y Henriques-Calado (EPA 2026) muestran en 168 pacientes que la desregulación cognitivo-perceptual del PID-5 predice depresividad en MDD y bipolar por igual, mientras que las creencias inusuales y la inestabilidad interpersonal diferencian específicamente entre ambos cuadros.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este tipo de hallazgo va a alimentar el argumento de que el modelo dimensional de personalidad del DSM-5 (PID-5) discrimina MDD de bipolar mejor que la categoría diagnóstica sola — caso clínico listo para ENAM/Residentado sobre diagnóstico diferencial dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.11004" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.11004</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · 2026-09-03 · preprint</div>
+          <div class="r10-title">Pensamiento repetitivo negativo en la vida diaria: dinámica temporal y asociaciones transdiagnósticas con la salud mental a lo largo de la adultez</div>
+          <div class="r10-line">Ma, Andrews-Hanna y equipo siguen a 4.826 adultos (18-100 años) con EMA por smartphone y aíslan, mediante análisis factorial multinivel, una dimensión de pensamiento repetitivo negativo (RNT) transdiagnóstica que se replica en muestra independiente y varía a lo largo de la vida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el RNT medido en tiempo real (no retrospectivo) se va a consolidar como el transdiagnostic target favorito de la próxima generación de terapia digital — buen ángulo para contenido sobre EMA como herramienta de evaluación dimensional en consulta.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/evj9q_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/evj9q_v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · 2026-09-03 · rct</div>
+          <div class="r10-title">Efectos proximales de una intervención transdiagnóstica de momento ecológico para mejorar la resiliencia en jóvenes que buscan ayuda (EMIcompass)</div>
+          <div class="r10-line">Gugel, Reininghaus y equipo publican en JMIR un análisis secundario del ECA EMIcompass: una intervención transdiagnóstica de momento ecológico (EMA + feedback) mejora resiliencia en jóvenes en riesgo, con efectos proximales medibles sesión a sesión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: EMIcompass es el prototipo de intervención transdiagnóstica escalable por app que vale la pena adaptar a un producto AMAUTA de apoyo basado en evidencia para jóvenes peruanos, en vez de contenido genérico de bienestar.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/77150" target="_blank" rel="noopener">↗ doi.org/10.2196/77150</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 2026-09-03 · preprint</div>
+          <div class="r10-title">Medición de rasgos autistas en adultos húngaros: evaluación psicométrica del Autism Spectrum Quotient revisado (AQ-50-HU-R)</div>
+          <div class="r10-line">Sörnyei, Farkas y equipo validan la versión húngara revisada del Autism Spectrum Quotient (AQ-50-HU-R) en 2.390 adultos con un modelo bifactorial donde el 71% de la varianza común cae en un factor general de rasgos autistas (AUC=0,906 frente a diagnóstico confirmado).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: cada nueva validación bifactorial de un instrumento de rasgos autistas en otra población es un ladrillo más para el argumento de que el autismo se mide mejor como continuo dimensional que como categoría binaria — dato útil para tu línea TEA/neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.01.26361970" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.01.26361970</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · editorial</div>
+          <div class="r10-title">Estrategias terapéuticas específicas por etapa en trastornos de la conducta alimentaria: traduciendo el staging clínico en rutas de atención</div>
+          <div class="r10-line">Bou Khalil (EPA 2026) propone un marco terapéutico escalonado por etapa clínica para trastornos de la conducta alimentaria, alineando intensidad de tratamiento con riesgo médico, cronicidad e historia terapéutica en vez de solo el diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el staging en trastornos alimentarios va a ser tu puente más directo entre &#39;psicopatología dimensional teórica&#39; y &#39;protocolo de manejo clínico real&#39; para el capítulo de aplicaciones clínicas del libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10377" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10377</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Desarrollo de un protocolo grupal de Terapia Metacognitiva transdiagnóstica de 8 sesiones: estudio piloto con seguimiento a 6 meses</div>
+          <div class="r10-line">Ozdel y Çelik-Korkmaz (EPA 2026) pilotean un protocolo grupal de 8 sesiones de Terapia Metacognitiva transdiagnóstica para ansiedad y depresión mixtas en 12 pacientes, con mejoras grandes sostenidas a 6 meses.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los protocolos breves transdiagnósticos tipo MCT de 8 sesiones son el formato ideal para escalar en AMAUTA/telesalud — costo bajo, un solo protocolo cubre ansiedad y depresión mixtas sin necesitar rutas diagnósticas separadas.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10918" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10918</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · meta-analysis</div>
+          <div class="r10-title">Cariprazina como tratamiento transdiagnóstico de síntomas depresivos a través de distintos trastornos</div>
+          <div class="r10-line">Dombi, Barabássy y equipo (EPA 2026) meta-analizan ensayos de cariprazina (agonista parcial D3/D2) y muestran eficacia sobre síntomas depresivos independientemente del diagnóstico primario —MDD, bipolar o esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la farmacología transdiagnóstica (un compuesto, un síntoma dimensional, no un diagnóstico) va a ganar terreno regulatorio — cariprazina es tu ejemplo de cabecera para explicar por qué &#39;tratar la dimensión depresiva&#39; tiene más sentido biológico que &#39;tratar el diagnóstico&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10611" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10611</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La ansiedad y la depresión no comparten un mismo &#39;motor&#39; de aprendizaje: según Wang et al., la depresión amortigua la respuesta del ánimo a la recompensa mientras la ansiedad la amplifica — son direcciones opuestas del mismo circuito de error de predicción, no dos caras de la misma moneda.</li><li>Un subtipo electrofisiológico (EEG) puede describir mejor el perfil conductual de un niño que su diagnóstico de TDAH o TEA — el dato normativo individual le gana a la categoría DSM (Tabbal et al., EPA 2026).</li><li>La irritabilidad, tratada casi siempre como síntoma secundario, tiene su propia firma de conectividad cerebral transdiagnóstica que se replica en una cohorte externa — merece specifier propio, no nota al pie (Liu et al.).</li><li>Un solo fármaco (cariprazina) reduce síntomas depresivos de forma comparable en MDD, bipolar y esquizofrenia — evidencia directa de que el síntoma dimensional responde a tratamiento independientemente de la etiqueta diagnóstica (Dombi et al.).</li><li>Un déficit computacional en &#39;saber cuándo alguien te mira&#39; predice disfunción social a través de psicosis, ansiedad social y autismo por igual — la frontera entre esos tres diagnósticos podría estar trazada en el lugar equivocado (Lasagna et al.).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos evaluar irritabilidad y pensamiento repetitivo negativo como dimensiones transversales de rutina en la historia clínica, en vez de esperar a que aparezcan dentro de un diagnóstico específico?</li><li>Si un compuesto como cariprazina trata el síntoma depresivo cruzando diagnósticos, ¿qué tan sostenible es seguir aprobando fármacos &#39;por indicación&#39; en vez de &#39;por dimensión&#39;?</li><li>¿Qué tan lejos estamos de pedir un EEG normativo de 20 minutos para subtipificar un TDAH o TEA en vez de aplicar solo criterios DSM?</li><li>¿La disociación computacional depresión/ansiedad vía error de predicción de recompensa cambia cómo deberíamos psicoeducar a un paciente sobre &#39;por qué me siento así&#39; en consulta?</li><li>¿El staging clínico de trastornos alimentarios es un modelo replicable para TDAH/TEA en adultos, donde también hay trayectorias de cronicidad y severidad muy distintas?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/carrete IG: &#39;Tu ansiedad y tu depresión no son opuestos, son dos fallas distintas en cómo tu cerebro predice la recompensa&#39;, basado en Wang et al. 2026.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional sobre &#39;normative modeling&#39; como el siguiente paso después de HiTOP, usando el estudio EEG transdiagnóstico de Tabbal et al. como caso ancla.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de posición propio: staging clínico en TDAH/TEA adultos inspirado en el modelo de staging de trastornos alimentarios (Bou Khalil, EPA 2026) — línea de investigación poco explorada.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Caso clínico ENAM/Residentado: diferenciar MDD de bipolar usando dimensiones PID-5 (desregulación cognitivo-perceptual vs. inestabilidad interpersonal) en vez de solo criterios categoriales (Carvalho et al.).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido AMAUTA sobre farmacología transdiagnóstica: cariprazina como ejemplo de &#39;tratar el síntoma, no la etiqueta&#39; — gancho para audiencia de residentes.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychological Medicine</span><span class="tag ">European Psychiatry (congreso EPA 2026)</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">PsyArXiv/OSF</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC/PubMed (API directa con filtro de fecha) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · PsyArXiv/OSF · medRxiv · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 5 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
