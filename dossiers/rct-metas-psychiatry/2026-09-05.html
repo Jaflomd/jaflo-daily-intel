@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-05 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">5 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">66</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">66</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychiatric Quarterly, 2 sep 2026 · review · 2026-09-02</div>
+        <h3 class="r3-title">Systematic Review of rTMS and dTMS in Treatment-Resistant Obsessive-Compulsive Disorder: Target- and Phenotype-Specific Outcomes</h3>
+        <p class="r3-hook">Systematic review PRISMA + PROSPERO (CRD420251003027) sobre 27 artículos/23 estudios de rTMS y dTMS en TOC resistente, con GRADE por blanco anatómico: dTMS (mPFC/ACC) y prefrontal (OFC/DLPFC) tienen certeza moderada respaldada por múltiples RCTs, mientras pre-SMA baja a moderada por heterogeneidad y moderación genética (genotipo SLC6A4), y SMA/VMPFC/PPC quedan en muy baja certeza. Los predictores de respuesta —Y-BOCS basal ≥28, mayor edad, menor discapacidad funcional e hiperactivación amigdalar basal en provocación de síntomas— son exactamente el tipo de estratificación clínica+genética+neurofisiológica que arma su línea de psiquiatría de precisión. Le importa a Javier porque es material listo para un capítulo del libro sobre TOC resistente y para un módulo AMAUTA/USAMEDIC de razonamiento clínico donde el eje no es &#39;qué técnica&#39; sino &#39;a quién seleccionar&#39; — y la tabla de certeza GRADE por blanco es un ejercicio perfecto de lectura crítica para preparar residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11126-026-10309-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s11126-026-10309-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Affective Disorders, 2 sep 2026 · paper · 2026-09-02</div>
+        <h3 class="r3-title">Symptom networks in manic and mixed presentations of bipolar disorder: Mapping the crossroads</h3>
+        <p class="r3-hook">Con datos basales de 1384 pacientes en episodio maníaco o mixto (DSM-IV) provenientes de 5 ensayos clínicos, este estudio modela redes sintomáticas conjuntas YMRS-MADRS y halla que la depresión —sobre todo tristeza y anhedonia— es más central y conectada que la manía dentro de la red, con un clúster de &#39;activación-disforia&#39; que puentea ambos dominios; los episodios maníacos y mixtos DSM-IV difieren claramente en estructura de red, mientras que el especificador DSM-5 &#39;con características mixtas&#39; refleja variación dentro del espectro maníaco más que una categoría propia. Le importa a Javier porque es una prueba empírica directa de network theory aplicada a un problema nosológico real (DSM-IV vs DSM-5 en estados mixtos) — material central para su libro de psicopatología dimensional y para enseñar en AMAUTA/USAMEDIC por qué la red sintomática, no solo la categoría, es la unidad de análisis correcta en un tema clásico de examen (estados mixtos bipolares).</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122442" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122442</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Molecular Psychiatry, 2 sep 2026 · paper · 2026-09-02</div>
+        <h3 class="r3-title">Neurophysiological signatures of Stanford Neuromodulation Therapy in treatment resistant depression</h3>
+        <p class="r3-hook">Reanálisis mecanístico del ensayo original de Stanford Neuromodulation Therapy (SNT/SAINT, doble ciego, sham-controlado, N=24: 12 activo/12 sham) usando TMS-EEG longitudinal en 14 sesiones: la SNT activa reduce progresivamente la excitabilidad cortical en el sitio de estimulación (DLPFC izquierda, 90,000 pulsos en 5 días) de forma sitio-específica, y explora si marcadores neurales basales predicen la respuesta clínica. Le importa a Javier porque es el ejemplo de manual de neuromodulación de precisión que arma su línea (biomarcador EEG → parámetro de protocolo → predicción de respuesta), publicado en una revista de máximo nivel (Molecular Psychiatry). Es contenido ideal para IG/YouTube contrastando TMS &#39;de catálogo&#39; (10 sesiones en 4-6 semanas) contra el protocolo SNT de alta dosis en 5 días, y alimenta directamente su pensamiento sobre la próxima generación de dispositivos de neuromodulación guiados por biomarcador para su libro de psiquiatría de precisión.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03837-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03837-4</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Attention Disorders, 5 sep 2026 · rct · 2026-09-05</div>
+          <div class="r10-title">Comprehensive Treatment and Monthly 2 Year Follow-Up in Children With ADHD: Randomized Controlled Prospective Study</div>
+          <div class="r10-line">RCT en 186 niños de 6-13 años con TDAH combinado: tras 3 meses de tratamiento comprehensivo (estimulante + entrenamiento parental + habilidades sociales), el seguimiento mensual estructurado no supera al seguimiento comunitario usual a 2 años, salvo en hiperactividad/impulsividad reportada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza para su línea TDAH/neurodivergencia que la ganancia sostenida a 2 años depende de la intensidad del tratamiento inicial, no de la vigilancia posterior — buen contraargumento de contenido contra el &#39;seguimiento eterno&#39; sin reinversión de intensidad.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/10870547261478344" target="_blank" rel="noopener">↗ doi.org/10.1177/10870547261478344</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 4 sep 2026 · rct · 2026-09-04</div>
+          <div class="r10-title">Right DLPFC repetitive transcranial magnetic stimulation in women with borderline personality disorder: A double-blind randomized sham-controlled trial</div>
+          <div class="r10-line">Ensayo doble ciego sham-controlado (N=30, mujeres con trastorno límite de personalidad y autolesión/suicidalidad reciente) de rTMS 10Hz en DLPFC derecho no halla diferencia significativa Grupo×Tiempo en el desenlace primario, con solo señales exploratorias de mejoría depresiva en el grupo activo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Resultado negativo bien reportado en neuromodulación + trastorno de personalidad — útil como ejemplo de honestidad estadística (no forzar la señal exploratoria a conclusión) para enseñar lectura crítica en AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122473" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122473</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+          <div class="r10-title">Remotely Supervised, Home-Based Transcranial Direct Current Stimulation for Major Depressive Disorder: Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">SR+MA PRISMA 2020 sobre tDCS domiciliaria con supervisión remota en depresión mayor evalúa eficacia, seguridad, factibilidad y aceptabilidad, con búsqueda en MEDLINE/Embase/Web of Science/Cochrane/registros hasta julio 2025.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La neuromodulación &#39;a domicilio&#39; gana terreno como opción de acceso — contenido natural para su cruce IA/tecnología + neuromodulación + salud mental accesible en contextos como el peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92522" target="_blank" rel="noopener">↗ doi.org/10.2196/92522</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, 3 sep 2026 · rct · 2026-09-03</div>
+          <div class="r10-title">Adjunctive n-3 PUFA supplementation improves niacin skin flush response and shows biomarker-stratified signals in schizophrenia</div>
+          <div class="r10-line">En 99 pacientes con esquizofrenia (vs 30 controles sanos), agregar PUFA n-3 a la farmacoterapia estándar mejora significativamente la respuesta de flush cutáneo a niacina (biomarcador de membrana; interacción grupo×tiempo β=0.57, IC95% 0.08-1.06, p=.025), con señales exploratorias de estratificación por respuesta basal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Ejemplo pequeño pero limpio de psiquiatría de precisión biomarcador-guiada en esquizofrenia — insumo para su línea de precisión y para contenido sobre &#39;biomarcadores baratos que ya podrían usarse&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.08.033" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.033</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Epidemiology and Psychiatric Sciences, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+          <div class="r10-title">Risk of mortality and complications in people with depressive disorder and co-occurring diabetes mellitus: a systematic review and meta-analysis</div>
+          <div class="r10-line">MA PROSPERO de 26 estudios halla que pacientes con depresión y diabetes tienen 30% más mortalidad por cualquier causa (RR 1.30, IC95% 1.21-1.39) y 28% más complicaciones que diabéticos sin depresión, con 63% más complicaciones metabólicas (RR 1.63, IC95% 1.33-1.99).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Dato de peso para psiquiatría de enlace y medicina psicosomática — refuerza el argumento de tamizaje de depresión obligatorio en diabetes, buen gancho de contenido sobre &#39;la psiquiatría que falta en medicina interna&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S2045796026100882" target="_blank" rel="noopener">↗ doi.org/10.1017/S2045796026100882</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 4 sep 2026 · rct · 2026-09-04</div>
+          <div class="r10-title">A multicenter randomized controlled effectiveness trial of transdiagnostic treatment for adolescents with subthreshold anxiety and depressive symptoms</div>
+          <div class="r10-line">RCT multicéntrico (N=676, NCT05322642) compara el Protocolo Unificado para Adolescentes (UP-A) contra relajación progresiva activa en síntomas subclínicos de ansiedad/depresión: ambos mejoran de forma comparable, sin superioridad clara del protocolo transdiagnóstico salvo en hiperactividad y conducta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El mensaje no es &#39;qué terapia específica&#39; sino &#39;que haya algo estructurado y escalable&#39; — refuerza su interés en intervenciones diseminables tipo stepped-care aplicables a poblaciones grandes (relevante para salud mental estudiantil en AMAUTA).</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726105443" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105443</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Journal of Clinical Psychiatry, 2 sep 2026 · rct · 2026-09-02</div>
+          <div class="r10-title">Evaluation of Sexual Function With Adjunctive Lumateperone in Patients With Major Depressive Disorder</div>
+          <div class="r10-line">En el estudio fase 3 Study 502 (N=480, 82.5% con disfunción sexual basal), agregar lumateperona 42mg/día a antidepresivo mejora significativamente la función sexual (CSFQ-14) vs placebo+antidepresivo (diferencia de medias=2.7, tamaño de efecto=0.38, p&lt;.0001).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Dato de nicho pero accionable cuando la disfunción sexual es la barrera de adherencia — insumo directo para su razonamiento clínico psicofarmacológico en depresión resistente.</div>
+          <a class="r10-link" href="https://doi.org/10.4088/JCP.26m16387" target="_blank" rel="noopener">↗ doi.org/10.4088/JCP.26m16387</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Trauma, Violence, &amp; Abuse, 2 sep 2026 · meta-analysis · 2026-09-02</div>
+          <div class="r10-title">School-Based Versus Clinic-Based Interventions for PTSD in Children and Adolescents: A Systematic Review and Meta-Analysis on Their Differences in Effectiveness and Retention Rate</div>
+          <div class="r10-line">MA de 22 estudios (N=1926, edades 4-19) halla que las intervenciones psicosociales para TEPT en el colegio reducen síntomas de forma comparable a las intervenciones en clínica, con diferencias en retención de pacientes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Argumento fuerte para modelos escolares de tamizaje/intervención en trauma infantil — aplicable a su interés en salud pública, educación y accesibilidad del tratamiento.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/15248380261467491" target="_blank" rel="noopener">↗ doi.org/10.1177/15248380261467491</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nutritional Neuroscience, 2 sep 2026 · review · 2026-09-02</div>
+          <div class="r10-title">Pre- and probiotics for gastrointestinal and behavioral symptoms in autism spectrum disorder: a systematic review</div>
+          <div class="r10-line">SR de 15 estudios (N=1015) sobre pre/probióticos (Bifidobacterium, Lactobacillus, galactooligosacáridos) en TEA halla mejoras consistentes en síntomas gastrointestinales, pero beneficio conductual variable e inconsistente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Buen material para desinflar la narrativa de &#39;la microbiota cura el autismo&#39; en redes, manteniendo lo real (mejora GI) — encaja con su rol de evidencia proporcional al claim en su línea TDAH/TEA.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/1028415X.2026.2723173" target="_blank" rel="noopener">↗ doi.org/10.1080/1028415X.2026.2723173</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, 3 sep 2026 · meta-analysis · 2026-09-03</div>
+          <div class="r10-title">Visual dysfunction and psychosis: A systematic review and meta-analysis</div>
+          <div class="r10-line">SR de 56 estudios sobre disfunción visual y psicosis halla hallazgos longitudinales heterogéneos pero anomalías consistentes retinianas/oculomotoras/electrofisiológicas en estudios caso-control, con meta-análisis exploratorio cuando los datos lo permitieron.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Empuja la idea de biomarcadores oculares/electrofisiológicos como marcador de riesgo o estado en psicosis — línea a seguir para su interés en biomarcadores de precisión en el espectro psicótico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.08.032" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.032</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El predictor más fuerte de respuesta a TMS en TOC resistente no es la técnica sino la severidad basal (Y-BOCS≥28) y la hiperactivación amigdalar: la neuromodulación de precisión empieza por seleccionar bien al paciente, no solo por elegir mejor el blanco.</li><li>En los estados mixtos bipolares, la depresión —no la manía— es el nodo más conectado de la red sintomática: el especificador DSM-5 &#39;con características mixtas&#39; capta variación dentro del espectro maníaco, no una categoría nosológica nueva.</li><li>El seguimiento mensual post-tratamiento intensivo en TDAH no mejora los resultados a 2 años más que el seguimiento comunitario habitual: la dosis inicial de tratamiento sostiene la ganancia, no la vigilancia posterior.</li><li>Depresión + diabetes no es solo peor calidad de vida: es 30% más mortalidad total y 63% más complicaciones metabólicas frente a diabetes sola — el tamizaje de depresión en diabetes debería ser tan protocolar como el de retinopatía.</li><li>Los probióticos en TEA sí mejoran de forma consistente los síntomas gastrointestinales, pero el beneficio conductual sigue siendo inconsistente: la narrativa de &#39;la microbiota cura el autismo&#39; no está sostenida por la evidencia actual.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debería la severidad basal (Y-BOCS≥28) más la hiperactivación amigdalar entrar como criterio formal de selección para dTMS en TOC resistente, más allá del simple fracaso a tratamiento previo?</li><li>¿El especificador DSM-5 &#39;con características mixtas&#39; está perdiendo poder discriminativo frente al estado mixto DSM-IV clásico, y eso debería reabrir el debate dimensional en la próxima revisión diagnóstica?</li><li>Si el seguimiento mensual no añade beneficio sobre el seguimiento comunitario en TDAH a 2 años, ¿dónde debería reinvertirse ese recurso — más intensidad de tratamiento inicial, o mejor entrenamiento del equipo comunitario?</li><li>¿Debería el tamizaje de depresión ser un indicador de calidad obligatorio en el manejo de diabetes en el sistema de salud peruano, dado el exceso de mortalidad y de complicaciones metabólicas documentado?</li><li>¿Qué tan lejos está la niacin skin flush response de convertirse en un biomarcador clínicamente usable para estratificar candidatos a PUFA adjunto en esquizofrenia?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie IG/YouTube &#39;Precisión, no solo dosis&#39;: un post por semana tomando un predictor de respuesta real (Y-BOCS≥28 en TOC resistente, biomarcador NSFR en esquizofrenia) para enseñar estratificación de pacientes en neuromodulación y psicofarmacología.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional sobre estados mixtos bipolares usando la red sintomática YMRS-MADRS de este estudio (N=1384, 5 RCTs) como caso ilustrativo de network theory aplicada a un problema nosológico real (DSM-IV vs DSM-5).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota corta o carta al editor proponiendo un checklist clínico replicable en Perú a partir del modelo de predictores de respuesta a dTMS en TOC de este systematic review (severidad, edad, discapacidad funcional, hiperactivación amigdalar).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre &#39;seguimiento vs tratamiento intensivo&#39; en TDAH, usando el hallazgo de que el seguimiento mensual no supera al seguimiento comunitario tras 3 meses de tratamiento comprehensivo — pregunta tipo ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel desmontando la narrativa &#39;la microbiota cura el autismo&#39; con los datos reales de la SR de pre/probióticos en TEA (mejora GI sí documentada, beneficio conductual inconsistente) — ejemplo de evidencia proporcional al claim.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Psychiatric Quarterly</span><span class="tag ">Journal of Attention Disorders</span><span class="tag ">JMIR Mental Health</span><span class="tag ">Schizophrenia Research</span><span class="tag ">Psychological Medicine</span><span class="tag ">Epidemiology and Psychiatric Sciences</span><span class="tag ">The Journal of Clinical Psychiatry</span><span class="tag ">Trauma, Violence, &amp; Abuse</span><span class="tag ">Nutritional Neuroscience</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: pubmed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 5 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
