@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-05 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">5 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">48</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">18</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">The Lancet Digital Health, 2 sep 2026 · rct · 2026-09-02</div>
+        <h3 class="r3-title">Effect of a computer-aided quality feedback system on colonoscopists&#39; adenoma detection rate in Denmark: a multicentre, stepped-wedge, cluster-randomised, controlled trial</h3>
+        <p class="r3-hook">Ensayo controlado aleatorizado por conglomerados con diseño stepped-wedge en tres hospitales universitarios daneses: cuando los endoscopistas recibieron retroalimentación automatizada (CAQ) sobre su propia técnica tras cada colonoscopía (velocidad de retirada, intubación cecal, pólipos detectados), su tasa de detección de adenomas subió de 43.4% a 48.6% (OR 1.24) y la de adenocarcinoma casi se duplicó en términos relativos (6.5%→8.9%). Le importa a Javier porque es la prueba de más alto nivel posible (RCT por clústeres, resultado clínico duro, no solo examen ni satisfacción) de que el feedback automatizado y granular sigue moviendo el comportamiento de un experto YA certificado — el argumento más fuerte que puede citar para defender que AMAUTA/USAMEDIC inviertan en dashboards de feedback por métrica (no solo nota final) dentro de sus bancos de simulacros de Residentado. Cómo usarlo: es la cita ancla para el libro de neurociencia educativa al argumentar que &#39;feedback específico y repetido&#39; mueve la aguja en comportamiento clínico real, con un tamaño de efecto (OR 1.24) usable como benchmark de lo razonable a esperar de un sistema de feedback bien diseñado.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.landig.2026.101046" target="_blank" rel="noopener">↗ doi.org/10.1016/j.landig.2026.101046</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JMIR Medical Education, 3 sep 2026 · paper · 2026-09-03</div>
+        <h3 class="r3-title">What Platform Scores Miss: Multidimensional Evaluation of AI Teaching Agents in Medical Education</h3>
+        <p class="r3-hook">Estudio que compara 8 agentes de enseñanza basados en LLM (role-play de paciente/estudiante/experto/familia) evaluados por 22 estudiantes de medicina con un rubric independiente de 8 dimensiones: el ranking de &#39;score de plataforma&#39; no coincidió con la calidad pedagógica real —el agente 3° mejor según la plataforma terminó último en el rubric, y viceversa— y la calibración de dificultad fue la debilidad compartida por todos. Le importa a Javier porque ataca directo su línea de IA aplicada a educación e investigación: es evidencia de que desplegar un agente de IA &#39;porque el marketplace le puso buen puntaje&#39; es una métrica engañosa, y valida su instinto de exigir evidencia proporcional al claim en vez de aceptar scores de caja negra. Cómo usarlo: como argumento citable para diseñar/exigir un rubric propio de 8 dimensiones al evaluar cualquier tutor de IA que AMAUTA/USAMEDIC quiera integrar a sus bancos, en vez de fiarse del score nativo de la plataforma.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/96819" target="_blank" rel="noopener">↗ doi.org/10.2196/96819</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Clinical Anatomy, 3 sep 2026 · paper · 2026-09-03</div>
+        <h3 class="r3-title">Prompt Strategy and Model Choice in AI-Assisted Gross Anatomy Education: Evaluating Zero-Shot, Few-Shot, and Chain-of-Thought Prompting for Image Interpretation</h3>
+        <p class="r3-hook">Estudio comparativo que evaluó 4 LLMs multimodales (GPT-5.2, Claude Sonnet 4.6, Gemini 3, Grok 4) identificando 75 estructuras anatómicas en imágenes reales de disección cadavérica bajo tres estrategias de prompting: Gemini 3 con chain-of-thought lideró con 67.3% de precisión —invirtiendo el orden que domina en evaluaciones de anatomía basadas en texto— y ningún modelo fue confiable como identificador autónomo. Le importa a Javier porque es evidencia empírica y proporcional (no hype) de que &#39;mejor modelo de texto&#39; no implica &#39;mejor modelo de imagen clínica&#39;, algo directamente relevante para cualquier apuesta suya de usar IA multimodal en razonamiento clínico visual dentro de USAMEDIC/AMAUTA. Cómo usarlo: como evidencia para calibrar expectativas en contenido o en el libro de neurociencia educativa sobre qué tareas visuales delegar hoy a IA (con supervisión) y cuáles todavía no, citando que el chain-of-thought sí mejora el desempeño en modelos capaces pero no en todos.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/ca.70224" target="_blank" rel="noopener">↗ doi.org/10.1002/ca.70224</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine, 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">A Structural and Educational Intervention to Improve Inter-Visit Care in an Internal Medicine Residency Clinic: A Multimethod Evaluation</div>
+          <div class="r10-line">Intervención curricular + estructural en una clínica de residentado de medicina interna: la comunicación de resultados de laboratorio subió de 57% a 76% y el tiempo bajó de 18.7 a 8.5 días —resultado clínico real, aunque el diseño es pre-post en un solo centro sin grupo control, señal para Javier más que prueba fuerte.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vas a ver más &#39;intervenciones integradas&#39; currículo+sistema (no solo currículo) publicadas con este diseño multimétodo — útil de replicar en Residentado si AMAUTA quiere mover una métrica clínica dura y no solo satisfacción.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10690-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10690-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Pediatrics, 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">The Doctor Will Zoom You Now: An Experiential Telemedicine Assessment for Pediatric Residents</div>
+          <div class="r10-line">OSCE virtual de 2 casos para evaluar telemedicina en residentes de pediatría: menos de la mitad dominó identificación del paciente y examen físico guiado a distancia —sin grupo control, pero la brecha detectada es replicable para cualquier banco de OSCE virtual que Javier arme en Residentado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la telemedicina va a empezar a aparecer como estación obligatoria en exámenes tipo ENAM/Residentado en 1-2 años, y quien ya tenga un checklist validado (como este) tendrá ventaja de diseño curricular.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/00099228261465379" target="_blank" rel="noopener">↗ doi.org/10.1177/00099228261465379</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Academic Radiology, 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">Structured Scaffolding for Early Oral Reasoning: A Modern Team-Based Training Model for Radiology Residents</div>
+          <div class="r10-line">Programa de 12 meses de discusión de casos en equipo para entrenar razonamiento oral en residentes de radiología: mejoró confianza y conocimiento auto-reportado en las 8 dimensiones medidas —pero el outcome es 100% auto-reporte en un solo centro sin control, más plantilla de diseño replicable que evidencia dura.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: con el regreso del examen oral certificador en radiología en EE.UU. vas a ver una ola de currículos tipo &#39;scaffolding para razonamiento oral&#39; — Javier podría adaptar los 6 dominios cognitivos a razonamiento clínico psiquiátrico oral para Residentado, si añade un outcome objetivo además de la confianza.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.acra.2026.08.089" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.089</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El RCT de Lancet Digital Health muestra que dar a un endoscopista YA certificado feedback automatizado por métrica sigue moviendo su comportamiento (OR 1.24 en detección de adenomas) — la curva de aprendizaje de un experto no se aplana tanto si el feedback es lo bastante granular.</li><li>En la evaluación de agentes de IA docentes, el score nativo de plataforma y la calidad pedagógica real correlacionaron tan poco que el 3° mejor por plataforma fue el peor por rubric — comprar IA educativa por &#39;estrellas&#39; del marketplace es apostar a ciegas.</li><li>Ningún LLM multimodal (ni Gemini 3, el mejor) superó 67% de precisión identificando estructuras en disección cadavérica real — la IA multimodal todavía está lejos del ojo entrenado en anatomía visual, aunque el chain-of-thought sí ayuda a los modelos más capaces.</li><li>Contraintuitivo: en el estudio de anatomía el orden de los modelos se INVIRTIÓ frente a los benchmarks de texto clínico — liderar en texto no implica liderar en interpretación de imagen.</li><li>La intervención de inter-visit care en JGIM bajó el tiempo de respuesta de resultados de 18.7 a 8.5 días combinando currículo + rediseño del sistema de trabajo — el dato accionable es que el currículo solo, sin tocar el sistema, probablemente no hubiera bastado.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el feedback automatizado por métrica sigue moviendo a endoscopistas ya certificados, ¿qué pasaría si AMAUTA/USAMEDIC dieran a sus docentes de Residentado un dashboard de métricas de enseñanza en vez de una evaluación anual genérica?</li><li>¿Cómo se vería un rubric de 8 dimensiones (conocimiento, calibración de dificultad, seguridad clínica, engagement) aplicado a los tutores de IA que ya usa o podría usar AMAUTA, en vez de confiar en el score nativo de la plataforma?</li><li>Si Gemini 3 con chain-of-thought lidera en imagen anatómica pero ningún modelo pasa de 67%, ¿qué tareas de razonamiento clínico visual (neuroimagen psiquiátrica, fondo de ojo) sigue siendo prematuro delegar a IA sin supervisión estrecha en los bancos de Javier?</li><li>¿Vale la pena adaptar el checklist de telemedicina de este estudio pediátrico para armar una estación de OSCE virtual específica de psiquiatría (evaluación remota de riesgo suicida, por ejemplo) en Residentado?</li><li>¿Qué intervención estructural —no solo curricular— le falta al banco de razonamiento clínico de USAMEDIC para que una mejora de conocimiento se traduzca en un cambio de comportamiento medible, como pasó en el estudio de inter-visit care?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT: &#39;Comprar un tutor de IA por sus estrellas del marketplace es apostar a ciegas&#39;, usando el hallazgo JMIR de que el ranking de plataforma no predice calidad pedagógica real.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo explicando por qué un RCT por clústeres en endoscopistas YA expertos (Lancet Digital Health) pesa más que 10 estudios de satisfacción — usarlo para enseñar jerarquía de evidencia en un post corto.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Nota para el libro de neurociencia educativa: sección sobre por qué el feedback granular y repetido sigue moviendo el comportamiento de expertos certificados (caso CAQ colonoscopía), con implicancia para el diseño de feedback en Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/comentario proponiendo un rubric de evaluación de 8 dimensiones (adaptado del paper JMIR) para tutores de IA usados en bancos de razonamiento clínico psiquiátrico, testeando si se repite la discrepancia plataforma-vs-rubric.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Comparativo en redes de &#39;qué tan buena es la IA para leer anatomía/imagen clínica en 2026&#39; usando el 67% del mejor modelo (Clinical Anatomy) como ancla de expectativas realistas frente al hype.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">The Lancet Digital Health</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Clinical Anatomy</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Clinical Pediatrics</span><span class="tag ">Academic Radiology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (esearch/esummary/efetch vía NCBI eutils) · Europe PMC (verificación cruzada) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv, descubrimiento inicial). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 5 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
