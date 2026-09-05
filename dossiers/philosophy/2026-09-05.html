@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-05 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">5 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">150</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Perspectives on Psychological Science · Fernandez FX, Burke SN, Nadel L — 3 sep 2026 · paper · 2026-09-03</div>
+        <h3 class="r3-title">Aging as a Continuation of Development: A Hypothesis and Framework</h3>
+        <p class="r3-hook">Un equipo de la Universidad de Arizona propone reencuadrar el envejecimiento cognitivo no como declive compensatorio sino como continuación programada del desarrollo: una reasignación evolutivamente conservada de plasticidad desde circuitos hipocampales hacia corticales, que sacrifica codificación rápida de detalles nuevos a cambio de integración semántica, coherencia narrativa y sabiduría — distinguiendo explícitamente este proceso normal de trayectorias patológicas como el Alzheimer. Le importa a Javier porque es exactamente el tipo de argumento dimensional (continuum funcional, no categoría binaria normal/patológico) que sostiene su psiquiatría dimensional HiTOP/RDoC, y porque reformula un constructo que enseña en su libro de neurociencia educativa: la &#39;reserva cognitiva&#39; de docentes y residentes mayores deja de ser un parche compensatorio y pasa a ser una fase madurativa con función propia. Cómo usarlo: como argumento central de un capítulo o contenido IG/YT sobre &#39;el mito del declive&#39;, y como ejemplo pedagógico en AMAUTA de razonamiento dimensional aplicado a memoria y envejecimiento.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/17456916261469175" target="_blank" rel="noopener">↗ doi.org/10.1177/17456916261469175</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Acta Psychologica · Polin BA, Benisaac E, Aharon I — 4 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">When deliberation becomes inefficient</h3>
+        <p class="r3-hook">Este estudio desafía la premisa de que más deliberación siempre mejora las decisiones: en elecciones de bajo riesgo donde deliberar más no puede cambiar el resultado, es el pensamiento experiencial —no la reflexión racional— el que predice que la persona siga enganchada al problema más tiempo del necesario. Le importa a Javier directamente en su línea de razonamiento clínico: a residentes de ENAM/Residentado se les enseña casi siempre que &#39;pensar más es decidir mejor&#39;, pero este hallazgo marca un umbral real donde deliberar deja de aportar señal y se vuelve ruido disfrazado de rigor, algo central para su Competency Lab de razonamiento. Cómo usarlo: diseñar un módulo AMAUTA sobre &#39;cuándo dejar de pensar&#39; — entrenar a los residentes a reconocer decisiones de bajo-stakes donde la sobre-deliberación no mejora el juicio clínico, solo consume tiempo y confianza.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.actpsy.2026.107733" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107733</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Qualitative Health Research · Sibeoni J — 4 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">Already Counter-Inductive: Feyerabend, Phenomenologically Inspired Methods, and the Unrealized Epistemological Potential of Qualitative Health Research</h3>
+        <p class="r3-hook">El autor recupera el contra-inductivismo de Feyerabend —proponer deliberadamente teorías que contradicen la evidencia aceptada para exponer los límites del paradigma dominante— y argumenta que los métodos fenomenológicos en investigación cualitativa de salud ya operan así, sin explotar todavía su potencial epistemológico pleno. Le importa a Javier porque, como investigador RENACYT que empuja marcos dimensionales (HiTOP/RDoC) contra el paradigma categorial DSM/ICD, el contra-inductivismo de Feyerabend es literalmente la lógica filosófica formal de su propio programa de investigación: proponer un marco que &#39;contradice&#39; el consenso categorial no es herejía metodológica, es contra-inducción legítima. Cómo usarlo: citarlo en la introducción metodológica de su libro de psicopatología o de un paper, como justificación filosófica explícita del giro dimensional frente a la ortodoxia categorial.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/10497323261473799" target="_blank" rel="noopener">↗ doi.org/10.1177/10497323261473799</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica · Shreya, Sandhu H, Mundi HS, Javed AF, Choudhry S — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Visceral states and social transmission bias</div>
+          <div class="r10-line">Estados viscerales como el hambre degradan el juicio independiente y aumentan la dependencia del juicio ajeno en decisiones financieras, sin relación aparente con comida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este mecanismo migrará pronto a la literatura de error diagnóstico por fatiga de guardia, dándole a Javier un ángulo nuevo para su línea de razonamiento clínico bajo presión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107752" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107752</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Personality and Social Psychology · Bruns J, Bleckmann E, Niemeyer LM, Back MD, Nestler S — 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">How will I know if you really like me? Assessing the role of appearance, behavior, and reciprocity for metaliking accuracy</div>
+          <div class="r10-line">Las personas juzgan bien cuánto agradan en general pero fallan al estimar el agrado específico hacia ellas, apoyándose demasiado en supuestos de reciprocidad — un sesgo de metacognición social.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se integrará en frameworks de comunicación de liderazgo como advertencia contra sobreinterpretar señales sociales — material directo para el pilar de comunicación de su Competency Lab.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/pspp0000611" target="_blank" rel="noopener">↗ doi.org/10.1037/pspp0000611</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Humanities · Kaldjian LC, Bettendorf BA, Jotterand F — 2 sep 2026 · paper · 2026-09-02</div>
+          <div class="r10-title">Virtues and Narratives in Medicine: An Analysis and Collection of Virtue-Illustrating Stories in Medical Journals</div>
+          <div class="r10-line">Identifica 12 virtudes médicas nucleares (humildad, sabiduría práctica, coraje, benevolencia...) a partir de un análisis narrativo de historias clínicas publicadas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se volverá material base para rúbricas de ética médica narrativa evaluables — Javier podría adaptarlo como marco de &#39;virtudes evaluables&#39; en AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10912-026-10057-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s10912-026-10057-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Immigrant and Minority Health · Milani A, Mazzocco K — 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">Institutional Confirmation Bias in Refugee Health Governance: Why Emergency Templates Persist Despite Evidence of Chronic Harm</div>
+          <div class="r10-line">Las plantillas de &#39;modo emergencia&#39; persisten en sistemas de salud para refugiados no por falta de evidencia sino por sesgo de confirmación institucional que blinda el statu quo del daño crónico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el marco de &#39;sesgo de confirmación institucional&#39; se extenderá a analizar por qué los servicios de salud mental resisten adoptar marcos dimensionales pese a la evidencia — paralelo directo al obstáculo de la psiquiatría dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10903-026-01979-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s10903-026-01979-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Aging, Neuropsychology, and Cognition · Landinez Martinez D, Montoya Londoño DM, Gutierrez de Blume AP — 4 sep 2026 · review · 2026-09-04</div>
+          <div class="r10-title">Metacognition and executive functioning as predictors of functional independence in community-dwelling older adults: a systematic review with bibliometric mapping</div>
+          <div class="r10-line">La función ejecutiva predice consistentemente la independencia funcional en adultos mayores, pero la contribución específica de la metacognición sigue subestudiada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: abrirá una línea de entrenamiento metacognitivo (no solo ejecutivo) para preservar autonomía en el envejecimiento — territorio fértil para su línea de precisión psiquiátrica en geropsiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/13825585.2026.2727870" target="_blank" rel="noopener">↗ doi.org/10.1080/13825585.2026.2727870</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Quarterly Journal of Experimental Psychology · Utegaliyev N, von Castell C — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">EXPRESS: Rigged Clocks and Cognitive Performance: Task-specific Effects and the Potential Role of Manipulation Suspicion</div>
+          <div class="r10-line">Relojes manipulados para correr más rápido o más lento no mejoran el desempeño cognitivo de forma consistente: la demanda de la tarea pesa más que la velocidad percibida del tiempo, y la sospecha de manipulación interfiere.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: cuestionará el uso ingenuo de &#39;presión de tiempo artificial&#39; en simulacros tipo ENAM como técnica de mejora de desempeño.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/17470218261488691" target="_blank" rel="noopener">↗ doi.org/10.1177/17470218261488691</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Workplace Health &amp; Safety · Lacsa JEM — 4 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">Beyond Trauma-Informed Care: Addressing Moral Injury as the Missing Organizational Imperative</div>
+          <div class="r10-line">Propone que la lesión moral (moral injury) —el daño de actuar contra los propios valores por presión institucional— necesita una respuesta organizacional distinta del cuidado informado en trauma, no un subtipo del mismo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el concepto de &#39;moral injury&#39; ganará tracción frente al burnout clásico en discusiones de salud mental médica — relevante directamente para el pilar self-care/kinobody y los comités de ética HVLH de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/21650799261486440" target="_blank" rel="noopener">↗ doi.org/10.1177/21650799261486440</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Deliberar más no siempre decide mejor: en elecciones de bajo riesgo, el sistema experiencial —no el racional— es el que te mantiene enganchado más tiempo sin mejorar el resultado (Polin et al., 2026).</li><li>El envejecimiento cognitivo &#39;normal&#39; podría no ser declive sino una reasignación programada de plasticidad hacia sabiduría semántica — el mismo mecanismo que distingue envejecer bien de demenciar (Fernandez et al., 2026).</li><li>El contra-inductivismo de Feyerabend —proponer deliberadamente lo contrario del consenso para exponer sus límites— es, sin saberlo, el método que ya usan los investigadores cualitativos fenomenológicos en salud (Sibeoni, 2026).</li><li>El hambre no solo te hace elegir peor: te hace confiar más en el juicio ajeno que en el propio, incluso en decisiones financieras sin relación con comida (Shreya et al., 2026).</li><li>Un sistema de salud puede rechazar evidencia de daño crónico no por ignorancia sino por sesgo de confirmación institucional que protege sus propias plantillas de &#39;emergencia&#39; (Milani &amp; Mazzocco, 2026).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿En qué punto exacto del razonamiento clínico la deliberación adicional deja de aportar señal y empieza a ser ruido experiencial disfrazado de rigor?</li><li>¿La &#39;reserva cognitiva&#39; que se estudia en residentes y docentes mayores es realmente reserva, o es la reasignación adaptativa de plasticidad que describe el marco de Fernandez et al.?</li><li>¿Puede el contra-inductivismo de Feyerabend formalizarse como criterio metodológico explícito para justificar publicar marcos dimensionales (HiTOP/RDoC) frente a revisores anclados en DSM/ICD?</li><li>¿Cuánto del sesgo de confirmación institucional que bloquea marcos dimensionales en psiquiatría opera por el mismo mecanismo documentado en gobernanza de salud para refugiados?</li><li>¿La fatiga de guardia degrada el juicio diagnóstico independiente por el mismo mecanismo visceral que hace confiar más en el juicio ajeno al decidir con hambre?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video IG/YT: &#39;El mito del declive cognitivo&#39; — usar el marco de Fernandez et al. (aging-as-development) para explicar por qué la sabiduría clínica de un médico de 60 años no es a pesar del envejecimiento sino gracias a él.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/hilo: &#39;Cuándo dejar de pensar&#39; — el hallazgo de Polin et al. sobre deliberación ineficiente aplicado a decisiones de bajo riesgo en la práctica clínica diaria.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo metodológico para el libro de psicopatología: usar a Feyerabend y el contra-inductivismo como justificación filosófica explícita del giro dimensional frente al DSM/ICD.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta editorial o paper corto: proponer que el sesgo de confirmación institucional (Milani &amp; Mazzocco) es también el mecanismo que frena la adopción de HiTOP/RDoC en servicios de salud mental latinoamericanos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC: rúbrica de las 12 virtudes médicas de Kaldjian et al. como marco evaluable de humanismo clínico en la preparación ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Perspectives on Psychological Science</span><span class="tag ">Acta Psychologica</span><span class="tag ">Qualitative Health Research</span><span class="tag ">Journal of Personality and Social Psychology</span><span class="tag ">Journal of Medical Humanities</span><span class="tag ">Journal of Immigrant and Minority Health</span><span class="tag ">Aging, Neuropsychology, and Cognition</span><span class="tag ">Quarterly Journal of Experimental Psychology</span><span class="tag ">Workplace Health &amp; Safety</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 5 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
