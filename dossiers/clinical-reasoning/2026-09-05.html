@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-09-05 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">5 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">61</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JMIR Medical Education, 3 sep 2026 · rct · 2026-09-03</div>
+        <h3 class="r3-title">Scaffolded AI-Supported Problem-Based Learning for Medical Interns: Exploratory Retrospectively Registered Randomized Controlled Evaluation With a Voluntary Feasibility Follow-Up</h3>
+        <p class="r3-hook">Zhao y equipo construyeron MAPLE-CR, un entorno de PBL asistido por IA que en vez de dar respuestas actúa como andamiaje de proceso —prompts de razonamiento, tutor y pares simulados, retroalimentación estructurada— y lo probaron en un ECA exploratorio con 52 internos: el grupo intervención sacó 8.25 puntos más en el posttest que el autoestudio con el mismo caso (P=.001), con la mayor ganancia justo en la dimensión de razonamiento clínico (3.7/5) más que en participación activa (2.1/5). Para tu pilar AMAUTA/USAMEDIC esto es casi un prototipo listo para tu Competency Lab: un tutor de IA que fuerza el proceso de razonamiento (generación de hipótesis, integración de datos) en vez de resolver el caso, algo que puedes replicar para ENAM/Residentado donde la capacidad de facilitadores humanos es el cuello de botella real. Los propios autores advierten que el estudio no aísla qué parte del andamiaje genera el efecto ni tiene potencia prospectiva —así que úsalo como prueba de concepto y guion de diseño instruccional, no como validación definitiva, y considera replicarlo con tus propios residentes peruanos como estudio piloto.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/95039" target="_blank" rel="noopener">↗ doi.org/10.2196/95039</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Diagnosis (Berlin), 2 sep 2026 · paper · 2026-09-02</div>
+        <h3 class="r3-title">Methods to measure clinicians&#39; diagnostic calibration: an appraisal for real world application</h3>
+        <p class="r3-hook">Bradford, Singh y Meyer revisan la literatura y entrevistan a 10 expertos en razonamiento clínico para responder una pregunta incómoda: ¿cómo medimos si un clínico sabe cuándo está equivocado, fuera del laboratorio? Concluyen que la calibración no es un rasgo fijo sino fluctuante y dependiente del contexto, y que debe medirse sobre decisiones clínicamente significativas (no solo el diagnóstico final) para servir en la práctica real. Para tu línea de educación médica de precisión y tu apuesta por biomarcadores objetivos de desempeño (en paralelo a tu trabajo en psiquiatría de precisión), este paper te da el vocabulario y el marco metodológico para diseñar instrumentos de calibración diagnóstica dentro de AMAUTA —no solo &#39;¿acertaste?&#39; sino &#39;¿tu confianza predijo tu acierto?&#39;— que es exactamente el tipo de feedback formativo que separa la educación médica genérica de la de precisión. Es material directo para un capítulo o módulo sobre metacognición clínica en el Competency Lab.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0039" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0039</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Radiology: Artificial Intelligence, 2 sep 2026 · editorial · 2026-09-02</div>
+        <h3 class="r3-title">Human-AI Collaboration in Radiology: The Blind Spots</h3>
+        <p class="r3-hook">Kim, Adams y Hedderich sintetizan la literatura de interacción humano-IA en radiología y aíslan tres puntos ciegos que distorsionan el razonamiento diagnóstico cuando hay IA de por medio: sesgo de automatización y encuadre de la incertidumbre del modelo, diseño de interfaz que dirige la atención del radiólogo, y conformidad algorítmica —anular el propio juicio por presión medicolegal u organizacional. Para tu pilar ai-enhancement esto es el contrapeso mecanístico que necesitas frente al entusiasmo genérico por la IA diagnóstica: no basta con que el modelo sea preciso, la forma en que se presenta su output determina si el clínico razona mejor o simplemente obedece. Es un argumento directo para un post o módulo AMAUTA sobre cómo diseñar (o exigir) interfaces de IA clínica que preserven el razonamiento activo del residente en vez de inducir complacencia automática, algo trasladable de radiología a cualquier especialidad que empiece a usar apoyo diagnóstico por IA en el Perú.</p>
+        <a class="r3-link" href="https://doi.org/10.1148/ryai.260325" target="_blank" rel="noopener">↗ doi.org/10.1148/ryai.260325</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">9</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of General Internal Medicine, 3 sep 2026 · rct · 2026-09-03</div>
+          <div class="r10-title">Physician Ratings and Adoption of AI-Generated e-Consultation Advice: A Randomized Clinical Vignette Study</div>
+          <div class="r10-line">En un ensayo con 44 médicos de medicina interna, etiquetar el mismo consejo de e-consulta como &#39;especialista humano&#39; o &#39;IA médica especializada&#39; (OpenEvidence) no cambió las calificaciones de calidad (medias 4.2–4.7/5 en ambos casos), sugiriendo que el sesgo contra la IA se disuelve cuando el contenido es genuinamente bueno.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esto va a usarse para argumentar que la resistencia a la IA clínica es más una cuestión de calidad percibida del output que de la etiqueta &#39;IA&#39; en sí —relevante si preparas contenido para normalizar el uso de e-consultas por IA entre tus residentes de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11606-026-10777-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10777-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">The American Surgeon, 3 sep 2026 · editorial · 2026-09-03</div>
+          <div class="r10-title">I Might Be Wrong: The Role of Intellectual Humility in Debiasing Surgical Education</div>
+          <div class="r10-line">Jung y Dyke proponen un andamiaje de reflexión (afirmación, justificación, evidencia que contradice, condiciones de revisión) para cultivar humildad intelectual como precondición psicológica del debiasing quirúrgico, ligado a estrategias ya conocidas como el &#39;diagnostic time-out&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Se va a citar como marco práctico en morbimortalidad y simulación; es una plantilla que puedes adaptar directamente a las sesiones de casos clínicos de USAMEDIC para enseñar debiasing sin que suene a lista genérica de sesgos.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/00031348261487664" target="_blank" rel="noopener">↗ doi.org/10.1177/00031348261487664</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 3 sep 2026 · preprint · 2026-09-03</div>
+          <div class="r10-title">Evaluating GPT-4o Model Proficiency and Clinical Reasoning for Antimicrobial Stewardship in Dentistry</div>
+          <div class="r10-line">GPT-4o acertó 72% de 125 preguntas de prescripción antibiótica dental y sus justificaciones fueron calificadas positivamente en 95.4% de 12 ejes de razonamiento clínico, pero el contenido faltante (7.8%) y el potencial de daño moderado-severo (7.1%) marcan dónde el modelo &#39;razona bien&#39; pero omite lo crítico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es otro dato a favor de que evaluar el razonamiento de un LLM exige ir más allá del % de aciertos —útil como ejemplo transversal (no solo dental) si escribes sobre cómo auditar el razonamiento de la IA clínica más allá de la exactitud.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.01.26361980" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.01.26361980</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (Berlin), 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">History taking: the foundation of diagnostic excellence</div>
+          <div class="r10-line">Russell, Garibaldi y Salvador argumentan que la anamnesis sigue siendo la piedra angular del diagnóstico correcto —muchas veces resuelve el caso antes de cualquier prueba— y que la IA debe aumentar, no reemplazar, la conexión humana que hace posible una historia clínica completa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a circular como pieza de referencia en cursos de habilidades clínicas; te sirve para contrapesar el entusiasmo por la IA diagnóstica en AMAUTA recordando que el dato de entrada (la entrevista) sigue siendo el cuello de botella real, no el algoritmo.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0144" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0144</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Seminars in Thrombosis and Hemostasis, 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">Beyond Accuracy: Why Replacing Traditional Scores with AI in Thrombosis Care Creates New Ethical and Regulatory Obligations</div>
+          <div class="r10-line">Danilatou y Arachchillage comparan los scores tradicionales de riesgo trombótico (transparentes pero limitados) con modelos de IA (mejor desempeño predictivo pero con nuevas cargas éticas y regulatorias), y advierten que mejor predicción no equivale automáticamente a mejor valor clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un argumento reciclable fuera de trombosis: útil si escribes sobre por qué la psiquiatría de precisión no puede adoptar un algoritmo solo porque supera a una escala clínica en AUC, sin resolver antes la interpretabilidad y la responsabilidad clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1055/a-2943-7750" target="_blank" rel="noopener">↗ doi.org/10.1055/a-2943-7750</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Current Opinion in Anesthesiology, 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">Technology fatigue, cognitive load, and clinician well-being in modern anesthesia practice</div>
+          <div class="r10-line">Ruskin y Clebone Ruskin revisan cómo la fatiga de alarmas y la &#39;complacencia por automatización&#39; (confiar en un sistema sin considerar sus límites) erosionan el bienestar del clínico y pueden retrasar diagnósticos o tratamientos, no solo en anestesia sino en cualquier UCI o sala con monitoreo intensivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a alimentar el debate sobre diseño de EHR y alertas clínicas; conecta con tu interés en neurodivergencia y carga cognitiva —la complacencia por automatización es, en el fondo, un fallo de razonamiento Sistema 1 inducido por el propio diseño tecnológico.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/aco.0000000000001707" target="_blank" rel="noopener">↗ doi.org/10.1097/aco.0000000000001707</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Imaging Informatics in Medicine, 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">Less Is More: Radiologists Prefer Brief Narratives in LLM-Generated Clinical History Summaries</div>
+          <div class="r10-line">En un estudio con 4 radiólogos sobre 90 estudios de imagen, los resúmenes narrativos breves generados por IA (reducción de texto del 95.2%) fueron preferidos en el 89% de las calificaciones frente a resúmenes estructurados más largos, con igual comprehensividad percibida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a servir de evidencia para diseñar interfaces de IA clínica en general: menos texto bien curado supera a más texto estructurado cuando el objetivo es apoyar —no sustituir— el razonamiento del clínico bajo presión de tiempo.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10278-026-02229-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s10278-026-02229-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open, 2 sep 2026 · paper · 2026-09-02</div>
+          <div class="r10-title">Exploring primary care providers&#39; perspectives on clinical decision support for venous thromboembolism diagnosis: a qualitative study</div>
+          <div class="r10-line">Entrevistas a 8 médicos de atención primaria en EE. UU. muestran que valoran el apoyo a la decisión clínica para TEV precisamente porque los síntomas son inespecíficos y el tiempo de consulta es limitado, pero la adopción sigue siendo inconsistente por fricción de flujo de trabajo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Confirma un patrón que verás una y otra vez en tu propia práctica: el problema de la IA/CDS en atención primaria no es la precisión del algoritmo sino la fricción de integrarlo en 10 minutos de consulta.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2026-122559" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2026-122559</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Pregnancy Hypertension, 2 sep 2026 · paper · 2026-09-02</div>
+          <div class="r10-title">Impact of sFlt-1/PlGF ratio availability on intended management decisions in hypertensive disorders of pregnancy with diagnostic uncertainty</div>
+          <div class="r10-line">En un webinar educativo con 68 proveedores obstétricos, dar acceso al biomarcador sFlt-1/PlGF ante incertidumbre diagnóstica hizo que la intención de manejo expectante subiera de 20.9% a 87.8%, mostrando cuánto puede mover un solo dato objetivo la decisión clínica bajo incertidumbre.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un caso de estudio limpio y cuantificado de cómo un biomarcador reduce la incertidumbre diagnóstica y cambia el comportamiento clínico real —trasladable como ejemplo pedagógico a cualquier discusión sobre biomarcadores en psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.preghy.2026.101508" target="_blank" rel="noopener">↗ doi.org/10.1016/j.preghy.2026.101508</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el ECA de MAPLE-CR, el mayor salto de aprendizaje no estuvo en el conocimiento fáctico (4.4/5) sino en el razonamiento clínico (3.7/5) — el andamiaje de proceso mueve más la aguja del razonamiento que del contenido, justo lo que un tutor humano con poco tiempo no siempre logra.</li><li>La calibración diagnóstica no es un rasgo estable del clínico: fluctúa según el caso y el contexto — medirla exige mirar decisiones específicas, no un puntaje global de &#39;qué tan buen diagnosticador eres&#39;.</li><li>Etiquetar un consejo clínico como &#39;IA&#39; en vez de &#39;especialista humano&#39; no bajó su calificación de calidad entre médicos de medicina interna — el sesgo anti-IA se disuelve cuando el output es objetivamente bueno, lo cual cambia la conversación de &#39;aceptación de la IA&#39; a &#39;calidad del output&#39;.</li><li>Menos texto gana: los radiólogos prefirieron resúmenes de historia clínica generados por IA con 95% menos texto, y no perdieron comprehensividad percibida — la sobrecarga de información, no su ausencia, es la amenaza real al razonamiento bajo presión de tiempo.</li><li>Un solo biomarcador objetivo (sFlt-1/PlGF) movió la intención de manejo expectante de 20.9% a 87.8% entre proveedores obstétricos — la incertidumbre diagnóstica se resuelve más con datos objetivos bien posicionados que con más entrenamiento en heurísticas.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué pasaría si adaptas el andamiaje de MAPLE-CR (prompts de razonamiento + tutor/par simulado) a un caso de psiquiatría dimensional para tus residentes de AMAUTA, en vez de un caso médico genérico?</li><li>¿Cómo se vería un instrumento de calibración diagnóstica —confianza vs. acierto por decisión, no por caso completo— aplicado a los exámenes formativos del Competency Lab?</li><li>Si el sesgo anti-IA se disuelve cuando el contenido es bueno, ¿qué tan bueno tiene que ser un output de IA en salud mental para que un psiquiatra peruano deje de exigir la etiqueta &#39;humano&#39; antes de confiar en él?</li><li>¿La complacencia por automatización que describe el paper de anestesia tiene un equivalente en el uso de escalas y algoritmos en psiquiatría —por ejemplo, aceptar un score de riesgo suicida sin cuestionar sus límites?</li><li>¿Qué biomarcador objetivo, hoy disponible pero subutilizado en psiquiatría, podría mover la intención de manejo clínico tanto como el sFlt-1/PlGF lo hizo en hipertensión del embarazo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/carrusel IG: &#39;La IA no te va a diagnosticar mejor sola, pero sí puede diseñar mejor tu entrenamiento&#39; — usando el ECA de MAPLE-CR como gancho para promocionar el enfoque de andamiaje de razonamiento en AMAUTA/USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA sobre &#39;calibración diagnóstica&#39;: feedback formativo que compara confianza reportada vs. acierto real en preguntas de práctica ENAM, inspirado en el marco de Bradford et al.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección de tu libro de psicopatología sobre &#39;puntos ciegos de la colaboración humano-IA&#39; (automatización, framing de incertidumbre, conformidad algorítmica), trasladando el marco de radiología a psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio piloto: replicar el diseño de MAPLE-CR con un caso de psiquiatría dimensional (HiTOP) en un grupo de residentes peruanos, con pre/post test de razonamiento clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video sobre &#39;menos texto, mejor razonamiento&#39;: cómo la preferencia de radiólogos por resúmenes breves de IA (89%) debería inspirar el diseño de tus propios materiales educativos para AMAUTA (menos, mejor curado).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">Radiology: Artificial Intelligence</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">The American Surgeon</span><span class="tag ">medRxiv</span><span class="tag ">Seminars in Thrombosis and Hemostasis</span><span class="tag ">Current Opinion in Anesthesiology</span><span class="tag ">Journal of Imaging Informatics in Medicine</span><span class="tag ">BMJ Open</span><span class="tag ">Pregnancy Hypertension</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC · PubMed · medRxiv · Consensus. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 5 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
