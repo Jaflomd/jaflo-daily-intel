@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-06 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">6 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">98</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Neuroscience and Biobehavioral Reviews · 2026-09-03 · review</div>
+        <h3 class="r3-title">Addressing fusiform gyrus dysfunction in schizophrenia, theory of mind, and implications for antipsychotics&#39; response and resistance: A systematic review</h3>
+        <p class="r3-hook">Revisión sistemática (2765 artículos cribados, 86 incluidos) que consolida al giro fusiforme como un hub dinámico y sensible al estado clínico -no una lesión fija- detrás de las alteraciones perceptuales, emocionales y de teoría de la mente en esquizofrenia: pacientes drug-naïve muestran alteraciones heterogéneas, primer episodio con hipoconectividad ligada a síntomas negativos, respondedores a antipsicóticos con normalización parcial, y resistentes al tratamiento con hipoactivación persistente. Para tu línea de psiquiatría dimensional y network theory es exactamente el tipo de hallazgo transdiagnóstico -un circuito, no una categoría- que conecta con tu marco de psicopatología para el mundo: el mismo sustrato distingue quién responde y quién no antes de que el ensayo-error clínico lo confirme en semanas. Para psiquiatría de precisión es un candidato concreto a biomarcador de imagen para estratificar riesgo de resistencia al tratamiento en esquizofrenia. Para AMAUTA/USAMEDIC es material de alto rendimiento sobre neurobiología de la resistencia a antipsicóticos, un tema que rara vez se enseña con este nivel de mecanismo. Ángulo de contenido: &#39;la esquizofrenia resistente al tratamiento podría tener una firma cerebral visible antes de probar el tercer antipsicótico -este review junta 86 estudios que apuntan al mismo circuito&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106938" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106938</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Periodontal Research · 2026-09-04 · review</div>
+        <h3 class="r3-title">Periodontitis and Neuropsychiatric Disorders: Epidemiological and Mechanistic Evidence</h3>
+        <p class="r3-hook">Revisión que sintetiza evidencia epidemiológica y mecanística conectando periodontitis con trastornos neuropsiquiátricos, con la asociación más fuerte y consistente en depresión y ansiedad -no en psicosis ni en demencia-, vía tres vías propuestas: translocación microbiana y disbiosis oral, (neuro)inflamación sistémica de bajo grado, y vulnerabilidades compartidas, enmarcadas en un eje oral-intestino-cerebro. Para tu línea de psiquiatría dimensional es un ejemplo nítido de vulnerabilidad transdiagnóstica biológica que no respeta la frontera psiquiatría/odontología -el tipo de conexión inesperada que tu libro de psicopatología para el mundo necesita para argumentar que el sustrato importa más que el rótulo diagnóstico. Para tu enfoque de evidencia proporcional al claim: los propios autores marcan que los diseños transversales limitan la inferencia causal, así que el hallazgo es asociación robusta, no causalidad probada. Ángulo de contenido: &#39;tu boca le habla a tu cerebro -la periodontitis se asocia con más depresión y ansiedad, y esta revisión junta el mecanismo microbiano e inflamatorio detrás, con la salvedad honesta de que aún no prueba causalidad&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/jre.70172" target="_blank" rel="noopener">↗ doi.org/10.1111/jre.70172</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Current Nutrition Reports · 2026-09-04 · review</div>
+        <h3 class="r3-title">Nutritional Problems in Neurodevelopmental Disorders</h3>
+        <p class="r3-hook">Revisión narrativa que mapea los problemas nutricionales específicos por trastorno del neurodesarrollo: selectividad alimentaria y sensibilidades sensoriales en autismo, alimentación impulsiva y riesgo de obesidad en TDAH, y dificultades de deglución más deficiencias de micronutrientes en discapacidad intelectual y síndrome de Down. Para tu línea TDAH/TEA/neurodivergencia es un recordatorio directo y accionable de que el manejo integral va más allá del fármaco o la terapia conductual -la nutrición es un dominio de intervención con problemas específicos y medibles por diagnóstico, no un genérico de &#39;come sano&#39;. Para AMAUTA/USAMEDIC es contenido de alto valor práctico: pocas veces se enseña el tamizaje nutricional diferenciado por trastorno del neurodesarrollo en la formación médica. Ángulo de contenido: &#39;TDAH y autismo no comparten el mismo problema con la comida -uno es impulsividad alimentaria con riesgo de obesidad, el otro es selectividad sensorial que limita la dieta- y esta revisión te da el mapa diferenciado para preguntarlo bien en consulta&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s13668-026-00797-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s13668-026-00797-7</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Network Meta-Analysis en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Epilepsy &amp; Behavior · 2026-09-05 · guideline</div>
+        <h3 class="r3-title">The current state of clinical practice guidelines for women with epilepsy: a systematic review</h3>
+        <p class="r3-hook">Revisión sistemática que evalúa la calidad metodológica y el contenido específico de género de las 11 guías de práctica clínica para mujeres con epilepsia publicadas entre 2014-2024 (todas de EE.UU. o Europa): encuentra alta calidad metodológica general pero debilidades relativas en aplicabilidad y participación de stakeholders, con el embarazo ampliamente cubierto mientras que adolescencia, epilepsia catamenial, menopausia y salud ósea reciben &#39;atención limitada y a menudo carecen de guía accionable&#39;. Para tu foco secundario en neuropsiquiatría es un hallazgo directo sobre un hueco de guía en la interfaz epilepsia-psiquiatría: los síntomas del ánimo ligados al ciclo catamenial y a la transición menopáusica en mujeres con epilepsia quedan sin normativa clara pese a su relevancia clínica. Para AMAUTA/USAMEDIC es un ángulo poco explotado de pregunta de examen -brechas de guía por etapa de vida- y un ejercicio perfecto de lectura crítica de guías (AGREE II) más allá de memorizar recomendaciones. Ángulo de contenido: &#39;las guías de epilepsia en mujeres están muy bien resueltas para el embarazo y casi vacías para la epilepsia catamenial y la menopausia -este review cuantifica exactamente dónde está el hueco&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.yebeh.2026.111262" target="_blank" rel="noopener">↗ doi.org/10.1016/j.yebeh.2026.111262</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Epidemiology and Psychiatric Sciences · 2026-09-04 · meta-analysis</div>
+        <h3 class="r3-title">Risk of mortality and complications in people with depressive disorder and co-occurring diabetes mellitus</h3>
+        <p class="r3-hook">Metaanálisis de 26 estudios provenientes de 9 regiones que cuantifica el exceso de riesgo en pacientes con depresión y diabetes concurrentes frente a diabetes sola: mayor mortalidad por todas las causas, mayor mortalidad cardiovascular específica, y mayor riesgo de complicaciones metabólicas y cardiovasculares, con heterogeneidad relevante entre regiones. Para tu voz de &#39;evidencia proporcional al claim&#39; es la cifra que respalda con solidez real -no solo intuición clínica- que la comorbilidad depresión-diabetes no es un problema de calidad de vida sino de mortalidad medible. Para AMAUTA/USAMEDIC es un caso ideal para enseñar por qué el tamizaje de depresión en el paciente diabético no debería ser un checkbox aislado sino parte de un protocolo de manejo integrado -con impacto directo en morbimortalidad, no solo en bienestar subjetivo. Ángulo de contenido: &#39;la depresión en el paciente diabético no solo empeora el ánimo -eleva la mortalidad cardiovascular, y este metaanálisis de 26 estudios en 9 regiones lo confirma con números duros&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S2045796026100882" target="_blank" rel="noopener">↗ doi.org/10.1017/S2045796026100882</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Trauma, Violence, &amp; Abuse · 2026-09-05 · meta-analysis</div>
+        <h3 class="r3-title">Military Sexual Trauma and Eating Disorders: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Revisión sistemática y metaanálisis de 7 estudios en veteranos de EE.UU. (más de 3.3 millones de participantes) que encuentra que quienes experimentaron trauma sexual militar tienen 2.42 veces las probabilidades de trastornos de la conducta alimentaria o sus síntomas frente a quienes no lo experimentaron -pero los propios autores señalan que todos los estudios incluidos usan datos previos a 2012-. Para tu línea de psiquiatría dimensional es otro ejemplo de trauma como driver transdiagnóstico que atraviesa categorías clínicas (TEPT, TCA) en vez de quedar aislado en un solo diagnóstico. Para tu voz de &#39;evidencia proporcional al claim&#39; es un caso de manual: el tamaño de efecto es real y consistente, pero la honestidad metodológica exige señalar que la evidencia está basada en datos de hace más de una década, antes de cambios importantes en cultura y reporte militar. Ángulo de contenido: &#39;trauma sexual militar y trastornos alimentarios están fuertemente asociados -2.4 veces más riesgo- pero toda la evidencia detrás de ese número tiene más de 12 años: así se lee un efecto real con una advertencia de vigencia&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/15248380261462177" target="_blank" rel="noopener">↗ doi.org/10.1177/15248380261462177</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Schizophrenia Research · 2026-09-03 · meta-analysis</div>
+        <h3 class="r3-title">Visual dysfunction and psychosis: A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión de 56 estudios con metaanálisis de 12 estudios transversales que encuentra que la disfunción visual se asocia con mayores probabilidades de desenlaces relacionados a psicosis (OR=1.98), con hallazgos longitudinales heterogéneos pero evidencia transversal consistente, apoyando un marco bidireccional en vez de una causalidad única en cualquier dirección. Para tu línea de psiquiatría dimensional y network theory es evidencia de que el procesamiento sensorial-perceptual es un dominio transdiagnóstico medible en psicosis, no un epifenómeno -coherente con marcos tipo RDoC que tu libro de psicopatología dimensional necesita ilustrar con datos duros. Para AMAUTA/USAMEDIC es un ángulo clínico poco enseñado: las quejas visuales en un paciente con síntomas psicóticos merecen evaluación, no descarte automático como &#39;ansiedad&#39;. Ángulo de contenido: &#39;la disfunción visual y la psicosis se asocian casi al doble de probabilidad -y todavía no sabemos bien qué causa qué, lo cual hace la pregunta clínicamente más interesante, no menos&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.schres.2026.08.032" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.032</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el systematic review del giro fusiforme en esquizofrenia (Neurosci Biobehav Rev), los pacientes que responden a antipsicóticos muestran normalización parcial del circuito, mientras los resistentes al tratamiento muestran hipoactivación persistente -un patrón de imagen que podría anticipar la resistencia antes de agotar el ensayo-error farmacológico.</li><li>La revisión de periodontitis y trastornos neuropsiquiátricos (J Periodontal Research) encuentra la asociación más fuerte específicamente con depresión y ansiedad -no con psicosis ni demencia- lo que apunta a una vía inflamatoria/microbiana particular en vez de un efecto genérico de &#39;peor salud general, peor cerebro&#39;.</li><li>De las 11 guías de práctica clínica para mujeres con epilepsia evaluadas (Epilepsy &amp; Behavior), casi todas cubren bien el embarazo, pero la epilepsia catamenial, la menopausia y la salud ósea quedan con &#39;guía accionable limitada&#39; -un hueco normativo justo en las etapas donde el ánimo y la epilepsia interactúan más.</li><li>El metaanálisis de depresión y diabetes concurrentes (Epidemiology and Psychiatric Sciences, 26 estudios, 9 regiones) muestra que la comorbilidad eleva tanto la mortalidad por todas las causas como la mortalidad cardiovascular específica frente a diabetes sola -la depresión aquí no es un modificador de calidad de vida, es un modificador de sobrevida.</li><li>El metaanálisis de trauma sexual militar y trastornos alimentarios (Trauma, Violence, &amp; Abuse) encuentra un OR de 2.42 en veteranos -pero los autores mismos advierten que los 7 estudios incluidos usan datos previos a 2012, dejando abierto qué tan vigente es esa cifra hoy.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el patrón de (in)activación del giro fusiforme distingue a respondedores de resistentes a antipsicóticos en esquizofrenia, ¿qué tan lejos estamos de usarlo como criterio para decidir la estrategia farmacológica desde el inicio en vez de esperar semanas de ensayo-error?</li><li>Con la periodontitis asociándose más fuerte a depresión/ansiedad que a otros cuadros neuropsiquiátricos, ¿estás preguntando hoy por salud bucal en la anamnesis de un paciente con depresión o ansiedad que no responde como esperas?</li><li>Si 11 guías de epilepsia en mujeres cubren bien el embarazo pero casi nada la epilepsia catamenial o la menopausia, ¿qué tanto indagas por el ciclo menstrual y los síntomas perimenopáusicos en tus pacientes con epilepsia y comorbilidad psiquiátrica?</li><li>Con el riesgo de mortalidad cardiovascular elevado en depresión+diabetes confirmado en 26 estudios de 9 regiones, ¿tu manejo de un paciente diabético con depresión hoy es realmente integrado, o el tamizaje de ánimo sigue siendo un casillero aislado en la historia clínica?</li><li>Si el OR=2.42 entre trauma sexual militar y trastornos alimentarios descansa enteramente en datos previos a 2012, ¿qué necesitarías ver en un estudio nuevo para confiar en ese número hoy, y cambiaría tu práctica mientras tanto?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrete IG/YT: &#39;tu boca le habla a tu cerebro&#39; -la conexión periodontitis-depresión/ansiedad y el eje oral-intestino-cerebro, usando el review de Journal of Periodontal Research.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre el posible biomarcador de imagen de la esquizofrenia resistente al tratamiento -el patrón del giro fusiforme- usando el systematic review de Neuroscience and Biobehavioral Reviews.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota corta o carta al editor proponiendo un protocolo breve de tamizaje nutricional diferenciado por trastorno del neurodesarrollo (TDAH vs TEA vs discapacidad intelectual) para consulta ambulatoria en Perú, basado en el review de Current Nutrition Reports.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología dimensional sobre &#39;vulnerabilidades transdiagnósticas invisibles&#39; -periodontitis-depresión y disfunción visual-psicosis- como evidencia de que el sustrato biológico atraviesa las categorías diagnósticas.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido ENAM/Residentado sobre los huecos de las guías de epilepsia en mujeres (epilepsia catamenial, menopausia) como pregunta de examen y como brecha real de práctica clínica en la interfaz neurología-psiquiatría.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Neuroscience and Biobehavioral Reviews</span><span class="tag ">Journal of Periodontal Research</span><span class="tag ">Current Nutrition Reports</span><span class="tag ">Epilepsy &amp; Behavior</span><span class="tag ">Epidemiology and Psychiatric Sciences</span><span class="tag ">Trauma, Violence, &amp; Abuse</span><span class="tag ">Schizophrenia Research</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (E-utilities, date-filtered pdat 2026-09-03 a 2026-09-06) · Consensus (Semantic Scholar/PubMed/Scopus, exploración). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 6 de septiembre de 2026.</div>
+</div>
+</body>
+</html>

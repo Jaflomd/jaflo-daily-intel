@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-06 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">6 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">56</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">42</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">medRxiv (preprint), 4 sep 2026 · preprint · 2026-09-04</div>
+        <h3 class="r3-title">Testing Claimed Associations of Prenatal Acetaminophen with Neurodevelopmental Disorders: Re-analysis Using Bias-Correction Methods</h3>
+        <p class="r3-hook">Grover, Ioannidis y colegas reanalizan los 24 estudios (30 estimados a nivel de estudio) de la revisión sistemática de 2025 que había concluido un vínculo &#39;fuerte&#39; entre acetaminofén prenatal y trastornos del neurodesarrollo, aplicando métodos de corrección de sesgo (bias-correction) sobre esos mismos datos: la asociación con autismo se debilita sustancialmente al ponderar correctamente, la de TDAH se mantiene modesta pero con incertidumbre alta en pruebas de credibilidad, y la categoría amplia de trastorno del neurodesarrollo no muestra patrón claro — la conclusión explícita es que &#39;el reclamo de evidencia fuerte no estaba sustentado&#39; por métodos rigurosos. Le importa a Javier porque es el caso de manual para su voz de &#39;evidencia proporcional al claim&#39;: un reclamo viral (con eco político incluso, tipo RFK) que se sostiene en una revisión de 2025 pero se cae bajo reanálisis de sesgo, exactamente el tipo de ejercicio de lectura crítica que quiere instalar en AMAUTA/USAMEDIC y en su libro de psicopatología dimensional. Es material directo para su línea TDAH/TEA/neurodivergencia — no como evidencia a favor o en contra del fármaco, sino como caso de estudio de cómo una asociación epidemiológica se infla mediáticamente antes de pasar el filtro de corrección estadística.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.08.28.26361666" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.28.26361666</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Molecular Psychiatry, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+        <h3 class="r3-title">Pharmacological and non-pharmacological modulation of striatal dopamine release: a meta-analysis of [11C]raclopride PET studies</h3>
+        <p class="r3-hook">Meta-análisis de 92 estudios de neuroimagen con PET [11C]raclopride que compara cuánta dopamina estriatal liberan distintas intervenciones farmacológicas y no farmacológicas: la anfetamina produce aproximadamente 4 veces más liberación dopaminérgica que los desafíos cognitivos (10.9% vs 2.7%, p&lt;.001), con patrones regionales distintos frente a alcohol o actividad cognitiva, y el contexto de recompensa no logra diferenciar significativamente la respuesta dopaminérgica a tareas cognitivas — lo que sugiere límites reales de la imagen actual para detectar efectos dopaminérgicos específicos de recompensa. Le importa a Javier porque calibra con números duros algo que su línea de psiquiatría de precisión necesita todo el tiempo: cuánto puede realmente &#39;ver&#39; un biomarcador de imagen antes de sobre-interpretarlo, un ancla útil para cualquier futuro paper o módulo sobre estratificación biomarcador-guiada en TDAH o adicciones. Es también gancho de contenido directo: contrastar &#39;4x más dopamina por anfetamina que por logro cognitivo&#39; desmonta la narrativa popular de &#39;dopamina por productividad&#39; que circula en redes sobre neurodivergencia.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03826-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03826-7</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of the American Academy of Child and Adolescent Psychiatry, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+        <h3 class="r3-title">Systematic Review and Meta-Analysis: Risk Factors for Suicide in Youth Psychological Autopsy Studies</h3>
+        <p class="r3-hook">Meta-análisis de 19 muestras de estudios de autopsia psicológica (~958 casos de suicidio, 1102 controles) que identifica los factores más fuertemente asociados a suicidio juvenil: ideación suicida (OR 16.1, IC95% 5.0-51.5), intento de suicidio previo (OR 14.2, 6.3-31.8) y eventos estresantes agudos (OR 13.7, 9.6-19.5) superan por mucho a los diagnósticos psiquiátricos crónicos de base, llevando a los autores a describir un perfil de riesgo &#39;impulsivo y proximal&#39; que exige prevención centrada en regulación emocional y reducción de medios letales. Le importa a Javier porque es insumo de alto rendimiento clínico para su línea de razonamiento clínico y para módulos ENAM/Residentado sobre evaluación de riesgo suicida: refuerza que el eje de decisión no es &#39;¿qué diagnóstico tiene?&#39; sino &#39;¿qué tan proximal e impulsivo es el riesgo ahora?&#39; — un argumento estructurado como red de factores próximos, coherente con su marco de network theory aplicado más allá de síntomas hacia factores de riesgo conductual.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jaac.2026.08.484" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jaac.2026.08.484</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">8</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Trauma, Violence, &amp; Abuse, 5 sep 2026 · meta-analysis · 2026-09-05</div>
+          <div class="r10-title">Military Sexual Trauma and Eating Disorders: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">SR+MA de 7 estudios en veteranos (n pooled 3.38 millones) halla que el trauma sexual militar se asocia a 2.42 veces más probabilidad de trastorno alimentario o síntomas, con todos los estudios basados en datos de 2002-2012.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El hallazgo envejece mal en su base de datos (2002-2012) más que en su magnitud de efecto — es gancho para contenido sobre la brecha entre trauma-informed care y diagnóstico alimentario en poblaciones de alto riesgo que rara vez llegan a psiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/15248380261462177" target="_blank" rel="noopener">↗ doi.org/10.1177/15248380261462177</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Quality of Life Research, 5 sep 2026 · rct · 2026-09-05</div>
+          <div class="r10-title">Functional outcomes following psychotherapy for elevated suicide risk: Secondary analysis of a randomized controlled trial</div>
+          <div class="r10-line">Análisis secundario de un RCT de psicoterapia para riesgo suicida elevado que mide desenlaces funcionales (no solo síntomas) como indicador de recuperación real.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza el argumento de que &#39;menos ideación&#39; no es igual a &#39;mejor funcionamiento&#39; — insumo para su discurso sobre outcomes que sí importan en salud mental más allá de escalas sintomáticas.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11136-026-04382-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s11136-026-04382-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">British Journal of Sports Medicine, 3 sep 2026 · rct · 2026-09-03</div>
+          <div class="r10-title">Resistance training and depressive symptoms in subcortical vascular cognitive impairment: secondary results of a randomised clinical trial</div>
+          <div class="r10-line">RCT en 91 adultos (edad media 75) con deterioro cognitivo vascular subcortical: entrenamiento de resistencia 2x/semana durante 12 meses reduce significativamente síntomas depresivos (CESD-10) frente a un grupo control de balance/tono, con efecto sostenido a 6 y 12 meses.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Evidencia de peso para su pilar kinobody-selfcare cruzado con psiquiatría geriátrica: &#39;ejercicio de fuerza como antidepresivo adjunto&#39; es contenido con gancho amplio y base RCT sólida, no solo anecdótica.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bjsports-2026-112111" target="_blank" rel="noopener">↗ doi.org/10.1136/bjsports-2026-112111</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">American Journal of Clinical Hypnosis, 4 sep 2026 · rct · 2026-09-04</div>
+          <div class="r10-title">Ego-strengthening hypnotherapy, negative emotional state, and suicidal thoughts in outpatients with depression</div>
+          <div class="r10-line">Ensayo controlado (n=40, grupo experimental vs. lista de espera) en pacientes ambulatorios con depresión: 10 sesiones de hipnoterapia de fortalecimiento del yo reducen significativamente depresión, ansiedad, estrés e ideación suicida frente a controles.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Muestra pequeña y diseño con lista de espera (no placebo activo) limitan la fuerza de la conclusión — útil como ejemplo de lectura crítica en AMAUTA/USAMEDIC sobre por qué &#39;significativo&#39; no siempre es &#39;concluyente&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/00029157.2026.2718383" target="_blank" rel="noopener">↗ doi.org/10.1080/00029157.2026.2718383</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 4 sep 2026 · rct · 2026-09-04</div>
+          <div class="r10-title">Comparative effectiveness of different acupuncture courses for chronic insomnia disorder: a randomized controlled trial</div>
+          <div class="r10-line">RCT en 201 pacientes con insomnio crónico compara cursos de acupuntura de 4, 6 y 8 semanas: 6 y 8 semanas superan a 4 semanas en el ISI, pero extender de 6 a 8 semanas aporta beneficio adicional limitado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Dato de dosis-respuesta accionable para el insomnio comórbido con depresión/ansiedad que ve en consulta — 6 semanas como punto de rendimientos decrecientes es un umbral práctico para contenido sobre &#39;cuánto tratamiento es suficiente&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122469" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122469</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychiatry, 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">Substance use and co-occurring mental health conditions among adolescents and young adults in North America: a systematic review</div>
+          <div class="r10-line">SR de 29 estudios en adolescentes y jóvenes de Norteamérica halla que síntomas depresivos, ansiosos, de trauma y externalizantes acompañan frecuentemente al consumo de sustancias, con trauma y adversidad social como factores prominentes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza que la atención integrada (no en silos separados de salud mental y adicciones) sigue siendo la brecha — contenido natural para su interés en modelos de atención escalables tipo AMAUTA para poblaciones jóvenes.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12888-026-08580-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12888-026-08580-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">Applications and outcomes of virtual reality in inpatient psychiatry: A systematic review</div>
+          <div class="r10-line">SR de 37 estudios (N=1004) sobre uso de realidad virtual en hospitalización psiquiátrica: aplicaciones más comunes en TCC/exposición (35%) y evaluación (24%), con evidencia preliminar de factibilidad, aceptabilidad y seguridad, y mejoras más consistentes en ansiedad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La VR en psiquiatría de agudos está en la fase &#39;factible y segura&#39; pero no &#39;probadamente eficaz&#39; — insumo para su cruce IA/tecnología en salud mental, con el matiz de que la evidencia todavía es de implementación, no de eficacia dura.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/s0033291726105662" target="_blank" rel="noopener">↗ doi.org/10.1017/s0033291726105662</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research, 3 sep 2026 · rct · 2026-09-03</div>
+          <div class="r10-title">Proximal Effects of a Transdiagnostic, Ecological Momentary Intervention for Enhancing Resilience in Help-Seeking Young People (EMIcompass): Findings From a Secondary Analysis of an Exploratory Randomized Controlled Trial</div>
+          <div class="r10-line">Análisis secundario exploratorio (n=37) de una intervención momentánea ecológica transdiagnóstica en jóvenes que buscan ayuda: efectos pequeños-a-moderados en afecto negativo y estrés tras completar tareas de la intervención, con intervalos de confianza que cruzan cero.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Señal débil pero temprana para intervenciones digitales momentáneas transdiagnósticas — vale la pena seguirle la pista para su línea de IA aplicada a intervención en tiempo real, sin sobrevenderla todavía como evidencia consolidada.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/77150" target="_blank" rel="noopener">↗ doi.org/10.2196/77150</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El vínculo acetaminofén-autismo, presentado en 2025 como &#39;evidencia fuerte&#39;, se diluye sustancialmente al aplicar métodos de corrección de sesgo sobre los mismos 24 estudios — el problema no fueron datos nuevos, fue el método de ponderación.</li><li>En PET con [11C]raclopride, la anfetamina libera ~4 veces más dopamina estriatal que cualquier tarea cognitiva medida (10.9% vs 2.7%) — la narrativa popular de &#39;dopamina por logro&#39; tiene una base de imagen mucho más débil de lo asumido.</li><li>En autopsias psicológicas de suicidio juvenil, la ideación activa (OR 16.1) y un evento estresante agudo (OR 13.7) pesan más que el diagnóstico psiquiátrico crónico de base — el riesgo real es proximal e impulsivo, no solo categorial.</li><li>Entrenamiento de fuerza 2x/semana redujo síntomas depresivos de forma sostenida a 12 meses en deterioro cognitivo vascular subcortical — la prescripción de ejercicio en psiquiatría geriátrica no debería limitarse a lo aeróbico.</li><li>Extender acupuntura de 6 a 8 semanas en insomnio crónico no sumó beneficio relevante — el punto de rendimientos decrecientes en protocolos de tratamiento llega antes de lo que muchos esquemas clínicos asumen.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la asociación acetaminofén-autismo se diluye bajo corrección de sesgo, ¿qué estándar de rigor deberíamos exigir antes de traducir un hallazgo epidemiológico en advertencia clínica o mensaje público?</li><li>¿Qué implica para la interpretación de estudios de imagen dopaminérgica en TDAH y adicciones que la respuesta a tareas cognitivas sea tan débil frente a estimulantes farmacológicos?</li><li>¿Cómo rediseñar el tamizaje de riesgo suicida adolescente para pesar más la proximalidad (ideación activa, evento estresante agudo) que el diagnóstico psiquiátrico de base?</li><li>¿Debería el entrenamiento de resistencia ofrecerse como línea principal (no solo adjunta) en programas de rehabilitación cognitiva vascular con síntomas depresivos comórbidos?</li><li>¿Qué combinación de trauma sexual militar y trastorno alimentario amerita tamizaje específico en veteranos que hoy no se está haciendo de forma sistemática?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel desmontando el mito &#39;acetaminofén causa autismo&#39; usando el reanálisis de bias-correction como caso de manual de &#39;cómo leer críticamente un meta-análisis viral&#39;, para AMAUTA/USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido visual contrastando &#39;dopamina por anfetamina vs. dopamina por logro cognitivo&#39; (4x de diferencia en PET) como gancho sobre neurociencia del refuerzo, conectado a TDAH.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota breve o carta editorial resumiendo el perfil &#39;impulsivo-proximal&#39; del riesgo suicida juvenil, aplicable a un protocolo de tamizaje para su comité de ética (HVLH).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección en el libro de psicopatología dimensional sobre &#39;evidencia inflada&#39;: usar el caso acetaminofén-TEA como ejemplo canónico de cómo una claim viral se sostiene o cae bajo reanálisis estadístico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie corta IG/YT &#39;ejercicio como psicofármaco&#39; usando el RCT de entrenamiento de fuerza en deterioro vascular con síntomas depresivos, cruzando con el pilar kinobody-selfcare.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Journal of the American Academy of Child and Adolescent Psychiatry</span><span class="tag ">Psychological Medicine</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Trauma, Violence, &amp; Abuse</span><span class="tag ">BMC Psychiatry</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">British Journal of Sports Medicine</span><span class="tag ">Quality of Life Research</span><span class="tag ">American Journal of Clinical Hypnosis</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · Europe PMC · medRxiv · Consensus. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 6 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
