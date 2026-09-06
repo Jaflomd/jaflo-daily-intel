@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-06 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">6 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">39</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">20</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JMIR Medical Education, 3 sep 2026 · rct · 2026-09-03</div>
+        <h3 class="r3-title">Scaffolded AI-Supported Problem-Based Learning for Medical Interns: Exploratory Retrospectively Registered Randomized Controlled Evaluation With a Voluntary Feasibility Follow-Up</h3>
+        <p class="r3-hook">RCT exploratorio (n=52) que compara MAPLE-CR —un entorno con IA generativa usada como andamiaje de proceso (tutor y compañeros simulados, prompts de razonamiento, retroalimentación estructurada) en vez de máquina de respuestas— contra autoestudio equivalente para internos de medicina en un caso de PBL: el grupo con IA obtuvo un posttest significativamente mayor (diferencia de medianas Hodges-Lehmann 8.25 puntos, IC95% 6.60-11.60, p=.001) y mayor ganancia de puntaje. Le importa a Javier porque es el diseño más cercano a lo que necesita para defender —con un RCT real, no una demo— que un tutor de IA en USAMEDIC/AMAUTA debe diseñarse como andamiaje de razonamiento clínico (no como buscador de respuestas), justo su línea de IA aplicada a educación e investigación; el propio estudio reconoce que el análisis de sensibilidad post hoc no confirma potencia estadística suficiente, lo cual es un matiz honesto que vale citar. Cómo usarlo: como cita ancla para diseñar o defender un módulo de PBL asistido por IA en los bancos de razonamiento clínico de Residentado, replicando la lógica de &#39;IA como tutor socrático estructurado&#39; y no como oráculo, y citando explícitamente la limitación de potencia como advertencia para no sobreinterpretar el tamaño del efecto.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/95039" target="_blank" rel="noopener">↗ doi.org/10.2196/95039</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JMIR Medical Education, 3 sep 2026 · paper · 2026-09-03</div>
+        <h3 class="r3-title">Estimating the Prevalence of Generative AI Use in Medical School Application Essays: Cross-Sectional Study</h3>
+        <p class="r3-hook">Estudio transversal sobre 6000 ensayos de admisión a una escuela de medicina de EE.UU. (2364 postulantes) comparando la cohorte 2021-2022 (antes de ChatGPT) contra 2023-2024 (tras su difusión) con el detector GPTZero: el uso probable de IA subió de 2.7% a 12.3% de los ensayos, fue mayor en ensayos secundarios y en postulantes más jóvenes, y NO se asoció con ventaja en invitación a entrevista ni en admisión. Le importa a Javier porque es evidencia proporcional (no pánico moral ni hype) sobre cuánto y cómo se usa la IA generativa en un proceso de alto riesgo (admisión médica), directamente relevante para su exigencia de &#39;evidencia proporcional al claim&#39; al diseñar políticas de integridad académica en AMAUTA/USAMEDIC y para su línea de IA en investigación/educación. Cómo usarlo: como dato ancla para una política de uso de IA en ensayos/personal statements de sus propios procesos de selección o cursos, y como argumento de que &#39;detectar IA&#39; no predice ni debe usarse para decidir individualmente (el propio estudio lo desaconseja), matiz que vale la pena repetir en contenido sobre IA y evaluación.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/96673" target="_blank" rel="noopener">↗ doi.org/10.2196/96673</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">BMC Medical Education, 3 sep 2026 · paper · 2026-09-03</div>
+        <h3 class="r3-title">Exploratory study of protective factors against belief in neuromyths in in-service teachers at Brazilian vocational-technical high schools</h3>
+        <p class="r3-hook">Encuesta transversal a 130 docentes técnico-vocacionales brasileños (32 afirmaciones: 7 neuromitos + 25 ítems de neurociencia real): 51.21% endosó al menos un neuromito, con &#39;estilos de aprendizaje preferidos&#39; como el más prevalente (87%), mientras que tener formación en salud o humanidades y buscar fuentes científicas múltiples predijo mayor conocimiento cerebral real y menor creencia en neuromitos. Le importa a Javier porque es munición empírica fresca y cuantificada exactamente para el libro de neurociencia educativa: no es solo &#39;los estilos de aprendizaje son un mito&#39; como afirmación suelta, sino una cifra concreta (87% de endoso) en una población formadora de formadores, con los predictores de resistencia al mito ya identificados (formación + fuentes múltiples). Cómo usarlo: como estadística citable de apertura para un capítulo o post sobre por qué el neuromito de &#39;estilos de aprendizaje&#39; sigue vivo en la docencia (con cifra dura, no solo intuición), y como argumento a favor de que los cursos de formación docente de AMAUTA incluyan explícitamente alfabetización en neurociencia para blindar contra neuromitos.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-09601-0" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-09601-0</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Wound Care, 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Simulation-based pressure ulcer/injury education in undergraduate nursing: perceived effectiveness versus demonstrated clinical competence</div>
+          <div class="r10-line">En 61 estudiantes de enfermería tras simulación de manejo de úlceras por presión, la percepción de efectividad (SET-M) no correlacionó con la competencia clínica objetiva medida por OSCE (ρ=-0.129, p=0.321) —diseño de un solo grupo sin control, pero el hallazgo de disociación percepción-competencia es exactamente el mismo patrón que el paper JMIR de ayer sobre scores de plataforma de IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vas a ver más papers de simulación reportando ambos outcomes (SET-M/satisfacción + OSCE/competencia objetiva) en paralelo, porque el gap percepción-competencia se está volviendo un hallazgo recurrente — útil para exigir siempre outcome objetivo (Kirkpatrick 3) en los simulacros de AMAUTA/USAMEDIC, nunca solo encuesta de satisfacción.</div>
+          <a class="r10-link" href="https://doi.org/10.12968/jowc.2026.0374" target="_blank" rel="noopener">↗ doi.org/10.12968/jowc.2026.0374</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 5 sep 2026 · preprint · 2026-09-05</div>
+          <div class="r10-title">Artificial Intelligence Use and Its Cognitive and Psychological Correlates Among Medical and Allied Health Students in Ibadan, Nigeria</div>
+          <div class="r10-line">Encuesta transversal a 365 estudiantes de salud en Nigeria: 92.3% usa IA para fines académicos (43% a diario), con asociación positiva débil con reflexión cognitiva (r=0.120) pero los usuarios diarios aceptaron respuestas de IA sin verificar su exactitud casi el doble que los usuarios ocasionales (62.8% vs 41.8%) —diseño transversal, sin grupo control, pero el dato de verificación es accionable.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la brecha &#39;uso alto de IA vs. baja verificación&#39; se va a volver el argumento central para exigir módulos obligatorios de alfabetización en IA en currículos de salud — encaja directo con la insistencia de Javier en evidencia proporcional al claim al usar IA en sus propios bancos.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10616911/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10616911/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Health Information Management, 5 sep 2026 · paper · 2026-09-05</div>
+          <div class="r10-title">Stroke clinical documentation education program in Australia and New Zealand</div>
+          <div class="r10-line">Programa educativo de 4 módulos (video de 10 min) para mejorar documentación clínica de ictus en clínicos y especialistas en codificación: el número de respuestas correctas en el post-test subió de mediana 3 a 5 (p&lt;0.001) en 41 participantes —diseño pre-post de un solo grupo, sin control, pero el formato ultracorto y medible es replicable.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los micro-módulos de 10 minutos con pre/post-test van a seguir ganando terreno sobre los cursos largos para actualizar conocimiento puntual — un formato que AMAUTA podría adaptar para &#39;parches&#39; de conocimiento específico en el banco de Residentado en vez de rehacer un curso entero.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/18333583261453569" target="_blank" rel="noopener">↗ doi.org/10.1177/18333583261453569</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">F1000Research (preprint), 3 sep 2026 · preprint · 2026-09-03</div>
+          <div class="r10-title">Sample size determination across study designs in health professions education research: a methodology guide</div>
+          <div class="r10-line">Guía metodológica que organiza la lógica de cálculo de tamaño muestral por tipo de diseño en investigación de educación médica (comparaciones de dos grupos, pre-post, ensayos educativos por clústeres, Delphi, encuestas), señalando que el cálculo de muestra es uno de los elementos peor reportados en este campo — relevante para Javier como investigador RENACYT que publica en educación médica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta guía se va a volver referencia de cita rápida en la sección de métodos de papers de educación médica en los próximos meses — vale tenerla a mano antes de diseñar el próximo estudio o ensayo educativo publicable de AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.12688/f1000research.185853.2" target="_blank" rel="noopener">↗ doi.org/10.12688/f1000research.185853.2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open, 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Impact of the standardised patient teaching method on medical students&#39; clinical reasoning competence: a systematic review protocol</div>
+          <div class="r10-line">Protocolo registrado en PROSPERO (CRD420251163882) de una revisión sistemática que sintetizará el efecto del método de paciente estandarizado sobre razonamiento clínico en estudiantes de medicina, con Cochrane RoB 2 y meta-análisis si es factible — todavía sin resultados, pero marca qué síntesis de alto nivel viene en camino.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: cuando esta SR se publique (probablemente en 6-12 meses) va a ser la referencia estándar para justificar o cuestionar inversión en pacientes estandarizados versus otras formas de práctica de razonamiento clínico en Residentado — vale poner una alerta para no perderla.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2025-114495" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-114495</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 3 sep 2026 · preprint · 2026-09-03</div>
+          <div class="r10-title">Professionalism as a developmental competency: insights from workplace-based assessment in Brazilian pediatric residency</div>
+          <div class="r10-line">Evaluación en el lugar de trabajo (P-MEX brasileño) a 27 residentes de pediatría: los residentes de tercer año tuvieron puntajes significativamente MÁS bajos en manejo del tiempo y profesionalismo global que los de primer/segundo año —diseño transversal de un solo centro, sin control, pero el hallazgo contraintuitivo (el profesionalismo no sube linealmente con la antigüedad) es relevante para el diseño de evaluación por competencias.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vas a ver más evidencia de que el profesionalismo autopercibido/observado NO es monótonamente creciente con el año de residencia —útil para que AMAUTA no asuma que basta con &#39;más tiempo en el sistema&#39; para blindar profesionalismo, y en cambio diseñe feedback estructurado específico por año.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10451915/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10451915/v1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El RCT de MAPLE-CR muestra que un tutor de IA diseñado como andamiaje de razonamiento (no como buscador de respuestas) sí produce ganancia de aprendizaje medible frente a autoestudio — pero el propio estudio admite que su análisis de potencia post hoc no la confirma, un matiz honesto que rara vez se destaca en el hype de IA educativa.</li><li>En admisión médica en EE.UU., el uso probable de IA generativa en ensayos subió de 2.7% a 12.3% entre 2021-22 y 2023-24, pero no dio ninguna ventaja de admisión — contraintuitivo frente al miedo de que &#39;todos hacen trampa y les funciona&#39;.</li><li>51.21% de docentes técnico-vocacionales brasileños cree en al menos un neuromito, y el más prevalente (87%) es justamente &#39;estilos de aprendizaje preferidos&#39; — el neuromito más desmentido en la literatura sigue siendo el más creído en el aula real.</li><li>Dato accionable: en tres estudios distintos de esta semana (simulación de úlceras por presión, scores de IA educativa, ayer también en colonoscopía) la percepción de qué tan bien se hizo algo sigue sin correlacionar con el desempeño objetivo medido — cualquier sistema de evaluación en AMAUTA/USAMEDIC necesita ambos outcomes, nunca solo uno.</li><li>Contraintuitivo del estudio de profesionalismo en residentes de pediatría brasileños: los de tercer año, con más experiencia clínica, puntuaron PEOR en manejo del tiempo y profesionalismo global que los de primer/segundo año — más antigüedad no es sinónimo de más profesionalismo observable.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si un tutor de IA diseñado como andamiaje socrático (MAPLE-CR) sí mueve el aprendizaje de razonamiento clínico en internos, ¿qué estructura de prompts y roles simulados (paciente/tutor/par) valdría la pena portar a un módulo de razonamiento clínico psiquiátrico en los bancos de USAMEDIC?</li><li>¿Vale la pena correr una encuesta rápida de neuromitos (adaptada del instrumento brasileño) entre los docentes de AMAUTA, dado que el mito de &#39;estilos de aprendizaje&#39; sigue tan extendido incluso entre formadores?</li><li>Si el uso de IA en ensayos de admisión no da ventaja real, ¿qué política de transparencia (declarar uso de IA en vez de prohibirlo/detectarlo) sería más honesta y menos punitiva para los procesos de selección o evaluación escrita que maneja Javier?</li><li>¿Qué versión corta (tipo el módulo de 10 minutos de documentación de ictus) podría reemplazar algún bloque largo y poco medido del banco de Residentado con un pre/post-test que sí demuestre ganancia de conocimiento?</li><li>Si el profesionalismo evaluado en el lugar de trabajo no crece linealmente con el año de residencia, ¿qué feedback específico por año (no genérico) debería incorporar un sistema de evaluación de competencias en Residentado o en los comités de ética de HVLH?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT sobre el estudio brasileño de neuromitos: &#39;87% de los docentes cree que hay que enseñar según el estilo de aprendizaje preferido — la neurociencia dice que no&#39;, con la cifra como gancho para el libro de neurociencia educativa.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Nota para el libro de neurociencia educativa: capítulo o sección citando el hallazgo de disociación percepción-competencia (simulación de úlceras por presión + score de plataforma de IA) como patrón repetido, no anécdota aislada.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Diseñar y proponer un módulo de razonamiento clínico psiquiátrico inspirado en MAPLE-CR (IA como tutor socrático con roles simulados) para USAMEDIC/AMAUTA, documentando el diseño como posible paper de educación médica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post corto sobre el dato nigeriano: &#39;usar IA a diario para estudiar se asocia con aceptar sus respuestas sin verificarlas casi el doble de veces&#39; — usarlo para justificar por qué AMAUTA exige verificación activa en cualquier tutor de IA que use.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Guardar la guía de F1000Research sobre cálculo de tamaño muestral en educación médica como referencia de método para el próximo estudio o ensayo educativo que Javier quiera publicar desde AMAUTA/USAMEDIC.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JMIR Medical Education</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Journal of Wound Care</span><span class="tag ">Health Information Management</span><span class="tag ">BMJ Open</span><span class="tag ">Research Square (preprint)</span><span class="tag ">F1000Research (preprint)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (búsqueda estructurada por fecha y tipo de publicación, verificación de metadata) · PubMed eutils (efetch de verificación cuando Europe PMC no traía abstract) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv, descubrimiento inicial) · WebSearch (site:pubmed.ncbi.nlm.nih.gov, verificación cruzada). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 6 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
