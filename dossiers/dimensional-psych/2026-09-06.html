@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-06 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">6 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">154</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">48</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychological Medicine · 2026-09-04 · rct</div>
+        <h3 class="r3-title">Ensayo multicéntrico aleatorizado del Protocolo Unificado transdiagnóstico para adolescentes con síntomas subclínicos de ansiedad y depresión</h3>
+        <p class="r3-hook">Fonseca-Pedrero, Pérez-Esteban y equipo publican en Psychological Medicine un ECA multicéntrico con 676 adolescentes (12-18 años) que compara el Protocolo Unificado para Adolescentes (UP-A) —una intervención transdiagnóstica que trata mecanismos compartidos de ansiedad y depresión en vez de diagnósticos separados— contra relajación progresiva activa como control, con seguimiento a 6 y 12 meses, registro clínico (NCT05322642) y adherencia alta (~78%) en ambos brazos. Para tu libro de psicopatología dimensional esto es evidencia de traducción clínica real, no solo teoría HiTOP/RDoC sobre estructura: es un protocolo transdiagnóstico ya probado en 676 adolescentes con datos a 12 meses, el tipo de evidencia que necesitas para el capítulo que conecta dimensionalidad con intervención escalable. Es material directo para AMAUTA/USAMEDIC como caso de enseñanza de &#39;tratar el factor compartido, no el diagnóstico&#39; en población adolescente, y para tu línea de educación médica de precisión como ejemplo de diseño de ECA pragmático transdiagnóstico que vale la pena diseccionar en clase.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/s0033291726105443" target="_blank" rel="noopener">↗ doi.org/10.1017/s0033291726105443</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">bioRxiv (preprint) · 2026-09-04 · preprint</div>
+        <h3 class="r3-title">Contaminación del aire, adversidad temprana y amígdala: correlatos ambientales de la psicopatología bifactorial en preadolescentes</h3>
+        <p class="r3-hook">Del Giacco, Rosario y equipo (cohorte ABCD, N=3.601 niños de 9-10 años) muestran en un preprint que la adversidad temprana se asocia con mayores puntajes bifactoriales de psicopatología general, internalizante y externalizante específica, que la exposición a PM2.5 modera esa asociación en el componente externalizante, y que en niños con más adversidad, un menor volumen amigdalino basolateral-paralaminar se vincula con más psicopatología general y externalizante. Para tu marco dimensional esto cierra la brecha entre &#39;el factor p existe estadísticamente&#39; y &#39;el factor p tiene un correlato ambiental y cerebral manipulable&#39; —útil para el capítulo de fundamentos ambientales/neurodesarrollo del libro. Como pieza de precision-psychiatry y de tu línea TDAH/TEA (la cohorte ABCD es la misma que usas para hablar de neurodivergencia), te da un ángulo de contenido poco explotado: el aire que respira tu paciente pediátrico modula su riesgo de psicopatología general, no solo su asma.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.08.31.748438" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.08.31.748438</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience · 2026-09-04 · review</div>
+        <h3 class="r3-title">Desregulación neurodesarrollo del sistema de recompensa y riesgo de adicción en TDAH: hacia una psiquiatría de precisión por subgrupos</h3>
+        <p class="r3-hook">Custodio, Yi, Kim y Cheong publican una revisión que reencuadra el vínculo TDAH-trastorno por uso de sustancias: en vez de tratar la comorbilidad como un hecho categorial, proponen la desregulación del circuito de recompensa (dopaminérgico, frontoestriatal) como mecanismo unificador transdiagnóstico y plantean estratificar el riesgo de adicción por subgrupos de psiquiatría de precisión en vez de por el diagnóstico TDAH completo. Esto es oro puro para tu línea TDAH/TEA y tu pilar de precision-psychiatry: te da el argumento mecanístico —no solo estadístico— de por qué &#39;TDAH&#39; no predice adicción de forma uniforme, y un marco de subtipificación por circuito de recompensa que sirve tanto para el capítulo de neurodesarrollo del libro como para contenido AMAUTA sobre por qué el residente no debería tratar &#39;TDAH + riesgo de adicción&#39; como una sola entidad de manejo. Al ser una revisión reciente y sintética, funciona como bibliografía ancla para justificar el modelo dimensional frente a residentes escépticos del enfoque categorial en el ENAM.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02370-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02370-3</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · editorial</div>
+          <div class="r10-title">TMS guiada por fMRI para modular la cognición social en adultos con autismo</div>
+          <div class="r10-line">Schilbach (EPA 2026) muestra que TMS neuronavegada guiada por fMRI sobre la corteza temporoparietal derecha mejora selectivamente el procesamiento de información social en adultos con autismo, evaluado con una tarea computacional de aprendizaje probabilístico, frente a estimulación simulada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la estimulación cerebral guiada por neuroimagen funcional (no por diagnóstico) se va a volver tu ejemplo de cabecera para explicar neuromodulación de precisión en TEA — material listo para un video AMAUTA sobre &#39;el objetivo de estimulación no es el diagnóstico, es el circuito&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10325" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10325</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Retos de clasificación en perfiles heterogéneos de alto potencial intelectual y autismo sin discapacidad intelectual</div>
+          <div class="r10-line">Lavenne, Planche y Vaivre-Douret (EPA 2026) argumentan que perfiles de alto potencial intelectual y autismo sin discapacidad intelectual pueden compartir conductas superficialmente similares pero reflejar mecanismos self-other distintos, complicando la clasificación diferencial.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este tipo de trabajo alimenta tu argumento de que &#39;parece TEA&#39; y &#39;es TEA&#39; no son lo mismo sin mirar el mecanismo — caso clínico natural para tu línea de neurodivergencia y para razonamiento clínico diferencial en el Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.11109" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.11109</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Redes funcionales cerebrales a gran escala subyacentes a autolesión no suicida, adicción y sus funciones en trastornos psiquiátricos juveniles</div>
+          <div class="r10-line">Liu, Zhang y equipo (EPA 2026) mapean redes funcionales cerebrales a gran escala que subyacen a la autolesión no suicida, la adicción y su función psicológica en una muestra transdiagnóstica de psiquiatría infantojuvenil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la autolesión no suicida como nodo transdiagnóstico de red —no como síntoma exclusivo de un trastorno— te da munición extra para el capítulo de network psychopathology del libro, con aplicación directa a la población adolescente que ves en consulta y contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10254" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10254</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Medicina de precisión en esquizofrenia: estratificación de pacientes por perfiles de biomarcadores inflamatorios, metabólicos y del eje intestino-cerebro mediante análisis de perfiles latentes</div>
+          <div class="r10-line">Couce-Sánchez, Dal Santo y equipo (EPA 2026) usan análisis de perfiles latentes sobre biomarcadores inflamatorios, metabólicos y del eje intestino-cerebro para estratificar pacientes con esquizofrenia más allá del diagnóstico único.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el análisis de perfiles latentes biológicos se va a consolidar como la herramienta estadística puente entre lo dimensional y el biomarcador accionable — vale la pena que lo menciones como método, no solo como hallazgo, en el capítulo de psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10536" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10536</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · paper</div>
+          <div class="r10-title">Staging integrativo del trastorno bipolar: incorporando biomarcadores a la progresión por etapas (estudio BOARDING-PASS)</div>
+          <div class="r10-line">Girone, Cremaschi y equipo (EPA 2026) presentan el diseño del estudio BOARDING-PASS, que integra biomarcadores clínicos, neuroimagen y machine learning para modelar la progresión por etapas del trastorno bipolar más allá de las fases clínicas tradicionales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: BOARDING-PASS es el prototipo de estudio de staging multimodal que vas a querer citar cuando expliques a residentes por qué &#39;trastorno bipolar&#39; no es una etapa fija sino una trayectoria neuroprogresiva medible.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10721" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10721</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · editorial</div>
+          <div class="r10-title">Desregulación emocional en anorexia nerviosa y trastorno límite de personalidad: solapamientos y distinciones</div>
+          <div class="r10-line">Kucharska (EPA 2026) usa fMRI con imágenes emocionales para comparar reevaluación cognitiva y supresión emocional entre anorexia nerviosa y trastorno límite de personalidad, dos condiciones que comparten desregulación emocional como mecanismo transdiagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la desregulación emocional medida con las mismas tareas fMRI en AN y TLP es el tipo de dato transdiagnóstico compartido/específico que puedes usar para ilustrar la diferencia entre &#39;espectro compartido&#39; y &#39;mecanismo específico&#39; en tu capítulo de emoción y psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10378" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10378</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">American Journal of Human Genetics · 2026-09-04 · paper</div>
+          <div class="r10-title">Más allá de los exones: heredabilidad no codificante y poligenicidad en rasgos y trastornos humanos complejos</div>
+          <div class="r10-line">Fuhrer, Shadrin y equipo muestran que la contribución de regiones exónicas a la heredabilidad cae del 22% al 13% a medida que aumenta la poligenicidad, siendo los fenotipos psiquiátricos y cognitivos los más poligénicos y menos dependientes de variantes codificantes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este hallazgo genético-metodológico (no clínico) te da respaldo cuantitativo para argumentar en el libro por qué buscar &#39;el gen de la esquizofrenia&#39; nunca iba a funcionar — la arquitectura poligénica extrema de lo psiquiátrico es casi anti-categorial por diseño.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ajhg.2026.08.012" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ajhg.2026.08.012</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Assessment · 2026-09-04 · paper</div>
+          <div class="r10-title">Midiendo el sobrecontrol como rasgo: ¿la medición encaja con la teoría?</div>
+          <div class="r10-line">Balling, Scott, Lang y Samuel encuentran que los dos instrumentos estándar de RO-DBT para medir el estilo de afrontamiento sobrecontrolado no muestran una estructura unidimensional clara, cuestionando la validez de constructo de una diana transdiagnóstica ya en uso clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este hallazgo negativo —la medida no valida como se pensaba— es justo el material para el capítulo de &#39;medir mal lo dimensional es peor que no medirlo&#39;, advertencia útil antes de que RO-DBT se popularice más en Latinoamérica.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/10731911261479237" target="_blank" rel="noopener">↗ doi.org/10.1177/10731911261479237</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · editorial</div>
+          <div class="r10-title">Bases teóricas y clínicas de los modelos de staging en trastornos de la conducta alimentaria</div>
+          <div class="r10-line">Fernández-Aranda y Jiménez-Murcia (EPA 2026) revisan las bases teóricas y clínicas de los modelos de staging en trastornos de la conducta alimentaria, enmarcándolos como aplicación directa de principios de medicina de precisión al curso evolutivo de la enfermedad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: complementa la pieza de staging clínico en TCA que ya viste ayer — dos charlas del mismo simposio EPA convergiendo en staging como puente entre psicopatología dimensional y medicina de precisión, argumento que puedes usar tal cual en el capítulo correspondiente.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10380" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10380</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry · congreso EPA 2026 · 2026-09-04 · editorial</div>
+          <div class="r10-title">Mejorando la predicción de trastornos psiquiátricos relacionados con estrés mediante psiquiatría computacional</div>
+          <div class="r10-line">Marinić y Mužinić Marinić (EPA 2026) revisan cómo la psiquiatría computacional puede mejorar la predicción de trastornos relacionados con estrés (adaptativo, estrés agudo, TEPT) integrando datos heterogéneos en modelos predictivos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: es una revisión narrativa delgada, pero sirve como mapa rápido de referencias 2020-2025 en psiquiatría computacional aplicada a estrés — útil para armar rápido una diapositiva AMAUTA sin rastrear tú mismo toda la literatura.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.11878" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.11878</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El factor p bifactorial ya no es solo estadística de cuestionarios: en niños de 9-10 años del estudio ABCD, la contaminación por PM2.5 modera cuánto la adversidad temprana empuja síntomas externalizantes — la dimensionalidad tiene ahora un dial ambiental medible en microgramos por metro cúbico.</li><li>TDAH no predice adicción de forma pareja: la revisión de Custodio et al. sugiere que el riesgo real vive en subgrupos de desregulación dopaminérgica-frontoestriatal, no en la etiqueta diagnóstica completa — trata &#39;TDAH&#39; como umbral de riesgo heterogéneo, no como destino.</li><li>Las dos herramientas estándar para medir &#39;sobrecontrol&#39; en RO-DBT (ASC-WP y OCTRS) no pasan la prueba de unidimensionalidad — un target transdiagnóstico ya en uso clínico puede estar mal medido, y nadie lo había puesto a prueba hasta ahora.</li><li>Reevaluación cognitiva vs. supresión emocional no distingue tan limpio entre anorexia y TLP como se asume: ambas comparten desregulación emocional como mecanismo, lo específico está en cómo cada una la expresa, no en si la tienen.</li><li>El staging en psiquiatría deja de ser metáfora oncológica cuando se combina con biomarcadores y ML (BOARDING-PASS): la &#39;etapa&#39; de un paciente bipolar es candidata a convertirse en un número, no solo en una impresión clínica.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuánto de la variabilidad en respuesta a un protocolo transdiagnóstico como el UP-A se explica por el subtipo de factor general del paciente, y no por el diagnóstico de entrada (ansiedad vs. depresión subclínica)?</li><li>Si el riesgo de adicción en TDAH depende del subgrupo de desregulación de recompensa, ¿qué marcador clínico de bajo costo —más allá de neuroimagen— podría aproximar ese subgrupo en consulta de Residentado en Perú?</li><li>¿Vale la pena adoptar el análisis de perfiles latentes sobre biomarcadores rutinarios (inflamación, metabólico) como paso intermedio hacia psiquiatría de precisión, incluso sin acceso a neuroimagen o genómica?</li><li>¿Qué pasaría si aplicaras el mismo marco de staging biomarcador+ML de BOARDING-PASS (bipolar) a una cohorte peruana con TEA/TDAH para modelar trayectorias de neurodesarrollo en vez de solo fases del estado de ánimo?</li><li>Si los instrumentos de sobrecontrol de RO-DBT fallan en unidimensionalidad, ¿qué otras &#39;dianas transdiagnósticas&#39; que usas o enseñas en AMAUTA nunca han sido puestas a prueba de validez de constructo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/reel AMAUTA: &#39;TDAH no es un diagnóstico, es un umbral de riesgo heterogéneo&#39; usando el modelo de subgrupos de desregulación de recompensa de Custodio et al. como gancho visual (circuito dopaminérgico + subtipos).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o carrusel sobre el hallazgo de PM2.5 x adversidad temprana x amígdala: &#39;el aire que respira tu paciente es un factor de riesgo psiquiátrico dimensional&#39;, con un gráfico simple bifactor + exposición ambiental.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro (fundamentos ambientales/neurodesarrollo): usar el estudio ABCD de contaminación-adversidad-amígdala como caso ancla de &#39;el factor p tiene biología ambiental&#39;, citando el modelo bifactor y el volumen amigdalino basolateral-paralaminar.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota/comentario breve proponiendo validar en español/Perú los instrumentos de sobrecontrol de RO-DBT (ASC-WP, OCTRS) antes de popularizarlos clínicamente, dado el hallazgo negativo de Balling et al.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Clase ENAM/Residentado sobre razonamiento clínico diferencial usando el caso de perfiles de alto potencial intelectual vs. autismo sin discapacidad intelectual (Lavenne et al.) como ejercicio de &#39;conducta similar, mecanismo distinto&#39;.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">European Psychiatry (congreso EPA 2026)</span><span class="tag ">Psychological Medicine</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">American Journal of Human Genetics</span><span class="tag ">Assessment</span><span class="tag ">bioRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC / PubMed · bioRxiv (vía Europe PMC) · European Psychiatry - abstracts congreso EPA 2026 (PMC). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 6 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
