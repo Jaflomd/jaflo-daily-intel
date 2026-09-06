@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-06 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">6 de septiembre de 2026 · 2026-W36 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">218</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Trends in Pharmacological Sciences · Toutain PL, Gandia P, Concordet D — 5 sep 2026 · editorial · 2026-09-05</div>
+        <h3 class="r3-title">Why pharmacological concepts survive despite scientific progress</h3>
+        <p class="r3-hook">Los autores identifican tres mecanismos por los que un concepto científico sobrevive pese a evidencia en contra: amnesia (se olvida por qué se adoptó), institucionalización (se vuelve estándar curricular/regulatorio) y reificación (un constructo operacional se confunde con realidad biológica) — y advierten que la IA entrenada con literatura científica hereda esos mismos sesgos. Le importa a Javier porque nombra con precisión el obstáculo exacto que enfrenta su programa de investigación dimensional (HiTOP/RDoC): el DSM/ICD categorial no resiste por evidencia sino por institucionalización y reificación, justo los mecanismos que este paper formaliza, y la advertencia sobre IA conecta directo con su línea de IA aplicada a investigación. Cómo usarlo: citarlo en la introducción metodológica de su libro de psicopatología como marco explícito para argumentar por qué la ortodoxia categorial resiste al cambio, y como caso AMAUTA de pensamiento crítico sobre por qué lo que se enseña en la facultad no siempre está sostenido por evidencia vigente.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.tips.2026.08.008" target="_blank" rel="noopener">↗ doi.org/10.1016/j.tips.2026.08.008</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Perspectives on Medical Education · Parsons AS, Kelleher M, Bowen J, Warburton KM, Ryan MS, van Mook WNKA, Durning SJ — 4 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">Phenotypes of Management Reasoning Struggle in Postgraduate Medical Education</h3>
+        <p class="r3-hook">Un estudio cualitativo con 20 directores de programa y jefes de comités de competencia de EE.UU. identifica cuatro fenotipos específicos de dificultad en el razonamiento de MANEJO —distinto del diagnóstico—: guiones de manejo limitados, incapacidad de cambiar de curso, triage/ejecución deficiente de tareas y falla de calibración sobre cuánta intervención amerita una situación; hoy se malinterpretan genéricamente como problemas de &#39;gestión del tiempo&#39; o &#39;comunicación&#39;. Le importa a Javier de forma directa: su línea de razonamiento clínico y su rol evaluando/remediando residentes en AMAUTA/USAMEDIC necesitan justo este vocabulario, porque el &#39;no rinde en el ENAM/Residentado&#39; hoy se diagnostica sin distinguir cuál de los cuatro fenotipos está fallando. Cómo usarlo: adaptarlo como rúbrica de diagnóstico en simulacros AMAUTA para identificar el fenotipo exacto de cada residente y diseñar remediación específica en vez de genérica — material directo para el pilar de razonamiento de su Competency Lab.</p>
+        <a class="r3-link" href="https://doi.org/10.5334/pme.2960" target="_blank" rel="noopener">↗ doi.org/10.5334/pme.2960</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Advances in Health Sciences Education · Lee CY, Lai HY, Lee CH, Chen MM, Yau SY — 5 sep 2026 · paper · 2026-09-05</div>
+        <h3 class="r3-title">Collaborative clinical reasoning in the ICU: how teams construct shared understanding in real time</h3>
+        <p class="r3-hook">Analizando 27 horas de video de equipos de UCI, los autores identifican tres mecanismos interaccionales por los que el razonamiento clínico se construye en equipo y no solo en la mente individual: clarificación progresiva (construcción del problema por capas desde distintas profesiones), alineación condicional (explorar hipótesis divergentes sin romper la cohesión del equipo) y coordinación situada (cómo la posición física y los objetos estructuran quién participa). Le importa a Javier porque su línea de razonamiento clínico y su trabajo en comités de ética (HVLH) suelen tratar el razonamiento como proceso individual evaluable, y este marco da lenguaje empírico para enseñar y evaluar razonamiento DE EQUIPO, relevante tanto para residentes que rotan en AMAUTA como para el diseño de comités colegiados. Cómo usarlo: como estructura de un módulo o capítulo sobre &#39;razonamiento clínico distribuido&#39;, entrenando a residentes a reconocer y practicar los tres mecanismos explícitamente en pase de visita y discusión de casos.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10459-026-10575-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s10459-026-10575-3</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Regulatory Toxicology and Pharmacology · Calabrese EJ — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Hermann Muller&#39;s X-ray reverse mutation hypothesis: Why his efforts to rescue his gene mutation claim were doomed to fail</div>
+          <div class="r10-line">Un análisis histórico muestra por qué el intento de Hermann Muller de &#39;revertir&#39; mutaciones inducidas por rayos X estaba condenado desde el diseño: un desajuste mecanístico entre el daño real (deleciones grandes) y la reversión precisa que necesitaba demostrar.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se convertirá en caso de enseñanza estándar sobre cómo reconocer una hipótesis mal diseñada desde el experimento mismo — material directo para un módulo AMAUTA de pensamiento crítico en investigación.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.yrtph.2026.106234" target="_blank" rel="noopener">↗ doi.org/10.1016/j.yrtph.2026.106234</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Annals of Vascular Surgery · Salomon B, Chen D, Chainey J, Witt E, Srivastava S — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Cognitive Task Analysis of Lower Extremity Angiography Interpretation and Intraoperative Decision-Making</div>
+          <div class="r10-line">Un análisis de tareas cognitivas (CTA) con cirujanos vasculares expertos extrae y estructura los heurísticos tácitos —invisibles para el residente— que usan para decidir la agresividad del tratamiento en angiografía de extremidad inferior.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la metodología CTA (entrevistas &#39;think-aloud&#39; + codificación) se replicará como plantilla para extraer heurísticos clínicos tácitos en otras especialidades — un método que Javier podría adaptar para documentar razonamiento experto en psiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.avsg.2026.08.038" target="_blank" rel="noopener">↗ doi.org/10.1016/j.avsg.2026.08.038</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the American Geriatrics Society · Stalter LN et al. — 5 sep 2026 · rct · 2026-09-05</div>
+          <div class="r10-title">Best Case/Worst Case: A Multisite Randomized Trial of Scenario Planning for Patients With Late-Stage Kidney Disease</div>
+          <div class="r10-line">Un ensayo aleatorizado multicéntrico (68 nefrólogos, 268 pacientes) muestra que entrenar médicos en la herramienta de comunicación &#39;mejor caso/peor caso&#39; no mejoró los cuidados paliativos y se asoció a MÁS inicio de diálisis y PEOR calidad de vida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este resultado negativo reabrirá el debate sobre por qué frameworks de decisión compartida bien intencionados pueden empeorar el desenlace sin ajuste al contexto — advertencia directa para cualquier herramienta de decisión que Javier enseñe en AMAUTA sin medir su efecto real.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jgs.70695" target="_blank" rel="noopener">↗ doi.org/10.1111/jgs.70695</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">AAPS Journal · Krishna R — 4 sep 2026 · editorial · 2026-09-04</div>
+          <div class="r10-title">Betting on Biology: Rethinking Probability as the Currency of Risk in Biotechnology Portfolios</div>
+          <div class="r10-line">Un comentario disecciona cómo los índices de probabilidad (éxito técnico/regulatorio, VPN ajustado por riesgo) usados para decidir inversión en biotecnología se aplican sin precisión conceptual, distorsionando decisiones de portafolio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: alimentará una discusión más amplia sobre el mal uso de &#39;números de probabilidad&#39; como falsa precisión en decisiones de alto riesgo — aplicable a cómo Javier prioriza qué líneas de investigación o proyectos de contenido tienen mejor ROI/leverage.</div>
+          <a class="r10-link" href="https://doi.org/10.1208/s12248-026-01290-3" target="_blank" rel="noopener">↗ doi.org/10.1208/s12248-026-01290-3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">PharmacoEconomics · Yiu S et al. — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Bayesian Dynamic Borrowing to Enhance Evidence for New Therapies</div>
+          <div class="r10-line">Un framework bayesiano (&#39;dynamic borrowing&#39;) muestra cómo combinar evidencia histórica, un desenlace intermedio concurrente y un estimado impreciso del ensayo actual, controlando error tipo I, para decidir sobre terapias con desenlaces raros o tardíos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se volverá referencia estándar en evaluación de tecnología sanitaria — ejemplo de razonamiento bayesiano riguroso trasladable al pilar de precisión psiquiátrica de Javier, donde también escasean datos y los desenlaces tardan en aparecer.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s40273-026-01656-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s40273-026-01656-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Irish Journal of Medical Sciences · Akturan S, Kurt AK, Kumlu G, Güner Y — 5 sep 2026 · paper · 2026-09-05</div>
+          <div class="r10-title">Development of a self-reported clinical decision-making competence scale for medical students</div>
+          <div class="r10-line">Se desarrolla y valida una escala de 27 ítems, unidimensional y con excelente confiabilidad (α=0.971), para que estudiantes de medicina autoevalúen su competencia en toma de decisiones clínicas: cognitiva, ética e interpersonal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: instrumentos así se integrarán a la evaluación formativa de competencias — Javier podría adaptarlo como autoevaluación dentro de AMAUTA/USAMEDIC antes y después de simulacros ENAM.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11845-026-04589-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s11845-026-04589-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Appetite · Zou Y, Xu X, Zhao L — 5 sep 2026 · paper · 2026-09-05</div>
+          <div class="r10-title">The differences in adolescents&#39; health intertemporal decision-making across different socioeconomic statuses</div>
+          <div class="r10-line">En adolescentes, el bajo estatus socioeconómico (objetivo y subjetivo) se asocia a mayor descuento temporal específicamente frente a comida no saludable —no como efecto general—, confirmado con manipulación experimental del estatus percibido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: reforzará intervenciones de &#39;imaginación del yo futuro&#39; como palanca de cambio conductual, mecanismo trasladable a psicoeducación sobre adherencia en la línea TDAH/TEA de Javier, donde el descuento temporal también es central.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.appet.2026.108772" target="_blank" rel="noopener">↗ doi.org/10.1016/j.appet.2026.108772</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica · Wang X, Sheng G, Zhu Y — 4 sep 2026 · meta-analysis · 2026-09-04</div>
+          <div class="r10-title">Psychological effects of temporal landmarks: A meta-analysis of affective, cognitive, and self-regulatory processes</div>
+          <div class="r10-line">Un meta-análisis (31 estudios, N=13,765) confirma el &#39;efecto de comienzo fresco&#39; de los hitos temporales sobre autorregulación, pero con heterogeneidad altísima (I²=90.8%): el efecto es real pero depende del contexto, no un truco universal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: forzará a la literatura de autoayuda a dejar de vender el &#39;lunes/1º de mes&#39; como palanca mágica y a especificar condiciones de contexto — perla lista para desmontar consejo genérico en contenido IG/YT de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107747" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107747</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Current Opinion in Psychology · Lemmens A — 5 sep 2026 · editorial · 2026-09-05</div>
+          <div class="r10-title">Algorithmic fairness as a human-technology interaction problem</div>
+          <div class="r10-line">El artículo reencuadra la equidad algorítmica no como problema técnico-estadístico sino de interacción humano-tecnología: los algoritmos pueden reproducir o amplificar sesgos humanos, pero también hacer explícitas decisiones antes opacas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este reencuadre &#39;interaccional&#39; se volverá estándar para evaluar herramientas de IA clínica —incluidas las que Javier usa en investigación y educación—, donde el criterio no será solo el algoritmo sino cómo el clínico lo usa e interpreta.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.copsyc.2026.102411" target="_blank" rel="noopener">↗ doi.org/10.1016/j.copsyc.2026.102411</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Perspectives on Medical Education · Bosveld MH et al. — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">The Gordian Knot That Is Patient and Public Involvement in Interprofessional Education</div>
+          <div class="r10-line">Un estudio cualitativo en 4 países europeos (15 grupos focales, 78 participantes) muestra que integrar la voz del paciente en educación interprofesional se estanca por falta de apoyo institucional, pese a promover &#39;simetría epistémica&#39; entre futuros profesionales y pacientes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el concepto de &#39;injusticia epistémica&#39; clínico-paciente ganará tracción para rediseñar programas de formación — encaja directo con el trabajo de Javier en comités de ética (HVLH) y con AMAUTA si busca incorporar voz de paciente real en la enseñanza.</div>
+          <a class="r10-link" href="https://doi.org/10.5334/pme.2261" target="_blank" rel="noopener">↗ doi.org/10.5334/pme.2261</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Entrenar a médicos en un framework de comunicación de decisiones (&#39;mejor caso/peor caso&#39;) puede empeorar desenlaces si no se ajusta al contexto: en el ensayo BC/WC, los pacientes de los médicos entrenados iniciaron MÁS diálisis y reportaron PEOR calidad de vida (JAGS, 2026).</li><li>El &#39;efecto de comienzo fresco&#39; de fechas simbólicas es real pero con heterogeneidad de 91% entre estudios: funciona en unos contextos y no en otros, así que venderlo como truco universal es sobregeneralizar el dato (Acta Psychologica, 2026).</li><li>El error de razonamiento clínico más caro no siempre es diagnóstico: los cuatro fenotipos de &#39;falla de manejo&#39; identificados en residentes ocurren DESPUÉS de llegar al diagnóstico correcto — el residente sabe qué tiene el paciente pero no sabe qué hacer con eso (Perspectives on Medical Education, 2026).</li><li>Los heurísticos de decisión de un cirujano vascular experto son, por definición, invisibles para él mismo: hubo que grabarlo interpretando angiografías y hacerlo narrar en voz alta para poder codificar su propio criterio clínico (Annals of Vascular Surgery, 2026).</li><li>Un concepto científico no sobrevive por ser correcto sino por tres mecanismos sociales —se olvida por qué se adoptó, se institucionaliza, y se confunde el constructo con la realidad biológica—, y la IA entrenada con literatura científica hereda ese mismo sesgo de &#39;reificación&#39; (Trends in Pharmacological Sciences, 2026).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuántos residentes que &#39;no rinden&#39; en el Residentado tienen en realidad razonamiento diagnóstico intacto pero fallan en alguno de los 4 fenotipos de razonamiento de manejo — y estamos remediando el fenotipo equivocado?</li><li>¿Qué constructos de la psiquiatría categorial (DSM/ICD) sobreviven hoy por evidencia y cuáles sobreviven solo por institucionalización o reificación, según el marco de Toutain et al.?</li><li>Si el razonamiento clínico en UCI se construye en equipo mediante mecanismos interaccionales observables, ¿cómo evaluamos hoy a un residente en un examen que solo mide razonamiento individual?</li><li>¿Qué &#39;framework de decisión compartida&#39; usamos en consulta o en AMAUTA que suena bien en teoría pero nunca hemos medido si mejora o empeora el desenlace real, como pasó con Best Case/Worst Case?</li><li>¿Qué heurísticos tácitos usa uno mismo al razonar un caso clínico complejo que nunca ha verbalizado ni enseñado explícitamente — y que un cognitive task analysis podría extraer?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie IG/YT &#39;Los 4 fenotipos del mal razonamiento clínico&#39; — un post por fenotipo (guion limitado, no cambia de curso, mal triage, mal calibrado) con un caso ENAM/Residentado real por cada uno.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología: &#39;Por qué el DSM sobrevive sin evidencia&#39;, usando el marco de amnesia/institucionalización/reificación de Toutain et al. como andamiaje argumentativo explícito.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper corto (carta/comentario) aplicando cognitive task analysis (CTA) a razonamiento diagnóstico psiquiátrico, replicando la metodología de Annals of Vascular Surgery 2026 para extraer heurísticos tácitos de psiquiatras expertos.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA sobre &#39;razonamiento clínico distribuido en equipo&#39; basado en los tres mecanismos de Advances in Health Sciences Education (clarificación progresiva, alineación condicional, coordinación situada), con ejercicio de pase de visita simulado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Perla del día desmontando el &#39;efecto lunes/año nuevo&#39; con el dato de heterogeneidad de 91% del meta-análisis de Acta Psychologica, para la línea de psicoeducación basada en evidencia proporcional al claim.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Trends in Pharmacological Sciences</span><span class="tag highlight">Perspectives on Medical Education</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag ">Regulatory Toxicology and Pharmacology</span><span class="tag ">Annals of Vascular Surgery</span><span class="tag ">Journal of the American Geriatrics Society</span><span class="tag ">AAPS Journal</span><span class="tag ">PharmacoEconomics</span><span class="tag ">Irish Journal of Medical Sciences</span><span class="tag ">Appetite</span><span class="tag ">Acta Psychologica</span><span class="tag ">Current Opinion in Psychology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch directo — MCP de PubMed no disponible en este entorno) · WebSearch sobre Substack/Farnam Street/Reddit (r/LessWrong, r/mentalmodels, r/philosophy)/X/YouTube — intentado pero sin ítems verificables con fecha y contenido confirmables dentro de la ventana 48–72h. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 6 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
