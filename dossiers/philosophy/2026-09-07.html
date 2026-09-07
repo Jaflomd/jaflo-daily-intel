@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-07 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">7 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">18</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">The British Journal of Psychiatry · Ophir Y — 7 sep 2026 · paper · 2026-09-07</div>
+        <h3 class="r3-title">Conceptual challenges in psychiatric nosology: ADHD across six editions of the DSM</h3>
+        <p class="r3-hook">Un análisis textual sistemático de las descripciones de TDAH en las seis ediciones del DSM (1980-2022) aplica principios de filosofía de la ciencia para mapear cinco problemas conceptuales que se han renegociado edición tras edición: umbrales de prevalencia, heterogeneidad de género/diagnóstica, encuadre etiológico, límites con lo médico, y comorbilidad/validez discriminante. Le importa a Javier de forma directa porque ataca el punto exacto de su programa de investigación dimensional (HiTOP/RDoC): demuestra con evidencia textual que el DSM no es un documento estable sino una fotografía de un consenso en movimiento, el mismo argumento que sostiene por qué la psiquiatría categorial no resiste al escrutinio conceptual. Cómo usarlo: citarlo en el capítulo de TDAH de su libro de psicopatología como genealogía conceptual del diagnóstico, y llevarlo a AMAUTA como ejercicio de pensamiento crítico — enseñar a residentes a leer el DSM como objeto histórico en disputa, no como tabla fija que memorizar para el ENAM.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10768" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10768</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Acta Biotheoretica · Lee J, Ross LN — 6 sep 2026 · paper · 2026-09-06</div>
+        <h3 class="r3-title">Causal Explanation from a Conceptual Engineering Perspective: Non-Reductionism, Precision, and Pluralism</h3>
+        <p class="r3-hook">Los autores proponen un marco de &#39;ingeniería conceptual&#39; para la explicación causal en biología y neurociencia con tres tesis: las explicaciones tienden al no-reduccionismo, apuntan a objetivos explicativos precisos en vez de &#39;completos&#39; o multidimensionales, y deben aceptar pluralismo entre distintos tipos de sistemas causales. Le importa a Javier porque es literalmente el andamiaje filosófico que necesita su apuesta por HiTOP/RDoC: en vez de buscar UNA causa completa de un trastorno, el marco justifica formalmente por qué la psiquiatría de precisión debe aceptar explicaciones plurales y precisas según el nivel del sistema (molecular, circuital, conductual) — mecanismo, no cajón categorial. Cómo usarlo: como fundamento filosófico explícito en la introducción metodológica de su libro de neurociencia educativa o del proyecto BMSE, para argumentar con vocabulario técnico por qué &#39;pluralismo causal&#39; no es indecisión sino rigor.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10441-026-09538-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s10441-026-09538-3</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">International Psychogeriatrics · Stratmann MW, Petter J, Kriston L, Schneider BC, König HH, Hajek A — 5 sep 2026 · paper · 2026-09-05</div>
+        <h3 class="r3-title">Networks of episodic and persistent/recurrent depressive symptoms in older adults: results from the Survey of Health, Ageing and Retirement in Europe</h3>
+        <p class="r3-hook">En 8,519 adultos mayores europeos (44% con depresión episódica, 56% persistente/recurrente), los autores construyen redes de síntomas depresivos y encuentran que ni la fuerza global de la red ni su estructura difieren significativamente entre ambos grupos — un resultado nulo que sugiere que las interacciones entre síntomas pesan menos de lo esperado en la cronicidad de la depresión tardía. Le importa a Javier porque es una aplicación directa de network theory, su propia herramienta metodológica en psiquiatría dimensional, y el hallazgo nulo es justo el tipo de dato incómodo que un programa de investigación riguroso necesita reportar en vez de ocultar. Cómo usarlo: como caso de discusión metodológica en su propio trabajo de network analysis (¿qué variable SÍ explica la cronicidad si la conectividad de red no lo hace?), y como ejemplo de humildad epistémica en su Competency Lab — un resultado nulo bien reportado vale más que un ajuste forzado a la hipótesis.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.inpsyc.2026.100266" target="_blank" rel="noopener">↗ doi.org/10.1016/j.inpsyc.2026.100266</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the Science of Food and Agriculture · Huang Y, Zhang M, Yang X, Nie F, Jia X, Wu K — 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">The interplay between emotion and rationality: decoding farmers&#39; cognitive processes in genetically modified maize adoption decisions</div>
+          <div class="r10-line">Con datos de 468 agricultores, un estudio de teoría dual-process muestra que la cognición racional aumenta la disposición a adoptar maíz transgénico, la cognición emocional la inhibe, y la experiencia de cultivo amplifica lo racional mientras reduce lo emocional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este hallazgo alimentará el argumento de que la &#39;experiencia directa&#39; (no solo más información) es la palanca real contra la resistencia emocional a una innovación — modelo trasladable a cómo Javier introduce IA o neuromodulación a colegas escépticos en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jsfa.71025" target="_blank" rel="noopener">↗ doi.org/10.1002/jsfa.71025</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Expert Review of Neurotherapeutics · Moro V, Vianello G, Gambina G, Gobbetto V, Gasparini M, Beccherle M — 6 sep 2026 · review · 2026-09-06</div>
+          <div class="r10-title">The clinical implications of anosognosia in Alzheimer&#39;s disease</div>
+          <div class="r10-line">Una revisión narrativa de 53 estudios mapea modelos teóricos, instrumentos de evaluación e implicancias clínicas de la anosognosia (falla de metacognición sobre el propio déficit) en Alzheimer, y propone un proceso de evaluación en dos pasos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: ese proceso de evaluación en dos pasos se volverá referencia estándar — Javier podría adaptarlo como metáfora clínica para enseñar &#39;metacognición fallida&#39; en otros cuadros (TDAH, TEA) donde también hay brecha entre autopercepción y déficit real.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/14737175.2026.2726416" target="_blank" rel="noopener">↗ doi.org/10.1080/14737175.2026.2726416</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Psychology · Rutenkröger M, Nieke N, Brandes L, Scholl I — 5 sep 2026 · paper · 2026-09-05</div>
+          <div class="r10-title">Negotiating uncertainty and responsibility after a vestibular schwannoma diagnosis: a qualitative study of meaning-making and surgical decision-making</div>
+          <div class="r10-line">Entrevistas cualitativas a 12 pacientes muestran que decidir operarse un schwannoma vestibular es &#39;trabajo emocional, relacional y moral&#39;, no solo procesamiento de información técnica sobre riesgos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: reforzará el giro hacia herramientas de decisión compartida que incorporen explícitamente la dimensión moral/relacional — relevante para cómo Javier entrena consentimiento informado en los comités de ética HVLH.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s40359-026-05506-1" target="_blank" rel="noopener">↗ doi.org/10.1186/s40359-026-05506-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Experimental Child Psychology · Toda R, Toda N, Hagihara H, Kanakogi Y — 6 sep 2026 · paper · 2026-09-06</div>
+          <div class="r10-title">How do children intervene in transgressions? The influence of apology and intervention costs</div>
+          <div class="r10-line">Dos experimentos con niños de 6 años muestran que el castigo es la opción MENOS elegida frente a una transgresión ajena, y que las disculpas y el costo personal modulan con flexibilidad si el niño interviene o no.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: alimentará el debate sobre castigo vs. reparación en crianza y educación — citable en contenido sobre TDAH/TEA de Javier para desmontar el supuesto de que &#39;los niños son punitivos por defecto&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jecp.2026.106654" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jecp.2026.106654</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open · Wang Y, Hu S, Huang Q, Yang H, Zhang Y, Li B — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Impact of the standardised patient teaching method on medical students&#39; clinical reasoning competence: a systematic review protocol</div>
+          <div class="r10-line">Protocolo de revisión sistemática (5 bases de datos) que evaluará si el método de &#39;paciente estandarizado&#39; mejora la competencia de razonamiento clínico y comunicación en estudiantes de medicina.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: sus resultados, cuando salgan, serán evidencia citable para justificar o rediseñar los simulacros con pacientes estandarizados en AMAUTA/USAMEDIC — vale registrar el protocolo para seguirle la pista.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2025-114495" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-114495</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Attention, Perception &amp; Psychophysics · Thomas L, Scerif G, Yusuf H, Laird M, Taylor G, Evans NJ, Manning C — 6 sep 2026 · paper · 2026-09-06</div>
+          <div class="r10-title">Autistic and non-autistic children&#39;s perceptual decision-making in visual orientation and motion tasks and the effect of task instructions</div>
+          <div class="r10-line">Niños autistas y no autistas ajustan igual de bien su estrategia de decisión perceptual (priorizar velocidad o precisión) según instrucciones explícitas, desafiando el supuesto de rigidez cognitiva generalizada en autismo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se sumará a la evidencia que reposiciona la &#39;inflexibilidad&#39; del autismo como específica de contexto, no un rasgo cognitivo global — directamente citable en la línea TEA de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.3758/s13414-026-03330-8" target="_blank" rel="noopener">↗ doi.org/10.3758/s13414-026-03330-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Physical Medicine and Rehabilitation · Arends GR, van Kooij YE, Rutten J, Bolt I, Loos NL, Wouters RM — 5 sep 2026 · paper · 2026-09-05</div>
+          <div class="r10-title">Clinicians&#39; ethical considerations regarding the use of prediction models in hand and wrist care: a qualitative study</div>
+          <div class="r10-line">Un estudio cualitativo encuentra que los clínicos aceptan los modelos predictivos de IA solo cuando &#39;apoyan, no reemplazan&#39; el juicio clínico, priorizando su autonomía profesional y la equidad del cuidado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;apoyo, no reemplazo&#39; se volverá el marco retórico estándar para justificar IA clínica ante comités de ética — aplicable directo a cómo Javier posiciona su línea de IA en investigación y educación ante colegas escépticos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.apmr.2026.08.019" target="_blank" rel="noopener">↗ doi.org/10.1016/j.apmr.2026.08.019</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nursing Ethics · Elsayed GEA, Ramadan OME, Taha WH, Alotaibi A, Alshammari FRT, Eldesoky HAM — 6 sep 2026 · paper · 2026-09-06</div>
+          <div class="r10-title">Caught between care and conviction: Primary health care nurses&#39; moral distress during vaccine-hesitancy encounters in a culturally diverse context</div>
+          <div class="r10-line">Enfermeras de atención primaria en contextos culturalmente diversos reportan distrés moral cuando el deber de proteger al niño choca con la autoridad decisoria de los padres frente a la duda vacunal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: alimentará protocolos de apoyo ético para personal de salud en conflictos de autoridad parental — material directo para el comité de ética HVLH sobre cómo estructurar decisiones cuando el paciente-niño no decide por sí mismo.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/09697330261483628" target="_blank" rel="noopener">↗ doi.org/10.1177/09697330261483628</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research · Salemans RFC, Verwilligen RAF, Geelen SJG, et al. — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Shared Decision-Making in the Management of Deep Partial-Thickness Burns: Development and Implementation of a Multicomponent Decision Aid</div>
+          <div class="r10-line">Una ayuda de decisión multicomponente para quemaduras dérmicas profundas fue usada por el 67% de los pacientes elegibles (28 de 42 casos) y bien recibida, mostrando viabilidad real de la decisión compartida en cuidado agudo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se replicará como plantilla de &#39;decision aid&#39; digital para otras decisiones agudas de alto estrés — modelo aplicable si Javier diseña herramientas de decisión compartida en contextos psiquiátricos urgentes.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/86789" target="_blank" rel="noopener">↗ doi.org/10.2196/86789</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Interdisciplinary CardioVascular and Thoracic Surgery · Hage A, Hage F, Magro CA, Galloway A — 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Surviving or Thriving? Tenets of Shared Decision-Making in Communicating Perioperative Risk Prior to High-Risk Cardiac Surgery</div>
+          <div class="r10-line">Un análisis sobre comunicación de riesgo antes de cirugía cardiaca de alto riesgo propone los principios (&#39;tenets&#39;) que distinguen decisión compartida real de mero trámite informativo, separando &#39;sobrevivir&#39; de &#39;prosperar&#39; tras la cirugía.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: consolidará un vocabulario común de &#39;tenets&#39; de decisión compartida en cirugía de alto riesgo — trasladable a cómo Javier comunica riesgos de neuromodulación (TEC, TMS) a pacientes y familiares.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/icvts/ivag234" target="_blank" rel="noopener">↗ doi.org/10.1093/icvts/ivag234</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El DSM no es un documento estable: seis ediciones de criterios de TDAH muestran que hasta la &#39;validez discriminante&#39; se ha renegociado edición tras edición — lo que enseñas como criterio diagnóstico es una fotografía de un consenso en movimiento, no una verdad fija.</li><li>Una red de síntomas depresivos MÁS conectada no predijo más cronicidad en adultos mayores: el hallazgo nulo de Stratmann et al. recuerda que &#39;conectividad&#39; en un modelo de red no es sinónimo automático de &#39;gravedad clínica&#39;.</li><li>Los agricultores con MÁS experiencia práctica son los que MENOS se dejan llevar por la emoción al decidir adoptar una tecnología nueva: la experiencia directa no aumenta el miedo, lo reduce — contraintuitivo frente al supuesto de que &#39;más exposición genera más cautela&#39;.</li><li>Niños de 6 años eligen NO castigar como primera respuesta ante una transgresión ajena: el castigo es la opción menos común, no la más natural — dato que desmonta el supuesto adultocéntrico de que los niños son punitivos por defecto.</li><li>Son los propios clínicos, no los pacientes, quienes ponen el límite ético a la IA médica: la aceptan solo si &#39;apoya sin reemplazar&#39; su juicio — el freno real a la IA en medicina no vendrá de la tecnología sino de cómo los médicos redefinan su propia autoridad.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuáles de los cinco problemas conceptuales que Ophir identifica en el TDAH (umbral de prevalencia, heterogeneidad de género, encuadre etiológico, límites médicos, validez discriminante) siguen sin resolverse también en los criterios de TEA que AMAUTA usa para preparar el ENAM?</li><li>Si la estructura de red de síntomas depresivos no distingue depresión episódica de persistente en adultos mayores (Stratmann et al.), ¿qué variable explica realmente la cronicidad — y podría un diseño HiTOP/RDoC capturarla mejor que el análisis de red solo?</li><li>¿Qué pasaría si el marco de &#39;ingeniería conceptual&#39; de Lee &amp; Ross (precisión sobre completitud, pluralismo causal) se aplicara a cómo HVLH redacta sus propios criterios de decisión ética, en vez de buscar un único principio rector?</li><li>¿Cómo se traduciría el hallazgo de que la experiencia directa reduce la resistencia emocional a una innovación (maíz transgénico) al diseño de un módulo AMAUTA que busque bajar la resistencia de residentes hacia herramientas de IA?</li><li>Si los clínicos solo aceptan la IA cuando &#39;apoya sin reemplazar&#39; su juicio, ¿qué características concretas de una herramienta de IA en psiquiatría (de precisión o educativa) comunican &#39;apoyo&#39; en vez de &#39;reemplazo&#39; — y cómo se prueba eso empíricamente?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel IG-YT: &#39;El DSM no es un libro sagrado, es un borrador en seis versiones&#39; — usar el análisis de Ophir sobre TDAH (timeline de criterios cambiando edición a edición) como gancho visual para introducir pensamiento crítico sobre nosología a residentes.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología: &#39;Ingeniería conceptual aplicada a la psiquiatría&#39; — usar el marco de Lee &amp; Ross (no-reduccionismo, precisión, pluralismo causal) como fundamento filosófico explícito de por qué HiTOP/RDoC buscan explicaciones plurales y precisas por nivel, no una causa única.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta al editor o nota metodológica corta usando el hallazgo nulo de Stratmann (red de síntomas depresivos sin diferencias significativas) como caso para discutir cuándo un resultado &#39;sin diferencias en red&#39; es ausencia real de señal vs. limitación de muestra o instrumento — aplicado a datos propios de network theory en TDAH/TEA.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo de Competency Lab (comunicación): ejercicio de simulación basado en el marco &#39;apoyo, no reemplazo&#39; (Arends et al.) para que residentes practiquen cómo presentar una herramienta de IA a un paciente o colega escéptico sin sonar defensivo.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Protocolo/idea de paper: adaptar el &#39;decision aid&#39; multicomponente de quemaduras (Salemans et al., 67% de uso real) a decisiones agudas en psiquiatría de urgencia (p. ej. inicio de neuromodulación o cambio de esquema), midiendo tasa de uso real como outcome primario.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">The British Journal of Psychiatry</span><span class="tag ">Acta Biotheoretica</span><span class="tag ">International Psychogeriatrics</span><span class="tag ">Journal of the Science of Food and Agriculture</span><span class="tag ">Expert Review of Neurotherapeutics</span><span class="tag ">BMC Psychology</span><span class="tag ">Journal of Experimental Child Psychology</span><span class="tag ">BMJ Open</span><span class="tag ">Attention, Perception &amp; Psychophysics</span><span class="tag ">Archives of Physical Medicine and Rehabilitation</span><span class="tag ">Nursing Ethics</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">Interdisciplinary CardioVascular and Thoracic Surgery</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI eutils esearch/esummary/efetch, 2026-09-04 a 2026-09-07). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 7 de septiembre de 2026.</div>
+</div>
+</body>
+</html>

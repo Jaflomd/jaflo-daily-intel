@@ -1,0 +1,50 @@
+# ⭐ 🌐 Neurociencia · Triple Red & Neuropsiquiatría — 2026-09-07
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/neuro-triple-network/2026-09-07.html
+
+## 🏆 Top 3
+- [ ] **Robust prediction of irritability from brain functional connectivity in a transdiagnostic psychiatric sample of children and adolescents** — _European Psychiatry (resumen EPA 2026, vol. 69 supl. 1) · 04 sep 2026 · paper_ — [pmc.ncbi.nlm.nih.gov/articles/PMC13441579](https://pmc.ncbi.nlm.nih.gov/articles/PMC13441579/) <!--star:neuro-triple-network|2026-09-07|t3-1-->
+  > Con 1,143 niños y adolescentes de Healthy Brain Network (TDAH, depresión, ansiedad y TEA mezclados) y connectome-based predictive modeling, el equipo aísla dos redes que predicen la irritabilidad medida por Affective Reactivity Index: una red positiva fronto-parietal (control cognitivo top-down) y una red negativa que involucra ganglios basales (motivación/emoción bottom-up); el modelo se valida externamente en una cohorte independiente de depresión (n=129) diferenciando alto/bajo enojo. Esto es exactamente el tipo de evidencia que tu apuesta por HiTOP/RDoC necesita: un síntoma dimensional (irritabilidad) que atraviesa cuatro diagnósticos categoriales vía un mecanismo de red compartido y replicable, no cuatro trastornos separados con su propio 'circuito'. Úsalo en tu libro de psicopatología dimensional como caso de enseñanza y considera si el predictor fronto-parietal/ganglios basales se replica en muestra peruana -ahí hay un paper posible para tu meta RENACYT.
+- [ ] **The Evolution of Deep Brain Stimulation in Psychiatry: Historical Targets and Network Expansion** — _European Psychiatry (resumen EPA 2026, vol. 69 supl. 1) · 04 sep 2026 · review_ — [pmc.ncbi.nlm.nih.gov/articles/PMC13445094](https://pmc.ncbi.nlm.nih.gov/articles/PMC13445094/) <!--star:neuro-triple-network|2026-09-07|t3-2-->
+  > Revisión histórica que traza la migración de dianas de DBS psiquiátrica -cápsula interna anterior (TOC, lesiones), cápsula/estriado ventral (2004), núcleo accumbens (compulsión/anhedonia), núcleo subtalámico (adaptado de Parkinson)- hacia el 'giro network-céntrico' post-2010: hoy el objetivo real es el circuito cortico-estriado-tálamo-cortical (CSTC) completo, no un punto aislado, con dianas nuevas en amígdala, accumbens (adicciones) e ínsula/hipotálamo (anorexia). Es el reencuadre teórico que tu currículo de neuromodulación necesita: pasar de 'diana única' a 'red completa' es la misma lógica que aplicas cuando enseñas psicofarmacología dimensional en vez de 'un fármaco, un síntoma'. Sirve como storyline de 60 segundos para IG/YT (línea de tiempo ALIC→VC/VS→NAc→STN→CSTC) y como argumento para tu libro sobre por qué la psiquiatría de precisión necesita pensar en redes, no en dianas.
+- [ ] **Transcranial photobiomodulation rebalances cortical excitation/inhibition in young adults with attention deficit/hyperactivity disorder** — _medRxiv (preprint) · 04 sep 2026 · preprint_ — [doi.org/10.64898/2026.09.01.26361884](https://doi.org/10.64898/2026.09.01.26361884) <!--star:neuro-triple-network|2026-09-07|t3-3-->
+  > Yuan, Wang, Dang et al. muestran que la fotobiomodulación transcraneal (luz infrarroja, no corriente eléctrica) reequilibra la excitación/inhibición cortical en adultos jóvenes con TDAH y mejora su desempeño en memoria de trabajo, acercándolo a niveles típicos -una vía de neuromodulación no invasiva y de bajo costo frente a TMS/tDCS. Cae directo en la intersección de dos de tus líneas vivas: TDAH/neurodivergencia y neuromodulación de precisión, y es un hallazgo casi sin cobertura en español todavía -oportunidad de gap de contenido. Para AMAUTA es un buen gancho de razonamiento clínico: '¿qué significa reequilibrar E/I cortical con luz?' como pregunta disparadora antes de explicar el modelo de balance excitación/inhibición en TDAH.
+
+## 📡 Radar (10)
+- [ ] **One dose of Psilocybin modulates Brain Activity among Depressive patients: Preliminary Neuroimaging Results from the PSILODAC Study** — _European Psychiatry (resumen EPA 2026) · 04 sep 2026 · paper_ — [pmc.ncbi.nlm.nih.gov/articles/PMC13441741](https://pmc.ncbi.nlm.nih.gov/articles/PMC13441741/) <!--star:neuro-triple-network|2026-09-07|t10-1-->
+  > En 10 pacientes con depresión resistente, una sola dosis de psilocibina (25mg) aumentó la actividad de reposo (ALFF/ReHo) en corteza prefrontal medial/ventrolateral y lóbulo parietal inferior a los 5 días -piloto francés, hipótesis-generador, no evidencia de eficacia.
+  > 🔮 En 12-18 meses vas a ver la primera réplica con n>30 y análisis de red DMN explícito; para tu línea de psiquiatría de precisión, vale la pena mapear ya qué regulación existe en Perú para terapia asistida con psicodélicos antes de que llegue la evidencia de fase 2.
+- [ ] **Functional connectivity associated with the severity of the Anxiety-Tension stage of Emotional Burnout** — _European Psychiatry (resumen EPA 2026) · 04 sep 2026 · paper_ — [pmc.ncbi.nlm.nih.gov/articles/PMC13444674](https://pmc.ncbi.nlm.nih.gov/articles/PMC13444674/) <!--star:neuro-triple-network|2026-09-07|t10-2-->
+  > En 752 universitarios (Kyiv), la etapa de Ansiedad-Tensión del burnout se asocia con hipersincronización alfa fronto-parietal y desincronización beta-alta/gamma, afectando memoria de corto plazo y atención sostenida -EEG de reposo, muestra grande para un estudio de burnout.
+  > 🔮 Un marcador EEG de 3 minutos para detectar burnout temprano en residentes/estudiantes de medicina (tu población AMAUTA) es plausible en 2-3 años si esto se replica fuera de Ucrania; podrías proponerlo como screening piloto en tus cohortes de preparación ENAM.
+- [ ] **Brain connectivity patterns associated with duration of abstinence in methamphetamine use disorder** — _European Psychiatry (resumen EPA 2026) · 04 sep 2026 · paper_ — [pmc.ncbi.nlm.nih.gov/articles/PMC13441602](https://pmc.ncbi.nlm.nih.gov/articles/PMC13441602/) <!--star:neuro-triple-network|2026-09-07|t10-3-->
+  > Con connectome-based predictive modeling (atlas Shen-268) en 85+48 pacientes con trastorno por uso de metanfetamina y 75 controles, la conectividad motor-sensorial↔default mode predice la duración de abstinencia (r=0.51, validado r=0.41 en cohorte independiente) -reorganización de red progresiva, no un interruptor binario.
+  > 🔮 Este tipo de biomarcador de trayectoria (no solo diagnóstico) va camino a volverse estándar en investigación de adicciones; útil para tu línea de psiquiatría de precisión como ejemplo de 'biomarcador de proceso' vs. 'biomarcador de estado'.
+
+---
+
+## 💎 Perlas del día
+- La irritabilidad transdiagnóstica se predice mejor por el balance de red fronto-parietal↔ganglios basales que por la etiqueta diagnóstica (n=1,143): un punto a favor concreto de pensar en dimensiones y no en categorías.
+- La neuromodulación psiquiátrica lleva 25 años migrando de 'una diana' (cápsula anterior, luego accumbens, luego núcleo subtalámico) a 'una red completa' (circuito cortico-estriado-tálamo-cortical) -la ínsula y el accumbens ya son blancos DBS de rutina para TOC y anorexia, no solo para Parkinson.
+- Con una sola dosis de psilocibina ya se detectan cambios de actividad prefrontal/parietal a los 5 días (n=10) -dato hipótesis-generador, no prueba de eficacia; la trampa es tratarlo como si ya fuera evidencia de fase 2.
+- La fotobiomodulación transcraneal (luz infrarroja, no corriente) mejora memoria de trabajo en TDAH reequilibrando excitación/inhibición cortical -una vía de neuromodulación no invasiva y barata, casi sin cobertura en español.
+- En consumo de metanfetamina, la conectividad motor-sensorial↔default mode predice cuánto tiempo lleva alguien abstinente (r=0.51, validado): la recuperación de red es progresiva y medible, no un punto de corte binario de 'días limpio'.
+
+## ❓ Preguntas del día
+- ¿Qué tan generalizable es el predictor de irritabilidad fronto-parietal/ganglios basales (Healthy Brain Network, EEUU) a una muestra clínica peruana o latinoamericana?
+- Si la neuromodulación psiquiátrica ya migró a 'circuito completo' (CSTC), ¿por qué seguimos enseñando psicofarmacología en ENAM/Residentado como 'un fármaco, una diana molecular'?
+- ¿Qué marco ético y regulatorio necesitaría Perú para ofrecer psilocibina en depresión resistente, dado que la evidencia de imagen sigue siendo n=10 y preliminar?
+- ¿La fotobiomodulación transcraneal podría ser una alternativa de bajo costo a TMS/tDCS para TDAH en contextos con poco acceso a neuromodulación especializada?
+- ¿Cómo cambiaría el pronóstico de un paciente con trastorno por uso de sustancias si midiéramos su trayectoria de reorganización de red en vez de solo contar días de abstinencia?
+
+## 💡 Ideas del día
+- (content) Reel/post: 'La psiquiatría dejó de buscar la región dañada y empezó a buscar la red mal sincronizada' -usando la línea de tiempo DBS (cápsula anterior → accumbens → subtalámico → circuito CSTC) como storytelling visual.
+- (paper) Carta/comentario proponiendo replicar el predictor de irritabilidad transdiagnóstica (fronto-parietal/ganglios basales) en una cohorte peruana -conecta directo con tu meta RENACYT Distinguido.
+- (content) Video AMAUTA: '3 biomarcadores de red que ya casi entran a la práctica clínica' (irritabilidad-CPM, DBS-CSTC, conectividad-abstinencia) para enseñar razonamiento clínico basado en evidencia emergente.
+- (book) Sección del libro de psicopatología dimensional: usar el estudio de irritabilidad transdiagnóstica como caso de enseñanza de un síntoma dimensional que cruza TDAH/depresión/ansiedad/TEA vía un mecanismo de red común.
+- (content) Hilo sobre fotobiomodulación transcraneal en TDAH -nicho casi sin cobertura en español, buen ROI/leverage de contenido con evidencia fresca detrás.
+
+---
+_Fuentes: Europe PMC / PubMed · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · medRxiv/bioRxiv API · WebSearch. Atribución a PubMed por sus términos de uso._

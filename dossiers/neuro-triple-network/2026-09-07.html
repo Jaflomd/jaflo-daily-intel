@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-09-07 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">7 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">38</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Psychiatry (resumen EPA 2026, vol. 69 supl. 1) · 04 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">Robust prediction of irritability from brain functional connectivity in a transdiagnostic psychiatric sample of children and adolescents</h3>
+        <p class="r3-hook">Con 1,143 niños y adolescentes de Healthy Brain Network (TDAH, depresión, ansiedad y TEA mezclados) y connectome-based predictive modeling, el equipo aísla dos redes que predicen la irritabilidad medida por Affective Reactivity Index: una red positiva fronto-parietal (control cognitivo top-down) y una red negativa que involucra ganglios basales (motivación/emoción bottom-up); el modelo se valida externamente en una cohorte independiente de depresión (n=129) diferenciando alto/bajo enojo. Esto es exactamente el tipo de evidencia que tu apuesta por HiTOP/RDoC necesita: un síntoma dimensional (irritabilidad) que atraviesa cuatro diagnósticos categoriales vía un mecanismo de red compartido y replicable, no cuatro trastornos separados con su propio &#39;circuito&#39;. Úsalo en tu libro de psicopatología dimensional como caso de enseñanza y considera si el predictor fronto-parietal/ganglios basales se replica en muestra peruana -ahí hay un paper posible para tu meta RENACYT.</p>
+        <a class="r3-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13441579/" target="_blank" rel="noopener">↗ pmc.ncbi.nlm.nih.gov/articles/PMC13441579</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Psychiatry (resumen EPA 2026, vol. 69 supl. 1) · 04 sep 2026 · review · 2026-09-04</div>
+        <h3 class="r3-title">The Evolution of Deep Brain Stimulation in Psychiatry: Historical Targets and Network Expansion</h3>
+        <p class="r3-hook">Revisión histórica que traza la migración de dianas de DBS psiquiátrica -cápsula interna anterior (TOC, lesiones), cápsula/estriado ventral (2004), núcleo accumbens (compulsión/anhedonia), núcleo subtalámico (adaptado de Parkinson)- hacia el &#39;giro network-céntrico&#39; post-2010: hoy el objetivo real es el circuito cortico-estriado-tálamo-cortical (CSTC) completo, no un punto aislado, con dianas nuevas en amígdala, accumbens (adicciones) e ínsula/hipotálamo (anorexia). Es el reencuadre teórico que tu currículo de neuromodulación necesita: pasar de &#39;diana única&#39; a &#39;red completa&#39; es la misma lógica que aplicas cuando enseñas psicofarmacología dimensional en vez de &#39;un fármaco, un síntoma&#39;. Sirve como storyline de 60 segundos para IG/YT (línea de tiempo ALIC→VC/VS→NAc→STN→CSTC) y como argumento para tu libro sobre por qué la psiquiatría de precisión necesita pensar en redes, no en dianas.</p>
+        <a class="r3-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13445094/" target="_blank" rel="noopener">↗ pmc.ncbi.nlm.nih.gov/articles/PMC13445094</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">medRxiv (preprint) · 04 sep 2026 · preprint · 2026-09-04</div>
+        <h3 class="r3-title">Transcranial photobiomodulation rebalances cortical excitation/inhibition in young adults with attention deficit/hyperactivity disorder</h3>
+        <p class="r3-hook">Yuan, Wang, Dang et al. muestran que la fotobiomodulación transcraneal (luz infrarroja, no corriente eléctrica) reequilibra la excitación/inhibición cortical en adultos jóvenes con TDAH y mejora su desempeño en memoria de trabajo, acercándolo a niveles típicos -una vía de neuromodulación no invasiva y de bajo costo frente a TMS/tDCS. Cae directo en la intersección de dos de tus líneas vivas: TDAH/neurodivergencia y neuromodulación de precisión, y es un hallazgo casi sin cobertura en español todavía -oportunidad de gap de contenido. Para AMAUTA es un buen gancho de razonamiento clínico: &#39;¿qué significa reequilibrar E/I cortical con luz?&#39; como pregunta disparadora antes de explicar el modelo de balance excitación/inhibición en TDAH.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.01.26361884" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.01.26361884</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (resumen EPA 2026) · 04 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">One dose of Psilocybin modulates Brain Activity among Depressive patients: Preliminary Neuroimaging Results from the PSILODAC Study</div>
+          <div class="r10-line">En 10 pacientes con depresión resistente, una sola dosis de psilocibina (25mg) aumentó la actividad de reposo (ALFF/ReHo) en corteza prefrontal medial/ventrolateral y lóbulo parietal inferior a los 5 días -piloto francés, hipótesis-generador, no evidencia de eficacia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>En 12-18 meses vas a ver la primera réplica con n&gt;30 y análisis de red DMN explícito; para tu línea de psiquiatría de precisión, vale la pena mapear ya qué regulación existe en Perú para terapia asistida con psicodélicos antes de que llegue la evidencia de fase 2.</div>
+          <a class="r10-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13441741/" target="_blank" rel="noopener">↗ pmc.ncbi.nlm.nih.gov/articles/PMC13441741</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (resumen EPA 2026) · 04 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Functional connectivity associated with the severity of the Anxiety-Tension stage of Emotional Burnout</div>
+          <div class="r10-line">En 752 universitarios (Kyiv), la etapa de Ansiedad-Tensión del burnout se asocia con hipersincronización alfa fronto-parietal y desincronización beta-alta/gamma, afectando memoria de corto plazo y atención sostenida -EEG de reposo, muestra grande para un estudio de burnout.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Un marcador EEG de 3 minutos para detectar burnout temprano en residentes/estudiantes de medicina (tu población AMAUTA) es plausible en 2-3 años si esto se replica fuera de Ucrania; podrías proponerlo como screening piloto en tus cohortes de preparación ENAM.</div>
+          <a class="r10-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13444674/" target="_blank" rel="noopener">↗ pmc.ncbi.nlm.nih.gov/articles/PMC13444674</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry (resumen EPA 2026) · 04 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Brain connectivity patterns associated with duration of abstinence in methamphetamine use disorder</div>
+          <div class="r10-line">Con connectome-based predictive modeling (atlas Shen-268) en 85+48 pacientes con trastorno por uso de metanfetamina y 75 controles, la conectividad motor-sensorial↔default mode predice la duración de abstinencia (r=0.51, validado r=0.41 en cohorte independiente) -reorganización de red progresiva, no un interruptor binario.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este tipo de biomarcador de trayectoria (no solo diagnóstico) va camino a volverse estándar en investigación de adicciones; útil para tu línea de psiquiatría de precisión como ejemplo de &#39;biomarcador de proceso&#39; vs. &#39;biomarcador de estado&#39;.</div>
+          <a class="r10-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13441602/" target="_blank" rel="noopener">↗ pmc.ncbi.nlm.nih.gov/articles/PMC13441602</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La irritabilidad transdiagnóstica se predice mejor por el balance de red fronto-parietal↔ganglios basales que por la etiqueta diagnóstica (n=1,143): un punto a favor concreto de pensar en dimensiones y no en categorías.</li><li>La neuromodulación psiquiátrica lleva 25 años migrando de &#39;una diana&#39; (cápsula anterior, luego accumbens, luego núcleo subtalámico) a &#39;una red completa&#39; (circuito cortico-estriado-tálamo-cortical) -la ínsula y el accumbens ya son blancos DBS de rutina para TOC y anorexia, no solo para Parkinson.</li><li>Con una sola dosis de psilocibina ya se detectan cambios de actividad prefrontal/parietal a los 5 días (n=10) -dato hipótesis-generador, no prueba de eficacia; la trampa es tratarlo como si ya fuera evidencia de fase 2.</li><li>La fotobiomodulación transcraneal (luz infrarroja, no corriente) mejora memoria de trabajo en TDAH reequilibrando excitación/inhibición cortical -una vía de neuromodulación no invasiva y barata, casi sin cobertura en español.</li><li>En consumo de metanfetamina, la conectividad motor-sensorial↔default mode predice cuánto tiempo lleva alguien abstinente (r=0.51, validado): la recuperación de red es progresiva y medible, no un punto de corte binario de &#39;días limpio&#39;.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué tan generalizable es el predictor de irritabilidad fronto-parietal/ganglios basales (Healthy Brain Network, EEUU) a una muestra clínica peruana o latinoamericana?</li><li>Si la neuromodulación psiquiátrica ya migró a &#39;circuito completo&#39; (CSTC), ¿por qué seguimos enseñando psicofarmacología en ENAM/Residentado como &#39;un fármaco, una diana molecular&#39;?</li><li>¿Qué marco ético y regulatorio necesitaría Perú para ofrecer psilocibina en depresión resistente, dado que la evidencia de imagen sigue siendo n=10 y preliminar?</li><li>¿La fotobiomodulación transcraneal podría ser una alternativa de bajo costo a TMS/tDCS para TDAH en contextos con poco acceso a neuromodulación especializada?</li><li>¿Cómo cambiaría el pronóstico de un paciente con trastorno por uso de sustancias si midiéramos su trayectoria de reorganización de red en vez de solo contar días de abstinencia?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post: &#39;La psiquiatría dejó de buscar la región dañada y empezó a buscar la red mal sincronizada&#39; -usando la línea de tiempo DBS (cápsula anterior → accumbens → subtalámico → circuito CSTC) como storytelling visual.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/comentario proponiendo replicar el predictor de irritabilidad transdiagnóstica (fronto-parietal/ganglios basales) en una cohorte peruana -conecta directo con tu meta RENACYT Distinguido.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video AMAUTA: &#39;3 biomarcadores de red que ya casi entran a la práctica clínica&#39; (irritabilidad-CPM, DBS-CSTC, conectividad-abstinencia) para enseñar razonamiento clínico basado en evidencia emergente.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional: usar el estudio de irritabilidad transdiagnóstica como caso de enseñanza de un síntoma dimensional que cruza TDAH/depresión/ansiedad/TEA vía un mecanismo de red común.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre fotobiomodulación transcraneal en TDAH -nicho casi sin cobertura en español, buen ROI/leverage de contenido con evidencia fresca detrás.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">European Psychiatry (EPA 2026)</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC / PubMed · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · medRxiv/bioRxiv API · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 7 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
