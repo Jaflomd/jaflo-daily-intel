@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-07 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">7 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">128</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">52</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychiatry Research, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Comparative efficacy of interventions for transdiagnostic anhedonia: a network meta-analysis</h3>
+        <p class="r3-hook">Network meta-analysis de 61 ensayos independientes (5794 participantes, 80 comparaciones) que evalúa qué intervención —fármaco, neuromodulación o psicoterapia— reduce mejor la anhedonia tratada como dominio transdiagnóstico (depresión mayor, esquizofrenia, anhedonia rasgo), no como síntoma de un solo diagnóstico: vortioxetina 10mg/día lidera el ranking (SMD -0.90), seguida de TMS sobre DLPFC izquierda (SMD -0.55), activación conductual (-0.52) y meditación (-0.49), pero es el TMS-DLPFC el que muestra el patrón de evidencia más consistente y estable (5 ensayos directos, robusto a leave-one-trial-out). Le importa a Javier porque es prácticamente el caso de laboratorio de su marco dimensional/HiTOP: trata la anhedonia como un dominio de reward processing que cruza categorías diagnósticas, el argumento exacto que quiere anclar empíricamente en su libro de psicopatología dimensional, y además cruza en simultáneo con su línea de neuromodulación. Puede usarlo para un capítulo o módulo sobre &#39;tratar el dominio, no el diagnóstico&#39; (network theory aplicada a decisiones de tratamiento, no solo a síntomas) y como gancho de contenido: &#39;el fármaco gana el ranking pero el TMS es la apuesta más replicable&#39; abre una conversación sobre qué significa realmente &#39;mejor evidencia&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.psychres.2026.117435" target="_blank" rel="noopener">↗ doi.org/10.1016/j.psychres.2026.117435</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Molecular Psychiatry, 1 sep 2026 · meta-analysis · 2026-09-01</div>
+        <h3 class="r3-title">Nutraceuticals and phytoceuticals for the treatment of major depressive disorder: a systematic review and network meta-analysis</h3>
+        <p class="r3-hook">Network meta-analysis masivo (163 estudios, n=15,757, 137 combinaciones de compuestos) sobre nutraceúticos y fitoceúticos para depresión mayor: al restringir el análisis a compuestos con ≥2 RCTs, comparador no-TAU, bajo riesgo de sesgo y sin financiamiento de industria, solo EPA (omega-3), vitamina D3 e hipérico ZE117 mantienen tamaños de efecto grandes vs. placebo — pero una meta-regresión muestra que los efectos más grandes se asocian sistemáticamente con puntajes AMSTAR más bajos (peor calidad metodológica), y la certeza global de la evidencia queda en baja a muy baja. Le importa a Javier porque es el caso de manual perfecto para su voz de &#39;evidencia proporcional al claim&#39;: la mayoría de los suplementos que circulan en redes como &#39;antidepresivos naturales&#39; pierden fuerza justo cuando se filtra por rigor metodológico, exactamente el tipo de heurística de lectura crítica que quiere instalar en AMAUTA/USAMEDIC de cara a ENAM y Residentado. Es contenido directo para desmontar el hype de suplementos en salud mental (con el matiz honesto de que EPA/vitamina D3/hipérico sí sobreviven el filtro, aunque con certeza baja) y ejemplo canónico para el libro de psicopatología dimensional sobre cómo leer un NMA con heterogeneidad e inconsistencia global altas.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03759-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03759-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">JAMA Psychiatry, 2 sep 2026 · rct · 2026-09-02</div>
+        <h3 class="r3-title">Serial Ketamine Infusions for Treatment-Resistant Bipolar Depression: A Randomized Clinical Trial</h3>
+        <p class="r3-hook">El estudio Ket-BD: RCT doble ciego, controlado con midazolam (n=68 aleatorizados, 63 en análisis final) en depresión bipolar I/II resistente a tratamiento — 4 infusiones IV de ketamina en 2 semanas, adjuntas a estabilizador de ánimo o antipsicótico, redujeron el MADRS significativamente más que midazolam (diferencia -7.3 puntos, IC95% -12.0 a -2.5, p=.003, d de Cohen=0.7), sin un solo caso de manía, hipomanía, psicosis o intento de suicidio en ningún brazo. Le importa a Javier porque llena un vacío real de su práctica de psiquiatría de precisión: casi toda la evidencia de ketamina viene extrapolada de depresión unipolar, y aquí hay un RCT bien diseñado específicamente en bipolar, donde el temor al viraje afectivo pesa fuerte en cada decisión de prescripción. Es insumo directo para un módulo de actualización ENAM/Residentado sobre manejo de depresión bipolar resistente (con el dato tranquilizador de cero viraje maníaco como argumento de seguridad) y gancho de contenido sobre qué tan generalizable es realmente la evidencia de ketamina cuando se prueba en la población para la que casi nunca fue diseñada.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.2658" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.2658</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry, 2 sep 2026 · rct · 2026-09-02</div>
+          <div class="r10-title">Neurophysiological signatures of Stanford Neuromodulation Therapy in treatment resistant depression</div>
+          <div class="r10-line">Ensayo doble ciego sham-controlado (n=24) con TMS-EEG longitudinal muestra que la Stanford Neuromodulation Therapy (SNT) reduce progresivamente la excitabilidad cortical específica del sitio de estimulación (-27.9% al día 3) y la actividad estimada del cíngulo anterior subgenual, con mayor actividad basal en esa región asociada a mejor respuesta clínica (r=-0.67).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El marcador de excitabilidad cortical temprana es candidato serio a biomarcador de respuesta pre-tratamiento en neuromodulación — línea directa para su interés en TMS guiado por biomarcador, aunque el n=12 por brazo exige replicación en muestras más grandes antes de cualquier aplicación clínica real.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03837-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03837-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Psychiatry and Clinical Neuroscience, 6 sep 2026 · meta-analysis · 2026-09-06</div>
+          <div class="r10-title">Toward precision medicine: can neuroimaging prospectively predict early treatment outcomes in schizophrenia spectrum disorders? A systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-análisis multinivel de 16 estudios (AUC pooled=0.75, sensibilidad y especificidad de 0.75) halla que modelos de neuroimagen basal —especialmente de conectividad funcional— predicen con precisión moderada-buena qué pacientes con esquizofrenia no responderán tempranamente al tratamiento antipsicótico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La conectividad funcional supera a los modelos estructurales o de metabolismo como predictor — apuntala su apuesta por biomarcadores de red (no lesiones puntuales) en estratificación de tratamiento, aunque la falta de validación externa geográfica sigue siendo la barrera antes de traducción clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02359-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02359-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 6 sep 2026 · meta-analysis · 2026-09-06</div>
+          <div class="r10-title">Cardiorespiratory fitness in people with bipolar disorder: A systematic review and meta-analysis</div>
+          <div class="r10-line">SR+MA de 20 estudios halla que la capacidad cardiorrespiratoria en trastorno bipolar es 7.4 mL/kg/min menor que en controles sanos (SMD -0.89), pero solo dos estudios piloto no controlados han evaluado si intervenciones de actividad física la revierten.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El déficit está bien documentado pero la evidencia de que el ejercicio lo revierte en bipolar todavía no existe — vacío claro para su cruce kinobody-selfcare + psiquiatría y oportunidad de contenido sobre &#39;lo que sabemos vs. lo que asumimos&#39; en fitness y trastorno bipolar.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122480" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122480</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 4 sep 2026 · rct · 2026-09-04</div>
+          <div class="r10-title">A multicenter randomized controlled effectiveness trial of transdiagnostic treatment for adolescents with subthreshold anxiety and depressive symptoms</div>
+          <div class="r10-line">RCT multicéntrico (n=676 adolescentes) compara el Protocolo Unificado transdiagnóstico (UP-A) contra relajación progresiva activa para síntomas subclínicos de ansiedad/depresión: ambos grupos mejoran de forma similar, sin superioridad clara del protocolo especializado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El hallazgo de &#39;equivalencia&#39; entre una intervención transdiagnóstica sofisticada y relajación progresiva estructurada respalda modelos de tamizaje escalable tipo AMAUTA en salud mental adolescente — no siempre hace falta el protocolo más complejo a nivel subclínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726105443" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105443</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Epidemiology and Psychiatric Sciences, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+          <div class="r10-title">Risk of mortality and complications in people with depressive disorder and co-occurring diabetes mellitus: a systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-análisis de 26 estudios halla que pacientes con depresión y diabetes comórbida tienen 30% más mortalidad por cualquier causa (RR 1.30) y 63% más complicaciones metabólicas que quienes solo tienen diabetes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Refuerza el argumento de integración salud mental-medicina general en su discurso de educación médica de precisión: el tamizaje de depresión debería ser rutinario en manejo de diabetes, no un añadido opcional.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S2045796026100882" target="_blank" rel="noopener">↗ doi.org/10.1017/S2045796026100882</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+          <div class="r10-title">Remotely Supervised, Home-Based Transcranial Direct Current Stimulation for Major Depressive Disorder: Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">SR+MA de 6 ensayos sham-controlados halla un efecto pequeño del tDCS domiciliario supervisado a distancia sobre depresión (Hedges g=0.36), pero el efecto no es robusto al excluir el ensayo positivo más grande, y los 2 ensayos más grandes fueron negativos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El tDCS casero está en la misma fase que la VR hospitalaria: factible y con señal, pero no lista para recomendación clínica rutinaria — buen ejemplo de &#39;el tamaño del estudio cambia la conclusión&#39; para AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92522" target="_blank" rel="noopener">↗ doi.org/10.2196/92522</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Preventive Cardiology, 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Depressive Symptoms Trajectories Across the Transition to Cardiovascular Disease in Middle-Aged and Older Adults: A Multicohort Study</div>
+          <div class="r10-line">Estudio multicohorte (HRS+ELSA+CHARLS, n=28,704) muestra que los síntomas depresivos aumentan gradualmente en los años previos al diagnóstico de enfermedad cardiovascular, se elevan más en el momento del diagnóstico y siguen empeorando después.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El patrón de escalada pre-diagnóstico sugiere una ventana de detección temprana antes del evento cardiovascular — insumo para contenido sobre psiquiatría preventiva integrada a cardiología, más allá del ya conocido vínculo depresión-corazón.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/eurjpc/zwag459" target="_blank" rel="noopener">↗ doi.org/10.1093/eurjpc/zwag459</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research, 2 sep 2026 · rct · 2026-09-02</div>
+          <div class="r10-title">Digital Mindfulness Intervention for Pregnant Women With Affective Disorders and Acute Stress Reactions: Prespecified Secondary Analysis of a Randomized Controlled Trial</div>
+          <div class="r10-line">Análisis secundario preespecificado de un RCT (n=147) halla que un programa de mindfulness digital de 8 semanas sin contacto con terapeuta reduce significativamente síntomas depresivos en gestantes con trastornos afectivos (hasta -4.81 puntos en EPDS posparto), con mayor proporción de mejoría clínica relevante.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Evidencia de que una intervención digital escalable y sin terapeuta puede mover la aguja en salud mental perinatal — línea de contenido/aplicación para su interés en IA/tecnología en salud mental cuando el acceso a terapeuta es la barrera real, aunque el efecto se atenúa a los 6 meses.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/93811" target="_blank" rel="noopener">↗ doi.org/10.2196/93811</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Digital Health, 5 sep 2026 · meta-analysis · 2026-09-05</div>
+          <div class="r10-title">The effects of virtual reality interventions on depression and anxiety in older adults during and after the COVID-19 pandemic: A meta-analysis</div>
+          <div class="r10-line">Meta-análisis de 12 estudios (n=724) halla que las intervenciones de realidad virtual reducen depresión y ansiedad en adultos mayores durante y después de la pandemia de COVID-19, con mayor efecto en VR totalmente inmersiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Otra señal de que la inmersión —no solo el contenido— es la variable que más importa en VR terapéutica, un paralelo directo al hallazgo de tDCS domiciliario: la forma de entrega cambia el resultado tanto como la intervención misma.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/20552076261487229" target="_blank" rel="noopener">↗ doi.org/10.1177/20552076261487229</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BJPsych Open, 7 sep 2026 · review · 2026-09-07</div>
+          <div class="r10-title">Mental health outcomes and associated factors among Myanmar refugees: systematic review</div>
+          <div class="r10-line">SR de 14 estudios (&gt;10,800 refugiados) halla prevalencias muy altas y heterogéneas de depresión (30-89%), ansiedad (39-42%) y TEPT (4-61%) en refugiados de Myanmar, con empleo e ingreso como los únicos factores protectores identificados consistentemente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El rango tan amplio de prevalencia en depresión es en sí mismo un dato: apunta a falta de estandarización de instrumentos más que a variabilidad real — gancho para hablar de rigor metodológico en salud mental de poblaciones migrantes en su contenido de educación médica.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjo.2026.12080" target="_blank" rel="noopener">↗ doi.org/10.1192/bjo.2026.12080</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el NMA de anhedonia transdiagnóstica, la vortioxetina lidera el ranking (SMD -0.90) pero es el TMS sobre DLPFC izquierda el que muestra el patrón de evidencia más replicable — el &#39;mejor&#39; en el ranking no siempre es el más confiable clínicamente.</li><li>En el NMA de nutraceúticos para depresión (163 estudios, n=15,757), los tamaños de efecto más grandes se asociaron sistemáticamente con peor calidad metodológica (AMSTAR más bajo) — una correlación inversa que debería activar sospecha automática ante cualquier suplemento &#39;milagroso&#39;.</li><li>La ketamina en depresión bipolar resistente (Ket-BD, JAMA Psychiatry) no produjo un solo caso de viraje maníaco o psicosis en 68 pacientes — el miedo al viraje afectivo, tan citado como barrera, no se materializó en el ensayo mejor diseñado hasta ahora en esta población.</li><li>La capacidad cardiorrespiratoria en bipolar está bien documentada como 7.4 mL/kg/min más baja que en controles, pero literalmente solo 2 estudios piloto sin grupo control han probado si el ejercicio la revierte — la narrativa de &#39;ejercicio como tratamiento&#39; corre muy por delante de la evidencia de intervención.</li><li>En depresión + diabetes comórbida, el riesgo de complicaciones metabólicas sube 63% pero el de retinopatía baja 16% — un patrón de riesgo no uniforme que desafía la idea simplista de que &#39;la depresión empeora todo por igual&#39; en enfermedad crónica.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el TMS-DLPFC es más consistente que la vortioxetina en el ranking de anhedonia transdiagnóstica pero no el &#39;ganador&#39; numérico, ¿debería la práctica clínica priorizar consistencia de evidencia sobre tamaño de efecto puntual al elegir tratamiento?</li><li>¿Qué estándar mínimo de calidad metodológica (AMSTAR, RoB) deberíamos exigir antes de recomendar un nutraceútico como adyuvante antidepresivo en consulta?</li><li>Ante la ausencia de viraje maníaco en el ensayo de ketamina en bipolar, ¿es momento de revisar cuán conservadores somos al excluir pacientes bipolares de protocolos de ketamina por un temor teórico no confirmado en el diseño más riguroso disponible?</li><li>Si la conectividad funcional predice mejor la no-respuesta antipsicótica temprana que los modelos estructurales, ¿qué tan lejos estamos de un protocolo de neuroimagen pre-tratamiento costo-efectivo para esquizofrenia de inicio?</li><li>¿Cómo deberíamos interpretar clínicamente un rango de prevalencia de depresión del 30-89% en la misma población de refugiados — como heterogeneidad real del contexto o como falla de instrumentos de medición?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie IG/YT &#39;el ranking no es el veredicto&#39;: usar el NMA de anhedonia transdiagnóstica para explicar por qué el TMS-DLPFC, no el fármaco &#39;ganador&#39;, es la apuesta más sólida clínicamente.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post desmontando suplementos &#39;antidepresivos naturales&#39; con el hallazgo de que a mejor efecto reportado, peor calidad de estudio (NMA de nutraceúticos, Molecular Psychiatry) — material AMAUTA/USAMEDIC sobre lectura crítica.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o mini-paper resumiendo el ensayo Ket-BD (ketamina en bipolar resistente) como actualización de manejo para el módulo de psicofarmacología de precisión en bipolar.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección en el libro de psicopatología dimensional sobre anhedonia como dominio transdiagnóstico (HiTOP/RDoC), usando el NMA de 61 ensayos como ancla empírica del argumento dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido comparando tDCS casero vs. VR inmersiva en depresión/ansiedad: mismo patrón (&#39;los estudios más grandes cambian la conclusión&#39; / &#39;la inmersión importa&#39;) como gancho sobre cómo leer meta-análisis de intervenciones digitales en salud mental.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag highlight">JAMA Psychiatry</span><span class="tag ">Psychiatry Research</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Psychological Medicine</span><span class="tag ">Epidemiology and Psychiatric Sciences</span><span class="tag ">JMIR Mental Health</span><span class="tag ">European Journal of Preventive Cardiology</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">Digital Health</span><span class="tag highlight">BJPsych Open</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (E-utils) · Consensus. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 7 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
