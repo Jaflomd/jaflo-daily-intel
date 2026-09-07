@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-09-07 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">7 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">66</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">32</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JMIR Medical Education, 3 sep 2026 · rct · 2026-09-03</div>
+        <h3 class="r3-title">Scaffolded AI-Supported Problem-Based Learning for Medical Interns: Exploratory Retrospectively Registered Randomized Controlled Evaluation With a Voluntary Feasibility Follow-Up</h3>
+        <p class="r3-hook">Un RCT exploratorio (n=52 internos) prueba MAPLE-CR, un entorno multiagente donde la IA generativa actúa como andamiaje de proceso —prompts de razonamiento, tutor y compañero simulados, feedback estructurado— en vez de máquina de respuestas. El grupo intervención superó al de autoestudio en ganancia de conocimiento de razonamiento clínico (diferencia Hodges-Lehmann 8.25 puntos, p=.001), con el mayor salto entre el primer y segundo caso practicado. Esto es casi un blueprint operativo para el Competency Lab de AMAUTA/USAMEDIC: no reemplazar el PBL presencial sino escalar su lógica —tutor + par + estructura— cuando falta capacidad de facilitadores para preparar ENAM/Residentado. Vale la pena leer el detalle metodológico antes de replicarlo: el estudio es honesto en que no aisló qué componente del andamiaje genera el efecto, así que cualquier versión propia debería empezar con ese mismo cuidado.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/95039" target="_blank" rel="noopener">↗ doi.org/10.2196/95039</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of General Internal Medicine, 3 sep 2026 · rct · 2026-09-03</div>
+        <h3 class="r3-title">Physician Ratings and Adoption of AI-Generated e-Consultation Advice: A Randomized Clinical Vignette Study</h3>
+        <p class="r3-hook">Docentes de medicina interna (n=44) calificaron muy bien el consejo de e-consulta generado por IA especializada (OpenEvidence) y adoptaron la recomendación mucho más tras verla (81.8% vs 37.5% antes, OR 8.43) —pero etiquetarlo como &#39;médico especialista&#39; o &#39;sistema de IA&#39; no cambió ni la calificación ni la adopción (p=.70). Para la línea ai-enhancement de Javier esto es un dato incómodo y útil a la vez: la confianza no se está calibrando por la fuente declarada sino por el contenido mismo, lo que es tanto una oportunidad (la IA puede ganarse el lugar por mérito) como un riesgo de sesgo de automatización sin disclosure real. Es material directo para un hilo o clase sobre cómo enseñar a residentes a evaluar consejo de IA con los mismos criterios —completitud, accionabilidad, evidencia— sin depender de saber quién lo firmó.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11606-026-10777-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10777-w</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Medicine (Baltimore), 4 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">Comparative evaluation of large language models for text-based diagnostic reasoning in fetal central nervous system MRI: A retrospective single-center diagnostic accuracy study</h3>
+        <p class="r3-hook">En 85 casos de RM fetal de SNC convertidos a resumen de texto (sin imagen), DeepSeek superó a Gemini y ChatGPT en concordancia con el diagnóstico principal (77.6% vs 69.4% vs 61.2%, Cochran&#39;s Q p=.044), aunque las comparaciones pareadas no sobrevivieron corrección de Holm. Más allá del resultado puntual, el diseño —razonamiento diagnóstico basado solo en texto clínico, evaluado a ciegas en exactitud, calidad de razonamiento y seguridad de comunicación— es un molde replicable que Javier podría adaptar a viñetas de psiquiatría dimensional (HiTOP/RDoC) para su línea de precisión psiquiátrica: comparar cómo distintos LLMs generan diferenciales dimensionales en vez de categoriales. El hallazgo también es una advertencia proporcional: los autores concluyen que esto apoya evaluación supervisada, no diagnóstico autónomo.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/MD.0000000000050485" target="_blank" rel="noopener">↗ doi.org/10.1097/MD.0000000000050485</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">8</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cell Reports Medicine, 4 sep 2026 · review · 2026-09-04</div>
+          <div class="r10-title">Transforming large language models into medical specialists via knowledge injection</div>
+          <div class="r10-line">Revisión en journal de alto impacto que organiza en un marco único las tres estrategias para convertir un LLM genérico en &#39;especialista médico confiable&#39; (embedding estático, alineación conductual, inyección dinámica tipo RAG) más integración multimodal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este framework se vuelve la referencia citada por default cuando alguien —incluido Javier en un proyecto de IA aplicada a investigación/educación— proponga construir un asistente especializado en vez de usar un LLM genérico sin ajustar.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.xcrm.2026.103020" target="_blank" rel="noopener">↗ doi.org/10.1016/j.xcrm.2026.103020</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (Berlin, Germany), 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">History taking: the foundation of diagnostic excellence</div>
+          <div class="r10-line">Ensayo/revisión que reafirma la anamnesis como pilar del diagnóstico y plantea que la IA debe aumentarla, no reemplazarla, con foco en comunicación centrada en el paciente para reducir error diagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a circular como contenido base para cursos de habilidades clínicas (encaja directo con el Competency Lab de AMAUTA) más que como paper citado en investigación — su valor es pedagógico, no empírico.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0144" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0144</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Emergency Nursing, 6 sep 2026 · review · 2026-09-06</div>
+          <div class="r10-title">Healthcare practitioners&#39; use of the HEART score for risk stratification and management of adults with acute chest pain presenting to the emergency department: A scoping review</div>
+          <div class="r10-line">Revisión de 15 estudios muestra que el HEART score es fiable en sus componentes objetivos pero pierde consistencia justo en el componente clínico-subjetivo (historia), con adherencia variable según experiencia del clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Se va a usar como ejemplo estándar de &#39;dónde falla la calibración humana en escalas estructuradas&#39; en artículos de educación médica sobre razonamiento asistido por reglas de decisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.ienj.2026.101893" target="_blank" rel="noopener">↗ doi.org/10.1016/j.ienj.2026.101893</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Immigrant and Minority Health, 3 sep 2026 · paper · 2026-09-03</div>
+          <div class="r10-title">Institutional Confirmation Bias in Refugee Health Governance: Why Emergency Templates Persist Despite Evidence of Chronic Harm</div>
+          <div class="r10-line">Extiende el sesgo de confirmación del nivel individual al institucional: protocolos de &#39;emergencia&#39; en gobernanza de salud de refugiados persisten pese a evidencia de daño crónico acumulado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Poco citado dentro de la literatura clásica de razonamiento clínico, pero con potencial de abrir un subtema de &#39;sesgo de sistema&#39; que conecta bien con el pensamiento de sistemas/dimensional de Javier si decide llevarlo a un capítulo o hilo.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10903-026-01979-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s10903-026-01979-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Irish Journal of Medical Science, 5 sep 2026 · paper · 2026-09-05</div>
+          <div class="r10-title">Development of a self-reported clinical decision-making competence scale for medical students</div>
+          <div class="r10-line">Nueva escala autorreportada para medir &#39;competencia en toma de decisiones clínicas&#39; en estudiantes de medicina; útil como instrumento pero limitada por ser percepción, no desempeño real medido.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Probablemente se valide en más países como instrumento de bajo costo para currículos, pero seguirá necesitando cruzarse con medidas de desempeño real (como las que ya prioriza el Competency Lab) para no quedarse en autopercepción.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11845-026-04589-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s11845-026-04589-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JBI Evidence Synthesis, 7 sep 2026 · review · 2026-09-07</div>
+          <div class="r10-title">Mapping the evidence on artificial intelligence-based clinical decision support systems for undergraduate nursing students: a scoping review protocol</div>
+          <div class="r10-line">Protocolo (sin resultados aún) para mapear sistemáticamente la evidencia sobre sistemas de soporte a la decisión clínica con IA usados con estudiantes de enfermería de pregrado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Cuando publiquen resultados (probablemente 2027), va a ser el mapa de referencia para saber qué hueco de evidencia queda libre si Javier quisiera correr un estudio análogo en pregrado de medicina.</div>
+          <a class="r10-link" href="https://doi.org/10.11124/JBIES-26-00065" target="_blank" rel="noopener">↗ doi.org/10.11124/JBIES-26-00065</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Lancet Digital Health, 3 sep 2026 · meta-analysis · 2026-09-03</div>
+          <div class="r10-title">Status, challenges, and future directions of machine learning in the management of epilepsy: a systematic review and meta-analysis</div>
+          <div class="r10-line">Revisión sistemática de alto perfil que mapea dónde el machine learning ya aporta valor clínico en el manejo de epilepsia y dónde la evidencia todavía es débil o no generalizable.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Sirve como plantilla metodológica: el mismo ejercicio de &#39;mapear madurez de ML por tarea clínica&#39; aplicado a psiquiatría dimensional mostraría probablemente que el diagnóstico está menos maduro que el pronóstico o el monitoreo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.landig.2026.101029" target="_blank" rel="noopener">↗ doi.org/10.1016/j.landig.2026.101029</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Occupational Health, 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">Applicability of Infrared Thermography in Occupational Health for Multidisciplinary Clinical Decision-Making: A Systematic Review with Narrative Synthesis</div>
+          <div class="r10-line">Revisión narrativa sobre termografía infrarroja como insumo adicional para decisiones clínicas multidisciplinarias en salud ocupacional; evidencia todavía heterogénea entre estudios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Nicho fuera del radar habitual de Javier, pero ilustra el patrón general de &#39;herramienta de bajo costo sumándose al toolkit de decisión clínica&#39; — más relevante como ejemplo pedagógico que como lectura prioritaria.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/joccuh/uiag050" target="_blank" rel="noopener">↗ doi.org/10.1093/joccuh/uiag050</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el RCT de e-consulta con IA (JGIM), decir que el consejo venía de un &#39;médico especialista&#39; o de un &#39;sistema de IA&#39; no cambió ni la calificación de calidad ni la tasa de adopción — la confianza se calibró por el contenido, no por la etiqueta declarada.</li><li>La fiabilidad del HEART score es más alta en sus componentes objetivos (edad, troponina) y cae justo en el componente más clínico y humano: la historia del paciente — el eslabón &#39;blando&#39; de la escala es el más variable entre observadores.</li><li>En el ensayo de PBL con IA como andamiaje (MAPLE-CR), el salto de aprendizaje más grande ocurrió entre el primer y segundo caso practicado, no de forma sostenida en las semanas siguientes — sugiere que el retorno marginal del scaffolding se concentra al inicio.</li><li>El sesgo de confirmación no vive solo en la cabeza del clínico individual: en gobernanza de salud de refugiados, protocolos de &#39;emergencia&#39; institucionales persisten como plantilla pese a evidencia acumulada de daño crónico.</li><li>Comparando tres LLMs en razonamiento diagnóstico puramente textual sobre RM fetal de SNC, el modelo con mejor exactitud diagnóstica (DeepSeek) no fue el más mediático ni el más caro — la marca del LLM no predice bien su desempeño en una tarea clínica específica.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si etiquetar un consejo como &#39;IA&#39; o &#39;médico&#39; no cambia si un clínico lo adopta, ¿qué sí determina la confianza real — el formato, la evidencia citada, o solo la fluidez del texto?</li><li>¿El beneficio de un andamiaje de IA tipo MAPLE-CR se mantiene si se retira después de unas semanas, o el residente vuelve a su línea base de razonamiento sin el apoyo?</li><li>¿Qué encontraríamos si replicamos el diseño de comparación de LLMs en razonamiento diagnóstico textual (como el de RM fetal) usando viñetas de psiquiatría dimensional en vez de neuroimagen?</li><li>¿La misma caída de fiabilidad que el HEART score muestra en su componente &#39;historia&#39; aparece también en las escalas estructuradas que se enseñan para ENAM/Residentado, y eso las hace menos confiables de lo que se asume?</li><li>¿Qué &#39;plantillas de emergencia&#39; institucionales existen en salud mental peruana —protocolos rígidos ante crisis— que puedan estar perpetuando un sesgo de confirmación a nivel de sistema, no solo individual?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carousel IG: &#39;La IA no cambia si confías en un consejo médico — el contenido sí&#39;, a partir del hallazgo del JGIM de que etiquetar como IA vs humano no cambió ni calificación ni adopción.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video corto sobre el componente &#39;historia clínica&#39; como el eslabón más variable del HEART score — gancho directo para enseñar anamnesis estructurada en el Competency Lab de AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio: replicar el diseño de comparación de LLMs en razonamiento diagnóstico textual (el de RM fetal SNC) aplicado a viñetas de psiquiatría dimensional/HiTOP, midiendo exactitud y calibración por modelo.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Caso de estudio para el libro de neurociencia educativa: usar MAPLE-CR como ejemplo de &#39;IA como andamiaje de proceso&#39; (no oráculo) en simulación clínica — ilustra en datos el argumento central del libro.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre sesgo de confirmación institucional (caso refugiados) como puente para reflexionar sobre protocolos rígidos en salud mental peruana — conecta razonamiento clínico con la línea de psiquiatría de precisión y pensamiento de sistemas.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Medicine (Baltimore)</span><span class="tag ">Cell Reports Medicine</span><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">International Emergency Nursing</span><span class="tag ">Journal of Immigrant and Minority Health</span><span class="tag ">Irish Journal of Medical Science</span><span class="tag ">JBI Evidence Synthesis</span><span class="tag ">The Lancet Digital Health</span><span class="tag ">Journal of Occupational Health</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch, date_from=hoy-4d, datetype=pdat) · Consensus MCP (Semantic Scholar/PubMed/Scopus/ArXiv) — usado para descubrimiento, items fuera de ventana 48-72h descartados tras verificar fecha real · WebSearch (medRxiv, arXiv, Reddit — sin hallazgos nuevos dentro de ventana). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 7 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
