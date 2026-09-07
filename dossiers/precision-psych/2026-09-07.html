@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-07 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">7 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Psychiatry — Congreso EPA 2026 (ALCEDIAG/CNRS, Barcelona-París-Copenhague), indexado 4 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">RNA editing‐based biomarker blood test for the diagnosis of bipolar disorder: results of the EDIT-B consortium study</h3>
+        <p class="r3-hook">El consorcio EDIT-B (ensayo multicéntrico NCT05603819, 393 adultos con episodio depresivo mayor en Barcelona, París y Copenhague) probó un test de sangre basado en firmas de edición de ARN combinado con algoritmos de IA para distinguir trastorno bipolar de depresión mayor unipolar en el momento en que el paciente llega deprimido — el algoritmo mejor (A2) logró AUC 0.873, sensibilidad 82.6% y especificidad 80.3%, validado en cohortes independientes. A Javier le importa directamente porque ataca el problema que él mismo denuncia en su línea de psiquiatría de precisión: el retraso diagnóstico de ~10 años entre unipolar y bipolar que hoy depende solo de entrevista e historia clínica, con el costo de tratar bipolares con antidepresivos solos. Es material de manual para su capítulo de precisión: un biomarcador objetivo con validación externa real (no solo AUC de entrenamiento) que podría convertirse en pregunta de ENAM/Residentado sobre el futuro del diagnóstico diferencial del episodio depresivo, y un caso ideal para su docencia sobre qué significa &#39;biomarcador clínicamente accionable&#39; frente a los cientos que nunca pasan de la fase exploratoria.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/j.eurpsy.2026.10189" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10189</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Psychopharmacology, 4 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">Psilocybin-induced changes in electroencephalography link acute and long-term effects</h3>
+        <p class="r3-hook">En un ensayo cruzado doble ciego controlado con placebo (N=20), un equipo checo-japonés-británico registró EEG de alta densidad antes, durante y hasta 24 horas después de una dosis media de psilocibina (~0.26 mg/kg): la intensidad psicológica aguda del &#39;viaje&#39; no predijo el resultado a 4 semanas, pero la reducción de potencia delta/theta a las 24 horas (la fase de &#39;afterglow&#39; subaguda) sí correlacionó con cambios positivos duraderos, sugiriendo que ahí — no en el pico agudo — está el marcador de quién responde. A Javier le importa porque conecta directamente su línea de neuromodulación con psiquiatría de precisión aplicada a psicodélicos, un área donde el hype supera ampliamente la evidencia mecanística: aquí hay un biomarcador EEG concreto y replicable de responsividad individual, útil para su docencia sobre por qué &#39;sentir mucho&#39; en la sesión no es lo mismo que &#39;responder al tratamiento&#39;. Puede usarlo como contraejemplo directo del marketing popular de la &#39;experiencia mística&#39; como predictor de eficacia, y como gancho para explicar la ventana subaguda como el verdadero blanco terapéutico en su contenido sobre neuromodulación.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/02698811261473445" target="_blank" rel="noopener">↗ doi.org/10.1177/02698811261473445</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Academic Radiology (NYU Langone Health), 2 sep 2026 · paper · 2026-09-02</div>
+        <h3 class="r3-title">Artificial Intelligence-Enabled Precision Education: A Novel Tool to Augment Radiology Residency Training</h3>
+        <p class="r3-hook">Radiólogos de NYU Langone usaron GPT-4o para leer automáticamente los reportes clínicos diarios de cada residente (PGY-2 a PGY-4), detectar qué patologías importantes del currículo NO había visto todavía cada uno (con &gt;91% de precisión y recall), y asignarle casos de enseñanza curados específicamente para cubrir ese hueco — comparando cohortes pre (2022-23) y post-intervención (2024-25) encontraron aumentos estadísticamente significativos (p&lt;0.05) en exposición a patologías clave en las cinco subespecialidades evaluadas, sin reducir el volumen de casos clínicos reales. A Javier le importa muchísimo porque es exactamente el problema de AMAUTA/USAMEDIC llevado a datos: en vez de asumir que un simulacro estándar de ENAM/Residentado cubre parejo a todos los alumnos, este diseño rastrea automáticamente el &#39;gap&#39; individual de exposición a temas de alto rendimiento y lo cierra con contenido dirigido. Es un blueprint replicable y barato (un LLM leyendo texto clínico/de estudio, no un modelo entrenado desde cero) que puede adaptar tal cual para detectar qué áreas de la currícula ENAM cada estudiante de AMAUTA no domina y priorizar ahí el contenido, convirtiendo la &#39;educación de precisión&#39; de concepto de marketing a proceso medible con su propio pre/post.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.acra.2026.08.068" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.068</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026, indexado 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Connected-Speech Readability as a Biomarker of Psychosis</div>
+          <div class="r10-line">En 28 adultos con trastornos psicóticos DSM-5 evaluados con la tarea &#39;Cookie Theft&#39;, el habla conectada mostró el patrón contraintuitivo de mayor densidad léxica pero peor legibilidad, junto a marcadores acústicos distintos (jitter, energía, MFCC) frente a controles sanos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el análisis automatizado de habla conectada (texto + audio) se vuelve una herramienta de screening de psicosis de bajo costo en contextos con poco acceso a neuroimagen — un ángulo que Javier puede citar como fenotipado digital &#39;pobre en recursos, rico en señal&#39; aplicable a Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10952" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10952</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026 (España, 4 centros), indexado 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Precision medicine in schizophrenia: stratifying patients by inflammatory, metabolic, and gut-brain biomarker profiles using latent profile analysis</div>
+          <div class="r10-line">En 199 pacientes con esquizofrenia de 4 centros españoles, un análisis de perfiles latentes sobre marcadores inflamatorios, metabólicos y de eje intestino-cerebro identificó un subgrupo de 8.5% con peor memoria de trabajo y fluidez verbal pese a tener la MISMA severidad sintomática que el resto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Augura que &#39;gravedad sintomática igual, pronóstico cognitivo distinto&#39; se convierte en el argumento estándar contra decidir tratamiento solo por escalas de síntomas — Javier puede usarlo como caso de aula sobre por qué PANSS sola no basta para estratificar.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10536" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10536</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026, indexado 4 sep 2026 · review · 2026-09-04</div>
+          <div class="r10-title">Glycogen Synthase Kinase-3β (GSK3β): Role in the Mechanism of Action of Lithium and Potential as a Predictive Biomarker of Therapeutic Response in Bipolar Disorder</div>
+          <div class="r10-line">Revisión sistemática (PRISMA, 1999-2025) muestra que el litio inhibe GSK3β y que el polimorfismo −50T/C (rs334558) de GSK3β se asocia con mejor respuesta a largo plazo, proponiendo combinarlo con niveles de GSK3β fosforilada como biomarcador de respuesta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Cree que la farmacogenómica del litio (el fármaco más antiguo y barato de la psiquiatría) se vuelve el ejemplo favorito para mostrar que &#39;psiquiatría de precisión&#39; no requiere multi-ómica cara — aplicable directo a su docencia sobre trastorno bipolar.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.11860" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.11860</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Neuroendocrinology, 3 sep 2026 · review · 2026-09-03</div>
+          <div class="r10-title">RORA as a sex-specific molecular link in autism spectrum disorder: from transcriptional regulation to clinical phenotype across the lifespan</div>
+          <div class="r10-line">Revisión integra evidencia de cerebro postmortem, sangre periférica, metilación y modelos animales para mostrar que el gen RORA está regulado bidireccionalmente por hormonas sexuales (andrógenos lo suprimen, estrógenos lo activan), explicando mecánicamente el sesgo masculino en autismo y el &#39;efecto protector femenino&#39; con un solo gen.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que RORA se vuelve la referencia estándar para explicar la diferencia de prevalencia TEA por sexo sin recurrir a explicaciones vagas de &#39;diagnóstico tardío en mujeres&#39; — material directo para el capítulo de neurodivergencia de su libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.yfrne.2026.101285" target="_blank" rel="noopener">↗ doi.org/10.1016/j.yfrne.2026.101285</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026 (León, España), indexado 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Precision Psychiatry in Treatment-Resistant Schizophrenia: Clinical Application of Pharmacogenetics in Antipsychotic Treatment</div>
+          <div class="r10-line">Estudio prospectivo en curso en España que entrega a los clínicos reportes farmacogenéticos de CYP450 en pacientes con esquizofrenia resistente al tratamiento (20-30% de todos los casos), evaluando con PANSS/CGI/MoCA si eso cambia la prescripción y reduce la polifarmacia — resultados aún no disponibles al momento del abstract.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Augura que en el próximo año este mismo consorcio publicará resultados que Javier podrá citar como el primer caso &#39;de rutina clínica real&#39; (no solo protocolo) de farmacogenética CYP450 guiando antipsicóticos en resistencia al tratamiento — vale la pena que lo tenga en el radar para seguimiento.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.11768" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.11768</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026, indexado 4 sep 2026 · review · 2026-09-04</div>
+          <div class="r10-title">Digital phenotyping and passive monitoring as tools for personalized treatment of bipolar disorder – a literature review</div>
+          <div class="r10-line">Revisión (PubMed/Scopus/Web of Science 2015-2025) sobre apps y sensores pasivos para predecir recaída en bipolar (KIOS-Bipolar, MONARCA II) concluye que &#39;no todas las apps reducen recaídas&#39; y que el campo sigue limitado por muestras pequeñas y falta de validación clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta honestidad sobre resultados mixtos —poco común en revisiones de fenotipado digital— se cita cada vez más como corrección al exceso de entusiasmo con apps de salud mental, buen contraejemplo para la lectura crítica de biomarcadores digitales que Javier enseña.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10710" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10710</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026, indexado 4 sep 2026 · review · 2026-09-04</div>
+          <div class="r10-title">Inflammatory markers as predictors of antidepressant response: a precision-psychiatry synthesis</div>
+          <div class="r10-line">Síntesis sistemática (2020-2025, ~2291 participantes en 7 estudios) encuentra que un panel mínimo de CRP ± IL-6 basal podría orientar la elección entre ISRS y IRSN: con CRP baja (&lt;1 mg/L) responden mejor a ISRS, con CRP≥1 mg/L los IRSN superan a los ISRS.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Cree que &#39;CRP como brújula ISRS vs IRSN&#39; se vuelve un atajo clínico citado en guías de bajo costo antes de que existan ensayos aleatorizados guiados por biomarcador que lo confirmen — útil para Javier como ejemplo de bio-marcador &#39;casi listo&#39; pero todavía no validado prospectivamente.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10927" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10927</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026 (North Texas), indexado 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Stratified approaches for predicting immunometabolic depression-associated features through biomarker-symptom clustering, network profiling, cutoff definition, and delineation of non-linear trends: A methodological overview</div>
+          <div class="r10-line">En adultos mayores de North Texas con y sin depresión, el análisis de redes y clustering de síntomas superó a los modelos de regresión lineal para capturar la relación entre envejecimiento, depresión e inflamación de bajo grado, con umbrales clínicos más útiles que asociaciones continuas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los modelos de red (network theory) siguen ganando terreno sobre la regresión lineal clásica como forma preferida de analizar comorbilidad inflamación-depresión en geriatría — coherente con la propia línea de network theory de Javier para su libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10964" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10964</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry — Congreso EPA 2026, indexado 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">Role of ACEI/ARBs on antidepressant treatment response assessed through biomarker levels and gene expression analysis in persons with depression: A prospective observational study</div>
+          <div class="r10-line">Estudio observacional prospectivo (n=102 monoterapia vs n=64 antidepresivo + IECA/ARA-II ≥3 meses, más 20 controles) encontró mayor reducción de HDRS-17 y mayor tasa de respondedores en el grupo combinado, con caída significativa de angiotensina II sérica (p=0.002).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto impulsa estudios de reposicionamiento de fármacos cardiovasculares baratos (IECA/ARA-II) como adyuvantes antidepresivos de bajo costo — relevante para contextos con recursos limitados como el sistema peruano que Javier conoce de cerca.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.10585" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.10585</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 2 sep 2026 · preprint · 2026-09-02</div>
+          <div class="r10-title">SEPI-SIM: An Educational Architecture for Longitudinal Competency Development in Simulation-Based Health Professions Education</div>
+          <div class="r10-line">Estudio conceptual (revisión narrativa PubMed/Scopus/SciELO 2010-2024) propone SEPI-SIM, una arquitectura de 4 fases (evaluación diagnóstica, evaluación progresiva de competencias, feedback estructurado, monitoreo longitudinal) que integra simulación, evaluación programática, feedback y learning analytics en un solo sistema de evidencia longitudinal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Augura que marcos integradores tipo SEPI-SIM (uniendo simulación + analytics + feedback en una sola arquitectura, en vez de tratarlos como herramientas sueltas) se vuelven la plantilla de referencia para rediseñar programas de educación médica de precisión — Javier podría mapear directamente las fases de AMAUTA/USAMEDIC contra este marco.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10541973/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10541973/v1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En psicosis, el habla NO se vuelve más pobre en vocabulario — se vuelve más densa léxicamente pero MENOS legible; el marcador no es &#39;hablar menos&#39;, es hablar de forma más difícil de seguir.</li><li>En psilocibina, la intensidad del &#39;viaje&#39; agudo no predice el beneficio a 4 semanas: lo que predice es cuánto bajan las ondas delta/theta 24 horas después, cuando el efecto psicoactivo ya pasó.</li><li>Un fármaco para la presión arterial (IECA/ARA-II) potenció la respuesta a antidepresivos casi tanto como cambiar de clase de antidepresivo — la psiquiatría de precisión no siempre requiere fármacos nuevos.</li><li>En 199 esquizofrénicos con perfiles biológicos idénticos en severidad sintomática (PANSS), solo el 8.5% con perfil inflamatorio-metabólico alterado concentró casi todo el déficit cognitivo — la escala de síntomas por sí sola escondía al subgrupo que más importaba.</li><li>Un solo gen (RORA), regulado en direcciones opuestas por testosterona y estrógeno, explica mecánicamente tanto por qué el autismo es más frecuente en varones como por qué las mujeres parecen &#39;protegidas&#39; — no son dos fenómenos, es el mismo interruptor visto desde ambos lados.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos empezar a pedir un biomarcador objetivo (como el test EDIT-B de edición de ARN) antes de esperar años de evolución clínica para diferenciar depresión unipolar de bipolar en casos ambiguos?</li><li>Si el verdadero blanco terapéutico de la psilocibina es la ventana subaguda de 24 horas y no el viaje agudo, ¿qué tan mal enfocado está el discurso público (y parte del clínico) sobre &#39;la experiencia mística&#39; como ingrediente activo?</li><li>¿Qué pasaría si AMAUTA/USAMEDIC rastreara automáticamente, con un LLM leyendo el material que cada alumno ya practica, qué temas de alto rendimiento ENAM/Residentado NO ha cubierto todavía — en vez de asumir que el simulacro estándar cubre parejo a todos?</li><li>¿Debería preguntarse rutinariamente por uso de IECA/ARA-II al elegir antidepresivo, dado que podría estar potenciando (o podría potenciarse deliberadamente) la respuesta en pacientes que ya los toman por hipertensión?</li><li>¿Cuánta de la enseñanza categórica sobre &#39;diferencias de sexo en TEA&#39; que se repite en clase debería reemplazarse por el mecanismo dimensional único (RORA + hormonas) que explica ambos lados del fenómeno a la vez?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel explicando el hallazgo EDIT-B (test de sangre para diferenciar bipolar de depresión unipolar) como ejemplo de por qué el diagnóstico bipolar tarda en promedio 10 años — gancho: &#39;esto podría cambiar en tu próxima consulta&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta/borrador de paper o nota metodológica adaptando el diseño de &#39;Precision Education&#39; de radiología (NYU) a un piloto AMAUTA: usar un LLM para detectar automáticamente qué temas de alto rendimiento ENAM no ha cubierto cada alumno y medir el efecto de cerrar ese gap.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto sobre la paradoja psilocibina: &#39;no es lo que sientes en la sesión, es lo que pasa 24 horas después&#39; — conectando neuromodulación, expectativas populares sobre psicodélicos y el marcador EEG subagudo.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología dimensional sobre RORA como caso de manual de gen único con efecto bidireccional por sexo — ejemplo concreto de mecanismo dimensional detrás de un patrón que se enseña como categórico (&#39;más TEA en varones&#39;).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/carrusel comparando biomarcadores &#39;baratos y reposicionables&#39; (IECA/ARA-II, litio/GSK3β) vs biomarcadores &#39;caros&#39; (multi-ómica, RNA editing) — psiquiatría de precisión de bajo costo aplicable a un sistema de salud como el peruano.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">European Psychiatry (Congreso EPA 2026)</span><span class="tag ">Journal of Psychopharmacology</span><span class="tag ">Academic Radiology</span><span class="tag ">Frontiers in Neuroendocrinology</span><span class="tag ">Research Square (preprint)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC REST API (búsqueda por fecha exacta 2026-09-01 a 2026-09-07) · PubMed vía NCBI eutils (efetch de abstracts) · Consensus (Semantic Scholar/PubMed/Scopus/ArXiv) · PMC (abstracts del Congreso EPA 2026 en European Psychiatry) · WebSearch (site:pubmed.ncbi.nlm.nih.gov, Europe PMC). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 7 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
