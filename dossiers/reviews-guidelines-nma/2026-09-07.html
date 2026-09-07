@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-07 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">7 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychopathology · 2026-09-05 · review</div>
+        <h3 class="r3-title">Schizoidism and Syntony vis-à-vis Plessner, Autopoiesis, and 4E Cognition</h3>
+        <p class="r3-hook">Revisión conceptual que retoma el par schizoidismo-sintonía de Kretschmer/Bleuler/Minkowski y lo pone a dialogar con la fenomenología biológica de Plessner, la autopoiesis y la cognición 4E (embodied-embedded-enacted-extended): plantea que el acoplamiento organismo-entorno -descentrado/centrado en Plessner, Körper/Leib- comparte una lógica profunda con cómo el psiquismo se relaciona con su ambiente, y defiende una relación fluida (no categórica) entre los complejos sintomáticos y la psique normal. Para tu libro de psicopatología para el mundo y tu línea de psiquiatría dimensional es material de fondo directo: es exactamente el tipo de argumento filosófico-clínico que sostiene por qué pensar en dimensiones y continuos -no en categorías discretas- tiene una tradición fenomenológica seria detrás, no solo estadística (HiTOP/RDoC). Para AMAUTA/USAMEDIC es un ángulo de enseñanza poco común: usar Kretschmer y la fenomenología clásica para que el residente entienda de dónde viene la intuición dimensional que hoy defienden los marcos cuantitativos. Ángulo de contenido: &#39;antes de HiTOP y RDoC, Kretschmer y Plessner ya sospechaban que la psicosis y la normalidad viven en el mismo continuo -este paper conecta esa tradición filosófica con la cognición 4E moderna&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1159/psp/aelag007" target="_blank" rel="noopener">↗ doi.org/10.1159/psp/aelag007</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Zeitschrift für Gerontologie und Geriatrie · 2026-09-04 · review</div>
+        <h3 class="r3-title">Pathophysiology and biomarkers of delirium in older adults - Narrative review</h3>
+        <p class="r3-hook">Revisión narrativa (literatura 2010-2026, priorizando estudios en humanos y hospitalizados/perioperatorios) que organiza el delirium como resultado de la interacción entre vulnerabilidad predisponente y desencadenantes agudos, vía neuroinflamación, desbalance de neurotransmisores, neurodegeneración, disfunción metabólica y falla de la barrera hematoencefálica -con biomarcadores candidatos (inflamatorios, neurodegenerativos, metabólicos, de estrés) todavía sin uso clínico establecido. Para tu foco secundario en neuropsiquiatría es una síntesis directamente accionable en la interfaz delirium-demencia-psiquiatría de enlace, justo el terreno donde el psiquiatra debe distinguir delirium hipoactivo de depresión o demencia en el adulto mayor hospitalizado. Para AMAUTA/USAMEDIC es contenido de alto rendimiento para ENAM/Residentado -el delirium es tema recurrente de examen y esta revisión ordena mecanismo y biomarcadores en un solo mapa mental. Ángulo de contenido: &#39;el delirium en el adulto mayor no tiene todavía un biomarcador de rutina -pero esta revisión junta las cuatro vías fisiopatológicas que hoy explican por qué un paciente hospitalizado se desconecta de un día para otro&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00391-026-02638-2" target="_blank" rel="noopener">↗ doi.org/10.1007/s00391-026-02638-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Trends in Neurosciences · 2026-09-05 · review</div>
+        <h3 class="r3-title">Spatial navigation and the basal forebrain in Alzheimer&#39;s disease and other neurodegenerative diseases</h3>
+        <p class="r3-hook">Revisión que sintetiza por qué el deterioro de la navegación espacial es prominente en Alzheimer y demencia por cuerpos de Lewy pero mucho menos marcado en demencia frontotemporal y en la encefalopatía TDP-43 límbica relacionada con la edad (LATE) -y lo conecta con la degeneración del prosencéfalo basal y sus vías colinérgicas, presente en las cuatro condiciones pero asociada a déficit espacial específicamente en Alzheimer y Lewy. Para tu foco secundario en neuropsiquiatría es un argumento clínico concreto de diagnóstico diferencial: &#39;se pierde para volver a casa&#39; pesa distinto según qué demencia estés viendo, y esta revisión de una revista de referencia en neurociencia (Trends in Neurosciences) le da sustento mecanístico a un signo que a veces se subestima en la anamnesis. Para tu línea de psiquiatría de precisión es candidato a marcador clínico-cognitivo de bajo costo (a diferencia de un biomarcador molecular) para orientar el diagnóstico diferencial de demencias antes de imágenes o líquido cefalorraquídeo. Ángulo de contenido: &#39;que un paciente se pierda en su propio barrio no es un síntoma genérico de demencia -según cuál demencia sea, ese signo aparece temprano o casi nunca, y el prosencéfalo basal explica por qué&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.tins.2026.08.005" target="_blank" rel="noopener">↗ doi.org/10.1016/j.tins.2026.08.005</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JAMA Psychiatry · 2026-09-01 · network-meta-analysis</div>
+        <h3 class="r3-title">Pharmacological Interventions for Weight Reduction in Patients With Schizophrenia Treated With Antipsychotics: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">Network meta-analysis de 95 estudios (39 intervenciones farmacológicas, N=5898) que rankea qué fármacos reducen más el peso en pacientes con trastornos del espectro esquizofrenia tratados con antipsicóticos: semaglutida (-10.98 kg, certeza moderada), liraglutida (-5.43 kg, certeza moderada), topiramato (-3.95 kg, certeza moderada), metformina (-3.86 kg, certeza moderada) y exenatida (-2.97 kg, certeza moderada) lideran el ranking, con semaglutida y metformina alcanzando el umbral de cambio clínicamente significativo (≥5%). Para tu línea de psiquiatría de precisión es la evidencia de mayor certeza disponible hasta ahora para normatizar el manejo del aumento de peso inducido por antipsicóticos -un problema de adherencia y morbimortalidad cardiometabólica que rara vez se maneja con este nivel de evidencia comparativa. Para AMAUTA/USAMEDIC es contenido de examen de altísimo rendimiento: los GLP-1 (semaglutida) entrando al manejo psiquiátrico es un tema que va a aparecer cada vez más en preguntas de residentado. Ángulo de contenido: &#39;si tu paciente con esquizofrenia sube de peso con el antipsicótico, esta NMA de JAMA Psychiatry ya te rankeó qué añadir -semaglutida al tope, con la certeza de evidencia más alta reportada&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1814" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1814</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychiatry Research · 2026-09-01 · network-meta-analysis</div>
+        <h3 class="r3-title">Comparative efficacy of interventions for transdiagnostic anhedonia: a network meta-analysis</h3>
+        <p class="r3-hook">Network meta-analysis (60 reportes, 61 ensayos, 5794 participantes, protocolo PROSPERO CRD42025630784) que compara intervenciones farmacológicas, neuromoduladoras y psicológicas para la anhedonia tratada como constructo transdiagnóstico -no por diagnóstico- en depresión mayor, esquizofrenia y anhedonia de rasgo en sanos: vortioxetina 10mg/día, TMS dirigida a DLPFC izquierda, activación conductual y meditación superan al control combinado (SMD -0.90, -0.55, -0.52, -0.49 respectivamente), con TMS-DLPFC mostrando el patrón de evidencia más consistente pese a heterogeneidad sustancial (I²=71.9%). Para tu línea de psiquiatría dimensional y network theory esto es exactamente el tipo de evidencia que tu marco necesita: un síntoma (anhedonia) tratado como diana terapéutica transversal a categorías diagnósticas, con un ranking comparativo real detrás en vez de solo teoría. Para tu libro de psicopatología dimensional es un caso de manual para argumentar que RDoC no es solo un marco conceptual -ya genera ensayos y metaanálisis diseñados explícitamente de forma transdiagnóstica. Ángulo de contenido: &#39;la anhedonia ya se trata como blanco transdiagnóstico en los ensayos clínicos -este NMA compara vortioxetina, TMS, activación conductual y meditación cruzando depresión y esquizofrenia en la misma red&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.psychres.2026.117435" target="_blank" rel="noopener">↗ doi.org/10.1016/j.psychres.2026.117435</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Molecular Psychiatry · 2026-09-01 · network-meta-analysis</div>
+        <h3 class="r3-title">Nutraceuticals and phytoceuticals for the treatment of major depressive disorder: a systematic review and network meta-analysis</h3>
+        <p class="r3-hook">Network meta-analysis de 163 estudios (15,757 participantes, 137 combinaciones de compuestos) sobre nutracéuticos/fitocéuticos para depresión mayor que, tras filtrar por ≥2 ECA, comparador no-TAU, bajo riesgo de sesgo y ausencia de financiamiento por la industria, reduce el listado de &#39;ganadores&#39; a EPA, vitamina D3 y extracto de hipérico (St. John&#39;s wort) ZE117 con tamaños de efecto grandes -mientras que un metarregresión muestra que los efectos más grandes se asocian con menor calidad metodológica (puntaje AMSTAR-Plus más bajo), y la confianza global en la evidencia es baja a muy baja. Para tu voz de &#39;evidencia proporcional al claim&#39; es el material perfecto: la mayoría de lo que el paciente pregunta en consulta (&#39;¿me sirve tal suplemento?&#39;) se desinfla exactamente como predice este NMA en cuanto se exige rigor metodológico. Para contenido en IG/YT es un ángulo de alto interés público -desmontar el hype de los nutracéuticos con datos, no con opinión. Ángulo de contenido: &#39;de más de cien nutracéuticos antidepresivos estudiados, casi todos pierden su efecto cuando filtras por calidad del estudio -EPA, vitamina D3 e hipérico son los pocos que sobreviven el filtro riguroso&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03759-1" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03759-1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">The Journal of Prevention of Alzheimer&#39;s Disease · 2026-09-04 · guideline</div>
+        <h3 class="r3-title">Integrating frailty into decision-making for disease-modifying therapies in Alzheimer&#39;s disease: a proposed expert-opinion based approach</h3>
+        <p class="r3-hook">Marco de decisión basado en opinión de expertos que propone incorporar sistemáticamente la evaluación de fragilidad en la selección de pacientes para las nuevas terapias modificadoras de enfermedad en Alzheimer (anti-amiloide): señala que la fragilidad -común en adultos mayores con Alzheimer- no se evaluó sistemáticamente en los ensayos pivote de estas terapias, lo que limita la generalización de sus resultados a la población real, y propone que la evaluación de fragilidad informe tanto ensayos futuros como la práctica clínica, incluyendo revisión de medicación e intervenciones multidominio. Para tu foco secundario en neuropsiquiatría y tu línea de psiquiatría de precisión es un documento de normatización temprana justo en el momento en que estas terapias empiezan a llegar a la práctica clínica fuera de Estados Unidos -la pregunta de &#39;a quién sí y a quién no&#39; todavía no tiene guía formal, y este approach expert-opinion intenta llenar ese vacío antes de que exista una guía consolidada. Para razonamiento clínico es un caso ideal de cómo estratificar riesgo-beneficio en un paciente mayor y frágil frente a una terapia nueva y costosa. Ángulo de contenido: &#39;las terapias anti-amiloide para Alzheimer no vienen con manual de a quién no dárselas -este approach de expertos propone la fragilidad como el criterio que todavía falta en los ensayos pivote&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.tjpad.2026.100666" target="_blank" rel="noopener">↗ doi.org/10.1016/j.tjpad.2026.100666</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JAMA Psychiatry · 2026-09-01 · meta-analysis</div>
+        <h3 class="r3-title">Neurometabolites and Antipsychotic Response in Psychosis: A Mega-Analysis</h3>
+        <p class="r3-hook">Mega-análisis con datos de participantes individuales (1189 personas, 18 estudios) más metaanálisis complementario (23 estudios, 1844 participantes) que encuentra que los pacientes con psicosis no-respondedores a antipsicóticos muestran elevaciones consistentes de glutamato, glutamato+glutamina, colina y mio-inositol en corteza frontal medial frente a respondedores -con la elevación de glutamato+glutamina replicada prospectivamente en primer episodio (Glass Δ=0.41) y el mio-inositol más alto específicamente en resistencia al tratamiento (Glass Δ=0.64). Para tu línea de psiquiatría de precisión es evidencia de primer nivel (JAMA Psychiatry, datos individuales agregados) de un biomarcador de espectroscopía por resonancia magnética que podría anticipar quién no responderá a antipsicóticos -y que apunta directamente a nuevas dianas terapéuticas glutamatérgicas e inflamatorias, no solo dopaminérgicas. Conecta con el hallazgo de ayer sobre el giro fusiforme en esquizofrenia resistente: dos líneas de evidencia independientes convergiendo en que la resistencia al tratamiento tiene una firma biológica medible antes del ensayo-error clínico. Ángulo de contenido: &#39;la resistencia a antipsicóticos ya tiene una firma química visible en espectroscopía -glutamato y mio-inositol elevados en corteza frontal, en el mega-análisis de datos individuales más grande hecho hasta ahora sobre el tema&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.1674" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.1674</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Asia-Pacific Psychiatry · 2026-09-01 · meta-analysis</div>
+        <h3 class="r3-title">Prevalence and Incidence of Dementia for Schizophrenia and Other Primary Psychotic Disorders: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Metaanálisis que encuentra una prevalencia combinada de demencia del 24.3% (IC95%: 20.5-28.5%) en adultos mayores con trastornos psicóticos primarios (esquizofrenia y afines) tras excluir un outlier, con heterogeneidad alta (I²=84.7%) explicada por tipo de prevalencia, entorno, región geográfica y edad, y una incidencia que varía ampliamente entre estudios. Para tu foco secundario en neuropsiquiatría es el puente cuantitativo directo entre psicosis crónica y demencia -una población que envejece con esquizofrenia y que necesita planificación de servicios integrados, un ángulo que casi no se enseña en la formación psiquiátrica estándar. Para AMAUTA/USAMEDIC es un dato memorizable y con cifra concreta (24.3%) que reencuadra la esquizofrenia como una condición con curso neurocognitivo a largo plazo, no solo un trastorno de síntomas positivos/negativos en la adultez temprana. Ángulo de contenido: &#39;uno de cada cuatro adultos mayores con esquizofrenia tiene demencia -este metaanálisis pone número a algo que la psiquiatría rara vez planifica: qué pasa con estos pacientes cuando envejecen&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/appy.70033" target="_blank" rel="noopener">↗ doi.org/10.1111/appy.70033</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Molecular Psychiatry · 2026-09-04 · meta-analysis</div>
+        <h3 class="r3-title">Pharmacological and non-pharmacological modulation of striatal dopamine release: a meta-analysis of [11C]raclopride PET studies</h3>
+        <p class="r3-hook">Metaanálisis de 92 estudios PET con [11C]raclopride (n=1640) que cuantifica y compara la magnitud y distribución regional de la liberación de dopamina estriatal inducida por anfetamina, metilfenidato, ketamina, alcohol y desafíos cognitivos con y sin recompensa: la anfetamina libera ~4 veces más dopamina que los desafíos cognitivos y ~2 veces más que el alcohol, con efectos comparables a metilfenidato; además, la respuesta a metilfenidato se atenúa con la edad mientras que los desafíos cognitivos liberan más dopamina en personas mayores. Para tu línea TDAH/neurodivergencia es directamente relevante -el metilfenidato es primera línea en TDAH y este metaanálisis cuantifica su efecto dopaminérgico frente a otros estimulantes y frente al propio envejecimiento del sistema, un dato útil para explicar por qué la respuesta clínica puede variar con la edad del paciente. Para psiquiatría de precisión es una tabla de referencia cuantitativa que faltaba en el campo: comparar en la misma métrica fármacos que rara vez se ponen lado a lado. Ángulo de contenido: &#39;toda la neuroimagen dopaminérgica en una sola tabla -cuánta dopamina libera cada estimulante, el alcohol y hasta una tarea cognitiva, y por qué el metilfenidato libera menos en el cerebro que envejece&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03826-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03826-7</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El NMA de JAMA Psychiatry sobre manejo del peso en esquizofrenia encuentra que semaglutida y metformina son las únicas intervenciones que alcanzan el umbral de cambio clínicamente significativo (≥5% de peso corporal) con certeza de evidencia moderada -los GLP-1 ya tienen ranking formal en psiquiatría, no solo en endocrinología.</li><li>El NMA de anhedonia transdiagnóstica (Psychiatry Research) trata el síntoma como blanco terapéutico cruzando depresión mayor y esquizofrenia en la misma red bayesiana -la TMS dirigida a DLPFC izquierda fue la intervención con el patrón de evidencia más consistente, no el antidepresivo.</li><li>En el NMA de nutracéuticos para depresión (Molecular Psychiatry), una metarregresión muestra que a menor calidad metodológica del estudio, mayor el tamaño de efecto reportado -de más de 100 compuestos evaluados, solo EPA, vitamina D3 e hipérico ZE117 sobreviven el filtro de rigor.</li><li>El mega-análisis de neurometabolitos y respuesta a antipsicóticos (JAMA Psychiatry) encuentra mio-inositol elevado específicamente en pacientes con resistencia al tratamiento -no solo en no-respondedores en general- sugiriendo que la resistencia tiene una firma bioquímica más marcada que la simple falta de respuesta.</li><li>El metaanálisis de demencia en trastornos psicóticos (Asia-Pacific Psychiatry) reporta 24.3% de prevalencia combinada en adultos mayores con esquizofrenia -casi 1 de cada 4- con heterogeneidad alta (I²=84.7%) que la revisión atribuye a diferencias de región, entorno y edad, no a un solo factor dominante.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si semaglutida y metformina ya tienen el ranking de mayor certeza para revertir el aumento de peso por antipsicóticos, ¿en qué momento de tu seguimiento hoy consideras iniciar un GLP-1 en vez de esperar a que el daño metabólico esté instalado?</li><li>Con la TMS-DLPFC izquierda mostrando el patrón más consistente contra la anhedonia transdiagnóstica -en depresión y en esquizofrenia por igual-, ¿tratarías la anhedonia como síntoma-diana independiente del diagnóstico de base si tuvieras acceso a neuromodulación?</li><li>Si de más de 100 nutracéuticos evaluados solo tres sobreviven el filtro de rigor metodológico, ¿cómo respondes hoy, con datos y no con opinión, cuando un paciente te pregunta por un suplemento específico para su depresión?</li><li>Con el mio-inositol elevado específicamente en resistencia al tratamiento (no solo en no-respuesta), ¿qué tan lejos estamos de pedir una espectroscopía antes de declarar a un paciente resistente a antipsicóticos tras dos ensayos fallidos?</li><li>Si 1 de cada 4 adultos mayores con esquizofrenia tiene demencia, ¿tu seguimiento a largo plazo de estos pacientes incluye tamizaje cognitivo sistemático, o el diagnóstico psiquiátrico sigue eclipsando la vigilancia neurocognitiva conforme envejecen?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o carrete sobre el ranking de JAMA Psychiatry de qué fármaco usar para el aumento de peso por antipsicóticos -semaglutida al tope- como actualización práctica para psiquiatras y residentes.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido ENAM/Residentado sobre demencia en esquizofrenia (24.3% de prevalencia en el metaanálisis de Asia-Pacific Psychiatry) como pregunta de examen que reencuadra la esquizofrenia como enfermedad de curso neurocognitivo largo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota o hilo desmontando el hype de nutracéuticos para depresión con el NMA de Molecular Psychiatry -ángulo de &#39;evidencia proporcional al claim&#39; para audiencia general y para pacientes.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología dimensional retomando el paper de Schizoidism/Syntony (Plessner, autopoiesis, 4E) como raíz fenomenológica histórica del pensamiento dimensional moderno (HiTOP/RDoC).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota corta o carta al editor proponiendo un algoritmo de decisión clínica que incorpore fragilidad (siguiendo el approach expert-opinion de J Prev Alzheimer&#39;s Disease) para seleccionar candidatos a terapias anti-amiloide en el contexto peruano, donde la disponibilidad es incipiente.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JAMA Psychiatry</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Psychiatry Research</span><span class="tag ">Asia-Pacific Psychiatry</span><span class="tag ">Trends in Neurosciences</span><span class="tag ">Psychopathology</span><span class="tag ">Zeitschrift für Gerontologie und Geriatrie</span><span class="tag ">The Journal of Prevention of Alzheimer&#39;s Disease</span><span class="tag ">The International Journal of Neuropsychopharmacology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (PubMed/MEDLINE) · Consensus. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 7 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
