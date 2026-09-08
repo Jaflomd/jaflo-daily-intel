@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-09-08 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">8 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Perspectives on Medical Education, 4 sep 2026 · paper · 2026-09-04</div>
+        <h3 class="r3-title">Phenotypes of Management Reasoning Struggle in Postgraduate Medical Education</h3>
+        <p class="r3-hook">Estudio cualitativo multi-institucional (20 directores de programa y jefes de comité de competencias, 15 programas de medicina interna/pediatría en EE.UU., 15 casos de remediación) que llena un vacío real: casi toda la literatura de razonamiento clínico —y casi todos los comités de remediación— se centra en el razonamiento diagnóstico, dejando sin marco el razonamiento de manejo. Identifican 4 fenotipos de falla: guiones de manejo limitados (no logra generar un plan aunque ya tiene el diagnóstico), &#39;no puede cambiar de rumbo&#39; (no integra información nueva a un plan ya trazado), mal triage/ejecución de tareas, y mala calibración del nivel de intervención. Para Javier esto es oro directo para AMAUTA/USAMEDIC y el Competency Lab: la mayoría de sus alumnos de ENAM/Residentado ya acierta el diagnóstico y falla después, en el plan —esta taxonomía da un lenguaje preciso para dar feedback ahí en vez de repetir &#39;estudia más diferenciales&#39;. También es material aprovechable para su libro de psicopatología: un marco dimensional de tipos de falla, no una lista binaria de &#39;sabe/no sabe&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.5334/pme.2960" target="_blank" rel="noopener">↗ doi.org/10.5334/pme.2960</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Research Square (preprint), 6 sep 2026 · preprint · 2026-09-06</div>
+        <h3 class="r3-title">AI-enhanced case-based learning for clinical reasoning in pathophysiology: A sequential cohort study</h3>
+        <p class="r3-hook">Estudio de cohortes secuenciales en Nanchang University (cohorte IA n=49 vs cohorte tradicional n=47, perfiles basales comparables) que integra IA en tres puntos del curso de fisiopatología: recursos personalizados antes de clase, analítica en vivo durante la discusión, y evaluación automatizada después. La cohorte con IA sacó más en el examen final (88.59 vs 83.14, p&lt;0.05) y 84.1% reportó satisfacción —pero 43.9% también reportó sobre-dependencia de la IA y menor profundidad de pensamiento crítico en problemas abiertos. Es casi un piloto de lo que podría ser un módulo de IA dentro del Competency Lab de AMAUTA: la estructura (pre-clase/en-clase/post-clase) es replicable, pero el dato de sobre-dependencia es la advertencia que Javier debería incorporar al diseño desde el inicio —medir no solo nota final sino dependencia— en vez de descubrirlo después como efecto secundario no buscado.</p>
+        <a class="r3-link" href="https://doi.org/10.21203/rs.3.rs-10187129/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10187129/v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Advances in Health Sciences Education, 5 sep 2026 · paper · 2026-09-05</div>
+        <h3 class="r3-title">Collaborative clinical reasoning in the ICU: how teams construct shared understanding in real time</h3>
+        <p class="r3-hook">Análisis microinteraccional en video (27 horas, 18 encuentros, 12 episodios analizados a fondo) de equipos de UCI que desplaza la unidad de análisis del razonamiento clínico de la cognición individual a la construcción social: identifica tres mecanismos —clarificación progresiva, alineación condicional (negociar hipótesis sin romper la cohesión del equipo) y coordinación situada (cómo la posición espacial y los objetos estructuran quién participa). Para la línea de psiquiatría dimensional/network theory de Javier, esto es una metáfora empírica casi lista: si el razonamiento clínico real ya se comporta como una red distribuida entre personas y artefactos, encaja de forma natural con pensar la psicopatología como red de nodos en interacción, no como entidades aisladas. Aplicable también al Competency Lab: en vez de coachear &#39;comunicación&#39; en abstracto, se puede entrenar específicamente estos tres mecanismos en los debriefs de casos en equipo.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10459-026-10575-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s10459-026-10575-3</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Hospital Medicine, 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">From frameworks to the frontline: Hospitalist perspectives on diagnostic excellence programs</div>
+          <div class="r10-line">Estudio cualitativo (7 focus groups, 30 hospitalistas, 14 hospitales, más de 80 intervenciones descritas) confirma que una década después del reporte de la Academia Nacional de EE.UU. sobre diagnóstico, los programas de excelencia diagnóstica siguen siendo reactivos y que la carga cognitiva sigue siendo el enemigo silencioso del razonamiento clínico en la primera línea.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta taxonomía de barreras (reactivo vs. proactivo, sistema vs. clínico) se vuelve el marco que Javier cita si arma una propuesta formal de &#39;cultura de excelencia diagnóstica&#39; para AMAUTA/USAMEDIC, más que un paper que alguien lea entero.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jhm.70453" target="_blank" rel="noopener">↗ doi.org/10.1002/jhm.70453</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (Berlin), 8 sep 2026 · editorial · 2026-09-08</div>
+          <div class="r10-title">The AI arc and interpretive drift</div>
+          <div class="r10-line">Pieza de opinión en Diagnosis —revista de referencia del campo— que acuña &#39;interpretive drift&#39;: la distorsión sutil que ocurre cuando el relato del paciente pasa por un resumen generado por IA antes de llegar a la historia clínica, y propone la revisión activa como práctica de seguridad diagnóstica, no trámite administrativo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Se vuelve terminología estándar en discusiones sobre notas ambientales con IA; Javier podría adoptar &#39;interpretive drift&#39; como concepto enseñable en su línea de IA aplicada a educación, aplicado a cómo sus residentes usan resúmenes de IA para presentar casos.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0162" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0162</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (Berlin), 8 sep 2026 · editorial · 2026-09-08</div>
+          <div class="r10-title">When an AI-generated diagnosis begins to matter: the AI consequence point</div>
+          <div class="r10-line">Pieza conceptual complementaria en el mismo número: define el &#39;punto de consecuencia de la IA&#39; —el momento exacto en que el uso previo a la consulta de una IA diagnóstica por el paciente empieza a alterar la atención real, no el mero hecho de haber usado la IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Va a generar un marco de medición (framing previsita, cambios observables en tres dominios) que grupos de investigación en diagnóstico operacionalizarán en 2027; útil desde ya para que Javier piense cómo sus pacientes o alumnos llegan ya &#39;anclados&#39; en un diagnóstico de IA.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0153" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0153</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of International Medical Research, 7 sep 2026 · review · 2026-09-07</div>
+          <div class="r10-title">Elucidating the transformative role of large language models in advancing anesthesiology education</div>
+          <div class="r10-line">Revisión narrativa (2020-2026) que mapea 4 usos validados de LLMs en formación de anestesiología —generación de recursos, simulación de escenarios, remediación personalizada, evaluación automatizada— y advierte sobre alucinación y sobre-dependencia que puede &#39;impair independent clinical reasoning&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El marco de 4 usos se va a replicar como plantilla en revisiones análogas por especialidad; Javier podría ser quien escriba la versión para psiquiatría/educación médica de precisión antes de que otro grupo lo haga.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/03000605261483195" target="_blank" rel="noopener">↗ doi.org/10.1177/03000605261483195</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica, 4 sep 2026 · paper · 2026-09-04</div>
+          <div class="r10-title">When deliberation becomes inefficient</div>
+          <div class="r10-line">Dos experimentos (N=918) muestran que la deliberación reflexiva no siempre mejora el resultado: en tareas sin beneficio informativo de seguir pensando, el pensamiento experiencial predice sobre-involucramiento y revisión innecesaria, más que la falta de reflexión predice error.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Contraargumento útil al dogma de &#39;Sistema 2 siempre gana&#39;; Javier puede usarlo para matizar sus clases de razonamiento dual-proceso enseñando también cuándo conviene dejar de deliberar, no solo cuándo frenar el Sistema 1.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107733" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107733</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open, 4 sep 2026 · protocol · 2026-09-04</div>
+          <div class="r10-title">Impact of the standardised patient teaching method on medical students&#39; clinical reasoning competence: a systematic review protocol</div>
+          <div class="r10-line">Protocolo de revisión sistemática (PRISMA-P, sin resultados aún) que mapeará el efecto real de la simulación con pacientes estandarizados sobre la competencia de razonamiento clínico en estudiantes de medicina.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Cuando publiquen resultados (probablemente 2027), da el mapa de evidencia que le faltaría a Javier si quisiera justificar con literatura formal una simulación con pacientes estandarizados dentro del Competency Lab de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2025-114495" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2025-114495</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Más deliberación no siempre gana: en decisiones sin información nueva que ganar, seguir &#39;pensando&#39; es la trampa cognitiva, no el atajo (Acta Psychologica, N=918).</li><li>La mayoría de comités de remediación evalúan si el residente &#39;sabe el diagnóstico&#39;, pero el punto de quiebre real suele estar después, en el plan de manejo, no en el nombre de la enfermedad (Perspectives on Medical Education).</li><li>El grupo que usó IA en el aula sacó mejor nota (88.59 vs 83.14) Y casi la mitad reportó sentir que pensaba menos por sí mismo: la métrica de examen y la métrica de dependencia se movieron en direcciones que ninguna encuesta de satisfacción captura por separado.</li><li>Revisar una nota clínica generada por IA no es un trámite administrativo: funcionalmente es el mismo acto que revisar un resultado de laboratorio antes de firmarlo —una práctica de seguridad diagnóstica (Diagnosis, &#39;interpretive drift&#39;).</li><li>El razonamiento clínico que se enseña en el aula es individual; el que ocurre en una UCI real es coreografía entre personas y objetos —se pierde casi toda la evidencia de cómo se razona bien en equipo si solo se mide al residente solo frente a un caso escrito.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuál de los 4 fenotipos de falla en razonamiento de manejo (guiones limitados, no cambia de rumbo, mal triage, mala calibración) es el que más repites viendo en tus alumnos de AMAUTA que ya dominan el diagnóstico pero fallan el plan?</li><li>Si 43.9% de los estudiantes con IA en el aula reportan sobre-dependencia pese a sacar mejor nota, ¿qué métrica de &#39;pensamiento propio&#39; deberías medir en el Competency Lab además del puntaje final?</li><li>¿Cómo se vería un &#39;interpretive drift&#39; en psiquiatría, donde el relato del paciente ya es más interpretativo que en medicina interna —el resumen de IA distorsiona más, o simplemente distorsiona distinto?</li><li>¿En qué parte de tu enseñanza de razonamiento dual-proceso estás asumiendo que &#39;más deliberación siempre es mejor&#39;, cuando el dato dice que a veces el Sistema 2 solo da vueltas sin ganar información nueva?</li><li>Si un paciente llega a consulta ya anclado en un diagnóstico generado por IA (el &#39;punto de consecuencia&#39;), ¿tu protocolo actual de anamnesis detecta ese anclaje antes de heredarlo tú mismo en la historia clínica?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o reel de IG explicando los 4 fenotipos de falla en razonamiento de manejo (no diagnóstico) para audiencia ENAM/Residentado que ya domina el diagnóstico pero se traba en el plan.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto sobre &#39;interpretive drift&#39;: cómo revisar una nota clínica generada por IA como si fuera un resultado de laboratorio, con un ejemplo de psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Adaptar el diseño de razonamiento colaborativo en UCI (clarificación progresiva, alineación condicional, coordinación situada) a un estudio observacional de juntas clínicas de psiquiatría o del comité de ética HVLH.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional que use el marco de razonamiento colaborativo/distribuido como puente conceptual hacia la teoría de redes: el equipo co-construyendo el diagnóstico igual que los síntomas co-construyen un cuadro.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie corta para el Competency Lab de AMAUTA: &#39;cuándo NO seguir pensando&#39;, basada en el hallazgo de deliberación ineficiente —antídoto al mito de que el Sistema 2 siempre gana.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Perspectives on Medical Education</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag ">Journal of Hospital Medicine</span><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">Journal of International Medical Research</span><span class="tag ">Acta Psychologica</span><span class="tag ">BMJ Open</span><span class="tag ">Research Square (preprint)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC / PubMed · Consensus · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 8 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
