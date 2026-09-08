@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-08 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">8 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">72</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">72</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">British Journal of Psychiatry · 2026-09-07 · review</div>
+        <h3 class="r3-title">Conceptual challenges in psychiatric nosology: ADHD across six editions of the DSM</h3>
+        <p class="r3-hook">Análisis teórico anclado en un textual-analysis empírico previo de todas las descripciones de ADHD del DSM-III (1980) al DSM-5-TR (2022), que identifica cinco tensiones estructurales de la nosología psiquiátrica -umbral de desviación/prevalencia, heterogeneidad de género, framing etiológico, límites del framing médico, y comorbilidad/validez discriminante- usando ADHD como caso de estudio. Para tu libro de psicopatología para el mundo y tu línea de psiquiatría dimensional (HiTOP/RDoC) es munición directa: documenta con filosofía de la ciencia por qué seis revisiones categoriales del DSM no han resuelto la ausencia de marcador biológico claro en ADHD, el mismo argumento que sostiene moverse a dimensiones. Para AMAUTA/USAMEDIC es contenido de alto rendimiento para quien prepara ENAM/Residentado: entender el &#39;por qué&#39; detrás de los cambios de criterio, no solo memorizarlos, cambia cómo se razona una pregunta de diagnóstico diferencial. Ángulo de contenido: &#39;seis ediciones del DSM después, el ADHD sigue sin biomarcador -este análisis de Br J Psychiatry desglosa qué se movió en cada revisión y por qué nunca fue solo ciencia&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10768" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10768</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">BJPsych Bulletin · 2026-09-07 · review</div>
+        <h3 class="r3-title">Precision without participation: why precision psychiatry needs Collaborative/Therapeutic Assessment</h3>
+        <p class="r3-hook">Argumenta que biomarcadores, fenotipado digital e IA prometen diagnóstico y selección de tratamiento más precisos, pero que esa información objetivamente válida no mejora el cuidado si el paciente la vive como impuesta o desconectada de sus preocupaciones -y propone Collaborative/Therapeutic Assessment (C/TA) como el puente que convierte hallazgos técnicos en conocimiento personalmente útil. Pega directo en tu línea de psiquiatría de precisión y en tu pilar de IA aplicada a investigación y educación: es la advertencia que falta en casi todo el discurso pro-precisión, y un contrapeso útil para razonamiento clínico centrado en el paciente. Para AMAUTA/USAMEDIC es un ángulo de enseñanza poco común -que el residente entienda que &#39;más preciso&#39; no es sinónimo de &#39;más útil clínicamente&#39; si no hay participación del paciente en el proceso. Ángulo de contenido: &#39;la psiquiatría de precisión puede volverse precisión sin participación -un diagnóstico técnicamente refinado que el paciente experimenta como ajeno no cura nada&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjb.2026.10278" target="_blank" rel="noopener">↗ doi.org/10.1192/bjb.2026.10278</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Dialogues in Clinical Neuroscience · 2026-09-06 · review</div>
+        <h3 class="r3-title">Dynamical system modeling in schizophrenia: a narrative review of computational psychiatry frameworks</h3>
+        <p class="r3-hook">Revisión narrativa que sintetiza cómo la teoría de sistemas dinámicos modela la esquizofrenia como un proceso no lineal con transiciones de estado -en vez de una categoría fija- distinguiendo modelos teóricos, enfoques data-driven y marcos validados empíricamente contra datos longitudinales reales de pacientes. Para tu línea de psiquiatría dimensional y network theory es la contraparte matemática exacta de la intuición HiTOP/RDoC: le da ecuaciones y trayectorias a la idea de que los síntomas fluctúan en un continuo, no que aparecen o desaparecen categóricamente. Para tu libro de psicopatología es material de puente entre fenomenología clásica y psiquiatría computacional moderna -un capítulo entero podría anclarse en esta síntesis. Ángulo de contenido: &#39;la esquizofrenia no es un interruptor de encendido/apagado sino una trayectoria dinámica -la psiquiatría computacional le está poniendo ecuaciones a esa intuición dimensional que ya tenían Kraepelin y Bleuler&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/19585969.2026.2724875" target="_blank" rel="noopener">↗ doi.org/10.1080/19585969.2026.2724875</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Network Meta-Analysis en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Chinese Neurosurgical Society (Zhonghua Yi Xue Za Zhi) · 2026-09-07 · guideline</div>
+        <h3 class="r3-title">Expert consensus on the management of traumatic brain injury in mass casualty incidents (2026 edition)</h3>
+        <p class="r3-hook">Consenso Delphi de la Chinese Neurosurgical Society, graduado con el sistema de niveles de evidencia de Oxford CEBM (2009), que produce 42 recomendaciones cubriendo todo el proceso de manejo de TCE en incidentes de víctimas masivas -desde triaje en el sitio hasta, explícitamente, un módulo de soporte psicológico temprano dentro del protocolo estandarizado. Para tu foco secundario en neuropsiquiatría (TCE) es un hallazgo poco común: una guía formal que normatiza el soporte psicológico como parte del proceso de rescate, no como añadido posterior, en un escenario de recursos limitados. Para AMAUTA/USAMEDIC es un ángulo de enseñanza distinto -usar esta guía para ilustrar metodología de desarrollo de consenso (Delphi + graduación Oxford) como habilidad de medicina basada en evidencia transferible más allá del contenido clínico. Ángulo de contenido: &#39;en un desastre masivo con TCE, el soporte psicológico ya está normado junto al manejo neuroquirúrgico -no es un lujo posterior, es parte del protocolo desde el primer minuto&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.3760/cma.j.cn112137-20260624-01605" target="_blank" rel="noopener">↗ doi.org/10.3760/cma.j.cn112137-20260624-01605</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neuropsychological Rehabilitation · 2026-09-07 · guideline</div>
+        <h3 class="r3-title">Reaching an initial consensus on the non-pharmacological management of post-stroke emotionalism using the Delphi Method and mini-focus groups</h3>
+        <p class="r3-hook">Consenso Delphi (38 profesionales en ronda 1, 19 en ronda 2) más mini-focus groups que identifica las intervenciones no farmacológicas mejor valoradas para el emocionalismo post-ACV -pedir respiración profunda, educar al paciente, reconocer el episodio y continuar la actividad, y enseñar técnicas de distracción- y documenta incertidumbre generalizada sobre cómo evaluarlo y diagnosticarlo como barrera clínica central. Para tu foco secundario en neuropsiquiatría es exactamente el tipo de síntoma en la interfaz neurología-psiquiatría que se subdiagnostica -llanto o risa patológica post-ictus que el equipo no psiquiátrico no sabe manejar. Para AMAUTA/USAMEDIC es una perla de manejo práctico al lado de la cama, poco cubierta en la enseñanza estándar de residentado. Ángulo de contenido: &#39;el emocionalismo post-ACV sigue sin consenso farmacológico claro, pero ya hay consenso Delphi sobre qué hacer sin fármacos mientras se cierra esa brecha&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/09602011.2026.2723018" target="_blank" rel="noopener">↗ doi.org/10.1080/09602011.2026.2723018</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Epilepsy &amp; Behavior · 2026-09-05 · guideline</div>
+        <h3 class="r3-title">The current state of clinical practice guidelines for women with epilepsy: a systematic review</h3>
+        <p class="r3-hook">Revisión sistemática que evalúa con AGREE II las 11 guías de práctica clínica existentes para mujeres con epilepsia (2014-2024): calidad metodológica global alta (mediana 74.9%), pero cobertura fuertemente desbalanceada -el embarazo está bien normado, mientras adolescencia, epilepsia catamenial, menopausia y salud ósea reciben atención mínima o nula, con recomendaciones divergentes incluso en monitoreo terapéutico en embarazo. Para tu foco secundario en neuropsiquiatría y tu línea de psiquiatría de precisión (cuidado ajustado a etapa vital) es un mapa claro de dónde falta evidencia normativa específica de género a lo largo del ciclo vital -un vacío que probablemente se repite en guías psiquiátricas &#39;de la mujer&#39;. Para AMAUTA/USAMEDIC es alfabetización meta-guía: enseña a apreciar críticamente una guía con AGREE II, habilidad transferible más allá de la epilepsia. Ángulo de contenido: &#39;las guías de epilepsia en mujeres están hechas para el embarazo -la adolescencia y la menopausia siguen casi sin normar&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.yebeh.2026.111262" target="_blank" rel="noopener">↗ doi.org/10.1016/j.yebeh.2026.111262</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience · 2026-09-06 · meta-analysis</div>
+        <h3 class="r3-title">Toward precision medicine: can neuroimaging prospectively predict early treatment outcomes in schizophrenia spectrum disorders? A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis multinivel (16 estudios, PRISMA-DTA, protocolo preregistrado) que agrupa el desempeño discriminativo de la neuroimagen basal (RM/PET) para predecir respuesta a antipsicóticos en espectro esquizofrenia: AUC pooled 0.75 (I²=28.1%), con los modelos basados en conectividad funcional superando significativamente a los estructurales (p=0.03) y sensibilidad/especificidad de 0.75 en el modelo HSROC. Para tu línea de psiquiatría de precisión es el estado del arte actual de cuánto (y cuán poco) se puede predecir hoy con biomarcadores de imagen antes de tratar -útil para calibrar expectativas frente al hype. Para tu línea de network theory el hallazgo de que la conectividad funcional predice mejor que la anatomía estructural refuerza pensar la respuesta a tratamiento como propiedad de red, no de región aislada. Ángulo de contenido/paper: &#39;la resonancia funcional ya predice con AUC 0.75 quién va a responder al antipsicótico -promisorio, pero todavía falta estandarización antes de usarlo en consulta&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02359-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02359-y</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neurological Sciences · 2026-09-07 · meta-analysis</div>
+        <h3 class="r3-title">Efficacy and safety of cannabinoid-based interventions for behavioral and cognitive symptoms in dementia: systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis de 9 ensayos controlados aleatorizados (334 participantes, GRADE, RoB 2, modelos frecuentista y bayesiano) que no encuentra beneficio de los cannabinoides sobre agitación (CMAI), síntomas neuropsiquiátricos (NPI-NH) ni cognición (MMSE) en Alzheimer/demencia, con certeza moderada para los desenlaces conductuales y más somnolencia que placebo (RR 2.03). Para tu foco secundario en neuropsiquiatría y tu ética de evidencia proporcional al claim es un contrapeso necesario a la narrativa pro-cannabis en síntomas conductuales de demencia (BPSD), justo donde las familias suelen pedirlo sin sustento. Para AMAUTA/USAMEDIC es un ejemplo limpio de cómo leer un resultado negativo bien hecho (GRADE + Bayes) en vez de descartarlo como &#39;estudio chico sin poder&#39;. Ángulo de contenido: &#39;el cannabis medicinal para la agitación en demencia no funcionó en este meta-análisis con GRADE -certeza moderada de que no hay efecto, y sí más somnolencia&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10072-026-09347-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s10072-026-09347-z</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Alzheimer&#39;s Disease · 2026-09-07 · meta-analysis</div>
+        <h3 class="r3-title">Mild behavioral impairment and risk of incident dementia: A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática y meta-análisis de evidencia longitudinal que confirma el mild behavioral impairment (MBI) -cambios conductuales persistentes de aparición tardía, evaluados con instrumentos alineados a ISTAART- como predictor clínicamente significativo de demencia incidente, con apatía y desregulación afectiva como los dominios más fuertes, y asociación con mayor carga amiloide y tau fosforilada plasmática. Para tu línea de psiquiatría dimensional es un caso de estudio perfecto: MBI es literalmente una dimensión conductual (no una categoría diagnóstica) con validez biológica demostrada, exactamente el tipo de constructo que defiende tu argumento HiTOP/RDoC aplicado a neuropsiquiatría. Para tu libro de psicopatología y tu foco secundario en neuropsiquiatría conecta apatía/desregulación afectiva -síntomas psiquiátricos comunes- con el pródromo biológico de la neurodegeneración. Ángulo de contenido/paper: &#39;antes del deterioro cognitivo franco, la apatía y la desregulación afectiva ya anuncian demencia -MBI es la dimensión conductual que hoy predice mejor que muchos biomarcadores tempranos&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/13872877261480315" target="_blank" rel="noopener">↗ doi.org/10.1177/13872877261480315</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El cannabis medicinal para agitación en demencia no mostró efecto en 9 RCTs con certeza GRADE moderada -y sí aumentó la somnolencia (RR 2.03); la anécdota clínica no sostiene la evidencia acumulada.</li><li>Dentro del síndrome de mild behavioral impairment, apatía y desregulación afectiva -no la queja cognitiva- son los predictores más fuertes de demencia incidente.</li><li>Las guías de epilepsia en mujeres están mejor desarrolladas para el embarazo que para la adolescencia, la epilepsia catamenial o la menopausia: el ciclo vital completo sigue sin normar.</li><li>La conectividad funcional (no la anatomía estructural) es hoy el mejor predictor por neuroimagen de la respuesta a antipsicóticos en esquizofrenia (AUC 0.75 vs modelos estructurales, p=0.03).</li><li>Seis ediciones del DSM después, ADHD sigue sin marcador biológico claro: el &#39;avance&#39; diagnóstico ha sido sobre todo de umbral y framing, no de validez biológica.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debe la psiquiatría de precisión incorporar formalmente evaluación colaborativa (C/TA) para que un biomarcador se traduzca en cambio clínico real, o el riesgo es diluir la &#39;precisión&#39; en subjetividad?</li><li>Si la conectividad funcional predice mejor que la estructura cerebral la respuesta a antipsicóticos, ¿qué implica eso para el diseño de los próximos biomarcadores en esquizofrenia?</li><li>¿Debería el mild behavioral impairment integrarse como screening dimensional de rutina pre-demencia, dado que ya se asocia a biomarcadores de neurodegeneración?</li><li>¿Qué le falta a las guías de epilepsia para cubrir bien adolescencia y menopausia, y ese mismo vacío se repite en otras guías &#39;de la mujer&#39; en psiquiatría?</li><li>Tras nueve RCTs negativos en cannabinoides para síntomas conductuales de demencia, ¿por qué persiste la prescripción off-label -inercia clínica, presión familiar, o falta real de alternativas?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT explicando el emocionalismo post-ACV (llanto/risa patológica post-ictus) con las 4 intervenciones no farmacológicas priorizadas por el consenso Delphi -tema poco conocido, alto valor clínico práctico.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel contra-narrativa: por qué el cannabis medicinal no funciona para agitación en demencia, usando los números GRADE y bayesianos del meta-análisis de Neurological Sciences.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/comentario a Br J Psychiatry o revista afín conectando el análisis de seis ediciones del DSM en ADHD con el marco HiTOP -qué hubiera cambiado si ADHD se hubiera clasificado dimensionalmente desde el inicio.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología usando la revisión de sistemas dinámicos en esquizofrenia (Dialogues Clin Neurosci) como puente entre fenomenología clásica (Kraepelin/Bleuler) y psiquiatría computacional moderna.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper o preprint explorando mild behavioral impairment como caso de estudio dimensional: un constructo conductual sin categoría diagnóstica que predice demencia mejor que muchos biomarcadores tempranos -puente neuropsiquiatría/psiquiatría dimensional.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">British Journal of Psychiatry</span><span class="tag highlight">BJPsych Bulletin</span><span class="tag ">Dialogues in Clinical Neuroscience</span><span class="tag ">Epilepsy &amp; Behavior</span><span class="tag ">Neuropsychological Rehabilitation</span><span class="tag ">Neurological Sciences</span><span class="tag ">Journal of Alzheimer&#39;s Disease</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Chinese Neurosurgical Society (Zhonghua Yi Xue Za Zhi)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 8 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
