@@ -1,0 +1,71 @@
+# ⭐ ♟️ Modelos Mentales & Filosofía — 2026-09-08
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/philosophy/2026-09-08.html
+
+## 🏆 Top 3
+- [ ] **Epistemic reflexivity for AI-augmented research** — _Communications Psychology · Kendeou P, Veletsianos G, Whetung C — 7 sep 2026 · editorial_ — [doi.org/10.1038/s44271-026-00527-3](https://doi.org/10.1038/s44271-026-00527-3) <!--star:philosophy|2026-09-08|t3-1-->
+  > Los autores proponen la 'reflexividad epistémica' como práctica formal que investigadores e instituciones deben adoptar al usar IA generativa en ciencia: no tratar la IA como herramienta neutral, sino examinar activamente cómo sus outputs moldean las preguntas de investigación y el riesgo de homogeneizar el conocimiento hacia un 'monocultivo científico'. Le importa a Javier de forma directa porque es meta RENACYT Distinguido que ya usa IA en investigación y en AMAUTA/USAMEDIC: el paper da vocabulario técnico y un marco publicable para algo que probablemente practica de manera intuitiva — vigilar que la IA no aplane la diversidad de hipótesis en su propio programa de psiquiatría dimensional. Cómo usarlo: citarlo en la sección de métodos de próximos papers donde use LLMs como research assistant, y convertirlo en un módulo corto de AMAUTA sobre uso crítico de IA para residentes que investigan.
+- [ ] **Interpretive theory of mind predicts greater willingness to seek out disagreement for learning** — _Child Development · Blakey KH, Ronfard S — 8 sep 2026 · paper_ — [pubmed.ncbi.nlm.nih.gov/42707001](https://pubmed.ncbi.nlm.nih.gov/42707001/) <!--star:philosophy|2026-09-08|t3-2-->
+  > El estudio muestra que la disposición a buscar activamente el desacuerdo como fuente de aprendizaje está predicha por la 'teoría de la mente interpretativa' — entender que dos personas pueden interpretar la misma evidencia de forma distinta y ambas válidas — más que por la simple tolerancia a estar equivocado. Le importa a Javier porque es el mecanismo cognitivo concreto detrás de la humildad epistémica que quiere modelar en su Competency Lab: no 'aceptar que puedes estar mal' en abstracto, sino entrenar la habilidad específica de ver por qué un razonamiento clínico distinto al propio puede ser igual de legítimo, algo directamente aplicable a las discusiones del comité de ética HVLH y a casos ambiguos de TDAH/TEA. Cómo usarlo: como base conceptual de un módulo de razonamiento clínico en AMAUTA que entrene explícitamente esa 'teoría de la mente interpretativa' frente a discrepancias diagnósticas entre residentes, y como semilla de un post o capítulo sobre por qué buscar desacuerdo activamente enseña más que simplemente tolerarlo.
+- [ ] **The AI arc and interpretive drift** — _Diagnosis · Feren AP — 8 sep 2026 · editorial_ — [pubmed.ncbi.nlm.nih.gov/42703752](https://pubmed.ncbi.nlm.nih.gov/42703752/) <!--star:philosophy|2026-09-08|t3-3-->
+  > Publicado en Diagnosis (la revista de referencia sobre error y razonamiento diagnóstico), el título apunta a un 'drift interpretativo': una deriva gradual en cómo el clínico interpreta la evidencia a medida que delega más el paso de síntesis a sistemas de IA. Le importa a Javier porque toca el núcleo de su línea de razonamiento clínico y educación médica de precisión: si AMAUTA empieza a incorporar IA en la preparación para el ENAM/Residentado, este es exactamente el riesgo metodológico a nombrar y vigilar frente a sus estudiantes antes de que se normalice como muleta diagnóstica. Cómo usarlo: conseguir el texto completo cuando esté disponible y usar 'drift interpretativo' como término técnico en su currícula de razonamiento clínico — nombra un fenómeno que probablemente ya observa de forma anecdótica en residentes que usan IA sin verificar el razonamiento intermedio.
+
+## 📡 Radar (10)
+- [ ] **Collaborating with GenAI: A Blessing or a Curse for Creativity?** — _Current Opinion in Psychology · Caprioli S — 7 sep 2026 · review_ — [pubmed.ncbi.nlm.nih.gov/42705114](https://pubmed.ncbi.nlm.nih.gov/42705114/) <!--star:philosophy|2026-09-08|t10-1-->
+  > Revisión sobre bajo qué condiciones colaborar con IA generativa potencia la creatividad humana y bajo cuáles la erosiona.
+  > 🔮 Predicción Fable: se citará como marco rápido para decidir cuándo delegar la generación de ideas a la IA y cuándo protegerla — aplicable directo a cómo Javier produce contenido (IG/YT) y capítulos de libro sin diluir su voz.
+- [ ] **Collaborative clinical reasoning in the ICU: how teams construct shared understanding in real time** — _Advances in Health Sciences Education · Lee CY, Lai HY, Lee CH, Chen MM, Yau SY — 5 sep 2026 · paper_ — [pubmed.ncbi.nlm.nih.gov/42700338](https://pubmed.ncbi.nlm.nih.gov/42700338/) <!--star:philosophy|2026-09-08|t10-2-->
+  > Con análisis microinteraccional de video en una UCI, el estudio trata el razonamiento clínico en equipo como un logro social y distribuido en tiempo real, no un acto cognitivo privado.
+  > 🔮 Predicción Fable: alimentará el diseño de simulacros AMAUTA que evalúen razonamiento clínico EN EQUIPO, no solo individual — coherente con el giro de Javier hacia educación médica de precisión basada en interacción real.
+- [ ] **From frameworks to the frontline: hospitalist perspectives on diagnostic excellence programs** — _Journal of Hospital Medicine · Keniston A, Klein RM, Tozier M, et al. (ADEPT Research Group) — 7 sep 2026 · paper_ — [pubmed.ncbi.nlm.nih.gov/42703931](https://pubmed.ncbi.nlm.nih.gov/42703931/) <!--star:philosophy|2026-09-08|t10-3-->
+  > El grupo ADEPT documenta la brecha entre los frameworks formales de 'excelencia diagnóstica' y su aplicación real en el frente clínico, según hospitalistas.
+  > 🔮 Predicción Fable: se usará para justificar rediseños de programas de razonamiento clínico que midan implementación real — útil para auditar si AMAUTA/USAMEDIC enseña frameworks que de verdad se usan en guardia.
+- [ ] **Conversational AI as Personalised Cognitive Support: Adults With Intellectual Disability's Experiences of Everyday Decision-Making** — _Journal of Intellectual Disability Research · Álvarez-Aguado I, Vega V, Roselló-Peñaloza M, et al. — 7 sep 2026 · paper_ — [pubmed.ncbi.nlm.nih.gov/42706704](https://pubmed.ncbi.nlm.nih.gov/42706704/) <!--star:philosophy|2026-09-08|t10-4-->
+  > Estudio cualitativo sobre cómo adultos con discapacidad intelectual usan IA conversacional como apoyo cognitivo personalizado para decisiones cotidianas.
+  > 🔮 Predicción Fable: abrirá la puerta a protocolos de 'IA como andamiaje decisional' trasladables a TDAH/TEA — el apoyo cognitivo externo no reemplaza el criterio, reduce carga ejecutiva, línea directa con la neurodivergencia de Javier.
+- [ ] **Cognitive Effort as a Compensatory Mechanism for Motor Control in Impulsivity** — _Journal of Motor Behavior · Ferreira BP, Meira Junior CM, Nogueira NGHM, et al. — 7 sep 2026 · paper_ — [pubmed.ncbi.nlm.nih.gov/42704255](https://pubmed.ncbi.nlm.nih.gov/42704255/) <!--star:philosophy|2026-09-08|t10-5-->
+  > El estudio propone que el esfuerzo cognitivo actúa como mecanismo compensatorio para el control motor en perfiles impulsivos.
+  > 🔮 Predicción Fable: aporta un marco mecanístico trasladable a TDAH — 'esfuerzo cognitivo compensatorio' como explicación de por qué algunos pacientes impulsivos regulan mejor bajo demanda motora estructurada, citable en el libro de psicopatología.
+- [ ] **Mapping the evidence on artificial intelligence-based clinical decision support systems for undergraduate nursing students: a scoping review protocol** — _JBI Evidence Synthesis · Scerbo F, Caggianelli G, Ciucciarelli S, Cangelosi G, Vanzi V, Mazzotta R — 7 sep 2026 · paper_ — [pubmed.ncbi.nlm.nih.gov/42515950](https://pubmed.ncbi.nlm.nih.gov/42515950/) <!--star:philosophy|2026-09-08|t10-6-->
+  > Protocolo de revisión de alcance que mapeará la evidencia sobre sistemas de apoyo a decisión clínica basados en IA en formación de enfermería de pregrado.
+  > 🔮 Predicción Fable: sus resultados serán un mapa útil para que Javier decida, con evidencia y no solo intuición tecnológica, si incorporar CDSS de IA en AMAUTA/USAMEDIC.
+- [ ] **From Invisible to Enrolled: How Artificial Intelligence Is Reshaping Clinical Trial Recruitment** — _Pharmaceutical Medicine · Ahn S — 6 sep 2026 · editorial_ — [pubmed.ncbi.nlm.nih.gov/42701994](https://pubmed.ncbi.nlm.nih.gov/42701994/) <!--star:philosophy|2026-09-08|t10-7-->
+  > Ensayo sobre cómo la IA cambia el reclutamiento en ensayos clínicos, de pacientes 'invisibles' a 'enrolados' mediante identificación algorítmica.
+  > 🔮 Predicción Fable: se volverá lectura de referencia para investigadores RENACYT que diseñan reclutamiento de estudios — aplicable si Javier escala ensayos en psiquiatría de precisión.
+- [ ] **Clinical Reasoning: A 79-Year-Old Man With Subacute Onset Involuntary Facial Movements and Discoordination** — _Neurology · Plaza-Jennings A, Rajarajan P, O'Hare M, Gheihman G, Manzano GS — 8 sep 2026 · paper_ — [pubmed.ncbi.nlm.nih.gov/42566727](https://pubmed.ncbi.nlm.nih.gov/42566727/) <!--star:philosophy|2026-09-08|t10-8-->
+  > Nueva entrega de la serie educativa 'Clinical Reasoning' de Neurology, que expone paso a paso el razonamiento diagnóstico ante un caso de movimientos faciales involuntarios subagudos.
+  > 🔮 Predicción Fable: útil como plantilla de FORMATO para que Javier diseñe casos ENAM/Residentado que enseñen el proceso de razonamiento en voz alta, no solo el diagnóstico final.
+- [ ] **Whose Voice Sounds Professional? Accent, Fluency, and the Politics of Communication Assessment in Health Professions Education** — _Teaching and Learning in Medicine · Jerjes W — 7 sep 2026 · editorial_ — [pubmed.ncbi.nlm.nih.gov/42704088](https://pubmed.ncbi.nlm.nih.gov/42704088/) <!--star:philosophy|2026-09-08|t10-9-->
+  > El ensayo cuestiona cómo se evalúa el 'profesionalismo comunicativo' en educación médica, señalando sesgos de acento y fluidez que penalizan a hablantes no nativos.
+  > 🔮 Predicción Fable: alimentará una revisión de rúbricas de comunicación clínica en programas como AMAUTA/USAMEDIC, que forman médicos peruanos a veces evaluados con estándares angloparlantes — tema directo para el pilar de comunicación del Competency Lab.
+- [ ] **Eco-affective health as a missing pillar of planetary health leadership** — _BMJ Leader · Marques LM — 7 sep 2026 · editorial_ — [pubmed.ncbi.nlm.nih.gov/42705909](https://pubmed.ncbi.nlm.nih.gov/42705909/) <!--star:philosophy|2026-09-08|t10-10-->
+  > Propone la 'salud eco-afectiva' — cómo se procesa emocionalmente el malestar climático — como pilar faltante en los modelos de liderazgo en salud planetaria.
+  > 🔮 Predicción Fable: se integrará en discusiones de liderazgo en salud pública como framework de comunicación de crisis — trasladable al pilar de comunicación de liderazgo de Javier en sus comités.
+
+---
+
+## 💎 Perlas del día
+- Buscar desacuerdo activamente no requiere tolerar estar equivocado: requiere una habilidad específica, la 'teoría de la mente interpretativa', que permite ver que otra lectura de la misma evidencia puede ser igual de válida (Blakey & Ronfard, 2026).
+- La reflexividad epistémica frente a la IA no es 'usarla menos': es examinar activamente cómo sus outputs están reduciendo la diversidad de tus propias hipótesis de investigación (Kendeou et al., 2026).
+- En la UCI, el mejor razonamiento clínico en equipo no ocurre en la cabeza de un experto: ocurre en cómo el equipo construye entendimiento compartido en tiempo real — es un logro social, no solo cognitivo (Lee et al., 2026).
+- Los frameworks de 'excelencia diagnóstica' fallan más por brecha de implementación en el frente clínico que por defecto de diseño teórico (Keniston et al., grupo ADEPT, 2026).
+- Evaluar si alguien 'suena profesional' en medicina a menudo mide acento y fluidez, no competencia clínica real — un sesgo que penaliza sistemáticamente a médicos no angloparlantes (Jerjes, 2026).
+
+## ❓ Preguntas del día
+- ¿Qué preguntas de investigación dejarías de hacerte si delegaras por completo la síntesis de literatura a un LLM — y cómo lo notarías?
+- En las discusiones de casos difíciles del comité HVLH, ¿el desacuerdo se resuelve por jerarquía o porque alguien cambia realmente su interpretación de la evidencia?
+- ¿Cuántos de tus residentes en AMAUTA podrían explicar el PROCESO por el que llegan a un diagnóstico, y no solo el diagnóstico final?
+- Si un paciente con TDAH regula mejor su impulsividad bajo demanda motora estructurada, ¿qué implica eso para el diseño de intervenciones no farmacológicas?
+- ¿Las rúbricas de comunicación clínica que usas en AMAUTA/USAMEDIC miden competencia real o fluidez con un acento 'estándar'?
+
+## 💡 Ideas del día
+- (content) Post/reel explicando la 'teoría de la mente interpretativa' como la habilidad concreta detrás de buscar desacuerdo activo, con un ejemplo de caso clínico ambiguo discutido en HVLH.
+- (paper) Nota metodológica corta aplicando el marco de reflexividad epistémica de Kendeou et al. a un caso propio de uso de IA en investigación dimensional (HiTOP/RDoC).
+- (book) Sección del libro de psicopatología sobre 'esfuerzo cognitivo compensatorio' en impulsividad como puente entre neurociencia motora y TDAH.
+- (content) Serie de contenido AMAUTA en formato 'razonamiento clínico paso a paso', inspirada en la serie Clinical Reasoning de Neurology, para casos tipo ENAM.
+- (paper) Auditoría interna (documentable como paper educativo) de las rúbricas de comunicación clínica de AMAUTA/USAMEDIC frente al sesgo de acento descrito por Jerjes (2026).
+
+---
+_Fuentes: PubMed (búsqueda directa por fecha 2026-09-05 a 2026-09-08, vía WebFetch sobre pubmed.ncbi.nlm.nih.gov, dado que el MCP dedicado de PubMed no está disponible en este entorno) · Consensus MCP (cuota mensual agotada, sin resultados) · WebSearch sobre Farnam Street, Substack, Reddit (r/mentalmodels, r/LessWrong, r/philosophy), X/Twitter, Astral Codex Ten y Big Think — no arrojó ítems web con fecha verificable dentro de la ventana de 48-72h esta corrida; el dossier de hoy es de origen 100% PubMed. Atribución a PubMed por sus términos de uso._

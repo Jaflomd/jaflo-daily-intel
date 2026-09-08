@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-08 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">8 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">46</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">46</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Communications Psychology · Kendeou P, Veletsianos G, Whetung C — 7 sep 2026 · editorial · 2026-09-07</div>
+        <h3 class="r3-title">Epistemic reflexivity for AI-augmented research</h3>
+        <p class="r3-hook">Los autores proponen la &#39;reflexividad epistémica&#39; como práctica formal que investigadores e instituciones deben adoptar al usar IA generativa en ciencia: no tratar la IA como herramienta neutral, sino examinar activamente cómo sus outputs moldean las preguntas de investigación y el riesgo de homogeneizar el conocimiento hacia un &#39;monocultivo científico&#39;. Le importa a Javier de forma directa porque es meta RENACYT Distinguido que ya usa IA en investigación y en AMAUTA/USAMEDIC: el paper da vocabulario técnico y un marco publicable para algo que probablemente practica de manera intuitiva — vigilar que la IA no aplane la diversidad de hipótesis en su propio programa de psiquiatría dimensional. Cómo usarlo: citarlo en la sección de métodos de próximos papers donde use LLMs como research assistant, y convertirlo en un módulo corto de AMAUTA sobre uso crítico de IA para residentes que investigan.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s44271-026-00527-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s44271-026-00527-3</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Child Development · Blakey KH, Ronfard S — 8 sep 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Interpretive theory of mind predicts greater willingness to seek out disagreement for learning</h3>
+        <p class="r3-hook">El estudio muestra que la disposición a buscar activamente el desacuerdo como fuente de aprendizaje está predicha por la &#39;teoría de la mente interpretativa&#39; — entender que dos personas pueden interpretar la misma evidencia de forma distinta y ambas válidas — más que por la simple tolerancia a estar equivocado. Le importa a Javier porque es el mecanismo cognitivo concreto detrás de la humildad epistémica que quiere modelar en su Competency Lab: no &#39;aceptar que puedes estar mal&#39; en abstracto, sino entrenar la habilidad específica de ver por qué un razonamiento clínico distinto al propio puede ser igual de legítimo, algo directamente aplicable a las discusiones del comité de ética HVLH y a casos ambiguos de TDAH/TEA. Cómo usarlo: como base conceptual de un módulo de razonamiento clínico en AMAUTA que entrene explícitamente esa &#39;teoría de la mente interpretativa&#39; frente a discrepancias diagnósticas entre residentes, y como semilla de un post o capítulo sobre por qué buscar desacuerdo activamente enseña más que simplemente tolerarlo.</p>
+        <a class="r3-link" href="https://pubmed.ncbi.nlm.nih.gov/42707001/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42707001</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Diagnosis · Feren AP — 8 sep 2026 · editorial · 2026-09-08</div>
+        <h3 class="r3-title">The AI arc and interpretive drift</h3>
+        <p class="r3-hook">Publicado en Diagnosis (la revista de referencia sobre error y razonamiento diagnóstico), el título apunta a un &#39;drift interpretativo&#39;: una deriva gradual en cómo el clínico interpreta la evidencia a medida que delega más el paso de síntesis a sistemas de IA. Le importa a Javier porque toca el núcleo de su línea de razonamiento clínico y educación médica de precisión: si AMAUTA empieza a incorporar IA en la preparación para el ENAM/Residentado, este es exactamente el riesgo metodológico a nombrar y vigilar frente a sus estudiantes antes de que se normalice como muleta diagnóstica. Cómo usarlo: conseguir el texto completo cuando esté disponible y usar &#39;drift interpretativo&#39; como término técnico en su currícula de razonamiento clínico — nombra un fenómeno que probablemente ya observa de forma anecdótica en residentes que usan IA sin verificar el razonamiento intermedio.</p>
+        <a class="r3-link" href="https://pubmed.ncbi.nlm.nih.gov/42703752/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42703752</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Current Opinion in Psychology · Caprioli S — 7 sep 2026 · review · 2026-09-07</div>
+          <div class="r10-title">Collaborating with GenAI: A Blessing or a Curse for Creativity?</div>
+          <div class="r10-line">Revisión sobre bajo qué condiciones colaborar con IA generativa potencia la creatividad humana y bajo cuáles la erosiona.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se citará como marco rápido para decidir cuándo delegar la generación de ideas a la IA y cuándo protegerla — aplicable directo a cómo Javier produce contenido (IG/YT) y capítulos de libro sin diluir su voz.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42705114/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42705114</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Advances in Health Sciences Education · Lee CY, Lai HY, Lee CH, Chen MM, Yau SY — 5 sep 2026 · paper · 2026-09-05</div>
+          <div class="r10-title">Collaborative clinical reasoning in the ICU: how teams construct shared understanding in real time</div>
+          <div class="r10-line">Con análisis microinteraccional de video en una UCI, el estudio trata el razonamiento clínico en equipo como un logro social y distribuido en tiempo real, no un acto cognitivo privado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: alimentará el diseño de simulacros AMAUTA que evalúen razonamiento clínico EN EQUIPO, no solo individual — coherente con el giro de Javier hacia educación médica de precisión basada en interacción real.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42700338/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42700338</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Hospital Medicine · Keniston A, Klein RM, Tozier M, et al. (ADEPT Research Group) — 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">From frameworks to the frontline: hospitalist perspectives on diagnostic excellence programs</div>
+          <div class="r10-line">El grupo ADEPT documenta la brecha entre los frameworks formales de &#39;excelencia diagnóstica&#39; y su aplicación real en el frente clínico, según hospitalistas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se usará para justificar rediseños de programas de razonamiento clínico que midan implementación real — útil para auditar si AMAUTA/USAMEDIC enseña frameworks que de verdad se usan en guardia.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42703931/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42703931</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Intellectual Disability Research · Álvarez-Aguado I, Vega V, Roselló-Peñaloza M, et al. — 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Conversational AI as Personalised Cognitive Support: Adults With Intellectual Disability&#39;s Experiences of Everyday Decision-Making</div>
+          <div class="r10-line">Estudio cualitativo sobre cómo adultos con discapacidad intelectual usan IA conversacional como apoyo cognitivo personalizado para decisiones cotidianas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: abrirá la puerta a protocolos de &#39;IA como andamiaje decisional&#39; trasladables a TDAH/TEA — el apoyo cognitivo externo no reemplaza el criterio, reduce carga ejecutiva, línea directa con la neurodivergencia de Javier.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42706704/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42706704</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Motor Behavior · Ferreira BP, Meira Junior CM, Nogueira NGHM, et al. — 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Cognitive Effort as a Compensatory Mechanism for Motor Control in Impulsivity</div>
+          <div class="r10-line">El estudio propone que el esfuerzo cognitivo actúa como mecanismo compensatorio para el control motor en perfiles impulsivos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: aporta un marco mecanístico trasladable a TDAH — &#39;esfuerzo cognitivo compensatorio&#39; como explicación de por qué algunos pacientes impulsivos regulan mejor bajo demanda motora estructurada, citable en el libro de psicopatología.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42704255/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42704255</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JBI Evidence Synthesis · Scerbo F, Caggianelli G, Ciucciarelli S, Cangelosi G, Vanzi V, Mazzotta R — 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Mapping the evidence on artificial intelligence-based clinical decision support systems for undergraduate nursing students: a scoping review protocol</div>
+          <div class="r10-line">Protocolo de revisión de alcance que mapeará la evidencia sobre sistemas de apoyo a decisión clínica basados en IA en formación de enfermería de pregrado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: sus resultados serán un mapa útil para que Javier decida, con evidencia y no solo intuición tecnológica, si incorporar CDSS de IA en AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42515950/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42515950</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Pharmaceutical Medicine · Ahn S — 6 sep 2026 · editorial · 2026-09-06</div>
+          <div class="r10-title">From Invisible to Enrolled: How Artificial Intelligence Is Reshaping Clinical Trial Recruitment</div>
+          <div class="r10-line">Ensayo sobre cómo la IA cambia el reclutamiento en ensayos clínicos, de pacientes &#39;invisibles&#39; a &#39;enrolados&#39; mediante identificación algorítmica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se volverá lectura de referencia para investigadores RENACYT que diseñan reclutamiento de estudios — aplicable si Javier escala ensayos en psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42701994/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42701994</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neurology · Plaza-Jennings A, Rajarajan P, O&#39;Hare M, Gheihman G, Manzano GS — 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Clinical Reasoning: A 79-Year-Old Man With Subacute Onset Involuntary Facial Movements and Discoordination</div>
+          <div class="r10-line">Nueva entrega de la serie educativa &#39;Clinical Reasoning&#39; de Neurology, que expone paso a paso el razonamiento diagnóstico ante un caso de movimientos faciales involuntarios subagudos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: útil como plantilla de FORMATO para que Javier diseñe casos ENAM/Residentado que enseñen el proceso de razonamiento en voz alta, no solo el diagnóstico final.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42566727/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42566727</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Teaching and Learning in Medicine · Jerjes W — 7 sep 2026 · editorial · 2026-09-07</div>
+          <div class="r10-title">Whose Voice Sounds Professional? Accent, Fluency, and the Politics of Communication Assessment in Health Professions Education</div>
+          <div class="r10-line">El ensayo cuestiona cómo se evalúa el &#39;profesionalismo comunicativo&#39; en educación médica, señalando sesgos de acento y fluidez que penalizan a hablantes no nativos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: alimentará una revisión de rúbricas de comunicación clínica en programas como AMAUTA/USAMEDIC, que forman médicos peruanos a veces evaluados con estándares angloparlantes — tema directo para el pilar de comunicación del Competency Lab.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42704088/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42704088</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Leader · Marques LM — 7 sep 2026 · editorial · 2026-09-07</div>
+          <div class="r10-title">Eco-affective health as a missing pillar of planetary health leadership</div>
+          <div class="r10-line">Propone la &#39;salud eco-afectiva&#39; — cómo se procesa emocionalmente el malestar climático — como pilar faltante en los modelos de liderazgo en salud planetaria.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se integrará en discusiones de liderazgo en salud pública como framework de comunicación de crisis — trasladable al pilar de comunicación de liderazgo de Javier en sus comités.</div>
+          <a class="r10-link" href="https://pubmed.ncbi.nlm.nih.gov/42705909/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42705909</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Buscar desacuerdo activamente no requiere tolerar estar equivocado: requiere una habilidad específica, la &#39;teoría de la mente interpretativa&#39;, que permite ver que otra lectura de la misma evidencia puede ser igual de válida (Blakey &amp; Ronfard, 2026).</li><li>La reflexividad epistémica frente a la IA no es &#39;usarla menos&#39;: es examinar activamente cómo sus outputs están reduciendo la diversidad de tus propias hipótesis de investigación (Kendeou et al., 2026).</li><li>En la UCI, el mejor razonamiento clínico en equipo no ocurre en la cabeza de un experto: ocurre en cómo el equipo construye entendimiento compartido en tiempo real — es un logro social, no solo cognitivo (Lee et al., 2026).</li><li>Los frameworks de &#39;excelencia diagnóstica&#39; fallan más por brecha de implementación en el frente clínico que por defecto de diseño teórico (Keniston et al., grupo ADEPT, 2026).</li><li>Evaluar si alguien &#39;suena profesional&#39; en medicina a menudo mide acento y fluidez, no competencia clínica real — un sesgo que penaliza sistemáticamente a médicos no angloparlantes (Jerjes, 2026).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué preguntas de investigación dejarías de hacerte si delegaras por completo la síntesis de literatura a un LLM — y cómo lo notarías?</li><li>En las discusiones de casos difíciles del comité HVLH, ¿el desacuerdo se resuelve por jerarquía o porque alguien cambia realmente su interpretación de la evidencia?</li><li>¿Cuántos de tus residentes en AMAUTA podrían explicar el PROCESO por el que llegan a un diagnóstico, y no solo el diagnóstico final?</li><li>Si un paciente con TDAH regula mejor su impulsividad bajo demanda motora estructurada, ¿qué implica eso para el diseño de intervenciones no farmacológicas?</li><li>¿Las rúbricas de comunicación clínica que usas en AMAUTA/USAMEDIC miden competencia real o fluidez con un acento &#39;estándar&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel explicando la &#39;teoría de la mente interpretativa&#39; como la habilidad concreta detrás de buscar desacuerdo activo, con un ejemplo de caso clínico ambiguo discutido en HVLH.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica corta aplicando el marco de reflexividad epistémica de Kendeou et al. a un caso propio de uso de IA en investigación dimensional (HiTOP/RDoC).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología sobre &#39;esfuerzo cognitivo compensatorio&#39; en impulsividad como puente entre neurociencia motora y TDAH.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido AMAUTA en formato &#39;razonamiento clínico paso a paso&#39;, inspirada en la serie Clinical Reasoning de Neurology, para casos tipo ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Auditoría interna (documentable como paper educativo) de las rúbricas de comunicación clínica de AMAUTA/USAMEDIC frente al sesgo de acento descrito por Jerjes (2026).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Communications Psychology</span><span class="tag ">Child Development</span><span class="tag ">Diagnosis</span><span class="tag ">Current Opinion in Psychology</span><span class="tag ">Advances in Health Sciences Education</span><span class="tag ">Journal of Hospital Medicine</span><span class="tag ">Journal of Intellectual Disability Research</span><span class="tag ">Journal of Motor Behavior</span><span class="tag ">JBI Evidence Synthesis</span><span class="tag ">Pharmaceutical Medicine</span><span class="tag ">Neurology</span><span class="tag ">Teaching and Learning in Medicine</span><span class="tag ">BMJ Leader</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (búsqueda directa por fecha 2026-09-05 a 2026-09-08, vía WebFetch sobre pubmed.ncbi.nlm.nih.gov, dado que el MCP dedicado de PubMed no está disponible en este entorno) · Consensus MCP (cuota mensual agotada, sin resultados) · WebSearch sobre Farnam Street, Substack, Reddit (r/mentalmodels, r/LessWrong, r/philosophy), X/Twitter, Astral Codex Ten y Big Think — no arrojó ítems web con fecha verificable dentro de la ventana de 48-72h esta corrida; el dossier de hoy es de origen 100% PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 8 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
