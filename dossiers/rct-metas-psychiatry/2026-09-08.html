@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-08 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">8 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">180</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Biological Psychiatry, 7 sep 2026 · rct · 2026-09-07</div>
+        <h3 class="r3-title">Neurophysiological Signatures of Negative Symptom Improvement After High-Definition Transcranial Direct Current Stimulation</h3>
+        <p class="r3-hook">Ensayo doble ciego, sham-controlado (n=103 pacientes con esquizofrenia: 52 activo / 51 sham, más 76 controles sanos) que aplicó HD-tDCS sobre DLPFC izquierda para síntomas negativos y encontró una mejora grande (d=-1.46) frente a sham, con el cambio en la onda N100 (potencial evocado auditivo, marcador de inhibición cortical) asociado específicamente a la mejora clínica (p=0.01) y correlacionado con la severidad basal (r=-0.28, p=0.025). Le importa a Javier porque conecta directamente dos de sus líneas vivas — neuromodulación y psiquiatría de precisión — al proponer el N100 como biomarcador candidato de respuesta a tDCS en síntomas negativos, exactamente el tipo de &#39;predictor de respuesta&#39; que quiere anclar en su marco RDoC/HiTOP en vez de tratar &#39;esquizofrenia&#39; como caja negra. Puede usarlo como caso de estudio en su libro o en contenido AMAUTA: &#39;no es solo si el tDCS funciona, es a quién y por qué&#39;, con el N100 basal como candidato a estratificar pacientes antes de indicar 20 sesiones.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.biopsych.2026.07.026" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.07.026</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience, 6 sep 2026 · meta-analysis · 2026-09-06</div>
+        <h3 class="r3-title">Toward precision medicine: can neuroimaging prospectively predict early treatment outcomes in schizophrenia spectrum disorders? A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática con meta-análisis de 16 estudios que evalúa si el neuroimagen basal (estructural vs. funcional) predice de forma prospectiva la respuesta temprana al tratamiento en esquizofrenia: el poder discriminativo global fue bueno (AUC=0.75, IC95% 0.70-0.80; mejor modelo AUC=0.81; sensibilidad y especificidad de 0.75), con los modelos de conectividad funcional superando a los estructurales, aunque los propios autores piden estandarización metodológica y validación externa antes de uso clínico. Le importa a Javier porque es evidencia de nivel meta-analítico —no un estudio aislado— de que la &#39;psiquiatría de precisión&#39; empieza a tener números reales de rendimiento predictivo, justo el argumento cuantitativo que necesita para su línea de precision-psychiatry y para separar el hype del dato en contenido y en ENAM. Puede usarlo para un módulo de &#39;qué tan lejos estamos realmente de predecir quién responde a qué&#39;, con el AUC como ancla numérica concreta y como contraste pedagógico entre publicación prometedora y aplicabilidad clínica todavía no lista.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02359-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02359-y</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Molecular Psychiatry, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+        <h3 class="r3-title">Pharmacological and non-pharmacological modulation of striatal dopamine release: a meta-analysis of [11C]raclopride PET studies</h3>
+        <p class="r3-hook">Meta-análisis de 92 estudios (n=1640) con PET [11C]raclopride que compara cuánta dopamina estriatal liberan distintas intervenciones farmacológicas y cognitivas: la anfetamina libera ~4 veces más dopamina que los desafíos cognitivos (10.9% vs. 2.7%, p&lt;0.001), los psicoestimulantes muestran preferencia regional por putamen/estriado ventral sobre caudado, y el efecto del metilfenidato se atenúa con la edad. Le importa a Javier directamente por su línea TDAH: es evidencia mecanística cuantitativa de por qué el metilfenidato &#39;pega distinto&#39; según edad y región cerebral, algo que puede convertir en contenido de precisión farmacológica para TDAH (dosis/edad/expectativa de respuesta) y en un dato duro para su marco dimensional de reward processing, que conecta con la anhedonia transdiagnóstica que ya venía siguiendo. Usable como gancho: &#39;la dopamina no es un interruptor único&#39;, que abre a explicar por qué distintos pacientes con TDAH responden distinto al mismo fármaco.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03826-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03826-7</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 4 sep 2026 · rct · 2026-09-04</div>
+          <div class="r10-title">A multicenter randomized controlled effectiveness trial of transdiagnostic treatment for adolescents with subthreshold anxiety and depressive symptoms</div>
+          <div class="r10-line">RCT multicéntrico (n=676 adolescentes) que comparó el Protocolo Unificado transdiagnóstico contra relajación progresiva en formato escolar y no encontró diferencias entre grupos: ambos redujeron síntomas por igual, con alta adherencia (~78%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: este resultado nulo no mata el enfoque transdiagnóstico, lo reposiciona — Javier puede usarlo para argumentar que en contextos escolares de bajo recurso &#39;estructura + grupo&#39; importa tanto como el protocolo específico, mensaje directamente aplicable a programas de tamizaje que pueda diseñar o enseñar en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726105443" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105443</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychopharmacology, 7 sep 2026 · rct · 2026-09-07</div>
+          <div class="r10-title">The Antidepressant Effects of the mGlu2/3 Receptor Antagonist TS-161 in Treatment-Resistant Depression</div>
+          <div class="r10-line">Ensayo fase IIa cruzado, doble ciego, placebo-controlado (n=11, depresión resistente sin medicación) del antagonista mGlu2/3 TS-161: sin diferencia clínica vs. placebo a día 21 (p=0.91), pese a evidencia de compromiso del SNC (aumento de potencia gamma en MEG, pFDR&lt;0.01).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: otro fármaco glutamatérgico que &#39;prende&#39; el biomarcador pero no el síntoma — refuerza el punto de Javier de que biomarcador no es igual a eficacia clínica, material listo para una pregunta tipo ENAM sobre la falacia del outcome sustituto.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/JCP.0000000000002246" target="_blank" rel="noopener">↗ doi.org/10.1097/JCP.0000000000002246</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuropsychopharmacology, 5 sep 2026 · rct · 2026-09-05</div>
+          <div class="r10-title">NMDA subunit 2B-selective negative allosteric modulator satoprodil (BI 1569912) as mono- and adjunctive therapy in patients with major depressive disorder</div>
+          <div class="r10-line">Dos ensayos fase II multicéntricos de búsqueda de dosis (adjunto n=243, monoterapia n=225) de satoprodil, modulador NMDA-2B: bien tolerado pero sin superioridad clínicamente relevante sobre placebo en ninguna dosis ni formato.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: cae otro candidato de la línea glutamatérgica post-ketamina — útil como contraejemplo cuando alumnos de residentado asuman que &#39;todo lo NMDA&#39; es el próximo gran antidepresivo.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41386-026-02538-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41386-026-02538-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+          <div class="r10-title">Remotely Supervised, Home-Based Transcranial Direct Current Stimulation for Major Depressive Disorder</div>
+          <div class="r10-line">Meta-análisis de 12 estudios (6 RCT sham-controlados) de tDCS domiciliario supervisado a distancia para depresión mayor: efecto antidepresivo pequeño pero significativo (Hedges g=0.36, IC95% 0.06-0.66, p=0.03), aunque los dos ensayos más grandes fueron negativos y la certeza GRADE es moderada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: el tDCS casero no está listo para recomendación rutinaria, pero el modelo &#39;supervisión remota + dispositivo en casa&#39; es el prototipo de neuromodulación escalable que le conviene seguir a Javier para su cruce de precisión y acceso vía IA/telepsiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92522" target="_blank" rel="noopener">↗ doi.org/10.2196/92522</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 6 sep 2026 · meta-analysis · 2026-09-06</div>
+          <div class="r10-title">Cardiorespiratory fitness in people with bipolar disorder: A systematic review and meta-analysis</div>
+          <div class="r10-line">Revisión sistemática (n=190 en el análisis cuantitativo) muestra que la capacidad cardiorrespiratoria en trastorno bipolar es ~7.4 mL/kg/min menor que en controles sanos (IC95% -12.7 a -2.1), pero solo hay dos estudios piloto de intervención: aún no hay evidencia de qué tan reversible es.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: gancho directo para su línea kinobody-selfcare aplicada a psiquiatría — &#39;el bipolar trae un déficit cardiometabólico medible&#39; es contenido de alto valor para argumentar el ejercicio como coadyuvante, no como lifestyle opcional, aunque el hueco de ensayos de intervención es justo el gap de investigación que él podría llenar.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122480" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122480</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Epidemiology and Psychiatric Sciences, 4 sep 2026 · meta-analysis · 2026-09-04</div>
+          <div class="r10-title">Risk of mortality and complications in people with depressive disorder and co-occurring diabetes mellitus</div>
+          <div class="r10-line">Meta-análisis de 26 estudios en 9 regiones: la comorbilidad depresión+diabetes eleva mortalidad por todas las causas (RR 1.30, IC95% 1.21-1.39), mortalidad cardiovascular (RR 1.15) y complicaciones metabólicas (RR 1.63, IC95% 1.33-1.99).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: dato de mortalidad duro y citable para justificar el screening de depresión en cualquier paciente con diabetes — material listo para una pregunta ENAM que cruce medicina interna y psiquiatría, intersección que USAMEDIC suele subexplotar.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S2045796026100882" target="_blank" rel="noopener">↗ doi.org/10.1017/S2045796026100882</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El metilfenidato libera dopamina de forma edad-dependiente y regionalmente específica (putamen/estriado ventral): la dosis &#39;estándar&#39; para TDAH no produce el mismo efecto neuroquímico en un niño de 8 años que en un adulto de 30.</li><li>Un biomarcador que &#39;se mueve&#39; (potencia gamma en MEG, N100 cortical) no garantiza que el síntoma se mueva con él: dos ensayos de esta semana (TS-161, satoprodil) muestran compromiso del SNC medible sin eficacia clínica.</li><li>El tDCS domiciliario para depresión funciona en el meta-análisis pooled pero pierde fuerza justo en los dos ensayos más grandes y mejor controlados — señal clásica de que estudios pequeños están inflando el efecto agregado.</li><li>En bipolar, la brecha de fitness cardiorrespiratorio (-7.4 mL/kg/min vs. controles) es mayor que muchos efectos farmacológicos que sí prescribimos de rutina, y casi no hay ensayos de intervención con ejercicio.</li><li>Predecir con neuroimagen quién responde a tratamiento en esquizofrenia ya no es ciencia ficción (AUC=0.75-0.81), pero tampoco es tan bueno como sugiere el hype de precisión: sensibilidad y especificidad de 0.75 todavía dejan a 1 de cada 4 mal clasificado.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos empezar a dosificar metilfenidato considerando edad y perfil de liberación dopaminérgica regional, en vez de solo peso y síntomas?</li><li>Si el N100 predice quién responde a tDCS en síntomas negativos de esquizofrenia, ¿vale la pena un EEG de 10 minutos antes de indicar 20 sesiones de estimulación?</li><li>¿Cuántos &#39;biomarcadores que se mueven sin el síntoma&#39; (TS-161, satoprodil) necesitamos ver antes de exigir que todo ensayo glutamatérgico reporte outcome clínico duro, no solo neuroimagen o MEG?</li><li>¿Por qué seguimos sin ensayos de intervención de ejercicio en bipolar cuando la brecha de fitness cardiorrespiratorio es de las más grandes descritas en psiquiatría metabólica?</li><li>En contextos escolares de bajo recurso, ¿importa más el protocolo específico (transdiagnóstico vs. relajación progresiva) o la estructura grupal en sí — y qué implica eso para diseñar programas de tamizaje masivo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/carrete IG: &#39;La dopamina no es un interruptor único&#39; — usar el dato de anfetamina vs. desafío cognitivo (4x más liberación) y la atenuación del metilfenidato con la edad para explicar por qué el TDAH en niños vs. adultos responde distinto al mismo fármaco.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo/módulo del libro de psicopatología dimensional: &#39;biomarcador que se mueve, síntoma que no se mueve&#39; — usar TS-161 y satoprodil como casos gemelos de esta semana para enseñar el problema de los outcomes sustitutos en psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Idea de paper/comentario: revisión sistemática de cuántos ensayos glutamatérgicos fase II en depresión resistente han fallado en el outcome clínico pese a biomarcador positivo en los últimos años — encaja con su interés en razonamiento clínico y evidencia proporcional al claim.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido AMAUTA/ENAM: pregunta de práctica basada en el meta-análisis de depresión+diabetes (RR de mortalidad) para entrenar razonamiento clínico en comorbilidad médico-psiquiátrica, tema subrepresentado en el temario.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre el meta-análisis de neuroimagen predictiva en esquizofrenia (AUC 0.75-0.81): separar &#39;promesa de precisión&#39; de &#39;aplicabilidad clínica real hoy&#39; — gancho directo con su pilar precision-psychiatry y su voz de evidencia proporcional al claim.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Biological Psychiatry</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Psychological Medicine</span><span class="tag ">Journal of Clinical Psychopharmacology</span><span class="tag ">Neuropsychopharmacology</span><span class="tag ">JMIR Mental Health</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Epidemiology and Psychiatric Sciences</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI E-utilities · Europe PMC. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 8 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
