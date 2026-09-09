@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-09-09 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">9 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">bioRxiv (preprint) · 08 sep 2026 · preprint · 2026-09-08</div>
+        <h3 class="r3-title">Heterogeneity of Brain Dynamics in Genetic and Psychiatric Conditions</h3>
+        <p class="r3-hook">Con 4,812 personas de 5 meses a 66 años, EEG de alta densidad en reposo, 11 condiciones psiquiátricas y un amplio panel de variantes genéticas raras, este preprint construye trayectorias normativas de organización espectral, conectividad y complejidad cortical -y encuentra que los diagnósticos psiquiátricos comparten un perfil transdiagnóstico de desviaciones pequeñas, mientras que las variantes genéticas raras individuales producen firmas mucho más grandes, distintas y a veces opuestas entre sí, que solo convergen hacia ese mismo perfil psiquiátrico cuando se agrupan. Para tu apuesta HiTOP/RDoC esto es evidencia directa a escala masiva de que &#39;esquizofrenia&#39; o &#39;TDAH&#39; como categorías DSM esconden una biología más fina que solo aparece al mirar genética específica -el argumento central de tu libro de psicopatología dimensional. Que el TEA tenga de los efectos más pequeños a nivel de grupo pero la mayor variabilidad individual es material directo para tu línea de neurodivergencia: hay que dejar de buscar &#39;el patrón EEG del autismo&#39; y hablar de individuos. Como el recurso es abierto e interactivo (puntuaciones normativas para comparar hallazgos futuros), es candidato para que tu equipo lo use como benchmark en un proyecto de tu meta RENACYT, y el hallazgo de que se necesitan muestras de cientos de sujetos para asociaciones robustas es una lección de razonamiento clínico perfecta para AMAUTA sobre por qué desconfiar de los papers de neuroimagen con n=20.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.01.748394" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.01.748394</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Neural Engineering (online ahead of print) · 08 sep 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Identifying shared and personalized brain functional connectivity subspace across neuropsychiatric disorders</h3>
+        <p class="r3-hook">Con 1,923 pacientes de tres consorcios abiertos (REST-meta-MDD para depresión, ABIDE para autismo, ADHD-200 para TDAH) más controles pareados por sitio, este grupo descompone la conectividad funcional de cada persona en un subespacio &#39;compartido&#39; y uno &#39;personalizado&#39; -y muestra que el compartido revela un núcleo transdiagnóstico de desacoplamiento de la red por defecto con patrones subcorticales divergentes (hiperconectividad en depresión, hipoconectividad en autismo y TDAH), mientras que el personalizado es el que realmente predice severidad de síntomas y distingue diagnósticos (macro-F1 77.6%), validado en una cohorte independiente (Human Connectome Project). Es casi un experimento diseñado para tu línea de psiquiatría de precisión: separa explícitamente &#39;lo que comparten los trastornos&#39; de &#39;lo que hace único a cada paciente&#39;, con la réplica externa que le falta a la mayoría de estudios de conectividad. Para tu libro de psicopatología dimensional es un ejemplo casi perfecto de arquitectura jerárquica -vulnerabilidad compartida de red por defecto abajo, huella individual arriba- justo el argumento que necesitas cuando te pregunten por qué HiTOP no es solo relabeling del DSM. También es contenido de alto ROI para IG/AMAUTA: &#39;todos los trastornos comparten una red rota, pero cada paciente la rompe distinto&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1088/1741-2552/aea44a" target="_blank" rel="noopener">↗ doi.org/10.1088/1741-2552/aea44a</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Psychotherapy and Psychosomatics (online ahead of print) · 08 sep 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Cognitive Reserve as a Stratification Factor for Cognitive Impairment and Disease Progression in Major Depressive Disorder</h3>
+        <p class="r3-hook">En 539 pacientes con depresión mayor y 549 controles sanos de la cohorte Marburg-Münster, la reserva cognitiva (estimada con años de educación, logro ocupacional y CI verbal -medidas que se toman en cualquier consulta, sin neuroimagen) modera significativamente la relación entre alteraciones de conectividad de sustancia blanca y desempeño cognitivo (p-FWE=0.006), y predice el curso de la enfermedad a 2 años con un tamaño de efecto comparable al riesgo poligénico y al maltrato infantil. Es la pieza que le falta a tu línea de psiquiatría de precisión para un argumento de alto ROI: no hace falta un conectoma de $2,000 para estratificar riesgo cognitivo en depresión, con tres preguntas de historia clínica ya se captura buena parte de esa señal pronóstica. Para AMAUTA es un caso de enseñanza ideal de razonamiento clínico bayesiano -variables clínicas simples con validez pronóstica comparable a biomarcadores caros- justo lo que quieres que un residente priorice de cara al ENAM. Y al ser un estudio de cohorte grande y bien controlado (no un n=30), lo puedes citar con la confianza que exige tu propia regla de &#39;evidencia proporcional al claim&#39; cuando hables de reserva cognitiva como factor modificable en depresión.</p>
+        <a class="r3-link" href="https://doi.org/10.1159/pps/aemag013" target="_blank" rel="noopener">↗ doi.org/10.1159/pps/aemag013</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint) · 07 sep 2026 · preprint · 2026-09-07</div>
+          <div class="r10-title">Individualized, parcel-guided rTMS to the left dorsolateral prefrontal cortex for treatment resistant depression</div>
+          <div class="r10-line">En 15 pacientes con depresión resistente a tratamiento, TMS dirigido individualmente al parcial 46 de la DLPFC -la región más anticorrelacionada con el cíngulo subgenual según el conectoma normativo de cada paciente- muestra tasas de respuesta similares a la localización por fMRI individual, y la fuerza basal de esa anticorrelación predice quién responde mejor.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Para tu línea de neuromodulación de precisión, valida que no siempre se necesita un fMRI individual costoso para TMS dirigido por red: un mapeo por parcelas del conectoma normativo podría democratizar el TMS de precisión en contextos con poco acceso a neuroimagen -vale seguirlo hasta que haya réplica con muestra mayor antes de llevarlo a tu currículo como recomendación práctica.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.03.26362155" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.03.26362155</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders (online ahead of print) · 08 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Multilevel dynamic abnormalities of suicidal ideation in major depressive disorder from regional dynamics to network states</div>
+          <div class="r10-line">En 237 pacientes con depresión mayor (109 con ideación suicida) y seguimiento longitudinal de 89 tras 8 semanas de ISRS, la ideación suicida se asocia a mayor persistencia en un estado cerebral hiperconectado (sistemas somatomotor, visual y de atención ventral), y la mejoría tras tratamiento se relaciona con menor transición hacia ese estado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un candidato temprano a biomarcador de estado (no de rasgo) para monitorizar riesgo suicida durante el tratamiento -relevante para tu línea de psiquiatría de precisión si se replica, aunque de momento es una asociación exploratoria, no una herramienta clínica lista para usar.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122486" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122486</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain, Behavior, and Immunity (online ahead of print) · 08 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Gut microbiota correlating with glycerophospholipid metabolism dysregulation is associated with brain functional alterations in adolescent depression</div>
+          <div class="r10-line">En 160 adolescentes con depresión y 90 controles, un estudio multi-ómico (microbiota fecal, metabolómica sérica, fMRI y transcriptómica espacial) encuentra que la disbiosis intestinal se asocia a disrupción del metabolismo de glicerofosfolípidos, que a su vez media alteraciones de conectividad funcional y desacople estructura-función en precúneo y giro precentral.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Alimenta el eje intestino-cerebro como vía mecanística (no solo correlacional) hacia la disfunción de red en depresión adolescente -contenido natural para un hilo sobre &#39;la depresión también se ve en las heces&#39;, aunque conviene esperar réplica antes de tratarlo como biomarcador listo para clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbi.2026.107005" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.107005</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">bioRxiv (preprint) · 08 sep 2026 · preprint · 2026-09-08</div>
+          <div class="r10-title">Reduced EEG Complexity and Its Association with Social Communication in Adults with Autism Spectrum Disorder: A Multiscale Entropy Study</div>
+          <div class="r10-line">En 47 adultos con TEA y 40 controles, la complejidad de la señal EEG (multiscale entropy) en escalas largas está reducida y se asocia a mayor puntaje de afecto social en el ADOS-2, con menor diferenciación entre ventanas sociales y no sociales durante una tarea de video -de los pocos estudios que miran esto en adultos, no solo en niños.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Si se replica con cohorte independiente, la MSE de EEG podría sumarse como biomarcador dimensional de dificultad social en TEA adulto -relevante para tu línea de neurodivergencia adulta, aunque la muestra moderada pide cautela antes de usarlo en fenotipado clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.01.747412" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.01.747412</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En 4,812 personas con EEG de alta densidad, los trastornos psiquiátricos como grupo apenas se desvían de lo normal -son las variantes genéticas raras individuales las que producen firmas grandes y hasta opuestas entre sí, que solo convergen en el perfil psiquiátrico compartido cuando se agrupan a nivel poblacional.</li><li>Separar la conectividad de cada paciente en una parte &#39;compartida&#39; y una &#39;personalizada&#39; revela que la parte compartida marca vulnerabilidad transdiagnóstica (desacople de la red por defecto), pero es la parte personalizada la que realmente predice qué tan grave está cada quien (macro-F1 77.6%).</li><li>Tres datos de historia clínica (años de educación, logro ocupacional, CI verbal) predicen el curso de la depresión a 2 años con un poder comparable al riesgo poligénico o al maltrato infantil -la reserva cognitiva es un biomarcador de bajo costo escondido a la vista.</li><li>TMS guiado por un conectoma normativo (sin fMRI individual) logra en depresión resistente tasas de respuesta similares a la localización por fMRI personalizado -la precisión de red no siempre exige la resonancia más cara.</li><li>En depresión adolescente, la disbiosis intestinal no es solo una correlación de moda: se asocia a un metabolito específico (glicerofosfolípidos) que media el desacople entre estructura y función cerebral en precúneo y giro precentral -hay una vía mecánica propuesta, no solo una asociación.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si las variantes genéticas raras producen firmas EEG opuestas entre sí que convergen en el mismo perfil psiquiátrico agregado, ¿qué tan útil sigue siendo hablar de &#39;el fenotipo EEG del TDAH&#39; en la práctica clínica individual?</li><li>¿El subespacio &#39;personalizado&#39; de conectividad (el que predice severidad individual) podría convertirse en la próxima generación de biomarcador de respuesta a tratamiento, más allá de solo clasificar diagnóstico?</li><li>Si la reserva cognitiva predice el curso de la depresión casi tan bien como el riesgo poligénico, ¿deberíamos medirla rutinariamente en la primera consulta, incluso donde no hay acceso a neuroimagen ni a pruebas genéticas?</li><li>¿Cuánto se puede confiar en un target de TMS basado en conectoma normativo (n=15) antes de ofrecerlo como alternativa real al fMRI individual en un contexto con recursos limitados como el peruano?</li><li>¿La reducción de complejidad EEG en TEA adulto refleja un rasgo estable desde la infancia o un proceso que cambia con la edad -y eso importa para decidir cuándo intervenir?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo: &#39;Tu genética psiquiátrica es más rara que tu diagnóstico&#39; usando el estudio de 4,812 personas (bioRxiv) para explicar por qué dos personas con el mismo diagnóstico DSM pueden tener cerebros casi opuestos.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional usando el estudio de subespacio compartido vs. personalizado (J Neural Eng) como ejemplo visual de arquitectura jerárquica que sustenta HiTOP: vulnerabilidad compartida abajo, fenotipo individual arriba.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video AMAUTA de razonamiento clínico: &#39;Tres preguntas de historia valen casi lo mismo que un test genético&#39; con el estudio de reserva cognitiva de Marburg-Münster, para enseñar pensamiento bayesiano de bajo costo de cara a ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta o comentario proponiendo evaluar si el target de TMS por conectoma normativo (parcela 46 DLPFC-cíngulo subgenual) es replicable con datos de conectividad abiertos en una muestra clínica peruana -conecta con tu línea de neuromodulación y tu meta RENACYT.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG sobre el estudio de microbiota-depresión adolescente: &#39;lo que comes también le habla a tu red por defecto&#39; -ángulo accesible del eje intestino-cerebro con base mecanística real, no solo la moda del microbioma.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">bioRxiv</span><span class="tag ">medRxiv</span><span class="tag ">Journal of Neural Engineering</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">Psychotherapy and Psychosomatics</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI E-utilities · Europe PMC REST API · bioRxiv API · medRxiv API · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 9 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
