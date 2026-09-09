@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-09 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">9 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">45</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Archives of Psychiatry and Clinical Neuroscience, 6 sep 2026 · meta-analysis · 2026-09-06</div>
+        <h3 class="r3-title">Toward precision medicine: can neuroimaging prospectively predict early treatment outcomes in schizophrenia spectrum disorders? A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática con meta-análisis (PRISMA-DTA, 16 estudios) que pregunta si el neuroimagen basal predice de forma prospectiva la respuesta temprana al tratamiento en el espectro esquizofrenia: desempeño discriminativo &#39;bueno&#39; (AUC=0.75, sensibilidad y especificidad de 0.75), con modelos de conectividad funcional superando a los estructurales, pero los propios autores piden estandarización y validación externa antes de uso clínico. Le importa a Javier porque es exactamente el tipo de evidencia cuantitativa —no anécdota ni promesa— que necesita para su línea de precision-psychiatry y para su marco RDoC/HiTOP: un AUC=0.75 es un número concreto para enseñar la diferencia entre &#39;promete&#39; y &#39;ya se puede usar en consulta&#39;. Puede convertirlo en un módulo de contenido AMAUTA o en un capítulo de su libro de psicopatología sobre qué tan lejos está realmente la psiquiatría de precisión de predecir quién responde a qué, usando este AUC como ancla pedagógica frente al hype.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00406-026-02359-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02359-y</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Attention Disorders, 8 sep 2026 · review · 2026-09-08</div>
+        <h3 class="r3-title">Electroencephalographic Signatures of Methylphenidate in ADHD: A Systematic Review and 10 Recommendations for Future Research</h3>
+        <p class="r3-hook">Revisión sistemática registrada en PROSPERO (44 estudios) sobre las firmas electroencefalográficas del metilfenidato en TDAH: el hallazgo más replicado es un aumento de la amplitud P3 tras la dosis (11/20 estudios), pero el resto de potenciales evocados y medidas de qEEG son inconsistentes, y los autores concluyen que el EEG todavía NO cumple criterios para ser un biomarcador de respuesta a tratamiento en TDAH. Le importa a Javier directamente por su línea TDAH/neurodivergencia: es una respuesta negativa honesta —justo el tipo de dato que necesita para frenar el entusiasmo prematuro con &#39;neurofeedback&#39; o EEG comercial como herramienta de estratificación clínica, y para enseñarlo en ENAM/Residentado como ejemplo de biomarcador candidato vs. biomarcador validado. Puede usarlo como gancho de contenido: &#39;el EEG todavía no te dice si el metilfenidato va a funcionar&#39;, anclado en las 10 recomendaciones del paper para investigación futura, que conecta con su propia agenda de investigador RENACYT en TDAH.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/10870547261483457" target="_blank" rel="noopener">↗ doi.org/10.1177/10870547261483457</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Schizophrenia Research, 7 sep 2026 · meta-analysis · 2026-09-07</div>
+        <h3 class="r3-title">Glymphatic system alterations in schizophrenia evaluated by the DTI-ALPS index: A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis de 8 estudios de alta calidad que compara el índice DTI-ALPS (marcador indirecto de función glinfática, el sistema que &#39;lava&#39; el cerebro durante el sueño) entre pacientes con esquizofrenia y controles: el índice está marcadamente reducido en esquizofrenia (SMD=-2.42, IC95% -4.06 a -0.79), sin sesgo de publicación detectado, y el estadio de la enfermedad modera significativamente el efecto. Le importa a Javier porque abre una vía biológica nueva y cuantificable —aclaramiento de residuos cerebrales durante el sueño— para su marco dimensional/RDoC de psicosis, más allá de dopamina y glutamato, y conecta con su interés en biomarcadores de precisión. Es material de alto gancho para su libro de psicopatología o para un reel/capítulo sobre &#39;el cerebro psicótico no descansa igual&#39;, usando el efecto tan grande (SMD&gt;2) como advertencia pedagógica sobre heterogeneidad de estadios de enfermedad, no solo como dato aislado.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.schres.2026.08.035" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.035</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, 8 sep 2026 · meta-analysis · 2026-09-08</div>
+          <div class="r10-title">Effect of dopamine partial agonist antipsychotics on suicide risk in persons with schizophrenia and schizoaffective disorders</div>
+          <div class="r10-line">Systematic review + meta-análisis (~20 estudios) muestra que los agonistas parciales de dopamina (aripiprazol, brexpiprazol, cariprazina) no redujeron significativamente el riesgo de suicidio vs. placebo en RCTs (RR≈0.65, p=0.38), aunque hay señales de preocupación en ensayos abiertos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: esto refuerza que clozapina sigue siendo el único antipsicótico con efecto antisuicida establecido — dato directo para el módulo de psicofarmacología de riesgo suicida que Javier enseña en USAMEDIC/ENAM, donde suele corregirse la idea de que &#39;cualquier antipsicótico moderno&#39; protege igual.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.09.006" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.09.006</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Harvard Review of Psychiatry, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+          <div class="r10-title">MDMA-Assisted Therapy May Decrease PTSD Symptoms, Dissociation, Depression, and Functional Disability: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">Meta-análisis de RCTs de terapia asistida con MDMA para TEPT: mejora significativa en síntomas de TEPT, disociación, depresión y discapacidad funcional vs. control, pero sin mejora en calidad del sueño; limitado por muestras pequeñas y problemas de cegamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: el problema de cegamiento (todos notan si recibieron MDMA) es el talón de Aquiles metodológico que Javier puede usar como caso de enseñanza sobre por qué la evidencia psicodélica &#39;positiva&#39; necesita lectura crítica antes de traducirse a guía clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/HRP.0000000000000478" target="_blank" rel="noopener">↗ doi.org/10.1097/HRP.0000000000000478</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Annals of Internal Medicine, 8 sep 2026 · review · 2026-09-08</div>
+          <div class="r10-title">Interventions to Improve Outpatient Follow-up for Hospitalized Patients With Alcohol Use Disorder: A Systematic Review</div>
+          <div class="r10-line">Revisión sistemática (17 estudios, &gt;12,000 pacientes, 21 intervenciones) encuentra que solo 8/21 (38%) de las intervenciones mejoraron el enlace a seguimiento ambulatorio tras hospitalización por trastorno por uso de alcohol, con certeza GRADE baja.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: dato accionable para diseño de programas de continuidad de cuidado en uso de sustancias — Javier puede usarlo para argumentar, con evidencia y no solo intuición, qué tipo de intervención de enlace vale la pena replicar en un sistema de salud con recursos limitados como el peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.7326/ANNALS-26-01312" target="_blank" rel="noopener">↗ doi.org/10.7326/ANNALS-26-01312</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Alzheimer&#39;s Disease, 8 sep 2026 · meta-analysis · 2026-09-08</div>
+          <div class="r10-title">A Bayesian network meta-analysis of specific exercise modalities for depressive symptoms</div>
+          <div class="r10-line">Network meta-análisis Bayesiano (19 RCTs, 9 modalidades de ejercicio) en adultos con deterioro cognitivo leve encuentra que el baile (&#39;dance exercise&#39;) muestra la mejora más consistente en síntomas depresivos frente a otras modalidades, aunque con inconsistencia entre estudios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: población no es depresión mayor pura (es DCL en adultos mayores), pero el ranking NMA de modalidades de ejercicio es un insumo directo para su línea kinobody-selfcare aplicada a psiquiatría — el baile como intervención con mejor ranking es un gancho de contenido más interesante que &#39;haz ejercicio&#39; genérico.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/13872877261485578" target="_blank" rel="noopener">↗ doi.org/10.1177/13872877261485578</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Ningún agonista parcial de dopamina (aripiprazol, brexpiprazol, cariprazina) tiene evidencia sólida de reducir el riesgo de suicidio en esquizofrenia — sigue siendo terreno exclusivo de clozapina.</li><li>El EEG (potencial P3) todavía no cumple los criterios para ser biomarcador de respuesta al metilfenidato en TDAH, pese a ser el hallazgo electrofisiológico más replicado: &#39;se mueve&#39; pero no predice quién responde.</li><li>El índice DTI-ALPS (función glinfática) está reducido con un tamaño de efecto enorme en esquizofrenia (SMD=-2.42) — el &#39;lavado&#39; cerebral durante el sueño podría ser un eje biológico infraexplorado en psicosis.</li><li>En terapia asistida con MDMA para TEPT, el mayor obstáculo no es la eficacia (que mejora síntomas y funcionalidad) sino el cegamiento: los pacientes casi siempre saben si recibieron el fármaco activo.</li><li>Solo 4 de cada 10 intervenciones de enlace a seguimiento ambulatorio tras hospitalización por uso de alcohol muestran beneficio real — la mayoría de programas de &#39;transición de cuidado&#39; no tiene el efecto que se asume.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Con un AUC=0.75, el neuroimagen ya debería influir decisiones clínicas tempranas en esquizofrenia, o seguimos en fase de investigación pura?</li><li>Si clozapina sigue siendo el único antipsicótico con efecto antisuicida probado, ¿qué tan seguido se está infrautilizando en pacientes de alto riesgo por miedo a sus efectos adversos?</li><li>¿Debería la función glinfática (sueño, aclaramiento de residuos) entrar como dimensión explícita en un marco RDoC/HiTOP de psicosis?</li><li>¿Cómo se enseña honestamente a un residente que un hallazgo EEG &#39;consistente&#39; (P3) no equivale a un biomarcador clínicamente útil?</li><li>¿Qué diseño de estudio podría resolver el problema de cegamiento en terapias psicodélicas sin sacrificar la intervención misma?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/infografía: &#39;¿la resonancia ya te dice si vas a responder al tratamiento?&#39; usando el AUC=0.75 del meta-análisis de neuroimagen en esquizofrenia como ancla numérica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post corto desmontando el mito del &#39;EEG como test de TDAH&#39;: el P3 sube con metilfenidato pero no predice respuesta — material directo para ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología sobre el sistema glinfático como nuevo eje biológico en psicosis, conectando sueño, aclaramiento cerebral y network theory.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o carta al editor proponiendo una escala simple de &#39;madurez de biomarcador&#39; (candidato → validado → clínicamente útil) usando como ejemplos el EEG-TDAH y el neuroimagen-esquizofrenia de esta semana.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido AMAUTA sobre psicofarmacología de riesgo suicida en esquizofrenia: por qué ningún agonista parcial de dopamina reemplaza a clozapina en el paciente de alto riesgo.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Schizophrenia Research</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Annals of Internal Medicine</span><span class="tag ">Harvard Review of Psychiatry</span><span class="tag ">Journal of Attention Disorders</span><span class="tag ">Journal of Alzheimer&#39;s Disease</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · Europe PMC · NCBI E-utils · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 9 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
