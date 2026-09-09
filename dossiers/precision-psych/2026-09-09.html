@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-09 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">9 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">77</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 8 sep 2026 · review · 2026-09-08</div>
+        <h3 class="r3-title">Biological heterogeneity of melancholic, atypical, anxious, and psychotic depression</h3>
+        <p class="r3-hook">Esta síntesis narrativa integra evidencia de cinco dominios biológicos —eje HPA, inflamación, circuitos neurales/neuromoduladores, carga genética y ritmo circadiano— para mapear la heterogeneidad detrás de los subtipos melancólico, atípico, ansioso y psicótico de depresión, encontrando hiperfunción marcada del eje HPA en depresión psicótica, hipercortisolemia o retroalimentación alterada en melancólica, y activación inmunometabólica en el perfil atípico reverso-neurovegetativo. A Javier le importa directamente porque valida con evidencia biológica multi-dominio la tesis central de su libro de psicopatología: los subtipos no son cajas discretas del DSM sino &#39;prototipos informados por evidencia en un espacio biológico multidimensional continuo&#39;, exactamente el argumento que sostiene con network theory y HiTOP. Puede usarlo como el anclaje biológico faltante para el capítulo de psiquiatría de precisión —conecta biotipos con mecanismos medibles (HPA, inflamación, circuitos)— y como material de aula para enseñar por qué &#39;depresión&#39; en el ENAM no debería tratarse como una entidad única al momento de razonar tratamiento.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111923" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111923</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neuroscience &amp; Biobehavioral Reviews, 7 sep 2026 · review · 2026-09-07</div>
+        <h3 class="r3-title">Convergent Functional Connectivity Alterations in ADHD Revealed by EEG: A Systematic Review Across Methods, States and Spatial Scales</h3>
+        <p class="r3-hook">Esta revisión sistemática de 37 estudios de conectividad funcional por EEG en TDAH (n=4,038) encuentra un patrón convergente pese a la diversidad metodológica: integración posterior reducida con compensación frontal relativa, interacciones alteradas entre redes de gran escala, y mayor conectividad local con integración global debilitada, más marcado en bandas de frecuencia lentas. A Javier le importa porque es exactamente el tipo de biomarcador digital/electrofisiológico agregado (no un solo estudio con n pequeño) que su línea TDAH/TEA necesita para argumentar fenotipado objetivo más allá del diagnóstico clínico puro, y porque conecta directamente con su marco RDoC de circuitos de atención y control cognitivo. Es material citable para su docencia sobre TDAH en AMAUTA/USAMEDIC (el patrón frontal-posterior es fácil de enseñar visualmente) y para su contenido sobre por qué el EEG cuantitativo, aunque no es aún diagnóstico por sí solo, ya muestra una convergencia de evidencia que otros biomarcadores de TDAH no tienen.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106949" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106949</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">JMIR Medical Education, 8 sep 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Role-Differentiated AI Competencies and Curriculum Implications for Health Professions Education: Qualitative Study</h3>
+        <p class="r3-hook">Este estudio cualitativo (entrevistas a profundidad con 13 expertos en medicina académica, odontología, práctica clínica e industria de IA en salud, con análisis temático reflexivo) propone competencias de IA diferenciadas por rol: los usuarios clínicos necesitan alfabetización en datos/ML y profesionalismo de IA, los desarrolladores requieren competencias operativas de validación de sistemas, y los líderes institucionales necesitan gobernanza y planificación estratégica a lo largo del ciclo de vida de la IA. A Javier le importa muchísimo porque es un marco listo para usar en el diseño curricular de AMAUTA/USAMEDIC: en vez de un único módulo genérico de &#39;IA para médicos&#39;, esto le da una estructura defendible con literatura para diferenciar qué le enseña al estudiante que prepara ENAM (usuario) de lo que necesitaría como líder de comité o de contenido (gobernanza). Puede citarlo directamente al diseñar o defender un módulo de competencias de IA escalonado por rol dentro de la marca, y también en su trabajo de comité de ética (HVLH) para las conversaciones sobre gobernanza de IA en formación médica.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/97608" target="_blank" rel="noopener">↗ doi.org/10.2196/97608</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain, Behavior, and Immunity, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Longitudinal associations between inflammatory biomarkers, polygenic risk scores and cardiometabolic outcomes in major depressive and anxiety disorders</div>
+          <div class="r10-line">En 2,716 participantes de la cohorte NESDA seguidos 6 años, CRP/IL-6/TNF-α más altos se asociaron consistentemente con peor perfil cardiometabólico (IMC, cintura, triglicéridos, HDL), mientras que el PRS solo explicó hasta 12.9% de la varianza en LDL.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este hallazgo empuja a Javier a enfatizar en su docencia que el biomarcador inflamatorio (medible y modificable) es hoy más accionable clínicamente que el PRS en depresión/ansiedad, un argumento fuerte para su línea de psiquiatría de precisión pragmática.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbi.2026.106999" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.106999</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 6 sep 2026 · preprint · 2026-09-06</div>
+          <div class="r10-title">Genetic and epigenetic architecture of mass spectrometry-derived lipids in blood and their role in lifetime Major Depressive Disorder</div>
+          <div class="r10-line">En ~1,000 participantes escoceses, este estudio multi-ómico halla 23 especies de lípidos (LPC, DG, PC) asociadas a depresión de por vida, con el clúster génico FADS como nodo mecanístico compartido entre variantes genéticas y metilación del ADN.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el lipidoma se vuelve la próxima capa &#39;ómica&#39; integrada a los paneles multi-dominio de psiquiatría de precisión — útil para el capítulo de Javier sobre biomarcadores más allá de genética/inflamación.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.02.26362049" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.02.26362049</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">World Journal of Biological Psychiatry, 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Circulating cell-free DNA and NETosis-related biomarkers in schizophrenia: association with clinical features and treatment</div>
+          <div class="r10-line">En 60 pacientes con esquizofrenia vs. 63 controles, el cfDNA nuclear y anticuerpos anti-ADN subieron mientras el cfDNA mitocondrial bajó — patrón que apunta a origen nuclear, no a NETosis, como fuente del cfDNA elevado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este resultado negativo sobre NETosis reorienta la búsqueda de biomarcadores inflamatorios en esquizofrenia hacia mecanismos de daño nuclear/apoptosis — buen ejemplo de aula sobre cómo un hallazgo &#39;negativo&#39; redirige una línea de biomarcador.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/15622975.2026.2729050" target="_blank" rel="noopener">↗ doi.org/10.1080/15622975.2026.2729050</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Magnetic Resonance Imaging, 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Hippocampal metabolites illustrate greater potential for early response assessment to antidepressant therapy than the anterior cingulate cortex in major depressive disorder</div>
+          <div class="r10-line">En 42 pacientes con MDD seguidos con espectroscopia por RM a las 8 semanas, solo el hipocampo (no la corteza cingulada anterior) mostró aumento de tNAA/tCr asociado a remisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estudios como este favorecen protocolos de MRS hipocampal sobre ACC como marcador de respuesta temprana en ensayos de antidepresivos — dato concreto para el capítulo de neuroimagen de precisión de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.mri.2026.110797" target="_blank" rel="noopener">↗ doi.org/10.1016/j.mri.2026.110797</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychopharmacology, 7 sep 2026 · rct · 2026-09-07</div>
+          <div class="r10-title">The Antidepressant Effects of the mGlu2/3 Receptor Antagonist TS-161 in Treatment-Resistant Depression: A Phase IIa Proof-of-Concept Clinical Trial</div>
+          <div class="r10-line">En un ensayo cruzado fase IIa con 11 adultos con depresión resistente, TS-161 (antagonista mGlu2/3) mostró compromiso de SNC por RM espectroscópica y MEG pero ningún beneficio clínico frente a placebo al día 21 (p=0.91).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este resultado negativo se cita como caso de enseñanza clásico —biomarcador de mecanismo positivo + resultado clínico nulo— para el argumento de Javier de que &#39;compromiso de blanco&#39; no es sinónimo de eficacia.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/JCP.0000000000002246" target="_blank" rel="noopener">↗ doi.org/10.1097/JCP.0000000000002246</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Neural Transmission, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Childhood maltreatment and inflammatory biomarkers associated with depressive severity in adolescents with major depressive disorder</div>
+          <div class="r10-line">En 70 adolescentes con depresión (40 graves, 30 no graves) y 39 controles, PTX3 y FKBP5 estuvieron elevados en el grupo grave, y tanto el maltrato infantil como PTX3 predijeron independientemente la gravedad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que PTX3/FKBP5 se posicionan como candidatos a panel de estratificación temprana de gravedad en depresión adolescente — relevante para la intersección de Javier entre trauma infantil, TDAH/TEA y psiquiatría de precisión pediátrica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00702-026-03279-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s00702-026-03279-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">The British Journal of Psychiatry, 8 sep 2026 · editorial · 2026-09-08</div>
+          <div class="r10-title">Immune dysregulation in depression and psychosis: summary of current evidence and future perspectives</div>
+          <div class="r10-line">Editorial que resume la evidencia sobre disfunción inmune en depresión y psicosis y concluye que, pese a la asociación robusta, ningún biomarcador inmune ha demostrado aún utilidad clínica consolidada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de editorial de cautela se vuelve la cita obligada cuando Javier necesite frenar el entusiasmo de un biomarcador inmune &#39;prometedor&#39; frente a estudiantes o audiencia de redes.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10761" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10761</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint, versión actualizada), 7 sep 2026 · preprint · 2026-09-07</div>
+          <div class="r10-title">Sex and gender differences in OCD: A scoping review and a two subtypes hypothesis</div>
+          <div class="r10-line">Revisión de alcance que documenta inconsistencias en cómo se mide sexo/género en estudios de TOC y propone una hipótesis de dos subtipos ligados a diferencias de presentación por sexo/género.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta hipótesis de subtipos alimenta la conversación de Javier sobre estratificación más allá de biomarcadores duros — un eje demográfico/fenotípico que también es &#39;psiquiatría de precisión&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1101/2025.02.08.25321933" target="_blank" rel="noopener">↗ doi.org/10.1101/2025.02.08.25321933</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint), 8 sep 2026 · preprint · 2026-09-08</div>
+          <div class="r10-title">Maladaptive Precision: A Channel-Specific Predictive-Processing Framework for the Neurodevelopmental Consequences of Early Life Adversity</div>
+          <div class="r10-line">Marco teórico que propone que la adversidad temprana sesga la ponderación de precisión (predictive processing) en canales específicos —elevando la señal de amenaza y suprimiendo evidencia desconfirmatoria— con la corteza cingulada anterior como nodo mecanístico central.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este marco de &#39;precisión desadaptativa&#39; se vuelve puente conceptual entre psiquiatría computacional y la línea RDoC/neurodesarrollo de Javier, aunque al ser teórico y sin validación empírica todavía debe presentarse como hipótesis, no como hallazgo confirmado.</div>
+          <a class="r10-link" href="https://osf.io/preprints/psyarxiv/zj4bf" target="_blank" rel="noopener">↗ osf.io/preprints/psyarxiv/zj4bf</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR mHealth and uHealth, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Mobile-First Web Access and Captioned Video in Francophone Cardiology Education: Multicountry Ecological Learning Analytics Study</div>
+          <div class="r10-line">Analítica de aprendizaje de 34 países (agrupados por nivel de ingreso) sobre una plataforma de cardiología francófona muestra que el acceso móvil y el subtitulado (60.9% de uso en países de bajos ingresos) no se asocian a mayor abandono ni menor tiempo en página.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este dato de equidad en diseño mobile-first + subtitulado es directamente portable a AMAUTA/USAMEDIC para llegar a estudiantes con conectividad limitada, sin sacrificar engagement medido por analítica.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/90345" target="_blank" rel="noopener">↗ doi.org/10.2196/90345</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>TS-161 mostró compromiso de SNC medible por RM espectroscópica y MEG pero cero beneficio clínico frente a placebo (p=0.91, n=11): un biomarcador de &#39;engagement&#39; farmacológico positivo no garantiza eficacia — la vara de precisión psiquiátrica real está en el desenlace clínico, no en la imagen.</li><li>Un nuevo paper muestra que muchos pipelines de descubrimiento de biomarcadores proteómicos inflan su rendimiento por &#39;data leakage&#39;, y ya existen herramientas open-source para detectarlo en código y en manuscritos — la misma vara TRIPOD/PROBAST que Javier exige en clase, ahora con checklist automatizable.</li><li>En la cohorte NESDA (n=2,716, 6 años), la inflamación (CRP/IL-6/TNF-α) predice peor perfil cardiometabólico de forma consistente, pero el PRS solo explica hasta 12.9% de la varianza en LDL: hoy el biomarcador inflamatorio modificable pesa más que la genética fija.</li><li>Los subtipos de depresión (melancólico, atípico, psicótico, ansioso) mapean a firmas biológicas distintas de eje HPA, inflamación y circuitos — evidencia a favor de tratarlos como &#39;prototipos en un espacio multidimensional continuo&#39; y no como categorías DSM discretas.</li><li>En esquizofrenia, el cfDNA mitocondrial BAJA (no sube) mientras el nuclear sube — el patrón contradice la hipótesis de NETosis y apunta a daño nuclear/apoptótico como origen, un recordatorio de que el mecanismo &#39;obvio&#39; no siempre es el correcto.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿El modelo multidimensional de biotipos de depresión (HPA-eje/inflamación/circuitos) es enseñable en pregrado ENAM sin caer en sobre-simplificación categorial?</li><li>Si el PRS solo explica ~13% de la varianza en LDL en pacientes con depresión/ansiedad, ¿qué techo realista debería comunicar Javier sobre la farmacogenómica psiquiátrica en el corto plazo?</li><li>¿Debería un módulo AMAUTA formal de &#39;competencias diferenciadas en IA&#39; (usuario/desarrollador/líder) preceder cualquier implementación de tutoría IA en preparación ENAM?</li><li>Dado que TS-161 mostró compromiso de SNC sin beneficio clínico, ¿qué biomarcador de &#39;engagement&#39; farmacológico debería exigirse como suficiente antes de avanzar a fase III en depresión resistente?</li><li>¿Las herramientas open-source para detectar data leakage en paneles de proteínas deberían ser un paso obligatorio antes de citar cualquier AUC de biomarcador en clase o en redes?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT explicando por qué un ensayo negativo (TS-161 en depresión resistente) sigue siendo dato valioso: compromiso de SNC medido por RM espectroscópica/MEG sin beneficio clínico — lección sobre biomarcador de mecanismo vs. biomarcador de respuesta.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología sobre el modelo continuo multidimensional de subtipos de depresión (eje HPA, inflamación, circuitos, genética, ritmo circadiano) como alternativa a categorías DSM discretas, citando la síntesis de Prog Neuropsychopharmacol Biol Psychiatry.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/paper proponiendo un marco de competencias diferenciadas en IA (usuario clínico / desarrollador / líder institucional) adaptado a AMAUTA/USAMEDIC, basado en el estudio cualitativo de JMIR Medical Education.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido corto sobre el hallazgo de cfDNA en esquizofrenia: por qué la caída de cfDNA mitocondrial (no su aumento) descarta NETosis como mecanismo — gancho para explicar cómo un biomarcador &#39;negativo&#39; también informa mecanismo.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica (paper o hilo) sobre data leakage en paneles de biomarcadores proteómicos, usando las herramientas open-source del Global Neurodegeneration Proteomics Consortium como checklist aplicable a estudios de biomarcadores psiquiátricos.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">World Journal of Biological Psychiatry</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Magnetic Resonance Imaging</span><span class="tag ">Journal of Clinical Psychopharmacology</span><span class="tag ">Journal of Neural Transmission</span><span class="tag highlight">The British Journal of Psychiatry</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">JMIR mHealth and uHealth</span><span class="tag ">medRxiv</span><span class="tag ">PsyArXiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch) · Europe PMC REST API · medRxiv/bioRxiv API · PsyArXiv (OSF API) · WebSearch sobre pubmed.ncbi.nlm.nih.gov y europepmc.org. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 9 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
