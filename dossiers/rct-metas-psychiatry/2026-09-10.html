@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">10 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">64</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychological Medicine, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+        <h3 class="r3-title">No evidence for a generalised predictive processing deficit in psychosis: A meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis multinivel registrado en PROSPERO (34 resultados de 27 estudios, 904 pacientes con psicosis vs. 1039 controles) que pone a prueba la influyente teoría del predictive processing en psicosis: no encuentra evidencia de un sesgo generalizado hacia los priors (g=0.03, IC95% -0.27 a 0.34, p=.818), ni asociación con delirios (r=-.16) ni alucinaciones (r=.04), y ni siquiera un modelo jerárquico de dos niveles reconcilia los resultados contradictorios de la literatura. Le importa a Javier porque ataca directamente el corazón de su marco dimensional/RDoC: una teoría computacional &#39;de moda&#39; para explicar síntomas psicóticos transdiagnósticos no sobrevive a la síntesis cuantitativa cuando se agregan los estudios, justo el tipo de llamada de atención que necesita para enseñar rigor en HiTOP/RDoC frente al entusiasmo teórico. Es material directo para su libro de psicopatología o un capítulo/reel sobre &#39;por qué las teorías bonitas de neurociencia computacional a veces no aguantan un meta-análisis&#39;, y para ENAM/Residentado como ejemplo de cómo leer un tamaño de efecto nulo con IC amplio.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726105455" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105455</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neuroscience and Biobehavioral Reviews, 7 sep 2026 · review · 2026-09-07</div>
+        <h3 class="r3-title">Convergent Functional Connectivity Alterations in ADHD Revealed by EEG: A Systematic Review Across Methods, States and Spatial Scales</h3>
+        <p class="r3-hook">Revisión sistemática y síntesis narrativa (37 estudios, n=4038, pediátrico a adulto) de conectividad funcional por EEG en TDAH que, pese a enorme heterogeneidad metodológica, encuentra patrones convergentes: integración posterior reducida con compensación frontal, redes fragmentadas y mayor conectividad local a costa de la integración global, sobre todo en bandas lentas y bajo demanda cognitiva/afectiva, replicando lo visto en fMRI. Le importa a Javier porque es el contrapeso constructivo del hallazgo de ayer en este mismo dominio (el EEG y metilfenidato, donde el EEG todavía no predecía respuesta): aquí el EEG sí muestra una firma de red replicable en TDAH, un paso real para su línea de TDAH/neurodivergencia y psiquiatría de precisión, aunque todavía como fenotipo descriptivo y no como biomarcador clínico listo para decidir tratamiento. Puede convertirlo en contenido AMAUTA sobre &#39;qué tan cerca (y lejos) está el EEG de ser útil en TDAH&#39;, contrastándolo con el estudio de metilfenidato para enseñar la diferencia entre biomarcador descriptivo y biomarcador de decisión clínica; vale notar que un autor declara vínculos con Janssen, Idorsia y Schwabe Pharma, dato a mencionar si lo usa en clase.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106949" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106949</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">European Journal of Psychotraumatology, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+        <h3 class="r3-title">Effectiveness and moderators of PE and CPT in adult PTSD treatment: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis grande (175 brazos de tratamiento de 163 estudios) que compara Prolonged Exposure (PE) y Cognitive Processing Therapy (CPT) para TEPT en adultos: efecto pooled grande (Hedges&#39; g=1.67, IC95% 1.56-1.79), con PE superando a CPT en muestras no militares y efectos mayores en muestras con más mujeres y menor proporción de trauma sexual, aunque una sensibilidad que excluye 10 outliers reduce el efecto (g=1.55) y ninguna interacción moderadora fue significativa en el modelo completo. Le importa a Javier porque es evidencia de primera línea, cuantificada y con moderadores, para el módulo de TEPT que enseña en ENAM/Residentado y USAMEDIC: un tamaño de efecto de 1.67 es un ancla numérica mucho más fuerte que &#39;la terapia funciona&#39;, y la comparación PE vs. CPT según composición de la muestra es material directo para razonamiento clínico basado en heterogeneidad de subgrupos. Puede usarlo para un módulo de contenido o capítulo comparando psicoterapias basadas en evidencia para trauma, con la salvedad metodológica de los outliers como ejemplo de por qué siempre hay que pedir el análisis de sensibilidad antes de citar un tamaño de efecto.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/20008066.2026.2709751" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2709751</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">American Journal of Geriatric Psychiatry, 12 ago 2026 (online ahead of print) · meta-analysis · 2026-08-12</div>
+          <div class="r10-title">Comparative Efficacy of Specific Exercise Interventions on Post-Stroke Depression, Anxiety and Cognitive Function in Older Adults: A Systematic Review and Network Meta-Analysis of Randomized Controlled Trials</div>
+          <div class="r10-line">Network meta-análisis (52 RCTs, 4170 pacientes) encuentra que el entrenamiento dual-task, el ejercicio mente-cuerpo y el entrenamiento de equilibrio/coordinación son las modalidades con mejor ranking SUCRA para depresión, ansiedad y cognición post-ictus en adultos mayores.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: aunque la población es post-ictus y no psiquiatría pura, el ranking NMA por modalidad de ejercicio es insumo directo para la línea kinobody-selfcare de Javier — el ejercicio mente-cuerpo/dual-task como prescripción específica es un gancho de contenido más fuerte que &#39;el ejercicio ayuda&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jagp.2026.08.012" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jagp.2026.08.012</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Bulletin, 20 ago 2026 · rct · 2026-08-20</div>
+          <div class="r10-title">Mapping 20-Year Global Functioning Trajectories in Schizophrenia Spectrum Disorders</div>
+          <div class="r10-line">Análisis de trayectorias de 20 años de funcionamiento global en 376 pacientes del ensayo OPUS con primer episodio de esquizofrenia: 3 trayectorias (recuperación funcional 21%, mejora moderada 37%, funcionamiento deteriorado 42%), predichas por sexo masculino, mayor edad y síntomas negativos altos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: el 42% en trayectoria deteriorada a 20 años es el dato duro que Javier puede usar para argumentar, con evidencia longitudinal real, que la psiquiatría de precisión en esquizofrenia necesita estratificar por trayectoria desde el primer episodio y no tratar a todos igual.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/schbul/sbag117" target="_blank" rel="noopener">↗ doi.org/10.1093/schbul/sbag117</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nursing in Critical Care, sep 2026 · meta-analysis · 2026-09-09</div>
+          <div class="r10-title">Effect of Diaries on Mental Health Outcomes in Adult ICU Survivors: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">Meta-análisis (21 estudios, 2180 pacientes) tras corrección por sesgo de publicación: los diarios de UCI NO reducen significativamente incidencia ni severidad de TEPT, aunque mantienen beneficios modestos en ansiedad y depresión, mejores cuando los lleva personal de salud.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: otro ejemplo de intervención &#39;humanista&#39; con menos evidencia dura de la que se asume tras ajustar sesgo de publicación — útil para el módulo de razonamiento clínico de Javier sobre leer meta-análisis con trim-and-fill antes de recomendar una práctica.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/nicc.70675" target="_blank" rel="noopener">↗ doi.org/10.1111/nicc.70675</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica, 7 sep 2026 (online ahead of print) · meta-analysis · 2026-09-07</div>
+          <div class="r10-title">Effects of exercise on depression, anxiety, and physiological/biochemical markers in college students with depressive symptoms: A three-level meta-analysis</div>
+          <div class="r10-line">Meta-análisis de tres niveles (22 estudios, 1255 universitarios con síntomas depresivos) halla que el ejercicio reduce síntomas depresivos (g=-1.14) y ansiosos (g=-0.77), pero con evidencia de certeza baja a muy baja (GRADE).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: efecto grande pero certeza baja — Javier puede usarlo como caso de enseñanza sobre por qué un tamaño de efecto llamativo no siempre implica una recomendación clínica sólida, conectando con kinobody-selfcare pero con la salvedad GRADE explícita.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107763" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107763</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Indian Journal of Psychiatry, ago 2026 · rct · 2026-08-17</div>
+          <div class="r10-title">Effectiveness of Brief Psychological Intervention for Depression in Pregnancy (BIND-P): A multi-centric randomized controlled trial (RCT)</div>
+          <div class="r10-line">RCT multicéntrico en India (1352 gestantes) muestra que una intervención psicológica breve (BIND-P) para depresión en el embarazo NO fue superior al tratamiento usual en reducir PHQ-9 (diferencia ajustada 0.03, p=.91), aunque con menor deserción (17% vs. 30%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: resultado nulo en eficacia pero con mejor retención — dato útil para Javier sobre diseño de intervenciones de salud mental perinatal de bajo costo en sistemas con recursos limitados, más relevante por el &#39;qué no funcionó&#39; que por el &#39;qué funcionó&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.4103/indianjpsychiatry_712_24" target="_blank" rel="noopener">↗ doi.org/10.4103/indianjpsychiatry_712_24</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Indian Journal of Psychiatry, ago 2026 · rct · 2026-08-17</div>
+          <div class="r10-title">Telephone-based outreach and interventions for persons with suicide attempts - A randomized controlled trial</div>
+          <div class="r10-line">RCT en India (390 personas tras un intento de suicidio) muestra que el seguimiento telefónico con intervención psicosocial estructurada y el simple recordatorio telefónico redujeron por igual la ideación suicida a 6 meses, sin diferencia significativa entre ambos brazos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: si el contacto telefónico simple funciona casi igual que la intervención estructurada, el mensaje para sistemas de salud con pocos recursos (como el peruano) es que el contacto humano regular importa más que la sofisticación del protocolo.</div>
+          <a class="r10-link" href="https://doi.org/10.4103/indianjpsychiatry_366_24" target="_blank" rel="noopener">↗ doi.org/10.4103/indianjpsychiatry_366_24</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Addictive Behaviors Reports, 26 ago 2026 · meta-analysis · 2026-08-26</div>
+          <div class="r10-title">Psychological correlates of problematic pornography use: A systematic review and meta-analysis of measurement and conceptualization differences</div>
+          <div class="r10-line">Meta-análisis de 97 artículos/111 muestras sobre uso problemático de pornografía encuentra asociación consistente con craving, desregulación emocional, depresión, soledad y vergüenza sexual, con perfiles distintos según se mida como desregulación conductual o como malestar subjetivo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: la distinción desregulación-vs-malestar es un marco dimensional útil (conecta con HiTOP) para pensar el uso problemático de pantallas/contenido como un espectro y no una categoría binaria — insumo para contenido sobre adicciones conductuales desde una lente dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.abrep.2026.100741" target="_blank" rel="noopener">↗ doi.org/10.1016/j.abrep.2026.100741</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Digital Health, 5 sep 2026 · meta-analysis · 2026-09-05</div>
+          <div class="r10-title">The effects of virtual reality interventions on depression and anxiety in older adults during and after the COVID-19 pandemic: A meta-analysis</div>
+          <div class="r10-line">Meta-análisis pequeño (12 estudios, 724 adultos mayores) encuentra que las intervenciones de realidad virtual reducen síntomas depresivos y ansiosos, con mayor efecto en VR totalmente inmersiva que semi/baja inmersión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: evidencia todavía preliminar (n pequeño) pero es la semilla de un ángulo de contenido sobre neuromodulación/tecnología aplicada a psiquiatría geriátrica — Javier puede marcarlo como &#39;watch this space&#39; más que como práctica ya recomendable.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/20552076261487229" target="_blank" rel="noopener">↗ doi.org/10.1177/20552076261487229</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Psychiatric Research, 2 sep 2026 (online ahead of print) · meta-analysis · 2026-09-02</div>
+          <div class="r10-title">Sugar-sweetened beverages consumption and the risk of depression in youth: A systematic review and meta-analysis of observational studies</div>
+          <div class="r10-line">Meta-análisis observacional (26 estudios, &gt;275,000 jóvenes) halla asociación entre consumo de bebidas azucaradas y depresión (OR=1.28), significativa en estudios transversales pero NO en estudios de cohorte.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: la caída de la señal en estudios longitudinales es la lección clave — Javier puede usarlo para enseñar causalidad inversa/confusión en investigación de estilo de vida y salud mental, relevante para su línea de psiquiatría de precisión con datos observacionales.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jpsychires.2026.08.024" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jpsychires.2026.08.024</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Polysubstance use after remission in first-episode psychosis: Associations with positive symptoms and self-care</div>
+          <div class="r10-line">Análisis secundario del ensayo HAMLETT (283 pacientes con primer episodio de psicosis) muestra que el uso de múltiples sustancias tras la remisión se asocia a síntomas positivos más severos y peor autocuidado, sobre todo en quienes continúan antipsicótico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: el patrón de consumo de sustancias en el post-remisión temprano es una señal de riesgo cuantificable que encaja con el interés de Javier en estratificación temprana de primer episodio psicótico — candidato a pregunta de investigación propia con cohortes similares en Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.09.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.09.004</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Una de las teorías computacionales más citadas en psicosis (predictive processing / sesgo hacia los priors) no sobrevive a un meta-análisis multinivel bien hecho: el efecto agregado es esencialmente cero (g=0.03).</li><li>El EEG en TDAH ya muestra una firma de red replicable (menos integración posterior, más compensación frontal) — pero eso es fenotipo descriptivo, todavía no un biomarcador que diga quién responde a qué tratamiento.</li><li>A 20 años de un primer episodio de esquizofrenia, 4 de cada 10 pacientes siguen en una trayectoria de funcionamiento deteriorado: la &#39;recuperación funcional&#39; completa es la minoría (21%), no la norma.</li><li>Cuando se corrige el sesgo de publicación, los diarios de UCI dejan de reducir significativamente el TEPT — una intervención &#39;humanista&#39; intuitivamente buena que pierde fuerza bajo escrutinio estadístico riguroso.</li><li>En una RCT de 1352 gestantes, una intervención psicológica breve no superó al tratamiento usual en reducir depresión, pero sí redujo casi a la mitad el abandono del tratamiento: a veces el verdadero efecto está en la adherencia, no en el síntoma.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el predictive processing generalizado no tiene sustento meta-analítico, ¿qué le queda al marco computacional de la psicosis que sí sea defendible con evidencia agregada?</li><li>¿Debería el EEG de conectividad funcional entrar ya en protocolos de investigación de TDAH como fenotipo de estratificación, aunque todavía no prediga respuesta a tratamiento?</li><li>Con 42% de pacientes en trayectoria de funcionamiento deteriorado a 20 años, ¿qué tan temprano (y con qué marcador) se podría identificar a ese subgrupo desde el primer episodio?</li><li>Si el contacto telefónico simple iguala a una intervención psicosocial estructurada en reducir ideación suicida, ¿estamos sobrediseñando los protocolos de seguimiento post-intento en sistemas de salud con pocos recursos?</li><li>¿Cómo se distingue, en la práctica clínica diaria, un &#39;biomarcador descriptivo&#39; (como el EEG en TDAH) de uno que realmente cambia una decisión de tratamiento?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/infografía: &#39;la teoría bonita que no sobrevivió al meta-análisis&#39;, usando el g=0.03 de predictive processing en psicosis como ejemplo de cómo leer un efecto nulo con IC amplio.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Comparar en un mismo post/carrusel el hallazgo de ayer (EEG-metilfenidato no predice respuesta) con el de hoy (EEG-conectividad sí muestra firma de red en TDAH) para enseñar la diferencia entre biomarcador descriptivo y biomarcador de decisión.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología sobre trayectorias de 20 años en esquizofrenia (datos OPUS), usando el 42% en funcionamiento deteriorado como argumento a favor de estratificación temprana por trayectoria.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta al editor o paper corto proponiendo replicar el análisis de trayectorias de funcionamiento (tipo OPUS) en una cohorte peruana de primer episodio psicótico, aprovechando su perfil RENACYT.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido AMAUTA sobre TEPT: PE vs. CPT con el tamaño de efecto g=1.67 como ancla, incluyendo la salvedad de los outliers como ejemplo de lectura crítica de meta-análisis para ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychological Medicine</span><span class="tag ">Neuroscience and Biobehavioral Reviews</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">American Journal of Geriatric Psychiatry</span><span class="tag ">Schizophrenia Bulletin</span><span class="tag ">Schizophrenia Research</span><span class="tag ">Nursing in Critical Care</span><span class="tag ">Acta Psychologica</span><span class="tag ">Indian Journal of Psychiatry</span><span class="tag ">Addictive Behaviors Reports</span><span class="tag ">Digital Health</span><span class="tag ">Journal of Psychiatric Research</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · NCBI E-utils · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
