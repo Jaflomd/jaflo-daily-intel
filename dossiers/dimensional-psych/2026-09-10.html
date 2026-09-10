@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">10 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">medRxiv (preprint), 8 sept 2026 · preprint · 2026-09-08</div>
+        <h3 class="r3-title">Patrones intergeneracionales longitudinales de psicopatología en una muestra poblacional: estudio ABCD</h3>
+        <p class="r3-hook">Con 11,142 niños y sus padres biológicos del Adolescent Brain Cognitive Development Study, seguidos con hasta cinco evaluaciones anuales, el estudio identifica trayectorias de psicopatología infantil por análisis de clases latentes: 76.1% de los niños se mantiene en una trayectoria estable, pero mayor psicopatología parental predice fuertemente pertenecer a las clases de síntomas moderados o altos (OR 1.28–2.61), y la sintomatología internalizante materna es el predictor longitudinal más fuerte de la internalizante del hijo dos años después. Le importa a Javier porque es exactamente el tipo de validación estructural e incremental a gran escala y con diseño longitudinal que su libro necesita para defender la dimensionalidad como algo que se puede rastrear en el desarrollo, no solo medir en un corte transversal, y porque el hallazgo de asimetría materna/paterna es un dato clínico accionable que rara vez se discute. Puede usarlo como antecedente metodológico (clases latentes + seguimiento anual) para un proyecto RENACYT propio de estadificación temprana en población peruana, y como contenido docente en AMAUTA sobre por qué la anamnesis familiar en salud mental debería preguntar con la misma profundidad por ambos padres.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.04.26362261" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.04.26362261</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Neural Engineering, 8 sept 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Subespacios de conectividad funcional compartidos y personalizados a través de trastornos neuropsiquiátricos</h3>
+        <p class="r3-hook">En 1,923 pacientes con depresión mayor, TEA o TDAH más controles del Human Connectome Project, un algoritmo de descomposición (COBE) separa la conectividad funcional en un subespacio compartido y uno personalizado: el compartido revela un núcleo transdiagnóstico de desacople de la red neuronal por defecto con conectividad subcortical divergente (hiperconectada en depresión, hipoconectada en TEA/TDAH), mientras que el subespacio personalizado predice mejor la severidad sintomática y discrimina diagnósticos (macro-F1 77.6%). Le importa a Javier porque ancla empíricamente su intersección más productiva, dimensional × TDAH/TEA, mostrando que un mismo sistema neural roto puede fallar en direcciones opuestas según el diagnóstico categorial, y porque valida su tesis de psiquiatría de precisión de que lo transdiagnóstico y lo individual no compiten sino que se complementan (núcleo compartido + firma personal). Puede convertirlo en un módulo de AMAUTA/USAMEDIC sobre por qué &#39;transdiagnóstico&#39; no significa &#39;todo es lo mismo&#39;, y en referencia metodológica para cualquier proyecto propio de fenotipado biológico dimensional en TDAH/TEA.</p>
+        <a class="r3-link" href="https://doi.org/10.1088/1741-2552/aea44a" target="_blank" rel="noopener">↗ doi.org/10.1088/1741-2552/aea44a</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Affective Disorders, 8 sept 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Fenotipos cognitivos asociados a riesgo familiar de trastorno bipolar en jóvenes: análisis de perfiles latentes y su relación con los sistemas de aproximación e inhibición conductual</h3>
+        <p class="r3-hook">En 180 jóvenes con y sin riesgo familiar de trastorno bipolar tipo I, un análisis de perfiles latentes identifica cuatro fenotipos cognitivos (resiliente, tiempo de reacción lento, memoria de trabajo baja, rendimiento global bajo), donde el riesgo familiar se asocia significativamente a peor perfil (OR=0.2 de estar en el perfil resiliente vs. el de peor desempeño) y, sobre todo, a un impulso de aproximación conductual (BAS) reducido, no solo a déficits cognitivos clásicos. Le importa a Javier porque conecta directamente un constructo nuclear de RDoC (los sistemas de valencia positiva/negativa vía BAS/BIS) con un fenotipo medible ANTES de la conversión a trastorno categorial, exactamente el puente RDoC-clínica que su libro busca ilustrar, y porque encaja con su interés en estadificación temprana y neurodivergencia. Puede usarlo como caso de enseñanza en AMAUTA/USAMEDIC para explicar RDoC con un ejemplo concreto y medible (BAS/BIS) en vez de la definición abstracta del constructo, y como antecedente de diseño (perfiles latentes + riesgo familiar) para un estudio propio de estadificación en jóvenes de alto riesgo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122484" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122484</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">British Journal of Psychiatry, 7 sept 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Trayectorias de carga de comorbilidad física y mortalidad por todas las causas en enfermedad mental grave: modelado conjunto de clases latentes a 10 años</div>
+          <div class="r10-line">Con modelado conjunto de clases latentes en pacientes con enfermedad mental grave seguidos hasta 10 años, el estudio identifica trayectorias distintas de carga de comorbilidad física que predicen mortalidad por todas las causas, evidencia de estadificación clínica con impacto directo en manejo integral.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estas trayectorias de comorbilidad física se integrarán como &#39;especificador de estadificación&#39; en guías de manejo de enfermedad mental grave, y que Javier puede citarlo en su discurso de psiquiatría de precisión para argumentar que estadificar solo por síntomas psiquiátricos es incompleto sin la carga física.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10764" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10764</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Journal of Eating Disorders, 6 sept 2026 · paper · 2026-09-06</div>
+          <div class="r10-title">Puente entre psicopatología alimentaria y suicidalidad: comparación de redes entre anorexia y bulimia nerviosa</div>
+          <div class="r10-line">Una comparación de redes de síntomas entre anorexia y bulimia nerviosa muestra que la psicopatología alimentaria se conecta con la ideación y conducta suicida por vías estructuralmente distintas según el subtipo diagnóstico, network psychopathology aplicada a un dominio de alto riesgo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los nodos puente identificados aquí se convertirán en dianas de intervención priorizadas en protocolos de riesgo suicida en TCA, y que Javier puede usar este paper como ejemplo docente de cómo el network analysis cambia la pregunta clínica de &#39;qué trastorno tiene&#39; a &#39;qué síntoma intervenir primero&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/eat.70196" target="_blank" rel="noopener">↗ doi.org/10.1002/eat.70196</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 8 sept 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Heterogeneidad biológica de la depresión melancólica, atípica, ansiosa y psicótica</div>
+          <div class="r10-line">Revisión sobre heterogeneidad biológica entre los especificadores melancólico, atípico, ansioso y psicótico de la depresión, que respalda tratarlos como fenotipos con biología parcialmente distinta y no como matices puramente descriptivos del DSM.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos hallazgos alimentarán biomarcadores específicos por especificador (no por &#39;depresión&#39; genérica), y que Javier puede usarlo para reforzar en su libro que los specifiers ya tienen tracción empírica biológica, no solo utilidad descriptiva.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111923" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111923</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Nervous and Mental Disease, 7 sept 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Evaluación psicométrica de la Dimensional Anhedonia Rating Scale (DARS)</div>
+          <div class="r10-line">Estudio preliminar (n=35) en depresión mayor con trastorno por uso de cannabis valida una estructura de cuatro factores para la DARS, con buen desempeño discriminativo (~85% sensibilidad, 75% especificidad) más allá de su población original.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la DARS empezará a reemplazar escalas de anhedonia de un solo ítem en estudios transdiagnósticos con comorbilidad por sustancias, y que Javier puede evaluar adoptarla como medida dimensional de anhedonia en su propia práctica e investigación.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/nmd.0000000000001894" target="_blank" rel="noopener">↗ doi.org/10.1097/nmd.0000000000001894</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 9 sept 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Efecto del estrés materno prenatal sobre síntomas internalizantes en adolescentes y moderación genética de la función ejecutiva y la corteza prefrontal</div>
+          <div class="r10-line">En 3,111 adolescentes, el estrés materno prenatal predijo más síntomas internalizantes a los 14 y 16 años, y una interacción genética débil sugiere que mayor potencial genético para función ejecutiva podría aumentar —no proteger de— la sensibilidad al estrés temprano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este hallazgo contraintuitivo generará debate sobre modelos simplistas de resiliencia genética, y que Javier puede usarlo para matizar cualquier narrativa determinista de biomarcadores genéticos en su docencia de psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/s0033291726105431" target="_blank" rel="noopener">↗ doi.org/10.1017/s0033291726105431</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Research Protocols, 8 sept 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Atención de salud mental basada en medición para adolescentes en África: protocolo de un test adaptativo computarizado (AfriCAT)</div>
+          <div class="r10-line">Protocolo del estudio AfriCAT (5,155 adolescentes kenianos) para desarrollar un test adaptativo computarizado de depresión/ansiedad basado en teoría de respuesta al ítem, pensado para triaje preciso en contextos de bajos recursos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de CAT dimensional se volverá estándar de tamizaje en sistemas de salud con poco personal especializado, y que Javier puede adaptar la lógica metodológica (IRT + triaje adaptativo) a un proyecto de evaluación de precisión en AMAUTA/USAMEDIC o en su propia consulta peruana.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/98369" target="_blank" rel="noopener">↗ doi.org/10.2196/98369</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Reports, 8 sept 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Transformational Clinical Matrix-Expanded: marco metateórico para conceptualizar procesos disfuncionales y psicopatología</div>
+          <div class="r10-line">Propuesta metateórica (TCM-XP) que organiza siete dominios transdiagnósticos —de experiencias adversas a disfunciones de redes neuronales— para conceptualizar psicopatología compleja ligada a trauma, sin reducirla a categorías DSM ni a un solo mecanismo neurobiológico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de marco integrador seguirá proliferando como &#39;meta-modelo&#39; antes de que ninguno se consolide como estándar, y que Javier puede usarlo como contraste crítico en su libro: ¿cuántos dominios necesita un modelo transdiagnóstico antes de dejar de ser parsimonioso?</div>
+          <a class="r10-link" href="https://doi.org/10.1177/00332941261481769" target="_blank" rel="noopener">↗ doi.org/10.1177/00332941261481769</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 9 sept 2026 · preprint · 2026-09-09</div>
+          <div class="r10-title">Un factor general subyace al riesgo de salud mental de siete tecnologías digitales</div>
+          <div class="r10-line">En 10,454 adultos, un solo factor general explicó casi toda la varianza en malestar asociado a siete tecnologías digitales distintas (redes sociales, apps de citas, IA de compañía, etc.), sin evidencia de mecanismos específicos por plataforma (ωH=0.984).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este &#39;factor general del malestar digital&#39; se convertirá en el argumento estrella contra el pánico moral específico por plataforma, y que Javier puede usarlo como ejemplo perfecto de lógica de factor-p aplicada fuera de la psicopatología clásica para contenido IG/YT sobre por qué &#39;no es la app, es la vulnerabilidad&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10956237/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10956237/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">British Journal of Clinical Psychology, 7 sept 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Neuroticismo, extraversión y autocompasión como mediadores de resultados terapéuticos: eficacia a largo plazo de una adaptación grupal breve del Protocolo Unificado</div>
+          <div class="r10-line">En 102 universitarios, una versión breve grupal del Protocolo Unificado redujo depresión/ansiedad/estrés a 12 meses, con la reducción de neuroticismo y el aumento de autocompasión —no la extraversión— como mecanismos de cambio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que neuroticismo y autocompasión se consolidarán como los dos mecanismos de cambio &#39;universales&#39; a monitorear en cualquier tratamiento transdiagnóstico, y que Javier puede citarlo como evidencia de utilidad clínica real del enfoque transdiagnóstico para estudiantes de medicina en AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/bjc.70096" target="_blank" rel="noopener">↗ doi.org/10.1111/bjc.70096</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Adolescence, 9 sept 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Asociaciones entre resiliencia, estrés percibido, estrés por expectativas académicas y problemas depresivos en adolescentes: un análisis de redes</div>
+          <div class="r10-line">Una red de síntomas en 3,336 adolescentes de Singapur ubica la desesperanza percibida como nodo más central entre resiliencia, estrés y problemas depresivos, con regulación emocional y autoimagen positiva como nodos puente estables a través del desarrollo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que &#39;desesperanza percibida&#39; se convertirá en la diana de intervención prioritaria en programas escolares de resiliencia, y que Javier puede usar este mapa de red como plantilla docente para introducir network analysis en AMAUTA con un ejemplo no clínico y de bajo riesgo.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jad.70266" target="_blank" rel="noopener">↗ doi.org/10.1002/jad.70266</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el estudio ABCD, la psicopatología internalizante de la madre predice más los síntomas internalizantes del hijo dos años después que la del padre: el &#39;riesgo parental&#39; no es simétrico, y promediarlo en un solo puntaje familiar pierde esa asimetría.</li><li>Un subespacio de conectividad cerebral compartido entre depresión, TEA y TDAH muestra hiperconectividad subcortical en depresión pero hipoconectividad en TEA/TDAH en las mismas regiones: el mismo sistema puede fallar en direcciones opuestas según el diagnóstico.</li><li>En jóvenes con riesgo familiar de trastorno bipolar, lo que mejor distingue el riesgo no es solo el desempeño cognitivo bajo, sino un impulso de aproximación conductual (BAS) reducido: un constructo motivacional RDoC, no un déficit cognitivo clásico.</li><li>Un solo factor general explica el malestar asociado a siete tecnologías digitales distintas con un ωH de 0.984: la variable que casi no aporta nada extra es justo la que más se debate en la conversación pública, qué app usas.</li><li>Mayor potencial genético para función ejecutiva se asoció a MÁS sensibilidad al estrés prenatal a los 16 años, no menos: un hallazgo que invierte la intuición de que &#39;mejor genética ejecutiva&#39; siempre protege del estrés temprano.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el riesgo materno pesa más que el paterno en las trayectorias internalizantes de los hijos, ¿tu anamnesis familiar en consulta pregunta con la misma profundidad por la salud mental de ambos padres?</li><li>¿Cuánto del TDAH y el TEA que ves en consulta comparte el mismo núcleo transdiagnóstico de desacople de la red neuronal por defecto, aunque se exprese en direcciones opuestas de conectividad subcortical?</li><li>¿Estás midiendo el sistema de aproximación conductual (BAS) en jóvenes con riesgo familiar de bipolaridad, o solo evalúas síntomas categoriales que aparecen después de que el daño motivacional ya ocurrió?</li><li>Si un solo factor general explica el malestar por siete tecnologías digitales distintas, ¿tiene sentido seguir dando consejos específicos por plataforma a pacientes neurodivergentes, en vez de abordar la vulnerabilidad subyacente?</li><li>¿Qué especificador de depresión (melancólico, atípico, ansioso, psicótico) tratas hoy como si fuera solo descriptivo, cuando la evidencia biológica ya sugiere que son fenotipos parcialmente distintos?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;El factor p fuera de la psiquiatría&#39; — usa el hallazgo del factor general de malestar digital (7 tecnologías, un solo factor) para explicar la lógica del factor p a una audiencia no clínica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre RDoC aplicado: usar el paper de perfiles cognitivos + BAS/BIS en riesgo familiar de bipolaridad como caso clínico para enseñar los sistemas de valencia positiva/negativa antes de que aparezcan síntomas categoriales.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro sobre estadificación: comorbilidad física como especificador de estadificación en enfermedad mental grave, usando las trayectorias a 10 años del British Journal of Psychiatry como evidencia de que la psiquiatría de precisión debe incluir salud física.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/paper propio: replicar el diseño de red de síntomas (Yeo et al., adolescentes de Singapur) en población adolescente peruana, comparando nodos centrales de desesperanza y estrés académico — aporte RENACYT con datos locales.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido IG/YT: &#39;Tu app no es el problema, tu vulnerabilidad sí&#39; — basado en el factor general del malestar digital, dirigido a padres preocupados por pantallas en hijos neurodivergentes.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">medRxiv</span><span class="tag ">Journal of Neural Engineering</span><span class="tag ">Journal of Affective Disorders</span><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">International Journal of Eating Disorders</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Journal of Nervous and Mental Disease</span><span class="tag ">Psychological Medicine</span><span class="tag ">JMIR Research Protocols</span><span class="tag ">Psychological Reports</span><span class="tag ">Research Square (preprint)</span><span class="tag ">British Journal of Clinical Psychology</span><span class="tag ">Journal of Adolescence</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (MED+PPR) · PubMed · medRxiv · Research Square · PsyArXiv (revisado, sin ítems nuevos calificantes). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
