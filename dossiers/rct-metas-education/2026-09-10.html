@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">10 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">46</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">27</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">BMC Medical Education, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+        <h3 class="r3-title">Prevalence of test anxiety among medical students: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis real (35 estudios, 13,489 estudiantes de medicina a nivel global) que encuentra una prevalencia agrupada de ansiedad ante exámenes del 49.8% — casi 1 de cada 2 estudiantes reporta niveles clínicamente relevantes de test anxiety, con alta heterogeneidad entre estudios que los autores atribuyen a falta de estandarización en cómo y cuándo se mide. Le importa a Javier porque AMAUTA/USAMEDIC entrena exactamente a esta población (candidatos a ENAM y Residentado, los exámenes de mayor carga psicológica del sistema médico peruano) y porque la conversación conecta directo con su línea de psiquiatría dimensional (HiTOP/RDoC): la ansiedad ante examen no es una etiqueta homogénea de &#39;nervios&#39; sino un constructo que merece el mismo desglose dimensional que aplica a otros fenómenos clínicos. Cómo usarlo: usar el 49.8% como gancho de contenido para un módulo de manejo de ansiedad ante examen dentro de AMAUTA, y como justificación de una línea de investigación propia (RENACYT) que mida test anxiety con instrumentos estandarizados en cohortes peruanas de ENAM/Residentado — vacío que el propio meta-análisis señala explícitamente.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-10270-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-10270-2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JMIR Medical Education, 9 sep 2026 · paper · 2026-09-09</div>
+        <h3 class="r3-title">AI-Assisted Angoff Standard Setting for Multiple-Choice Examinations in Medical Education: Comparative Study</h3>
+        <p class="r3-hook">Estudio comparativo real que enfrentó modelos de lenguaje grande contra paneles de jueces/docentes en el método Angoff modificado para fijar puntos de corte de exámenes de opción múltiple: las estimaciones generadas por LLM mostraron mayor consistencia y menor variabilidad que los paneles humanos, aunque ambos produjeron tasas de aprobación comparables, con recomendación explícita de mantener supervisión humana. Le importa a Javier porque toca el corazón operativo de AMAUTA/USAMEDIC — cómo se fijan hoy los puntos de corte de simulacros y bancos de ítems de ENAM/Residentado, proceso dependiente de paneles docentes con toda su variabilidad subjetiva — y conecta directo con la revisión de Medical Education sobre validez de evaluación con IA (framework de las cuatro inferencias de Kane) que salió esta semana: aquí tiene ya un caso empírico concreto donde aplicar ese checklist. Cómo usarlo: pilotear un panel Angoff asistido por LLM (documentando el argumento de validez con las inferencias de Kane) para el próximo punto de corte de un simulacro AMAUTA, corriéndolo en paralelo contra el panel docente actual antes de reemplazarlo.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/98766" target="_blank" rel="noopener">↗ doi.org/10.2196/98766</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Simulation in Healthcare, 9 sep 2026 · rct · 2026-09-09</div>
+        <h3 class="r3-title">Gamification With Progress Bars Improves Performance and Retention in Virtual Reality Simulation: A Randomized, Controlled Trial</h3>
+        <p class="r3-hook">Ensayo aleatorizado controlado real (n=24 estudiantes de medicina) que probó si agregar barras de progreso gamificadas a un simulador VR de cirugía de hueso temporal mejoraba el desempeño frente a los soportes estándar del simulador: el grupo con feedback gamificado tuvo desempeño significativamente mayor, con mayor beneficio en quienes no tenían experiencia previa con videojuegos, y retención del aprendizaje mantenida a 2.5 meses. Le importa a Javier porque es evidencia de nivel RCT (no opinión) de que un elemento de diseño barato como una barra de progreso mejora la curva de aprendizaje en simulación de alta fidelidad — exactamente el tipo de mejora replicable en los módulos de simulación de entrevista clínica/psiquiátrica de AMAUTA sin necesitar hardware VR costoso. Cómo usarlo: incorporar feedback gamificado visible (aciertos acumulados, barras de avance) en los simulacros de banco de preguntas y en las simulaciones de entrevista clínica de AMAUTA, priorizando a los estudiantes sin trasfondo &#39;gamer&#39;, que son quienes más se benefician según este RCT.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/SIH.0000000000000966" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000966</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Effect of Large Language Model-Powered Virtual Standardized Patients on History-Taking Among Undergraduate Medical Students: Propensity-Matched Cohort Study</div>
+          <div class="r10-line">Estudio de cohortes con emparejamiento por propensity score real (168 estudiantes de tercer año, 120 con IA vs 48 control) mostró que pacientes estandarizados virtuales potenciados por LLM mejoraron los puntajes de historia clínica frente al control (87.71 vs 83.74), con mayor beneficio en quienes ya tenían mejor base de conocimiento — directamente relevante a las simulaciones de entrevista clínica de AMAUTA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los pacientes estandarizados humanos van a empezar a convivir con (y perder terreno frente a) pacientes virtuales LLM para práctica de anamnesis de bajo riesgo — Javier podría pilotear un paciente virtual IA propio para práctica de entrevista psiquiátrica en AMAUTA antes que la competencia lo haga.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92486" target="_blank" rel="noopener">↗ doi.org/10.2196/92486</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 8 sep 2026 · rct · 2026-09-08</div>
+          <div class="r10-title">Visualizing the future: impact of holographic visualization on teaching minimally invasive veneer preparation: a randomized controlled trial</div>
+          <div class="r10-line">RCT real (60 estudiantes de odontología) mostró que la visualización holográfica, frente a fotografía convencional, produjo mayores ganancias en comprensión espacial para preparación de carillas dentales, con alta aceptación estudiantil — evidencia de que herramientas de visualización 3D baratas superan al material 2D estándar en tareas espaciales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la visualización 3D/holográfica de bajo costo se va a volver estándar para enseñar cualquier habilidad con fuerte componente espacial — un ángulo de contenido visual (IG/YT) que Javier puede explorar para semiología o neuroanatomía en sus cursos.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-10324-5" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-10324-5</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Revista da Escola de Enfermagem da USP, 7 sep 2026 · rct · 2026-09-07</div>
+          <div class="r10-title">Active learning-based reinforcement in nursing education: a cluster-randomized controlled trial using Roper, Logan and Tierney&#39;s life model</div>
+          <div class="r10-line">RCT por clusters real en estudiantes de enfermería de primer año mostró que reforzar una clase magistral interactiva con una semana de programa basado en rompecabezas (puzzle-based) elevó los puntajes post-test y la motivación, mientras el grupo control incluso bajó su puntaje — evidencia de que el refuerzo activo post-clase, no solo la clase misma, sostiene el aprendizaje.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los formatos de refuerzo activo post-clase (puzzles, retrieval practice espaciado) se van a volver el complemento default de cualquier clase magistral — incorporable como tarea de una semana después de cada clase teórica de USAMEDIC/AMAUTA sin rediseñar el curso completo.</div>
+          <a class="r10-link" href="https://doi.org/10.1590/1980-220X-REEUSP-2026-0022en" target="_blank" rel="noopener">↗ doi.org/10.1590/1980-220X-REEUSP-2026-0022en</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Journal of Nursing Education, 10 sep 2026 · rct · 2026-09-10</div>
+          <div class="r10-title">Video-Supported Collaborative Learning: Effects on Nursing Students&#39; OSCE Performance and Self-Efficacy Beliefs</div>
+          <div class="r10-line">RCT real en estudiantes de enfermería de primer año (Turquía) mostró que el aprendizaje colaborativo apoyado en video, frente al entrenamiento convencional, mejoró tanto la autoconfianza como el desempeño en el OSCE del grupo intervención frente al control.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el video colaborativo pre-OSCE se va a volver un complemento estándar y barato de la preparación de exámenes clínicos estructurados — replicable directo en los OSCE simulados de Residentado que corre AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.3928/01484834-20260630-01" target="_blank" rel="noopener">↗ doi.org/10.3928/01484834-20260630-01</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Leveraging Natural Language Processing for Analysis of EPA Comment Quality by Automated QuAL Scoring</div>
+          <div class="r10-line">Estudio real que analizó 12,841 comentarios de evaluación de Actividades Profesionales Confiables (EPA) en cirugía usando machine learning: la calidad promedio del feedback escrito por docentes es mediocre, con solo 29% incluyendo sugerencias concretas de mejora — evidencia dura de un problema de calidad docente que suele asumirse solo cualitativamente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el scoring automático de calidad de feedback (tipo QuAL) se va a volver herramienta estándar de auditoría de desarrollo docente — Javier podría usar un enfoque similar para auditar el feedback que dan los tutores de AMAUTA en las simulaciones de entrevista antes de invertir en más entrenamiento docente genérico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104118" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104118</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cardiovascular and Interventional Radiology, 9 sep 2026 · review · 2026-09-09</div>
+          <div class="r10-title">A Scoping Review of Interventional Radiology Curricula for Medical Students and Correlation with Kern&#39;s Six-Step Framework for Curriculum Development</div>
+          <div class="r10-line">Scoping review real (36 estudios) sobre cómo se enseña radiología intervencionista en pregrado encontró que la mayoría de las intervenciones ignoran el marco de 6 pasos de Kern para diseño curricular, con foco casi exclusivo en &#39;identificar el problema&#39; y poca atención a evaluación de necesidades e implementación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: más especialidades nicho van a auditar sus currículos contra el framework de Kern y van a encontrar el mismo vacío — vale la pena que Javier corra ese mismo ejercicio con los módulos de AMAUTA/USAMEDIC antes de que se vuelva exigencia explícita de acreditación.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00270-026-04614-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s00270-026-04614-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Educator, 9 sep 2026 · review · 2026-09-09</div>
+          <div class="r10-title">Student Evaluation of Courses in Health Care Professions: A Scoping Review</div>
+          <div class="r10-line">Scoping review real (44 estudios, 2015-2026) sobre evaluación docente por estudiantes en profesiones de la salud identificó 5 temas clave (procesos/métodos, mejora de efectividad, tasas de respuesta, perspectivas de stakeholders, sesgo) y recomienda instrumentos validados en vez de encuestas ad hoc de satisfacción.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la evaluación docente por estudiantes va a exigir cada vez más instrumentos validados y reporte explícito de sesgo — un estándar que Javier puede adelantar diseñando la evaluación de tutores de AMAUTA con un instrumento validado en vez de la encuesta genérica típica.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/NNE.0000000000002331" target="_blank" rel="noopener">↗ doi.org/10.1097/NNE.0000000000002331</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioural Brain Research, 9 sep 2026 · review · 2026-09-09</div>
+          <div class="r10-title">Neurocognitive Effects of Stress in Higher Education: Mechanisms, Challenges, and Opportunities</div>
+          <div class="r10-line">Revisión sistemática real (estudios 2000-2025) sobre efectos del estrés en la cognición de universitarios sintetiza que el estrés moderado puede facilitar la consolidación de memoria pero el estrés intenso o prolongado deteriora memoria explícita, atención y funciones ejecutivas vía eje HPA — mecanismo directamente relevante a su línea TDAH/TEA/precisión psiquiátrica en poblaciones de alto rendimiento académico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el diseño de &#39;ambientes educativos resilientes al estrés&#39; se va a volver tema explícito de currículo médico, no solo bienestar estudiantil aislado — Javier puede posicionarse temprano conectando este mecanismo con su marco dimensional (HiTOP/RDoC) para el estrés académico en candidatos a ENAM/Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbr.2026.116470" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbr.2026.116470</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">The French Journal of Urology, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Basic urological procedure workshops during pre-surgical residency bootcamp: Outcomes from a French university hospital</div>
+          <div class="r10-line">Estudio real con comparación de dos cohortes (62 estudiantes, 2 años) en un bootcamp pre-residentado de urología en Francia mostró que el apoyo en video antes del taller mejoró significativamente el desempeño en cateterismo uretral (no en punción suprapúbica) frente a instrucción estándar sin video.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el video pre-taller como &#39;flipped&#39; barato para procedimientos puntuales se va a volver default en cualquier bootcamp pre-residentado — replicable en AMAUTA antes de cualquier taller práctico presencial, no solo en procedimientos quirúrgicos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.fjurol.2026.103201" target="_blank" rel="noopener">↗ doi.org/10.1016/j.fjurol.2026.103201</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Open, 9 sep 2026 · review · 2026-09-09</div>
+          <div class="r10-title">Impact of Sexual and Gender Minority (SGM) Identity on Specialty Choice, Career Trajectory and the Physician Workforce: a Systematic Review Protocol</div>
+          <div class="r10-line">Protocolo real de revisión sistemática (PRISMA-P) que anuncia el mapeo de cómo la identidad de minoría sexual y de género se asocia a elección de especialidad, trayectoria profesional y fuerza laboral médica — aún sin resultados, confirma que el campo carece hoy de una síntesis rigurosa sobre el tema.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: cuando esta revisión publique resultados va a alimentar la conversación sobre diversidad e inclusión en la elección de especialidad médica — tema tangencial que Javier puede marcar para seguimiento si su comité de ética HVLH toca casos de discriminación o disclosure de identidad en el entrenamiento clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjopen-2026-120964" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjopen-2026-120964</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Casi la mitad de los estudiantes de medicina del mundo (49.8%, según el meta-análisis de hoy) tiene ansiedad clínicamente relevante ante exámenes — y la mayoría de programas la trata como anécdota, no como variable a medir con instrumentos estandarizados.</li><li>Una barra de progreso gamificada en un simulador VR beneficia más a quien NO es gamer — el punto no es &#39;a los jóvenes les gusta lo gamificado&#39;, sino que compensa la falta de familiaridad previa con interfaces tipo videojuego.</li><li>Los LLM fijando puntos de corte Angoff son más consistentes que los paneles docentes humanos — la &#39;subjetividad experta&#39; que se defiende como virtud en evaluación educativa es, medida, más ruido que señal.</li><li>Solo 29% del feedback escrito real que reciben los residentes de cirugía en sus EPA incluye una sugerencia concreta de mejora — la mayoría del &#39;feedback&#39; documentado es descriptivo, no accionable.</li><li>El estrés moderado ayuda a consolidar memoria; el estrés intenso la destruye — la meta de &#39;cero estrés&#39; en preparación de examen de alto stakes puede ser tan contraproducente como el estrés descontrolado.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué instrumento estandarizado de test anxiety (no una encuesta casera) debería aplicar AMAUTA en su próxima cohorte para medir esa prevalencia en Perú y compararla contra el 49.8% global?</li><li>¿Un panel Angoff híbrido (LLM + docentes) reduce la variabilidad de puntos de corte en los simulacros de ENAM/Residentado sin perder el criterio clínico que un modelo no tiene?</li><li>¿Qué tan replicable es el efecto de la barra de progreso gamificada fuera de VR — funcionaría igual en un simulacro de banco de preguntas online sin componente 3D?</li><li>¿El feedback que dan los tutores de AMAUTA en las simulaciones de entrevista psiquiátrica cae en el mismo patrón de &#39;descriptivo, no accionable&#39; que el 71% de los EPA comments de este estudio?</li><li>¿Dónde está el punto óptimo de estrés (ni cero ni desbordado) para memoria y función ejecutiva en un candidato a Residentado, y cómo se opera eso en el diseño de un simulacro de alta exigencia?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel IG explicando la cifra del 49.8% de test anxiety en estudiantes de medicina y qué hacer distinto (medir y diseñar, no solo &#39;relájate&#39;), citando el meta-análisis de hoy.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Piloto de panel Angoff asistido por LLM para fijar puntos de corte de un simulacro AMAUTA, documentado como estudio de validez con el marco de Kane — candidato a paper propio RENACYT.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de neurociencia educativa sobre el eje HPA, estrés y consolidación de memoria en preparación de examen de alto stakes, integrando el mecanismo de la revisión de hoy con el marco HiTOP/RDoC.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Sumar feedback gamificado visible (barra de avance, aciertos acumulados) al banco de preguntas y simulacros online de AMAUTA/USAMEDIC, priorizando a estudiantes sin trasfondo gamer.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Auditoría rápida de una muestra de feedback escrito por tutores de AMAUTA en simulaciones de entrevista, replicando la métrica QuAL del estudio de hoy, como insumo a un futuro paper de desarrollo docente.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JMIR Medical Education</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Simulation in Healthcare</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">The Journal of Nursing Education</span><span class="tag ">Cardiovascular and Interventional Radiology</span><span class="tag ">Nurse Educator</span><span class="tag ">Behavioural Brain Research</span><span class="tag ">BMJ Open</span><span class="tag ">Revista da Escola de Enfermagem da USP</span><span class="tag ">The French Journal of Urology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · PubMed E-utilities. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
