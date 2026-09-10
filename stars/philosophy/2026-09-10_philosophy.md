@@ -1,0 +1,62 @@
+# ⭐ ♟️ Modelos Mentales & Filosofía — 2026-09-10
+
+> Marca con `[x]` los papers/unidades que quieras **estrellar**. Aparecen en la página Favoritos de la galería.
+> Galería: https://jaflomd.github.io/jaflo-daily-intel/ · Favoritos: https://jaflomd.github.io/jaflo-daily-intel/favoritos.html
+> Dossier: https://jaflomd.github.io/jaflo-daily-intel/dossiers/philosophy/2026-09-10.html
+
+## 🏆 Top 3
+- [ ] **Epistemic reflexivity for AI-augmented research** — _Communications Psychology (Nature) · Kendeou P, Veletsianos G, Whetung C — 7 sep 2026 · paper_ — [doi.org/10.1038/s44271-026-00527-3](https://doi.org/10.1038/s44271-026-00527-3) <!--star:philosophy|2026-09-10|t3-1-->
+  > Los autores argumentan que usar IA generativa en ciencia exige que instituciones e investigadores practiquen 'reflexividad epistémica' activa — no basta con confiar o desconfiar de la IA, hay que auditar continuamente cómo su uso protege o erosiona la diversidad intelectual del propio pensamiento. Le importa a Javier directamente en su doble rol: como investigador RENACYT Distinguido que ya usa IA en su flujo de análisis y escritura, y como responsable de AMAUTA/USAMEDIC, donde sus residentes se apoyan cada vez más en LLMs para razonar casos. Cómo usarlo: convertir 'reflexividad epistémica' en un hábito concreto y verbalizable (no una actitud vaga) — un checklist breve que él mismo aplique antes de aceptar un output de IA en un manuscrito, y que pueda enseñar en AMAUTA como parte de su línea de IA aplicada a investigación y educación.
+- [ ] **The Attentional Switching Framework: A Dual Process Account of How the Brain Switches when Attention Switches** — _Neuroscience & Biobehavioral Reviews · Kam JWY, Spreng RN, Mills C, Cleary AM — 9 sep 2026 · review_ — [doi.org/10.1016/j.neubiorev.2026.106966](https://doi.org/10.1016/j.neubiorev.2026.106966) <!--star:philosophy|2026-09-10|t3-2-->
+  > El framework propone que cambiar el foco atencional entre el mundo externo y el pensamiento interno involucra dos mecanismos distintos: uno de dominio general que regula CUÁNDO y CÓMO ocurre el cambio (resource-dependent), y otro que sostiene cada estado atencional por vías neuronales separadas (resource-independent) — reconciliando así la vieja disputa entre modelos de sistema unificado vs. sistemas separados. Le importa a Javier en el centro exacto de su línea TDAH/TEA/neurodivergencia: no es un dato abstracto de atención, es un modelo mecanístico y testeable de justo el tipo de fallo de switching que caracteriza fenomenológicamente al TDAH. Cómo usarlo: como anclaje teórico citable (no de 'falta de atención' genérica) para un capítulo o sección de su libro de psicopatología sobre TDAH, y como base conceptual para diseñar o evaluar un protocolo de entrenamiento de switching atencional en su consulta o en AMAUTA.
+- [ ] **Plausible nonsense and deliberative reasoning: Benchmarking LLMs against human judgment** — _PNAS · Veri F, Kreia Umbelino G — publicado online 8-9 sep 2026 (número del 15 sep) · paper_ — [doi.org/10.1073/pnas.2600126123](https://doi.org/10.1073/pnas.2600126123) <!--star:philosophy|2026-09-10|t3-3-->
+  > Con un nuevo 'Deliberative Reason Index', los autores evalúan 60 LLMs frente a juicio humano en escenarios de política pública y encuentran que solo 4 modelos superan de forma consistente el umbral de coherencia deliberativa — la mayoría produce respuestas superficialmente plausibles pero con razonamiento deliberativo pobre. Le importa a Javier porque le da una métrica concreta y citable, no una impresión, para su línea de IA aplicada a investigación/educación y razonamiento clínico: exactamente el tipo de evidencia que necesita para argumentar por qué un LLM 'que suena bien' en un caso clínico no es lo mismo que un LLM que razona bien. Cómo usarlo: como base empírica para diseñar en AMAUTA un ejercicio donde los residentes comparen el 'sonar convincente' de una respuesta de IA contra su coherencia deliberativa real antes de aceptarla como apoyo diagnóstico.
+
+## 📡 Radar (10)
+- [ ] **Epistemic rationality in chimpanzees** — _Learning & Behavior · Andrews K — 8 sep 2026 · paper_ — [doi.org/10.3758/s13420-026-00712-8](https://doi.org/10.3758/s13420-026-00712-8) <!--star:philosophy|2026-09-10|t10-1-->
+  > El estudio ofrece evidencia de que los chimpancés revisan racionalmente sus creencias ante nueva evidencia — un rasgo central de la 'racionalidad epistémica' que se creía casi exclusivamente humano.
+  > 🔮 Predicción Fable: se citará en discusiones sobre continuidad evolutiva de la cognición social — insumo comparativo para un capítulo del libro de psicopatología de Javier sobre qué tan antigua filogenéticamente es la capacidad de actualizar creencias, relevante para pensar la rigidez cognitiva en TDAH/TEA.
+- [ ] **Physicians' mental models regarding appropriate goals of care in chronic critical illness: a qualitative interview study** — _Chest · Andersen SK, Yang Y, Kross EK, Haas B, Hart J, Bagshaw SM, Dzeng E, Fischhoff B, White DB — 8 sep 2026 · paper_ — [doi.org/10.1016/j.chest.2026.08.047](https://doi.org/10.1016/j.chest.2026.08.047) <!--star:philosophy|2026-09-10|t10-2-->
+  > Entrevistas a 29 intensivistas muestran que lo que dispara un cambio de metas de cuidado no es un evento único sino la percepción de una trayectoria de enfermedad plana y sostenida, sin potencial funcional.
+  > 🔮 Predicción Fable: la metodología (entrevista + mapeo explícito de mental models clínicos) se replicará para estudiar cómo los residentes de AMAUTA construyen su propio modelo mental de 'cuándo cambiar el manejo' en psiquiatría de precisión.
+- [ ] **Fairness decision-making in younger and older adults and associated neural indices** — _Journal of Gerontology: Series B · Cho I, Barber N, Soo Goh JO, Gutchess A — 9 sep 2026 · paper_ — [doi.org/10.1093/geronb/gbag190](https://doi.org/10.1093/geronb/gbag190) <!--star:philosophy|2026-09-10|t10-3-->
+  > Con 36 jóvenes y 36 adultos mayores, el estudio halla que los mayores juzgan la justicia sobre todo por el resultado y los jóvenes por la intención, diferencia moderada por el volumen de la corteza prefrontal dorsomedial.
+  > 🔮 Predicción Fable: dato de mecanismo trasladable a la línea de neuromodulación/psiquiatría de precisión de Javier sobre cómo la edad reconfigura el peso relativo de intención vs. resultado en el razonamiento social.
+- [ ] **Conversational AI as Personalised Cognitive Support: Adults With Intellectual Disability's Experiences of Everyday Decision-Making** — _Journal of Intellectual Disability Research · Álvarez-Aguado I, Vega V, Roselló-Peñaloza M, et al. — 7 sep 2026 · paper_ — [doi.org/10.1111/jir.70171](https://doi.org/10.1111/jir.70171) <!--star:philosophy|2026-09-10|t10-4-->
+  > 46 adultos con discapacidad intelectual usaron IA conversacional 4 semanas en Chile y valoraron que 'organizara su pensamiento' sin reemplazar su autonomía de decisión.
+  > 🔮 Predicción Fable: modelo replicable para la línea TDAH/TEA de Javier — un 'copiloto' de decisión que no decide por el paciente, base para una idea de contenido o proyecto de IA en neurodivergencia.
+- [ ] **Teaching and Assessing Clinical Reasoning in Health Professions Education: A Systematic Review** — _Journal of Dental Education · Ahmed S, Naz M, Raza Z, Ali M, Khan MSU, Rizvi M — 8 sep 2026 · review_ — [doi.org/10.1002/jdd.70361](https://doi.org/10.1002/jdd.70361) <!--star:philosophy|2026-09-10|t10-5-->
+  > Revisión de 27 estudios halla que aprendizaje basado en casos, illness scripts, simulación y práctica deliberada con feedback mejoran consistentemente el razonamiento clínico.
+  > 🔮 Predicción Fable: checklist directo para justificar o afinar el diseño curricular de AMAUTA/USAMEDIC en la preparación para ENAM y Residentado.
+- [ ] **Balancing technical rational with professional artistry: a case study in developing clinical reasoning for advanced care practitioners in primary care** — _Education for Primary Care · Swanson E, Agashi S — 8 sep 2026 · paper_ — [doi.org/10.1080/14739879.2026.2718211](https://doi.org/10.1080/14739879.2026.2718211) <!--star:philosophy|2026-09-10|t10-6-->
+  > Un caso muestra que el razonamiento clínico experto exige alternar entre seguir protocolo y aplicar juicio artesanal, interpretando pruebas en contexto y comunicando con el paciente.
+  > 🔮 Predicción Fable: refuerza el argumento de que el razonamiento clínico es un modelo mental dual entrenable, no un checklist — insumo para un módulo AMAUTA sobre cuándo desviarse del protocolo con criterio.
+- [ ] **Whose Voice Sounds Professional? Accent, Fluency, and the Politics of Communication Assessment in Health Professions Education** — _Teaching and Learning in Medicine · Jerjes W — 7 sep 2026 · editorial_ — [doi.org/10.1080/10401334.2026.2726321](https://doi.org/10.1080/10401334.2026.2726321) <!--star:philosophy|2026-09-10|t10-7-->
+  > El autor argumenta que la evaluación de comunicación en educación médica suele confundir 'sonar profesional' con acento dominante, penalizando a hablantes no nativos aunque lo clínicamente relevante sea la comprensibilidad.
+  > 🔮 Predicción Fable: tema sensible pero directo para el pilar de comunicación del Competency Lab de Javier — motivo para auditar si las rúbricas de comunicación de AMAUTA miden sesgo de acento en vez de claridad clínica real.
+
+---
+
+## 💎 Perlas del día
+- La revisión de creencias ante evidencia nueva — el núcleo de la 'racionalidad epistémica' — no es exclusivamente humana: los chimpancés la muestran de forma medible (Andrews, 2026).
+- Lo que dispara que un intensivista cambie las metas de cuidado no es un evento dramático sino una trayectoria plana sostenida en el tiempo: el mental model se activa por ausencia de cambio, no por su presencia (Andersen et al., 2026).
+- Usar IA en investigación no es un problema de 'confiar o no confiar' sino de practicar reflexividad epistémica activa como hábito operacionalizable, no como actitud vaga (Kendeou et al., 2026).
+- De 60 LLMs evaluados con el Deliberative Reason Index, solo 4 superan el umbral de coherencia deliberativa humana: la mayoría suena plausible pero razona peor de lo que aparenta (Veri & Kreia Umbelino, 2026).
+- Adultos mayores y jóvenes literalmente usan variables distintas para juzgar qué es justo —resultado vs. intención— y esa diferencia tiene una base anatómica medible en la corteza prefrontal dorsomedial (Cho et al., 2026).
+
+## ❓ Preguntas del día
+- Cuando usas un LLM para apoyar un análisis de tu investigación RENACYT, ¿qué práctica concreta de 'reflexividad epistémica' aplicas antes de aceptar su output?
+- ¿El modelo de switching atencional dual (regulación general + representación específica de cada estado) cambia cómo evalúas la variabilidad atencional de tus pacientes con TDAH entre tareas externas e internas?
+- En AMAUTA, si sometieras las respuestas de un LLM usado por residentes al Deliberative Reason Index, ¿cuántas pasarían el umbral de coherencia deliberativa real?
+- ¿Las rúbricas de comunicación que usas para evaluar residentes en USAMEDIC miden comprensibilidad clínica o, sin quererlo, 'acento estándar'?
+- En los casos límite de precisión psiquiátrica que discutes, ¿el cambio de manejo lo dispara un evento puntual o —como en cuidados críticos— una trayectoria plana sostenida?
+
+## 💡 Ideas del día
+- (content) Post IG/YT explicando el Deliberative Reason Index: por qué un LLM que 'suena bien' puede razonar peor que un residente, con ejemplos de casos clínicos reales.
+- (book) Sección del libro de psicopatología sobre el Attentional Switching Framework como modelo neurocognitivo del TDAH, citando el mecanismo dual de Kam et al. (2026).
+- (paper) Paper o módulo corto que operacionalice la 'reflexividad epistémica' de Kendeou et al. como protocolo concreto de uso de IA en investigación para su equipo.
+- (paper) Auditoría interna (o paper breve) de las rúbricas de comunicación de AMAUTA/USAMEDIC para detectar sesgo de acento vs. comprensibilidad clínica, inspirada en Jerjes (2026).
+- (content) Contenido que compare la revisión de creencias en chimpancés (Andrews, 2026) con la rigidez de creencias en TDAH/TEA — gancho evolutivo para explicar racionalidad epistémica a audiencia general.
+
+---
+_Fuentes: PubMed. Atribución a PubMed por sus términos de uso._

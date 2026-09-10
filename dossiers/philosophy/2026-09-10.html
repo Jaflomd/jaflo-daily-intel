@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-10 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">10 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">65</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Communications Psychology (Nature) · Kendeou P, Veletsianos G, Whetung C — 7 sep 2026 · paper · 2026-09-07</div>
+        <h3 class="r3-title">Epistemic reflexivity for AI-augmented research</h3>
+        <p class="r3-hook">Los autores argumentan que usar IA generativa en ciencia exige que instituciones e investigadores practiquen &#39;reflexividad epistémica&#39; activa — no basta con confiar o desconfiar de la IA, hay que auditar continuamente cómo su uso protege o erosiona la diversidad intelectual del propio pensamiento. Le importa a Javier directamente en su doble rol: como investigador RENACYT Distinguido que ya usa IA en su flujo de análisis y escritura, y como responsable de AMAUTA/USAMEDIC, donde sus residentes se apoyan cada vez más en LLMs para razonar casos. Cómo usarlo: convertir &#39;reflexividad epistémica&#39; en un hábito concreto y verbalizable (no una actitud vaga) — un checklist breve que él mismo aplique antes de aceptar un output de IA en un manuscrito, y que pueda enseñar en AMAUTA como parte de su línea de IA aplicada a investigación y educación.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s44271-026-00527-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s44271-026-00527-3</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neuroscience &amp; Biobehavioral Reviews · Kam JWY, Spreng RN, Mills C, Cleary AM — 9 sep 2026 · review · 2026-09-09</div>
+        <h3 class="r3-title">The Attentional Switching Framework: A Dual Process Account of How the Brain Switches when Attention Switches</h3>
+        <p class="r3-hook">El framework propone que cambiar el foco atencional entre el mundo externo y el pensamiento interno involucra dos mecanismos distintos: uno de dominio general que regula CUÁNDO y CÓMO ocurre el cambio (resource-dependent), y otro que sostiene cada estado atencional por vías neuronales separadas (resource-independent) — reconciliando así la vieja disputa entre modelos de sistema unificado vs. sistemas separados. Le importa a Javier en el centro exacto de su línea TDAH/TEA/neurodivergencia: no es un dato abstracto de atención, es un modelo mecanístico y testeable de justo el tipo de fallo de switching que caracteriza fenomenológicamente al TDAH. Cómo usarlo: como anclaje teórico citable (no de &#39;falta de atención&#39; genérica) para un capítulo o sección de su libro de psicopatología sobre TDAH, y como base conceptual para diseñar o evaluar un protocolo de entrenamiento de switching atencional en su consulta o en AMAUTA.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106966" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106966</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PNAS · Veri F, Kreia Umbelino G — publicado online 8-9 sep 2026 (número del 15 sep) · paper · 2026-09-09</div>
+        <h3 class="r3-title">Plausible nonsense and deliberative reasoning: Benchmarking LLMs against human judgment</h3>
+        <p class="r3-hook">Con un nuevo &#39;Deliberative Reason Index&#39;, los autores evalúan 60 LLMs frente a juicio humano en escenarios de política pública y encuentran que solo 4 modelos superan de forma consistente el umbral de coherencia deliberativa — la mayoría produce respuestas superficialmente plausibles pero con razonamiento deliberativo pobre. Le importa a Javier porque le da una métrica concreta y citable, no una impresión, para su línea de IA aplicada a investigación/educación y razonamiento clínico: exactamente el tipo de evidencia que necesita para argumentar por qué un LLM &#39;que suena bien&#39; en un caso clínico no es lo mismo que un LLM que razona bien. Cómo usarlo: como base empírica para diseñar en AMAUTA un ejercicio donde los residentes comparen el &#39;sonar convincente&#39; de una respuesta de IA contra su coherencia deliberativa real antes de aceptarla como apoyo diagnóstico.</p>
+        <a class="r3-link" href="https://doi.org/10.1073/pnas.2600126123" target="_blank" rel="noopener">↗ doi.org/10.1073/pnas.2600126123</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Learning &amp; Behavior · Andrews K — 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Epistemic rationality in chimpanzees</div>
+          <div class="r10-line">El estudio ofrece evidencia de que los chimpancés revisan racionalmente sus creencias ante nueva evidencia — un rasgo central de la &#39;racionalidad epistémica&#39; que se creía casi exclusivamente humano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se citará en discusiones sobre continuidad evolutiva de la cognición social — insumo comparativo para un capítulo del libro de psicopatología de Javier sobre qué tan antigua filogenéticamente es la capacidad de actualizar creencias, relevante para pensar la rigidez cognitiva en TDAH/TEA.</div>
+          <a class="r10-link" href="https://doi.org/10.3758/s13420-026-00712-8" target="_blank" rel="noopener">↗ doi.org/10.3758/s13420-026-00712-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Chest · Andersen SK, Yang Y, Kross EK, Haas B, Hart J, Bagshaw SM, Dzeng E, Fischhoff B, White DB — 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Physicians&#39; mental models regarding appropriate goals of care in chronic critical illness: a qualitative interview study</div>
+          <div class="r10-line">Entrevistas a 29 intensivistas muestran que lo que dispara un cambio de metas de cuidado no es un evento único sino la percepción de una trayectoria de enfermedad plana y sostenida, sin potencial funcional.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la metodología (entrevista + mapeo explícito de mental models clínicos) se replicará para estudiar cómo los residentes de AMAUTA construyen su propio modelo mental de &#39;cuándo cambiar el manejo&#39; en psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.chest.2026.08.047" target="_blank" rel="noopener">↗ doi.org/10.1016/j.chest.2026.08.047</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Gerontology: Series B · Cho I, Barber N, Soo Goh JO, Gutchess A — 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Fairness decision-making in younger and older adults and associated neural indices</div>
+          <div class="r10-line">Con 36 jóvenes y 36 adultos mayores, el estudio halla que los mayores juzgan la justicia sobre todo por el resultado y los jóvenes por la intención, diferencia moderada por el volumen de la corteza prefrontal dorsomedial.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato de mecanismo trasladable a la línea de neuromodulación/psiquiatría de precisión de Javier sobre cómo la edad reconfigura el peso relativo de intención vs. resultado en el razonamiento social.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/geronb/gbag190" target="_blank" rel="noopener">↗ doi.org/10.1093/geronb/gbag190</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Intellectual Disability Research · Álvarez-Aguado I, Vega V, Roselló-Peñaloza M, et al. — 7 sep 2026 · paper · 2026-09-07</div>
+          <div class="r10-title">Conversational AI as Personalised Cognitive Support: Adults With Intellectual Disability&#39;s Experiences of Everyday Decision-Making</div>
+          <div class="r10-line">46 adultos con discapacidad intelectual usaron IA conversacional 4 semanas en Chile y valoraron que &#39;organizara su pensamiento&#39; sin reemplazar su autonomía de decisión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: modelo replicable para la línea TDAH/TEA de Javier — un &#39;copiloto&#39; de decisión que no decide por el paciente, base para una idea de contenido o proyecto de IA en neurodivergencia.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jir.70171" target="_blank" rel="noopener">↗ doi.org/10.1111/jir.70171</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Dental Education · Ahmed S, Naz M, Raza Z, Ali M, Khan MSU, Rizvi M — 8 sep 2026 · review · 2026-09-08</div>
+          <div class="r10-title">Teaching and Assessing Clinical Reasoning in Health Professions Education: A Systematic Review</div>
+          <div class="r10-line">Revisión de 27 estudios halla que aprendizaje basado en casos, illness scripts, simulación y práctica deliberada con feedback mejoran consistentemente el razonamiento clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: checklist directo para justificar o afinar el diseño curricular de AMAUTA/USAMEDIC en la preparación para ENAM y Residentado.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jdd.70361" target="_blank" rel="noopener">↗ doi.org/10.1002/jdd.70361</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Education for Primary Care · Swanson E, Agashi S — 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Balancing technical rational with professional artistry: a case study in developing clinical reasoning for advanced care practitioners in primary care</div>
+          <div class="r10-line">Un caso muestra que el razonamiento clínico experto exige alternar entre seguir protocolo y aplicar juicio artesanal, interpretando pruebas en contexto y comunicando con el paciente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza el argumento de que el razonamiento clínico es un modelo mental dual entrenable, no un checklist — insumo para un módulo AMAUTA sobre cuándo desviarse del protocolo con criterio.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/14739879.2026.2718211" target="_blank" rel="noopener">↗ doi.org/10.1080/14739879.2026.2718211</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Teaching and Learning in Medicine · Jerjes W — 7 sep 2026 · editorial · 2026-09-07</div>
+          <div class="r10-title">Whose Voice Sounds Professional? Accent, Fluency, and the Politics of Communication Assessment in Health Professions Education</div>
+          <div class="r10-line">El autor argumenta que la evaluación de comunicación en educación médica suele confundir &#39;sonar profesional&#39; con acento dominante, penalizando a hablantes no nativos aunque lo clínicamente relevante sea la comprensibilidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: tema sensible pero directo para el pilar de comunicación del Competency Lab de Javier — motivo para auditar si las rúbricas de comunicación de AMAUTA miden sesgo de acento en vez de claridad clínica real.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/10401334.2026.2726321" target="_blank" rel="noopener">↗ doi.org/10.1080/10401334.2026.2726321</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La revisión de creencias ante evidencia nueva — el núcleo de la &#39;racionalidad epistémica&#39; — no es exclusivamente humana: los chimpancés la muestran de forma medible (Andrews, 2026).</li><li>Lo que dispara que un intensivista cambie las metas de cuidado no es un evento dramático sino una trayectoria plana sostenida en el tiempo: el mental model se activa por ausencia de cambio, no por su presencia (Andersen et al., 2026).</li><li>Usar IA en investigación no es un problema de &#39;confiar o no confiar&#39; sino de practicar reflexividad epistémica activa como hábito operacionalizable, no como actitud vaga (Kendeou et al., 2026).</li><li>De 60 LLMs evaluados con el Deliberative Reason Index, solo 4 superan el umbral de coherencia deliberativa humana: la mayoría suena plausible pero razona peor de lo que aparenta (Veri &amp; Kreia Umbelino, 2026).</li><li>Adultos mayores y jóvenes literalmente usan variables distintas para juzgar qué es justo —resultado vs. intención— y esa diferencia tiene una base anatómica medible en la corteza prefrontal dorsomedial (Cho et al., 2026).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Cuando usas un LLM para apoyar un análisis de tu investigación RENACYT, ¿qué práctica concreta de &#39;reflexividad epistémica&#39; aplicas antes de aceptar su output?</li><li>¿El modelo de switching atencional dual (regulación general + representación específica de cada estado) cambia cómo evalúas la variabilidad atencional de tus pacientes con TDAH entre tareas externas e internas?</li><li>En AMAUTA, si sometieras las respuestas de un LLM usado por residentes al Deliberative Reason Index, ¿cuántas pasarían el umbral de coherencia deliberativa real?</li><li>¿Las rúbricas de comunicación que usas para evaluar residentes en USAMEDIC miden comprensibilidad clínica o, sin quererlo, &#39;acento estándar&#39;?</li><li>En los casos límite de precisión psiquiátrica que discutes, ¿el cambio de manejo lo dispara un evento puntual o —como en cuidados críticos— una trayectoria plana sostenida?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT explicando el Deliberative Reason Index: por qué un LLM que &#39;suena bien&#39; puede razonar peor que un residente, con ejemplos de casos clínicos reales.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología sobre el Attentional Switching Framework como modelo neurocognitivo del TDAH, citando el mecanismo dual de Kam et al. (2026).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper o módulo corto que operacionalice la &#39;reflexividad epistémica&#39; de Kendeou et al. como protocolo concreto de uso de IA en investigación para su equipo.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Auditoría interna (o paper breve) de las rúbricas de comunicación de AMAUTA/USAMEDIC para detectar sesgo de acento vs. comprensibilidad clínica, inspirada en Jerjes (2026).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido que compare la revisión de creencias en chimpancés (Andrews, 2026) con la rigidez de creencias en TDAH/TEA — gancho evolutivo para explicar racionalidad epistémica a audiencia general.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Communications Psychology (Nature)</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">PNAS</span><span class="tag ">Learning &amp; Behavior</span><span class="tag ">Chest</span><span class="tag ">Journal of Gerontology: Series B</span><span class="tag ">Journal of Intellectual Disability Research</span><span class="tag ">Journal of Dental Education</span><span class="tag ">Education for Primary Care</span><span class="tag ">Teaching and Learning in Medicine</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 10 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
