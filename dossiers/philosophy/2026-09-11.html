@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">11 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">210</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">JMIR Medical Education · Sánchez JD — 10 sep 2026 · editorial · 2026-09-10</div>
+        <h3 class="r3-title">Promise, Mimicry, and Surveillance: Responsibly Integrating Artificial Intelligence With Socratic Inquiry in Medical Education</h3>
+        <p class="r3-hook">El autor nombra dos trampas concretas al usar LLMs para enseñar razonamiento clínico por método socrático: la &#39;trampa de la mimesis&#39; (un sistema que genera preguntas con forma socrática puede parecer que cultiva metacognición mientras solo entrega contenido interactivo — el efecto ELIZA aplicado a educación) y la &#39;Paradoja del Panóptico&#39; (la vigilancia de datos que hace útil al tutor de IA erosiona la seguridad psicológica que el método socrático necesita, empujando al residente a un engagement performativo en vez de auténtico). Le importa a Javier en el núcleo exacto de AMAUTA/USAMEDIC: es el riesgo más probable de cualquier tutor de IA que use para preparar residentes para ENAM, y viene con un modelo causal falsable, no solo una advertencia genérica. Cómo usarlo: adoptar el framework de 3 pilares del autor (gobernanza, currículo, desarrollo docente) como checklist de diseño antes de escalar cualquier herramienta de IA conversacional en AMAUTA, y usar la distinción de 4 modalidades de delegación para decidir explícitamente qué NUNCA delega a la IA (juicio clínico ambiguo, deliberación ética).</p>
+        <a class="r3-link" href="https://doi.org/10.2196/102958" target="_blank" rel="noopener">↗ doi.org/10.2196/102958</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Medicine, Health Care and Philosophy · Bramora P, Pilis W — 9 sep 2026 · paper · 2026-09-09</div>
+        <h3 class="r3-title">The academic theatre of shadows: epistemological and ethical erosion in the era of marketing-based medicine</h3>
+        <p class="r3-hook">Los autores describen el mecanismo por el cual &#39;Evidence-Based Marketing&#39; desplaza a Evidence-Based Medicine: analizan cómo se rebautizan errores analíticos (usando la mala interpretación de Cross-reactive Carbohydrate Determinants como caso) como &#39;descubrimientos&#39;, convirtiendo población sana en &#39;pacientes fantasma&#39; para beneficio comercial, y documentan una &#39;inversión de jerarquía&#39; donde la administración institucional termina respaldando al med-influencer carismático por encima del experto — con paralelismo explícito al caso Theranos. Le importa a Javier directamente como investigador RENACYT Distinguido que compite por atención con médicos-influencers en el mismo espacio de Instagram/YouTube donde él hace content-documentation, y como educador que necesita que sus residentes distingan evidencia real de marketing con apariencia científica. Cómo usarlo: el concepto de &#39;commodity diagnostics&#39; y &#39;teatro de sombras académico&#39; es un nombre citable y transferible para un módulo de AMAUTA sobre cómo detectar diagnósticos o tratamientos psiquiátricos promovidos más por métricas digitales que por validación metodológica, y una idea de contenido directa para su propia marca frente a la desinformación en salud mental.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11019-026-10395-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s11019-026-10395-7</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Nature Neuroscience · Xue C, Markman SK, Chen R, Kramer LE, Cohen MR — 10 sep 2026 · paper · 2026-09-10</div>
+        <h3 class="r3-title">Feature interference underlies a neuronal basis for the behavioral cost of task uncertainty</h3>
+        <p class="r3-hook">Combinando electrofisiología en monos, psicofísica humana y redes neuronales artificiales, los autores muestran que el costo de la incertidumbre de tarea no viene de una limitación genérica de &#39;capacidad cognitiva&#39; sino de un mecanismo específico: bajo condiciones incierto, las representaciones neuronales de características irrelevantes se fortalecen y se entrelazan con las relevantes (&#39;interferencia de características&#39;), degradando la decisión perceptual — algo que ni humanos ni monos evitan, pero que una red artificial entrenada solo para acertar sí evita. Le importa a Javier en el cruce exacto de su línea TDAH/TEA y de razonamiento clínico: es un mecanismo neuronal concreto y testeable para por qué la incertidumbre diagnóstica (un caso clínico ambiguo, o un paciente que no encaja limpio en HiTOP/RDoC) empeora el juicio, no por &#39;falta de atención&#39; sino por interferencia representacional activa. Cómo usarlo: como anclaje mecanístico citable para un capítulo del libro de psicopatología sobre por qué el razonamiento clínico se degrada específicamente bajo ambigüedad diagnóstica, y como marco para diseñar en AMAUTA un ejercicio que enseñe a residentes a reconocer cuándo están sufriendo interferencia de características (encajar el caso a un diagnóstico conocido) en vez de razonar limpio.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41593-026-02430-w" target="_blank" rel="noopener">↗ doi.org/10.1038/s41593-026-02430-w</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioural Brain Research · Zhang F, Cheng L, Shu L, et al. — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Altered Intertemporal Decision-Making in Individuals with High Autistic Traits</div>
+          <div class="r10-line">Con 81 participantes, rasgos autistas altos se asocian a mayor descuento temporal (preferencia por recompensa inmediata) explicado por peor control ejecutivo, no por diferente valoración subjetiva de la recompensa — directo a la línea TDAH/TEA de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: se usará para argumentar que la impulsividad de elección en neurodivergencia es un problema de control ejecutivo específico (memoria de trabajo, resolución de conflicto), no de motivación — insumo concreto para el libro de psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbr.2026.116466" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbr.2026.116466</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Consciousness and Cognition · Frisoni M, Tarasi L, Borgomaneri S, Romei V — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Autistic traits are associated with suboptimal decision Bias strategies in subsecond timing</div>
+          <div class="r10-line">Usando Teoría de Detección de Señales, los rasgos autistas no alteran la sensibilidad perceptual temporal sino el sesgo de decisión: mayor puntaje en &#39;Imaginación&#39; predice anclarse al primer estímulo en vez de usar la referencia acumulada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza el reencuadre de &#39;déficit perceptual&#39; a &#39;estrategia de decisión subóptima&#39; en TEA — dato citable para separar percepción de decisión en las evaluaciones de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.concog.2026.104123" target="_blank" rel="noopener">↗ doi.org/10.1016/j.concog.2026.104123</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Current Biology · Di Y, An X, Li HH — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Distinct oscillatory neural rhythms support representational precision and confidence in working memory</div>
+          <div class="r10-line">El cerebro codifica dos formas distintas de incertidumbre en memoria de trabajo en ritmos EEG separados: precisión representacional en banda alfa y una señal de confianza escalar en banda beta que persiste entre ensayos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: primer marcador EEG separable de &#39;qué tan bien recuerdo&#39; vs &#39;qué tan seguro estoy de recordar&#39; — candidato a biomarcador de metacognición trasladable a la línea de neuromodulación/precisión de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.cub.2026.08.041" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cub.2026.08.041</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">NeuroImage · Jia C, Xu X — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Simulating the Unreal: Neural Mechanisms of Counterfactual Comprehension</div>
+          <div class="r10-line">Con fNIRS en mandarín (sin marcadores gramaticales explícitos de contrafactualidad), el razonamiento contrafactual recluta corteza sensoriomotora e IFG izquierdo, modulado por memoria de trabajo y Teoría de la Mente — evidencia para la &#39;Hipótesis de Simulación Mental&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato de mecanismo para enseñar &#39;pensar en segundo orden&#39; como simulación sensoriomotora entrenable, no solo lógica abstracta — insumo de contenido sobre por qué el pensamiento contrafactual cuesta cognitivamente.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroimage.2026.122225" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroimage.2026.122225</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Applied Health Economics and Health Policy · Küçükuncular A, Culyer AJ — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">When Does Health Technology Assessment Need Deliberation? Evidence, Algorithms and the Limits of Consultation</div>
+          <div class="r10-line">Los autores dan un criterio explícito de cuándo la deliberación humana agrega valor sobre el razonamiento algorítmico puro: cuando la evidencia es heterogénea/contestada, los valores están en disputa, la implementación es incierta, o la credibilidad institucional importa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: marco directamente reusable para decidir en psiquiatría de precisión cuándo un algoritmo/IA basta y cuándo se necesita juicio clínico deliberativo explícito y justificable — no una regla vaga de &#39;usar criterio&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s40258-026-01071-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s40258-026-01071-1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Annals of Biomedical Engineering · Viceconti M — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Assessing the Credibility of Quantitative Information: A General Framework</div>
+          <div class="r10-line">El &#39;7S Framework&#39; unifica metrología, estadística y validación computacional en un solo esquema para evaluar la credibilidad de cualquier dato cuantitativo (medido, inferido o predicho), incluyendo los casos nuevos como datos sintéticos de entrenamiento de IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: candidato a checklist para que Javier evalúe, como revisor o investigador RENACYT, la credibilidad de papers que usan IA/datos sintéticos antes de citarlos o coautorearlos.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10439-026-04367-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s10439-026-04367-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Psychology &amp; Psychotherapy · Çökmüş FP, Tiftikçi Z, İyilikçi O, Aydın O — sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Comparative Analysis of Metacognition and Mindfulness Across Social Anxiety Disorder, Panic Disorder and Healthy Controls</div>
+          <div class="r10-line">En 147 participantes, la disfunción metacognitiva (autoconciencia cognitiva, necesidad de controlar pensamientos) y el mindfulness bajo predicen severidad de forma distinta en ansiedad social vs. pánico — no es un mecanismo único transdiagnóstico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato fino para la psiquiatría dimensional de Javier — argumenta contra un módulo transdiagnóstico único de &#39;entrenar metacognición&#39; y a favor de targets metacognitivos específicos por fenotipo dentro de HiTOP.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/cpp.70334" target="_blank" rel="noopener">↗ doi.org/10.1002/cpp.70334</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education · St-Onge C, Marceau M, Zumbo BD — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Assessment fairness at the nexus of validity: Linking fairness threats to score meaning</div>
+          <div class="r10-line">Los autores reencuadran la equidad en evaluación como un problema de VALIDEZ, no un añadido de equidad: normas culturales estrechas, expectativas del evaluador y barreras de acceso son &#39;amenazas de validez&#39; porque cambian lo que el puntaje realmente representa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: marco directo para auditar los OSCE/exámenes de USAMEDIC — no solo si son &#39;justos&#39; sino si el puntaje sigue midiendo lo mismo entre subgrupos de residentes.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/medu.70311" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70311</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Microbiology &amp; Biology Education · Gibbens BB — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Science communication about contentious biology topics: why it frequently fails and how to fix it</div>
+          <div class="r10-line">El autor sintetiza psicología, comunicación de ciencia y educación biológica en un framework práctico que empareja cada fallo típico de comunicación (cuando la evidencia choca con creencias previas) con su remedio específico, entrenable en el currículo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: plantilla directa para el pilar de comunicación del Competency Lab — checklist de &#39;fallo → remedio&#39; que Javier puede adaptar para enseñar a residentes a comunicar psiquiatría a pacientes escépticos.</div>
+          <a class="r10-link" href="https://doi.org/10.1128/jmbe.00194-26" target="_blank" rel="noopener">↗ doi.org/10.1128/jmbe.00194-26</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Issues in Mental Health Nursing · Tallman SB — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Person Mapping and Tier-Class Symptom Status: A Framework for Collaborative Mental Health Assessment Across Clinical Settings</div>
+          <div class="r10-line">Framework de dos partes (Person Mapping longitudinal + Tier-Class Symptom Status por severidad dimensional) para evaluar salud mental sin forzar diagnóstico categórico inmediato, compatible con sistemas diagnósticos existentes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: converge con la psiquiatría dimensional (HiTOP/RDoC) que Javier ya defiende — posible cita cruzada o coautoría temática para mostrar que la tendencia dimensional también emerge fuera de psiquiatría, en enfermería.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/01612840.2026.2710858" target="_blank" rel="noopener">↗ doi.org/10.1080/01612840.2026.2710858</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un tutor de IA socrático puede generar preguntas con forma socrática y aun así solo entregar contenido interactivo disfrazado — separar la mímica conversacional de la ganancia metacognitiva real sigue sin resolverse metodológicamente (Sánchez, 2026).</li><li>Los errores analíticos no desaparecen solos: se reetiquetan como &#39;descubrimientos&#39; cuando hay incentivo comercial — el caso de los Cross-reactive Carbohydrate Determinants muestra el mecanismo exacto de cómo el marketing convierte población sana en &#39;pacientes fantasma&#39; (Bramora &amp; Pilis, 2026).</li><li>La incertidumbre no degrada la decisión por falta de &#39;capacidad cognitiva&#39; genérica: degrada porque representaciones neuronales irrelevantes se entrelazan con las relevantes — interferencia de características, medible y específica (Xue et al., 2026, Nat Neurosci).</li><li>La equidad en un examen no es un añadido de justicia social: es, técnicamente, una amenaza a la VALIDEZ del puntaje — si el puntaje no significa lo mismo entre subgrupos, deja de medir lo que dice medir (St-Onge et al., 2026).</li><li>En rasgos autistas altos, la impulsividad temporal (preferir la recompensa inmediata) no viene de valorar distinto la recompensa, sino de peor control ejecutivo — el mismo síntoma superficial, mecanismo distinto al que se suele asumir (Zhang et al., 2026).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si escalas un tutor de IA socrático en AMAUTA para preparar residentes para ENAM, ¿cómo distingues que estén razonando mejor y no solo produciendo respuestas con forma de razonamiento (la &#39;trampa de la mimesis&#39;)?</li><li>¿Qué tan expuesto está tu propio contenido de Instagram/YouTube a competir, sin quererlo, dentro de la misma lógica de &#39;Evidence-Based Marketing&#39; que describe Bramora — métricas por encima de validación metodológica?</li><li>Cuando un caso clínico ambiguo no encaja limpio en HiTOP/RDoC, ¿el error que cometes (o que comete el residente) es interferencia de características — forzar el caso a un patrón conocido — o es genuina falta de evidencia?</li><li>¿Las OSCE o exámenes de USAMEDIC podrían estar midiendo algo distinto para distintos subgrupos de residentes sin que eso se haya auditado nunca como amenaza de validez, no solo de equidad?</li><li>En tu psiquiatría dimensional, ¿la disfunción metacognitiva que buscas entrenar es transdiagnóstica de verdad, o —como sugiere Çökmüş— necesitas un target metacognitivo distinto para ansiedad social que para pánico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT sobre la &#39;trampa de la mimesis&#39; y la &#39;Paradoja del Panóptico&#39; de Sánchez (2026): por qué un chatbot socrático que suena bien puede no estar enseñando a razonar, con ejemplo de un caso ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA de diseño de tutores de IA basado en el framework de 3 pilares (gobernanza, currículo, desarrollo docente) de Sánchez (2026), con las 4 modalidades de delegación como checklist de qué NUNCA delegar.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología sobre interferencia de características (Xue et al., 2026) como mecanismo de por qué el razonamiento clínico se degrada bajo ambigüedad diagnóstica.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper corto o carta que aplique el concepto de &#39;teatro de sombras académico&#39; (Bramora &amp; Pilis, 2026) al ecosistema de médicos-influencers en salud mental hispanohablante — caso propio de content-documentation.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Auditoría interna de las OSCE/exámenes de USAMEDIC bajo el marco de fairness-as-validity de St-Onge et al. (2026) — detectar amenazas de validez por subgrupo antes que quejas de equidad.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Medicine, Health Care and Philosophy</span><span class="tag highlight">Nature Neuroscience</span><span class="tag ">Behavioural Brain Research</span><span class="tag ">Consciousness and Cognition</span><span class="tag ">Current Biology</span><span class="tag ">NeuroImage</span><span class="tag ">Applied Health Economics and Health Policy</span><span class="tag ">Annals of Biomedical Engineering</span><span class="tag ">Clinical Psychology &amp; Psychotherapy</span><span class="tag highlight">Medical Education</span><span class="tag ">Journal of Microbiology &amp; Biology Education</span><span class="tag ">Issues in Mental Health Nursing</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · Europe PMC. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
