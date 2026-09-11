@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">11 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">47</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Brain, Behavior, and Immunity, 8 sep 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Gut microbiota correlating with glycerophospholipid metabolism dysregulation is associated with brain functional alterations in adolescent depression</h3>
+        <p class="r3-hook">Este estudio multicéntrico integró metagenómica fecal, metabolómica sérica, fMRI en reposo y transcriptómica espacial cerebral en 160 adolescentes con depresión y 90 controles sanos, y encontró que la disbiosis intestinal se asocia con disrupción del metabolismo de glicerofosfolípidos, la cual media —vía análisis de mediación y machine learning— alteraciones funcionales específicas en precúneo y giro precentral que se relacionan con los síntomas depresivos. Le importa directamente a Javier porque es exactamente el tipo de evidencia multi-ómica estratificada que necesita para el capítulo de depresión adolescente de su libro de psicopatología: no es &#39;microbiota y depresión&#39; genérico, sino un pipeline reproducible (ómica → metabolito → circuito → síntoma) que ejemplifica cómo operacionalizar psiquiatría de precisión más allá del biomarcador único. Puede usarlo en AMAUTA como caso de enseñanza de integración multi-ómica con mediación estadística, y como referencia metodológica si explora ejes microbiota-cerebro en población adolescente peruana.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.bbi.2026.107005" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.107005</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Attention Disorders, 8 sep 2026 · review · 2026-09-08</div>
+        <h3 class="r3-title">Electroencephalographic Signatures of Methylphenidate in ADHD: A Systematic Review and 10 Recommendations for Future Research</h3>
+        <p class="r3-hook">Esta revisión sistemática PRISMA (registrada en PROSPERO) de 44 estudios examinó si el EEG sirve como biomarcador de mecanismo y de respuesta al metilfenidato en TDAH, y encontró que el hallazgo más consistente y replicado es un aumento de la amplitud P3 tras la administración aguda —sugiriendo mejora en procesamiento cognitivo de orden superior—, mientras que los efectos sobre potenciales de procesamiento sensorial temprano o monitoreo de respuesta son inconsistentes. Le importa directamente a Javier porque es la síntesis de mayor rigor metodológico disponible ahora mismo sobre un biomarcador EEG concreto y barato para monitorizar respuesta al fármaco de primera línea en TDAH, su línea clínica central, y porque las 10 recomendaciones metodológicas del propio artículo son material listo para enseñar en AMAUTA cómo leer una revisión sistemática de biomarcadores sin sobre-interpretar heterogeneidad. Puede citarlo en el capítulo de TDAH de su libro de psicopatología como estado del arte 2026 de EEG y metilfenidato, y usar la lista de recomendaciones como plantilla de razonamiento clínico con sus alumnos de Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/10870547261483457" target="_blank" rel="noopener">↗ doi.org/10.1177/10870547261483457</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Neurology: Education, 8 sep 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Education Research: More Than a Checkbox: Implementing a Narrative-Based Child Neurology Resident Assessment System</h3>
+        <p class="r3-hook">En el programa de residencia de neurología pediátrica de la Universidad de Colorado, este estudio rediseñó el sistema de evaluación para exigir comentarios narrativos anclados a una competencia específica (marco ACGME Milestones) y comparó 6 meses antes vs. 6 meses después de la reforma, mostrando mejoras medibles en volumen y especificidad narrativa del feedback docente. Le importa directamente a Javier porque AMAUTA/USAMEDIC viven de la calidad del feedback formativo a gran escala para el ENAM y el Residentado, y este es un modelo concreto —no una intervención de IA genérica— de cómo forzar que cada comentario esté anclado a una competencia observable, exactamente el estándar de &#39;precision feedback&#39; que exige su línea de educación médica de precisión. Puede pilotear el mismo diseño pre-post (línea base vs. intervención) en el sistema de evaluación docente de AMAUTA, y usarlo en su libro de neurociencia educativa como ejemplo de reforma de evaluación basada en competencias con datos de factibilidad, no solo de opinión.</p>
+        <a class="r3-link" href="https://doi.org/10.1212/ne9.0000000000200330" target="_blank" rel="noopener">↗ doi.org/10.1212/ne9.0000000000200330</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">The British Journal of Psychiatry, 8 sep 2026 · review · 2026-09-08</div>
+          <div class="r10-title">Immune dysregulation in depression and psychosis: summary of current evidence and future perspectives</div>
+          <div class="r10-line">Esta revisión en The British Journal of Psychiatry sintetiza la evidencia de disregulación inmune en depresión y psicosis, concluyendo que ningún biomarcador inmune tiene aún utilidad clínica robusta, pero que enfoques como target trial emulation y genómica funcional abren camino hacia la &#39;precisión inmunopsiquiátrica&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier la cita en su libro como referencia honesta de dónde estamos realmente en biomarcadores inmunes, útil para enseñar en AMAUTA a distinguir promesa mecanística de utilidad clínica probada, sin caer en hype.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/bjp.2026.10761" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10761</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical EEG and Neuroscience, 10 sep 2026 · rct · 2026-09-10</div>
+          <div class="r10-title">Clinical Efficacy of High-Frequency Deep Repetitive Transcranial Magnetic Stimulation in the Treatment of Depression and the Predictive Role of Baseline Triglyceride Levels: A Randomized Sham-Controlled Trial</div>
+          <div class="r10-line">En un ensayo aleatorizado sham-controlado con 80 pacientes, niveles basales más altos de triglicéridos en ayunas se asociaron a mayor respuesta a la estimulación magnética transcraneal profunda de alta frecuencia (HF-dTMS) para depresión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier lo señala como ejemplo accesible de estratificación pre-tratamiento con un marcador metabólico barato y ya disponible en cualquier laboratorio peruano, relevante para su línea de neuromodulación de precisión, aunque el propio estudio lo marca como exploratorio.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/15500594261487817" target="_blank" rel="noopener">↗ doi.org/10.1177/15500594261487817</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Dexamphetamine-induced striatal hyperdopaminergia attenuates reward-related neural activation: An 11C-PHNO PET-fMRI study</div>
+          <div class="r10-line">Con PET-fMRI simultáneo (11C-PHNO) en 28 voluntarios sanos, la hiperdopaminergia estriatal inducida por dexanfetamina atenuó la codificación de valor relevante para la recompensa en estriado ventral, aportando evidencia causal directa en humanos del mecanismo dopaminérgico propuesto para síntomas negativos en psicosis.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier lo usa como puente mecanístico entre su interés en TDAH (dopamina, motivación) y psicosis —un experimento causal, no solo correlacional— útil para el capítulo de psicosis de su libro de psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.08.019" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.08.019</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain, Behavior, and Immunity, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">A psychometric evaluation of diffusion basis spectrum imaging indicates altered white matter microstructure consistent with elevated edema in depression</div>
+          <div class="r10-line">Este estudio de confiabilidad test-retest (n=94, incluidos 43 con depresión mayor) valida que la imagen de espectro de base de difusión (DBSI) mide de forma reproducible marcadores de edema/inflamación de sustancia blanca, con mayor fracción &#39;hindered&#39; y menor &#39;fiber fraction&#39; en depresión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier lo archiva como el tipo de trabajo &#39;aburrido pero necesario&#39; —validación psicométrica antes de usar una técnica como endpoint clínico— que cita cuando le preguntan por qué un biomarcador prometedor de depresión inflamatoria aún no es clínicamente utilizable.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbi.2026.107002" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbi.2026.107002</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Characterization of Motor Signatures in Autism Using Interpretable Learning on 3D Motion Data</div>
+          <div class="r10-line">Con captura de movimiento 3D en 34 participantes (14 autistas, 20 neurotípicos) durante tareas de baile social e imitación emocional, un modelo de machine learning interpretable identificó patrones motores discriminantes específicos por región corporal que diferencian autismo, con mejor precisión en tareas socialmente más exigentes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier lo suma a su radar de fenotipado digital para TEA como alternativa de bajo costo (cámara, no wearable) a los biomarcadores fisiológicos, aunque con n=34 lo trata como prueba de concepto, no como herramienta lista para clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10816089/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10816089/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Resident perceptions of Mini-CEX during initial implementation in a UAE academic health system: prior exposure, assessor engagement and workflow constraints</div>
+          <div class="r10-line">En una encuesta transversal a 155 residentes de 16 programas en un sistema de salud académico de EAU, las percepciones del Mini-CEX fueron generalmente positivas (mediana 85/130), sin diferencias significativas por especialidad, aportando evidencia temprana sobre cómo se vive realmente esta evaluación formativa basada en el lugar de trabajo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier lo usa como benchmark si AMAUTA alguna vez instrumenta una evaluación tipo Mini-CEX para sus docentes o preceptores clínicos, y como evidencia de que la &#39;aceptación del residente&#39; es una métrica medible, no solo intuición.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10612322/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10612322/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 9 sep 2026 · preprint · 2026-09-09</div>
+          <div class="r10-title">Precision, Physics, and Confabulation: Softmax Temperature as an Analog of Dopaminergic Precision-Weighting in LLM Hallucination</div>
+          <div class="r10-line">Este preprint conecta matemáticamente la &#39;precisión&#39; dopaminérgica de la psiquiatría computacional (ponderación de errores de predicción en inferencia bayesiana) con el parámetro de temperatura del softmax en LLMs, y muestra en un LLaMA 3.2 local que manipular la temperatura reproduce el patrón cualitativo de sobreconfianza que predice la teoría de precisión aberrante en psicosis.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que a Javier —con su línea de psiquiatría computacional y de IA aplicada a investigación— le interesa como analogía conceptual provocadora para contenido o clase, con la advertencia explícita de que es preprint de autor único, sin revisión por pares, y que la analogía es matemática, no evidencia clínica de nada.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10974789/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10974789/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Clinical Pharmacology, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Association between body mass index and serum concentrations of olanzapine and selective serotonin reuptake inhibitors in patients with eating disorders</div>
+          <div class="r10-line">En 65 pacientes con trastornos de la conducta alimentaria comparados con 545 controles psiquiátricos, el IMC bajo no se asoció con cambios clínicamente relevantes en las concentraciones séricas ajustadas por dosis de olanzapina ni de ISRS, contradiciendo la intuición de que la caquexia altera masivamente la farmacocinética de estos fármacos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier lo usa como perla contraintuitiva para AMAUTA: un hallazgo negativo bien hecho (grupo de comparación, n moderado) que corrige un supuesto farmacocinético común en el manejo de anorexia/bulimia con comorbilidad psiquiátrica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00228-026-04175-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s00228-026-04175-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica, 9 sep 2026 · review · 2026-09-09</div>
+          <div class="r10-title">A review of attention-deficit/hyperactivity disorder: Causes, diagnosis, treatment, and impact</div>
+          <div class="r10-line">Esta revisión narrativa sintetiza el estado de los biomarcadores objetivos en TDAH (genéticos, de neuroimagen, oxidativos, retinianos), concluyendo que ninguno alcanza aún sensibilidad y especificidad suficientes para diagnóstico individual, pese al interés creciente en IA y terapéutica digital.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier la usa como contrapeso honesto en su libro y en clase: útil para enseñar que &#39;biomarcador prometedor&#39; y &#39;biomarcador diagnóstico validado&#39; son categorías distintas, un tema recurrente en su enseñanza de razonamiento clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107744" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107744</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature Human Behaviour, 8 sep 2026 · rct · 2026-09-08</div>
+          <div class="r10-title">Effects of a randomized controlled trial of unconditional cash transfers on epigenetic measures of ageing and cognition in children and mothers</div>
+          <div class="r10-line">En un ensayo aleatorizado de transferencias monetarias incondicionales a madres de bajos ingresos en EE.UU. (333 vs. 20 USD/mes durante los primeros 4 años de vida del niño), el grupo de mayor transferencia mostró un envejecimiento epigenético (DunedinPACE) significativamente más lento en los niños, aunque sin efecto sobre el biomarcador cognitivo Epigenetic-g.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que Javier lo cita como evidencia de que el contexto socioeconómico deja huella biológica medible en el neurodesarrollo temprano, relevante para su marco RDoC/dimensional de TDAH/TEA que incluye determinantes ambientales y no solo genéticos, con la salvedad de que es un desenlace secundario preregistrado, no el primario del ensayo.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41562-026-02568-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41562-026-02568-4</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El biomarcador farmacocinético más &#39;obvio&#39; para ajustar dosis en anorexia (IMC bajo) resultó no importar clínicamente para SSRIs/olanzapina: la intuición de &#39;paciente más liviano, dosis más baja&#39; no siempre aplica.</li><li>El EEG más replicado en 44 estudios sobre metilfenidato no mide atención sostenida, sino un marcador de procesamiento cognitivo general (P3): el mecanismo &#39;obvio&#39; (atención) es el que menos evidencia consistente tiene.</li><li>Separar lo que predice respuesta ANTES del tratamiento (triglicéridos basales en dTMS) de lo que se modifica CON el tratamiento sigue siendo el cuello de botella real de la psiquiatría de precisión, no la falta de biomarcadores candidatos.</li><li>Un sistema de feedback docente que obliga a anclar cada comentario a una competencia observable cambia el comportamiento de los evaluadores más rápido que capacitarlos en &#39;dar mejor feedback&#39; en abstracto.</li><li>La disbiosis intestinal en depresión adolescente no actúa sola: media su efecto sobre síntomas a través de metabolitos de fosfolípidos específicos que remodelan la conectividad de un giro concreto (precentral) — lo interesante no es &#39;la microbiota importa&#39;, es la cadena causal específica.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuántos de mis pacientes con depresión resistente tendrían un perfil inflamatorio-edematoso (tipo DBSI) si pudiera medirlo hoy, y cambiaría eso mi elección entre antiinflamatorio adyuvante y otra línea farmacológica?</li><li>Si el aumento de P3 tras metilfenidato es el biomarcador EEG más replicado, ¿vale la pena integrarlo como criterio objetivo de titulación de dosis en la práctica de TDAH en Perú, o sigue siendo prematuro fuera de investigación?</li><li>¿Qué pasaría si AMAUTA exigiera que cada comentario de feedback a un alumno de ENAM esté anclado a una competencia específica, como hizo el programa de neurología pediátrica de Colorado? ¿Cuánto cambiaría la calidad medible del feedback en 6 meses?</li><li>¿La analogía entre &#39;precisión dopaminérgica&#39; en psicosis y &#39;temperatura&#39; en LLMs es solo una metáfora elegante para clase, o hay algo genuinamente transferible sobre cómo pensamos la sobreconfianza bajo incertidumbre, humana o artificial?</li><li>¿Cuánto de la varianza en respuesta a dTMS que hoy atribuyo a &#39;suerte&#39; o &#39;motivación del paciente&#39; podría explicarse por marcadores metabólicos basales tan simples como un perfil lipídico de rutina?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo de IG/YT: &#39;El biomarcador que no midió lo que creías&#39; — usar el hallazgo negativo IMC-farmacocinética en anorexia para enseñar a leer estudios negativos bien hechos.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología: mapa de biomarcadores EEG de TDAH con las 10 recomendaciones metodológicas de la revisión PRISMA como checklist para evaluar estudios futuros.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Piloto de investigación: adaptar el modelo de evaluación narrativa anclada a competencias (Colorado) a un programa de AMAUTA/USAMEDIC y medir volumen/calidad de feedback pre-post.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto para YT: explicar la analogía &#39;temperatura de softmax = precisión dopaminérgica&#39; como gancho para enseñar el concepto de precision-weighting en psiquiatría computacional, con la advertencia de que es especulativo.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta/comentario editorial: evaluar si target trial emulation aplicada a cohortes peruanas de depresión/psicosis con marcadores inflamatorios disponibles podría aportar a la agenda de precisión inmunopsiquiátrica que plantea la revisión de BJP.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Brain, Behavior, and Immunity</span><span class="tag ">Journal of Attention Disorders</span><span class="tag ">Neurology: Education</span><span class="tag highlight">The British Journal of Psychiatry</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Clinical EEG and Neuroscience</span><span class="tag ">European Journal of Clinical Pharmacology</span><span class="tag ">Acta Psychologica</span><span class="tag highlight">Nature Human Behaviour</span><span class="tag ">Research Square (preprints)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC · PubMed · Research Square · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
