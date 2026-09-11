@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">11 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">40</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">33</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Anesthesia &amp; Analgesia, 9 sep 2026 · rct · 2026-09-09</div>
+        <h3 class="r3-title">Surgeon Incivility in the Preoperative Setting: A Multi-institutional Crossover Study on Anesthesiology Residents&#39; Decision-Making</h3>
+        <p class="r3-hook">Ensayo real, prospectivo, aleatorizado, ciego y crossover en dos centros académicos (Mount Sinai y UNC) con 79 residentes de anestesiología PGY2-4: cada residente enfrentó dos casos OSCE clínicamente ambiguos con un actor estandarizado que actuaba como cirujano civil o incívico. Cuando el &#39;cirujano&#39; fue grosero/desdeñoso, los residentes tuvieron 2.25 veces más probabilidad de proceder con la cirugía en vez de posponerla en un caso ambiguo — sin que sus puntajes de desempeño (comunicación, conciencia situacional, toma de decisiones) cambiaran. Le importa a Javier porque es evidencia dura, no anecdótica, de que la jerarquía y el trato hostil secuestran el juicio clínico sin que el residente lo note ni se refleje en su evaluación — justo el tipo de fenómeno que su marco de razonamiento clínico y su comité de ética HVLH necesitan nombrar con datos, no con quejas sueltas de candidatos a Residentado sobre &#39;jefes de guardia&#39; difíciles. Cómo usarlo: usar la cifra (OR 2.25, sin cambio en desempeño evaluado) como gancho de contenido sobre jerarquía y seguridad del paciente, y como justificación empírica para incluir un módulo específico de &#39;toma de decisiones bajo presión interpersonal&#39; en el entrenamiento de razonamiento clínico de AMAUTA, distinto del módulo estándar de manejo de estrés de examen.</p>
+        <a class="r3-link" href="https://doi.org/10.1213/ANE.0000000000008293" target="_blank" rel="noopener">↗ doi.org/10.1213/ANE.0000000000008293</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Acta Psychologica, 8 sep 2026 · meta-analysis · 2026-09-08</div>
+        <h3 class="r3-title">Problem-based and project-based learning as promising frameworks for generative AI-supported education: Emerging evidence from a systematic review and three-level meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis real de tres niveles (22 estudios controlados, 66 tamaños de efecto, enero 2023-abril 2026) sobre integrar IA generativa dentro de aprendizaje basado en problemas/proyectos (PBL/PjBL): el efecto agrupado crudo es grande (g=0.819) en conocimiento, pensamiento de orden superior, motivación y colaboración, pero el análisis de sensibilidad (corrección PEESE por sesgo de estudios pequeños) lo reduce a g=0.378 — y el desempeño de producto/solución, con estimado aparentemente enorme (g=1.958), tiene un intervalo de predicción tan amplio que cruza cero. Le importa a Javier porque es el paper que responde directo a su línea de IA en educación: no dice &#39;la IA generativa no funciona en PBL&#39;, dice que el tamaño real del efecto es la mitad de lo que el titular sugiere, y que los estudios individuales de &#39;PBL+IA mejora el desempeño&#39; que probablemente circulan en redes de educación médica están inflados — un caso de estudio perfecto de alfabetización meta-analítica para su propia práctica RENACYT. Cómo usarlo: usarlo como plantilla metodológica (three-level meta-analysis + PEESE) antes de publicar cualquier síntesis propia sobre IA en AMAUTA/USAMEDIC, y como ejemplo didáctico para enseñar a residentes/investigadores jóvenes por qué reportar solo el efecto crudo de un meta-análisis reciente es engañoso.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.actpsy.2026.107734" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107734</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Cardiovascular and Interventional Radiology, 9 sep 2026 · review · 2026-09-09</div>
+        <h3 class="r3-title">Simulation and Virtual Reality as Training Modalities in Interventional Radiology: A Systematic Review</h3>
+        <p class="r3-hook">Revisión sistemática real, registrada a priori en PROSPERO, con búsqueda PRISMA 2020 en cuatro bases y evaluación GRADE: 18 estudios (495 aprendices, 7 ensayos aleatorizados) sobre simulación/VR en radiología intervencionista. Los resultados pre-post son llamativos (reducciones de 50-72% en tiempo de fluoroscopia, hasta 76% en volumen de contraste) y hay transferencia real a paciente documentada (30% menos radiación en procedimientos guiados por TC reales), pero ningún ensayo aleatorizado estuvo libre de riesgo de sesgo y la certeza GRADE para la transferencia clínica es &#39;muy baja&#39;. Le importa a Javier porque es el contraste perfecto con el entusiasmo habitual por la simulación en AMAUTA/USAMEDIC: los números de mejora son reales, pero el propio equipo que hizo la revisión, con las herramientas correctas (RoB2, GRADE, SWiM), reporta honestamente que la certeza de que eso se traduzca a mejor atención real es baja — un estándar de rigor que su propia línea de educación médica de precisión debería replicar al reportar resultados de simulación. Cómo usarlo: adoptar el mismo lenguaje de certeza GRADE (&#39;probablemente mejora&#39;, &#39;certeza baja/muy baja&#39;) al comunicar resultados de simulación en AMAUTA, en vez de vender mejoras pre-post como si fueran evidencia fuerte de transferencia clínica.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00270-026-04592-3" target="_blank" rel="noopener">↗ doi.org/10.1007/s00270-026-04592-3</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">1</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Assessment fairness at the nexus of validity: Linking fairness threats to score meaning</div>
+          <div class="r10-line">Artículo conceptual real en Medical Education que propone &#39;fairness-as-validity&#39;: un examen (OSCE, entrevista múltiple, prueba estandarizada) sesgado no es &#39;válido pero injusto&#39;, es inválido, porque las amenazas de equidad (normas culturales estrechas, expectativas del evaluador, barreras de acceso) alteran lo que el puntaje realmente representa — conecta directo con el piloto Angoff-LLM que Javier ya tiene en pipeline para AMAUTA/USAMEDIC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los argumentos de validez basados en Kane van a empezar a exigir explícitamente evidencia de equidad como parte del mismo argumento (no como anexo aparte) — Javier puede adelantarse documentando el argumento de validez de su próximo punto de corte AMAUTA incluyendo desde el diseño posibles brechas de acceso (simulacros, bancos de preguntas) entre candidatos de Lima y de regiones.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/medu.70311" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70311</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un cirujano grosero en el prequirúrgico no vuelve peor al residente: el estudio de hoy midió que su desempeño evaluado (comunicación, decisión, conciencia situacional) no cambió — lo que cambió fue la decisión final, 2.25 veces más probable de proceder con cirugía en un caso ambiguo. La incivilidad no reduce competencia, secuestra el juicio.</li><li>El efecto &#39;espectacular&#39; (g=0.819) del meta-análisis de hoy sobre IA generativa + PBL/PjBL se reduce a menos de la mitad (g=0.378) apenas se corrige por sesgo de estudios pequeños — la regla no escrita de leer meta-análisis recientes: el número del abstract casi siempre está inflado.</li><li>La revisión de simulación/VR en radiología intervencionista encontró reducciones reales de hasta 76% en volumen de contraste — pero ningún ensayo aleatorizado de los siete incluidos estuvo libre de riesgo de sesgo, y la certeza GRADE de que eso mejore la atención real al paciente es &#39;muy baja&#39;. Los números bonitos de un estudio de simulación no siempre sobreviven al escrutinio metodológico.</li><li>&#39;Fairness&#39; en evaluación educativa no es un extra de equidad aparte de la validez, según el artículo de hoy en Medical Education: es la validez misma. Un examen sesgado no es &#39;válido pero injusto&#39; — es inválido, porque el puntaje deja de significar lo mismo para todos los examinados.</li><li>De los cuatro ítems reales de hoy, ninguno logró certeza alta de evidencia (ni siquiera el ensayo aleatorizado del cirujano incívico, limitado a dos centros y n=79) — un recordatorio de que en educación médica &#39;ensayo aleatorizado&#39; no es sinónimo automático de certeza alta.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Los tutores de AMAUTA que dan feedback cortante en simulacros de entrevista están empujando a los candidatos a decisiones más impulsivas bajo presión, igual que el cirujano incívico del estudio de hoy con los residentes de anestesiología?</li><li>¿Qué tanto del salto de aprendizaje reportado en PBL/PjBL con IA generativa es aprendizaje real vs. desempeño de producto inflado por la propia IA, dado que el estimado de &#39;producto&#39; (g=1.958) tuvo un intervalo de predicción que cruza cero?</li><li>¿Cómo se traduciría el framework de &#39;fairness-as-validity&#39; de hoy a un examen tipo ENAM, donde el acceso desigual a simulacros y bancos de preguntas entre Lima y regiones ya introduce varianza irrelevante al constructo antes de que el candidato llegue al examen?</li><li>¿Vale la pena invertir en simulación de alta fidelidad para un procedimiento específico de AMAUTA si, como muestra el SR de hoy en la especialidad mejor estudiada en este tema, la certeza GRADE de transferencia real a paciente sigue siendo &#39;muy baja&#39;?</li><li>¿Qué amenazas de equidad (normas del evaluador, barreras de acceso, sesgo cultural) del framework de hoy aplican, sin que nadie las esté midiendo, a los OSCE y simulacros actuales de USAMEDIC/AMAUTA?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post IG sobre el estudio de incivilidad de cirujanos: &#39;un jefe grosero no te hace peor médico, te hace decidir peor&#39; — gancho directo para hablar de jerarquía y toma de decisiones en Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio propio RENACYT: adaptar el diseño crossover del estudio de incivilidad al feedback de tutores AMAUTA en simulacros de entrevista psiquiátrica, midiendo si el tono del feedback cambia decisiones clínicas simuladas de los candidatos sin cambiar su puntaje evaluado.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de neurociencia educativa sobre cómo el estrés social/jerárquico (no solo el estrés de examen) secuestra el juicio clínico, integrando el mecanismo del estudio de incivilidad con el marco HiTOP/RDoC de reactividad al estrés.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Extender el piloto Angoff-LLM de AMAUTA (ya en pipeline) documentando explícitamente el argumento de equidad de acceso entre candidatos de Lima y regiones, siguiendo el framework de fairness-as-validity publicado hoy en Medical Education.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/post explicando por qué el efecto &#39;gigante&#39; de un meta-análisis reciente de IA+PBL se reduce a la mitad al corregir sesgo de publicación — gancho de contenido sobre alfabetización estadística para candidatos a Residentado/investigación.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Anesthesia &amp; Analgesia</span><span class="tag ">Acta Psychologica</span><span class="tag ">Cardiovascular and Interventional Radiology</span><span class="tag highlight">Medical Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · PubMed E-utilities. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
