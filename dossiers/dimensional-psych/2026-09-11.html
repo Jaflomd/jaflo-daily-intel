@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">11 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">58</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">29</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">PsyArXiv (preprint), 8 sept 2026 · preprint · 2026-09-08</div>
+        <h3 class="r3-title">Transdiagnostic Posttraumatic Symptom Systems Across Trauma-Exposure Patterns in a Large International Sample: From Network Structure to Stability and Simulated Perturbations</h3>
+        <p class="r3-hook">Con datos del Global Psychotrauma Screen en 8,209 adultos expuestos a trauma de 129 países, este preprint compara redes de síntomas transdiagnósticas entre patrones de exposición (evento único vs. múltiple/prolongado; infancia vs. adultez) y va más allá de la comparación clásica de fuerza de red: usa análisis de estabilidad de paisaje (stability landscape) y perturbaciones simuladas (NodeIdentifyR) para mostrar que las redes de trauma infantil y múltiple se &#39;atascan&#39; preferentemente en un estado de alta sintomatología, mientras que la de evento único estabiliza un estado bajo, incluso cuando la fuerza global de la red no difiere estadísticamente entre grupos. Le importa a Javier porque es exactamente el tipo de avance metodológico en network psychopathology que su libro necesita citar: la severidad ya no se mide solo por &#39;cuántas conexiones&#39; tiene la red, sino por si el sistema queda atrapado en un atractor patológico, un salto conceptual de la teoría de sistemas complejos aplicable a cualquier dominio HiTOP, no solo a trauma. Puede usarlo como caso metodológico avanzado en un módulo AMAUTA/USAMEDIC sobre &#39;más allá de la centralidad de nodos&#39; y como antecedente de diseño para un proyecto RENACYT propio que aplique estabilidad de paisaje a datos peruanos de comorbilidad.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/srq24_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/srq24_v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Affective Disorders, 9 sept 2026 · paper · 2026-09-09</div>
+        <h3 class="r3-title">Altered cortical oxygenation dynamics, impaired cortical recruitment, and network dysconnectivity across the transdiagnostic anxiety spectrum: a systems biology multi-channel fNIRS study</h3>
+        <p class="r3-hook">En controles sanos, trastorno de ansiedad generalizada, depresión ansiosa y comorbilidad ansiedad-depresión, este estudio de fNIRS multicanal durante una tarea de fluidez verbal muestra que el espectro de ansiedad transdiagnóstico comparte hiperconectividad funcional acompañada de menor eficiencia de red (menor clustering y eficiencia nodal), con el grupo comórbido mostrando la mayor desintegración de red y la variabilidad hemodinámica temporal como el predictor más fuerte de severidad across dominios. Le importa a Javier porque valida con un método biológico barato y escalable (fNIRS, no fMRI) su tesis de que &#39;transdiagnóstico&#39; no es ausencia de especificidad sino un patrón compartido con firmas cuantificables por subtipo, y porque el hallazgo de que más conexiones pueden ser peores que menos (hiperconectividad = ineficiencia) es un dato contraintuitivo perfecto para desmontar la lectura simplista de &#39;red más conectada = más sana&#39;. Puede usarlo como evidencia biológica de precisión psiquiátrica en su docencia AMAUTA/USAMEDIC sobre biomarcadores transdiagnósticos accesibles en contextos de bajos recursos como Perú, y como argumento a favor de fNIRS como herramienta de investigación propia más viable que fMRI para su línea de neuromodulación.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122485" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122485</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PsyArXiv (preprint), 10 sept 2026 · preprint · 2026-09-10</div>
+        <h3 class="r3-title">Predicting inattention and hyperactivity-impulsivity trajectories using random forest classification in the Adolescent Brain Cognitive Development Study</h3>
+        <p class="r3-hook">Con 11,875 niños del estudio ABCD seguidos anualmente de los 9-10 a los 12-13 años, modelos de mezcla de crecimiento identifican tres trayectorias de inatención (no afectado, moderado, persistente-alto) y cuatro de hiperactividad-impulsividad (no afectado, empeora, mejora, persistente-alto), y un clasificador de random forest usando variables familiares, demográficas, conductuales y puntajes de riesgo poligénico logra predecir la pertenencia a esas trayectorias, con sexo masculino, problemas externalizantes, conflicto familiar y PRS de TDAH como predictores clave. Le importa a Javier porque es la prueba longitudinal a gran escala, con machine learning, de que el TDAH no es un diagnóstico binario sino una trayectoria dimensional predecible desde la infancia, exactamente el argumento que necesita para su línea TDAH/TEA y para su interés en IA aplicada a investigación, y porque distingue &#39;empeora&#39; de &#39;mejora&#39; dentro de la hiperactividad, algo que la práctica clínica categorial ignora por completo. Puede convertirlo en el estudio ancla de un proyecto RENACYT propio (replicar random forest + trayectorias en cohorte peruana de TDAH) y en un caso de enseñanza AMAUTA/USAMEDIC sobre por qué predecir el curso importa más que confirmar el criterio DSM en el momento cero.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/bqdtk_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/bqdtk_v1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Psychiatric Research, 8 sept 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Alexithymia and personality pathology in relation to dimensions of general psychopathology</div>
+          <div class="r10-line">En 154 pacientes psiquiátricos heterogéneos, la alexitimia predice varianza única en demoralización, quejas somáticas y emociones negativas disfuncionales incluso controlando por rasgos de personalidad desadaptativos, apoyando su rol como correlato transdiagnóstico independiente dentro de los modelos dimensionales de psicopatología general.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la alexitimia se incorporará como especificador transdiagnóstico rutinario junto a los rasgos de personalidad en las próximas revisiones de HiTOP, y que Javier puede citar este hallazgo en su libro para argumentar que la desregulación afectiva merece su propio eje de medición, no solo derivarse de los rasgos de personalidad ya establecidos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jpsychires.2026.09.013" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jpsychires.2026.09.013</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint), 9 sept 2026 · preprint · 2026-09-09</div>
+          <div class="r10-title">Identity-Based Transdiagnostic Therapy (IBTT) for young people with anxiety and depression: A study protocol for a multicenter randomized clinical trial</div>
+          <div class="r10-line">Protocolo de un ECA multicéntrico (n=128, 16-29 años) que compara una terapia transdiagnóstica centrada en procesos de identidad (con rejilla de constructos personales y realidad virtual) contra el Protocolo Unificado para ansiedad y depresión juvenil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de terapia transdiagnóstica &#39;de identidad&#39; ganará tracción en jóvenes que no responden a protocolos de síntomas clásicos, y que Javier puede seguir sus resultados como referencia de innovación tecnológica (RV + rejilla de constructos) aplicable a su interés en IA/tecnología para educación y clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/p48d7_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/p48d7_v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cognitive Behaviour Therapy, 10 sept 2026 · rct · 2026-09-10</div>
+          <div class="r10-title">Effectiveness and mechanisms of internet-delivered transdiagnostic CBT for students with adjustment disorder: the role of cognitive inflexibility, self-compassion, and mindfulness</div>
+          <div class="r10-line">Un ECA con 181 universitarios muestra que un Protocolo Unificado transdiagnóstico entregado por internet reduce síntomas de trastorno adaptativo y mejora el ajuste académico, mediado por menor evitación experiencial y mayor autocompasión.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estas terapias transdiagnósticas digitales se volverán la puerta de entrada estándar para universidades con poco personal clínico, y que Javier puede evaluar un piloto similar (iCBT-UP) para estudiantes de AMAUTA/USAMEDIC con sobrecarga por el ENAM.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/16506073.2026.2720139" target="_blank" rel="noopener">↗ doi.org/10.1080/16506073.2026.2720139</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Neuroscience, 9 sept 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Functional Integrity of Mesolimbic-Hippocampal Circuits Is Associated with Anhedonia in Individuals with Early Life Stress</div>
+          <div class="r10-line">En una muestra enriquecida para anhedonia, la conectividad hipocampo-núcleo accumbens reducida y la menor modulación hipocampo-VTA interactúan con el trauma infantil para predecir mayor anhedonia anticipatoria, aterrizando el constructo RDoC de valencia positiva en un circuito medible.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el hipocampo se sumará al estriado como diana estándar en estudios de anhedonia y RDoC, y que Javier puede usar este circuito concreto para enseñar el constructo de &#39;sistemas de valencia positiva&#39; con un ejemplo mecanístico en vez de la definición abstracta de RDoC.</div>
+          <a class="r10-link" href="https://doi.org/10.1523/JNEUROSCI.0274-26.2026" target="_blank" rel="noopener">↗ doi.org/10.1523/JNEUROSCI.0274-26.2026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Assessment, 10 sept 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Computerized adaptive testing of neurocognitive deficits in psychosis</div>
+          <div class="r10-line">En 64 pacientes con psicosis y 50 controles, aplicar testeo adaptativo computarizado a tareas cognitivas experimentales del marco RDoC (CPT, Sternberg, SOPT) reduce el error estándar de medición, mejorando la precisión sin alargar la evaluación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el CAT se integrará como estándar en baterías cognitivas RDoC para acortar la evaluación sin perder precisión, y que Javier puede adaptar esta lógica (CAT + tareas cognitivas breves) a evaluación de precisión en su consulta o en AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/pas0001501" target="_blank" rel="noopener">↗ doi.org/10.1037/pas0001501</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Personality Disorders: Theory, Research, and Treatment, 10 sept 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">To diagnose or not to diagnose? Clinician perceptions of clinical utility and stigma in personality disorder diagnoses</div>
+          <div class="r10-line">89 psicólogos evaluando viñetas clínicas no perciben el Modelo Alternativo dimensional (AMPD) ni superior ni inferior al DSM-5 categorial en utilidad clínica o estigma, pero sí encuentran que la ausencia total de información diagnóstica genera más estigma que cualquiera de los dos sistemas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este hallazgo se citará para defender que adoptar el AMPD no tiene costo de estigma frente al DSM, y que Javier puede usarlo en AMAUTA/USAMEDIC para desmontar el mito de que &#39;dimensional es más confuso o más estigmatizante&#39; para el residente en formación.</div>
+          <a class="r10-link" href="https://doi.org/10.1037/per0000782" target="_blank" rel="noopener">↗ doi.org/10.1037/per0000782</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint), 10 sept 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Initial Development of the Hypomanic Tendency Scales (HTS): A Multidimensional Measure of Personality Dimensions Associated with Hypomania</div>
+          <div class="r10-line">A través de cuatro muestras y tres estudios, se desarrolla y valida la HTS, una escala de 18 ítems que descompone la tendencia a la hipomanía en cuatro subescalas (elación, agitación, pensamiento expansivo, urgencia positiva) en vez de un puntaje compuesto único.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que medidas multidimensionales como la HTS reemplazarán los puntajes globales de riesgo hipomaníaco en investigación transdiagnóstica del espectro bipolar, y que Javier puede evaluarla como herramienta dimensional complementaria en su práctica o docencia sobre especificadores del trastorno bipolar.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/ptjye_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/ptjye_v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint), 8 sept 2026 · preprint · 2026-09-08</div>
+          <div class="r10-title">Maladaptive Precision: A Channel-Specific Predictive-Processing Framework for the Neurodevelopmental Consequences of Early Life Adversity</div>
+          <div class="r10-line">Un marco conceptual propone que la adversidad temprana sesga la ponderación de precisión en canales específicos (amenaza, imprevisibilidad, cuidado) en vez de alterar una ganancia global única, distinguiéndose deliberadamente de los modelos de precisión global propuestos para el autismo, con la corteza cingulada anterior como locus mecanístico candidato.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este marco channel-specific generará debate frente a las teorías de precisión global en autismo, y que Javier puede usarlo para afinar su discurso sobre neurodivergencia: TEA y adversidad temprana podrían compartir el lenguaje de &#39;precisión alterada&#39; pero por mecanismos distintos, algo aprovechable en su libro y en AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/zj4bf_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/zj4bf_v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica, 8 sept 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Beyond burnout: Psychological vulnerability profiles in secondary school teachers</div>
+          <div class="r10-line">Un análisis centrado en la persona en 444 docentes identifica cuatro perfiles transdiagnósticos de vulnerabilidad (baja, emocional-social, cognitiva, alta general), mostrando que la vulnerabilidad psicológica se organiza en configuraciones distintas y no en un continuo único de riesgo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los perfiles de vulnerabilidad person-centered reemplazarán al &#39;burnout&#39; como constructo unidimensional en salud ocupacional docente, y que Javier puede usar esta metodología de perfiles latentes como plantilla para un estudio propio en poblaciones profesionales peruanas de alto estrés (residentes, docentes AMAUTA).</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107777" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107777</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 10 sept 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Convergent connectivity of sleep disorders and its neurotransmitter and cell enrichment correlates</div>
+          <div class="r10-line">Un mapeo de conectividad convergente pre-registrado sobre insomnio, apnea, narcolepsia y trastorno de conducta del sueño REM encuentra un patrón de red compartido (default mode, atención dorsal, frontoparietal) con correlatos de neurotransmisores y tipos celulares específicos, más variaciones específicas por trastorno.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este enfoque transdiagnóstico de conectividad convergente (compartido + específico) se replicará pronto en espectros psiquiátricos puros, y que Javier puede citarlo como ejemplo metodológico de cómo separar lo transdiagnóstico de lo específico sin necesidad de una muestra clínica gigante, aplicable a su interés en neuromodulación de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.09.26362596" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.26362596</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>La severidad de una red de síntomas no depende solo de cuántas conexiones tiene, sino de si el sistema queda &#39;atrapado&#39; en un atractor de alta sintomatología: el trauma infantil o repetido empuja al sistema hacia ese atractor aunque la fuerza global de la red no cambie.</li><li>Más conectividad funcional no es sinónimo de más salud: en el espectro de ansiedad transdiagnóstico, la hiperconectividad se acompaña de menor eficiencia de red, y el grupo con comorbilidad ansiedad-depresión es el más desorganizado, no el más &#39;conectado y protegido&#39;.</li><li>El TDAH tiene trayectorias, no solo diagnóstico: en la misma cohorte hay niños cuya hiperactividad empeora y otros en los que mejora con el tiempo, y esa distinción es predecible desde la infancia con variables familiares y de riesgo poligénico.</li><li>La alexitimia no se reduce a los rasgos de personalidad ya medidos: predice desregulación afectiva y somatización por sí sola, incluso después de controlar estadísticamente por los dominios de personalidad patológica del PID-5.</li><li>Lo que más reduce el estigma clínico en trastornos de personalidad no es elegir el modelo categorial o el dimensional (AMPD): es simplemente dar información diagnóstica en vez de dejar al paciente sin ningún marco de comprensión.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debería incorporarse la frecuencia y edad de primera exposición al trauma como especificador transdiagnóstico de rutina, dado que la estabilidad del sistema de síntomas predice mejor el curso que el diagnóstico categorial de TEPT?</li><li>¿Qué biomarcador de conectividad prefrontal (fNIRS) sería el mejor candidato como diana de neuromodulación en el subtipo de ansiedad-depresión comórbida, el más desorganizado en red de los cuatro grupos estudiados?</li><li>¿Vale la pena adaptar el modelo de random forest + trayectorias de ABCD a una cohorte peruana de TDAH, usando conflicto familiar y variables conductuales locales como sustituto de datos genéticos costosos?</li><li>¿Debería la alexitimia añadirse como eje de evaluación transdiagnóstica sistemática en la anamnesis, dado que aporta varianza única más allá de los rasgos de personalidad ya evaluados?</li><li>Si dar cualquier información diagnóstica reduce más el estigma que no darla, ¿cómo debería enseñarse el AMPD a los residentes para que dejen de percibirlo como &#39;la opción más confusa&#39; frente al DSM-5 categorial?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post explicando la idea de &#39;atractor de síntomas&#39;: por qué el trauma infantil o repetido deja al sistema psíquico atrapado en alta sintomatología aunque la red no se vea &#39;más conectada&#39; en el papel.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo de razonamiento clínico AMAUTA/USAMEDIC: &#39;de la categoría a la trayectoria&#39;, usando el estudio de random forest + ABCD sobre TDAH como caso para explicar por qué dos pacientes con el mismo diagnóstico tienen pronósticos distintos.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Proyecto RENACYT: replicar el análisis de trayectorias + random forest de ABCD en una cohorte peruana de TDAH/TEA con las variables familiares y conductuales disponibles localmente.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo de libro sobre por qué HiTOP necesita un eje propio de regulación afectiva/alexitimia, no derivado únicamente de los rasgos de personalidad ya medidos por el modelo dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo desmontando el mito de que el modelo dimensional (AMPD) es &#39;más estigmatizante o confuso&#39; que el DSM categorial, usando el dato de que la ausencia de diagnóstico es lo que más estigma genera.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Journal of Psychiatric Research</span><span class="tag ">Journal of Neuroscience</span><span class="tag ">Psychological Assessment</span><span class="tag ">Cognitive Behaviour Therapy</span><span class="tag ">Personality Disorders: Theory, Research, and Treatment</span><span class="tag ">Acta Psychologica</span><span class="tag ">PsyArXiv</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch) · PsyArXiv (OSF API) · medRxiv (bioRxiv API). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
