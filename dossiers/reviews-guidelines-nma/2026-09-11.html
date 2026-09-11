@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">11 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">150</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">84</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">The Lancet Public Health · 2026-09-09 · review</div>
+        <h3 class="r3-title">Beyond individual-level approaches to dementia prevention: a socioecological reappraisal</h3>
+        <p class="r3-hook">Viewpoint en The Lancet Public Health que aplica el modelo socioecológico de salud pública a los 61 factores de riesgo/protección modificables de demencia identificados en la literatura de fracción atribuible poblacional, y encuentra que el 80% (49/61) están mapeados solo a nivel individual, con apenas 3% interpersonal, 5% comunitario y 11% societal -evidencia de que el campo de prevención de demencia sigue anclado en modificar conductas individuales mientras ignora las condiciones estructurales que las producen. Para tu foco secundario de neuropsiquiatría es un reencuadre necesario: argumenta que la prevención efectiva requiere acción coordinada en educación, planificación urbana y política ambiental, no solo consejería de riesgo cardiovascular puerta a puerta. Para tu línea de psiquiatría de precisión es una advertencia: un protocolo de estratificación de riesgo de demencia que solo mida factores individuales replica el mismo sesgo que este Viewpoint denuncia. Para tu comité de ética (HVLH) conecta directamente con equidad en salud pública -quién queda fuera cuando la prevención se diseña solo a nivel individual. Ángulo de contenido: &#39;el 80% de lo que sabemos sobre prevenir demencia es sobre el individuo -y solo eso ya no alcanza: lo que falta mapear en comunidad y sociedad&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/S2468-2667(26)00171-4" target="_blank" rel="noopener">↗ doi.org/10.1016/S2468-2667(26)00171-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">JMIR Mental Health · 2026-09-10 · review</div>
+        <h3 class="r3-title">Tool or Companion? Reframing Conversational AI to Prevent Psychological Harm</h3>
+        <p class="r3-hook">Revisión en JMIR Mental Health que examina por qué encuadrar la IA conversacional (ChatGPT, Claude, Replika, Character.AI) como &#39;compañía&#39; en lugar de &#39;herramienta&#39; es conceptualmente engañoso y potencialmente dañino: mapea los mecanismos -diseño que evoca personalidad y calidez, empatía simulada generada estadísticamente- por los que usuarios, especialmente vulnerables, desarrollan dependencia emocional, y documenta desenlaces adversos reportados (dependencia emocional, exacerbación de síntomas, autolesión) junto a beneficios de corto plazo en soledad y ánimo. Para tu línea de IA aplicada a investigación y educación es lectura obligada: es exactamente el tipo de evidencia que debe informar cualquier producto o protocolo que uses o diseñes con IA conversacional en contacto directo con pacientes o estudiantes. Para tu comité de ética (HVLH) es un marco conceptual listo para evaluar riesgo en cualquier herramienta de IA que AMAUTA o tú mismo desplieguen. Para razonamiento clínico es un caso de enseñanza sobre cómo el antropomorfismo de un modelo puede confundirse con relación terapéutica real. Ángulo de contenido: &#39;¿herramienta o compañía? por qué la respuesta que le das a un paciente sobre su chatbot puede ser una pregunta clínica, no técnica&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/99354" target="_blank" rel="noopener">↗ doi.org/10.2196/99354</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Neuroscience and Biobehavioral Reviews · 2026-09-09 · review</div>
+        <h3 class="r3-title">The Role of Inferior Parietal Lobule in Emotion Dysregulation in Bipolar Disorder</h3>
+        <p class="r3-hook">Revisión en Neuroscience and Biobehavioral Reviews que examina el rol específico del lóbulo parietal inferior (IPL) en la desregulación emocional del trastorno bipolar (BD), partiendo de evidencia normativa en muestras sanas sobre los tres subprocesos de la regulación emocional -despliegue atencional, cambio cognitivo, modulación de respuesta- y conectándolos con déficits funcionales y estructurales del IPL documentados en BD. Para tu línea de psiquiatría dimensional (HiTOP/RDoC, network theory) es material de primera: la desregulación emocional es un constructo transdiagnóstico, y este review ancla un circuito neural específico (IPL) a subprocesos medibles, exactamente el tipo de evidencia que sostiene un modelo dimensional sobre uno puramente categorial de BD. Para tu libro de psicopatología para el mundo es un ejemplo listo de cómo un mecanismo transdiagnóstico (regulación emocional) explica mejor un fenómeno clínico que la etiqueta categorial (bipolar) por sí sola. Para intervención de precisión, el review señala directamente hacia el IPL como blanco potencial para intervenciones más específicas de regulación emocional en BD. Ángulo de contenido: &#39;el trastorno bipolar tiene una región cerebral específica implicada en por qué las emociones se desregulan -y no es la amígdala: es el lóbulo parietal inferior&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.neubiorev.2026.106939" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106939</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Alzheimer&#39;s Disease · 2026-09-08 · network-meta-analysis</div>
+        <h3 class="r3-title">A Bayesian network meta-analysis of specific exercise modalities for depressive symptoms in mild cognitive impairment</h3>
+        <p class="r3-hook">Network meta-analysis Bayesiano en Journal of Alzheimer&#39;s Disease que compara nueve modalidades de ejercicio para síntomas depresivos en deterioro cognitivo leve (MCI) a partir de 19 ECA: el ejercicio de baile mostró la mejora más consistente (SMD=-0.51, IC 95% credible -0.84 a -0.16) y el ranking más alto por SUCRA (80.71%), aunque los autores señalan heterogeneidad moderada e inconsistencia local en algunas comparaciones que exige cautela. Para tu foco secundario de neuropsiquiatría y tu línea de psiquiatría de precisión es un ranking accionable y raro -pocas NMA comparan modalidades específicas de ejercicio en MCI en lugar de tratarlo como una sola categoría &#39;actividad física&#39;- que podría informar un protocolo no farmacológico de manejo del ánimo en deterioro cognitivo leve. Para AMAUTA/USAMEDIC es contenido de examen de alto rendimiento sobre manejo no farmacológico de síntomas neuropsiquiátricos en MCI, con el matiz metodológico de leer SUCRA e inconsistencia de red, no solo el ranking. Ángulo de contenido: &#39;de nueve tipos de ejercicio para el ánimo en deterioro cognitivo leve, uno se lleva el primer lugar en el ranking bayesiano -y es bailar, no caminar&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/13872877261485578" target="_blank" rel="noopener">↗ doi.org/10.1177/13872877261485578</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Dual Diagnosis · 2026-09-10 · guideline</div>
+        <h3 class="r3-title">The Implementation of Current UK Guidance for the Treatment of Co-Occurring Mental Health and Substance Use Conditions: A Mixed Methods Systematic Review and Thematic Synthesis</h3>
+        <p class="r3-hook">Revisión sistemática y síntesis temática en Journal of Dual Diagnosis sobre la implementación real de la guía clínica del Reino Unido (vigente desde 2017) para el manejo de condiciones concurrentes de salud mental y uso de sustancias: de 17 estudios elegibles, identifica una brecha de implementación persistente -pacientes que enfrentan &#39;puertas equivocadas&#39; entre servicios, dificultad para reconocer la comorbilidad, y barreras como el estigma- pese a que la guía recomienda explícitamente un enfoque de &#39;sin puertas equivocadas&#39; y que la atención a comorbilidad sea &#39;trabajo de todos&#39;. Para tu línea de razonamiento clínico y tu foco en psiquiatría dimensional es un caso claro de por qué una guía bien diseñada no basta si la arquitectura de servicios sigue siendo categorial (salud mental vs. uso de sustancias como silos separados). Para AMAUTA/USAMEDIC es contenido directo sobre manejo de patología dual, con el matiz -poco enseñado- de distinguir &#39;existe guía&#39; de &#39;la guía se aplica&#39;. Ángulo de contenido: &#39;el Reino Unido tiene una guía de manejo de patología dual desde 2017 -y esta revisión muestra por qué los pacientes siguen encontrando la puerta equivocada&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/15504263.2026.2726794" target="_blank" rel="noopener">↗ doi.org/10.1080/15504263.2026.2726794</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">British Journal of Clinical Pharmacology · 2026-09-09 · guideline</div>
+        <h3 class="r3-title">HIV and anticholinergic burden: Towards a pragmatic stewardship algorithm</h3>
+        <p class="r3-hook">Revisión en British Journal of Clinical Pharmacology que propone un algoritmo pragmático de manejo (workflow) para la carga anticolinérgica (ACB) en personas con VIH: ante evidencia observacional de que mayor ACB se asocia a peor desempeño neuropsicológico, menor integridad cerebral, más caídas/fragilidad y más síntomas anticolinérgicos -riesgo amplificado en VIH por multimorbilidad y polifarmacia- el algoritmo propone acciones de alto rendimiento: reconciliación de medicación, puntuación rápida de ACB, verificación de interacciones con antirretrovirales (especialmente regímenes potenciados), y desprescripción/sustitución estructurada. Para tu foco secundario de neuropsiquiatría es directamente relevante a tu interés en deterioro cognitivo y delirium: la carga anticolinérgica es un factor de riesgo modificable y frecuentemente ignorado fuera de geriatría. Para AMAUTA/USAMEDIC es un algoritmo clínico listo para convertir en material docente sobre polifarmacia y cognición, aplicable más allá de VIH. Ángulo de contenido: &#39;la carga anticolinérgica tiene ahora un algoritmo pragmático de manejo en VIH -por qué deberías estar calculándola en cualquier paciente con polifarmacia y quejas cognitivas&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/bcp.70811" target="_blank" rel="noopener">↗ doi.org/10.1002/bcp.70811</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Clinical Sleep Medicine · 2026-09-10 · meta-analysis</div>
+        <h3 class="r3-title">Association between sleep paralysis and anxiety: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática y meta-análisis en Journal of Clinical Sleep Medicine, registrado en PROSPERO (CRD42024579831) y conforme a PRISMA/Cochrane, sobre 11 estudios (5568 participantes) que evalúa la asociación entre parálisis del sueño y ansiedad: encuentra una asociación significativa (SMD=0.35, IC 95% 0.27-0.44) con heterogeneidad cero (I²=0), un hallazgo inusualmente limpio para psiquiatría. Para tu línea de psiquiatría dimensional es un dato anclable a un síntoma transdiagnóstico infrarreportado -la parálisis del sueño rara vez se pregunta activamente en la entrevista de ansiedad- y para razonamiento clínico es un ejemplo de meta-análisis con consistencia excepcionalmente alta, útil para enseñar contraste con meta-análisis heterogéneos. Para AMAUTA/USAMEDIC es una pregunta de entrevista clínica de alto rendimiento que rara vez se enseña explícitamente. Ángulo de contenido: &#39;la parálisis del sueño está más asociada a ansiedad de lo que la mayoría de clínicos pregunta -y este meta-análisis con heterogeneidad cero lo confirma&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s44470-026-00190-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s44470-026-00190-9</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Acta Psychologica · 2026-09-10 · meta-analysis</div>
+        <h3 class="r3-title">Effects of physical activity on attentional domains in ADHD</h3>
+        <p class="r3-hook">Meta-análisis en Acta Psychologica sobre 11 estudios que evalúa el efecto de la actividad física en dominios atencionales específicos en TDAH: la atención general mejoró de forma significativa (Hedges g=-0.67) y la atención selectiva mostró un efecto grande (g=1.36, aunque con evidencia limitada y heterogeneidad sustancial), mientras que la atención sostenida no alcanzó significancia -un desglose por subdominio que la literatura previa no ofrecía. Para tu línea TDAH/TEA/neurodivergencia es evidencia directamente accionable: en lugar de recomendar &#39;actividad física&#39; de forma genérica, este meta-análisis sugiere que el beneficio depende de qué subdominio atencional se busca mejorar. Para AMAUTA/USAMEDIC es contenido de examen sobre manejo no farmacológico de TDAH con matiz metodológico (heterogeneidad, evidencia limitada en atención selectiva). Ángulo de contenido: &#39;la actividad física no mejora toda la atención en TDAH por igual -este meta-análisis separa qué subdominio realmente responde y cuál sigue sin evidencia sólida&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.actpsy.2026.107727" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107727</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">BMC Medical Education · 2026-09-09 · meta-analysis</div>
+        <h3 class="r3-title">Prevalence of test anxiety among medical students: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Revisión sistemática y meta-análisis en BMC Medical Education sobre 35 estudios (13,489 estudiantes de medicina) que estima la prevalencia global de ansiedad ante examen: prevalencia agrupada de 49.8% (IC 95% 39.9-59.6%, I²=98.2%), mayor en mujeres (52.6% vs. 46.3%), en estudiantes de primer año (58.6% vs. 47.9% en quinto año), en el sudeste asiático (59.3%), y durante el examen mismo (55.4%) comparado con antes o después. Para AMAUTA/USAMEDIC es el hallazgo más directamente accionable de todo el dossier de hoy: casi la mitad de tus estudiantes de ENAM/Residentado enfrenta ansiedad ante examen clínicamente relevante, con mayor carga justo en los años iniciales de preparación -un argumento basado en evidencia para incorporar manejo de ansiedad ante examen como componente formal del currículo, no solo contenido médico. Para tu línea de educación médica de precisión es un dato que pide estratificar la intervención por año de carrera y momento de evaluación. Ángulo de contenido: &#39;casi 1 de cada 2 estudiantes de medicina tiene ansiedad ante examen clínicamente relevante -por qué AMAUTA debería enseñar a manejarla, no solo a estudiar más&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12909-026-10270-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-10270-2</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El meta-análisis de parálisis del sueño y ansiedad (JCSM, PROSPERO CRD42024579831) encuentra una asociación significativa (SMD=0.35) con heterogeneidad cero (I²=0) -un resultado inusualmente limpio en psiquiatría, y un síntoma que rara vez se pregunta activamente en la entrevista de ansiedad.</li><li>Casi 1 de cada 2 estudiantes de medicina (49.8%, 35 estudios, 13,489 estudiantes) tiene ansiedad ante examen clínicamente relevante, con el pico en primer año (58.6%) y durante el examen mismo (55.4%) -exactamente la población y el momento que AMAUTA/USAMEDIC acompaña.</li><li>En la NMA Bayesiana de nueve modalidades de ejercicio para el ánimo en deterioro cognitivo leve, el baile fue el mejor ranqueado (SUCRA=80.71%, SMD=-0.51) -pero con heterogeneidad moderada e inconsistencia local que exige leer el ranking con cautela, no como jerarquía definitiva.</li><li>Solo 20% de los 61 factores modificables de riesgo/protección de demencia mapeados en la literatura de fracción atribuible poblacional están por encima del nivel individual (interpersonal, comunitario o societal) -el 80% restante sigue anclado en conducta individual, según el reencuadre socioecológico de The Lancet Public Health.</li><li>Las guías ANZJP GRADE para esquizofrenia solo ofrecen una recomendación débil para psicosis relacionada a metanfetamina -un comentario reciente en el mismo journal señala que la evidencia de tratamiento en este escenario clínico común en Australia sigue siendo escasa y propone construir un marco de consenso para generar evidencia de mayor nivel.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el 80% de los factores modificables de riesgo de demencia mapeados son de nivel individual, ¿cómo se traduciría un protocolo de estratificación de riesgo de psiquiatría de precisión que además incorpore factores comunitarios y societales, y quién sería responsable de intervenir en esos niveles?</li><li>¿Dónde está el límite clínico entre &#39;herramienta&#39; y &#39;compañía&#39; cuando un paciente reporta usar un chatbot de IA para soporte emocional, y debería esa distinción formar parte de la entrevista de intake en un protocolo asistido por IA?</li><li>Si la desregulación emocional en trastorno bipolar se ancla en un circuito específico (IPL) y no solo en la etiqueta categorial BD, ¿qué tanto de ese mecanismo se generaliza a la desregulación emocional transdiagnóstica que predice HiTOP, y qué tanto es específico de BD?</li><li>Con evidencia de tratamiento escasa para psicosis relacionada a metanfetamina y solo una recomendación débil en las guías ANZJP GRADE, ¿qué necesitaría una primera ronda Delphi para construir un marco de consenso aplicable también en contextos como el peruano?</li><li>Si la prevalencia de ansiedad ante examen en estudiantes de medicina es casi 50% y mayor en los primeros años, ¿debería AMAUTA/USAMEDIC formalizar un cribado y manejo de ansiedad ante examen dentro del currículo de preparación para ENAM/Residentado, y con qué instrumento?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel: &#39;De nueve tipos de ejercicio para el ánimo en deterioro cognitivo leve, uno gana el ranking bayesiano -y es bailar, no caminar&#39; -explicar SUCRA y por qué el ranking exige cautela por la inconsistencia de red.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel o hilo: &#39;¿Herramienta o compañía? Por qué la pregunta sobre el chatbot de tu paciente puede ser clínica, no técnica&#39; -basado en la revisión de JMIR Mental Health sobre IA conversacional y daño psicológico.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota exploratoria: evaluar la viabilidad de un marco de consenso Delphi para psicosis relacionada a metanfetamina en el contexto peruano/latinoamericano, dada la escasez de evidencia señalada por el comentario ANZJP sobre las guías GRADE de esquizofrenia.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección para el libro de psicopatología para el mundo: usar el review del lóbulo parietal inferior en trastorno bipolar como caso de cómo un mecanismo transdiagnóstico (regulación emocional) explica mejor un fenómeno clínico que la etiqueta categorial por sí sola -puente directo hacia HiTOP/RDoC.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto o carrusel para AMAUTA/USAMEDIC: &#39;Casi 1 de cada 2 estudiantes de medicina tiene ansiedad ante examen -qué dice el meta-análisis de 13,489 estudiantes sobre cuándo es peor y qué hacer&#39;, conectando con manejo de ansiedad como parte del currículo de examen.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">The Lancet Public Health</span><span class="tag ">JMIR Mental Health</span><span class="tag ">Neuroscience and Biobehavioral Reviews</span><span class="tag ">Journal of Alzheimer&#39;s Disease</span><span class="tag ">Journal of Dual Diagnosis</span><span class="tag ">British Journal of Clinical Pharmacology</span><span class="tag ">Journal of Clinical Sleep Medicine</span><span class="tag ">Acta Psychologica</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">The Australian and New Zealand Journal of Psychiatry</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities, acceso directo). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
