@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-11 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">11 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">medRxiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+        <h3 class="r3-title">Individualized cortical gradient and network topology reveal symptom-linked disruptions and neurobiological subtypes in schizophrenia</h3>
+        <p class="r3-hook">Estudio multisitio enorme (3958 personas con esquizofrenia vs. 5489 controles neurotípicos) que mapea gradientes corticales individualizados y topología de red (small-world), encontrando alteraciones a lo largo de ejes inferior-superior y frontotemporal, con hubs afectados en ínsula y cíngulo anterior; el análisis multivariado extrae una dimensión latente de severidad global (más fuerte en desorganización, más débil en síntomas afectivos) y el clustering identifica dos subtipos neurobiológicos robustos y estables desde etapas tempranas de la enfermedad (S1: cíngulo anterior; S2: temporoparietal). Le importa a Javier porque es exactamente el tipo de evidencia que sostiene su marco dimensional/de network theory (HiTOP/RDoC) frente al modelo categorial de &#39;la esquizofrenia&#39;: aquí la heterogeneidad no es ruido, es estructura replicable con dos subtipos y una dimensión transdiagnóstica de severidad. Es material directo para su libro de psicopatología (capítulo sobre heterogeneidad y subtipificación biológica) y para contenido AMAUTA/USAMEDIC contrastando el DSM categorial con la evidencia de red que ya no cabe en una sola etiqueta.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.04.25.26351736" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.04.25.26351736</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Biological Psychiatry, 9 sep 2026 (online ahead of print) · meta-analysis · 2026-09-09</div>
+        <h3 class="r3-title">Domain-Derived Biomarkers of Treatment Response in Major Depressive Disorder: An Activation Likelihood Estimation Neuroimaging Meta-Analysis</h3>
+        <p class="r3-hook">Meta-análisis de estimación de verosimilitud de activación (ALE) sobre 46 experimentos de neuroimagen (996 participantes únicos) en depresión mayor, que busca biomarcadores pre-tratamiento de respuesta a antidepresivos o TCC: encuentra que la hiperactivación pre-tratamiento en la ínsula anterior derecha (nodo clave de la red de saliencia) es un biomarcador transdiagnóstico (dominio-general) de mal pronóstico, con el cíngulo anterior subgenual sumándose como marcador específico en tareas de procesamiento emocional negativo; no hubo convergencia en estudios de reposo ni en marcadores de buen pronóstico. Le importa a Javier porque es evidencia concreta, cuantificada por convergencia de coordenadas (no un estudio aislado), para su pilar de psiquiatría de precisión: un candidato a biomarcador que podría, en teoría, decirle a un clínico antes de iniciar tratamiento quién tiene alto riesgo de no responder. Puede usarlo en su libro de psicopatología o en un módulo de precisión psiquiátrica para enseñar la diferencia entre &#39;biomarcador replicado por meta-análisis&#39; y &#39;biomarcador listo para la clínica&#39; — todavía no es esto último, y esa distinción es justo el tipo de rigor que quiere transmitir en ENAM/Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.biopsych.2026.06.027" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.06.027</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">medRxiv (preprint), 7 sep 2026 · preprint · 2026-09-07</div>
+        <h3 class="r3-title">Individualized, parcel-guided rTMS to the left dorsolateral prefrontal cortex for treatment resistant depression</h3>
+        <p class="r3-hook">Estudio piloto (15 pacientes) que usa reconstrucción de superficie del Human Connectome Project para ubicar, a partir de una MRI estructural individual (sin necesidad de fMRI funcional), el parcel 46 de la DLPFC izquierda más anti-correlacionado con el cíngulo anterior subgenual (sgACC) — el target teóricamente óptimo de TMS para depresión — y aplica rTMS guiado por ese parcel individual, con tasas de respuesta/remisión comparables a los protocolos guiados por fMRI individual (tipo SAINT), y con la anti-correlación DLPFC-sgACC pre-tratamiento correlacionando con la respuesta clínica. Le importa a Javier porque conecta directamente sus dos líneas de neuromodulación y psiquiatría de precisión sin la barrera de costo/logística del fMRI funcional individual: si esto se replica, es un camino realista para llevar TMS individualizado a contextos con menos recursos como el peruano. Es contenido natural para un reel o clase sobre &#39;psiquiatría de precisión que no necesita un resonador de investigación&#39;, con la salvedad explícita de que la muestra es piloto (n=15) y aún no es un RCT confirmatorio.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.03.26362155" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.03.26362155</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 9 sep 2026 · preprint · 2026-09-09</div>
+          <div class="r10-title">Clinically Meaningful Improvement in the treatment of Negative Symptoms of Schizophrenia: The Case of Roluperidone</div>
+          <div class="r10-line">Reanálisis pooled de 2 RCTs placebo-controlados de roluperidone en síntomas negativos de esquizofrenia: 1.5 a 1.75 veces más pacientes alcanzan umbrales de mejoría clínicamente reconocible (20% en PANSS-NSFS, 1pt en CGI-S, 10pt en PSP) que con placebo, todos con IC95% que excluyen el nulo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: útil para el módulo de razonamiento clínico de Javier sobre cómo un fármaco puede tener un efecto estadísticamente modesto en la escala continua pero traducirse en una diferencia real de &#39;responders&#39; cuando se ancla a umbrales clínicamente definidos — enseñable con las tres métricas juntas.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.07.26362403" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.07.26362403</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Lifestyle therapy versus cognitive behavioural therapy for adults with mood disorders: a randomised non-inferiority trial</div>
+          <div class="r10-line">RCT australiano de no-inferioridad (358 adultos con depresión mayor o bipolar, síntomas moderados-severos) muestra que la terapia de estilo de vida (dieta + ejercicio con profesionales acreditados) no es inferior a TCC breve para reducir MADRS a 8 semanas (ambos grupos bajan ~7-8.5 puntos).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: si esto se replica, abre la puerta a que nutricionistas y especialistas en ejercicio (línea kinobody-selfcare de Javier) sean proveedores legítimos de primera línea para depresión moderada, ampliando la fuerza laboral de salud mental más allá de psicólogos y psiquiatras.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.08.26362466" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362466</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Epidemiology and Psychiatric Sciences, 9 sep 2026 · rct · 2026-09-09</div>
+          <div class="r10-title">Mechanisms of impact of mental health peer support in high-, middle- and low-income settings: mediation analysis of the UPSIDES randomised controlled trial</div>
+          <div class="r10-line">Análisis de mediación del RCT multicéntrico UPSIDES (565 adultos con condiciones de salud mental severas, 6 sitios en Alemania, Uganda, Tanzania, India e Israel) encuentra que el apoyo entre pares no tiene efecto directo sobre la recuperación personal, pero sí efectos indirectos significativos vía esperanza e inclusión social.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: dato accionable para diseño de intervenciones de salud mental comunitaria en Perú — si el mecanismo real es esperanza + inclusión social y no el &#39;contacto entre pares&#39; en sí, cualquier programa debería medir y optimizar esos dos mediadores, no solo la dosis de la intervención.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S2045796026100900" target="_blank" rel="noopener">↗ doi.org/10.1017/S2045796026100900</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Sleep Medicine, 10 sep 2026 · meta-analysis · 2026-09-10</div>
+          <div class="r10-title">Association between sleep paralysis and anxiety: a systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-análisis registrado en PROSPERO (11 estudios, 5568 participantes) halla que la parálisis del sueño se asocia a puntajes de ansiedad significativamente más altos (SMD=0.35, IC95% 0.27-0.44, I²=0%), aunque la asociación con el diagnóstico formal de trastorno de ansiedad es menos consistente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: un dato de bajo costo y alta señal para la anamnesis — preguntar por parálisis del sueño como marcador transdiagnóstico de carga ansiosa es un tip clínico simple que Javier puede convertir en una perla de contenido corto.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s44470-026-00190-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s44470-026-00190-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience, 11 sep 2026 · meta-analysis · 2026-09-11</div>
+          <div class="r10-title">A systematic review and meta-analysis of routine white blood cell concentrations in people with eating disorders</div>
+          <div class="r10-line">Meta-análisis (38 estudios) muestra que los leucocitos y varios subtipos están reducidos en anorexia nerviosa vs. controles (sin relación con edad/IMC), se mantienen sin cambio en bulimia nerviosa, y solo se normalizan en anorexia tras restauración de peso avanzada (IMC cercano a 18.5).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: recordatorio útil para su línea de psiquiatría de precisión — un hallazgo de laboratorio &#39;anormal&#39; en TCA aquí es consecuencia de la desnutrición, no un biomarcador de enfermedad psiquiátrica per se, distinción clave para no sobre-psiquiatrizar hallazgos metabólicos.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroscience.2025.12.045" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroscience.2025.12.045</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Virtual and In-Person Psychiatric Care: Appointment Completion and Capacity Use in a Public Mental Health Service in Peru</div>
+          <div class="r10-line">Estudio ecológico longitudinal (54 meses pareados, servicio público peruano) encuentra que la teleconsulta psiquiátrica tiene mayor tasa de asistencia que la presencial (90.9% vs. 83.8%) pero peor uso de los cupos ofrecidos (73.0% vs. 90.5%), diferencias ambas significativas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: este es LOCAL — data peruana real sobre su propio sistema de salud mental. Útil para Javier como insumo directo (con nombre y cifras) al planificar cualquier iniciativa híbrida virtual/presencial en HVLH o en proyectos de política de salud mental en Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.08.26362068" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362068</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el reanálisis de roluperidone, &#39;funcionar&#39; no se define por la diferencia de medias sino por cuántos pacientes cruzan un umbral clínicamente reconocible (20% en PANSS-NSFS, 1pt en CGI-S, 10pt en PSP) — las tres métricas coinciden en la misma dirección.</li><li>El TMS individualizado por parcela cortical (usando solo una MRI estructural, sin fMRI funcional) logró tasas de respuesta comparables a los protocolos guiados por fMRI — la precisión no siempre requiere el escáner más caro.</li><li>La terapia de estilo de vida (dieta + ejercicio con profesionales acreditados) no fue inferior a la TCC breve para depresión moderada-severa: la evidencia empieza a sostener que el equipo de salud mental de primera línea puede ampliarse más allá de psicólogos y psiquiatras.</li><li>En anorexia nerviosa los leucocitos bajos no son un marcador de enfermedad psiquiátrica: son un efecto de la desnutrición que solo se revierte cuando el IMC se acerca a 18.5 en la recuperación de peso a largo plazo.</li><li>En el RCT UPSIDES, el apoyo entre pares no tuvo efecto directo sobre la recuperación personal — todo el beneficio pasa por dos mediadores medibles (esperanza e inclusión social), lo que cambia qué hay que medir para saber si un programa de pares está funcionando.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debería la esquizofrenia empezar a subtipificarse clínicamente por patrones de conectividad cortical (cíngulo anterior vs. temporoparietal) en vez de tratarse como una categoría única desde el primer episodio?</li><li>¿Qué tan lejos está el biomarcador de ínsula anterior derecha (mal pronóstico en depresión) de integrarse en un protocolo real de decisión clínica antes de elegir antidepresivo vs. TCC?</li><li>¿Puede el TMS guiado por parcela cortical individual (sin fMRI) democratizar el acceso a neuromodulación de precisión en sistemas de salud con recursos limitados como el peruano?</li><li>Si la terapia de estilo de vida es no inferior a la TCC para depresión moderada-severa, ¿qué implica esto para la formación y el rol de nutricionistas y especialistas en ejercicio en equipos de salud mental?</li><li>En un sistema híbrido virtual/presencial como el peruano, donde lo virtual asiste más pero usa peor los cupos ofrecidos, ¿cómo se debería planificar la capacidad — por asistencia, por cupos, o por ambos por separado?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel o post explicando los tres &#39;anchors&#39; de mejoría clínicamente significativa en esquizofrenia (CGI-S, PSP, PANSS-NSFS) usando el reanálisis de roluperidone como ejemplo de cómo leer un &#39;responder rate&#39; más allá del p-valor.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;la esquizofrenia tiene (al menos) dos subtipos de red cerebral&#39; a partir del estudio de gradientes corticales — gancho directo para explicar su marco dimensional/HiTOP a una audiencia no especializada.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o carta editorial corta usando los datos peruanos de citas virtuales vs. presenciales (asistencia vs. uso de cupos) para proponer métricas de capacidad más completas en la planificación de servicios públicos de salud mental en Perú.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología sobre biomarcadores de respuesta a tratamiento en depresión (ínsula anterior derecha) como caso de estudio de &#39;psiquiatría de precisión todavía en construcción&#39;: replicado por meta-análisis, pero no listo para la clínica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido AMAUTA/USAMEDIC comparando diseño de no-inferioridad (terapia de estilo de vida vs. TCC) con diseño de superioridad clásico — tema de razonamiento estadístico frecuente en preguntas de ENAM/Residentado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Biological Psychiatry</span><span class="tag ">Epidemiology and Psychiatric Sciences</span><span class="tag ">Journal of Clinical Sleep Medicine</span><span class="tag ">Neuroscience</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/eutils · Europe PMC · medRxiv API. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 11 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
