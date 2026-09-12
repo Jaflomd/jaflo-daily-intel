@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-09-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">12 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">12</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">JMIR Research Protocols, 9 sep 2026 · rct · 2026-09-09</div>
+        <h3 class="r3-title">TETRO: ensayo multicéntrico de TMS guiada por topología de red para TOC resistente a exposición</h3>
+        <p class="r3-hook">Este protocolo de ensayo clínico aleatorizado multicéntrico (TETRO, 250 pacientes planificados, 201 ya reclutados a febrero 2026) evalúa rTMS de baja frecuencia sobre el área motora presuplementaria -nodo del circuito ejecutivo/saliencia- como adyuvante a la terapia de exposición con prevención de respuesta en TOC resistente a tratamiento, usando topología de red cerebral pre-tratamiento y marcadores de neuroplasticidad en sangre y RM como predictores de respuesta y recaída. A Javier le importa porque, según los propios autores, es el primer ECA adecuadamente potenciado que prueba mecanismo, eficacia y costo-efectividad de neuromodulación dirigida por red en TOC -exactamente el tipo de evidencia que su línea de neuromodulación y psiquiatría de precisión necesita citar, y un modelo de diseño que combina topología de red con biomarcadores periféricos. Puede usarlo como caso de estudio en AMAUTA/USAMEDIC para enseñar diseño de ECA en neuromodulación psiquiátrica, y como antecedente metodológico directo si evalúa proponer un ensayo o colaboración similar vía RENACYT.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/94288" target="_blank" rel="noopener">↗ doi.org/10.2196/94288</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Neuropsychopharmacology, 10 sep 2026 · paper · 2026-09-10</div>
+        <h3 class="r3-title">Potencia gamma en reposo como biomarcador de desbalance excitación/inhibición en autismo: consorcio ABC-CT</h3>
+        <p class="r3-hook">En 1,597 EEGs de reposo de 399 niños autistas y sus pares con desarrollo típico, seguidos en 4 tiempos (basal, +6 semanas, +6 meses, +4 años) dentro del consorcio longitudinal ABC-CT, la potencia gamma -un índice del balance excitación/inhibición- estuvo consistentemente elevada en autismo, se asoció longitudinalmente con menor CI no verbal y peor memoria para rostros, y disminuyó con la edad en ambos grupos por igual. A Javier le importa porque es evidencia de consorcio, no de un estudio aislado, de un biomarcador E/I candidato con seguimiento de 4 años -el nivel de rigor longitudinal que su línea TDAH/TEA necesita para argumentar que el neurodesarrollo atípico tiene una firma electrofisiológica medible y estable, más allá del diagnóstico puramente conductual. Puede usarlo como evidencia central en un hilo o video AMAUTA sobre &#39;el autismo tiene una firma eléctrica, no solo conductual&#39;, y como antecedente para pensar el EEG de bajo costo como biomarcador de estratificación en Perú.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.euroneuro.2026.113864" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.113864</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">NeuroImage: Clinical, 9 sep 2026 · paper · 2026-09-09</div>
+        <h3 class="r3-title">Topografía de red funcional individualizada en jóvenes de alto riesgo clínico para psicosis en Kenia (KePROS)</h3>
+        <p class="r3-hook">Usando un método de mapeo individualizado (FUNCATA) en 63 jóvenes keniatas en riesgo clínico alto de psicosis y 24 controles sanos, este estudio encontró agrandamiento de la red de atención dorsal, reducción de la red de saliencia, y un índice de anormalidad topográfica elevado -más marcado en atención dorsal, red por defecto y cingulo-opercular- con el agrandamiento de atención dorsal prediciendo empeoramiento longitudinal de psicopatología general. A Javier le importa porque es uno de los pocos estudios de triple red en una cohorte africana no occidental -un recordatorio de que casi todo lo que sabemos de redes cerebrales viene de poblaciones WEIRD, y un espejo directo para pensar qué tan generalizable es lo que enseña en AMAUTA/USAMEDIC sobre biomarcadores de riesgo psicótico a poblaciones como la peruana. Puede usarlo como argumento en una propuesta RENACYT sobre neuroimagen en poblaciones latinoamericanas subrepresentadas, y como contenido para cuestionar el sesgo poblacional de la neurociencia de redes que enseña a diario.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.nicl.2026.104056" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nicl.2026.104056</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">5</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Topography, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Lo que la conectividad estática no ve: estados dinámicos de red en banda alfa en primer episodio de psicosis</div>
+          <div class="r10-line">En 78 pacientes con primer episodio de psicosis vs 60 controles, la conectividad EEG alfa dinámica -no la estática- revela menor variabilidad en un estado de red asociado al DMN, ligado a pensamiento formal alterado, con firmas distintas según estado de medicación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Los estudios de conectividad &#39;dinámica&#39; van a desplazar a la estática como estándar de reporte en psicosis -Javier podría anticipar el argumento metodológico en su libro: medir un promedio estático esconde justo la variabilidad que distingue al paciente.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10548-026-01249-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s10548-026-01249-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Research Bulletin, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">La red de saliencia orquesta la dinámica cerebral a gran escala durante la detección de estímulos: estudio EEG dFNC</div>
+          <div class="r10-line">Con EEG de conectividad dinámica, la red de saliencia actúa como hub central temprano (150-450ms) en la detección de estímulos relevantes, cediendo el control a la red frontoparietal en etapas tardías (450-550ms) -un mapa temporal fino del switching que Sridharan/Menon proponen a nivel teórico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esta disección milisegundo a milisegundo del switching SN→FPCN podría volverse el estándar para validar el modelo de triple red con EEG en vez de solo fMRI -útil para Javier si busca enseñar el modelo con evidencia de alta resolución temporal en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.brainresbull.2026.112117" target="_blank" rel="noopener">↗ doi.org/10.1016/j.brainresbull.2026.112117</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature Protocols, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">netneurotools: un toolkit abierto orientado a estudiantes para neurociencia de redes</div>
+          <div class="r10-line">El laboratorio de Bratislav Misic (McGill) publicó netneurotools, un toolkit de Python abierto y mantenido por sus propios estudiantes para estandarizar el análisis de redes cerebrales a gran escala frente a pipelines propietarios fragmentados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Herramientas abiertas como esta bajan la barrera de entrada para que grupos con recursos limitados -como uno en Perú- hagan neurociencia de redes reproducible; vale la pena que Javier o su equipo la evalúen para sus propios análisis de conectividad.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41596-026-01446-7" target="_blank" rel="noopener">↗ doi.org/10.1038/s41596-026-01446-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience, 11 sep 2026 · review · 2026-09-11</div>
+          <div class="r10-title">Fotobiomodulación y regulación del balance excitación-inhibición en trastornos neurológicos y psiquiátricos</div>
+          <div class="r10-line">Primera revisión narrativa que enmarca la fotobiomodulación (luz roja/infrarroja no invasiva) específicamente bajo el balance excitación-inhibición en trastornos neurológicos y psiquiátricos, con evidencia mecanística preliminar y hallazgos clínicos tempranos en cognición y ánimo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Si logra ensayos controlados más grandes, la fotobiomodulación podría sumarse como neuromodulación de bajo costo y no invasiva a la caja de herramientas de precisión psiquiátrica de Javier junto a TMS/tDCS -vale vigilarla antes de que se sature de hype sin evidencia dura.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroscience.2026.09.014" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroscience.2026.09.014</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Imaging and Behavior, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Ocho años de cambios longitudinales en la red de fatiga en enfermedad de Parkinson</div>
+          <div class="r10-line">En un seguimiento único de 8 años y 4 mediciones, la desconexión progresiva entre DLPFC derecho y cíngulo anterior dorsal izquierdo -nodos del circuito ejecutivo/saliencia- se asoció específicamente con el empeoramiento de la fatiga en Parkinson, sin relación con depresión ni cognición.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un ejemplo de libro de texto de diseño longitudinal de red específico a síntoma (no a diagnóstico) -Javier podría usarlo en AMAUTA para enseñar por qué seguir una red predefinida durante 8 años vale más que un corte transversal, aunque el diagnóstico de base no sea psiquiátrico.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11682-026-01197-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s11682-026-01197-9</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un ensayo de TOC con 250 pacientes ya no solo mide si el TMS funciona: mide si la topología de red de un paciente ANTES del tratamiento predice quién va a responder y quién va a recaer (TETRO, JMIR Research Protocols) -el diseño en sí es más precision psychiatry que muchos papers que usan esa etiqueta.</li><li>La potencia gamma en reposo -marcador de balance excitación/inhibición- se mantiene elevada en autismo durante 4 años de seguimiento y baja con la edad igual en ambos grupos: el desbalance E/I parece ser un rasgo estable, no solo un momento del desarrollo (ABC-CT, European Neuropsychopharmacology).</li><li>En jóvenes keniatas en riesgo de psicosis, la red de atención dorsal se agranda de forma parecida a lo descrito en esquizofrenia en poblaciones occidentales -pero casi toda la evidencia de &#39;triple red&#39; con la que enseñamos viene de poblaciones WEIRD (KePROS, NeuroImage: Clinical).</li><li>La conectividad &#39;promedio&#39; (estática) de un EEG puede ocultar justo la información que distingue a un paciente con psicosis: es la variabilidad del estado de red asociado al DMN, no su nivel basal, la que se asocia con pensamiento formal alterado (Brain Topography).</li><li>El switching saliencia→frontoparietal que enseñamos como concepto teórico (Sridharan/Menon) ya tiene un mapa en milisegundos: la red de saliencia domina entre 150-450ms, la frontoparietal toma el control después de los 450ms (Brain Research Bulletin).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la topología de red pre-tratamiento predice quién responde a rTMS en TOC (TETRO), ¿deberíamos empezar a exigir un mapeo de red antes de indicar neuromodulación en la práctica clínica, o el costo todavía no lo justifica fuera de un ensayo?</li><li>¿Qué tanto de lo que enseñamos sobre biomarcadores de riesgo psicótico (agrandamiento de redes de atención, reducción de saliencia) se sostiene cuando la muestra no es WEIRD, como en la cohorte keniata de KePROS -y qué pasaría si replicáramos ese diseño en Perú?</li><li>Si el desbalance E/I medido por gamma EEG es estable durante 4 años en autismo, ¿es un marcador de rasgo que deberíamos usar para subtipificar pacientes en investigación, o el riesgo de sobre-medicalizar una variable normal del neurodesarrollo es mayor que el beneficio?</li><li>¿La conectividad dinámica -no la estática- debería ser el nuevo estándar mínimo de reporte en estudios de psicosis, dado que es la variabilidad del estado de red, y no el promedio, la que se asocia con síntomas clínicos?</li><li>Si herramientas abiertas como netneurotools bajan la barrera técnica para hacer neurociencia de redes reproducible, ¿qué le impide realmente a un grupo de investigación peruano hacer este tipo de ciencia: el dato, el cómputo, o la formación?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;El primer ensayo de TOC que usa el mapa de tu cerebro para predecir si el TMS te va a funcionar&#39; usando TETRO (JMIR Research Protocols) para explicar neuromodulación guiada por red de forma accesible.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional citando el estudio ABC-CT (399 niños, 4 años de seguimiento) como evidencia de que el desbalance E/I en autismo es un rasgo estable medible por EEG, no solo un diagnóstico conductual.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta RENACYT: replicar el protocolo FUNCATA de KePROS (NeuroImage: Clinical) en una cohorte peruana de riesgo clínico alto para psicosis, dado que casi toda la evidencia de triple red proviene de poblaciones WEIRD.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video AMAUTA de razonamiento clínico: &#39;Por qué medir el promedio de tu EEG no alcanza&#39; usando el estudio de conectividad dinámica en primer episodio de psicosis (Brain Topography) para enseñar la diferencia entre conectividad estática y dinámica de cara al ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota o hilo sobre netneurotools (Nature Protocols, laboratorio de Misic) como herramienta abierta que su equipo podría adoptar para bajar el costo técnico de hacer análisis de conectividad reproducible en investigación propia.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">JMIR Research Protocols</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag ">NeuroImage: Clinical</span><span class="tag ">Brain Topography</span><span class="tag ">Brain Research Bulletin</span><span class="tag highlight">Nature Protocols</span><span class="tag ">Neuroscience</span><span class="tag ">Brain Imaging and Behavior</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI E-utilities (esearch/esummary/efetch) · WebSearch (preprints medRxiv/bioRxiv/PsyArXiv y labs clave - sin hallazgos nuevos verificables en la ventana de 48-72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
