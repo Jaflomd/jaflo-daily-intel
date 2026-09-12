@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">12 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">85</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">66</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Molecular Psychiatry, 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">Early-childhood temperament trajectories map onto transdiagnostic psychiatric risk</h3>
+        <p class="r3-hook">Escrito por el Centre for Precision Psychiatry de Oslo (el nombre literal del pilar de Javier), este estudio modeló trayectorias longitudinales de temperamento a los 1.5, 3 y 5 años en más de 50,000 niños de la cohorte noruega MoBa, y encontró que las desviaciones respecto a la trayectoria esperada de cada niño —no un punto de corte transversal— se organizan en dos dimensiones transdiagnósticas con base genética compartida (GWAS + FDR conjuncional): una eleva el riesgo de TDAH (HR=1.54) y otra el de autismo/Asperger (HR=1.64). Le importa directamente a Javier porque es el ejemplo más limpio que va a encontrar esta semana de psiquiatría dimensional aplicada en la práctica —HiTOP/RDoC operacionalizado como &#39;desviación de trayectoria individual&#39; en vez de categoría DSM— y conecta TDAH y TEA bajo un marco transdiagnóstico común, justo la intersección que trabaja en su libro de psicopatología. Puede citarlo en AMAUTA como caso de enseñanza de &#39;riesgo transdiagnóstico&#39; con datos duros, y como referencia metodológica (modelado de trayectorias, FEMA-Long) si diseña un estudio longitudinal de neurodesarrollo en Perú.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03881-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03881-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">JAMA Psychiatry, 9 sep 2026 · paper · 2026-09-09</div>
+        <h3 class="r3-title">Angiotensin-Converting Enzyme in Patients With Early-Stage Psychosis</h3>
+        <p class="r3-hook">En 200 participantes (78 controles, 122 con psicosis de inicio reciente) del Johns Hopkins Schizophrenia Center, este estudio muestra que los niveles de proteína ACE —no solo el riesgo genético del gen ACE— están reducidos en LCR y suero en psicosis (d=-1.16 y d=-0.92), y que los pacientes con psicosis resistente a tratamiento tienen niveles séricos de ACE aún más bajos que los no resistentes (d=-0.50, p=.03), mientras que la actividad enzimática canónica no distingue los subgrupos. Le importa a Javier porque es exactamente el tipo de biomarcador estratificador —proteína medible en sangre, no solo puntaje poligénico abstracto— que necesita para el capítulo de psicosis de su libro de psicopatología, y porque separa resistencia al tratamiento de psicosis en general, una pregunta clínica real de su práctica. Puede usarlo en AMAUTA como ejemplo de &#39;biomarcador candidato pero aún no accionable&#39; (útil para enseñar a distinguir promesa de utilidad clínica real), y como antecedente si explora el eje renina-angiotensina en su propia línea de investigación.</p>
+        <a class="r3-link" href="https://doi.org/10.1001/jamapsychiatry.2026.2588" target="_blank" rel="noopener">↗ doi.org/10.1001/jamapsychiatry.2026.2588</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">JMIR Medical Education, 9 sep 2026 · paper · 2026-09-09</div>
+        <h3 class="r3-title">AI-Assisted Angoff Standard Setting for Multiple-Choice Examinations in Medical Education: Comparative Study</h3>
+        <p class="r3-hook">Comparando 10 jueces expertos contra un panel de 5 LLMs (GPT-5.2, Grok, DeepSeek, MedGemma, Claude 4.5 Sonnet) haciendo Angoff modificado sobre un examen real de 120 ítems, el panel de IA logró mayor confiabilidad (coeficiente G=0.823 vs 0.738) y menor error (RMSE 1.28 vs 2.33) que los jueces humanos, con tasas de aprobación casi idénticas (71.2%). Le importa muchísimo a Javier porque AMAUTA/USAMEDIC vive de calibrar puntos de corte defendibles para ENAM y Residentado, y este es el primer dato duro —no promesa— de que un panel de LLMs puede asistir, no reemplazar, ese proceso con métricas de teoría de generalizabilidad, el estándar de evidencia que exige antes de meter algo así en producción. Puede pilotarlo con su propio banco de preguntas: correr el mismo panel de modelos sobre un set piloto y comparar G/Φ contra sus jueces actuales antes de tocar el punto de corte real de un examen.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/98766" target="_blank" rel="noopener">↗ doi.org/10.2196/98766</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Bioinformatics, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">BriGHT: transcriptome-regularized multimodal neuroimaging for brain disorder prediction</div>
+          <div class="r10-line">Un framework de código abierto (GitHub) usa el transcriptoma cerebral como ancla para regularizar redes de neuroimagen multimodal y predecir trastornos cerebrales, validado en ADNI, ADHD-200 y REST-meta-MDD, superando a otros métodos de hipergrafos en las seis tareas probadas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esto se vuelve una pieza de comparación estándar (baseline) en papers de predicción de MDD/ADHD por neuroimagen dentro de 12 meses; vale la pena que Javier lo tenga clonado y probado antes de que se sature el campo.</div>
+          <a class="r10-link" href="https://doi.org/10.1093/bioinformatics/btag681" target="_blank" rel="noopener">↗ doi.org/10.1093/bioinformatics/btag681</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Schizophrenia Research, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Predicting clozapine initiation among patients with schizophrenia via machine learning trained on electronic health record data</div>
+          <div class="r10-line">Un modelo XGBoost entrenado solo con datos de historia clínica electrónica (194,234 visitas de entrenamiento, ~4,928 pacientes daneses) predice con AUROC 0.81 qué pacientes con esquizofrenia iniciarán clozapina en el próximo año, apuntando al retraso crónico de años en usarla.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: en 2-3 años este tipo de alerta sobre historia clínica electrónica se integra como aviso clínico en sistemas psiquiátricos nórdicos, y es el prototipo que Javier podría adaptar a un sistema de salud peruano si consigue acceso a datos de HIS.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.schres.2026.08.029" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.029</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Neuropsychopharmacology, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">EEG resting-state gamma power as a potential biomarker of excitation/inhibition imbalance in autism: Evidence from the Autism Biomarkers Consortium for Clinical Trials</div>
+          <div class="r10-line">En 399 niños autistas y controles seguidos hasta 4 años (consorcio ABCCT, 1597 EEGs), la potencia gamma EEG en reposo está elevada en autismo y se asocia longitudinalmente con menor CI no verbal y memoria facial, un biomarcador de desbalance excitación/inhibición con datos longitudinales reales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este biomarcador EEG entra en los próximos dos años a ensayos clínicos de fármacos GABA/glutamatérgicos para autismo como criterio de estratificación de subgrupo, directamente citable en su línea TDAH/TEA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.euroneuro.2026.113864" target="_blank" rel="noopener">↗ doi.org/10.1016/j.euroneuro.2026.113864</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychiatry, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Using Speech to Develop Multivariable Prediction Models for Major Depressive Disorder and Generalized Anxiety Disorder During Pregnancy</div>
+          <div class="r10-line">Modelos de machine learning sobre características del habla en entrevistas clínicas predicen depresión mayor (F1 74-77%) y ansiedad generalizada (F1 76-80%) durante el embarazo, con desempeño igual o mejor que al combinar variables sociodemográficas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el fenotipado por voz se vuelve el &#39;signo vital&#39; digital más barato de escalar en tamizaje perinatal antes que cualquier wearable, ejemplo directo para el capítulo de fenotipado digital de su libro.</div>
+          <a class="r10-link" href="https://doi.org/10.4088/JCP.26m16487" target="_blank" rel="noopener">↗ doi.org/10.4088/JCP.26m16487</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Neuropsychiatry and Clinical Neurosciences, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">A Clinical Prediction Model for Self-Harm After Adolescent Traumatic Brain Injury</div>
+          <div class="r10-line">Un modelo de Cox con 12 predictores, validado internamente en 34,092 adolescentes galeses con TCE, predice riesgo de autolesión a 1 y 3 años (AUC 0.74/0.72) con buena calibración, usando solo datos de historia clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que modelos de este tipo (TCE → autolesión) se vuelven parte de guías de triaje post-alta en 3-5 años; útil para su enseñanza de razonamiento clínico y estratificación de riesgo en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1176/appi.neuropsych.20260042" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.neuropsych.20260042</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Research Protocols, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Transcranial Magnetic Stimulation for Patients with Exposure Therapy Resistant Obsessive-Compulsive Disorder (TETRO): Study Protocol for a Multicenter Randomized Controlled Trial</div>
+          <div class="r10-line">Protocolo de un ECA multicéntrico (n=250, ya con 201 reclutados) que combina rTMS de baja frecuencia sobre el pre-SMA con terapia de exposición en TOC resistente a tratamiento, y que analizará genotipo, topología de red cerebral y marcadores de neuroplasticidad como predictores de respuesta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: si el ECA resulta positivo (resultados esperados para 2027), esto empuja a que rTMS para TOC se reembolse en más sistemas de salud europeos; vale la pena tenerlo en el radar como referencia de diseño para estratificación de respuesta a neuromodulación.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/94288" target="_blank" rel="noopener">↗ doi.org/10.2196/94288</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Effect of Large Language Model-Powered Virtual Standardized Patients on History-Taking Among Undergraduate Medical Students: Propensity-Matched Cohort Study</div>
+          <div class="r10-line">En una cohorte pareada por puntaje de propensión con 168 estudiantes de medicina, practicar con un paciente estandarizado virtual potenciado por LLM mejoró el desempeño en toma de historia clínica (d=0.52) frente a instrucción rutinaria, con mayor beneficio en estudiantes de línea base alta (&#39;umbral cognitivo&#39;).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que ese hallazgo de &#39;umbral cognitivo&#39; —la IA ayuda más a quien ya tiene buena base, no al revés— se vuelve el argumento central para justificar enseñanza estratificada por nivel en AMAUTA en vez de un tutor de IA único para todos.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/92486" target="_blank" rel="noopener">↗ doi.org/10.2196/92486</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Profiling Human-AI Regulatory Support in Technology-Enhanced Interprofessional Education Among Health Professions Students: Person-Centered Exploratory Study</div>
+          <div class="r10-line">Con 136 estudiantes de ciencias de la salud, un análisis centrado en la persona encontró dos perfiles de autorregulación + co-regulación (humana y con IA generativa): el perfil &#39;positivo&#39; (37.5%) tuvo mejor comunicación, colaboración y satisfacción que el perfil &#39;negativo&#39; (62.5% de la muestra).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esto valida diseñar el andamiaje de IA en AMAUTA por perfil de autorregulación del estudiante, no como feature genérico; que más de la mitad caiga en el perfil &#39;negativo&#39; es alerta si se sueltan tutores de IA sin entrenar antes la autorregulación.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/95772" target="_blank" rel="noopener">↗ doi.org/10.2196/95772</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Promise, Mimicry, and Surveillance: Responsibly Integrating Artificial Intelligence With Socratic Inquiry in Medical Education</div>
+          <div class="r10-line">Un viewpoint nombra dos fallas concretas de usar LLMs para diálogo socrático a escala: la &#39;trampa de la mimetización&#39; (preguntas que suenan socráticas sin generar metacognición real) y la &#39;Paradoja del Panóptico&#39; (la vigilancia que hace efectivo al tutor de IA erosiona la seguridad psicológica que la indagación socrática necesita).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos dos constructos se citan repetidamente en 2027 como marco crítico estándar contra el hype de &#39;tutores IA socráticos&#39;; útil ya mismo como vocabulario preciso para el propio escepticismo de Javier hacia la IA educativa sin evidencia.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/102958" target="_blank" rel="noopener">↗ doi.org/10.2196/102958</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health, 10 sep 2026 · review · 2026-09-10</div>
+          <div class="r10-title">Tool or Companion? Reframing Conversational AI to Prevent Psychological Harm</div>
+          <div class="r10-line">Una revisión conceptual (King&#39;s College, Northeastern) mapea cómo el diseño que evoca calidez y personalidad en chatbots (Replika, Character.AI, ChatGPT, Claude) genera una asimetría estructural que puede reforzar sobrevalidación, ideación delirante y dependencia emocional en usuarios vulnerables.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: en el próximo año esto alimenta guías clínicas formales sobre cuándo advertir sobre &#39;compañía de IA&#39; en pacientes con riesgo psicótico o afectivo; material directo para contenido de Javier sobre los límites reales de la IA &#39;empática&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/99354" target="_blank" rel="noopener">↗ doi.org/10.2196/99354</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El biomarcador de psicosis resistente a tratamiento (ACE) no se ve en la actividad enzimática, solo en la cantidad de proteína: medir &#39;cuánto hay&#39; predice mejor que medir &#39;qué tan bien funciona&#39;, recordatorio de que en psiquiatría de precisión la variable correcta no siempre es la obvia.</li><li>Un panel de 5 LLMs fue más consistente que 10 jueces humanos expertos calibrando el punto de corte de un examen, no porque &#39;sepan más medicina&#39;, sino porque no arrastran la variabilidad entre jueces que afecta a los humanos.</li><li>La IA-tutor solo ayudó más a los estudiantes con mejor línea base (&#39;umbral cognitivo&#39;) en el estudio de pacientes virtuales: el estudiante que más necesita ayuda es, paradójicamente, al que menos beneficia un tutor de IA sin andamiaje extra.</li><li>En más de 50,000 niños noruegos, no fue el nivel de temperamento sino la desviación respecto a la propia trayectoria esperada del niño lo que predijo riesgo transdiagnóstico: la psiquiatría de precisión pediátrica se mueve de &#39;¿cuánto tiene?&#39; a &#39;¿cuánto se desvió de sí mismo?&#39;.</li><li>El hablar —la prosodia, no el contenido— predice depresión y ansiedad perinatal casi tan bien como combinarlo con datos sociodemográficos, y agregar esos datos no mejoró (incluso empeoró levemente) el modelo de depresión.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué pasaría si Javier corriera un panel de LLMs equivalente al del estudio Angoff sobre su propio banco de preguntas ENAM/Residentado y comparara el punto de corte resultante con el de sus jueces actuales?</li><li>Si la trayectoria de temperamento —no el nivel absoluto— predice riesgo transdiagnóstico en niños noruegos, ¿qué instrumento longitudinal de bajo costo podría implementarse en controles de niño sano en Perú para capturar &#39;desviación de trayectoria&#39; en vez de un solo corte transversal?</li><li>¿La resistencia al tratamiento en psicosis se explica mejor por proteína ACE circulante que por el riesgo poligénico del gen ACE? ¿Qué otros pares &#39;proteína vs. genotipo&#39; valdría la pena separar así en depresión resistente?</li><li>Si el beneficio de los pacientes virtuales con IA depende de un &#39;umbral cognitivo&#39; de base, ¿cómo se diseñaría en AMAUTA un andamiaje diferenciado para el estudiante de bajo desempeño al que la IA sola no ayuda?</li><li>¿Qué tan generalizable es la &#39;Paradoja del Panóptico&#39; —la vigilancia que hace efectivo al tutor de IA erosiona la seguridad psicológica— a la vigilancia por fenotipado digital en pacientes psiquiátricos, donde el mismo dato que predice una crisis podría erosionar la relación terapéutica?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel IG explicando la &#39;trampa de la mimetización&#39; y la &#39;Paradoja del Panóptico&#39; (JMIR Med Educ) como los dos riesgos reales de usar IA como tutor socrático, para la audiencia AMAUTA escéptica de la IA educativa sin evidencia.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Piloto interno en AMAUTA: correr un panel de 3-5 LLMs haciendo Angoff modificado sobre un examen piloto ENAM y comparar G/Φ/RMSE contra el panel de jueces humanos actual, replicando el diseño del estudio de Dubai Medical University.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional: &#39;de categoría a trayectoria&#39;, usando el estudio noruego de temperamento transdiagnóstico (Centre for Precision Psychiatry, Oslo) como caso ejemplar de HiTOP/RDoC aplicado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/video comparando los tres &#39;biomarcadores de estratificación&#39; de esta semana (ACE en psicosis resistente, EEG gamma en autismo, ML-EHR para inicio de clozapina) como mapa de qué tan cerca está cada uno de uso clínico real vs. promesa.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota metodológica corta explorando si el &#39;umbral cognitivo&#39; del estudio chino de pacientes virtuales con IA (el beneficio de la IA depende de la línea base del estudiante) se replica en la simulación clínica de USAMEDIC.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag highlight">JAMA Psychiatry</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Bioinformatics</span><span class="tag ">Schizophrenia Research</span><span class="tag ">European Neuropsychopharmacology</span><span class="tag ">Journal of Clinical Psychiatry</span><span class="tag ">Journal of Neuropsychiatry and Clinical Neurosciences</span><span class="tag ">JMIR Research Protocols</span><span class="tag ">JMIR Mental Health</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch, últimas 72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
