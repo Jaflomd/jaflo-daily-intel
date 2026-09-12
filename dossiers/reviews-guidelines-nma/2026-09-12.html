@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">12 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">136</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">84</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Clinical Child &amp; Family Psychology Review · 2026-09-11 · review</div>
+        <h3 class="r3-title">Do Psychological Interventions Reduce Paranoia in Adolescents? A Systematic Review</h3>
+        <p class="r3-hook">Revisión sistemática que sintetiza 30 estudios (10 ECA, 13 diseños de un solo brazo, 7 series de casos) sobre intervenciones psicológicas que miden cambios en paranoia en menores de 25 años: las intervenciones basadas en terapia cognitivo-conductual muestran los efectos más prometedores, pero la mayoría de estudios no fue diseñada específicamente para tratar paranoia y la calidad metodológica es débil. Para tu línea de psiquiatría dimensional (HiTOP/RDoC) es evidencia de primera mano de que la paranoia funciona como síntoma transdiagnóstico -no exclusivo de psicosis- que rara vez se trata como blanco terapéutico propio en adolescentes. Para tu libro de psicopatología para el mundo es un caso claro de la brecha entre &#39;existe un síntoma prevalente y deteriorante&#39; y &#39;existe un tratamiento diseñado para él&#39;. Ángulo de contenido: &#39;la paranoia adolescente casi nunca se trata como blanco terapéutico en sí misma -esta revisión muestra qué funciona y por qué la evidencia sigue siendo débil&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10567-026-00587-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s10567-026-00587-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Child &amp; Adolescent Psychiatry · 2026-09-11 · review</div>
+        <h3 class="r3-title">Disparities in Treatment Initiation Following Diagnosis of Attention-Deficit/Hyperactivity Disorder: A Systematic Review</h3>
+        <p class="r3-hook">Revisión sistemática (12 de 6,223 estudios identificados) sobre disparidades sociodemográficas en el tiempo hasta iniciar tratamiento tras diagnóstico de TDAH en niños y adolescentes: los varones inician tratamiento antes que las mujeres, y minorías étnicas/raciales, familias de menores ingresos y poblaciones rurales enfrentan demoras mayores, con variación geográfica pero sin diferencias consistentes por tipo de seguro. Para tu línea TDAH/TEA/neurodivergencia es evidencia directa de un sesgo de género en el acceso a tratamiento que rara vez se discute más allá del subdiagnóstico en mujeres -aquí el diagnóstico ya ocurrió y el retraso está en lo que sigue. Para AMAUTA/USAMEDIC es un dato de alto rendimiento sobre equidad en salud mental infantil, y para tu comité de ética (HVLH) es un caso concreto de inequidad estructural post-diagnóstica. Ángulo de contenido: &#39;diagnosticar TDAH no es el final de la brecha de género -esta revisión muestra que el retraso en iniciar tratamiento también está sesgado&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00787-026-03159-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s00787-026-03159-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Epilepsia · 2026-09-09 · review</div>
+        <h3 class="r3-title">A Systematic Review on Mental Health Issues in Adults with Newly Diagnosed Epilepsy</h3>
+        <p class="r3-hook">Revisión sistemática de 21 publicaciones (4,728 adultos, 10 países) sobre salud mental en epilepsia de reciente diagnóstico: síntomas depresivos en 11-50% de los tamizados (depresión formal en 2.9-13.3%), síntomas ansiosos en 25-35%, y estigma percibido en 25-53%, con heterogeneidad tan alta entre estudios que impidió hacer un metaanálisis formal. Para tu foco secundario de neuropsiquiatría es un llamado directo a integrar tamizaje psiquiátrico y psicoeducación desde el momento del diagnóstico neurológico, no después. Para AMAUTA/USAMEDIC es contenido de examen sobre comorbilidad psiquiátrica en epilepsia con un matiz metodológico poco enseñado: por qué tanta heterogeneidad impide sintetizar un número único de prevalencia. Ángulo de contenido: &#39;la salud mental en epilepsia de reciente diagnóstico se atiende tarde -y la heterogeneidad de la evidencia explica por qué nadie te puede dar un número exacto de cuánta gente la sufre&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1002/epi.70422" target="_blank" rel="noopener">↗ doi.org/10.1002/epi.70422</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Network Meta-Analysis en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Health Research Policy and Systems · 2026-09-10 · guideline</div>
+        <h3 class="r3-title">Adaptation and Pilot Implementation of the WHO Guideline on Digital Intervention to Strengthen Mental Health Systems in Lagos State, Nigeria</h3>
+        <p class="r3-hook">Estudio de adaptación e implementación piloto (marco ADAPTE, apreciación AGREE-II con puntaje global de 79.3%) de la Guía OMS sobre intervenciones digitales para fortalecer sistemas de salud mental (WHO-GRDI), pilotada en cinco sistemas de atención primaria en Lagos, Nigeria: notificación de stock de fármacos, supervisión y comunicación dirigida obtuvieron efectividad percibida de 80-92% y aceptabilidad de 80.5-91%, pero comunicación clínico-paciente y soporte de decisión clínica generaron dudas. Para tu línea de IA aplicada a investigación y educación y tu foco en psiquiatría de precisión, es un caso real -no teórico- de cómo adaptar una guía digital global a un sistema de salud de recursos limitados, con AGREE-II como herramienta de apreciación que podría aplicarse a cualquier protocolo digital que diseñes para AMAUTA. Ángulo de contenido: &#39;la OMS tiene una guía sobre intervenciones digitales en salud mental -este es el primer reporte real de qué funciona y qué no al llevarla a la práctica en un sistema de recursos limitados&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1186/s12961-026-01463-8" target="_blank" rel="noopener">↗ doi.org/10.1186/s12961-026-01463-8</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychological Medicine · 2026-09-09 · meta-analysis</div>
+        <h3 class="r3-title">No Evidence for a Generalised Predictive Processing Deficit in Psychosis: A Meta-Analysis</h3>
+        <p class="r3-hook">Metaanálisis de efectos aleatorios registrado en PROSPERO (CRD42024574379) sobre 34 resultados de 27 estudios (904 personas con psicosis del espectro esquizofrenia vs. 1,039 controles sanos) que evalúa si la psicosis implica una dependencia anómala de &#39;priors&#39; según la teoría de procesamiento predictivo: no encuentra evidencia de dependencia atípica de priors ni asociación con delirios o alucinaciones, ni en el análisis jerárquico de subgrupos. Para tu línea de psiquiatría dimensional/de precisión y tu interés en marcos computacionales (RDoC, network theory) es un resultado negativo de alto valor -desafía uno de los marcos explicativos más citados de la psicosis computacional y es material ideal para enseñar por qué un hallazgo negativo bien registrado en PROSPERO vale más que una teoría atractiva sin respaldo consistente. Ángulo de contenido: &#39;el marco de procesamiento predictivo de la psicosis, tan citado en psiquiatría computacional, no sobrevive a este metaanálisis -qué significa cuando la teoría más elegante no tiene la evidencia detrás&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726105455" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105455</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Journal of Psychotraumatology · 2026-09-09 · meta-analysis</div>
+        <h3 class="r3-title">Effectiveness and Moderators of PE and CPT in Adult PTSD Treatment: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Metaanálisis de gran escala (175 brazos de tratamiento, 163 estudios) que compara Exposición Prolongada (PE) y Terapia de Procesamiento Cognitivo (CPT) para TEPT en adultos: efecto agrupado grande (Hedges&#39; g=1.67, IC 95% 1.56-1.79), y en el análisis de sensibilidad -tras excluir 10 outliers- PE mostró efectos mayores que CPT en muestras no militares, con efectos más grandes en mayor proporción de mujeres, muestras militares y menor prevalencia de trauma sexual. Para tu línea de razonamiento clínico es un ejemplo excelente de por qué los moduladores de muestra importan más que declarar un tratamiento &#39;superior&#39; en abstracto. Para AMAUTA/USAMEDIC es contenido de examen de alto rendimiento sobre las dos terapias basadas en evidencia más citadas para TEPT, con el matiz -poco enseñado- de que la superioridad de PE sobre CPT depende del contexto de la muestra. Ángulo de contenido: &#39;¿PE o CPT para TEPT? este metaanálisis con 163 estudios muestra que la respuesta correcta depende de a quién le preguntas, no de cuál terapia es objetivamente mejor&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/20008066.2026.2709751" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2709751</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Scientific Reports · 2026-09-11 · meta-analysis</div>
+        <h3 class="r3-title">Efficacy of Prescription-Eligible Digital Health Applications for Depression and Generalized Anxiety Disorder in Germany: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Revisión sistemática y metaanálisis de 19 ECA (4,078 participantes) sobre la eficacia de las aplicaciones digitales de salud mental con receta médica (DiGA) en Alemania, vigentes desde 2020: reducen la severidad de síntomas depresivos frente a control tanto inmediatamente como en seguimiento, mientras la evidencia para ansiedad generalizada es limitada, y el hallazgo depende sobre todo de pocas aplicaciones (particularmente Deprexis), no de todo el ecosistema DiGA. Para tu línea de IA aplicada a investigación y educación y tu interés en psiquiatría de precisión es el modelo más maduro que existe hoy de &#39;app con receta médica&#39; integrada a un sistema de salud nacional, con el matiz crítico -poco difundido- de que la evidencia agregada no es representativa de todas las DiGA. Ángulo de contenido: &#39;Alemania ya tiene apps de salud mental con receta médica desde 2020 -este metaanálisis muestra qué tan sólida es realmente la evidencia detrás, y por qué no es tan sólida como el modelo sugiere&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41598-026-68875-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-68875-y</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El metaanálisis PROSPERO-registrado de Psychological Medicine (904 con psicosis vs. 1,039 controles) no encuentra evidencia de dependencia anómala de &#39;priors&#39; en psicosis -un resultado negativo que cuestiona uno de los marcos computacionales más citados en psiquiatría dimensional.</li><li>En disparidades de TDAH, los varones inician tratamiento antes que las mujeres tras el mismo diagnóstico -la brecha de género no termina en el subdiagnóstico, continúa después del diagnóstico mismo.</li><li>En el metaanálisis de PE vs. CPT para TEPT (163 estudios), tras excluir 10 outliers, PE mostró efectos mayores que CPT específicamente en muestras no militares -la superioridad depende del contexto de la muestra, no es absoluta.</li><li>La guía digital de la OMS (WHO-GRDI) piloteada en Lagos obtuvo 79.3% en apreciación AGREE-II y hasta 92% de efectividad percibida en notificación de stock y supervisión, pero el soporte de decisión clínica generó dudas -la adaptación de guías digitales globales no es uniforme entre sus propios componentes.</li><li>En epilepsia de reciente diagnóstico, la heterogeneidad entre los 21 estudios disponibles fue tan alta que impidió calcular una prevalencia agrupada de depresión o ansiedad -un caso de manual de por qué &#39;la evidencia existe&#39; no siempre significa &#39;la evidencia se puede sintetizar en un número&#39;.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Deberíamos dejar de enseñar el procesamiento predictivo como marco explicativo unificador de la psicosis, dado que el metaanálisis más grande hasta ahora no encuentra el déficit que predice?</li><li>¿Qué barreras estructurales -no solo clínicas- explican que las mujeres con TDAH inicien tratamiento más tarde que los varones incluso después de recibir el mismo diagnóstico?</li><li>¿Cómo se vería un protocolo de tamizaje psiquiátrico estandarizado al momento del diagnóstico de epilepsia, dado que la heterogeneidad actual impide saber la prevalencia real de comorbilidad?</li><li>Si la superioridad de PE sobre CPT en TEPT depende de si la muestra es militar o no, ¿qué tan seguros podemos estar de recomendar &#39;primera línea&#39; sin especificar la población?</li><li>¿Qué elementos del proceso de adaptación AGREE-II/ADAPTE usado para la guía digital de la OMS en Nigeria serían trasladables a un protocolo de salud mental digital diseñado para el sistema peruano?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo: &#39;la teoría más citada de por qué la psicosis distorsiona la realidad (procesamiento predictivo) acaba de perder su metaanálisis más grande -qué significa cuando la evidencia no acompaña a la teoría elegante&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video comparativo PE vs. CPT para TEPT explicando por qué &#39;cuál es mejor&#39; es la pregunta equivocada sin especificar población militar/no militar y proporción de mujeres en la muestra.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o carta breve proponiendo tamizaje psiquiátrico estandarizado desde el diagnóstico de epilepsia en servicios peruanos, citando la heterogeneidad de Epilepsia 2026 como justificación de un protocolo local.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología sobre la paranoia adolescente como síntoma transdiagnóstico tratable en sí mismo, no solo como marcador de riesgo de psicosis.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre la brecha de género post-diagnóstico en TDAH (inicio de tratamiento más tardío en mujeres) como extensión del discurso habitual de infradiagnóstico, con enfoque en equidad para AMAUTA.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Clinical Child &amp; Family Psychology Review</span><span class="tag ">European Child &amp; Adolescent Psychiatry</span><span class="tag ">Epilepsia</span><span class="tag ">Health Research Policy and Systems</span><span class="tag ">Psychological Medicine</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">Scientific Reports</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch) · WebSearch de verificación sobre bodies normativos (NICE/CANMAT/APA/WFSBP) - sin guías nuevas verificables dentro de la ventana de 48-72h. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
