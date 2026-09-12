@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">12 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">320</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Trends in Cognitive Sciences · Quilty-Dunn J, Wood JN — 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">The nativist-empiricist debate is broken</h3>
+        <p class="r3-hook">Usando &#39;controlled rearing&#39; (crianza controlada de animales recién nacidos) y redes neuronales de dominio general entrenadas bajo condiciones de desarrollo emparejadas, los autores muestran que el mismo fenómeno de desarrollo sostiene tanto la hipótesis nativista radical como la empirista radical: el debate no se resuelve empíricamente porque es un error conceptual que confunde niveles explicativos (estructuras simbólicas estables vs. los procesos subsimbólicos que las producen). Proponen disolver la dicotomía dentro de un marco multinivel del desarrollo cognitivo. Le importa a Javier directamente en su psiquiatría dimensional (HiTOP/RDoC): es el mismo error conceptual — tratar &#39;biológico vs. aprendido&#39; o &#39;categórico vs. dimensional&#39; como polos que compiten en un solo nivel — que él ya combate al defender modelos dimensionales frente al DSM categórico, y es material directo para el libro de psicopatología y la línea TDAH/TEA, donde el debate &#39;innato vs. adquirido&#39; sigue mal planteado. Cómo usarlo: adoptar el marco multinivel de Quilty-Dunn &amp; Wood como plantilla explícita para un capítulo del libro que explique por qué preguntar &#39;¿el TDAH es genético o ambiental?&#39; es la pregunta mal hecha, reformulándola en niveles (estructura sintomática estable vs. mecanismos subyacentes que la generan), coherente con su defensa de network theory sobre HiTOP.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.tics.2026.08.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.tics.2026.08.004</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Research Square (preprint) · Akhtar MAK — 11 sep 2026 · preprint · 2026-09-11</div>
+        <h3 class="r3-title">Possibility Ethics: Measuring Moral Value as the Expansion of Safe Future Options in Sociotechnical Systems</h3>
+        <p class="r3-hook">Propone &#39;Possibility Ethics&#39;, un marco ético computacional que mide el valor moral de un diseño sociotécnico no por principios abstractos (autonomía, justicia, no maleficencia) sino por cuánto ese diseño preserva o expande las opciones de futuro viables y éticamente admisibles para cada cohorte afectada, formalizado en una cantidad central, &#39;Option Entropy&#39; (Ωᵢᵈ = log(κ + Kᵢᵈ) − log κ), con protección explícita de subgrupos, salvaguardas de no-regresión y un mecanismo de &#39;Option Repair&#39; cuando un diseño reduce opciones. Le importa a Javier como investigador de psiquiatría de precisión y miembro de comités de ética (HVLH): es un marco cuantificable para comparar decisiones de diseño (¿qué algoritmo de triage, qué protocolo, qué criterio de derivación?) no solo por &#39;es autónomo/justo&#39; sino por cuántas opciones de vida futura preserva realmente el paciente, con protección de subgrupos vulnerables — relevante a TDAH/TEA. Cómo usarlo: como marco explícito para las decisiones del comité HVLH al evaluar tecnología o algoritmos clínicos, y como concepto citable para un paper o capítulo sobre ética computacional en psiquiatría de precisión; &#39;Option Entropy&#39; es también un nombre transferible a contenido de Instagram/YouTube sobre por qué una intervención &#39;bien intencionada&#39; puede ser éticamente mala si cierra opciones futuras del paciente. (Nota: preprint aún sin revisión por pares.)</p>
+        <a class="r3-link" href="https://doi.org/10.21203/rs.3.rs-10396743/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10396743/v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PsyArXiv (preprint) · Lanfranco RC — 11 sep 2026 · preprint · 2026-09-11</div>
+        <h3 class="r3-title">Perceptual awareness as an information-distribution problem</h3>
+        <p class="r3-hook">Propone un marco de teoría de la información (información mutua, información mutua condicional, co-información) para tratar la conciencia perceptual no como un fenómeno único sino como un problema de cómo se distribuye la información del estímulo entre las decisiones objetivas y los reportes subjetivos, permitiendo distinguir formalmente conciencia de contenido específico, claridad perceptual y confianza en vez de tratarlos como intercambiables, y vinculando estas cantidades a la sensibilidad metacognitiva. Le importa a Javier porque le da un marco formal y separable para algo que su línea de razonamiento clínico necesita constantemente: distinguir si un residente (o un paciente) &#39;no percibió bien&#39;, &#39;percibió pero no está seguro&#39; o &#39;percibió, está seguro, pero reporta mal&#39; — exactamente el tipo de separación que la psiquiatría dimensional necesita para no confundir déficit perceptual con déficit metacognitivo o de reporte, con aplicación directa a TEA. Cómo usarlo: como marco citable para diseñar instrumentos o viñetas de evaluación en AMAUTA que separen explícitamente &#39;no vio el signo clínico&#39; de &#39;lo vio pero no confió en su propio juicio&#39; — dos fallas de razonamiento con remedios pedagógicos distintos — y como anclaje teórico para un capítulo del libro de neurociencia educativa sobre metacognición perceptual. (Nota: preprint aún sin revisión por pares.)</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/zmf5h_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/zmf5h_v1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Trends in Cognitive Sciences · Vartanian O, Skov M, Nadal M, Chatterjee A — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Valuation as a bridge between aesthetics and creativity</div>
+          <div class="r10-line">Proponen que crear y apreciar arte comparten el mismo mecanismo de cómputo de valor del sistema de recompensa: la creatividad sería, en el fondo, una forma de evaluación estética aplicada a las propias ideas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: marco reusable para el pilar content-documentation de Javier — argumenta que &#39;ser creativo&#39; y &#39;tener buen juicio estético/clínico&#39; comparten circuito, útil para justificar por qué entrenar juicio clínico también entrena creatividad docente.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.tics.2026.08.005" target="_blank" rel="noopener">↗ doi.org/10.1016/j.tics.2026.08.005</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">NeuroImage · Bachman MD, HajiHosseini A, Cho H, Nemrodov D, Nestor A, Hutcherson CA — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Multivariate decoding of EEG reveals key spatial and temporal distinctions in perception and valuation</div>
+          <div class="r10-line">Con clasificación multivariada de EEG, muestran que el cerebro decodifica primero atributos perceptuales en paralelo y solo después integra el valor de forma secuencial, separando temporalmente &#39;percibir&#39; de &#39;valorar&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato de mecanismo complementario al de Vartanian et al. — candidato a biomarcador temporal de cuándo un residente pasa de &#39;percibir el caso&#39; a &#39;valorar/decidir sobre el caso&#39;, útil para la línea de neuromodulación/precisión de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroimage.2026.122230" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroimage.2026.122230</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint) · Chen J, Zhang R, Xu C, et al. — 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">MDT-guided language-model reasoning for spinal infection diagnosis</div>
+          <div class="r10-line">Un flujo de trabajo que obliga a un LLM a organizar evidencia dispersa al estilo de una junta multidisciplinaria (con reconciliación explícita de conflictos) mejora la exactitud diagnóstica frente a un LLM en zero-shot, y cambia cómo deciden los clínicos que reciben ese consejo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: evidencia temprana (preprint, sin revisión por pares) de que el valor de la IA en razonamiento clínico está en la estructura de deliberación que se le impone, no en el modelo en sí — relevante para cómo Javier diseñe tutores de IA en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10692703/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10692703/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Human Factors · Warner S, Stucky CH, Haegerich T, Yauger YJ — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">The Cognitive Transaction: Toward a Human Factors Research Agenda for AI in Anesthesia and Perioperative Care</div>
+          <div class="r10-line">Acuñan &#39;transacción cognitiva&#39; para nombrar el momento preciso en que un clínico, bajo presión de tiempo extrema, decide qué hacer con un output de IA, y argumentan que ese momento — no el modelo ni la implementación organizacional — es la unidad real de estudio.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;transacción cognitiva&#39; es un término citable y transferible fuera de anestesia, aplicable a cualquier momento en que un residente de AMAUTA deba decidir en tiempo real qué hacer con una sugerencia de IA en un caso agudo.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/102683" target="_blank" rel="noopener">↗ doi.org/10.2196/102683</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLOS Digital Health · Parkington K, Joseph JT, Musleh K, et al. — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Leveraging prompt-driven generative AI for systematic reviews in digital psychiatry: A stage-matched comparative proof-of-concept for healthcare researchers and clinicians</div>
+          <div class="r10-line">Compararon tres modos de GPT-5 (Auto, Agent, Deep Research) contra un flujo humano de consenso en una revisión sistemática registrada en PROSPERO de psiquiatría digital, evaluando cada etapa (búsqueda, tamizaje, extracción, síntesis) por separado en vez de juzgar &#39;la IA&#39; en bloque.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: metodología directamente adoptable para las revisiones sistemáticas de Javier como investigador RENACYT — evaluar cada etapa del flujo con un modo de IA distinto, con monitoreo explícito de alucinaciones antes de confiar en cualquier etapa.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pdig.0001666" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pdig.0001666</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cyberpsychology, Behavior, and Social Networking · Yang S, Oh S, Shim HE — 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Prompting with Respect: Cultural Norms and User Experience in LLM Interactions</div>
+          <div class="r10-line">En 43 universitarias coreanas, un prompt &#39;respetuoso&#39; (cortesía, gratitud) generó más satisfacción y respuestas socialmente más cálidas de ChatGPT que un prompt &#39;directivo&#39; (imperativos, crítica), aunque la calidad percibida del output casi no cambió.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato accionable para el pilar de comunicación del Competency Lab — cómo se le habla a la IA moldea la experiencia subjetiva del usuario independientemente de la calidad del resultado, transferible a cómo Javier enseña a comunicarse con pacientes.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/21522715261484255" target="_blank" rel="noopener">↗ doi.org/10.1177/21522715261484255</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Movement Disorders · Rovetta A, Biscetti L, Mansournia MA — 10 sep 2026 · editorial · 2026-09-10</div>
+          <div class="r10-title">What P-Values Can (and Cannot) Tell Us in Clinical Neurology</div>
+          <div class="r10-line">Autores vinculados al comité internacional contra el mal uso de la significancia estadística (ICAMSS) publican una revisión crítica sobre los límites de interpretación del valor-p en neurología clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: munición citable para Javier como revisor e investigador RENACYT al evaluar papers propios o ajenos que usan p-valores como única evidencia de un hallazgo clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/mds.70503" target="_blank" rel="noopener">↗ doi.org/10.1002/mds.70503</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Quarterly Journal of Experimental Psychology · Yahya M, Şişman Bal S — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">EXPRESS: Task-Specific Effects of Bilingualism on Proactive and Reactive Cognitive Control</div>
+          <div class="r10-line">En 98 participantes turcos (bilingües y monolingües) probados en tres tareas ejecutivas distintas, el efecto del bilingüismo sobre el control cognitivo proactivo vs. reactivo depende completamente de la demanda específica de la tarea, sin &#39;ventaja bilingüe&#39; general.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: refuerza para la línea TDAH/TEA de Javier que el control ejecutivo no es una capacidad única y generalizable — hay que medir proactivo y reactivo por separado, según la tarea, antes de hablar de &#39;déficit ejecutivo&#39; en un paciente.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/17470218261490486" target="_blank" rel="noopener">↗ doi.org/10.1177/17470218261490486</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Epidemiology · Tao J, Li Y, He X, et al. — 10 sep 2026 · review · 2026-09-10</div>
+          <div class="r10-title">How do mapping reviews meet needs of public health decision-makers? A Scoping Review</div>
+          <div class="r10-line">Revisión de 77 estudios sobre &#39;mapping reviews&#39; (mapas de evidencia) para decisores de salud pública: identifica qué características de diseño y reporte realmente sirven para que un decisor use el mapa, no solo para que exista.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: checklist reusable para Javier como investigador RENACYT al diseñar o evaluar mapas de evidencia dirigidos a decisores de política de salud mental, en vez de producir un mapa que nadie usa.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jclinepi.2026.112505" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jclinepi.2026.112505</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Developmental Neuropsychology · Zerouali S, Kaddouri H, El-Kamia A, Bouayad M, Alaoui S — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Cognitive Flexibility Deficits in Developmental Dyscalculia: A Robust, Intelligence-Independent Impairment</div>
+          <div class="r10-line">En 64 niños marroquíes de cuarto grado, el déficit de flexibilidad cognitiva en discalculia del desarrollo persiste incluso ajustando por memoria de trabajo, inhibición e inteligencia no verbal (d ajustado = 2.54), con un AUC diagnóstico de 0.97.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato fino para la línea TDAH/TEA/neurodivergencia de Javier — la flexibilidad cognitiva parece un marcador transdiagnóstico específico y medible, separable de la &#39;inteligencia general&#39;, con utilidad diagnóstica potencial si se replica fuera de Marruecos.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/87565641.2026.2731213" target="_blank" rel="noopener">↗ doi.org/10.1080/87565641.2026.2731213</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Preguntar &#39;¿es innato o aprendido?&#39; puede ser la pregunta mal planteada: cuando se prueba al límite empírico, el mismo dato sostiene ambas respuestas — el error está en confundir niveles explicativos, no en la evidencia (Quilty-Dunn &amp; Wood, 2026).</li><li>Un diseño &#39;bien intencionado&#39; puede ser éticamente malo si reduce las opciones de futuro de alguien, incluso sin violar autonomía o justicia en el sentido clásico — &#39;Option Entropy&#39; lo hace medible en vez de solo argumentable (Akhtar, 2026).</li><li>Percibir mal, no confiar en lo que se percibió, y reportarlo mal son tres fallas distintas del razonamiento clínico; tratarlas como una sola (&#39;falta de atención&#39;) es un error común al enseñar semiología (Lanfranco, 2026).</li><li>El momento en que un clínico decide qué hacer con una sugerencia de IA bajo presión de tiempo extrema — la &#39;transacción cognitiva&#39; — es la unidad real que falla o funciona, no el modelo ni la política institucional que lo implementó (Warner et al., 2026).</li><li>Cómo le hablas a un chatbot (con cortesía vs. con órdenes) cambia tu propia experiencia subjetiva de la interacción aunque el resultado objetivo sea el mismo: la cortesía no es decorativa, es parte del mecanismo (Yang et al., 2026).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Cuando defiendes la psiquiatría dimensional frente al DSM categórico, ¿estás en realidad cometiendo el mismo error de nivel explicativo que describen Quilty-Dunn &amp; Wood para el debate innato-aprendido, o tu argumento evita esa trampa?</li><li>Si aplicaras &#39;Option Entropy&#39; a una decisión reciente del comité de ética HVLH, ¿esa decisión habría expandido o reducido las opciones de futuro del paciente más vulnerable del caso?</li><li>En tu próxima evaluación de un residente, ¿puedes separar si &#39;no vio el signo&#39;, &#39;lo vio pero no confió en su juicio&#39; o &#39;lo vio, confió, pero lo reportó mal&#39; — o los tres se te mezclan en un solo &#39;no razonó bien&#39;?</li><li>¿En qué momento exacto de tu propio uso de IA en investigación o docencia ocurre tu &#39;transacción cognitiva&#39; — y tienes protocolo para ese momento, o lo decides ad hoc cada vez?</li><li>Si la flexibilidad cognitiva es un marcador transdiagnóstico separable de la inteligencia general (como en discalculia), ¿la estás midiendo en tus pacientes con TDAH/TEA, o solo evalúas inhibición y memoria de trabajo?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post IG/YT sobre por qué &#39;¿es genético o ambiental?&#39; es la pregunta mal hecha, usando el marco multinivel de Quilty-Dunn &amp; Wood (2026), con ejemplo directo del TDAH.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología aplicando &#39;Option Entropy&#39; (Akhtar, 2026) como forma de evaluar si una intervención en salud mental expande o reduce las opciones de futuro real del paciente.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA que enseñe a separar las tres fallas de razonamiento clínico del marco de Lanfranco (2026) — percepción, confianza, reporte — con casos ENAM reales.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper corto proponiendo &#39;transacción cognitiva&#39; (Warner et al., 2026) como marco para estudiar cómo los residentes usan sugerencias de IA en decisiones psiquiátricas agudas.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Protocolo de investigación propio adaptando el flujo de revisión sistemática asistido por GPT-5 de Parkington et al. (2026) para acelerar una revisión sistemática de AMAUTA/USAMEDIC, con el mismo monitoreo de alucinaciones por etapa.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Trends in Cognitive Sciences</span><span class="tag ">NeuroImage</span><span class="tag ">Movement Disorders</span><span class="tag ">Quarterly Journal of Experimental Psychology</span><span class="tag ">Journal of Clinical Epidemiology</span><span class="tag ">JMIR Human Factors</span><span class="tag ">PLOS Digital Health</span><span class="tag ">Cyberpsychology, Behavior, and Social Networking</span><span class="tag ">Developmental Neuropsychology</span><span class="tag ">Research Square (preprints)</span><span class="tag ">PsyArXiv (preprints)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · Europe PMC · PsyArXiv · Research Square. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
