@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-12 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">12 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">30</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">5</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">The Journal of ECT, 10 sep 2026 · rct · 2026-09-10</div>
+        <h3 class="r3-title">Efficacy of Adjunctive Deep Transcranial Magnetic Stimulation in Obsessive-Compulsive Disorder: A Randomized Sham-Controlled Study</h3>
+        <p class="r3-hook">RCT sham-controlado (n=49) en TOC resistente a tratamiento estándar: dTMS de alta frecuencia como adyuvante durante 2 semanas produjo una caída de Y-BOCS de -10.4 puntos vs. -2.6 con sham (g=1.39, p&lt;0.001), con tasa de respuesta de 75% frente a apenas 5% en el grupo sham, y mejoras secundarias también en ansiedad y depresión. Le importa a Javier porque es evidencia dura y bien controlada (no un piloto abierto) de que la neuromodulación no es solo &#39;TMS para depresión&#39;: aquí hay una señal robusta y de tamaño de efecto grande en TOC resistente, justo la intersección de sus líneas de neuromodulación y razonamiento clínico. Es material directo para un módulo AMAUTA/USAMEDIC sobre indicaciones de TMS más allá de depresión mayor, o para su libro de psicopatología al ilustrar cómo un ensayo pequeño pero bien diseñado (sham real, doble ciego) puede mover más la aguja clínica que un estudio observacional grande.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/YCT.0000000000001145" target="_blank" rel="noopener">↗ doi.org/10.1097/YCT.0000000000001145</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychological Medicine, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+        <h3 class="r3-title">No evidence for a generalised predictive processing deficit in psychosis: A meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis registrado en PROSPERO (34 comparaciones de 27 estudios, 904 personas con psicosis del espectro esquizofrenia vs. 1039 controles) que pone a prueba una de las teorías dimensionales más influyentes de la última década — que la psicosis refleja un sesgo generalizado hacia expectativas previas sobre evidencia sensorial (predictive processing) — y no encuentra evidencia de ese déficit generalizado (g=.03, IC95% -0.27 a 0.34), ni asociación consistente con delirios (r=-.16, p=.293) ni alucinaciones (r=.04, p=.780). Le importa a Javier porque es exactamente el tipo de resultado que su marco dimensional/RDoC necesita tomar en serio: una teoría de moda, popular en círculos de neurociencia computacional, que al meta-analizarse no sostiene su versión &#39;generalizada&#39;. Es una perla perfecta para enseñar rigor en su libro de psicopatología o en clases de razonamiento clínico — cómo una teoría atractiva y muy citada puede no sobrevivir la síntesis cuantitativa, y por qué eso no invalida el enfoque dimensional sino que exige versiones más específicas y falsables del modelo.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/S0033291726105455" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105455</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PsyArXiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+        <h3 class="r3-title">A systematic review and meta-analysis on motion sensitivity in schizophrenia</h3>
+        <p class="r3-hook">Revisión sistemática con meta-análisis (41 estudios) que encuentra un déficit robusto y de magnitud media en sensibilidad al movimiento visual en esquizofrenia (g=0.59, IC95% 0.49-0.68), consistente independientemente del uso de antipsicóticos, y más marcado para estímulos pequeños que grandes (posible alteración de supresión espacial); los autores piden controlar mejor los lapsos atencionales en estudios futuros para separar déficit perceptual genuino de un problema de atención. Le importa a Javier porque es un candidato a biomarcador perceptual transdiagnóstico —medible con una tarea psicofísica simple, no con neuroimagen cara— que encaja directamente en su pilar de psiquiatría de precisión y en el marco RDoC (dominio sensoriomotor/percepción). Es contenido natural para explicar en AMAUTA/USAMEDIC la diferencia entre &#39;marcador robusto en meta-análisis&#39; y &#39;test clínicamente listo para usar&#39;, y una buena perla para su libro de psicopatología sobre cómo la esquizofrenia también se puede medir con tareas de laboratorio baratas, no solo con escalas clínicas.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/34zmg_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/34zmg_v1</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">2</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Psychotraumatology, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+          <div class="r10-title">Effectiveness and moderators of PE and CPT in adult PTSD treatment: a systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-análisis grande (175 brazos de tratamiento, 163 estudios) confirma efectos sustanciales de Terapia de Exposición Prolongada (PE) y Terapia de Procesamiento Cognitivo (CPT) en TEPT (g=1.67, IC95% 1.56-1.79; g=1.55 tras excluir outliers), con PE más fuerte en muestras no militares, con más mujeres y menor tasa de trauma sexual.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: útil para el módulo de razonamiento clínico de Javier sobre cómo interpretar &#39;moderadores&#39; en un meta-análisis — PE y CPT no son intercambiables en cualquier población, y elegir entre ellas según el perfil del paciente (militar vs. civil, trauma sexual o no) es un ejemplo perfecto de medicina basada en evidencia aplicada, no solo en &#39;la terapia con el mejor tamaño de efecto promedio&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/20008066.2026.2709751" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2709751</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports, 11 sep 2026 · meta-analysis · 2026-09-11</div>
+          <div class="r10-title">Efficacy of prescription-eligible digital health applications for depression and generalized anxiety disorder in Germany: a systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-análisis PROSPERO (19 RCTs, N=4078) de las &#39;DiGA&#39; alemanas (apps de salud mental prescribibles y reembolsadas desde 2020) muestra reducción moderada de síntomas depresivos vs. control (SMD=-0.49 post-intervención, SMD=-0.35 en seguimiento), con evidencia aún limitada para ansiedad generalizada (solo 2 estudios) y resultados dominados por pocas apps, sobre todo Deprexis.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: caso de estudio directo para su línea de IA/tecnología aplicada a salud mental — Alemania ya tiene un modelo regulatorio de &#39;app con receta y reembolso&#39; con evidencia RCT detrás; es el tipo de política que Javier puede citar como referencia al hablar de digitalización de la salud mental en Perú, con la salvedad honesta de que el efecto es modesto y concentrado en pocas apps.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-68875-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-68875-y</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En TOC resistente, dTMS adyuvante logró 75% de respuesta vs. 5% con sham en solo 2 semanas (g=1.39): un tamaño de efecto de ensayo controlado, no de estudio abierto — vale la pena distinguir ambos al leer literatura de neuromodulación.</li><li>Una de las teorías dimensionales más citadas de la psicosis (el déficit generalizado de &#39;predictive processing&#39;) no sobrevivió el meta-análisis: g=.03, prácticamente cero, y sin asociación con delirios ni alucinaciones. Popular en seminarios no es lo mismo que replicado.</li><li>La esquizofrenia tiene un déficit robusto y bien replicado en sensibilidad al movimiento visual (g=0.59) que no depende de estar o no en antipsicóticos — un candidato a biomarcador perceptual que se mide con una tarea psicofísica de escritorio, no con un resonador.</li><li>Para TEPT, PE y CPT no son intercambiables: PE rinde más en muestras no militares con predominio femenino y menor trauma sexual — la elección de terapia debería mirar el perfil del paciente, no solo el tamaño de efecto promedio del meta-análisis.</li><li>El modelo alemán de &#39;apps de salud mental con receta y reembolso&#39; (DiGA) ya tiene 19 RCTs y un efecto real pero modesto en depresión (SMD=-0.49) — y ese efecto está sostenido casi enteramente por un puñado de aplicaciones, no por la categoría completa.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si dTMS adyuvante logra 75% de respuesta en TOC resistente en solo 2 semanas, ¿debería moverse más arriba en el algoritmo de tratamiento antes de agotar más líneas farmacológicas?</li><li>¿Qué le pasa a una teoría dimensional influyente (como &#39;predictive processing&#39; en psicosis) cuando el meta-análisis la contradice — se abandona, se reformula, o se busca el subgrupo donde sí aplica?</li><li>¿Puede un déficit perceptual medible con una tarea psicofísica simple (sensibilidad al movimiento) convertirse algún día en parte de una batería de estratificación de riesgo en esquizofrenia, junto a marcadores clínicos?</li><li>En la práctica peruana, con recursos limitados para psicoterapia especializada en trauma, ¿cómo se decide entre PE y CPT cuando el perfil del paciente (militar/civil, tipo de trauma) apunta a terapias distintas?</li><li>¿Qué tendría que pasar regulatoriamente en Perú para que un modelo tipo DiGA (app de salud mental con evidencia RCT y reembolso) sea viable, dado que el efecto ya demostrado en Alemania es real pero modesto?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel o post comparando el ensayo sham-controlado de dTMS en TOC (75% vs 5% de respuesta) con series abiertas típicas de neuromodulación, para enseñar por qué el diseño del estudio cambia cuánto confiar en un número.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;una teoría de moda en psicosis no sobrevivió el meta-análisis&#39; usando el estudio de predictive processing como gancho para hablar de por qué el marco dimensional/RDoC exige someter cada hipótesis a prueba cuantitativa, no solo a elegancia teórica.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección o nota corta del libro de psicopatología sobre biomarcadores perceptuales de bajo costo en esquizofrenia (sensibilidad al movimiento) como ejemplo de precisión psiquiátrica que no depende de neuroimagen.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido AMAUTA/USAMEDIC sobre cómo leer &#39;moderadores&#39; en un meta-análisis usando PE vs. CPT en TEPT — tema de razonamiento estadístico frecuente en preguntas de ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o hilo analizando el modelo alemán DiGA (apps de salud mental con receta y reembolso) como caso de referencia regulatoria para IA/tecnología en salud mental aplicable a Perú, con la salvedad del efecto modesto y concentrado en pocas apps.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">The Journal of ECT</span><span class="tag ">Psychological Medicine</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">Scientific Reports</span><span class="tag ">PsyArXiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/eutils · Europe PMC · PsyArXiv · medRxiv API. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 12 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
