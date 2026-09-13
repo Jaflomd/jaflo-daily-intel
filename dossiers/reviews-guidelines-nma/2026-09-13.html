@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">13 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">JMIR Mental Health · 2026-09-10 · review</div>
+        <h3 class="r3-title">Tool or Companion? Reframing Conversational AI to Prevent Psychological Harm</h3>
+        <p class="r3-hook">Revisión narrativa que integra investigación en IA, psiquiatría, psicología y ciencia de redes para explicar por qué usuarios -sobre todo vulnerables- tratan a asistentes conversacionales (Replika, Character.AI, ChatGPT, Claude) como &#39;compañeros&#39; en vez de herramientas: la empatía simulada y la sobrevalidación (sycophancy) generadas por los procedimientos de alineamiento crean un bucle de retroalimentación que puede reforzar creencias delirantes, ideación distorsionada y dependencia emocional, incluso en usuarios sin patología previa. Para tu línea de IA aplicada a investigación y educación es el marco conceptual más directo que has visto para diferenciar &#39;IA como herramienta&#39; de &#39;IA como sustituto relacional&#39; -una distinción central si vas a usar o recomendar chatbots en contextos educativos o clínicos. Para tu comité de ética (HVLH) es material de primera línea sobre daño psicológico iatrogénico por diseño de producto, no por mal uso del usuario. Ángulo de contenido: &#39;el chatbot no te valida porque te entiende -te valida porque fue entrenado para sonar cálido, y eso tiene un costo psiquiátrico que ya empieza a documentarse&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/99354" target="_blank" rel="noopener">↗ doi.org/10.2196/99354</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Molecular Psychiatry · 2026-09-12 · review</div>
+        <h3 class="r3-title">Young Minds in Distress: Exploring the Global Rise in Youth Mental Health Diagnoses</h3>
+        <p class="r3-hook">Revisión que sintetiza tendencias epidemiológicas globales y distingue el aumento real de morbilidad (depresión, suicidio, autolesión en países de altos ingresos) de la inflación diagnóstica, señalando la disrupción del sueño como factor de riesgo transdiagnóstico central y proponiendo un marco de intervención en tres niveles (universal, selectivo, indicado). Para tu libro de psicopatología para el mundo es una síntesis lista para citar sobre por qué &#39;más diagnósticos&#39; no siempre significa &#39;más sobrediagnóstico&#39; -hay severidad objetiva detrás del aumento. Para AMAUTA/USAMEDIC es contenido de alto rendimiento porque conecta epidemiología con un modelo clínico aplicable (regulación de entornos digitales, protocolos de retorno al estudio tras hospitalización psiquiátrica). Ángulo de contenido: &#39;la salud mental juvenil no está empeorando solo porque diagnosticamos más -este review global muestra la evidencia objetiva detrás del aumento y qué hacer con ella en la práctica&#39;.</p>
+        <a class="r3-link" href="https://pubmed.ncbi.nlm.nih.gov/42731987/" target="_blank" rel="noopener">↗ pubmed.ncbi.nlm.nih.gov/42731987</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Neurological Sciences · 2026-09-11 · review</div>
+        <h3 class="r3-title">Efficacy of Efgartigimod in the Treatment of Autoimmune Encephalitis: A Systematic Review</h3>
+        <p class="r3-hook">Revisión sistemática (12 estudios, 77 pacientes con encefalitis autoinmune) sobre efgartigimod -un antagonista del receptor Fc neonatal aprobado para miastenia gravis generalizada- como terapia adyuvante en pacientes con respuesta inadecuada a corticoides, inmunoglobulina IV o plasmaféresis: 76 de 77 pacientes mostraron mejoría clínica significativa sin eventos adversos graves, aunque la heterogeneidad entre diseños impidió un metaanálisis formal. Para tu foco secundario de neuropsiquiatría es evidencia temprana pero consistente de una opción terapéutica nueva en un cuadro que se presenta con síntomas psiquiátricos floridos (psicosis, catatonia, alteración de conciencia) antes de identificarse como autoinmune. Para AMAUTA/USAMEDIC es contenido de examen sobre la interfaz neurología-psiquiatría con un fármaco que probablemente empiece a aparecer en guías de manejo de encefalitis refractaria. Ángulo de contenido: &#39;un fármaco para miastenia gravis está mostrando 76/77 respuestas clínicas en encefalitis autoinmune refractaria -por qué la psiquiatría debería estar mirando esto de cerca&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10072-026-09373-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s10072-026-09373-x</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">2</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Canadian Journal of Psychiatry · 2026-09-12 · network-meta-analysis</div>
+        <h3 class="r3-title">Pharmacological Management of Opioid Use Disorder: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">Network meta-analysis registrado en PROSPERO (CRD42013006507) que evalúa 13 intervenciones farmacológicas para trastorno por uso de opioides en 103 ECA (26,624 personas): la terapia asistida con heroína fue la más efectiva para retención en tratamiento (OR=31.47, certeza moderada), seguida de heroína+metadona (OR=8.00) y metadona en dosis altas (OR=6.94); buprenorfina en dosis alta y baja mejoró abstinencia (certeza moderada), pero ninguna intervención redujo mortalidad por sobredosis con certeza suficiente. Para tu línea de razonamiento clínico es un caso de manual de por qué &#39;retención en tratamiento&#39; y &#39;reducción de mortalidad&#39; son desenlaces distintos que no siempre se mueven juntos -y por qué la terapia asistida con heroína, poco disponible en Latinoamérica, encabeza el ranking. Para AMAUTA/USAMEDIC es contenido de examen de alto rendimiento sobre jerarquía de opioides sustitutivos con certeza GRADE explícita por desenlace. Ángulo de contenido: &#39;este NMA con más de 26,000 pacientes rankea 13 tratamientos para trastorno por uso de opioides -y el que retiene más gente en tratamiento no es necesariamente el que reduce la mortalidad, son preguntas distintas&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/07067437261479071" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261479071</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Alzheimer&#39;s Disease · 2026-09-12 · network-meta-analysis</div>
+        <h3 class="r3-title">Clinical Efficacy of Non-Pharmacological Interventions on Cognitive Improvement in Patients with Mild to Moderate Alzheimer&#39;s Disease: A Systematic Review and Bayesian Network Meta-Analysis</h3>
+        <p class="r3-hook">Network meta-analysis bayesiano (50 ECA, 2,856 participantes, 11 categorías de intervención no farmacológica) que rankea efectos cognitivos en Alzheimer leve a moderado: entrenamiento dual-task lideró en MMSE (SUCRA=88.84%) y MoCA (SUCRA=90.67%), la estimulación transcraneal por corriente directa (tDCS) mostró rankings favorables similares, y la estimulación magnética transcraneal repetitiva (rTMS) fue la única intervención con mejoría significativa en ADAS-Cog frente a cuidado habitual. Para tu foco secundario de neuropsiquiatría y tu interés en neuromodulación es evidencia rankeada -no solo &#39;funciona/no funciona&#39;- sobre qué intervención no farmacológica priorizar según el instrumento cognitivo que estés siguiendo. Para AMAUTA/USAMEDIC es contenido de examen sobre neuromodulación en demencia con SUCRA como métrica poco enseñada pero cada vez más citada en NMA. Ángulo de contenido: &#39;no todas las intervenciones no farmacológicas para Alzheimer rankean igual según qué test cognitivo uses -este NMA bayesiano lo desglosa por instrumento&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/13872877261485496" target="_blank" rel="noopener">↗ doi.org/10.1177/13872877261485496</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Guías &amp; Consensos en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry · 2026-09-11 · meta-analysis</div>
+        <h3 class="r3-title">Peripheral Blood Glutamate, Glutamine, and GABA in Autism Spectrum Disorder: A Systematic Review and Meta-Analysis of Group Differences with an Exploratory Assessment of Diagnostic Accuracy</h3>
+        <p class="r3-hook">Metaanálisis (21 publicaciones, 804 personas con TEA vs. 721 controles) sobre glutamato, glutamina y GABA en sangre periférica: Glu elevado (SMD=1.04) y Gln reducido (SMD=-0.78) en TEA frente a controles, sin diferencia significativa en GABA, con heterogeneidad extremadamente alta y certeza GRADE &#39;muy baja&#39; en todos los indicadores -insuficiente para uso diagnóstico. Para tu línea TDAH/TEA/neurodivergencia es un recordatorio necesario de que un biomarcador con efecto estadísticamente significativo (Glu) no implica utilidad diagnóstica clínica: la certeza de evidencia y la heterogeneidad importan más que el p-valor aislado. Para AMAUTA/USAMEDIC es un ejemplo de examen sobre por qué GRADE &#39;muy bajo&#39; descarta un biomarcador aunque el efecto puntual parezca robusto. Ángulo de contenido: &#39;el glutamato en sangre está elevado en autismo en este metaanálisis -pero la certeza de evidencia es tan baja que no deberíamos usarlo para diagnosticar nada, y aquí está el porqué&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111926" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111926</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of Clinical Sleep Medicine · 2026-09-10 · meta-analysis</div>
+        <h3 class="r3-title">Association Between Sleep Paralysis and Anxiety: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Metaanálisis registrado en PROSPERO (CRD42024579831) sobre 11 estudios (5,568 participantes) que evalúa la asociación entre parálisis del sueño y ansiedad: puntajes de ansiedad significativamente más altos en quienes experimentan parálisis del sueño (SMD=0.35; IC 95% 0.27-0.44) con heterogeneidad cero (I²=0%) -un resultado inusualmente consistente entre estudios. Para tu línea de psiquiatría dimensional (HiTOP/RDoC) es un dato limpio sobre un fenómeno transdiagnóstico del sueño con señal de asociación robusta y reproducible, poco común en la literatura de trastornos del sueño. Para tu contenido en IG/YT es un gancho accesible: la parálisis del sueño, tan viral en redes por su fenomenología (&#39;presencia en la habitación&#39;), tiene ahora un correlato ansioso cuantificado con evidencia consistente. Ángulo de contenido: &#39;la parálisis del sueño no es solo la anécdota viral que ves en redes -este metaanálisis con heterogeneidad cero confirma que se asocia con ansiedad de forma consistente&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s44470-026-00190-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s44470-026-00190-9</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Public Health · 2026-09-11 · meta-analysis</div>
+        <h3 class="r3-title">Global Prevalence and Patterns of Benzodiazepine Use Among Adolescents and Young Adults: A Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Metaanálisis registrado en PROSPERO (CRD1230633) sobre 15 estudios (N=7,235,912) que estima la prevalencia global de uso de benzodiacepinas en adolescentes y adultos jóvenes (16-30 años): prevalencia agrupada de 4.4% (IC 95% 1.8-8.2%), más alta en uso mixto médico/no médico (5.9%), con sexo femenino, comorbilidad psiquiátrica (TDAH, depresión) y poliuso de sustancias como correlatos clave. Para tu línea TDAH/TEA es un dato directo sobre un patrón de prescripción de riesgo en población con comorbilidad de TDAH/depresión, justo el perfil que ves en consulta y en contenido educativo. Para tu comité de ética (HVLH) es evidencia cuantitativa para argumentar guías de prescripción ajustadas a la etapa de desarrollo en vez de extrapolar criterios de adultos. Ángulo de contenido: &#39;casi 1 de cada 20 adolescentes y adultos jóvenes en el mundo ha usado benzodiacepinas -y la comorbilidad con TDAH y depresión no es casualidad, según este metaanálisis con más de 7 millones de personas&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.puhe.2026.106490" target="_blank" rel="noopener">↗ doi.org/10.1016/j.puhe.2026.106490</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el NMA de tratamiento farmacológico para trastorno por uso de opioides (103 ECA, 26,624 personas), la terapia asistida con heroína lidera en retención (OR=31.47) pero ninguna intervención -ni esa- redujo la mortalidad por sobredosis con certeza suficiente: retener en tratamiento y salvar vidas son desenlaces distintos que el diseño de los ensayos actuales no logra conectar.</li><li>El NMA bayesiano de intervenciones no farmacológicas en Alzheimer leve-moderado (50 ECA) muestra que la mejor intervención depende del instrumento cognitivo: dual-task training domina en MMSE/MoCA, pero rTMS es la única con mejoría significativa en ADAS-Cog -rankings distintos según qué mides.</li><li>El metaanálisis de glutamato/GABA en sangre periférica para TEA encuentra Glu elevado con significancia estadística (SMD=1.04), pero certeza GRADE &#39;muy baja&#39; en todos los biomarcadores -un caso limpio de por qué un efecto significativo no equivale a un biomarcador diagnóstico útil.</li><li>La revisión sobre IA conversacional y daño psicológico documenta que la sobrevalidación (sycophancy) de chatbots emerge directamente de los procedimientos de alineamiento que premian respuestas &#39;cálidas&#39; -el riesgo no es un bug, es una consecuencia esperada del diseño actual de estos modelos.</li><li>En el metaanálisis de benzodiacepinas en adolescentes/adultos jóvenes (7.2 millones de personas, 15 estudios), la comorbilidad con TDAH y depresión aparece como correlato consistente del uso -sugiriendo que buena parte de esta prescripción ocurre en terreno psiquiátrico ya identificado, no al azar.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la terapia asistida con heroína encabeza el ranking de retención en el NMA de opioides pero solo se ha probado en personas con dependencia previa a heroína, ¿qué tan trasladable es este hallazgo a contextos como el peruano donde el patrón de consumo de opioides es distinto?</li><li>¿Qué implicaría para el diseño de intervenciones en Alzheimer que la &#39;mejor&#39; terapia no farmacológica cambie según se mida con MMSE, MoCA o ADAS-Cog -deberíamos dejar de hablar de &#39;la intervención más efectiva&#39; sin especificar el instrumento?</li><li>¿Deberíamos dejar de citar el glutamato/GABA periférico como biomarcador prometedor de TEA en contenido educativo, dado que la certeza GRADE es uniformemente muy baja pese al efecto estadístico?</li><li>Si la sobrevalidación de los chatbots es un efecto esperado del alineamiento y no un error de uso, ¿qué responsabilidad tienen los desarrolladores -y qué rol debería tener la psiquiatría- en poner límites de diseño antes de que el daño ocurra?</li><li>¿Qué guías de prescripción de benzodiacepinas ajustadas a la etapa de desarrollo (no extrapoladas de adultos) serían razonables dado que el 4.4% de prevalencia global en jóvenes se concentra en quienes ya tienen TDAH o depresión diagnosticados?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video: &#39;un chatbot no te entiende, fue entrenado para sonar cálido&#39; -explicando el mecanismo de sycophancy del review de JMIR Mental Health y por qué es relevante para pacientes vulnerables que usan IA como apoyo emocional.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Comparativa visual (carrusel IG) de las 13 intervenciones farmacológicas para trastorno por uso de opioides del NMA de Can J Psychiatry, mostrando qué desenlace optimiza cada una (retención vs. abstinencia vs. mortalidad).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o carta breve proponiendo que los servicios peruanos de salud mental adopten guías de prescripción de benzodiacepinas diferenciadas por edad de desarrollo, citando la prevalencia global y los correlatos de TDAH/depresión del metaanálisis de Public Health.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología sobre encefalitis autoimune como diagnóstico diferencial psiquiátrico -con efgartigimod como ejemplo de tratamiento emergente en la interfaz neurología-psiquiatría.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre por qué un biomarcador con p&lt;0.001 (glutamato en TEA) puede seguir siendo GRADE &#39;muy bajo&#39; -usando el metaanálisis de Prog Neuropsychopharmacol Biol Psychiatry como caso de enseñanza de razonamiento clínico sobre certeza de evidencia.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">JMIR Mental Health</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Neurological Sciences</span><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag ">Journal of Alzheimer&#39;s Disease</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Journal of Clinical Sleep Medicine</span><span class="tag ">Public Health</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI eutils · Europe PMC (verificación de DOI). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
