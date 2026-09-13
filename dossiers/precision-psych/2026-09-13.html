@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">13 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">38</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">33</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Psychiatry and Clinical Neurosciences, 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">Differentiation between bipolar versus unipolar depression by AI-based multimodal behavioral analysis</h3>
+        <p class="r3-hook">Analizando 366 pacientes (120 bipolar I, 93 bipolar II, 122 depresión mayor, 74 distimia) a partir de grabaciones de entrevistas clínicas, un modelo de IA que combina expresión facial, mirada y prosodía vocal distinguió depresión bipolar de unipolar con 78% de exactitud y AUC de 0.76, señalando inestabilidad temporal en expresión neutra, mirada y expresión triste como los rasgos que más pesan. A Javier le importa porque es exactamente el problema clínico que más le cuesta a un residente en ENAM/Residentado —diferenciar bipolar de unipolar sin herramientas objetivas, con consecuencias terapéuticas opuestas (estabilizador vs. antidepresivo)— y aporta un marcador conductual cuantificable que dialoga directamente con su marco dimensional (HiTOP) al mostrar que el eje bipolar-unipolar tiene una firma conductual medible, no solo categórica. Puede usarlo en su libro de psicopatología como ejemplo de &#39;fenotipado conductual objetivo&#39; y en AMAUTA como caso clínico para enseñar el diagnóstico diferencial con evidencia de por medio, más allá de la anamnesis tradicional.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/pcn.70124" target="_blank" rel="noopener">↗ doi.org/10.1111/pcn.70124</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology and Biological Psychiatry, 11 sep 2026 · meta-analysis · 2026-09-11</div>
+        <h3 class="r3-title">Peripheral blood glutamate, glutamine, and GABA in Autism Spectrum disorder: A systematic review and meta-analysis</h3>
+        <p class="r3-hook">Este metaanálisis de 21 estudios (804 personas con TEA vs. 721 controles) confirma que el glutamato en sangre periférica está elevado en autismo (SMD=1.04) y la glutamina reducida (SMD=-0.78), con estimados exploratorios de GABA que alcanzan sensibilidad 0.90 y especificidad 0.89 para distinguir TEA —pero los propios autores frenan la euforia: certeza de evidencia muy baja, insuficiente aún para screening poblacional. A Javier le importa doblemente: es material directo para su línea TDAH/TEA y para el marco RDoC (el eje glutamato/GABA como sistema de neurotransmisión disfuncional transdiagnóstico), y es un ejemplo perfecto de &#39;evidencia proporcional al claim&#39; —un hallazgo real con estadísticos duros que aun así no está listo para uso clínico, justo la distinción que enseña a separar promesa de utilidad en AMAUTA. Puede citarlo en el capítulo de TEA de su libro como el estado real del arte en biomarcadores periféricos, sin sobrevender lo que todavía no rinde clínicamente.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111926" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111926</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Surgical Education, 9 sep 2026 · paper · 2026-09-09</div>
+        <h3 class="r3-title">Leveraging Natural Language Processing for Analysis of EPA Comment Quality by Automated QuAL Scoring</h3>
+        <p class="r3-hook">Sobre 12,841 evaluaciones EPA de residentes de cirugía (7,211 con comentarios escritos), un modelo de NLP aplicó el score validado QuAL para medir automáticamente la calidad del feedback docente, y encontró que el comentario promedio saca apenas 2.91/5, que solo 29% ofrece una sugerencia concreta de mejora y que solo 26.5% conecta esa sugerencia con una conducta observada —el feedback formativo típico es pobre incluso cuando existe. A Javier le importa muchísimo porque esto es &#39;precision feedback&#39; con datos duros, no promesa: AMAUTA/USAMEDIC vive de dar feedback que realmente cambie el desempeño en ENAM/Residentado, y este paper le da una métrica automatizable (QuAL vía NLP) para auditar la calidad de su propio feedback y el de sus docentes, en vez de asumir que &#39;dar feedback&#39; basta. Puede pilotarlo corriendo el mismo scoring NLP sobre transcripciones de retroalimentación de simulacros de AMAUTA para ver en qué punto de esa escala 0-5 está realmente parado.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jsurg.2026.104118" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104118</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Stimulation, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">TMS-EEG Correlate of Suicidal Ideation in Individuals with Depression: A Multi-Site Synthesis</div>
+          <div class="r10-line">En 299 pacientes con depresión mayor agregados de cinco sitios, una amplitud N100 más negativa en la corteza prefrontal dorsolateral izquierda (medida por TMS-EEG) se asoció con mayor severidad de ideación suicida (OR=1.52), un candidato a biomarcador electrofisiológico de riesgo que aún necesita validación prospectiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que en 2-3 años el N100 vía TMS-EEG entra como covariable de estratificación en ensayos de neuromodulación para depresión con riesgo suicida, y es una referencia útil si Javier profundiza en electrofisiología aplicada a estratificación de riesgo.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.brs.2026.103206" target="_blank" rel="noopener">↗ doi.org/10.1016/j.brs.2026.103206</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Canadian Journal of Psychiatry, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Adherence and Acceptability of Smartphone- and Wearable-Based Digital Phenotyping in Patients With First-Episode Psychosis</div>
+          <div class="r10-line">En 40 pacientes con psicosis de inicio reciente, la adherencia pasiva (frecuencia cardiaca, sueño) llegó a 82-85% pero la activa (encuestas EMA) fue de solo 71%, y a mayor funcionamiento social/ocupacional, menor probabilidad de completar las encuestas (OR=0.91) —el fenotipado digital funciona mejor pasivo que activo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los protocolos de fenotipado digital en psicosis migran hacia diseños &#39;pasivo-primero&#39; con encuestas activas mínimas, un dato directamente aplicable si Javier diseña un estudio de fenotipado digital en su población.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/07067437261486958" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261486958</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical EEG and Neuroscience, 10 sep 2026 · rct · 2026-09-10</div>
+          <div class="r10-title">Clinical Efficacy of High-Frequency Deep Repetitive Transcranial Magnetic Stimulation in the Treatment of Depression and the Predictive Role of Baseline Triglyceride Levels</div>
+          <div class="r10-line">En un ECA de 80 pacientes (40 activo/40 sham), el HF-dTMS redujo más los síntomas depresivos que el sham, y niveles basales más altos de triglicéridos predijeron mayor respuesta —un biomarcador metabólico barato y ya disponible en cualquier laboratorio para seleccionar candidatos a neuromodulación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que si esto se replica, el perfil lipídico basal se vuelve un criterio de selección de bajo costo para TMS en sistemas de salud con recursos limitados, como el peruano —vale la pena que Javier lo tenga en el radar de neuromodulación.</div>
+          <a class="r10-link" href="https://doi.org/10.1177/15500594261487817" target="_blank" rel="noopener">↗ doi.org/10.1177/15500594261487817</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuropsychopharmacology (nota/comentario), 10 sep 2026 · editorial · 2026-09-10</div>
+          <div class="r10-title">Functional precision psychiatry: iPSC-derived neurons as predictive assays for antidepressant response</div>
+          <div class="r10-line">Pieza de noticias/comentario en Neuropsychopharmacology sobre el uso de neuronas derivadas de células madre pluripotentes inducidas (iPSC) del propio paciente como &#39;ensayo funcional&#39; para predecir respuesta a antidepresivos antes de prescribir —sin datos originales en esta pieza, pero marca hacia dónde apunta el campo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esto sigue siendo investigación básica cara y lejos de la clínica por 5+ años, pero es el nombre exacto (&#39;functional precision psychiatry&#39;) que vale la pena que Javier tenga listo para su libro cuando el campo madure.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41386-026-02550-8" target="_blank" rel="noopener">↗ doi.org/10.1038/s41386-026-02550-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioural Brain Research, 13 sep 2026 · paper · 2026-09-13</div>
+          <div class="r10-title">Cerebellar metabolic alterations and childhood physical abuse as biomarkers in bipolar disorder with comorbid borderline personality disorder</div>
+          <div class="r10-line">En pacientes con trastorno bipolar y comorbilidad con TLP, alteraciones metabólicas cerebelares (NAA/Cr y Cho/Cr elevados) se asocian con historia de abuso físico infantil, sugiriendo una vía biológica compartida entre trauma temprano y esta comorbilidad frecuente pero poco estratificada.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que la comorbilidad bipolar-TLP se convierte en su propio subfenotipo transdiagnóstico en los próximos años, terreno fértil para el capítulo de comorbilidad de su libro de psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbr.2026.116338" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbr.2026.116338</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology and Biological Psychiatry, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Disrupted Cerebello-Thalamo-hippocampal network topology in internet gaming disorder: Evidence from explainable graph convolutional networks</div>
+          <div class="r10-line">En 784 adultos jóvenes (453 con trastorno de juego por internet), una red neuronal de grafos explicable logró 62.6% de exactitud balanceada clasificando el trastorno desde conectividad cerebral completa, señalando el circuito cerebelo-tálamo-hipocampo como el que más cae en eficiencia con la severidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la exactitud aún modesta (62.6%) muestra que estos modelos de grafos todavía no son clínicamente usables solos, pero la interpretabilidad (qué región pesa más) es el tipo de &#39;IA explicable&#39; que Javier puede usar como ejemplo pedagógico de por qué precisión sin interpretabilidad no basta.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111932" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111932</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Clinical Pharmacology, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Association between body mass index and serum concentrations of olanzapine and selective serotonin reuptake inhibitors in patients with eating disorders</div>
+          <div class="r10-line">En pacientes con trastornos de la conducta alimentaria, el índice de masa corporal se asoció con las concentraciones séricas de olanzapina y de ISRS, un recordatorio de que la farmacocinética —no solo la farmacogenómica— es parte de la psiquiatría de precisión en poblaciones con peso corporal atípico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los protocolos de dosificación en TCA empiezan a incorporar ajuste por IMC de forma más sistemática, un matiz práctico que Javier puede sumar a su enseñanza de psicofarmacología ajustada al paciente real.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00228-026-04175-8" target="_blank" rel="noopener">↗ doi.org/10.1007/s00228-026-04175-8</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR mHealth and uHealth, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Mobile-First Web Access and Captioned Video in Francophone Cardiology Education: Multicountry Ecological Learning Analytics Study</div>
+          <div class="r10-line">Analizando 24 meses de datos de una plataforma francófona de educación en cardiología en 34 países, el uso de subtítulos fue tres veces mayor en países de bajo ingreso (60.9%) que en los de alto ingreso (18.8%), y el acceso móvil dominó donde menos recursos hay —data real de learning analytics sobre equidad educativa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el diseño &#39;mobile-first + subtitulado&#39; se vuelve estándar de facto para contenido médico educativo distribuido a países de bajo/mediano ingreso, exactamente el patrón que AMAUTA/USAMEDIC ya debería estar midiendo en su propio YouTube.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/90345" target="_blank" rel="noopener">↗ doi.org/10.2196/90345</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Role-Differentiated AI Competencies and Curriculum Implications for Health Professions Education: Qualitative Study</div>
+          <div class="r10-line">Entrevistas a 13 expertos en medicina/odontología/industria de IA en salud arrojan un marco de competencias de IA diferenciado por rol (usuario, desarrollador, líder), útil para diseñar currículo en vez de enseñar &#39;IA&#39; como bloque genérico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los currículos de pregrado/posgrado en LatAm adoptan marcos por rol como este en los próximos 2-3 años; Javier podría adaptarlo al currículo de IA aplicada dentro de AMAUTA distinguiendo &#39;usuario clínico&#39; de &#39;creador de contenido con IA&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/97608" target="_blank" rel="noopener">↗ doi.org/10.2196/97608</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 10 sep 2026 · editorial · 2026-09-10</div>
+          <div class="r10-title">Promise, Mimicry, and Surveillance: Responsibly Integrating Artificial Intelligence With Socratic Inquiry in Medical Education</div>
+          <div class="r10-line">Artículo de postura (sin datos propios) que nombra dos riesgos de usar IA para enseñanza socrática —la &#39;trampa de la mímica&#39; (preguntas que suenan socráticas sin cultivar metacognición real) y la &#39;paradoja del panóptico&#39; (vigilancia que erosiona la seguridad psicológica del aprendiz)— y propone un marco de gobernanza de tres pilares.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: estos dos términos (&#39;mimicry trap&#39;, &#39;Panopticon Paradox&#39;) se vuelven vocabulario estándar en la crítica a tutores de IA en educación médica; útil vocabulario si Javier arma contenido sobre los límites de la IA tutora en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/102958" target="_blank" rel="noopener">↗ doi.org/10.2196/102958</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El feedback formativo &#39;de siempre&#39; reprueba su propio estándar: en 12,841 evaluaciones EPA, solo 29% incluía una sugerencia de mejora —la precisión educativa empieza por medir si el feedback actual sirve, no por meter IA encima.</li><li>Un biomarcador puede tener sensibilidad y especificidad casi del 90% (GABA en TEA) y aun así no estar listo para clínica: la certeza de la evidencia, no el número aislado, es lo que decide si algo es accionable.</li><li>El fenotipado digital &#39;activo&#39; (encuestas) falla más justo en los pacientes con mejor funcionamiento —el sesgo de adherencia en digital phenotyping no es aleatorio, castiga a quien menos parece necesitar monitoreo tan cercano.</li><li>Diferenciar bipolar de unipolar por voz, mirada y expresión facial (AUC 0.76) ya rinde casi lo mismo que muchos scores clínicos tradicionales —el fenotipado conductual objetivo está más cerca de la práctica de lo que parece.</li><li>Un examen tan barato como triglicéridos en ayunas predijo mejor respuesta a neuromodulación —a veces &#39;psiquiatría de precisión&#39; no es multi-ómica cara, es un tubo de sangre que ya se pide de rutina.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el feedback formativo promedio saca 2.91/5 en calidad medible por NLP, ¿qué saca el feedback que hoy da el equipo de AMAUTA/USAMEDIC en sus simulacros?</li><li>¿La firma conductual de mirada, expresión y prosodía que distingue bipolar de unipolar (AUC 0.76) podría adaptarse a una app de bajo costo para tamizaje en el sistema de salud peruano?</li><li>¿Qué cambia si el eje glutamato/GABA se trata como dimensión continua (RDoC) en vez de biomarcador binario TEA sí/no, dado que el propio metaanálisis advierte que aún no sirve para screening categórico?</li><li>¿Vale la pena pedir triglicéridos basales de rutina antes de indicar neuromodulación, dado lo barato del examen frente al costo de un ciclo de TMS que no responde?</li><li>¿Cómo se vería un marco de competencias de IA &#39;por rol&#39; (usuario/desarrollador/líder) aplicado específicamente a un educador de contenido médico que es las tres cosas a la vez?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto para IG/YouTube: &#39;¿Bipolar o unipolar? Lo que tu cara dice antes que tú&#39;, usando el hallazgo de diferenciación por IA multimodal (AUC 0.76) como gancho y cerrando con la clínica real de por qué importa el diagnóstico diferencial.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post o hilo sobre &#39;precision feedback&#39; con los números crudos del paper de QuAL scoring (2.91/5, solo 29% con sugerencia) como espejo para que docentes de AMAUTA autoevalúen su feedback.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional sobre la comorbilidad bipolar-TLP como subfenotipo transdiagnóstico, usando el hallazgo cerebelo + abuso físico infantil como ancla biológica.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Carta metodológica o mini-estudio proponiendo pilotar el QuAL score (vía NLP) sobre transcripciones de feedback de AMAUTA/USAMEDIC, comparando calidad de feedback humano vs. asistido por IA.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido &#39;biomarcadores baratos&#39; (triglicéridos para TMS, IMC para dosificación de antipsicóticos/ISRS) que contrasta con la narrativa de que precisión = multi-ómica cara, para hacerlo accionable en Perú.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychiatry and Clinical Neurosciences</span><span class="tag ">Progress in Neuro-Psychopharmacology and Biological Psychiatry</span><span class="tag ">Journal of Surgical Education</span><span class="tag ">Brain Stimulation</span><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag ">Clinical EEG and Neuroscience</span><span class="tag ">Neuropsychopharmacology</span><span class="tag ">Behavioural Brain Research</span><span class="tag ">European Journal of Clinical Pharmacology</span><span class="tag ">JMIR mHealth and uHealth</span><span class="tag highlight">JMIR Medical Education</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch) · Europe PMC. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
