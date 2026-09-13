@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-09-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">13 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">27</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">20</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">bioRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+        <h3 class="r3-title">Neurosubtipos de psicosis dominados por sexo: la disconectividad multiescala del triple red predice vías cognitivas distintas (consorcio BSNIP, N=1,753)</h3>
+        <p class="r3-hook">Con datos de resting-state fMRI de 1,753 personas del consorcio BSNIP (1,127 con psicosis, 626 controles), este estudio usa aprendizaje no supervisado sobre conectividad funcional multiescala para identificar cuatro neurosubtipos de psicosis dominados por sexo (dos de predominio femenino, dos de predominio masculino), cada uno con patrones de disconectividad replicables -especialmente en el triple red (DMN-saliencia)- que predicen deterioro cognitivo específico, y en un subtipo femenino, también síntomas positivos y negativos. A Javier le importa porque es evidencia dura de que &#39;esquizofrenia&#39; como categoría única promedia poblaciones biológicamente distintas, exactamente el argumento que sostiene su apuesta por HiTOP/RDoC y la psiquiatría dimensional frente al DSM categorial, y porque introduce el sexo como variable biológica de estratificación que rara vez se toma en serio en neuroimagen psiquiátrica. Puede usarlo como capítulo o sección del libro de psicopatología dimensional, como ejemplo en AMAUTA/USAMEDIC de por qué un diagnóstico categorial esconde heterogeneidad real, y como antecedente metodológico si evalúa incorporar el sexo como variable de estratificación en una propuesta RENACYT propia.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.04.749545" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.04.749545</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">medRxiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+        <h3 class="r3-title">Nueve años de seguimiento: los estados dinámicos de red cerebral -no un patrón fijo- coevolucionan con la severidad de depresión y ansiedad (cohorte NESDA, N=340)</h3>
+        <p class="r3-hook">Analizando resting-state fMRI y datos clínicos de 340 participantes de la cohorte NESDA (228 con trastorno depresivo y/o de ansiedad) en tres cortes -basal, 2 años y 9 años-, este estudio identifica cuatro patrones de coactivación cerebral (CAPs) cuyo dwell time se asocia, tanto entre sujetos como dentro de cada individuo a lo largo del tiempo, con la severidad de depresión, ansiedad y miedo. A Javier le importa porque es de los pocos estudios de red con seguimiento a 9 años -el tipo de evidencia longitudinal que su marco de network theory necesita para argumentar que el curso de la psicopatología afectiva tiene un correlato dinámico medible y no solo un diagnóstico transversal fijo, y porque conecta directamente con su lectura dimensional de la comorbilidad ansiedad-depresión. Puede usarlo en el libro de psicopatología para ilustrar &#39;la red cambia con el síntoma, no solo el síntoma con la red&#39;, y como ejemplo en AMAUTA de por qué una cohorte de 9 años vale más que diez estudios transversales de un día, para pensar el diseño de estudios longitudinales propios.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.08.26362586" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362586</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+        <h3 class="r3-title">Detección crónica intracerebral durante DBS del cíngulo subcallosal capta en tiempo real el efecto de la ketamina en depresión resistente</h3>
+        <p class="r3-hook">Con 5,907 horas de sensing bilateral del cíngulo subcallosal (nodo del circuito saliencia/ejecutivo) en pacientes con estimulación cerebral profunda crónica, 485 grabaciones disparadas por el propio paciente y 47 episodios de dosificación de ketamina, este estudio muestra un desplazamiento consistente hacia actividad de banda rápida (21-40 Hz) tras la ketamina, con una señal de 23.44 Hz que aumenta antes del autorreporte de eventos de ansiedad o tristeza y alcanza su pico ~15 minutos después. A Javier le importa porque es neuromodulación de precisión llevada al extremo -un biomarcador electrofisiológico de un nodo de red capturado en tiempo real, no en un corte de resonancia una vez cada seis meses-, y porque el volumen y la naturaleza continua de estos datos son justo el tipo de problema donde su interés en IA aplicada a investigación tiene un caso de uso claro (decodificar estado clínico desde señal cruda). Puede usarlo como ejemplo de vanguardia en su línea de neuromodulación y psiquiatría de precisión, y como contenido AMAUTA/USAMEDIC sobre cómo la psiquiatría de precisión ya dejó de ser solo un concepto a futuro.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.08.26362080" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362080</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Archives of Psychiatry and Clinical Neuroscience, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Modelo de conectividad predice respuesta a tratamiento en fase aguda de esquizofrenia y lo liga a genes sinápticos</div>
+          <div class="r10-line">Un modelo de conectividad funcional pre/post-tratamiento (connectome-based predictive modeling) predice la reducción de síntomas positivos y afectivos en la fase aguda de esquizofrenia -validado en muestra independiente, aunque con efectos modestos (r≈0.41-0.49, p rozando 0.05)- y liga los cambios de red a genes de estructuras sinápticas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Modelos como este, con efectos aún modestos y p-valores límite, son el prototipo de lo que Javier necesita citar con la evidencia proporcional al claim que exige en su línea de psiquiatría de precisión: prometedor como prueba de concepto, no listo para reemplazar el juicio clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00406-026-02376-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s00406-026-02376-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">bioRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">La controlabilidad de conexiones (no de nodos) predice respuesta a rTMS en depresión resistente</div>
+          <div class="r10-line">En 25 pacientes con depresión resistente a tratamiento, métricas de controlabilidad a nivel de conexión (edge-based, no node-based) del conectoma estructural, centradas en el giro frontal medio, se asociaron con la respuesta a un curso de 5 semanas de rTMS de alta frecuencia sobre la DLPFC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La teoría de control de redes a nivel de conexión podría afinar el targeting de neuromodulación más que los mapas de activación clásicos -vale que Javier la tenga en el radar para su línea de neuromodulación, aunque con N=25 y autoría única todavía necesita réplica independiente antes de citarla como algo establecido.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.07.11.737986" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.07.11.737986</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Modelo de biología de sistemas liga biomarcadores periféricos con alteraciones de red en depresión y esquizofrenia</div>
+          <div class="r10-line">En 93 adultos (depresión mayor, esquizofrenia, controles), un modelo de biología de sistemas conecta biomarcadores periféricos de lípidos y antioxidantes con alteraciones estructurales y funcionales en redes parietal, sensoriomotora, cingulada e insular, mediadas estadísticamente por resiliencia psicológica y maltrato infantil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Este tipo de modelo transdiagnóstico -periferia más red más historia de vida- es el puente mecanismo-clínica que Javier defiende en su psiquiatría dimensional; es de esperar que veamos más &#39;biomarcadores híbridos&#39; de este tipo en los próximos meses.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.09.26362608" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.26362608</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">La entropía cerebral -no solo la conectividad- valida el modelo cortico-estriado-tálamo-cortical en TOC</div>
+          <div class="r10-line">En 67 pacientes con trastorno obsesivo-compulsivo vs 60 controles sanos, la entropía cerebral (complejidad de la señal BOLD en reposo) -una métrica distinta a la conectividad funcional clásica- muestra alteraciones en el circuito cortico-estriado-tálamo-cortical asociadas a la severidad de síntomas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La entropía cerebral podría sumarse como métrica complementaria estándar junto a la conectividad funcional para validar circuitos psiquiátricos -Javier podría introducirla en AMAUTA como una forma más fina de medir &#39;qué tan desregulada&#39; está una red, no solo si está hiper o hipoconectada.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.pnpbp.2026.111931" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111931</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Psychogeriatrics, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Subregiones estriatales distinguen demencia frontotemporal de esquizofrenia de inicio tardío pese a clínica similar</div>
+          <div class="r10-line">Comparando 36 pacientes con demencia frontotemporal variante conductual, 21 con esquizofrenia de inicio tardío y 56 controles, las subregiones estriatales muestran patrones estructurales, funcionales y de correlación con neurotransmisores distintos, pese al solapamiento clínico y cognitivo entre ambos cuadros.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esta comparación directa entre un cuadro neurodegenerativo y uno psiquiátrico de clínica casi idéntica es justo el ejercicio de razonamiento clínico diferencial que Javier usa para preparar candidatos al ENAM/Residentado -material listo para un caso clínico AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.inpsyc.2026.100273" target="_blank" rel="noopener">↗ doi.org/10.1016/j.inpsyc.2026.100273</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">AJNR American Journal of Neuroradiology, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">La adquisición multi-eco de fMRI mejora la confiabilidad del blanco de TMS personalizado en depresión</div>
+          <div class="r10-line">En pacientes con depresión mayor que iniciaban TMS clínico, la adquisición multi-eco de fMRI de reposo mejoró la confiabilidad de la conectividad funcional usada para personalizar el blanco de estimulación (cíngulo subgenual y circuito de depresión) frente a la adquisición de eco único.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Mejoras técnicas &#39;aburridas&#39; como esta -no un hallazgo nuevo sobre una red, sino hacer más confiable medirla- son las que terminan llevando la neuromodulación guiada por red de la investigación a la práctica clínica de precisión que Javier defiende.</div>
+          <a class="r10-link" href="https://doi.org/10.3174/ajnr.a9301" target="_blank" rel="noopener">↗ doi.org/10.3174/ajnr.a9301</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Puntajes poligénicos y aprendizaje automático para predecir respuesta a medicación en TDAH pediátrico</div>
+          <div class="r10-line">En 309 niños y adolescentes suecos que iniciaron medicación para TDAH (cohorte ADAPT), los puntajes poligénicos de TDAH, autismo, logro educativo e inteligencia se asociaron con el curso de respuesta a la medicación medido con la escala SNAP-IV.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>La predicción de respuesta a medicación por genética poligénica en TDAH todavía tiene efectos pequeños, pero es el tipo de evidencia que Javier puede usar -con evidencia proporcional al claim- para argumentar que el TDAH es genética y clínicamente heterogéneo, no una entidad única.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.09.26362635" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.26362635</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">bioRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Un inhibidor de acetilcolinesterasa modula la conectividad de la red de atención dorsal en adultos sanos</div>
+          <div class="r10-line">En 19 adultos sanos, donepezilo (inhibidor de acetilcolinesterasa) aumentó la conectividad funcional de la red de atención dorsal en un diseño cruzado doble ciego controlado con placebo, usando fMRI de reposo a 7T antes y después de la dosis.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un piloto pequeño en sanos, pero si escala a clínica podría sumar una vía farmacológica colinérgica dirigida por red a la caja de herramientas de precisión que Javier usa para pensar el circuito atencional en TDAH.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.09.750186" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.750186</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">NeuroImage, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">El entrenamiento de resistencia cambia la red frontoparietal a nivel estático, pero no a nivel dinámico tras corrección</div>
+          <div class="r10-line">En 25 atletas de resistencia vs 31 controles pareados, el entrenamiento a largo plazo se asoció con mayor conectividad estática dentro de las redes sensoriomotora, de saliencia y cingulo-opercular y menor segregación de la red frontoparietal, pero ninguna diferencia dinámica sobrevivió la corrección por comparaciones múltiples.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El hallazgo dinámico &#39;negativo&#39; es tan informativo como el estático positivo -un recordatorio honesto para el pilar kinobody-selfcare de Javier de que el ejercicio sí cambia la red cerebral, pero hay que ser cuidadoso con qué parte exacta del cambio resiste el escrutinio estadístico.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neuroimage.2026.122229" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neuroimage.2026.122229</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuropsychopharmacology, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">En ratones, un componente de la mismatch negativity madura en la adolescencia sin depender de la microglía</div>
+          <div class="r10-line">En corteza visual primaria de ratón, la &#39;detección de desviación&#39; -un componente de la mismatch negativity, biomarcador establecido de esquizofrenia en humanos- emerge específicamente durante la adolescencia junto con un refinamiento de la conectividad fronto-visual, y resultó no depender de la depleción de microglía, a diferencia de lo esperado por su rol propuesto en el riesgo de esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Si se replica en humanos, esto acotaría la ventana temporal exacta en que un biomarcador ya usado en la clínica (MMN) refleja maduración de circuitos fronto-sensoriales -relevante para la línea de neurodesarrollo y razonamiento clínico de Javier, aunque el puente ratón-humano sigue siendo la parte más frágil del estudio.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41386-026-02547-3" target="_blank" rel="noopener">↗ doi.org/10.1038/s41386-026-02547-3</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El efecto dinámico del entrenamiento de resistencia sobre la red frontoparietal no sobrevivió la corrección estadística, mientras que el efecto estático sí: &#39;se ve una red distinta en el que hace deporte&#39; a veces solo aguanta el análisis más simple, no el más fino (NeuroImage).</li><li>El biomarcador MMN de esquizofrenia que se enseña como reflejo de disfunción microglial, en ratones, en realidad emerge en la adolescencia sin depender de la microglía -la neurobiología real detrás de un biomarcador clínico puede ser distinta de la historia que se cuenta sobre él (Neuropsychopharmacology).</li><li>Un modelo de predicción de respuesta a tratamiento en esquizofrenia con r≈0.4 y p apenas bajo 0.05 en validación independiente ya se reporta como &#39;modelo validado&#39; -vale la pena enseñar a leer el tamaño del efecto, no solo el p&lt;0.05, a los candidatos al ENAM/Residentado (Eur Arch Psychiatry Clin Neurosci).</li><li>Con 5,907 horas de sensing intracraneal del cíngulo subcallosal, la señal eléctrica capta el efecto de la ketamina y anticipa eventos de ansiedad o tristeza minutos antes de que el propio paciente los reporte -la red &#39;sabe&#39; antes que el autorreporte (medRxiv, DBS + ketamina).</li><li>La disconectividad de triple red que distingue subtipos de psicosis depende de si el subtipo es de predominio femenino o masculino: &#39;esquizofrenia&#39; como diagnóstico único puede estar promediando entre poblaciones biológicamente distintas (BSNIP, bioRxiv).</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si los neurosubtipos de psicosis dominados por sexo tienen patrones de disconectividad replicables y distintos, ¿deberíamos empezar a estratificar por sexo los ensayos de neuromodulación en psicosis, en vez de tratarlo solo como covariable de ajuste?</li><li>Si el sensing crónico del cíngulo subcallosal detecta el efecto de la ketamina minutos antes del autorreporte del paciente, ¿qué tan lejos estamos de un &#39;biomarcador de alerta temprana&#39; para crisis anímicas en depresión resistente, y qué implica eso para el consentimiento informado de estos dispositivos?</li><li>Si un modelo predictivo en esquizofrenia se valida con r≈0.4 en muestra independiente, ¿ese nivel de evidencia ya alcanza para justificar monitoreo individualizado en la práctica clínica peruana, o todavía solo sirve para seguir refinando el modelo en investigación?</li><li>¿La entropía cerebral debería sumarse como medida estándar junto a la conectividad funcional al enseñar los circuitos disfuncionales en TOC, dado que capta algo que la conectividad clásica no ve?</li><li>Si el efecto dinámico del entrenamiento de resistencia sobre la red frontoparietal no sobrevive corrección estadística pero el efecto estático sí, ¿qué tanto del discurso popular sobre &#39;el ejercicio reorganiza tu cerebro&#39; se sostiene con el rigor que exigiríamos a un paper clínico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo IG/YT: &#39;La esquizofrenia no es una sola enfermedad: 4 subtipos según tu sexo biológico&#39; usando el estudio BSNIP (bioRxiv) para explicar heterogeneidad biológica de forma accesible.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional citando la cohorte NESDA de 9 años como evidencia de que los estados dinámicos de red -no un diagnóstico fijo- coevolucionan con la severidad de depresión y ansiedad.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video AMAUTA de razonamiento clínico diferencial usando el estudio de subregiones estriatales en demencia frontotemporal vs esquizofrenia de inicio tardío (Int Psychogeriatrics) para enseñar diagnóstico diferencial ante clínica similar.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota breve reanalizando los tamaños de efecto (r≈0.4, p límite) del modelo predictivo de conectividad en esquizofrenia (Eur Arch Psychiatry Clin Neurosci) como ejercicio de &#39;evidencia proporcional al claim&#39; para enseñar lectura crítica de papers.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre el sensing crónico de DBS + ketamina (medRxiv) como ejemplo de que la psiquiatría de precisión ya no es solo un concepto de futuro, sino una señal eléctrica capturable en tiempo real minutos antes del autorreporte del paciente.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">bioRxiv (preprint)</span><span class="tag ">medRxiv (preprint)</span><span class="tag ">European Archives of Psychiatry and Clinical Neuroscience</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">International Psychogeriatrics</span><span class="tag ">AJNR American Journal of Neuroradiology</span><span class="tag ">NeuroImage</span><span class="tag ">Neuropsychopharmacology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC REST API (búsqueda MED/PubMed, ventana 72h, filtro FIRST_PDATE) · bioRxiv API (preprints neurociencia, ventana 72h) · medRxiv API (preprints clínicos, ventana 72h) · WebSearch (Consensus MCP agotó su cuota mensual; arXiv q-bio.NC bloqueado por rate-limit 429 en esta corrida). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
