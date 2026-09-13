@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Modelos Mentales &amp; Filosofía — 2026-09-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#639922;
+    --accent-dim:rgba(99,153,34,0.12);
+    --accent-soft:rgba(99,153,34,0.07);
+    --accent-border:rgba(99,153,34,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">♟️</span>Modelos Mentales &amp; Filosofía</h1>
+      <div class="sub">13 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">110</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">PsyArXiv (preprint) · Montano RLT, Gutierrez JPG — 12 sep 2026 · preprint · 2026-09-12</div>
+        <h3 class="r3-title">Differential Associations of Excellencism and Perfectionism with Mental Health Outcomes Among Licensure Examinees</h3>
+        <p class="r3-hook">En 1,206 examinandos de licencia profesional, los autores separan &#39;excellencism&#39; (búsqueda de excelencia sin que el autoconcepto dependa del resultado) de perfeccionismo clásico, y muestran que el primero se asocia positivamente con satisfacción vital mientras el segundo se asocia con peores desenlaces psicológicos: dos vías psicológicas distintas hacia la misma meta de alto desempeño. Le importa a Javier porque describe exactamente a su población AMAUTA/USAMEDIC — médicos preparando ENAM y Residentado bajo presión extrema — y le da un marco medible para diferenciar el perfeccionismo patológico que quiere reducir en sus estudiantes del estándar alto que sí quiere fomentar, sin caer en la falsa dicotomía &#39;exigencia vs. autocuidado&#39; que domina el discurso de bienestar médico. Cómo usarlo: como instrumento citable para el componente de bienestar del currículo AMAUTA (identificar qué alumnos están en el cuadrante &#39;alto desempeño + malestar&#39; antes de que colapsen), y como gancho directo de contenido: &#39;por qué la excelencia y el perfeccionismo no son lo mismo (y uno de los dos te enferma)&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/avdrw_v2" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/avdrw_v2</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">PsyArXiv (preprint) · Girard JM, Kebe GY, Morency LP, De la Torre F, Liebenthal E, Baker JT — 11 sep 2026 · preprint · 2026-09-11</div>
+        <h3 class="r3-title">Evaluating Open-Weight Large Language Models for Structured Depression Assessment from Clinical Interviews</h3>
+        <p class="r3-hook">Probaron 25 arquitecturas de LLMs de peso abierto (preservando privacidad clínica, sin depender de APIs cerradas) para puntuar la escala MADRS a partir de transcripciones de 541 entrevistas psiquiátricas reales, y encontraron que descomponer la evaluación en pasos explícitos (extraer evidencia por ítem, luego puntuar) supera de forma consistente a pedirle al modelo que puntúe directamente — aunque el enfoque solo-texto pierde las señales no verbales de la entrevista. Le importa a Javier directamente en su pilar de IA en investigación y psiquiatría de precisión: es evidencia de que el valor de un LLM en evaluación clínica está en la estructura de razonamiento que se le impone, no en el modelo en sí (el mismo principio que ya apareció ayer con el razonamiento tipo junta multidisciplinaria), y que ese enfoque puede correr en modelos abiertos, crítico para investigación RENACYT en un sistema de salud como el peruano donde depender de APIs cerradas es una limitación real. Cómo usarlo: como precedente metodológico citable para cualquier proyecto que quiera usar LLMs en escalas estructuradas (HAM-D, escalas TDAH) sin exponer datos de pacientes a terceros, y como advertencia explícita de que el texto solo no basta si se pierde la conducta no verbal — relevante para diseñar telepsiquiatría asistida por IA.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/63sw4_v3" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/63sw4_v3</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src hot">Medical Education · Runyon C, Zwaan L, Cuddy MM, et al. — 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">Validity considerations in programmatic assessment of clinical reasoning</h3>
+        <p class="r3-hook">Usando el marco de validez de cinco inferencias de Kane, los autores argumentan que el razonamiento clínico es &#39;multifacético, dependiente de contenido y contexto, y en gran medida inobservable&#39;, por lo que la evaluación programática (múltiples puntos de datos de bajo riesgo integrados a lo largo del tiempo) fortalece la cadena de validez pero introduce sus propios supuestos nuevos que hay que hacer explícitos — y señalan la IA generativa como una amenaza transversal a la validez en cada una de las cinco inferencias. Le importa a Javier porque es el marco formal que su línea de educación médica de precisión (AMAUTA/USAMEDIC) necesita para justificar por qué evalúa razonamiento clínico con múltiples viñetas longitudinales en vez de un examen puntual tipo ENAM, y la advertencia sobre IA generativa aplica directamente a cómo valida (o no) los simulacros con IA que ya usa. Cómo usarlo: adoptar las cinco inferencias de Kane como checklist explícito al diseñar o auditar el sistema de evaluación de razonamiento clínico de AMAUTA, y citar el &#39;desarrollo en tres etapas&#39; del paper para justificar institucionalmente por qué la evaluación programática necesita tiempo de maduración antes de reemplazar exámenes tradicionales.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/medu.70308" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70308</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cognition · Fazioli L, Hadad BS, Denison RN, et al. — 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Suboptimal but intact integration of reward information during perceptual decision-making in autism</div>
+          <div class="r10-line">En una tarea de categorización perceptual con 32 adultos autistas y 48 no autistas, el ajuste del criterio de decisión ante recompensa monetaria fue subóptimo pero cualitativamente similar entre grupos, desafiando la idea de que el autismo implica insensibilidad a la recompensa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato citable para desmontar el mito &#39;TEA = no responde a incentivos&#39; en el diseño de estrategias motivacionales de Javier para pacientes y residentes con TEA/TDAH, apuntando a un déficit de integración de la señal, no de sensibilidad a ella.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.cognition.2026.106716" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cognition.2026.106716</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cognition · Berke MD, Horschler DJ, Royka A, et al. — 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">What primates know about other minds and how often they use it: A computational approach to comparative theory of mind</div>
+          <div class="r10-line">Un marco computacional que combina representaciones sociales con parámetros de &#39;frecuencia de uso&#39; muestra que los primates sí representan estados mentales ajenos en cinco paradigmas clásicos, pero confían mucho menos en esas representaciones que los humanos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: &#39;representar sin confiar en la representación&#39; es transferible a TEA — separar si un paciente no tiene teoría de la mente o la tiene pero no la usa, con implicancias directas para el libro de psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.cognition.2026.106698" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cognition.2026.106698</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · Zhang P, Lin Y, Lieder F, Ma WJ — 12 sep 2026 · preprint · 2026-09-12</div>
+          <div class="r10-title">Immediate reward reduces procrastination in a naturalistic multi-day task</div>
+          <div class="r10-line">En 611 participantes durante una tarea naturalista de 7 días, la recompensa inmediata (vs. diferida) hizo que todos empezaran antes, con el mayor beneficio en quienes procrastinan más.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: mecanismo aplicable al Competency Lab de Javier — rediseñar el estudio para ENAM con micro-recompensas inmediatas en vez de solo la meta lejana del examen podría reducir procrastinación de forma medible.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/p27dh_v3" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/p27dh_v3</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · Trzesniewski K, Gripshover SJ, Master A — 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Developing Effective GenAI Users: The Missing Motivational System and Why It Matters for Equity</div>
+          <div class="r10-line">Proponen que &#39;usar bien la IA generativa&#39; no es solo una habilidad técnica sino un sistema motivacional (creencias, objetivos, contexto) que las instituciones educativas moldean de forma desigual, con consecuencias de equidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: marco aplicable a cómo AMAUTA enseña IA a residentes con distintos recursos en el Perú — el &#39;gap&#39; en uso efectivo de IA puede ser motivacional y contextual, no solo de acceso, y por tanto corregible en el diseño curricular.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/uxh89_v2" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/uxh89_v2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Integrative Psychological &amp; Behavioral Science · Pacheco C, Fossa P — 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">Epoché and Protoexistence: Toward a Genetic Phenomenology of Experiential Emergence</div>
+          <div class="r10-line">Retoman la &#39;epoché&#39; husserliana (suspensión metódica del juicio) como mecanismo genético para entender cómo emerge la experiencia consciente misma, no solo cómo se interpreta después.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: vocabulario filosófico citable para el capítulo introductorio del libro de psicopatología de Javier sobre por qué &#39;suspender el juicio diagnóstico automático&#39; es un mecanismo fenomenológico con genealogía propia, no solo buena práctica clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s12124-026-10027-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s12124-026-10027-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Trends in Cognitive Sciences · Lieberman JM, Sacchet MD, et al. — 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Toward an interdisciplinary mind science of advanced meditation</div>
+          <div class="r10-line">Proponen un campo interdisciplinario formal para estudiar estados meditativos avanzados, integrando fenomenología computacional, neurociencia y desenlaces clínicos, más allá del &#39;mindfulness&#39; genérico de wellness.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: marco citable para el pilar self-care de Javier — diferenciar la meditación como intervención de precisión (dosis, estado, mecanismo neural) del mindfulness-hack superficial, con potencial de contenido sobre neuromodulación contemplativa.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.tics.2026.07.009" target="_blank" rel="noopener">↗ doi.org/10.1016/j.tics.2026.07.009</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education · Ennab F, Kovacevic M, Guraya SS — 10 sep 2026 · review · 2026-09-10</div>
+          <div class="r10-title">Now you see me, now you don&#39;t: A critical narrative review of educator identity</div>
+          <div class="r10-line">Revisión narrativa crítica que identifica dos trayectorias de identidad docente en profesiones de salud: &#39;habitantes plenos&#39; orientados a la educación y &#39;ciudadanos duales&#39; que balancean clínica y docencia, moldeadas más por condiciones estructurales que por vocación individual.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: marco aplicable a cómo Javier posiciona su propia identidad psiquiatra-investigador-educador AMAUTA y a cómo desarrolla a sus instructores, reconociendo la tensión clínica/docencia como estructural, no como un fallo personal.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/medu.70307" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70307</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cognition · Aldrich L, McDonough KL, Timmermans B, et al. — 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Visual perspective-taking and image-like representations: we can see it</div>
+          <div class="r10-line">Evidencia de que tomar la perspectiva visual de otra persona involucra representaciones genuinamente &#39;como-imagen&#39;, no solo inferencia proposicional abstracta sobre lo que el otro ve.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: dato de mecanismo útil para evaluar déficits de perspectiva visual/social en TEA de forma más fina — distinguir &#39;no puede simular la imagen&#39; de &#39;no puede inferir la regla&#39;, aplicable a viñetas de razonamiento clínico en AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.cognition.2026.106699" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cognition.2026.106699</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint) · Nour Eddine SA, Yacovone A, Kuperberg GR — 12 sep 2026 · preprint · 2026-09-12</div>
+          <div class="r10-title">Predictive coding unifies neural and behavioral signatures of contextual facilitation</div>
+          <div class="r10-line">El marco de codificación predictiva explica en un solo mecanismo por qué el contexto acelera la respuesta conductual y reduce la actividad neural durante la comprensión del lenguaje, precisando cuándo el efecto aparece en cada medida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: metáfora pedagógica citable para AMAUTA — una anamnesis bien hecha construye el &#39;contexto&#39; que acelera el reconocimiento diagnóstico del residente por el mismo mecanismo de predicción, ahorrando carga cognitiva downstream.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/auvtf_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/auvtf_v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cognition · Cohn N, Cardoso B, et al. — 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">Syntactic headedness aligns with visual narrative structure</div>
+          <div class="r10-line">La &#39;cabecera sintáctica&#39; (qué elemento es estructuralmente central en una oración) se alinea con la estructura de secuencias de imágenes en narrativas visuales (cómics), sugiriendo una gramática cognitiva compartida entre modalidades.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: marco transferible al pilar content-documentation de Javier — diseñar diagramas e infografías de razonamiento clínico con la misma lógica de &#39;cabecera&#39; que estructura una oración, para que se procesen con la eficiencia del lenguaje.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.cognition.2026.106712" target="_blank" rel="noopener">↗ doi.org/10.1016/j.cognition.2026.106712</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El TEA no reduce la sensibilidad a la recompensa: el problema no es &#39;no le importa el incentivo&#39;, es que integra la señal de recompensa de forma menos eficiente — cambia el diseño del refuerzo, no su intensidad.</li><li>Excellencism y perfeccionismo persiguen la misma meta (desempeño alto) por vías psicológicamente opuestas: la diferencia no está en cuánto exiges, sino en si tu autoconcepto depende del resultado.</li><li>Un LLM puntúa mejor una escala clínica cuando se le obliga a extraer evidencia paso a paso antes de puntuar: el valor no está en el modelo, está en la arquitectura de la deliberación que se le impone.</li><li>La recompensa inmediata —no la meta grande y lejana— es lo que mueve a empezar antes una tarea larga: rediseñar la temporalidad del refuerzo vence a intentar &#39;subir la motivación&#39;.</li><li>Los primates sí representan lo que otros primates piensan, pero confían mucho menos en esa representación que los humanos: &#39;tener teoría de la mente&#39; y &#39;confiar en ella&#39; son procesos separables.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cuánta de la &#39;falta de motivación&#39; que le atribuyes a un residente con TDAH es en realidad un problema de temporalidad del refuerzo (recompensa lejana), no de intensidad motivacional?</li><li>Si separas &#39;excellencism&#39; de perfeccionismo en tus alumnos de USAMEDIC, ¿qué proporción cae en el cuadrante de alto desempeño + alta satisfacción vs. alto desempeño + malestar?</li><li>¿Tu protocolo de evaluación de razonamiento clínico en AMAUTA sobreviviría un análisis explícito con las cinco inferencias de validez de Kane, incluyendo el supuesto de que la IA generativa no contamina el dato?</li><li>Un paciente con TEA que &#39;no reacciona&#39; a un incentivo terapéutico, ¿realmente no lo valora, o lo integra de forma menos eficiente en su decisión — y cambia eso el diseño del plan de refuerzo?</li><li>¿Cuánto de la identidad docente que le pides a tus instructores AMAUTA depende de vocación individual vs. de que la institución reconozca y remunere el tiempo de enseñanza como tiempo clínico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/IG: &#39;Excellencism vs. perfeccionismo — por qué exigirte no debería enfermarte&#39;, usando el estudio de examinandos de licencia como gancho para residentes que preparan el ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper corto (RENACYT): replicar el protocolo de LLM open-weight para puntuación de escalas clínicas (MADRS/HAM-D) en una muestra peruana, evaluando si la descomposición por pasos mejora la validez igual que en Girard et al.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología: usar &#39;representar sin confiar en la representación&#39; (teoría de la mente en primates) como plantilla para explicar el TEA como un problema de confianza en la representación social, no de ausencia de representación.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Contenido AMAUTA: rediseñar los simulacros ENAM con micro-recompensas inmediatas (insignias, feedback instantáneo) en vez de solo el objetivo lejano del examen, inspirado en el estudio de procrastinación de 7 días.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper/capítulo de educación médica: aplicar el marco de validez de Kane (cinco inferencias) para auditar públicamente el sistema de evaluación de razonamiento clínico de AMAUTA/USAMEDIC, incluyendo el riesgo de contaminación por IA generativa.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Cognition</span><span class="tag highlight">Medical Education</span><span class="tag ">Trends in Cognitive Sciences</span><span class="tag ">Integrative Psychological &amp; Behavioral Science</span><span class="tag ">PsyArXiv (OSF)</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (eutils) · PsyArXiv/OSF API · WebSearch (Substack, Farnam Street, LessWrong, Reddit, X, YouTube — sin hallazgos verificables en la ventana de 48-72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
