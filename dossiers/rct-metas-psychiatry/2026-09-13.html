@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">13 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">26</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Canadian Journal of Psychiatry, 12 sep 2026 · meta-analysis · 2026-09-12</div>
+        <h3 class="r3-title">Pharmacological Management of Opioid Use Disorder: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">NMA registrada en PROSPERO que combina 103 RCTs (26,624 personas con trastorno por uso de opioides) y rankea 13 intervenciones farmacológicas: la terapia asistida con heroína lidera retención en tratamiento (OR=31.47 vs. placebo, certeza moderada), seguida de heroína+metadona y metadona en dosis alta, mientras que buprenorfina mejora abstinencia por urianálisis; ninguna intervención redujo con certeza mortalidad, sobredosis o actividad criminal. Le importa a Javier porque es el tipo de NMA con GRADE que puede usar literalmente como caso de enseñanza en AMAUTA/USAMEDIC para explicar cómo leer un ranking de tratamientos (qué significa &#39;certeza moderada&#39; vs. &#39;baja&#39;, por qué un resultado puede ser el mejor en retención y no tener evidencia sobre mortalidad) — un ejercicio perfecto de razonamiento clínico aplicado a psiquiatría de las adicciones, un extremo del espectro que su libro de psicopatología no puede dejar fuera. Puede usarlo también para un módulo breve sobre por qué &#39;sustancia&#39; sigue siendo psiquiatría de alta evidencia y no un tema aparte.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/07067437261479071" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261479071</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">BMJ Mental Health, 12 sep 2026 · paper · 2026-09-12</div>
+        <h3 class="r3-title">ADHD medication use and risk of self-harm: a multinational self-controlled case series study</h3>
+        <p class="r3-hook">Estudio multinacional (Hong Kong, Nueva Zelanda, Corea del Sur, Taiwán, Reino Unido; 461,024 personas que iniciaron medicación para TDAH, 6,847 con autolesión incidente) que usa diseño self-controlled case series para separar causalidad de confusión por indicación: el riesgo de autolesión es más alto en los 90 días ANTES de iniciar el fármaco (IRR=2.58), baja en los primeros 90 días de tratamiento (IRR=1.78) y sigue bajando en el tratamiento sostenido (IRR=1.27) — es decir, el TDAH sin tratar explica más el riesgo que el medicamento en sí. Le importa a Javier directamente en su línea TDAH/TEA/neurodivergencia: es evidencia dura, multinacional y metodológicamente elegante (self-controlled, cada paciente es su propio control) contra el mito de &#39;los estimulantes causan autolesión&#39;, justo el tipo de dato que puede desmontar en un reel de Instagram o en un módulo de AMAUTA sobre seguridad de estimulantes, sin caer en el extremo contrario de negar que existe monitoreo clínico necesario.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/bmjment-2026-302819" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjment-2026-302819</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">medRxiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+        <h3 class="r3-title">Lifestyle therapy versus cognitive behavioural therapy for adults with mood disorders: a randomised non-inferiority trial</h3>
+        <p class="r3-hook">RCT australiano registrado (ACTRN12622001026718), no-inferioridad, single-blind, telehealth: 267 adultos con trastornos del ánimo asignados a terapia de estilo de vida vs. TCC durante 8 semanas; la terapia de estilo de vida no fue inferior a TCC (β=1.76, IC95% -0.28 a 3.81) y de hecho redujo más puntos de MADRS en términos absolutos (-8.55 vs. -6.82), con adherencia comparable. Le importa a Javier porque es un ejemplo de manual sobre cómo interpretar un margen de no-inferioridad (no es &#39;ganó&#39;, es &#39;no fue peor dentro del margen preespecificado&#39;) — material directo para razonamiento clínico y AMAUTA/USAMEDIC — y porque abre la puerta a ampliar el acceso a tratamiento basado en evidencia para depresión con personal de salud no especializado en TCC, algo directamente aplicable a la realidad de escasez de terapeutas entrenados en el sistema de salud peruano.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.08.26362466" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362466</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 11 sep 2026 · rct · 2026-09-11</div>
+          <div class="r10-title">Efficacy of tDCS-primed iTBS in major depressive disorder: A randomized, sham-controlled trial with exploratory resting motor threshold analyses</div>
+          <div class="r10-line">RCT doble ciego sham-controlado (n=76) en depresión mayor: &#39;primear&#39; la corteza con tDCS catódica antes de iTBS no superó a sham en reducción de HAMD-17/MADRS (ambos brazos &gt;70% de respuesta), aunque el cambio agudo en umbral motor de reposo se asoció de forma exploratoria con mejoría neurocognitiva.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: un resultado negativo bien diseñado como este es oro para el módulo de neuromodulación de Javier — enseña que &#39;combinar dos técnicas&#39; no siempre suma, y que la variabilidad interindividual en respuesta a TMS/tDCS (su línea de precisión psiquiátrica) sigue siendo el verdadero cuello de botella a resolver antes de protocolos combinados.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122493" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122493</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Autism and Developmental Disorders, 12 sep 2026 · rct · 2026-09-12</div>
+          <div class="r10-title">Inflammatory Cytokines as Biologic Signatures of the Effect of Dietary Supplementation With Omega Fatty Acids on Autism-Related Behaviors and Features Among Young Children: A Randomized Controlled Trial</div>
+          <div class="r10-line">RCT doble ciego registrado (NCT04312932, n=96, niños 2-&lt;7 años con autismo) probó omega 3-6 vs. placebo por 90 días: no hubo efecto sobre citoquinas inflamatorias ni sobre conductas relacionadas con autismo, y los cambios en citoquinas no se correlacionaron con cambios conductuales — con alguna señal exploratoria diferenciada por sexo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: perla anti-hype para su línea TDAH/TEA — un suplemento popular en consultorios y redes sociales no sostuvo su mecanismo propuesto (inflamación) en un ensayo bien controlado; material listo para un post que separe &#39;promesa biológica plausible&#39; de &#39;evidencia RCT real&#39;, justo la voz directa y proporcional a la evidencia que caracteriza su marca.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10803-026-07523-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s10803-026-07523-w</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Polygenic and machine learning analysis of medication response in a prospective pediatric cohort initiating ADHD medication</div>
+          <div class="r10-line">Cohorte prospectiva pediátrica (ADAPT, n=309 + 780 de cohorte de referencia): el puntaje poligénico de TDAH se asoció a mayor severidad basal (β=0.14, p=0.008), y un modelo de machine learning combinando datos genéticos y clínicos alcanzó 92% de precisión estimada para predecir respuesta a medicación (vs. 72% solo genética, 84% solo clínica), aunque los autores advierten falta de generalización aún.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: ejemplo temprano pero concreto de psiquiatría de precisión aplicada a TDAH — útil para su pilar de precisión psiquiátrica y para mostrar en AMAUTA/USAMEDIC cómo se ve un modelo predictivo &#39;todavía no listo para clínica&#39; sin descartar la dirección de la investigación.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.09.26362635" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.26362635</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Virtual and In-Person Psychiatric Care: Appointment Completion and Capacity Use in a Public Mental Health Service in Peru</div>
+          <div class="r10-line">Estudio ecológico retrospectivo (2022-2026) en el Instituto Nacional de Salud Mental &#39;Honorio Delgado-Hideyo Noguchi&#39; (Lima): la teleconsulta tuvo mayor tasa de asistencia que la presencial (90.9% vs. 83.8%, dif.+7.2 puntos) pero menor uso de la capacidad de citas disponibles (73.0% vs. 90.5%, dif.-17.5 puntos).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: dato hiperlocal y accionable para Javier — es evidencia peruana real sobre por qué &#39;virtual&#39; y &#39;presencial&#39; no se comparan solo por asistencia sino también por uso de capacidad instalada; perfecto para un post o clase sobre política de salud mental pública en Perú, con su propia data nacional en vez de referencias extranjeras.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.08.26362068" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362068</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Sleep Medicine, 10 sep 2026 · meta-analysis · 2026-09-10</div>
+          <div class="r10-title">Association between sleep paralysis and anxiety: a systematic review and meta-analysis</div>
+          <div class="r10-line">Meta-análisis PROSPERO (11 estudios, 5,568 personas): la parálisis del sueño se asoció a mayores puntajes de ansiedad (SMD=0.35, IC95% 0.27-0.44, I²=0%) aunque la asociación con prevalencia de trastornos de ansiedad formales fue inconsistente entre análisis.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: encaja en su marco dimensional/RDoC como ejemplo de fenómeno transdiagnóstico medible con una pregunta simple en la anamnesis — más útil como síntoma centinela de ansiedad que como diagnóstico en sí, buena perla para su libro de psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s44470-026-00190-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s44470-026-00190-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">PLoS One, 11 sep 2026 · rct · 2026-09-11</div>
+          <div class="r10-title">Executive function in alcohol use disorder with low psychiatric comorbidity: Comparison with a non-clinical sample and predictive value for treatment outcome</div>
+          <div class="r10-line">Análisis basal de un RCT sueco (n=147 con trastorno por uso de alcohol moderado y baja comorbilidad psiquiátrica, vs. n=72 controles): la función ejecutiva (batería CANTAB) no estuvo deteriorada frente a controles y no predijo reducción de consumo a 12 ni 26 semanas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: contraejemplo útil para su pilar de precisión psiquiátrica — un biomarcador neurocognitivo &#39;intuitivo&#39; (disfunción ejecutiva) no se sostiene como predictor en una muestra de AUD sin comorbilidad severa, recordatorio de que el fenotipo cambia según qué tan &#39;pura&#39; es la muestra clínica que se estudia.</div>
+          <a class="r10-link" href="https://doi.org/10.1371/journal.pone.0350955" target="_blank" rel="noopener">↗ doi.org/10.1371/journal.pone.0350955</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En TDAH, el riesgo de autolesión es más alto ANTES de empezar el estimulante (IRR=2.58) que durante el tratamiento sostenido (IRR=1.27) en 461,024 personas de 5 países: el problema suele ser el TDAH sin tratar, no el fármaco.</li><li>Una NMA de 103 RCTs en trastorno por uso de opioides encontró que ninguna de las 13 intervenciones farmacológicas reduce con certeza la mortalidad o la sobredosis — la mejor evidencia de retención en tratamiento no es lo mismo que la mejor evidencia de supervivencia.</li><li>Omega 3-6 en niños con autismo no cambió citoquinas inflamatorias ni conducta en un RCT doble ciego (n=96): el mecanismo antiinflamatorio propuesto para justificar el suplemento no se sostuvo en el ensayo.</li><li>En Lima, la teleconsulta psiquiátrica tiene mejor asistencia que la presencial (90.9% vs. 83.8%) pero peor aprovechamiento de los cupos disponibles (73.0% vs. 90.5%): &#39;más asistencia&#39; y &#39;más eficiencia de capacidad&#39; no son la misma métrica.</li><li>La disfunción ejecutiva no siempre acompaña al trastorno por uso de alcohol: en una muestra sueca con baja comorbilidad psiquiátrica, el desempeño en CANTAB fue igual al de controles sanos y no predijo el consumo a 6 meses.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Cómo explicarías a un residente, en una frase, por qué &#39;mejor en retención al tratamiento&#39; y &#39;mejor en reducir mortalidad&#39; pueden ser conclusiones distintas dentro de la misma NMA de opioides?</li><li>Si un paciente o padre de familia te pregunta si el metilfenidato &#39;puede causar&#39; que su hijo se autolesione, ¿cómo usarías el diseño self-controlled case series de este estudio para responder sin minimizar el riesgo real?</li><li>¿Qué le pedirías a un ensayo de &#39;terapia de estilo de vida vs. TCC&#39; antes de aceptar su conclusión de no-inferioridad: qué margen se preespecificó y qué tan grande fue el intervalo de confianza?</li><li>¿Qué tanto de tu escepticismo ante &#39;suplemento X mejora autismo por vía antiinflamatoria&#39; cambia después de ver un RCT bien controlado que no encuentra ni el cambio biológico ni el conductual?</li><li>En tu propia experiencia con teleconsulta en Perú, ¿el patrón de Lima (mejor asistencia, peor uso de cupos) se replica, o el cuello de botella real es otro (conectividad, alfabetización digital, agenda del especialista)?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel IG desmontando el mito &#39;estimulantes = riesgo de autolesión en TDAH&#39; usando las tres ventanas de riesgo (antes, inicio, tratamiento sostenido) del estudio multinacional de BMJ Mental Health.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre cómo leer una network meta-analysis con GRADE, usando la NMA de tratamiento farmacológico para trastorno por uso de opioides como caso guiado paso a paso.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota o hilo sobre el estudio peruano de teleconsulta vs. presencial en el INSM Honorio Delgado, conectándolo con política de salud mental pública y el futuro de la hibridación de servicios en Perú.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología sobre &#39;biomarcadores que no sobreviven el ensayo controlado&#39;: omega 3-6 en autismo y función ejecutiva en alcohol como dos ejemplos recientes de mecanismos plausibles que no predijeron el resultado clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de opinión/comentario sobre el uso de diseños self-controlled case series como estándar para estudiar seguridad de psicofármacos en poblaciones pediátricas, usando el estudio de TDAH y autolesión como ejemplo metodológico.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag ">BMJ Mental Health</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Journal of Autism and Developmental Disorders</span><span class="tag ">Journal of Clinical Sleep Medicine</span><span class="tag ">PLoS One</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/eutils (esearch/esummary/efetch) · medRxiv API (api.biorxiv.org) · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
