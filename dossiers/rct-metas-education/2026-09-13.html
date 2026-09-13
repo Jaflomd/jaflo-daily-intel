@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-13 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">13 de septiembre de 2026 · 2026-W37 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">41</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">7</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Nursing Education, 10 sep 2026 · rct · 2026-09-10</div>
+        <h3 class="r3-title">Video-Supported Collaborative Learning: Effects on Nursing Students&#39; OSCE Performance and Self-Efficacy Beliefs</h3>
+        <p class="r3-hook">Ensayo real, aleatorizado de dos brazos, en estudiantes de primer año de enfermería en Turquía: el grupo que preparó su OSCE con video-aprendizaje colaborativo (grabarse, verse entre pares, corregir) mejoró significativamente su autoeficacia y su desempeño en el OSCE frente al grupo de instrucción tradicional en laboratorio de refuerzo. Le importa a Javier porque es evidencia controlada, no anecdótica, de un método de preparación para examen práctico estructurado exactamente como los simulacros OSCE/ECOE que AMAUTA/USAMEDIC ya corre para Residentado — y el mecanismo (verse y corregirse en video entre pares) es replicable sin infraestructura cara. Cómo usarlo: pilotear un módulo de &#39;video-review por pares&#39; antes de los simulacros OSCE de AMAUTA, midiendo autoeficacia pre/post igual que el estudio, en vez de asumir que más práctica sola basta.</p>
+        <a class="r3-link" href="https://doi.org/10.3928/01484834-20260630-01" target="_blank" rel="noopener">↗ doi.org/10.3928/01484834-20260630-01</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">ANZ Journal of Surgery, 11 sep 2026 · rct · 2026-09-11</div>
+        <h3 class="r3-title">Application of AI-Enhanced Teaching Combined With Traditional Instruction in Cardiac and Great Vessel Surgery</h3>
+        <p class="r3-hook">Ensayo real con 40 residentes de cirugía cardiovascular en China, aleatorizados a un programa de 8 semanas de enseñanza combinada (planificación de aprendizaje inteligente + biblioteca de videos quirúrgicos + análisis de casos con IA) más instrucción tradicional, versus solo instrucción tradicional: el grupo con IA obtuvo puntajes de OSCE y de habilidad quirúrgica significativamente más altos (85.6 vs 78.3 y 92.4 vs 86.1, p&lt;0.01). Le importa a Javier porque es de los pocos RCT reales (no solo encuestas de percepción) que muestran que IA combinada con enseñanza tradicional mejora desempeño objetivo evaluado, no solo satisfacción — justo el tipo de evidencia que necesita su línea de IA en investigación/educación para justificar inversión en herramientas similares dentro de AMAUTA, más allá del hype. Cómo usarlo: usar el diseño (IA como complemento, no reemplazo, con evaluación objetiva pre/post) como plantilla para justificar y evaluar cualquier piloto de IA que AMAUTA introduzca en la preparación de Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/ans.70972" target="_blank" rel="noopener">↗ doi.org/10.1111/ans.70972</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">American Journal of Hospice &amp; Palliative Care, 10 sep 2026 · paper · 2026-09-10</div>
+        <h3 class="r3-title">Flipped Learning Versus Traditional Lectures in End-of-Life Nursing Education: A Comparative Study in Taiwan</h3>
+        <p class="r3-hook">Estudio real, comparativo pre-post de dos grupos, en 109 enfermeras taiwanesas: contra la narrativa simple de &#39;flipped classroom siempre gana&#39;, el hallazgo es matizado — la clase tradicional fue mejor enseñando protocolos procedimentales de retiro de soporte vital (d=.791), mientras que el aula invertida ganó en juicio clínico contextual sobre órdenes de no reanimar y en habilidades relacionales (d=.654 y d=.328), con un pequeño aumento en ansiedad ante la muerte. Le importa a Javier porque es el contraejemplo perfecto al entusiasmo genérico por metodologías activas en AMAUTA/USAMEDIC: la evidencia real dice que el método óptimo depende del tipo de contenido (reglas/protocolos vs. razonamiento contextual), no de una preferencia ideológica por lo &#39;activo&#39;. Cómo usarlo: segmentar el diseño instruccional de AMAUTA por tipo de contenido — protocolos y checklist duros en formato tradicional/directo, y razonamiento clínico ambiguo en formato invertido/discusión — en vez de aplicar flipped classroom de forma uniforme.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/10499091261487133" target="_blank" rel="noopener">↗ doi.org/10.1177/10499091261487133</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">4</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Medical Education, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Validity considerations in programmatic assessment of clinical reasoning</div>
+          <div class="r10-line">Artículo conceptual real en Medical Education que aplica el marco de validez de Kane (desempeño, calificación, generalización, extrapolación, consecuencias) a la evaluación programática de razonamiento clínico, y añade la IA generativa como amenaza transversal a cada inferencia — habla directo a la línea de razonamiento clínico de Javier.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los programas de evaluación de razonamiento clínico (incluido cualquier banco de casos de AMAUTA/USAMEDIC) van a necesitar documentar explícitamente cómo la IA generativa podría inflar o distorsionar cada inferencia de la cadena de validez antes de que un evaluador externo se los pida — Javier puede adelantarse escribiendo ese argumento de validez para su propio banco de razonamiento clínico ahora.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/medu.70308" target="_blank" rel="noopener">↗ doi.org/10.1111/medu.70308</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today, 12 sep 2026 · review · 2026-09-12</div>
+          <div class="r10-title">The Manchester Clinical Supervision Scale-26 as a Measure of Perceived Clinical Supervision Effectiveness: A Systematic Review</div>
+          <div class="r10-line">Revisión sistemática real con metodología COSMIN/GRADE sobre las propiedades psicométricas de la escala MCSS-26 (29 estudios): concluye que la escala más usada para medir &#39;supervisión clínica efectiva&#39; tiene validez de contenido limitada y consistencia inconsistente — la herramienta con la que muchos programas miden el feedback de sus tutores no está tan validada como parece.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: journals de educación en salud van a empezar a exigir evidencia psicométrica (no solo puntaje bruto) antes de aceptar &#39;mejoró la supervisión/feedback&#39; como hallazgo — Javier puede usar este hallazgo para no adoptar el MCSS-26 sin adaptarlo/validarlo si AMAUTA decide medir formalmente la calidad de feedback de sus tutores.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107358" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107358</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Ophthalmology, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Construct validity of five phacoemulsification modules on the EyeSi surgical simulator: a cross-sectional study across three levels of surgical expertise</div>
+          <div class="r10-line">Estudio real con 25 participantes (novatos, residentes avanzados, expertos) que confirma validez de constructo en 3 de 5 módulos del simulador EyeSi para cirugía de catarata (capsulorrexis, divide-and-conquer, inserción de lente), pero no en hidrodisección ni irrigación/aspiración — evidencia de que &#39;el simulador discrimina experiencia&#39; no aplica igual a todas sus tareas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los reportes de simulación educativa (incluidos los de AMAUTA sobre sus propias herramientas de práctica) van a tener que reportar validez de constructo módulo por módulo, no como propiedad global del simulador — un estándar de rigor trasladable a cualquier banco de casos o simulador clínico que Javier valide para AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10792-026-04251-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s10792-026-04251-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Academic Radiology, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">Curriculum-Integrated MRI Simulation Across Successive Cohorts: A Quasi-experimental Curriculum-Development Study of Cognitive Load and Instructional Efficiency</div>
+          <div class="r10-line">Estudio real, cuasi-experimental de un solo centro (40 estudiantes de radiografía, 3 cohortes sucesivas independientes) que integró simulación de RM en el currículo: la dirección de mejora fue consistente (satisfacción, examen final, carga cognitiva, metacognición), pero los contrastes de carga cognitiva y eficiencia instruccional dejaron de ser significativos tras corrección estadística.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este tipo de estudio &#39;de dirección consistente pero no significativo tras corrección&#39; se va a volver más común a medida que más programas midan simulación con rigor — recordatorio útil para Javier de exigir el mismo estándar (corrección por comparaciones múltiples) antes de anunciar una mejora de currículo en AMAUTA como si fuera un efecto confirmado.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.acra.2026.08.067" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.067</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el RCT de hoy con residentes de cirugía cardiovascular, la IA no reemplazó la enseñanza tradicional: la complementó. El grupo que subió más en OSCE y habilidad quirúrgica (85.6 vs 78.3, 92.4 vs 86.1) fue el de &#39;IA + tradicional&#39;, no &#39;solo IA&#39; — el diseño ganador siempre fue híbrido.</li><li>El estudio de flipped classroom en cuidados de fin de vida en Taiwán rompe el mito de &#39;lo activo siempre gana&#39;: para protocolos duros (retiro de soporte vital) la clase tradicional fue mejor (d=.791); para juicio clínico ambiguo (órdenes de no reanimar), ganó el aula invertida (d=.654). El método correcto depende del tipo de contenido, no de una moda pedagógica.</li><li>La escala MCSS-26, usada en decenas de estudios para medir &#39;supervisión clínica efectiva&#39;, tiene evidencia de validez de contenido &#39;limitada o insuficiente&#39; según la revisión sistemática COSMIN de hoy — muchos programas llevan años midiendo feedback de tutores con una regla que no está bien calibrada.</li><li>El simulador EyeSi de cirugía de catarata discrimina bien la experiencia quirúrgica en 3 de 5 módulos (capsulorrexis, divide-and-conquer, inserción de lente) pero no en hidrodisección ni irrigación/aspiración — un simulador puede ser válido para unas tareas y no para otras dentro del mismo software.</li><li>El estudio de simulación de RM de hoy mostró mejoras consistentes en cada cohorte sucesiva, pero al corregir por comparaciones múltiples la carga cognitiva y la eficiencia instruccional dejaron de ser significativas — la &#39;tendencia bonita&#39; en un gráfico de barras no siempre sobrevive a la corrección estadística.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Un módulo de video-review por pares antes del OSCE, como el del RCT de hoy, mejoraría la autoeficacia de los candidatos a Residentado de AMAUTA tanto como mejoró la de las estudiantes de enfermería del estudio (autoeficacia + desempeño OSCE)?</li><li>¿Qué contenidos del currículo de AMAUTA/USAMEDIC son &#39;protocolo duro&#39; (mejor en formato tradicional, según el estudio de hoy en cuidados de fin de vida) y cuáles son &#39;razonamiento contextual&#39; (mejor en formato invertido) — y está la malla actual mezclando ambos con el mismo método?</li><li>¿Qué parte del argumento de validez de Kane (desempeño, calificación, generalización, extrapolación, consecuencias) del paper de hoy en Medical Education ya está cubierta por el banco de razonamiento clínico de Javier, y cuál queda expuesta si un evaluador externo la pidiera hoy?</li><li>Si la escala MCSS-26 tiene validez de contenido limitada según la revisión de hoy, ¿qué instrumento (o versión adaptada) debería usar AMAUTA si decide medir formalmente la calidad del feedback de sus propios tutores?</li><li>¿El módulo de IA + enseñanza tradicional del RCT de hoy (planificación inteligente + biblioteca de videos + análisis de casos) es replicable con herramientas ya disponibles para AMAUTA, o requiere infraestructura que Javier no tiene todavía?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Piloto AMAUTA: módulo de video-review por pares antes de simulacros OSCE/ECOE, midiendo autoeficacia pre/post con el mismo diseño del RCT de hoy en Journal of Nursing Education.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio propio RENACYT: replicar el diseño del RCT de cirugía cardiovascular (IA + enseñanza tradicional vs. tradicional sola) adaptado a un módulo de razonamiento clínico psiquiátrico de AMAUTA, con evaluación objetiva pre/post en vez de solo satisfacción.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de educación médica de precisión sobre por qué &#39;flipped classroom&#39; no es universalmente superior, usando el contraste protocolo-duro vs. razonamiento-contextual del estudio de hoy en cuidados de fin de vida como caso ejemplar.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Documentar el argumento de validez de Kane (con la amenaza de IA generativa como inferencia transversal) para el banco de razonamiento clínico de AMAUTA, siguiendo el framework publicado hoy en Medical Education.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/hilo IG explicando por qué un simulador (EyeSi, o cualquier equivalente de AMAUTA) puede ser válido para unas tareas y no para otras del mismo software — gancho de alfabetización metodológica para candidatos a Residentado interesados en investigación.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Nursing Education</span><span class="tag ">ANZ Journal of Surgery</span><span class="tag ">American Journal of Hospice &amp; Palliative Care</span><span class="tag highlight">Medical Education</span><span class="tag ">Nurse Education Today</span><span class="tag ">International Ophthalmology</span><span class="tag ">Academic Radiology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed · PubMed E-utilities. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 13 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
