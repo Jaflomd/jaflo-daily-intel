@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-14 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">14 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">17</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">17</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Nurse Education in Practice, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+        <h3 class="r3-title">Effects of Problem-Based Learning and Flipped Classroom Educational Methods on Patient Safety Knowledge, Attitudes and Skills Among Nursing Students: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">Network meta-análisis real (13 estudios, 979 participantes, PRISMA-NMA, PROSPERO registrado) que compara aula invertida (FC) contra aprendizaje basado en problemas (PBL) para enseñar seguridad del paciente en enfermería: FC mejoró conocimiento (SMD=1.06) y habilidad (SMD=0.92) pero no actitud, y PBL rankeó más alto en los tres dominios — aunque cada estimación de PBL viene de un solo estudio, con certeza de baja a muy baja. Le importa a Javier porque es exactamente el tipo de comparación cabeza a cabeza entre metodologías activas que AMAUTA/USAMEDIC necesita antes de decidir si invierte más en discusión de casos (PBL) o en video-antes-de-clase (aula invertida) para contenido de seguridad del paciente/farmacovigilancia en su currículo de Residentado. Cómo usarlo: no tratar el ranking de PBL como ganador definitivo — la certeza &#39;baja a muy baja&#39; es la lección real, así que cualquier decisión curricular en AMAUTA basada en este NMA debería ir acompañada de una medición propia pre/post, no de la sola cita del ranking.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.nepr.2026.104971" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nepr.2026.104971</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Perspectives on Medical Education, 9 sep 2026 · rct · 2026-09-09</div>
+        <h3 class="r3-title">Pedagogical Efficacy of LLM-Generated Synthetic Data Versus Real-World Clinical Records: A Randomized Controlled Non-Inferiority Trial</h3>
+        <p class="r3-hook">RCT real, prospectivo, de no-inferioridad (403 aleatorizados, 386 en el análisis) que compara aprender con casos clínicos reales (revisados por expertos) versus casos generados por Gemini 3.0 Pro (también revisados por expertos) a partir de los mismos casos reales desidentificados: la no-inferioridad de los casos generados por IA NO se demostró (diferencia de medias -0.335, IC95% -1.006 a 0.337, por debajo del margen preespecificado), y los casos de IA se sintieron menos realistas en los escenarios clínicamente más complejos. Le importa muchísimo a Javier porque toca directo su línea de IA en investigación/educación: si AMAUTA/USAMEDIC usa o planea usar viñetas clínicas generadas por IA para el banco de casos de ENAM/Residentado, este es el primer ensayo riguroso que muestra que la equivalencia con casos reales NO está probada, sobre todo para razonamiento clínico complejo — justo el terreno de la psiquiatría dimensional. Cómo usarlo: antes de escalar cualquier banco de casos generado por IA en AMAUTA, replicar este diseño de no-inferioridad (o al menos medir realismo percibido) en vez de asumir que un caso generado por LLM enseña igual que uno real, especialmente para viñetas psiquiátricas complejas.</p>
+        <a class="r3-link" href="https://doi.org/10.5334/pme.2535" target="_blank" rel="noopener">↗ doi.org/10.5334/pme.2535</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Simulation in Healthcare, 9 sep 2026 · rct · 2026-09-09</div>
+        <h3 class="r3-title">Gamification With Progress Bars Improves Performance and Retention in Virtual Reality Simulation: A Randomized, Controlled Trial</h3>
+        <p class="r3-hook">RCT real con 24 estudiantes de medicina sin experiencia previa en cirugía de hueso temporal: añadir una barra de progreso visible a un simulador de realidad virtual (15 procedimientos de mastoidectomía, retención medida a 2.5 meses) mejoró significativamente el desempeño (diferencia de medias 1.5 puntos sobre una escala validada de 26) y, sobre todo, benefició más a quienes NO tenían experiencia en videojuegos, cerrando su brecha inicial tanto en entrenamiento como en retención a largo plazo. Le importa a Javier porque es una intervención mínima, barata y generalizable (una barra de progreso) con evidencia de retención a 2+ meses — no solo post-test inmediato —, exactamente el tipo de &#39;palanca de bajo costo y alto ROI&#39; que encaja con las líneas de simulación/OSCE de AMAUTA y con su criterio de evidencia proporcional al claim. Cómo usarlo: agregar una barra de progreso visible al banco de preguntas o simulador de práctica de AMAUTA/USAMEDIC y medir retención a 2-3 meses (no solo el examen inmediato), esperando que el mayor beneficio aparezca en los estudiantes con menos familiaridad con herramientas digitales/gamificadas.</p>
+        <a class="r3-link" href="https://doi.org/10.1097/SIH.0000000000000966" target="_blank" rel="noopener">↗ doi.org/10.1097/SIH.0000000000000966</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">8</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMC Nursing, 8 sep 2026 · rct · 2026-09-08</div>
+          <div class="r10-title">Adaptive AI-Based Mobile Simulation for Drug Calculation Competency in Nurses: A Mixed-Methods RCT</div>
+          <div class="r10-line">RCT real, mixto (56 enfermeras, 2 brazos, CONSORT + GRAMMS), en el que una app móvil de IA con feedback correctivo adaptativo mejoró con tamaños de efecto grandes el conocimiento, la toma de decisiones clínicas y la autoeficacia en cálculo de dosis de fármacos frente al grupo control.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este diseño de &#39;simulador móvil adaptativo de bajo costo con feedback correctivo&#39; se va a replicar rápido en otras habilidades de alto riesgo — Javier podría adaptarlo a un módulo de cálculo de dosis psicofarmacológicas para AMAUTA, midiendo autoeficacia pre/post igual que este estudio.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12912-026-05313-4" target="_blank" rel="noopener">↗ doi.org/10.1186/s12912-026-05313-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Nursing Management, 2026 · meta-analysis · 2026-09-11</div>
+          <div class="r10-title">Artificial Intelligence in Nursing Practice Education: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">Meta-análisis real (16 estudios, 1647 participantes, 7 RCT + 9 cuasi-experimentales, PRISMA 2020, PROSPERO) que encuentra que integrar IA en cursos prácticos de enfermería mejora conocimiento (SMD=0.72), habilidad práctica (SMD=1.25) y razonamiento clínico (SMD=0.43), con heterogeneidad muy alta en las dos primeras.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los journals de educación en salud van a exigir cada vez más el desglose de heterogeneidad (I²) antes de aceptar &#39;la IA mejora el aprendizaje&#39; como titular — Javier puede citar este SR+MA a favor de IA en AMAUTA, pero igual necesita su propio pre/post con medidas objetivas, no solo satisfacción.</div>
+          <a class="r10-link" href="https://doi.org/10.1155/jonm/6626865" target="_blank" rel="noopener">↗ doi.org/10.1155/jonm/6626865</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">BMC Medical Education, 9 sep 2026 · meta-analysis · 2026-09-09</div>
+          <div class="r10-title">Prevalence of Test Anxiety Among Medical Students: A Systematic Review and Meta-Analysis</div>
+          <div class="r10-line">Meta-análisis real (35 estudios, 13,489 estudiantes de medicina) que estima una prevalencia global de ansiedad ante exámenes de 49.8% (más alta en mujeres, en primer año y en Sudeste Asiático), con heterogeneidad muy alta entre estudios.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la ansiedad ante exámenes se va a consolidar como outcome a medir rutinariamente (no solo desempeño) en programas intensivos tipo ENAM/Residentado — Javier podría medir ansiedad pre/post en cohortes de AMAUTA/USAMEDIC para diferenciarse con datos reales, no solo con tasas de aprobación.</div>
+          <a class="r10-link" href="https://doi.org/10.1186/s12909-026-10270-2" target="_blank" rel="noopener">↗ doi.org/10.1186/s12909-026-10270-2</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Nursing Review, sep 2026 · review · 2026-09-11</div>
+          <div class="r10-title">Outcomes, Evaluation Metrics, and Measurement Tools for Large Language Model Applications Research in Nursing: A Scoping Review</div>
+          <div class="r10-line">Revisión de alcance real (50 estudios, metodología JBI + PRISMA-ScR) que mapea 56 métricas/herramientas usadas para evaluar aplicaciones de LLM en enfermería según el marco COMET, y encuentra reporte inconsistente y poca estandarización, sobre todo en tareas de extracción de datos y apoyo a decisiones.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: en los próximos 12-18 meses va a consolidarse un checklist tipo TRIPOD-LLM específico para estudios educativos con IA generativa que los revisores van a empezar a exigir — Javier puede adelantarse reportando sus propios estudios de IA en educación con ese nivel de estandarización desde ya.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/inr.70217" target="_blank" rel="noopener">↗ doi.org/10.1111/inr.70217</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Anesthesia &amp; Analgesia, 9 sep 2026 · rct · 2026-09-09</div>
+          <div class="r10-title">Surgeon Incivility in the Preoperative Setting: A Multi-institutional Crossover Study on Anesthesiology Residents&#39; Decision-Making</div>
+          <div class="r10-line">Estudio real, aleatorizado, ciego, cruzado y multicéntrico (79 residentes de anestesiología, 2 centros académicos) que muestra que la incivilidad del cirujano en el preoperatorio casi duplica la probabilidad de que el residente decida proceder con la cirugía en casos clínicamente ambiguos (OR=2.25), sin cambiar sus puntajes de desempeño evaluado.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la &#39;presión relacional&#39; (incivilidad, jerarquía) se va a reconocer cada vez más como variable que distorsiona el razonamiento clínico real más allá del conocimiento — Javier podría incluir escenarios con presión interpersonal (no solo casos clínicos &#39;limpios&#39;) en el banco de razonamiento clínico de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1213/ANE.0000000000008293" target="_blank" rel="noopener">↗ doi.org/10.1213/ANE.0000000000008293</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cardiovascular and Interventional Radiology, 9 sep 2026 · review · 2026-09-09</div>
+          <div class="r10-title">A Scoping Review of Interventional Radiology Curricula for Medical Students and Correlation with Kern&#39;s Six-Step Framework for Curriculum Development</div>
+          <div class="r10-line">Revisión de alcance real (36 estudios) que mapea el currículo de radiología intervencionista en pregrado médico contra el marco de 6 pasos de Kern, y encuentra que ningún estudio cubrió los 6 pasos: el foco está en &#39;identificar el problema&#39; y &#39;estrategias educativas&#39;, casi nadie hace evaluación de necesidades ni evaluación de resultados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el marco de Kern se va a usar cada vez más como checklist explícito de auditoría curricular en más especialidades — Javier podría auditar el diseño curricular de AMAUTA/USAMEDIC contra los 6 pasos (sobre todo evaluación de necesidades y de resultados, los más débiles aquí) en vez de asumir que ya está completo.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00270-026-04614-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s00270-026-04614-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Clinical Obesity, oct 2026 (online 2026) · meta-analysis · 2026-09-10</div>
+          <div class="r10-title">Effectiveness of Obesity Management Education for Healthcare Professionals: A Rapid Review and Meta-Analysis</div>
+          <div class="r10-line">Revisión rápida + meta-análisis real (18 estudios; 4 RCT + 3 no-RCT en el pool cuantitativo) que muestra que los programas educativos estructurados mejoran competencias prácticas de profesionales de salud en manejo de obesidad (SMD=0.41), con efecto significativamente mayor en intervenciones de 4 horas o más.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la duración mínima de la intervención (≥4h) se va a citar cada vez más como estándar de facto para justificar o rechazar talleres cortos de actualización docente — Javier puede usar este umbral cuantitativo al diseñar o evaluar los módulos de desarrollo docente de AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/cob.70113" target="_blank" rel="noopener">↗ doi.org/10.1111/cob.70113</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Polski Merkuriusz Lekarski, 2026 · review · 2026-09-10</div>
+          <div class="r10-title">Training of Nursing Personnel for the Public Health System</div>
+          <div class="r10-line">Revisión narrativa real (35 fuentes centrales de 120 identificadas, incluidas guías OMS/ICN) que concluye que transicionar de educación clínica tradicional a modelos integrados (educación basada en competencias, interprofesional, marco ADDIE) es clave para formar personal de enfermería resiliente, con foco en e-learning adaptativo bajo condiciones de emergencia (caso Ucrania).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el marco ADDIE combinado con educación basada en competencias va a seguir apareciendo como plantilla de &#39;reforma curricular de emergencia&#39; en sistemas de salud bajo estrés — de relevancia menor pero replicable si AMAUTA necesita justificar un rediseño curricular rápido con un marco pedagógico reconocido.</div>
+          <a class="r10-link" href="https://doi.org/10.36740/Merkur202604121" target="_blank" rel="noopener">↗ doi.org/10.36740/Merkur202604121</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el RCT de casos generados por IA de hoy, la no-inferioridad NO se demostró: los casos hechos por Gemini 3.0 Pro rindieron ligeramente peor y se sintieron menos realistas en los casos complejos — la IA generativa todavía no es un reemplazo probado de casos clínicos reales para enseñar razonamiento complejo.</li><li>En la network meta-análisis de PBL vs. aula invertida de hoy, cada estimación de PBL viene de un solo estudio: &#39;PBL ganó el ranking&#39; suena a certeza, pero la certeza real reportada es de baja a muy baja — un ranking bonito sobre evidencia frágil.</li><li>Un elemento tan simple como una barra de progreso en un simulador de realidad virtual mejoró el desempeño Y la retención a 2.5 meses — y benefició más a quienes tenían MENOS experiencia en videojuegos, cerrando la brecha en vez de ampliarla.</li><li>En el estudio de incivilidad quirúrgica de hoy, los residentes maltratados por el cirujano no rindieron peor en las escalas de desempeño evaluado — pero sí cambiaron su decisión clínica (proceder vs. posponer cirugía) casi el doble de veces. El daño de la incivilidad no se ve en el puntaje, se ve en la decisión.</li><li>Casi 1 de cada 2 estudiantes de medicina en el mundo (49.8%) tiene ansiedad clínicamente relevante ante exámenes según el metaanálisis de hoy — y es más alta en primer año que en quinto, lo que sugiere que no se &#39;cura sola&#39; con la experiencia, sino que necesita intervención temprana.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿El banco de casos clínicos que AMAUTA usa o podría usar con IA generativa ha sido comparado alguna vez, con un diseño de no-inferioridad como el de hoy, contra casos reales — o se está asumiendo la equivalencia sin evidencia?</li><li>Si el aula invertida mejora conocimiento y habilidad pero no actitud en seguridad del paciente (NMA de hoy), ¿qué componente adicional necesitaría añadir AMAUTA para también mover la actitud de sus estudiantes, no solo el conocimiento?</li><li>¿Cuánto costaría añadir una barra de progreso visible a las herramientas de práctica digital de AMAUTA/USAMEDIC, y valdría la pena medir su efecto en retención a 2+ meses como hizo el RCT de hoy?</li><li>¿El banco de razonamiento clínico de AMAUTA incluye escenarios con presión interpersonal/incivilidad, o solo casos clínicamente &#39;limpios&#39; — y debería, según el hallazgo de hoy de que la incivilidad cambia decisiones sin cambiar puntajes?</li><li>Si casi la mitad de los estudiantes de medicina tiene ansiedad ante exámenes según el metaanálisis de hoy, ¿AMAUTA mide esa ansiedad en sus cohortes de ENAM/Residentado, o solo mide tasas de aprobación?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/hilo IG explicando por qué el RCT de hoy en Perspectives on Medical Education NO logró demostrar que los casos clínicos generados por IA son equivalentes a los reales — gancho de alfabetización crítica sobre IA en educación médica para la audiencia de AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de estudio propio (RENACYT): replicar el diseño de no-inferioridad del RCT de hoy (casos reales vs. generados por IA) adaptado a viñetas de razonamiento clínico psiquiátrico dimensional, con outcome de razonamiento, no solo score de examen.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Piloto AMAUTA: agregar una barra de progreso visible al banco de preguntas o simulador de OSCE, midiendo desempeño y retención a 2-3 meses, replicando el RCT de gamificación en realidad virtual de hoy.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de neurociencia educativa sobre cómo la presión interpersonal (incivilidad, jerarquía) distorsiona la decisión clínica sin cambiar el desempeño medido, usando el estudio cruzado de hoy en anestesiología como caso ejemplar.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Auditoría curricular de AMAUTA/USAMEDIC contra los 6 pasos de Kern (con foco en evaluación de necesidades y evaluación de resultados, los más débiles según la revisión de hoy), documentada como paper de educación médica.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Nurse Education in Practice</span><span class="tag highlight">Perspectives on Medical Education</span><span class="tag ">Simulation in Healthcare</span><span class="tag ">BMC Nursing</span><span class="tag ">Journal of Nursing Management</span><span class="tag ">International Nursing Review</span><span class="tag highlight">BMC Medical Education</span><span class="tag ">Anesthesia &amp; Analgesia</span><span class="tag ">Cardiovascular and Interventional Radiology</span><span class="tag ">Clinical Obesity</span><span class="tag ">Polski Merkuriusz Lekarski</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch) · Europe PMC REST API. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 14 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
