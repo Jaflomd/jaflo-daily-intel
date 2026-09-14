@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-14 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">14 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">42</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">24</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">medRxiv (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+        <h3 class="r3-title">Individualized cortical gradient and network topology reveal symptom-linked disruptions and neurobiological subtypes in schizophrenia</h3>
+        <p class="r3-hook">Estudio multisitio masivo (3,958 personas con esquizofrenia vs. 5,489 controles neurotípicos) que usa gradientes corticales individualizados y teoría de grafos para mapear la organización cortical: encuentra una dimensión latente de severidad sintomática (más fuerte para desorganización, más débil para síntomas afectivos) que es específica de las medidas de gradiente/topología de red — el grosor cortical clásico no muestra el mismo patrón — y termina agrupando subtipos neurobiológicos dentro del espectro esquizofrenia. Le importa a Javier porque es casi un caso de manual de su línea de psiquiatría dimensional y network theory: en vez de tratar la esquizofrenia como categoría única, extrae una dimensión transdiagnóstica de severidad anclada en topología de red, exactamente el tipo de evidencia cuantitativa que puede citar para defender el marco HiTOP/RDoC frente a colegas categoriales en su libro de psicopatología o en un módulo avanzado de AMAUTA/USAMEDIC sobre heterogeneidad de la esquizofrenia.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.04.25.26351736" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.04.25.26351736</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry, 11 sep 2026 · meta-analysis · 2026-09-11</div>
+        <h3 class="r3-title">Peripheral blood glutamate, glutamine, and GABA in Autism Spectrum disorder: A systematic review and meta-analysis of group differences with an exploratory assessment of diagnostic accuracy</h3>
+        <p class="r3-hook">SR+MA con PRISMA y GRADE (21 publicaciones, 804 personas con TEA vs. 721 controles) que compara glutamato, glutamina y GABA en sangre periférica: el glutamato periférico está elevado en TEA (SMD=1.04, IC95% 0.62-1.45) aunque sin diferencia clara en GABA, y el análisis exploratorio de precisión diagnóstica (QUADAS-2) muestra que estos biomarcadores todavía no discriminan de forma estable a nivel individual. Le importa a Javier directo en su línea TDAH/TEA/neurodivergencia y en su pilar de psiquiatría de precisión: es el tipo de meta-análisis que enseña la diferencia entre &#39;diferencia de grupo estadísticamente significativa&#39; y &#39;biomarcador clínicamente útil para diagnóstico individual&#39; — material listo para un módulo de AMAUTA/USAMEDIC sobre por qué la mayoría de biomarcadores biológicos en TEA todavía no reemplazan la evaluación clínica, sin descartar la dirección de investigación hacia estratificación biológica del espectro.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.pnpbp.2026.111926" target="_blank" rel="noopener">↗ doi.org/10.1016/j.pnpbp.2026.111926</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Brain Stimulation, 12 sep 2026 · paper · 2026-09-12</div>
+        <h3 class="r3-title">TMS-EEG Correlate of Suicidal Ideation in Individuals with Depression: A Multi-Site Synthesis</h3>
+        <p class="r3-hook">Síntesis multisitio (5 centros académicos, 299 adultos con depresión mayor resistente a al menos un antidepresivo) que combina TMS de pulso único con EEG sobre la corteza prefrontal dorsolateral izquierda: un pico N100 más negativo se asocia de forma independiente con mayor severidad de ideación suicida (OR=1.52, IC95% 1.17-1.98), sin asociación equivalente para el área bajo la curva del GMFA. Le importa a Javier porque conecta directamente dos de sus líneas — neuromodulación y psiquiatría de precisión — con un problema clínico de máxima urgencia (predicción de riesgo suicida en depresión resistente): es un candidato temprano a biomarcador neurofisiológico objetivo, con la honestidad metodológica de reconocer que falta validación con TMS-EEG sham antes de uso clínico, justo el tono de evidencia proporcional al claim que caracteriza su voz.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.brs.2026.103206" target="_blank" rel="noopener">↗ doi.org/10.1016/j.brs.2026.103206</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">8</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Women&#39;s Mental Health, 14 sep 2026 · meta-analysis · 2026-09-14</div>
+          <div class="r10-title">Isolated physical activity programs during pregnancy and postpartum: Meta-analysis of randomized trials with usual-care controls on depressive and anxiety symptoms</div>
+          <div class="r10-line">MA registrado en PROSPERO (17 RCTs, Cochrane/PRISMA) que aísla el efecto de actividad física sola (sin componentes activos extra) sobre síntomas depresivos y ansiosos perinatales: reduce depresión prenatal (SMD=-0.52) y posparto (SMD=-0.33), pero con certeza baja a muy baja, y no muestra efecto claro sobre ansiedad prenatal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: perfecto para razonamiento clínico y AMAUTA/USAMEDIC — enseña a leer un efecto real pero de certeza GRADE baja/muy baja, y a Javier le da una intervención de bajo costo y alta viabilidad para el sistema de salud peruano en depresión perinatal, sin necesitar más terapeutas especializados.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00737-026-01752-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s00737-026-01752-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Scientific Reports, 11 sep 2026 · meta-analysis · 2026-09-11</div>
+          <div class="r10-title">Efficacy of prescription-eligible digital health applications for depression and generalized anxiety disorder in Germany: a systematic review and meta-analysis</div>
+          <div class="r10-line">SR+MA de las DiGA (apps de salud mental con receta médica en Alemania desde 2020): 19 RCTs, n=4,078; reducción de síntomas depresivos post-intervención (SMD=-0.49) y en seguimiento (SMD=-0.35), pero evidencia para ansiedad generalizada limitada a solo 2 estudios y dominada por una sola app (Deprexis).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: es el modelo regulatorio que Javier puede citar cuando hable de IA/digital health aplicada a psiquiatría — muestra que &#39;app con receta&#39; puede tener respaldo RCT real, pero también que la evidencia está concentrada en pocas apps, un matiz clave para no vender la categoría entera como validada.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41598-026-68875-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-68875-y</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Neural Transmission, 13 sep 2026 · paper · 2026-09-13</div>
+          <div class="r10-title">Excitation/inhibition balance subtypes in autism and their genetic, neural, and clinical profiles</div>
+          <div class="r10-line">EEG de alta densidad + análisis genómico en 310 jóvenes (164 con TEA) identifica tres subgrupos neurobiológicos dentro del autismo según balance excitación/inhibición (típico, E&gt;I, E&lt;I), cada uno con perfil clínico y de expresión génica distinto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: ejemplo casi de libro de texto de subtipificación biológica dentro de una categoría diagnóstica — material directo para su pilar de precisión psiquiátrica y su línea TDAH/TEA, mostrando que &#39;autismo&#39; probablemente no es un solo fenotipo neural sino al menos tres.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00702-026-03283-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s00702-026-03283-0</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Parsing the Functional Heterogeneity of the Psychosis Spectrum: A Clinically Informed Application of Genomic Structural Equation Modeling</div>
+          <div class="r10-line">Genomic SEM sobre esquizofrenia, bipolar y depresión mayor extrae cuatro factores transdiagnósticos del espectro psicótico (psicosis general con baja cognición, psicosis específica, afectivo específico, manía específica), cada uno con correlaciones genéticas distintas con rasgos de personalidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: es HiTOP hecho con genómica — un espectro transdiagnóstico de psicosis derivado estadísticamente en vez de por consenso clínico, justo el tipo de evidencia cuantitativa que Javier puede usar para argumentar el marco dimensional frente a la CIE/DSM categorial en clase o en su libro.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.08.26362224" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362224</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Chronic sensing during subcallosal cingulate deep brain stimulation captures ketamine-associated changes in major depressive disorder</div>
+          <div class="r10-line">5,907 horas de registro bilateral en pacientes con DBS de cíngulo subcalloso para depresión resistente muestran que la ketamina produce un desplazamiento convergente hacia actividad de banda rápida (21-40 Hz), con cambios que empiezan antes del auto-reporte de estados afectivos y alcanzan su pico ~15 minutos después.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: paso concreto hacia DBS adaptativa guiada por señal fisiológica en vez de parámetros fijos — material denso pero valioso para su pilar de neuromodulación/precisión psiquiátrica, mostrando cómo dos intervenciones biológicas (ketamina y DBS) podrían combinarse leyendo la misma señal.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.08.26362080" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26362080</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Predicting Active Suicidality from Temporal Dynamics of Implicit Life-Death Associations</div>
+          <div class="r10-line">En 77 participantes (22 con ideación suicida activa por ecological momentary assessment), el D-score clásico del Test de Asociación Implícita de Muerte no clasificó bien, pero un clasificador que usa la dinámica temporal de los tiempos de reacción alcanzó 77% de precisión balanceada para predecir ideación suicida activa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: perla metodológica para su pilar de precisión psiquiátrica — el hallazgo no es &#39;el test implícito funciona&#39;, es &#39;la forma de analizarlo (dinámica temporal vs. score agregado) es lo que lo hace útil&#39;, un matiz perfecto para enseñar en un módulo de AMAUTA sobre medición en psiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.09.26362642" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.26362642</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 12 sep 2026 · preprint · 2026-09-12</div>
+          <div class="r10-title">Caregiver-Rated Inappropriate Speech and Post-cTBS Motor Cortical Facilitation in Autism: A Pilot Biomarker Study</div>
+          <div class="r10-line">Estudio piloto (19 adultos autistas) de cTBS en corteza motora primaria: el ítem &#39;habla inapropiada&#39; del Aberrant Behavior Checklist se asoció con mayor facilitación cortical post-estimulación (beta=+0.688, P Holm-ajustada=.008), mientras que catatonia, impacto social y cognición no moderaron la respuesta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: señal preliminar (n=19, piloto) pero cruza dos líneas de Javier a la vez —TEA y neuromodulación— sugiriendo que rasgos conductuales específicos, no el diagnóstico global de autismo, podrían predecir quién responde a protocolos de estimulación; útil para plantear como hipótesis a validar, no como resultado cerrado.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.10.26362749" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.10.26362749</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioural Brain Research, 13 sep 2026 · review · 2026-09-13</div>
+          <div class="r10-title">Neuroimaging studies of non-suicidal self-injury in young adults with major depressive disorder</div>
+          <div class="r10-line">SR con PRISMA de 24 estudios de neuroimagen (2013-2025, 2,379 participantes) encuentra un patrón neural distinto para depresión mayor con autolesión no suicida frente a depresión sin autolesión: supresión del giro frontal, menor volumen de putamen y conectividad alterada en la red de modo por defecto y frontoparietal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: síntesis útil para el capítulo de autolesión de su libro de psicopatología — plantea que &#39;depresión con NSSI&#39; podría ser un fenotipo neural propio, aunque los autores mismos avisan que los diseños transversales todavía no permiten hablar de causalidad ni utilidad clínica inmediata.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbr.2026.116316" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbr.2026.116316</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Un meta-análisis con PRISMA/GRADE encontró que el glutamato en sangre periférica está elevado en autismo (SMD=1.04) pero el análisis de precisión diagnóstica muestra que ese biomarcador todavía no distingue de forma confiable a un individuo con TEA de uno sin TEA: diferencia de grupo real no es lo mismo que test diagnóstico útil.</li><li>En un estudio con 3,958 personas con esquizofrenia, la dimensión de severidad sintomática más fuerte no aparece en el grosor cortical clásico (la medida que todos miden) sino en gradientes de red y topología de grafos: el biomarcador &#39;obvio&#39; no fue el que mejor capturó la heterogeneidad clínica.</li><li>En depresión resistente a tratamiento, un pico neurofisiológico específico (N100 en TMS-EEG sobre la corteza prefrontal dorsolateral izquierda) se asocia con severidad de ideación suicida independiente de la severidad depresiva general: el riesgo suicida podría tener una firma neurofisiológica parcialmente distinta de la depresión misma.</li><li>Actividad física sola (sin terapia añadida) redujo depresión prenatal y posparto en un meta-análisis Cochrane/PRISMA, pero con certeza de evidencia baja a muy baja: es una intervención barata y probablemente útil, no una con el mismo respaldo que un fármaco bien estudiado.</li><li>Un test implícito de asociación vida-muerte no predijo ideación suicida activa cuando se usó el score tradicional agregado, pero sí lo hizo (77% de precisión) cuando se analizó la dinámica temporal de los tiempos de reacción: a veces el problema no es la herramienta, es cómo se analiza su señal.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el grosor cortical clásico no captura la dimensión de severidad sintomática en esquizofrenia pero la topología de red sí, ¿qué le dice eso a un residente sobre por qué seguimos enseñando neuroimagen estructural simple como si fuera suficiente?</li><li>¿Cómo explicarías la diferencia entre &#39;diferencia significativa de grupo&#39; y &#39;test diagnóstico útil a nivel individual&#39; usando el ejemplo del glutamato periférico en autismo, sin sonar como que descartas toda la línea de biomarcadores en TEA?</li><li>Si el N100 en TMS-EEG termina validándose como marcador de riesgo suicida en depresión resistente, ¿qué cambiaría en la práctica clínica peruana, donde el acceso a TMS-EEG es prácticamente nulo fuera de contextos de investigación?</li><li>¿Qué tan cómodo te sientes recomendando actividad física como intervención de primera línea para depresión perinatal leve, sabiendo que la certeza de evidencia GRADE es baja o muy baja pero el tamaño de efecto es real?</li><li>El estudio de subtipos de autismo por balance excitación/inhibición sugiere al menos tres fenotipos neurales distintos: ¿cómo cambiaría tu forma de explicar &#39;el espectro autista&#39; a un padre de familia si asumieras esa heterogeneidad biológica en vez de hablar de &#39;el autismo&#39; como una sola cosa?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o carrusel IG explicando el estudio de 3,958 pacientes con esquizofrenia: &#39;por qué la topología de red le gana al grosor cortical&#39; como gancho para introducir psiquiatría dimensional/network theory a una audiencia no especializada.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre cómo leer un meta-análisis con GRADE de certeza baja/muy baja, usando el MA de actividad física en depresión perinatal como caso guiado (efecto real vs. certeza de la evidencia).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección o capítulo del libro de psicopatología sobre &#39;subtipos ocultos dentro de un diagnóstico&#39;: combinar los subtipos E/I de autismo y los cuatro factores transdiagnósticos del espectro psicótico como dos ejemplos recientes de heterogeneidad biológica intra-categoría.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota o hilo sobre el biomarcador N100 (TMS-EEG) de ideación suicida en depresión resistente, con la advertencia honesta de que falta validación sham antes de cualquier uso clínico — modelo de comunicación de evidencia temprana sin generar falsas expectativas.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de opinión/comentario sobre el uso de Genomic SEM para derivar dimensiones transdiagnósticas del espectro psicótico como evidencia cuantitativa a favor de marcos tipo HiTOP frente a la clasificación categorial tradicional.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Brain Stimulation</span><span class="tag ">Archives of Women&#39;s Mental Health</span><span class="tag ">Scientific Reports</span><span class="tag ">Journal of Neural Transmission</span><span class="tag ">Behavioural Brain Research</span><span class="tag ">medRxiv</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/eutils (esearch/esummary/efetch) · medRxiv API (api.biorxiv.org). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 14 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
