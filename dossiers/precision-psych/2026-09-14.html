@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-14 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">14 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">138</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Schizophrenia Research, 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">Predicting clozapine initiation among patients with schizophrenia via machine learning trained on electronic health record data</h3>
+        <p class="r3-hook">Un equipo danés entrenó un modelo (XGBoost vs. regresión logística) sobre historias clínicas electrónicas de todos los adultos con esquizofrenia o trastorno esquizoafectivo atendidos en los Servicios Psiquiátricos de la Región Central de Dinamarca entre 2013 y 2024, combinando 179 predictores estructurados (diagnósticos, medicación, medidas coercitivas) con 750 predictores extraídos de notas clínicas mediante NLP, para predecir en cada visita si el paciente recibiría una primera prescripción de clozapina en los siguientes 365 días. A Javier le importa porque la demora en iniciar clozapina en esquizofrenia resistente al tratamiento es uno de los errores de razonamiento clínico más repetidos y más caros de la práctica —y de los más preguntados en ENAM/Residentado— y este modelo aporta justo lo que le falta a la enseñanza tradicional del algoritmo de escalamiento antipsicótico: una herramienta cuantitativa entrenada con datos reales de rutina, no solo un flujograma. Puede usarlo en AMAUTA como caso de &#39;psiquiatría de precisión aplicada&#39; para enseñar por qué clozapina se retrasa sistemáticamente, y como ejemplo en su libro de que un modelo de historia clínica electrónica, sin biomarcadores exóticos, ya puede anticipar una decisión terapéutica crítica.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.schres.2026.08.029" target="_blank" rel="noopener">↗ doi.org/10.1016/j.schres.2026.08.029</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Molecular Psychiatry, 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">Early-childhood temperament trajectories map onto transdiagnostic psychiatric risk</h3>
+        <p class="r3-hook">Con datos longitudinales de más de 50,000 niños de la cohorte noruega MoBa (Norwegian Mother, Father and Child Cohort Study), este grupo modeló trayectorias de temperamento a los 1.5, 3 y 5 años y encontró que las desviaciones individuales respecto a la trayectoria esperada se organizan en dos dimensiones transdiagnósticas: una que eleva el riesgo posterior de TDAH (hazard ratio=1.54) y otra que eleva el riesgo de síndrome de Asperger (hazard ratio=1.64), con loci genéticos compartidos identificados vía GWAS longitudinal de temperamento y análisis de FDR conjuncional. A Javier le importa directamente porque es evidencia dura de que el eje dimensional que defiende (HiTOP/RDoC) tiene una firma medible ya en la primera infancia, y porque conecta sus dos líneas vivas —TDAH/TEA y psiquiatría dimensional— en un solo hallazgo con genética de por medio. Es material de primera para el capítulo de neurodesarrollo de su libro de psicopatología dimensional, mostrando que &#39;desviarse de la propia trayectoria&#39;, no solo el puntaje absoluto, es lo que carga el riesgo.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03881-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03881-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">JMIR mHealth and uHealth, 8 sep 2026 · paper · 2026-09-08</div>
+        <h3 class="r3-title">Mobile-First Web Access and Captioned Video in Francophone Cardiology Education: Multicountry Ecological Learning Analytics Study</h3>
+        <p class="r3-hook">Este estudio ecológico analizó dos años de datos reales de uso (no encuestas) de una iniciativa francófona de educación cardiológica —sitio web mobile-first y canal de YouTube con subtítulos— comparando países de ingreso alto, medio y bajo, y encontró que la dependencia del acceso móvil se asocia de forma distinta con el compromiso (bounce rate, tiempo en página, retención en YouTube) según el nivel de ingreso del país. A Javier le importa porque es exactamente el tipo de dato que AMAUTA/USAMEDIC necesita y no suele medir: no asume que &#39;mobile-first + subtítulos&#39; funciona igual en Perú que en Francia, sino que lo mide con analítica real sobre una audiencia de ingresos medios, la misma franja donde vive su audiencia de médicos en formación para ENAM/Residentado. Puede usarlo para auditar sus propias métricas de Instagram/YouTube por segmento de audiencia y decidir con datos, no con intuición, dónde invertir el próximo rediseño móvil del contenido de AMAUTA.</p>
+        <a class="r3-link" href="https://doi.org/10.2196/90345" target="_blank" rel="noopener">↗ doi.org/10.2196/90345</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Machine learning-assisted plasma PEA proteomics enables differential diagnosis of melancholic depression and bipolar disorder</div>
+          <div class="r10-line">En 67 participantes (23 bipolar, 20 depresión mayor melancólica, 24 controles), un panel de proteómica plasmática (Olink Target 96 Neurology) más machine learning identificó perfiles proteicos distintos y clasificó bipolar vs. depresión mayor reduciendo el modelo a solo 5 proteínas informativas, atacando desde biomarcadores periféricos el mismo problema —diferenciar bipolar de unipolar— que el paper de comportamiento del dossier de ayer.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que en los próximos 2 años veremos paneles proteómicos reducidos (5-20 proteínas) compitiendo con marcadores conductuales por el mismo nicho clínico, y a Javier le conviene tener ambos enfoques —conductual y proteómico— listos como ejemplos complementarios en el capítulo de diagnóstico diferencial bipolar-unipolar de su libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122492" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122492</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuropsychopharmacology, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Epigenetic markers of response to psychotherapy in obsessive-compulsive disorder</div>
+          <div class="r10-line">En 889 adultos con TOC tratados con el Bergen 4-Day Treatment, un estudio de metilación de ADN en saliva (antes, después y a 3 meses) identificó regiones diferencialmente metiladas que predicen y acompañan la respuesta a psicoterapia intensiva, con genes ligados a neuroplasticidad, estrés e inmunidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la metilación de ADN como predictor de respuesta a psicoterapia (no solo a fármacos) se vuelve el próximo frente de la psiquiatría de precisión, un dato clave si Javier quiere argumentar en su libro que &#39;precisión&#39; no es solo biología de fármacos sino también saber qué terapia psicológica funciona para quién.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41386-026-02546-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41386-026-02546-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">British Journal of Clinical Pharmacology, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">The integrated Lei-CNS PBPK-PD model effectively predicts clozapine brain disposition and D2 receptor occupancy in humans</div>
+          <div class="r10-line">Un modelo farmacocinético-farmacodinámico fisiológico (LeiCNS-PK3.6) predijo con éxito la concentración cerebral libre de clozapina y la ocupación de receptores D2 en humanos a partir de datos en rata, evitando mediciones cerebrales directas éticamente inviables y afinando el monitoreo de un fármaco de ventana terapéutica estrecha.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos modelos PBPK-PD se integran en 3-5 años a las guías de dosificación de clozapina como complemento a los niveles plasmáticos, y es la pieza farmacocinética que completa desde otro ángulo el hallazgo de predicción de inicio de clozapina del top 3 de hoy —útil como un mismo caso clínico armado en dos capas para AMAUTA.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/bcp.70788" target="_blank" rel="noopener">↗ doi.org/10.1002/bcp.70788</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">NeuroImage: Clinical, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Functional brain connectivity in clinical high-risk youth from the Kenya psychosis-risk outcomes study (KePROS): functional network comparative area and topography analysis (FUNCATA)</div>
+          <div class="r10-line">En una cohorte keniana de 63 jóvenes en riesgo clínico alto de psicosis y 24 controles (Nairobi), un análisis individualizado de conectividad funcional (FUNCATA) replicó en población africana las alteraciones de la red de atención dorsal ya descritas en esquizofrenia, llenando un vacío de representatividad geográfica poco común en neuroimagen psiquiátrica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los estudios de riesgo psicótico en poblaciones subrepresentadas (África, Latinoamérica) ganan tracción como respuesta a la crítica de que la psiquiatría de precisión se construyó solo con datos WEIRD, un precedente directo que Javier puede citar si empuja un estudio de fenotipado de riesgo en población peruana.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nicl.2026.104056" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nicl.2026.104056</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 9 sep 2026 · paper · 2026-09-09</div>
+          <div class="r10-title">Altered cortical oxygenation dynamics, impaired cortical recruitment, and network dysconnectivity across the transdiagnostic anxiety spectrum: a systems biology multi-channel fNIRS study</div>
+          <div class="r10-line">Con fNIRS multicanal durante una tarea de fluidez verbal, este estudio de biología de sistemas distinguió patrones de oxigenación cortical y desconexión de red entre ansiedad generalizada, depresión ansiosa y su comorbilidad, con clasificación por machine learning y asociación a síntomas —evidencia de un espectro ansioso transdiagnóstico con firma neurofuncional medible.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el fNIRS, más barato y portátil que el fMRI, se convierte en el biomarcador de espectro ansioso más viable para clínicas con recursos limitados como las peruanas, y le da a Javier un ejemplo neurofisiológico concreto del eje transdiagnóstico de ansiedad para su marco HiTOP.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122485" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122485</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">JMIR Mental Health, 10 sep 2026 · editorial · 2026-09-10</div>
+          <div class="r10-title">Tool or Companion? Reframing Conversational AI to Prevent Psychological Harm</div>
+          <div class="r10-line">Este análisis conceptual argumenta que encuadrar a la IA conversacional (ChatGPT, Claude, Replika) como &#39;compañera&#39; en vez de herramienta fomenta dependencia emocional y erosiona el límite terapéutico, con mecanismos concretos —antropomorfización por diseño, empatía simulada— y riesgo especial en usuarios vulnerables.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: en 12-18 meses aparecen las primeras guías clínicas formales sobre cómo hablar con pacientes de su uso de compañeros de IA, lectura obligada para Javier antes de comentar en su contenido de salud mental el uso de chatbots, dado que él mismo usa IA en su práctica de investigación y educación.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/99354" target="_blank" rel="noopener">↗ doi.org/10.2196/99354</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 10 sep 2026 · editorial · 2026-09-10</div>
+          <div class="r10-title">Promise, Mimicry, and Surveillance: Responsibly Integrating Artificial Intelligence With Socratic Inquiry in Medical Education</div>
+          <div class="r10-line">Un viewpoint nombra dos fallas concretas de los tutores socráticos con LLM en educación médica: la &#39;trampa de la mímica&#39; (preguntas que suenan socráticas sin generar metacognición real) y la &#39;paradoja del panóptico&#39; (la vigilancia necesaria para que el tutor funcione erosiona la seguridad psicológica que el método socrático requiere).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos dos conceptos (&#39;mimicry trap&#39;, &#39;Panopticon Paradox&#39;) se vuelven vocabulario estándar en la literatura de IA educativa en 2027, y Javier puede adoptarlos ya para diseñar con más cuidado los tutores de IA de AMAUTA/USAMEDIC, evitando vender simulación de razonamiento clínico como si fuera razonamiento real.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/102958" target="_blank" rel="noopener">↗ doi.org/10.2196/102958</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 8 sep 2026 · paper · 2026-09-08</div>
+          <div class="r10-title">Role-Differentiated AI Competencies and Curriculum Implications for Health Professions Education: Qualitative Study</div>
+          <div class="r10-line">Con entrevistas a 13 expertos en medicina académica, práctica clínica e industria de IA en salud, este estudio cualitativo propone marcos de competencias en IA diferenciados por rol (usuario, desarrollador, líder) en vez de una competencia genérica única para currículos de profesiones de la salud.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los currículos de competencias en IA para profesiones de salud migran de &#39;alfabetización genérica&#39; a marcos diferenciados por rol en los próximos 2-3 años, un modelo directamente aplicable si Javier diferencia en AMAUTA qué necesita saber el residente &#39;usuario&#39; de IA frente al que quiere construir herramientas.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/97608" target="_blank" rel="noopener">↗ doi.org/10.2196/97608</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medical Science Monitor, 10 sep 2026 · paper · 2026-09-10</div>
+          <div class="r10-title">Changes in Glutathione and Homocysteine Concentrations in Treatment-Resistant Depression After Electroconvulsive Therapy</div>
+          <div class="r10-line">En 54 pacientes con depresión resistente al tratamiento (unipolar y bipolar) que recibieron TEC bilateral, la TEC redujo significativamente los síntomas depresivos, pero el glutatión y la homocisteína séricos no cambiaron de forma significativa, descartando —al menos en esta muestra— dos candidatos a biomarcador de respuesta a TEC basados en estrés oxidativo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este resultado negativo empuja la búsqueda de biomarcadores de respuesta a TEC hacia paneles multiómicos en vez de metabolitos aislados, y es un buen ejemplo pedagógico para AMAUTA de por qué un hallazgo negativo bien reportado también hace avanzar la psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.12659/msm.952203" target="_blank" rel="noopener">↗ doi.org/10.12659/msm.952203</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Acta Psychologica, 9 sep 2026 · review · 2026-09-09</div>
+          <div class="r10-title">A review of attention-deficit/hyperactivity disorder: Causes, diagnosis, treatment, and impact</div>
+          <div class="r10-line">Esta revisión narrativa sintetiza el estado actual de TDAH —genética, estrés oxidativo, neuroinflamación— y concluye que ningún biomarcador genético, de neuroimagen, oxidativo o retiniano tiene aún sensibilidad/especificidad suficiente para diagnóstico individual, manteniendo el diagnóstico como clínico según DSM-5.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los biomarcadores retinianos y de neuroimagen para TDAH seguirán como líneas de investigación activa sin uso clínico real por al menos 3-5 años más, un recordatorio útil para que Javier mantenga &#39;evidencia proporcional al claim&#39; al hablar de TDAH en AMAUTA y no sobrevenda pruebas biológicas que aún no diagnostican a nivel individual.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.actpsy.2026.107744" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107744</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El modelo que mejor predice si un paciente con esquizofrenia recibirá clozapina no usa ni un biomarcador biológico: usa notas clínicas de rutina procesadas con NLP —la precisión psiquiátrica más barata y disponible hoy es la que ya está escrita en la historia clínica, no la que hay que comprar en un laboratorio.</li><li>Un hallazgo negativo bien diseñado (la TEC mejora la depresión pero no cambia glutatión ni homocisteína) vale más para la ciencia acumulativa que un hallazgo positivo aislado sin réplica: descarta de un jalón todo un camino de biomarcadores oxidativos para TEC.</li><li>En el estudio de temperamento infantil, lo que predice riesgo psiquiátrico no es el nivel absoluto de temperamento del niño, sino cuánto se desvía de su propia trayectoria esperada —el mismo puntaje puede ser normal o riesgoso según de dónde venía.</li><li>Los tutores de IA socráticos en educación médica pueden sonar exactamente igual generando preguntas reales que generando &#39;teatro&#39; de preguntas: sin medir metacognición real (no solo fluidez conversacional), un programa como AMAUTA podría estar reforzando la ilusión de razonar sin razonamiento real.</li><li>La analítica de aprendizaje real (no las encuestas) muestra que &#39;mobile-first + subtítulos&#39; no es una receta universal: su efecto en el compromiso cambia según el nivel de ingreso del país, así que copiar el diseño de una plataforma educativa de un país rico sin medir en la propia audiencia puede fallar en silencio.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué tan tarde se está iniciando clozapina en pacientes con esquizofrenia resistente en el sistema peruano, y podría construirse un predictor similar al danés con datos de historia clínica electrónica local?</li><li>Si las desviaciones de la trayectoria esperada de temperamento (no el nivel absoluto) predicen riesgo transdiagnóstico, ¿cómo debería cambiar la forma en que se enseña &#39;desarrollo normal&#39; en pediatría y psiquiatría infantil para ENAM/Residentado?</li><li>¿Los biomarcadores proteómicos y los biomarcadores conductuales (IA multimodal) para diferenciar bipolar de unipolar apuntan al mismo subgrupo de pacientes, o identifican poblaciones distintas que habría que combinar?</li><li>¿Cómo se distingue, en un tutor de IA para razonamiento clínico, una pregunta que genera metacognición real de una que solo simula el patrón socrático —y cómo se mediría eso en AMAUTA sin depender solo de encuestas de satisfacción?</li><li>Si la metilación de ADN en saliva predice respuesta a psicoterapia intensiva en TOC, ¿qué otras psicoterapias breves e intensivas (exposición, activación conductual) valdría la pena estudiar con el mismo diseño pre-post-seguimiento epigenético?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel de Instagram: &#39;Por qué se retrasa años el inicio de clozapina (y cómo un algoritmo de historia clínica lo está resolviendo)&#39;, usando el paper de Perfalk et al. como gancho de razonamiento clínico.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional: &#39;La desviación de la trayectoria, no el punto de corte&#39;, usando el estudio noruego de temperamento infantil como caso ancla del argumento dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio o de tesista: replicar en una cohorte peruana pequeña el uso de NLP sobre notas clínicas de rutina (no biomarcadores) para predecir una decisión terapéutica de alto impacto (ej. cambio a clozapina, hospitalización), inspirado directamente en el diseño danés.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video/hilo para AMAUTA: &#39;Mimicry trap y Panopticon Paradox&#39;, explicando con ejemplos de simuladores de casos clínicos con IA por qué un tutor socrático puede fallar aunque suene bien, citando el viewpoint de Sánchez.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Auditoría interna de AMAUTA/USAMEDIC: correr analítica real (no solo encuestas) de mobile vs. desktop y retención en YouTube segmentada por tipo de audiencia, replicando la metodología ecológica del estudio de cardiología francófona antes del próximo rediseño de contenido.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Schizophrenia Research</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">JMIR mHealth and uHealth</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Neuropsychopharmacology</span><span class="tag ">British Journal of Clinical Pharmacology</span><span class="tag ">NeuroImage: Clinical</span><span class="tag ">JMIR Mental Health</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">Medical Science Monitor</span><span class="tag ">Acta Psychologica</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (via WebFetch, filtrado por fecha) · Europe PMC REST API (verificación de DOI/metadata) · WebSearch (medRxiv, PsyArXiv, arXiv, GitHub, JMIR). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 14 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
