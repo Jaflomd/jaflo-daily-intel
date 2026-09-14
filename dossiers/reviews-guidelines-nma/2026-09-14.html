@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-14 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">14 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">73</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">73</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">6</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Child Psychology and Psychiatry · 2026-09-13 · review</div>
+        <h3 class="r3-title">Annual Research Review: Sex differences in conduct disorder - revisiting existing evidence and exploring future directions</h3>
+        <p class="r3-hook">Annual Research Review (la sección más autoritativa de JCPP, reservada para síntesis que reencuadran un campo) que integra el proyecto multisitio FemNAT-CD y literatura afín para revisar diferencias de sexo en trastorno de conducta a través de cuatro dominios -fenotipo clínico, factores de riesgo, neurobiología y tratamiento- concluyendo que niñas y niños con el trastorno se parecen mucho más de lo asumido, con diferencias sutiles concentradas en edad de inicio, rasgos callous-unemotional y comorbilidad, no en la neurobiología de base. Para tu línea de psiquiatría dimensional (HiTOP/RDoC) es evidencia de primera mano de que un diagnóstico categorial esconde dimensiones transdiagnósticas (regulación emocional, rasgos callous-unemotional) que se comportan igual entre sexos mientras el fenotipo superficial varía -el argumento central de tu libro de psicopatología para el mundo. Para AMAUTA/USAMEDIC es contenido de examen de alto rendimiento precisamente por el estatus editorial de un &#39;Annual Research Review&#39;. Ángulo de contenido: &#39;llevamos años asumiendo que el trastorno de conducta se ve distinto en niñas y niños -este Annual Research Review de JCPP muestra que la diferencia real está en cuándo empieza y con qué rasgos se acompaña, no en la biología de base&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1111/jcpp.70234" target="_blank" rel="noopener">↗ doi.org/10.1111/jcpp.70234</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">European Child &amp; Adolescent Psychiatry · 2026-09-11 · review</div>
+        <h3 class="r3-title">Disparities in treatment initiation following diagnosis of attention-deficit/hyperactivity disorder: a systematic review</h3>
+        <p class="r3-hook">Revisión sistemática (12 estudios de 6,223 registros identificados) sobre disparidades sociodemográficas en el tiempo hasta el inicio de tratamiento tras el diagnóstico de TDAH en niños y adolescentes: los varones inician tratamiento más temprano que las mujeres (razones de tasa entre 1.02 y 1.36 según el estudio), y las minorías étnico-raciales, familias de bajos ingresos y zonas rurales muestran demoras consistentes -sin diferencias claras por tipo de seguro; la heterogeneidad entre estudios impidió un meta-análisis formal. Para tu línea TDAH/TEA/neurodivergencia es evidencia directa de una falla sistémica de acceso posterior al diagnóstico, un ángulo menos trabajado que el habitual &#39;diagnóstico tardío en niñas&#39;. Para AMAUTA/USAMEDIC conecta razonamiento clínico con equidad en salud: diagnosticar a tiempo no garantiza tratar a tiempo. Ángulo de contenido: &#39;diagnosticar TDAH no es la meta final -esta revisión muestra que niñas, familias de bajos ingresos y zonas rurales esperan más para empezar el tratamiento incluso después de tener el diagnóstico&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00787-026-03159-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s00787-026-03159-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Voice · 2026-09-12 · review</div>
+        <h3 class="r3-title">Artificial Intelligence-Related Voice and Speech Biomarkers of Alzheimer&#39;s Disease: A Systematic Review</h3>
+        <p class="r3-hook">Revisión sistemática (63 estudios, 18,540 participantes) de modelos de IA (machine learning y deep learning) que analizan voz y habla para detectar Alzheimer y deterioro cognitivo leve: los modelos distinguen Alzheimer de controles sanos con AUC &gt; 0.80 usando medidas prosódicas, temporales, espectrales y lingüísticas, pero el deterioro cognitivo leve resultó mucho más difícil de discriminar del envejecimiento normal, y la evaluación con las herramientas PROBAST/CLAIM mostró sesgo metodológico generalizado por datasets pequeños, monocéntricos y sin validación externa. Para tu línea de IA aplicada a investigación (y tu foco secundario en neuropsiquiatría) es el estado del arte más reciente sobre un biomarcador digital no invasivo con potencial de screening masivo, con una brecha clara entre &#39;funciona en el paper&#39; y &#39;listo para clínica&#39;. Para AMAUTA/USAMEDIC es contenido de examen sobre por qué un AUC alto no basta sin validación externa multicéntrica. Ángulo de contenido: &#39;la IA ya distingue Alzheimer de un cerebro sano solo por cómo hablas -pero todavía no detecta bien el deterioro leve, y esta revisión de 63 estudios explica exactamente dónde falla&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jvoice.2026.08.038" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jvoice.2026.08.038</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Network Meta-Analysis en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">0</span>
+    </div>
+    <div class="thin-note">No se encontraron Guías &amp; Consensos en la ventana de 48 h.</div>
+    <div class="r3-grid"></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Neurology: Clinical Practice · 2026-09-11 · meta-analysis</div>
+        <h3 class="r3-title">Extending the Treatment Window for Intravenous Thrombolysis in Acute Ischemic Stroke: An Updated Systematic Review and Meta-Analysis</h3>
+        <p class="r3-hook">Meta-análisis actualizado (14 ECA, 4,944 pacientes) sobre trombólisis intravenosa (alteplasa o tenecteplasa) administrada 4.5-24 horas después del inicio del ictus isquémico en pacientes seleccionados por imagen: la ventana extendida se asoció con mayor probabilidad de excelente resultado funcional a 3 meses (OR=1.43) y mejor recanalización (OR=3.28), sin diferencia en mortalidad, aunque con más riesgo de hemorragia intracraneal sintomática (OR=2.51); tenecteplasa mostró eficacia similar a alteplasa con una señal de menor riesgo hemorrágico. Para tu foco secundario de neuropsiquiatría en la interfaz ictus-cognición es evidencia que podría ampliar el número de pacientes elegibles para trombólisis -justo los que después desarrollan deterioro cognitivo vascular o síntomas neuropsiquiátricos post-ictus, terreno que sí es tuyo. Para AMAUTA/USAMEDIC es contenido de examen de alto rendimiento porque cuestiona un número que todo residente memoriza sin discutir (las 4.5 horas). Ángulo de contenido: &#39;la ventana de 4.5 horas para trombólisis en ictus que enseñamos en clase ya no es un límite absoluto -este meta-análisis muestra beneficio funcional hasta las 24 horas si seleccionas por imagen, al costo de más sangrado&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1212/CPJ.0000000000200654" target="_blank" rel="noopener">↗ doi.org/10.1212/CPJ.0000000000200654</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Scientific Reports · 2026-09-11 · meta-analysis</div>
+        <h3 class="r3-title">Efficacy of prescription-eligible digital health applications for depression and generalized anxiety disorder in Germany: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis (19 ECA, N=4,078) de las aplicaciones digitales de salud mental con receta médica (DiGA) aprobadas en Alemania desde 2020 para depresión y trastorno de ansiedad generalizada: reducción significativa de síntomas depresivos tanto inmediatamente post-intervención (SMD=-0.49) como en seguimiento (SMD=-0.35), aunque la evidencia para ansiedad generalizada fue limitada (solo 2 estudios) y el conjunto de evidencia está dominado por una sola aplicación (Deprexis), no representando a toda la categoría de DiGA disponibles. Para tu línea de IA aplicada a investigación y educación es el primer marco regulatorio real (aprobación tipo receta médica) que puedes citar como precedente de cómo un sistema de salud integra terapéutica digital con evidencia cuantificada. Para tu comité de ética (HVLH) es un caso de estudio sobre qué tan generalizable es &#39;la evidencia de las apps de salud mental&#39; cuando en realidad proviene mayormente de un solo producto. Ángulo de contenido: &#39;Alemania ya receta apps para depresión como si fueran fármacos -este meta-análisis muestra que funcionan, pero casi toda la evidencia viene de una sola aplicación, no de la categoría completa&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41598-026-68875-y" target="_blank" rel="noopener">↗ doi.org/10.1038/s41598-026-68875-y</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Archives of Women&#39;s Mental Health · 2026-09-14 · meta-analysis</div>
+        <h3 class="r3-title">Isolated physical activity programs during pregnancy and postpartum: Meta-analysis of randomized trials with usual-care controls on depressive and anxiety symptoms</h3>
+        <p class="r3-hook">Meta-análisis registrado en PROSPERO (CRD42022301284, siguiendo Cochrane Handbook y PRISMA) de 17 ECA (de 10,938 registros identificados) sobre programas de actividad física aislada -sin componentes activos adicionales- en síntomas depresivos y ansiosos perinatales: en ensayos preventivos, la actividad física redujo síntomas depresivos tanto prenatales (SMD=-0.52; certeza baja) como posparto (SMD=-0.33; certeza muy baja; I²=86%), sin efecto claro sobre ansiedad prenatal (certeza muy baja), y los programas estructurados de ~60 minutos tres veces por semana mostraron el efecto más favorable. Para tu línea de psiquiatría de precisión y educación médica es un ejemplo limpio de por qué &#39;hacer ejercicio ayuda con la depresión&#39; necesita matices de dosis, momento perinatal y certeza de evidencia antes de convertirse en recomendación clínica generalizable. Para AMAUTA/USAMEDIC es contenido de examen sobre diseño de meta-análisis (separar ensayos preventivos de terapéuticos) y por qué I²=86% obliga a leer un efecto significativo con cautela. Ángulo de contenido: &#39;el ejercicio en el embarazo y posparto sí reduce síntomas depresivos según este meta-análisis Cochrane/PRISMA -pero la certeza de evidencia es tan baja que no deberíamos prescribirlo como si fuera un antidepresivo probado&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00737-026-01752-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s00737-026-01752-9</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El Annual Research Review de JCPP sobre trastorno de conducta encuentra que niñas y niños se parecen mucho más de lo asumido: las diferencias de sexo son sutiles y se concentran en edad de inicio y rasgos callous-unemotional, no en la neurobiología de base -un golpe a la narrativa de &#39;presentaciones completamente distintas por sexo&#39;.</li><li>En la revisión de disparidades de TDAH, la brecha de sexo en inicio de tratamiento (razones de tasa hasta 1.36 a favor de los varones) persiste incluso después del diagnóstico -y no se explica por tipo de seguro médico, sugiriendo un sesgo de percepción clínica o familiar más que una barrera puramente económica.</li><li>La revisión de biomarcadores de voz por IA para Alzheimer logra AUC&gt;0.80 distinguiendo Alzheimer de controles sanos en 63 estudios (18,540 personas), pero falla en distinguir deterioro cognitivo leve del envejecimiento normal -la tarea clínicamente más relevante para el diagnóstico temprano es justo la que peor resuelve.</li><li>El meta-análisis de trombólisis extendida en ictus (14 ECA, 4,944 pacientes) muestra que administrar el fármaco hasta 24 horas después del inicio -seleccionando por imagen- mejora el resultado funcional (OR=1.43) sin aumentar la mortalidad, pero sí duplica el riesgo de hemorragia intracraneal sintomática (OR=2.51): el beneficio no es gratis.</li><li>Casi toda la evidencia de eficacia de las apps de salud mental con receta médica en Alemania (DiGA) proviene de una sola aplicación (Deprexis) entre las varias aprobadas -un recordatorio de que &#39;la categoría funciona&#39; y &#39;el producto que probamos funciona&#39; no son la misma afirmación.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si las diferencias de sexo en trastorno de conducta son tan sutiles como sugiere el Annual Research Review de JCPP, ¿deberíamos seguir enseñando &#39;presentaciones distintas por sexo&#39; en cursos de psicopatología, o reformular hacia rasgos transdiagnósticos compartidos?</li><li>¿Qué intervenciones a nivel de sistema de salud (no solo clínicas) explicarían que niñas, familias de bajos ingresos y zonas rurales tarden más en iniciar tratamiento de TDAH después del diagnóstico, si el tipo de seguro no marca diferencia?</li><li>Si un modelo de IA por voz distingue Alzheimer de un cerebro sano pero no detecta bien el deterioro cognitivo leve, ¿qué rol clínico real le queda -screening poblacional tardío o algo distinto- mientras no haya validación multicéntrica?</li><li>¿Deberíamos actualizar el número &#39;4.5 horas&#39; que se enseña como límite absoluto para trombólisis en ictus, dado que la ventana extendida por imagen mejora el resultado funcional al costo de más hemorragia sintomática -y cómo se comunica ese trade-off a un residente?</li><li>Si casi toda la evidencia de las DiGA alemanas depende de una sola aplicación, ¿qué estándar de evidencia deberíamos exigir antes de recomendar terapéutica digital en consulta o en contenido educativo -evidencia de categoría o evidencia de producto específico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video sobre el Annual Research Review de JCPP: &#39;el trastorno de conducta no se ve tan distinto entre niñas y niños como creíamos -la diferencia real está en cuándo empieza y con qué rasgos se acompaña&#39;, conectando con el marco dimensional del libro de psicopatología.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel o hilo sobre la revisión de disparidades de TDAH: comparar tiempos de inicio de tratamiento por sexo, etnia, ingreso y zona geográfica, con llamado a revisar protocolos de seguimiento post-diagnóstico en la práctica de AMAUTA/USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota o comentario breve sobre la revisión de biomarcadores de voz por IA en Alzheimer, proponiendo un estándar mínimo de validación externa (PROBAST/CLAIM) antes de adoptar herramientas de screening por voz en investigación o práctica clínica.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología o capítulo de neurociencia educativa sobre la ventana extendida de trombólisis en ictus como ejemplo de cómo la evidencia actualiza -sin eliminar del todo- una regla clínica clásica (&#39;las 4.5 horas&#39;), útil para enseñar razonamiento clínico basado en evidencia cambiante.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video crítico sobre las DiGA alemanas: &#39;Alemania receta apps para depresión como si fueran fármacos, pero casi toda la evidencia viene de una sola app&#39; -usando el meta-análisis de Scientific Reports para enseñar a distinguir evidencia de categoría vs. evidencia de producto.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Journal of Child Psychology and Psychiatry</span><span class="tag ">European Child &amp; Adolescent Psychiatry</span><span class="tag ">Journal of Voice</span><span class="tag ">Neurology: Clinical Practice</span><span class="tag ">Scientific Reports</span><span class="tag ">Archives of Women&#39;s Mental Health</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</span><span class="tag ">Epilepsia</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI eutils (esearch/esummary/efetch). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 14 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
