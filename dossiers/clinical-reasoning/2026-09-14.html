@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-09-14 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">14 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">48</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">17</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">9</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">European Journal of General Practice, 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">Precisión diagnóstica y manejo de la otitis media aguda sospechada: encuesta multicontinental de médicos de atención primaria con imágenes de membrana timpánica</h3>
+        <p class="r3-hook">Con 1,365 médicos de atención primaria en 12 países evaluando los mismos casos clínicos estructurados con imágenes reales de tímpano, el estudio mide error diagnóstico real (no autorreportado): solo 60% acertó la otitis media y apenas 31% reconoció correctamente un tímpano normal como normal, y la prescripción de antibióticos varió fuertemente según la precisión diagnóstica del médico. Para Javier esto es un caso de manual —medido, no anecdótico— de cómo el reconocimiento de patrones falla sistemáticamente hacia el sobrediagnóstico cuando la imagen es ambigua, exactamente el fenómeno de cierre prematuro e illness scripts mal calibrados que quiere enseñar en el Competency Lab de AMAUTA/USAMEDIC. El diseño (mismo set de casos, comparación internacional, vínculo directo a una decisión terapéutica costosa) es una plantilla replicable con casos psiquiátricos —por ejemplo TDAH o cuadros del espectro autista sobrediagnosticados por patrones inespecíficos— para un estudio propio o un banco de casos ENAM/Residentado.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/13814788.2026.2726138" target="_blank" rel="noopener">↗ doi.org/10.1080/13814788.2026.2726138</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Journal of General Internal Medicine, 11 sep 2026 · review · 2026-09-11</div>
+        <h3 class="r3-title">Anclaje diagnóstico en serologías autoinmunes positivas en pacientes polisintomáticos</h3>
+        <p class="r3-hook">Esta revisión diseca con precisión mecanicista cómo un antinuclear positivo de bajo título en un paciente con revisión de sistemas difusamente positiva se convierte en un diagnóstico autoinmune persistente e injustificado, nombrando tres mecanismos que convergen: negligencia de tasa base, anclaje en la serología positiva y momentum diagnóstico, y recomendando restricción diagnóstica en vez de escalada ante un cuadro polisintomático. Para Javier es oro directo para su línea de psiquiatría dimensional (HiTOP/RDoC): el mismo error —sumar síntomas inespecíficos sin corregir por tasa base y anclarse en un dato positivo temprano (un screening, un rasgo, una etiqueta previa)— es el mecanismo central del sobrediagnóstico psiquiátrico que su libro de psicopatología para el mundo necesita nombrar con vocabulario clínico riguroso, no solo psiquiátrico. Es vocabulario y estructura de razonamiento (base-rate neglect, anchoring, diagnostic momentum) directamente trasplantable a una clase o capítulo sobre por qué un cuestionario de síntomas TDAH/TEA positivo no basta para diagnosticar.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s11606-026-10727-6" target="_blank" rel="noopener">↗ doi.org/10.1007/s11606-026-10727-6</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">PsyArXiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+        <h3 class="r3-title">Evaluación de modelos de lenguaje de pesos abiertos para la evaluación estructurada de depresión desde entrevistas clínicas</h3>
+        <p class="r3-hook">Con 541 entrevistas grabadas de 277 pacientes psiquiátricos hospitalizados, el estudio muestra que hacer que un LLM de pesos abiertos puntúe la MADRS ítem por ítem y luego sume (descomponer el razonamiento en pasos intermedios) supera claramente la predicción directa del puntaje total, acercándose a la confiabilidad inter-evaluador humana —y que las señales descriptivas de los criterios de puntuación, no los ejemplos few-shot, son las que realmente mueven el desempeño. Para Javier esto es evidencia empírica directa de su pilar ai-enhancement aplicado a psiquiatría de precisión: el hallazgo de que &#39;descomponer en pasos&#39; bate a &#39;juzgar de un vistazo&#39; es el mismo argumento que puede usar para diseñar rúbricas de evaluación de razonamiento clínico en el Competency Lab, y el uso de modelos abiertos (no APIs propietarias) resuelve exactamente la barrera de privacidad que frenaría un piloto similar con datos de pacientes peruanos en su propia investigación RENACYT.</p>
+        <a class="r3-link" href="https://doi.org/10.31234/osf.io/63sw4_v3" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/63sw4_v3</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">6</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Sesgo de género en el diagnóstico de la enfermedad de Alzheimer: modelos de aprendizaje automático conscientes del sesgo (cohorte ADNI)</div>
+          <div class="r10-line">Con 757 pacientes ADNI y cuatro algoritmos de ML, la mitigación de sesgo (framework AI Fairness 360) redujo la disparidad de impacto por sexo de 1.167 a 0.823, y el &#39;adversarial debiasing&#39; logró la mejor exactitud balanceada (88.91%) sin sacrificar equidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier puede citar este pipeline de fairness (pre/in/post-procesamiento + LIME) como estándar mínimo exigible a cualquier modelo de IA diagnóstica que evalúe para su línea de psiquiatría de precisión, antes de considerar su despliegue en poblaciones peruanas heterogéneas.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10738736/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10738736/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 10 sep 2026 · preprint · 2026-09-10</div>
+          <div class="r10-title">Impacto de la radiografía de tórax asistida por IA en la toma de decisiones clínicas: análisis temporal de referencias a TC en cardiología ambulatoria</div>
+          <div class="r10-line">En 9,279 pacientes, la adopción rutinaria de IA en radiografías de tórax se asoció con un aumento significativo en las referencias a TC (OR 1.85, p&lt;0.001) y en el hallazgo de TC positivas, sugiriendo mejor detección pero también riesgo de sobre-referencia inducida por la herramienta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que este patrón —la IA no solo cambia la precisión sino el comportamiento decisional del clínico, en ambas direcciones— es exactamente el tipo de dato que Javier necesita para matizar su discurso de ai-enhancement: la IA puede mejorar calibración o simplemente inflar el umbral de pedir más pruebas, y distinguir ambos es un ángulo de contenido de alto valor.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10641991/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10641991/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Seguridad y eficiencia de la estrategia HEART-GP con troponina de alta sensibilidad point-of-care para dolor torácico agudo en atención primaria fuera de horario</div>
+          <div class="r10-line">Estudio prospectivo multicéntrico en cuatro centros holandeses de atención primaria fuera de horario evalúa si una estrategia estructurada (evaluación clínica + troponina I de alta sensibilidad point-of-care + ECG) permite al médico general distinguir con seguridad quién necesita referencia hospitalaria inmediata por sospecha de síndrome coronario agudo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que este diseño —regla de decisión estructurada + prueba point-of-care reemplazando el &#39;ojo clínico&#39; puro en el primer contacto— es un modelo trasplantable a protocolos de triaje psiquiátrico de urgencia (por ejemplo, riesgo suicida) que Javier podría proponer para AMAUTA/USAMEDIC.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.08.26361591" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.08.26361591</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 11 sep 2026 · preprint · 2026-09-11</div>
+          <div class="r10-title">Integración de educación en TC y RM en la rotación clínica mediante aprendizaje basado en casos liderado por especialistas: evaluación de métodos mixtos</div>
+          <div class="r10-line">Un modelo de sesión única, tipo &#39;aula invertida&#39; (revisión independiente de 7 casos de neurología + sesión de una hora liderada por un especialista), mejora la confianza autopercibida y la precisión diagnóstica de estudiantes de clínica sin rediseñar el currículo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que este formato de bajo costo curricular (casos autoguiados + una sesión experta) es directamente replicable como módulo corto del Competency Lab de AMAUTA para temas puntuales de razonamiento psiquiátrico, sin competir por espacio curricular grande.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10770137/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10770137/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (Berlin), 14 sep 2026 · editorial · 2026-09-14</div>
+          <div class="r10-title">El valor perdurable del examen físico para lograr la excelencia diagnóstica</div>
+          <div class="r10-line">Editorial que argumenta que el examen físico bien hecho sigue reduciendo errores diagnósticos y costos incluso en la era de la tecnología avanzada, y propone estrategias prácticas para reforzar esa habilidad como complemento (no sustituto) de la IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier puede usar este argumento como contrapeso deliberado en su discurso ai-enhancement: la IA no reemplaza la semiología, y esa tensión (examen físico vs. herramienta digital) es gancho de contenido recurrente para su audiencia clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0145" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0145</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Abdominal Radiology, 10 sep 2026 · review · 2026-09-10</div>
+          <div class="r10-title">El reporte de RM de próstata y su impacto en la toma de decisiones clínicas: la perspectiva de los urólogos</div>
+          <div class="r10-line">Revisión que muestra cómo la completitud y precisión del reporte radiológico (no solo la exactitud de la imagen) determina si el urólogo toma la decisión clínica correcta en cinco dominios distintos, desde triaje pre-biopsia hasta vigilancia activa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que este hallazgo —el formato y completitud del reporte, más que el hallazgo mismo, mueve la decisión del clínico receptor— aplica igual de bien a cómo Javier estructura sus propios informes o rúbricas de caso para que un residente tome la decisión correcta a partir de ellos.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00261-026-05780-y" target="_blank" rel="noopener">↗ doi.org/10.1007/s00261-026-05780-y</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En la otitis media, el error diagnóstico más común no fue sobrediagnosticar un cuadro difícil: fue no reconocer un tímpano NORMAL como normal (69% de errores en esos casos) — el sesgo de acción/disponibilidad pesa más que la falta de conocimiento.</li><li>&#39;Anclaje + negligencia de tasa base + momentum diagnóstico&#39; no son tres sesgos distintos en la práctica: son una secuencia. El anclaje inicial en un dato positivo alimenta el momentum, y ambos se disfrazan de acumulación legítima de evidencia.</li><li>Para un LLM evaluando depresión, forzarlo a puntuar ítem por ítem y sumar vence a pedirle el puntaje total de un vistazo — la misma lógica por la que un residente que arma un diferencial explícito razona mejor que uno que &#39;siente&#39; el diagnóstico.</li><li>La IA que mejora la detección (más TC positivas encontradas) y la IA que solo infla el umbral de pedir pruebas (más TC en general) generan la misma curva de referencias — sin un desenlace duro, ambas parecen &#39;éxito&#39;.</li><li>Mitigar sesgo de género en un modelo diagnóstico no es gratis: el modelo con mejor equidad (LR + Disparate Impact Remover) no fue el de mejor exactitud pura (adversarial debiasing) — hay que elegir explícitamente qué se optimiza.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué proporción del sobrediagnóstico de TDAH/TEA en la práctica peruana es negligencia de tasa base disfrazada de acumulación de síntomas, como describe el paper de anclaje en serologías?</li><li>¿Un banco de casos con imágenes ambiguas (como el de otitis media) replicado en semiología psiquiátrica —gestos, presentación, video— mediría mejor el error diagnóstico real que un examen de opción múltiple?</li><li>Si descomponer en pasos mejora a un LLM puntuando MADRS, ¿mejora también a un residente si se le fuerza a puntuar cada criterio DSM/HiTOP explícitamente antes de emitir un diagnóstico?</li><li>¿Cómo se distingue, en la práctica de AMAUTA, un estudiante &#39;potenciado&#39; por IA de uno que solo delega el trabajo cognitivo, antes de que llegue a rendir el ENAM?</li><li>¿Qué pasaría con las tasas de interconsulta a psiquiatría si un sistema de IA ambulatoria general empezara a marcar rutinariamente síntomas afectivos, como ocurrió con los hallazgos pulmonares en el estudio de radiografía de tórax?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/post en IG usando el hallazgo de otitis media (31% de tímpanos normales mal reconocidos) como gancho para explicar por qué &#39;ver el patrón&#39; no es lo mismo que &#39;reconocerlo bien&#39;, aplicado a semiología psiquiátrica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Adaptar el marco de tres mecanismos (anclaje, negligencia de tasa base, momentum diagnóstico) del paper de JGIM como rúbrica de autoevaluación para residentes que preparan casos ENAM en AMAUTA.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper propio: replicar el diseño de puntuación item-por-item vs. global del estudio MADRS-LLM pero aplicado a una escala dimensional (HiTOP) con modelos abiertos, evaluando privacidad y desempeño con datos peruanos.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección del libro de psicopatología para el mundo sobre &#39;anclaje y momentum diagnóstico&#39; como mecanismo transdiagnóstico de sobreetiquetado, usando el caso de las serologías autoinmunes como analogía didáctica.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo corto contrastando el estudio de radiografía de tórax (IA que aumenta referencias a TC) con el de fairness en Alzheimer (mitigar sesgo tiene costo de exactitud) para argumentar que &#39;la IA ayuda&#39; es una frase que necesita siempre un desenlace duro al lado.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">European Journal of General Practice</span><span class="tag ">Journal of General Internal Medicine</span><span class="tag ">Diagnosis (Berlin)</span><span class="tag ">Abdominal Radiology</span><span class="tag ">medRxiv</span><span class="tag ">Research Square</span><span class="tag ">PsyArXiv/OSF</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (PubMed/MEDLINE + preprints, REST API) · medRxiv · Research Square · PsyArXiv/OSF · WebSearch (Reddit, ImproveDx/Substack — sin hallazgos verificables nuevos en la ventana). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 14 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
