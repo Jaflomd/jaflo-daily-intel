@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-15 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">15 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">31</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">31</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Canadian Journal of Psychiatry, 12 sep 2026 · meta-analysis · 2026-09-12</div>
+        <h3 class="r3-title">Pharmacological Management of Opioid Use Disorder: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">Network meta-analysis con GRADE y registro PROSPERO (103 RCTs, 26,624 personas con trastorno por uso de opioides, 13 intervenciones) que compara todas las terapias de sustitución y antagonistas disponibles: la terapia asistida con heroína (sola o con metadona) y la metadona en dosis alta ganan en retención al tratamiento (OR=31.47 y OR=6.94 vs. placebo, certeza moderada), la buprenorfina mejora abstinencia por test de orina, y ninguna intervención redujo de forma clara mortalidad, sobredosis o actividad criminal. Le importa a Javier porque es el ejemplo de manual para enseñar en AMAUTA/USAMEDIC cómo leer un ranking de NMA con GRADE — qué significa &#39;certeza moderada&#39; para retención pero &#39;certeza baja&#39; para mortalidad en la misma tabla — sin caer en la lectura simplista de &#39;el más alto en el ranking es el mejor tratamiento&#39;. También es material directo para su línea de razonamiento clínico: separa con claridad qué pregunta responde bien la evidencia (retención, abstinencia) de la que sigue sin respuesta sólida (reducir muertes por sobredosis), justo la honestidad epistemológica que caracteriza su voz.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/07067437261479071" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261479071</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Neurosurgical Review, 15 sep 2026 · meta-analysis · 2026-09-15</div>
+        <h3 class="r3-title">Deep brain stimulation for Tourette syndrome: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis de 22 estudios (358 pacientes) sobre DBS para síndrome de Tourette refractario que compara blancos quirúrgicos: la reducción de tics (YGTSS) fue grande tanto en globus pallidus internus (SMD=2.29) como en núcleos talámicos (SMD=2.33), pero dentro del propio GPi el subtarget anteromedial (amGPi, SMD=3.01) superó claramente al posterior-ventrolateral (pvlGPi, SMD=1.23, no significativo); los síntomas obsesivo-compulsivos comórbidos (YBOCS) también mejoraron ~47%. Le importa a Javier porque cae directo en su pilar de neuromodulación y en su línea TDAH/TEA/neurodivergencia: Tourette es un trastorno del neurodesarrollo con alta comorbilidad TDAH/TOC, y este meta-análisis muestra que &#39;DBS para Tourette&#39; no es una intervención única, sino que el blanco anatómico específico —no solo la estructura general— determina la magnitud del beneficio, material ideal para un módulo AMAUTA sobre neuromodulación de precisión más allá del blanco genérico.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10143-026-04487-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s10143-026-04487-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Neurology, Neurosurgery &amp; Psychiatry, 14 sep 2026 · meta-analysis · 2026-09-14</div>
+        <h3 class="r3-title">Risk of neurodevelopmental disorders associated with paternal use of valproate during spermatogenesis: a living meta-analysis</h3>
+        <p class="r3-hook">Primera versión de una living meta-analysis (diseñada para actualizarse con nueva evidencia) que combina datos poblacionales de Dinamarca, Suecia, Noruega y Taiwán para responder si el uso de valproato por el padre —no la madre— durante la espermatogénesis aumenta el riesgo de trastornos del neurodesarrollo (TND) en la descendencia frente a lamotrigina o levetiracetam: el HR combinado se mantiene cerca de 1 en las cuatro combinaciones de cohortes analizadas (1.03 a 1.06, IC95% siempre cruzando 1, I²=0%), sin evidencia de riesgo paterno. Le importa a Javier directo en su línea TDAH/TEA/neurodivergencia y en consejería reproductiva: el riesgo teratogénico del valproato en el embarazo (materno) está sólidamente establecido y no cambia con este estudio, pero la ausencia de señal en la exposición paterna es un matiz clínicamente útil y contraintuitivo, perfecto para un módulo AMAUTA/USAMEDIC sobre no extrapolar automáticamente un riesgo materno bien documentado a una vía de exposición biológicamente distinta, y para el capítulo de psicofarmacología reproductiva de su libro.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/jnnp-2026-338454" target="_blank" rel="noopener">↗ doi.org/10.1136/jnnp-2026-338454</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">5</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Journal of Psychotraumatology, 14 sep 2026 · rct · 2026-09-14</div>
+          <div class="r10-title">Five-year outcomes in a randomised controlled trial of prolonged exposure therapy and supportive counselling for post-traumatic stress disorder in adolescents: a task-shifted intervention</div>
+          <div class="r10-line">RCT en un país de bajos/medianos ingresos con seguimiento a 60 meses (n=63 adolescentes con TEPT) muestra que tanto terapia de exposición prolongada (PE-A) como consejería de apoyo, entregadas por personal de salud no especialista entrenado (task-shifting), mantienen la reducción de síntomas hasta 5 años después, con PE-A superior en la mayoría de los puntos de seguimiento pero sin diferencia significativa a los 60 meses (g=0.33, p=.28).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: modelo directamente trasplantable al sistema peruano — muestra que un protocolo breve (~9 sesiones) de PE-A entregado por personal no especializado y supervisado sostiene beneficio a 5 años en TEPT adolescente; Javier puede usarlo para argumentar escalamiento de salud mental infanto-juvenil en Perú vía task-shifting, sin necesitar un psicólogo especializado por cada caso.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/20008066.2026.2721926" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2721926</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Childhood Maltreatment and Deviations From Normative Brain Structure: A Mega-Analysis of 3711 Individuals From the ENIGMA Major Depressive Disorder and ENIGMA Posttraumatic Stress Disorder Working Groups</div>
+          <div class="r10-line">Mega-análisis ENIGMA (3,711 personas, 25 sitios) usa modelado normativo para separar los efectos del maltrato infantil sobre la estructura cerebral de los del diagnóstico (MDD/TEPT): en adultas jóvenes, más abuso/negligencia se asocia con hipocampo y putamen más pequeños y corteza entorrinal más fina, con patrones distintos según sexo y edad (nulos en población pediátrica).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: evidencia transdiagnóstica de peso pesado (N=3,711) para su línea de psiquiatría dimensional — el maltrato infantil deja una firma neuroanatómica que cruza las categorías DSM de MDD y TEPT y que depende de edad/sexo, justo el tipo de dato cuantitativo que valida un marco HiTOP/RDoC frente a la categoría diagnóstica aislada en su libro de psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.02.016" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.02.016</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 15 sep 2026 · meta-analysis · 2026-09-15</div>
+          <div class="r10-title">Efficacy and safety of menopausal hormone therapy for depressive symptoms in perimenopausal women: A systematic review and meta-analysis</div>
+          <div class="r10-line">MA con GRADE y RoB2 (12 RCTs) encuentra que la terapia hormonal de reemplazo reduce síntomas depresivos en mujeres perimenopáusicas frente a placebo con un efecto pequeño (SMD=-0.23, IC95% -0.43 a -0.03), con posible mayor efecto para tibolona/reguladores selectivos de actividad estrogénica, aunque sin diferencia significativa entre subgrupos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: útil para el pilar de razonamiento clínico — un efecto real pero pequeño (SMD=-0.23) no es &#39;la HRT trata la depresión perimenopáusica&#39;, es &#39;la HRT puede ser un complemento razonable en depresión leve-moderada perimenopáusica&#39;, matiz que Javier puede usar para enseñar a no sobrevender un tamaño de efecto modesto como solución definitiva.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121892" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121892</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 15 sep 2026 · review · 2026-09-15</div>
+          <div class="r10-title">Effects of ketamine on sleep and circadian rhythmicity in major depressive disorder and bipolar disorder: A systematic review</div>
+          <div class="r10-line">SR de 26 estudios (N=1,694) sobre ketamina/esketamina/arketamina en MDD y trastorno bipolar encuentra evidencia preliminar de que la calidad de sueño basal y su mejoría temprana podrían predecir la respuesta antidepresiva, con efectos también sugeridos sobre ritmicidad circadiana objetiva, aunque con pocos estudios de calidad suficiente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: candidato de biomarcador conductual barato (sueño autorreportado) para predecir respuesta a ketamina antes de tratar — encaja directo en el pilar de psiquiatría de precisión de Javier: no requiere neuroimagen ni genética, solo una pregunta clínica bien hecha sobre sueño basal.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121915" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121915</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 15 sep 2026 · review · 2026-09-15</div>
+          <div class="r10-title">Structural and functional brain correlates of treatment-resistant depression: A systematic review of magnetic resonance imaging studies</div>
+          <div class="r10-line">SR de 27 estudios de neuroimagen que comparan depresión resistente a tratamiento (TRD) contra depresión sensible a tratamiento encuentra como hallazgo más robusto un menor volumen hipocampal en TRD, más alteraciones de sustancia blanca y conectividad funcional alterada en la red de modo por defecto (hiper e hipoconectividad reportadas de forma inconsistente).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: síntesis honesta que Javier puede citar en su pilar de precisión psiquiátrica para mostrar dónde está realmente la evidencia de neuroimagen en TRD (hipocampo, sustancia blanca) y dónde todavía es ruido metodológico (la red de modo por defecto) — material para enseñar a un residente a no repetir &#39;la DMN está alterada en depresión&#39; como si fuera un hallazgo limpio.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121916" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121916</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el meta-análisis en red más grande sobre tratamiento farmacológico del trastorno por uso de opioides (103 RCTs, 26,624 personas), ninguna de las 13 intervenciones —ni metadona, ni buprenorfina, ni heroína asistida— redujo de forma clara la mortalidad o las muertes por sobredosis: la evidencia es sólida para retención y abstinencia, pero prácticamente inexistente para el resultado que más le importa a un paciente y su familia.</li><li>El subtarget específico dentro de un mismo núcleo cerebral puede duplicar el beneficio de la DBS: en Tourette, estimular el globus pallidus anteromedial (SMD=3.01) superó ampliamente al posterior-ventrolateral (SMD=1.23, no significativo) — &#39;DBS en GPi&#39; no es una sola intervención, son al menos dos con resultados muy distintos.</li><li>El valproato es teratogénico en el embarazo, pero una living meta-analysis con datos de 4 países no encuentra ningún aumento de riesgo de trastornos del neurodesarrollo cuando es el padre —no la madre— quien lo usó durante la espermatogénesis (HR≈1.03-1.06, IC95% siempre cruzando 1): el riesgo conocido es específico de la exposición materna, no de la molécula en sí.</li><li>Una terapia de exposición de 9 sesiones en promedio, entregada por enfermeras sin experiencia previa en psicoterapia (task-shifting) en un país de bajos ingresos, sostuvo la mejoría en TEPT adolescente durante 5 años: el &#39;techo&#39; de la salud mental global puede no ser la falta de especialistas sino la falta de protocolos breves bien entrenados y supervisados.</li><li>La terapia hormonal de reemplazo redujo síntomas depresivos perimenopáusicos con un tamaño de efecto pequeño (SMD=-0.23) frente a placebo: es un efecto real y estadísticamente significativo, pero por sí solo no alcanza la magnitud que uno esperaría de un &#39;tratamiento para la depresión&#39; — el tamaño del efecto, no solo su significancia, define si vale la pena promoverlo como monoterapia.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la evidencia de la NMA es sólida para retención y abstinencia en trastorno por uso de opioides pero casi nula para mortalidad, ¿cómo comunicarías a un paciente que el tratamiento &#39;con más evidencia&#39; no es necesariamente el que más le va a salvar la vida?</li><li>¿Qué le dice a un residente que estimular dos subtargets dentro del mismo núcleo (GPi) en DBS para Tourette produzca resultados tan distintos (SMD 3.01 vs. 1.23 no significativo) sobre la costumbre de hablar de &#39;DBS en GPi&#39; como si fuera una sola técnica?</li><li>Si el riesgo teratogénico del valproato es específicamente materno y no paterno según esta living meta-analysis, ¿cómo ajustarías tu consejería reproductiva con un paciente varón con epilepsia o trastorno bipolar que planea ser padre?</li><li>¿Qué necesitarías ver en el sistema de salud peruano para replicar el modelo de task-shifting del RCT de TEPT adolescente (personal no especializado, ~9 sesiones, beneficio sostenido a 5 años) en un centro de salud público?</li><li>Con un SMD de -0.23 para HRT en depresión perimenopáusica, ¿en qué punto un tamaño de efecto pequeño pero real deja de justificar recomendar una intervención como monoterapia y pasa a ser solo &#39;un complemento razonable&#39;?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o carrusel IG explicando por qué &#39;DBS para Tourette&#39; no es una sola intervención: comparar amGPi vs. pvlGPi con sus tamaños de efecto (SMD 3.01 vs. 1.23) como gancho de neuromodulación de precisión.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre cómo leer una network meta-analysis con GRADE usando la NMA de opioides (103 RCTs) como caso guiado: separar qué outcome tiene certeza moderada (retención) de cuál sigue sin evidencia sólida (mortalidad).</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Nota o hilo corto sobre el hallazgo contraintuitivo de la living meta-analysis de valproato paterno: &#39;el riesgo que conoces es materno, no molecular&#39; como ejemplo de consejería reproductiva basada en evidencia y no en generalización automática.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología sobre maltrato infantil como variable transdiagnóstica: usar el mega-análisis ENIGMA (N=3,711, MDD+TEPT) como evidencia cuantitativa de que el trauma temprano deja una firma neuroanatómica que cruza categorías diagnósticas.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper de opinión/comentario proponiendo la calidad de sueño basal (autorreportada) como biomarcador de bajo costo para predecir respuesta a ketamina/esketamina en depresión resistente, a partir de la síntesis de 26 estudios (N=1,694).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag ">Neurosurgical Review</span><span class="tag ">Journal of Neurology, Neurosurgery &amp; Psychiatry</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Journal of Affective Disorders</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/eutils (esearch/esummary/efetch) · WebSearch (medRxiv/PsyArXiv — sin ítems nuevos en la ventana de 72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 15 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
