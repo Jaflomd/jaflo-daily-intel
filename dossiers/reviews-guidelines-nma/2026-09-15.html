@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Revisiones, Guías &amp; NMA — 2026-09-15 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#E11D48;
+    --accent-dim:rgba(225,29,72,0.12);
+    --accent-soft:rgba(225,29,72,0.07);
+    --accent-border:rgba(225,29,72,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">📋</span>Revisiones, Guías &amp; NMA</h1>
+      <div class="sub">15 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">85</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">22</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">8</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🔬</div>
+      <span class="sec-title">Top 3 Reviews</span>
+      <span class="sec-sub">sistemáticas · scoping · umbrella · narrativas</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Molecular Psychiatry · 2026-09-12 · review</div>
+        <h3 class="r3-title">Young minds in distress: Exploring the global rise in youth mental health diagnoses</h3>
+        <p class="r3-hook">Review en Molecular Psychiatry que sintetiza tendencias epidemiológicas globales en salud mental juvenil, separando el aumento real de morbilidad (depresión, suicidio, autolesión en países de altos ingresos, con indicadores objetivos de severidad más allá de la inflación diagnóstica) de los sesgos de detección, e identifica el sueño como factor de riesgo transdiagnóstico central que atraviesa distintos diagnósticos categoriales. Para tu libro de psicopatología para el mundo es munición directa: el propio review usa un marco transdiagnóstico (sueño, regulación emocional) que valida el argumento dimensional (HiTOP/RDoC) por encima de silos categoriales en población juvenil. Para tu línea TDAH/TEA/neurodivergencia da contexto poblacional sólido sobre por qué las tasas de diagnóstico suben y qué proporción es señal real vs. artefacto de vigilancia. Para AMAUTA/USAMEDIC es contenido de alto rendimiento para ENAM/Residentado (epidemiología de salud mental infanto-juvenil) y para tu propuesta de contenido en IG/YT: &#39;la salud mental juvenil no solo se diagnostica más, se está deteriorando de verdad -y el sueño es la variable que todos ignoran&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03884-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03884-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Zeitschrift für Gerontologie und Geriatrie · 2026-09-14 · review</div>
+        <h3 class="r3-title">[Treatment of delirium with psychotropic drugs-update 2026]</h3>
+        <p class="r3-hook">Narrative review alemán (Hewer &amp; Kopf) que actualiza el manejo psicofarmacológico del delirium no inducido por sustancias, apoyado explícitamente en la guía AWMF recién publicada &#39;Delir im höheren Lebensalter&#39; (Delirium en adultos mayores) de las sociedades científicas médicas alemanas, con foco en el balance riesgo-beneficio de antipsicóticos en pacientes vulnerables cuando persisten delirios, alucinaciones o agitación marcada. Para tu foco secundario de neuropsiquiatría es exactamente el tipo de síntesis que normatiza conducta clínica en la interfaz neurología-psiquiatría-geriatría, y para tu línea de psiquiatría de precisión es un caso de manual de cómo ajustar riesgo-beneficio de fármacos de alto riesgo en poblaciones vulnerables. Para AMAUTA/USAMEDIC el delirium es tema recurrente de ENAM/Residentado, y esta actualización 2026 te da la referencia normativa más fresca para actualizar ese módulo. Ángulo de contenido: contrastar el enfoque AWMF con el de la guía APA de delirium que ya circula en inglés.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00391-026-02655-1" target="_blank" rel="noopener">↗ doi.org/10.1007/s00391-026-02655-1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">European Journal of Psychotraumatology · 2026-09-14 · review</div>
+        <h3 class="r3-title">Eye-tracking and cognitive patterns in post-traumatic stress disorder: a scoping review</h3>
+        <p class="r3-hook">Scoping review que sintetiza hallazgos de eye-tracking (combinado con medidas neurofisiológicas) en TEPT, mostrando que el sesgo atencional ya no se explica solo por hipervigilancia sostenida sino que es dinámico, dependiente de contexto y puede incluir evitación -es decir, un fenotipo atencional más complejo y menos categorial de lo asumido. Para tu línea de psiquiatría dimensional (HiTOP/RDoC/network theory) es evidencia de que un síntoma nuclear de TEPT (el sesgo atencional a amenaza) se comporta como un proceso dimensional y contextual, no como un rasgo fijo -material directo para el capítulo de trauma en tu libro de psicopatología. Para tu línea de IA en investigación, el eye-tracking es un biomarcador digital cuantificable con alto potencial de integrarse a pipelines de fenotipado computacional, algo que conecta con tu pilar ai-enhancement. Ángulo de contenido: &#39;el TEPT no es solo hipervigilancia -el ojo del paciente muestra evitación activa, y eso cambia cómo deberíamos medir la respuesta al tratamiento&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/20008066.2026.2703319" target="_blank" rel="noopener">↗ doi.org/10.1080/20008066.2026.2703319</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🌐</div>
+      <span class="sec-title">Top 3 Network Meta-Analysis</span>
+      <span class="sec-sub">ranking comparativo de intervenciones</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Canadian Journal of Psychiatry · 2026-09-12 · network-meta-analysis</div>
+        <h3 class="r3-title">Pharmacological Management of Opioid Use Disorder: A Systematic Review and Network Meta-Analysis</h3>
+        <p class="r3-hook">NMA sobre 103 ECAs y más de 26,600 pacientes con trastorno por uso de opioides que rankea tratamientos asistidos por medicación: heroína fue la más efectiva para retención en tratamiento (certeza moderada), con buprenorfina y metadona en dosis altas mejorando abstinencia, mientras la evidencia sobre mortalidad y prevención de sobredosis sigue siendo limitada -un llamado explícito a ensayos más grandes que incorporen el escenario actual de fentanilo. Para tu comité de ética (HVLH) es un caso de estudio perfecto sobre el debate ético del tratamiento asistido con heroína, y para tu línea de psiquiatría de precisión ofrece un ranking comparativo real (no solo eficacia vs. placebo) para guiar decisiones de prescripción en adicciones. Para AMAUTA/USAMEDIC es contenido actualizado de farmacología de adicciones con jerarquía de evidencia clara para el módulo de trastornos por uso de sustancias. Ángulo de contenido: &#39;la heroína medicalizada gana el ranking de retención en este NMA -pero la evidencia sobre mortalidad sigue coja, y esa brecha importa más que el ranking&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1177/07067437261479071" target="_blank" rel="noopener">↗ doi.org/10.1177/07067437261479071</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📋</div>
+      <span class="sec-title">Top 3 Guías &amp; Consensos</span>
+      <span class="sec-sub">guías de práctica clínica · consensus statements</span>
+      <span class="sec-count">1</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">British Journal of Psychiatry · 2026-09-14 · guideline</div>
+        <h3 class="r3-title">Psychotropic medications in mood disorders: to deprescribe or not?</h3>
+        <p class="r3-hook">Artículo de Looi, Malhi y colegas (Sydney/Oxford) que resume y traduce a la práctica clínica recomendaciones derivadas de consenso de expertos para el deprescribing de medicación en trastornos del ánimo, discutiendo su ejecución en distintos contextos clínicos. Para tu pilar de psiquiatría de precisión es exactamente el tipo de guía accionable que necesitas: cuándo y cómo retirar antidepresivos o estabilizadores sin precipitar recaída, un tema donde la evidencia dura escasea y domina el juicio clínico experto. Para AMAUTA/USAMEDIC es contenido de alto valor diferencial -el deprescribing casi no se enseña en el currículo estándar de ENAM/Residentado pese a ser una decisión clínica diaria. Ángulo de contenido/libro: un capítulo o hilo sobre &#39;cuándo parar&#39; como contraparte necesaria de todo protocolo de inicio de tratamiento, coherente con tu voz de evidencia proporcional al claim.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10779" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10779</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📊</div>
+      <span class="sec-title">Top 3 Meta-Analysis</span>
+      <span class="sec-sub">síntesis cuantitativa de evidencia</span>
+      <span class="sec-count">3</span>
+    </div>
+    
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Neurosurgical Review · 2026-09-15 · meta-analysis</div>
+        <h3 class="r3-title">Deep brain stimulation for Tourette syndrome: a systematic review and meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis de 22 estudios y 358 pacientes con síndrome de Tourette refractario tratados con estimulación cerebral profunda (DBS), con reducción promedio de 48% en severidad de tics (YGTSS: de 69.19 a 35.88) y efectos grandes tanto en globo pálido interno como en núcleos talámicos (SMD 2.29 y 2.33 respectivamente), con el globo pálido anteromedial destacando dentro del subgrupo GPi. Esto es evidencia cuantitativa directa para tu línea de neuromodulación, uno de tus pilares vivos, y te da números concretos (tamaños de efecto, targets comparados) para hablar de DBS en Tourette con precisión en vez de generalidades. Para tu libro de neurociencia educativa es un ejemplo claro de cómo la neuromodulación traduce un modelo de circuito (ganglios basales-tálamo) en un resultado clínico medible. Ángulo de contenido: comparar targets de DBS en Tourette con un gráfico simple de reducción de YGTSS por sitio de estimulación.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s10143-026-04487-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s10143-026-04487-4</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Acta Psychologica · 2026-09-14 · meta-analysis</div>
+        <h3 class="r3-title">Efficacy of three virtual reality interventions for social anxiety disorder: A meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis de 17 ECAs que compara tres modalidades de realidad virtual para ansiedad social -exposición VR (SMD 0.521), VR-TCC (SMD 0.618, el efecto más grande) y VR con biofeedback (sin efecto significativo)- con subanálisis por región, tipo de dispositivo y población. Para tu pilar ai-enhancement/tecnología aplicada a la clínica es evidencia cuantitativa de que no toda intervención &#39;digital&#39; rinde igual: combinar VR con TCC estructurada supera a la exposición sola, mientras que añadir biofeedback sin protocolo cognitivo no aporta nada -un matiz importante para no sobrevender la tecnología per se. Para AMAUTA/USAMEDIC es contenido fresco sobre terapias basadas en tecnología para el módulo de trastornos de ansiedad. Ángulo de contenido: &#39;la realidad virtual funciona para ansiedad social, pero solo si viene con terapia cognitivo-conductual detrás -el dispositivo no es la terapia&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.actpsy.2026.107811" target="_blank" rel="noopener">↗ doi.org/10.1016/j.actpsy.2026.107811</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Neurology, Neurosurgery &amp; Psychiatry · 2026-09-14 · meta-analysis</div>
+        <h3 class="r3-title">Risk of neurodevelopmental disorders associated with paternal use of valproate during spermatogenesis: a living meta-analysis-version 1</h3>
+        <p class="r3-hook">Living meta-analysis (versión 1, con actualización continua planificada) sobre el riesgo de trastornos del neurodesarrollo asociado al uso paterno de valproato durante la espermatogénesis -desplazando el foco habitual de teratogenicidad materna hacia una vía de riesgo paterna, mucho menos estudiada. Para tu línea TDAH/TEA/neurodivergencia esto abre una pregunta de investigación poco explorada sobre exposición paterna a antiepilépticos/estabilizadores y riesgo neurodevelopmental en la descendencia, relevante tanto para consejería preconcepcional como para tu foco secundario de neuropsiquiatría (epilepsia). El formato &#39;living meta-analysis&#39; en sí mismo es interesante para tu pilar de IA/investigación: es un modelo de síntesis de evidencia que se actualiza de forma continua en vez de quedar fija en el tiempo de publicación, algo que podrías explorar como formato para tus propias revisiones. Ángulo de contenido: explicar qué es un &#39;living meta-analysis&#39; y por qué podría ser el futuro de las guías clínicas que citas en tus clases.</p>
+        <a class="r3-link" href="https://doi.org/10.1136/jnnp-2026-338454" target="_blank" rel="noopener">↗ doi.org/10.1136/jnnp-2026-338454</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el review de Molecular Psychiatry, el sueño emerge como el factor de riesgo transdiagnóstico central en el aumento de salud mental juvenil -más que cualquier diagnóstico categorial específico.</li><li>El NMA de trastorno por uso de opioides encuentra que la heroína medicalizada supera a buprenorfina y metadona en retención en tratamiento, pero la evidencia sobre mortalidad sigue siendo insuficiente para cambiar guías con ese único dato.</li><li>En DBS para Tourette, el objetivo anteromedial del globo pálido interno (amGPi) rinde mejor que el resto del subgrupo GPi -el target exacto dentro de la estructura importa tanto como la estructura misma.</li><li>El scoping review de eye-tracking en TEPT rompe el modelo de &#39;solo hipervigilancia&#39;: el sesgo atencional también incluye evitación activa, dependiente de contexto -el síntoma es más dinámico de lo que enseña el DSM.</li><li>En ansiedad social, combinar realidad virtual con biofeedback sin terapia cognitivo-conductual estructurada no mejora los resultados -la tecnología sin marco terapéutico no basta.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Qué proporción del aumento en diagnósticos de salud mental juvenil en tu población de estudiantes ENAM/Residentado es morbilidad real vs. mejor detección -y cómo lo comunicarías sin minimizar ninguna de las dos?</li><li>¿Deberíamos enseñar deprescribing de psicofármacos como módulo explícito en la formación de residentes, dado que casi no aparece en el currículo pese a ser decisión clínica diaria?</li><li>Si el sesgo atencional en TEPT es dinámico y contextual (no fijo), ¿qué implica eso para cómo diseñamos y medimos la exposición en terapia?</li><li>¿Qué haría falta para que un &#39;living meta-analysis&#39; reemplace a la guía clínica estática como referencia estándar en psiquiatría y neurología?</li><li>En DBS para Tourette, con efectos grandes tanto en GPi como en tálamo, ¿qué datos further faltan para pasar de &#39;target según centro&#39; a un algoritmo de selección de target basado en fenotipo del paciente?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/reel: &#39;La heroína medicalizada gana el ranking de retención en el NMA de TUO más reciente -pero hay un hueco de evidencia sobre mortalidad que nadie está mirando&#39;</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto comparando targets de DBS en Tourette (GPi anteromedial vs. tálamo) con los tamaños de efecto del meta-análisis de Neurosurgical Review, como ejemplo didáctico de neuromodulación por circuito</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo o sección en el libro de psicopatología para el mundo sobre cómo el sesgo atencional en TEPT (evitación + hipervigilancia dinámica) ejemplifica un síntoma dimensional mal capturado por criterios categoriales</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Paper/carta editorial proponiendo un caso de uso de &#39;living meta-analysis&#39; aplicado a un tema de tu línea de investigación (TDAH/TEA o precisión psiquiátrica), inspirado en el modelo JNNP de valproato paterno</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC actualizado de delirium en el adulto mayor incorporando la guía AWMF 2026 y contrastándola con la guía APA vigente en inglés</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">Canadian Journal of Psychiatry</span><span class="tag ">Journal of Neurology, Neurosurgery &amp; Psychiatry</span><span class="tag ">European Journal of Psychotraumatology</span><span class="tag ">Neuroscience &amp; Biobehavioral Reviews</span><span class="tag ">Zeitschrift für Gerontologie und Geriatrie</span><span class="tag ">Neurosurgical Review</span><span class="tag ">Acta Psychologica</span><span class="tag ">Journal of Substance Use and Addiction Treatment</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (eutils) · Europe PMC REST API · WebSearch. Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 15 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
