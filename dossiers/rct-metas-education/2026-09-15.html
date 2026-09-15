@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Educación — 2026-09-15 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#D85A30;
+    --accent-dim:rgba(216,90,48,0.12);
+    --accent-soft:rgba(216,90,48,0.07);
+    --accent-border:rgba(216,90,48,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🎓</span>Alta Evidencia · Educación</h1>
+      <div class="sub">15 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">64</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">64</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="thin-note">Semana delgada en este dominio: se muestran solo hallazgos reales verificados. Sin relleno.</div>
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">ANZ Journal of Surgery, 11 sep 2026 · rct · 2026-09-11</div>
+        <h3 class="r3-title">Application of AI-Enhanced Teaching Combined With Traditional Instruction in Cardiac and Great Vessel Surgery</h3>
+        <p class="r3-hook">RCT real (40 residentes de cirugía cardiovascular, aleatorizados 20 vs 20) que compara 8 semanas de enseñanza tradicional sola contra enseñanza tradicional + un paquete de IA educativa (planificación de aprendizaje inteligente, biblioteca de video quirúrgico inteligente, biblioteca de casos inteligente): el grupo con IA superó al control en OSCE total (85.6 vs 78.3, p&lt;0.01) y en habilidad quirúrgica en modelo porcino (92.4 vs 86.1, p&lt;0.001), con la ventaja más marcada específicamente en interpretación de imágenes. Le importa a Javier porque es la prueba controlada -no solo la promesa- de que empaquetar IA como biblioteca de casos + video + planificación adaptativa mejora desempeño objetivo (no solo satisfacción), justo el tipo de evidencia que su línea de IA en investigación/educación necesita antes de decidir cuánto invertir en un banco inteligente de casos para AMAUTA/USAMEDIC. Cómo usarlo: el diseño es replicable a bajo costo -Javier podría prototipar un banco de casos psiquiátricos + video comentado + ruta de estudio adaptativa para ENAM/Residentado y medir con una estación estructurada antes/después, tomando este estudio como plantilla metodológica (grupo control con enseñanza tradicional pura).</p>
+        <a class="r3-link" href="https://doi.org/10.1111/ans.70972" target="_blank" rel="noopener">↗ doi.org/10.1111/ans.70972</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">The Gerontologist, 10 sep 2026 · rct · 2026-09-10</div>
+        <h3 class="r3-title">Evaluating a coaching intervention for Dementia Care Practice Recommendations in care communities: a cluster randomized controlled trial</h3>
+        <p class="r3-hook">Ensayo clínico aleatorizado por clústeres real y grande (77 comunidades de cuidado, 434 miembros de personal -227 en 38 comunidades de intervención vs 207 en 39 control) que evalúa un programa de coaching de 6 meses para implementar las Dementia Care Practice Recommendations: mejoró satisfacción laboral y percepción de prácticas centradas en la persona, pero NO cambió la confianza del personal en el cuidado de demencia ni la percepción de la relación cuidador-residente. Le importa a Javier porque es un modelo de coaching a personal (no a estudiantes) con medición GEE rigurosa y outcomes de comportamiento/práctica real -exactamente el tipo de evidencia que necesita para diseñar el programa de desarrollo docente de AMAUTA (coaching a tutores/docentes, no solo talleres puntuales), y conecta con su línea de neurodivergencia/envejecimiento cognitivo al mostrar que cambiar la confianza percibida requiere algo más que coaching de prácticas. Cómo usarlo: si AMAUTA lanza un programa de coaching a docentes o preceptores, medir por separado cambio de prácticas vs confianza/autoeficacia como hizo este estudio -son outcomes disociables y el coaching de 6 meses solo garantiza el primero.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/geront/gnag183" target="_blank" rel="noopener">↗ doi.org/10.1093/geront/gnag183</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of the American College of Radiology, 11 sep 2026 · paper · 2026-09-11</div>
+        <h3 class="r3-title">Human Judgment and the Limits of Artificial Intelligence for Automated Rank Order Lists in Diagnostic Radiology Residency Selection</h3>
+        <p class="r3-hook">Estudio piloto real de una institución (148 postulantes al ciclo 2025-2026, 7 configuraciones de LLM generando 140 listas de orden de mérito) que compara si modelos de lenguaje pueden reproducir la lista final (ROL) de un comité de residentado: usando solo datos de postulación (sin entrevista), la concordancia con el comité humano fue baja (tau 0.15-0.36) y los rankings de IA colocaron sistemáticamente más abajo a postulantes mujeres, internacionales y no-MD (q&lt;0.05); con datos de entrevista incluidos, la concordancia subió a excelente (tau 0.84-0.93). Le importa muchísimo a Javier porque toca directo su línea de IA en investigación/educación aplicada a selección -si USAMEDIC o algún proceso de Residentado en Perú alguna vez asesora sobre herramientas de IA para rankear postulantes, este estudio muestra que el riesgo real no es que la IA no sirva, sino que la IA con datos incompletos amplifica sesgo silenciosamente. Cómo usarlo: cualquier herramienta de IA para apoyar selección de residentado (o el propio proceso de admisión de AMAUTA/USAMEDIC) debería auditarse con el mismo diseño -comparar ranking IA vs humano por subgrupo (género, procedencia) antes de usarla como apoyo, no después.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jacr.2026.09.006" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jacr.2026.09.006</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">7</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Academic Radiology, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">Curriculum-Integrated MRI Simulation Across Successive Cohorts: A Quasi-experimental Curriculum-Development Study of Cognitive Load and Instructional Efficiency</div>
+          <div class="r10-line">Estudio cuasi-experimental real (40 estudiantes de radiografía en 3 cohortes sucesivas) que integró 40 horas de simulación de alta fidelidad en un clerkship de RM y mostró mejora consistente en examen final, carga cognitiva y conciencia metacognitiva entre cohortes, aunque sin significancia tras corrección y con outcomes de transferencia solo autorreportados.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este diseño de cohortes sucesivas con simulación creciente es fácil de subestimar por su n pequeño, pero es exactamente el molde que Javier podría reciclar para pilotear simulación de entrevista clínica psiquiátrica en AMAUTA, midiendo examen y carga cognitiva cohorte a cohorte antes de escalar.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.acra.2026.08.067" target="_blank" rel="noopener">↗ doi.org/10.1016/j.acra.2026.08.067</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Robotic March Madness: A Gamified Approach to Enhancing Resident Engagement in Robotic Surgical Simulation</div>
+          <div class="r10-line">Torneo gamificado real, multi-institucional (32 residentes de cirugía general, 3 sedes, 6 semanas), que aumentó el uso del simulador robótico en 545% en repeticiones y 78% en tiempo activo comparado con las 6 semanas previas, usando solo un formato de eliminación estilo March Madness sin cambiar el contenido del entrenamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la gamificación por competencia (no por puntos/insignias) se va a volver el hack de bajo costo favorito en simulación quirúrgica -Javier podría adaptar un torneo similar al banco de preguntas o simulacros de USAMEDIC/AMAUTA antes de exámenes de Residentado para elevar el uso voluntario sin rediseñar el contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104155" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104155</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Teaching Model Context Protocol, Retrieval-Augmented Generation, and AI Agents to a Multidisciplinary Hospital Workforce: Single-Group Pre-Post Survey Study</div>
+          <div class="r10-line">Programa real de 56 horas (n=83 pre, 64 post, sin grupo control) que enseñó MCP, RAG y agentes de IA a personal hospitalario multidisciplinario, con la mayor ganancia de autoeficacia específicamente en MCP (d=1.57) y mejores resultados en personal no técnico que en especialistas de TI, aunque persistió una brecha entre autoeficacia y competencia aplicada al puesto.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: enseñar agentes de IA (no solo prompting) a personal no técnico va a ser el próximo estándar de capacitación hospitalaria -Javier podría diseñar una versión corta de este programa para su equipo de investigación/contenido en AMAUTA, priorizando proyectos capstone con mentoría, que este estudio identificó como el componente de mayor satisfacción.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/97822" target="_blank" rel="noopener">↗ doi.org/10.2196/97822</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">International Ophthalmology, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Construct validity of five phacoemulsification modules on the EyeSi surgical simulator: a cross-sectional study across three levels of surgical expertise</div>
+          <div class="r10-line">Estudio transversal real (25 participantes: 17 novatos, 4 residentes avanzados, 4 expertos) que confirma validez de constructo en 3 de 5 módulos de facoemulsificación del simulador EyeSi (capsulorrexis, divide-and-conquer, inserción de LIO), pero no en hidrodisección ni irrigación/aspiración.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los simuladores de habilidad quirúrgica van a empezar a reportar validez módulo por módulo en vez de validez global -un estándar que AMAUTA podría exigir a cualquier simulador o banco de estaciones OSCE que adopte para Residentado, en vez de asumir que el simulador ya está validado en bloque.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10792-026-04251-z" target="_blank" rel="noopener">↗ doi.org/10.1007/s10792-026-04251-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Nurse Education Today, 12 sep 2026 · systematic review · 2026-09-12</div>
+          <div class="r10-title">The Manchester Clinical Supervision Scale-26 as a Measure of Perceived Clinical Supervision Effectiveness: A Systematic Review</div>
+          <div class="r10-line">Revisión sistemática real con estándares COSMIN/GRADE (29 estudios) que concluye que la escala más usada para medir supervisión clínica percibida (MCSS-26) todavía no tiene evidencia sólida de validez de contenido ni estructural, y solo funciona como indicador amplio, no como medida precisa de efectividad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los próximos años van a traer un reemplazo o rediseño del MCSS-26 con validación COSMIN desde el diseño -mientras tanto, cualquier instrumento que AMAUTA use para medir calidad de supervisión/mentoría de sus tutores debería citarse con esta misma cautela: mide algo amplio, no la efectividad precisa.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.nedt.2026.107358" target="_blank" rel="noopener">↗ doi.org/10.1016/j.nedt.2026.107358</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neurosurgery, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">Automated Case Logging for Surgical Residency Training Using the Electronic Health Record: A Pilot Study</div>
+          <div class="r10-line">Piloto real (20 residentes de neurocirugía, 1977 casos) de un sistema automatizado que extrae casos desde la historia clínica electrónica y los precarga al sistema ACGME, logrando 94.8% de exactitud y reduciendo el tiempo de registro por caso de 200 a 68 segundos (66% menos), ahorrando 58 horas por residente en 5 años de formación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el logging automático se va a volver requisito de cualquier sistema de historia clínica electrónica en programas de residencia dentro de 2-3 años -Javier podría proponerlo como mejora de infraestructura para el registro de casos clínicos de Residentado/USAMEDIC, vendiendo el ahorro de horas-residente como el argumento de ROI.</div>
+          <a class="r10-link" href="https://doi.org/10.1227/neu.0000000000004210" target="_blank" rel="noopener">↗ doi.org/10.1227/neu.0000000000004210</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Surgical Education, 11 sep 2026 · paper · 2026-09-11</div>
+          <div class="r10-title">NEC-In-A-Box: Simulating Intraoperative Decision Making for Necrotizing Enterocolitis</div>
+          <div class="r10-line">Piloto educativo real y pequeño (9 participantes: 6 residentes, 2 fellows, 1 estudiante) con un simulador de baja fidelidad para decisión intraoperatoria en enterocolitis necrotizante: la preferencia por anastomosis primaria en un escenario multifocal cayó de 85.7% (pre) a 11.1% (intraoperatorio) y la documentación de metas de cuidado subió de 0% a 66.7% tras la intervención.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: el modelo de baja fidelidad + datos fisiológicos en tiempo real + debriefing experto se va a replicar para otras decisiones de alto riesgo con n pequeño -un formato barato que AMAUTA podría adaptar a viñetas de decisión psiquiátrica de alto riesgo (ej. contención vs no contención) midiendo cambio de decisión, no solo confianza.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jsurg.2026.104170" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jsurg.2026.104170</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El problema del ranking por IA en selección de residentado (JACR) no es que el modelo &#39;no sirva&#39; -es que con datos incompletos (solo postulación, sin entrevista) alucina patrones que penalizan a mujeres, extranjeros y no-MD; con la entrevista incluida la concordancia con el comité humano sube de tau 0.15-0.36 a 0.84-0.93.</li><li>En el RCT de cirugía cardíaca con IA, la ventaja del grupo con IA no fue pareja: se concentró en interpretación de imágenes, sugiriendo que la IA educativa gana terreno específico en reconocimiento de patrones visuales, no en todo el desempeño por igual.</li><li>El coaching de 6 meses a personal de cuidado de demencia cambió prácticas de trabajo e individualización del cuidado, pero no la confianza percibida del personal ni la relación cuidador-residente: coaching mueve conducta antes que actitud profunda.</li><li>Después de 29 estudios, la escala más usada para medir &#39;supervisión clínica efectiva&#39; (MCSS-26) sigue sin validez de contenido sólida según COSMIN/GRADE -un recordatorio de que medir bien la supervisión sigue sin resolverse ni en enfermería ni en medicina.</li><li>El logging automático de casos desde la historia clínica electrónica redujo 66% el tiempo por caso (200s a 68s) y ahorró 58 horas por residente en su formación: la carga administrativa de demostrar competencia (CBME) es en sí misma una barrera medible y solucionable con tecnología simple.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si un ranking de residentado generado por IA solo con datos de postulación discrimina sistemáticamente contra mujeres y postulantes extranjeros, ¿qué pasaría si se aplicara el mismo análisis de sesgo por subgrupo a procesos de selección de ENAM/Residentado en Perú?</li><li>¿Cuánto del &#39;aprendizaje&#39; que se atribuye a un simulador de alta fidelidad es en realidad artefacto de la curva de familiarización con el software, y no de la habilidad clínica que se intenta enseñar?</li><li>Si el coaching cambia prácticas de trabajo pero no la confianza percibida del personal, ¿qué instrumento debería usar AMAUTA para medir avance real en sus programas de desarrollo docente -conducta observada o autopercepción?</li><li>¿Qué pasaría si USAMEDIC midiera la carga administrativa de sus propios procesos de evaluación (horas-docente en calificar, tiempo en registrar casos discutidos en clase) igual que este estudio de neurocirugía midió el ahorro de tiempo del logging automatizado?</li><li>La ventaja de la IA en enseñanza quirúrgica se concentró en interpretación de imágenes: ¿esa misma ventaja se replica en el razonamiento clínico psiquiátrico, donde el &#39;patrón&#39; que hay que reconocer es narrativo y no radiológico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel comparando el ranking humano vs IA en selección de residentado -&#39;¿confiarías tu selección al algoritmo?&#39;- usando el hallazgo de sesgo por género/procedencia del estudio de JACR.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Mini-estudio piloto en USAMEDIC/AMAUTA: medir el tiempo docente ahorrado si se automatiza el registro de casos clínicos discutidos en clase, inspirado en el diseño del estudio de logging automatizado de Mass General.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo para el libro de educación médica sobre por qué medir supervisión clínica sigue sin resolverse, usando el fracaso de validación COSMIN del MCSS-26 como caso de estudio de un instrumento ampliamente usado pero pobremente validado.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo/carrusel: &#39;3 estudios reales de esta semana sobre dónde sí y dónde no funciona la IA en educación médica&#39; -RCT positivo en cirugía cardíaca vs sesgo en ranking de residentado vs capacitación sin grupo control en agentes de IA.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Diseñar y pilotear un torneo gamificado estilo &#39;Robotic March Madness&#39; pero para el banco de preguntas/simulacros de USAMEDIC antes de un examen de Residentado, midiendo uso voluntario antes/después como hizo el estudio de cirugía robótica.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">ANZ Journal of Surgery</span><span class="tag ">The Gerontologist</span><span class="tag ">Journal of the American College of Radiology</span><span class="tag ">Academic Radiology</span><span class="tag ">Journal of Surgical Education</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">International Ophthalmology</span><span class="tag ">Nurse Education Today</span><span class="tag ">Neurosurgery</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed (NCBI E-utilities: esearch/esummary/efetch) · WebSearch (site:pubmed.ncbi.nlm.nih.gov). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 15 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
