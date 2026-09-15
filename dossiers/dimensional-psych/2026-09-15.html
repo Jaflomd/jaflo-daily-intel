@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-15 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">15 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">28</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">British Journal of Psychiatry, 14 sep 2026 · paper · 2026-09-14</div>
+        <h3 class="r3-title">Dopamine antagonists and dynamic symptom networks in schizophrenia</h3>
+        <p class="r3-hook">Usando datos combinados de 8 ensayos aleatorizados de paliperidona (n=2508, esquizofrenia), los autores modelan redes temporales de síntomas con vector autoregression y muestran que el tratamiento antipsicótico no solo baja la severidad sintomática, sino que reduce medible y significativamente la conectividad global de la red de síntomas (18.92 vs. 26.52 con placebo, p&lt;.001), atenuando en particular la influencia de &#39;falta de espontaneidad&#39; como nodo motor de otros síntomas. Para Javier esto es oro puro: es probablemente la primera prueba a nivel de ensayo clínico de que la teoría de redes de Borsboom (tratar la conectividad, no solo el score) tiene consecuencias farmacológicas medibles, uniendo de un tirón su línea de network psychopathology con psiquiatría de precisión y neuromodulación. Úsalo como el caso ancla del libro para el capítulo de network theory, y como gancho de contenido: &#39;los antipsicóticos no bajan el número, rompen la red&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10775" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10775</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychiatry Research, 12 sep 2026 · paper · 2026-09-12</div>
+        <h3 class="r3-title">Shared structure of common mental disorders: Evidence from the ELSA-Brasil population study</h3>
+        <p class="r3-hook">Con 14,764 adultos de ELSA-Brasil divididos en submuestras independientes de EFA y CFA, este estudio prueba un modelo bifactor S-1 anclado en depresión-ansiedad que muestra un factor general internalizante dominante (ECV=.80, ωH=.79), con dimensiones fear-compulsive y somatic-cognitive aportando información secundaria y modesta, replicado de forma estable entre sexos. Para Javier es validación estructural de primer nivel para el capítulo de estructura dimensional de su libro: confirma con una muestra poblacional grande y metodología moderna (bifactor S-1, no el bifactor simétrico clásico que no convergió) que la mayor parte de lo que se diagnostica como entidades separadas es la misma dimensión de malestar con ruido de superficie distinto. Úsalo como ejemplo pedagógico paso a paso de cómo se ajusta e interpreta un bifactor S-1 en AMAUTA/USAMEDIC, más allá de citar HiTOP en abstracto.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.psychres.2026.117460" target="_blank" rel="noopener">↗ doi.org/10.1016/j.psychres.2026.117460</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Biological Psychiatry, 15 sep 2026 · paper · 2026-09-15</div>
+        <h3 class="r3-title">Neurobiological Signatures of Trauma, Personality, and Depressivity: A Transdiagnostic Machine Learning Study in Adolescents and Young Adults</h3>
+        <p class="r3-hook">En la cohorte multisitio PRONIA (descubrimiento n=633, replicación n=343; depresión de inicio reciente, riesgo de psicosis, controles), machine learning sobre volumen de materia gris identifica una firma &#39;trauma-personalidad-depresividad&#39; que predice mal funcionamiento a 9 meses con balanced accuracy de hasta 83% en la muestra de replicación, cruzando el espectro afectivo-psicótico. Para Javier es munición empírica directa para su pilar de psiquiatría de precisión: un marcador neurobiológico transdiagnóstico validado fuera de muestra que predice desenlace funcional mejor que cualquier etiqueta categórica. Úsalo como caso de enseñanza en razonamiento clínico de precisión: &#39;predecir el pronóstico, no memorizar el diagnóstico&#39; es el mensaje replicable para residentes y contenido.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.biopsych.2026.03.994" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.03.994</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry, 15 sep 2026 · meta-analysis · 2026-09-15</div>
+          <div class="r10-title">Childhood Maltreatment and Deviations From Normative Brain Structure: A Mega-Analysis of 3711 Individuals From the ENIGMA Major Depressive Disorder and ENIGMA Posttraumatic Stress Disorder Working Groups</div>
+          <div class="r10-line">Mega-análisis de 3711 personas de los grupos ENIGMA MDD/PTSD muestra que el maltrato infantil se asocia a desviaciones normativas de volumen/grosor cortical de forma transdiagnóstica, con efectos específicos por edad (solo adultos, no pediátricos) y sexo (más fuertes en mujeres jóvenes).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este mapa normativo edad/sexo-específico se vuelve la referencia para separar &#39;cicatriz de trauma&#39; de &#39;marcador de enfermedad&#39; en neuroimagen transdiagnóstica — útil para el capítulo de biomarcadores del libro de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.02.016" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.02.016</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Autism and Developmental Disorders, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">In Search of Subtypes of Children With Developmental Disabilities Using the WISC-V: A Latent Profile Analysis</div>
+          <div class="r10-line">En 727 niños referidos por evaluación de neurodesarrollo, el análisis de perfiles latentes con el WISC-V no halla subtipos cognitivos discretos en TEA ni en otras discapacidades del desarrollo, sino un continuo del factor g, con la velocidad de procesamiento como único índice de valor clínico incremental.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esto empuja a las guías de evaluación de TEA/TDAH a abandonar la búsqueda de &#39;perfiles cognitivos&#39; categóricos y reportar dimensiones continuas — material directo para la línea TDAH/TEA de Javier y para AMAUTA sobre por qué el &#39;perfil WISC típico de autismo&#39; es un mito psicométrico.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s10803-026-07506-x" target="_blank" rel="noopener">↗ doi.org/10.1007/s10803-026-07506-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry, 12 sep 2026 · review · 2026-09-12</div>
+          <div class="r10-title">Young minds in distress: Exploring the global rise in youth mental health diagnoses</div>
+          <div class="r10-line">Revisión en Molecular Psychiatry integra tendencias epidemiológicas globales de salud mental juvenil, distingue aumento real de inflación diagnóstica, e identifica la alteración del sueño como factor de riesgo transdiagnóstico central, proponiendo un marco de intervención en tres niveles.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el sueño como &#39;target transdiagnóstico universal&#39; se vuelve el ángulo de contenido juvenil más replicado este trimestre — oportunidad de posicionamiento temprano para el IG/YT de Javier antes de que se sature.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03884-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03884-x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging, 14 sep 2026 · meta-analysis · 2026-09-14</div>
+          <div class="r10-title">Shared functional abnormalities within somatosensory cortex in obsessive-compulsive disorder and anxiety disorders: A comparative meta-analysis</div>
+          <div class="r10-line">Metaanálisis coordinado (SDM) de fMRI en reposo (1429 pacientes con TOC, 1509 controles, comparado con 558 pacientes con ansiedad) halla que TOC y trastornos de ansiedad comparten reducción de actividad espontánea en el giro poscentral (corteza somatosensorial), aunque divergen en circuito CSTC/ACC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la corteza somatosensorial emerge como nuevo nodo transdiagnóstico candidato para neuromodulación dirigida (rTMS) en el espectro TOC-ansiedad — línea directa a la agenda de neuromodulación de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsc.2026.09.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsc.2026.09.004</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Emotional schemas and metacognitive beliefs in anxiety and depression: A network approach</div>
+          <div class="r10-line">En 1459 adultos en tratamiento, un análisis de redes (EBICglasso) muestra que &#39;pérdida de control&#39; y creencias metacognitivas negativas sobre incontrolabilidad/peligro son los nodos más centrales que conectan ansiedad y depresión, con diferencias de centralidad entre grupos clínico y no clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que estos nodos (no los síntomas DSM) se vuelven los blancos primarios de protocolos transdiagnósticos breves tipo Unified Protocol — insight aprovechable para el pilar de contenido de Javier sobre &#39;tratar el nodo, no el diagnóstico&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121838" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121838</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Neuroscience and Biobehavioral Reviews, 14 sep 2026 · review · 2026-09-14</div>
+          <div class="r10-title">A Transdiagnostic Framework for Neurological Intervention in Maladaptive Repetitive Behaviors</div>
+          <div class="r10-line">Revisión propone un marco transdiagnóstico escalonado (supresión del circuito de hábito → aprendizaje alternativo → consolidación → mantenimiento) para intervenir conductas repetitivas mal adaptativas —de adicción a TOC— combinando neuromodulación (rTMS, tDCS, DBS) con terapéutica digital basada en IA.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: este marco de 4 etapas se vuelve plantilla citable para protocolos combinados de neuromodulación + terapia digital en conductas repetitivas — directamente aprovechable para la línea de neuromodulación de Javier y como estructura de capítulo de libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.neubiorev.2026.106974" target="_blank" rel="noopener">↗ doi.org/10.1016/j.neubiorev.2026.106974</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychology, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">Distant and Distressed: Interpersonal Problems in Anxiety and Depression</div>
+          <div class="r10-line">En 1800 participantes del estudio longitudinal NESDA (seguimiento a 9 años), un estilo interpersonal &#39;frío-sumiso&#39; se asocia específicamente a mayor comorbilidad y cronicidad transdiagnóstica de ansiedad y depresión, incluso ajustando por demografía.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el estilo interpersonal se suma como specifier dimensional de severidad/cronicidad en próximas iteraciones de HiTOP para el espectro internalizante — anotar para el capítulo de specifiers del libro de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jclp.70212" target="_blank" rel="noopener">↗ doi.org/10.1002/jclp.70212</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Cognition &amp; Emotion, 11 sep 2026 · review · 2026-09-11</div>
+          <div class="r10-title">Self-report measures of beliefs about emotions for adults: a systematic review of conceptual approaches and psychometric properties using PRISMA-COSMIN methodology</div>
+          <div class="r10-line">Revisión sistemática PRISMA-COSMIN de 24 estudios y 11 medidas de creencias sobre emociones —factor transdiagnóstico clave en regulación emocional— halla calidad de desarrollo psicométrico pobre en general y ninguna medida recomendable sin reservas para uso clínico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esto abre una ventana real para que Javier o su equipo desarrollen y validen una medida breve de creencias emocionales en español para consulta y para AMAUTA — hueco de mercado académico identificado.</div>
+          <a class="r10-link" href="https://doi.org/10.1080/02699931.2026.2731387" target="_blank" rel="noopener">↗ doi.org/10.1080/02699931.2026.2731387</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Bayesian network analysis uncovers physical activity-mood dynamics: Insights from the DiAPAson study</div>
+          <div class="r10-line">Estudio ecológico de 7 días con EMA (8 registros/día) y actigrafía continua en 120 pacientes con espectro esquizofrenia vs. 113 controles halla acoplamiento bidireccional actividad física-ánimo robusto en controles (99.9% probabilidad posterior), pero atenuado y muy heterogéneo entre individuos con esquizofrenia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de dato ecológico momentáneo (EMA+actigrafía) se vuelve el próximo estándar para fenotipar heterogeneidad individual dentro del espectro esquizofrenia — relevante para la agenda de psiquiatría de precisión de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726105406" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105406</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Depression and Anxiety, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">Mapping Sex Differences in Depression, Anxiety, and Co-Occurring Symptoms in Adults Under Stress: A Bayesian Network Approach</div>
+          <div class="r10-line">En 1191 adultos bajo estrés agudo (confinamiento), redes bayesianas muestran arquitecturas de síntomas distintas por sexo: ansiedad/intrusión central en mujeres (con mayor conectividad global), depresión central en hombres (red más dispersa).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la estratificación por sexo de los nodos centrales de red se vuelve un ajuste estándar en protocolos transdiagnósticos de primera respuesta psicológica ante crisis — utilizable como pregunta de examen ENAM sobre diferencias de sexo en psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.1155/da/6640438" target="_blank" rel="noopener">↗ doi.org/10.1155/da/6640438</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El primer estudio a nivel de ensayo clínico que muestra que los antipsicóticos no solo bajan síntomas sino que literalmente &#39;desconectan&#39; la red sintomática (conectividad global 18.92 vs. 26.52 con placebo): la teoría de redes de Borsboom acaba de pasar su primera prueba de tratamiento aleatorizado.</li><li>En el bifactor S-1 de ELSA-Brasil, el factor general de malestar internalizante explica el 80% de la varianza común (ECV=.80): la mayoría de lo que llamamos &#39;ansiedad&#39; vs. &#39;depresión&#39; en consulta es la misma dimensión con ruido de superficie distinto.</li><li>En TEA no existe un &#39;perfil cognitivo WISC-V típico&#39;: el análisis de perfiles latentes en 727 niños solo encuentra un continuo del factor g, con la velocidad de procesamiento como único índice clínicamente informativo más allá del CI total.</li><li>TOC y trastornos de ansiedad comparten una firma de hipoactividad en la corteza somatosensorial (giro poscentral) pese a tener circuitos frontoestriatales distintos — un blanco transdiagnóstico de neuromodulación que casi nadie está mirando todavía.</li><li>Un estilo interpersonal &#39;frío-sumiso&#39; (no un síntoma del DSM) predice 9 años después qué pacientes con ansiedad/depresión se vuelven crónicos y comórbidos: el mejor &#39;specifier&#39; pronóstico disponible hoy podría no estar en ningún criterio diagnóstico.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>¿Debería la respuesta a antipsicóticos evaluarse por reducción de conectividad de la red sintomática (no solo por el PANSS total) como marcador temprano de respuesta real al tratamiento?</li><li>Si el factor general internalizante explica el 80% de la varianza en trastornos mentales comunes (ELSA-Brasil), ¿qué justifica seguir diagnosticando y facturando &#39;trastorno de ansiedad generalizada&#39; vs. &#39;depresión mayor&#39; como entidades separadas en la práctica ambulatoria?</li><li>¿Debería AMAUTA/USAMEDIC enseñar la velocidad de procesamiento del WISC-V como el único índice con valor incremental en TEA, en vez de perpetuar la búsqueda de &#39;perfiles cognitivos&#39; de autismo que este estudio no encuentra?</li><li>¿Vale la pena pilotar rTMS dirigido a corteza somatosensorial como intervención transdiagnóstica para el espectro TOC-ansiedad, dado el hallazgo de hipoactividad compartida en el giro poscentral?</li><li>¿Cómo debería un residente registrar y usar el estilo interpersonal (frío-sumiso vs. otros cuadrantes) como parte del examen dimensional inicial en ansiedad/depresión, si predice cronicidad a 9 años mejor que el diagnóstico categórico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo: &#39;Los antipsicóticos no bajan el número, rompen la red&#39; — usando el hallazgo de paliperidona y conectividad de red del British Journal of Psychiatry como gancho visual (antes/después de red sintomática).</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional usando el bifactor S-1 de ELSA-Brasil como ejemplo de manual de cómo se construye y valida paso a paso un factor general internalizante.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video corto: &#39;El mito del perfil cognitivo del autismo&#39; usando el estudio de perfiles latentes con WISC-V — directo a la línea TDAH/TEA de Javier, para desmontar el mito en consulta y en redes.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o mini-revisión (JAFLO/AMAUTA) proponiendo la corteza somatosensorial como blanco transdiagnóstico de neuromodulación en TOC-ansiedad, citando el metaanálisis coordinado SDM.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Pregunta de banco ENAM/Residentado sobre estilo interpersonal frío-sumiso como predictor de cronicidad en ansiedad/depresión (cohorte NESDA, seguimiento 9 años) — caso clínico con opción &#39;specifier dimensional&#39; vs. diagnóstico categórico.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">Psychiatry Research</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Journal of Autism and Developmental Disorders</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Neuroscience and Biobehavioral Reviews</span><span class="tag ">Journal of Clinical Psychology</span><span class="tag ">Cognition &amp; Emotion</span><span class="tag ">Psychological Medicine</span><span class="tag ">Depression and Anxiety</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/NCBI E-utilities (esearch/esummary/efetch; mindate=2026-09-11, maxdate=2026-09-15, datetype=pdat, sort=pub_date; query base del dominio + queries afinadas HiTOP/RDoC/transdiagnostic/bifactor/network analysis + ADHD/autism/clinical utility) · Europe PMC REST API (SRC:PPR — PsyArXiv/medRxiv/bioRxiv, orden por fecha de primera publicación; ítem más reciente hallado 2026-09-08, fuera de la ventana de 48-72h, sin preprints nuevos confirmables dentro de ventana) · WebSearch (medRxiv/PsyArXiv, X/Twitter, Reddit r/psychiatry-r/clinicalpsychology-r/cogsci, blogs académicos — sin hallazgos nuevos verificables dentro de la ventana de 48-72h). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 15 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
