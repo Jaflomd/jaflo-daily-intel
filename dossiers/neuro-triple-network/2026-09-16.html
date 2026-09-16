@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neurociencia · Triple Red &amp; Neuropsiquiatría — 2026-09-16 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#7C3AED;
+    --accent-dim:rgba(124,58,237,0.12);
+    --accent-soft:rgba(124,58,237,0.07);
+    --accent-border:rgba(124,58,237,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🌐</span>Neurociencia · Triple Red &amp; Neuropsiquiatría</h1>
+      <div class="sub">16 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">27</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">27</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Molecular Psychiatry, 14 sep 2026 · paper · 2026-09-14</div>
+        <h3 class="r3-title">Alteraciones prevalentes en el acoplamiento transcriptómico sangre-cerebro con la actividad funcional intrínseca en esquizofrenia, replicadas en dos cohortes</h3>
+        <p class="r3-hook">Con transcriptómica de sangre periférica y actividad cerebral intrínseca (fALFF) de resting-state fMRI en dos cohortes independientes (43 vs. 60 controles en descubrimiento; 41 vs. 29 en validación), el estudio identifica siete módulos de coexpresión génica en sangre asociados a esquizofrenia -enriquecidos en vías inmunometabólicas- cuyo acoplamiento con la actividad cerebral intrínseca está alterado de forma reproducible en ambas cohortes, con reconfiguración específica por red y un patrón de correlación inverso entre sistemas. A Javier le importa porque es exactamente el tipo de evidencia de &#39;sistema completo&#39; -periferia y cerebro, validada externamente en cohorte independiente- que su meta RENACYT en psiquiatría de precisión exige antes de mover una hipótesis de &#39;sugerente&#39; a &#39;sólida&#39;, y porque respalda con datos duros que la esquizofrenia es un trastorno multisistema y no solo un fenómeno de conectividad cortical aislada. Puede usarlo en el libro de psicopatología dimensional como ejemplo de biomarcador de red que integra periferia y cerebro, y como material AMAUTA/USAMEDIC para enseñar por qué la inflamación/metabolismo ya no es &#39;comorbilidad&#39; sino mecanismo candidato en esquizofrenia.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41380-026-03873-0" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03873-0</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Psychological Medicine, 15 sep 2026 · paper · 2026-09-15</div>
+        <h3 class="r3-title">El gradiente principal del conectoma está alterado en TEPT inducido por terremoto -y se liga a expresión génica y perfiles de neurotransmisores- comparado contra expuestos al mismo trauma sin TEPT</h3>
+        <p class="r3-hook">En 86 pacientes con TEPT causado por el mismo terremoto y 86 controles expuestos al mismo desastre pero sin TEPT -un diseño que aísla el efecto del trastorno del efecto de la exposición traumática-, el estudio encuentra alteraciones del gradiente principal del conectoma (el eje unimodal-transmodal que organiza el tránsito de sensación a cognición) ligadas a severidad de síntomas, interacciones sexo/edad, y patrones cerebrales de expresión génica y neurotransmisores. A Javier le importa porque el diseño &#39;trauma-expuesto-sin-TEPT&#39; es exactamente el control que su estándar de &#39;evidencia proporcional al claim&#39; exige para separar biología del trastorno de biología de la exposición, y porque el lenguaje de gradientes corticales (Margulies) es el que quiere llevar a su marco de psiquiatría dimensional (HiTOP/RDoC) en un trastorno hoy tratado casi enteramente de forma categorial. Puede usarlo como ejemplo metodológico riguroso en el libro de psicopatología dimensional, y como caso clínico-docente AMAUTA/USAMEDIC sobre cómo diseñar (y exigir) el grupo control correcto en investigación de trauma.</p>
+        <a class="r3-link" href="https://doi.org/10.1017/s0033291726105388" target="_blank" rel="noopener">↗ doi.org/10.1017/s0033291726105388</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Neural Transmission, 12 sep 2026 · paper · 2026-09-12</div>
+        <h3 class="r3-title">El desbalance excitación/inhibición en autismo no es unidireccional: EEG y genética revelan subtipos con perfiles clínicos distintos en forma de &#39;campana&#39; (N=310)</h3>
+        <p class="r3-hook">Con marcadores de balance excitación/inhibición (E/I) derivados de EEG en reposo en una muestra grande y balanceada por sexo (310 jóvenes: 164 con TEA, 146 con desarrollo típico), más análisis de variantes de número de copias y expresión génica, el estudio muestra que el desbalance E/I en autismo no va en una sola dirección: hay subtipos con exceso de excitación y subtipos con exceso de inhibición, cada uno con perfil clínico y genético propio, en una relación &#39;en forma de campana&#39; entre neurofisiología y habilidades sociales. A Javier le importa directamente porque el balance E/I es justo el mecanismo transdiagnóstico que su línea de TDAH/TEA/neurodivergencia necesita para argumentar heterogeneidad biológica dentro del espectro autista -no &#39;autismo&#39; como entidad única- y porque el diseño multimodal (EEG + genética + clínica) es el prototipo de estratificación que persigue su meta RENACYT en psiquiatría de precisión. Puede usarlo en el libro de psicopatología dimensional para ilustrar que &#39;más&#39; o &#39;menos&#39; no es lo mismo que &#39;distinto&#39;, y como contenido AMAUTA/USAMEDIC mostrando que un biomarcador EEG barato y escalable ya distingue subtipos donde el DSM ve una sola categoría.</p>
+        <a class="r3-link" href="https://doi.org/10.1007/s00702-026-03283-0" target="_blank" rel="noopener">↗ doi.org/10.1007/s00702-026-03283-0</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">bioRxiv (preprint), 12 sep 2026 · preprint · 2026-09-12</div>
+          <div class="r10-title">El modelado normativo de desviación cerebral individual -no la morfometría convencional- captura dimensiones transdiagnósticas de psicopatología en 1,095 niños y adolescentes</div>
+          <div class="r10-line">Con modelado normativo de estructura cerebral y correlación canónica dispersa en 1,095 niños y adolescentes del Healthy Brain Network, las puntuaciones individuales de desviación cerebral -no las medidas morfométricas de grupo- capturan dimensiones transdiagnósticas de psicopatología.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>El modelado normativo de desviación individual es candidato a volverse el puente cuantitativo entre HiTOP/RDoC y neuroimagen estructural; Javier puede seguir esta línea metodológica como argumento técnico central para el libro de psicopatología dimensional.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.12.751102" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.12.751102</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Hitos motores y del lenguaje tempranos se asocian con conectividad funcional en reposo y median parcialmente rasgos de autismo y TDAH en la adolescencia (ABCD, N=6,663)</div>
+          <div class="r10-line">En 6,663 adolescentes del estudio ABCD, hitos motores y de lenguaje tempranos (como caminar sin ayuda) se asocian con patrones específicos de conectividad funcional en reposo que median parcialmente su relación con rasgos de autismo y síntomas de TDAH.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Con una muestra de este tamaño, el hallazgo probablemente empuje a mirar hitos motores tempranos como señal de cribado barata y escalable; Javier puede citarlo en su línea TDAH/TEA como argumento a favor de vigilar el desarrollo motor, no solo el cognitivo, en atención primaria.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/s003329172610556x" target="_blank" rel="noopener">↗ doi.org/10.1017/s003329172610556x</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging, 14 sep 2026 · meta-analysis · 2026-09-14</div>
+          <div class="r10-title">Metaanálisis coordinado: el TOC comparte alteraciones somatosensoriales con los trastornos de ansiedad, cuestionando la especificidad del circuito cortico-estriado-tálamo-cortical</div>
+          <div class="r10-line">Un metaanálisis coordinado (SDM) de resting-state fMRI en 1,429 pacientes con TOC y 1,509 controles encuentra alteraciones funcionales compartidas en corteza somatosensorial entre TOC y trastornos de ansiedad, cuestionando la especificidad del circuito CSTC clásico del TOC.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Esta evidencia va a presionar el modelo CSTC &#39;puro&#39; del TOC hacia un marco más transdiagnóstico TOC-ansiedad; Javier puede usarlo como argumento cuantitativo -metaanálisis, no un solo estudio- para su apuesta HiTOP de que ambos comparten más sustrato del que separa el DSM.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bpsc.2026.09.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsc.2026.09.004</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 14 sep 2026 · rct · 2026-09-14</div>
+          <div class="r10-title">Un ensayo aleatorizado con tACS theta modula microestados EEG alterados en esquizofrenia con síntomas negativos prominentes</div>
+          <div class="r10-line">En un ensayo aleatorizado (26 activo vs. 21 sham) con tACS theta fronto-occipital de cinco días en esquizofrenia con síntomas negativos prominentes, la estimulación modula estados dinámicos de microestados EEG alterados que caracterizan a este subgrupo clínicamente difícil.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Si replica con muestra mayor, la modulación de microestados EEG con tACS podría convertirse en la primera intervención de neuromodulación dirigida por dinámica de red -no solo por región- para síntomas negativos resistentes; línea directa para la agenda de neuromodulación de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10810274/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10810274/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Research Square (preprint), 15 sep 2026 · preprint · 2026-09-15</div>
+          <div class="r10-title">Una subred de conectividad específica de la impulsividad -no de la depresión en general- distingue pacientes de alto y bajo riesgo suicida por rasgo (N=133)</div>
+          <div class="r10-line">Comparando 41 pacientes con depresión mayor de alta impulsividad contra 92 de baja impulsividad (sin fármacos), un análisis de estadística basada en redes (NBS) identifica una subred de conectividad en reposo específicamente ligada al rasgo de impulsividad, marcador de riesgo suicida.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Un biomarcador de red específico de impulsividad -no solo de &#39;depresión&#39; en general- es el tipo de estratificación que puede alimentar directamente la agenda de psiquiatría de precisión de Javier para predecir riesgo suicida más allá de la escala clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.21203/rs.3.rs-10779463/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10779463/v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Preprints.org, 14 sep 2026 · preprint · 2026-09-14</div>
+          <div class="r10-title">Síntesis híbrida IA-humana de 102 publicaciones del Human Connectome Project mapea seis dominios y el estado del potencial de biomarcador</div>
+          <div class="r10-line">Una síntesis híbrida IA-humana de 102 publicaciones que usan el Human Connectome Project organiza el campo en seis dominios -cognición, envejecimiento, salud mental, trastornos neurológicos, movimiento, personalidad- y señala vacíos en cómo se reporta el potencial de biomarcador.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Como mapa del terreno HCP, sirve más para diseñar la próxima propuesta que como hallazgo en sí; Javier puede usarlo como insumo de revisión de literatura para posicionar dónde falta evidencia de red en psiquiatría de precisión antes de proponer un estudio propio, y como ejemplo de su propia línea de IA aplicada a investigación.</div>
+          <a class="r10-link" href="https://doi.org/10.20944/preprints202609.1063.v1" target="_blank" rel="noopener">↗ doi.org/10.20944/preprints202609.1063.v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">bioRxiv (preprint), 14 sep 2026 · preprint · 2026-09-14</div>
+          <div class="r10-title">La correlación inter-sujeto de EEG en niños viendo video -candidato a biomarcador pediátrico- es sistemáticamente mayor en varones que en mujeres (N=1,143)</div>
+          <div class="r10-line">En 1,143 niños y adolescentes del Healthy Brain Network viendo cuatro videos naturalistas, la correlación inter-sujeto de EEG (un candidato a biomarcador pediátrico) es sistemáticamente mayor en varones que en mujeres (d=0.61-0.85), además de replicar el declive madurativo ya descrito.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Un efecto de sexo de este tamaño en un biomarcador candidato obliga a estratificar por sexo antes de validar clínicamente cualquier medida de ISC-EEG; Javier puede señalarlo como advertencia metodológica para su propia línea de biomarcadores en TDAH/TEA, donde la proporción de sexos ya está sesgada.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.07.749616" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.07.749616</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">bioRxiv (preprint), 14 sep 2026 · preprint · 2026-09-14</div>
+          <div class="r10-title">El catastrofismo respiratorio post-COVID se explica por conectividad ínsula-cíngulo y periacueductal-insular, no solo por ansiedad</div>
+          <div class="r10-line">Con fMRI de 7 teslas en 53 pacientes post-COVID con disnea persistente, el catastrofismo respiratorio se asocia a menor conectividad sustancia gris periacueductal-ínsula posterior y mayor conectividad amígdala basolateral-cíngulo anterior dorsal, un circuito de interocepción y saliencia.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Es un mapa fino del &#39;nodo de saliencia&#39; (ínsula-cíngulo) operando fuera de la psiquiatría clásica; Javier puede usarlo como ejemplo transdiagnóstico de que el mismo circuito explica ansiedad somática en medicina general, útil para el libro de neurociencia educativa sobre por qué &#39;es psicológico&#39; no debería ser el default clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.11.750997" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.11.750997</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Neuroscience, 14 sep 2026 · paper · 2026-09-14</div>
+          <div class="r10-title">La ansiedad social subclínica altera cómo el theta frontomedial reconfigura redes de gran escala según el contexto social, ensayo a ensayo (N=146)</div>
+          <div class="r10-line">En 146 participantes con distintos niveles de ansiedad social realizando una tarea de aprendizaje probabilístico solos o &#39;bajo escrutinio&#39;, oscilaciones theta frontomediales reconfiguran redes funcionales de gran escala ensayo a ensayo, y esa reconfiguración se altera específicamente con el contexto social en ansiedad social subclínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Trabajar con ansiedad subclínica -no un diagnóstico categorial- y mostrar un mecanismo dependiente de contexto es exactamente el diseño dimensional que Javier puede citar como evidencia metodológica en el libro de psicopatología dimensional para defender el continuo sobre el corte categorial en ansiedad social.</div>
+          <a class="r10-link" href="https://doi.org/10.1523/jneurosci.2161-25.2026" target="_blank" rel="noopener">↗ doi.org/10.1523/jneurosci.2161-25.2026</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Brain Imaging and Behavior, 12 sep 2026 · paper · 2026-09-12</div>
+          <div class="r10-title">Subredes de sustancia blanca cortico-subcorticales alteradas se asocian con dimensiones de síntomas PANSS, no con el diagnóstico global de esquizofrenia</div>
+          <div class="r10-line">Con tractografía probabilística en 61 pacientes con esquizofrenia y 63 controles pareados, el estudio identifica subredes de sustancia blanca cortico-subcorticales alteradas cuyas propiedades topológicas de grafo se asocian específicamente con dimensiones de síntomas de la PANSS, no con el diagnóstico global.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Ligar topología de red a dimensiones de síntomas -no al diagnóstico categorial &#39;esquizofrenia&#39;- es un paso más hacia el mapeo dimensional que Javier defiende; puede usarlo como evidencia estructural complementaria a los hallazgos funcionales de conectividad que ya sigue en su línea de psicosis.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s11682-026-01196-w" target="_blank" rel="noopener">↗ doi.org/10.1007/s11682-026-01196-w</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El desbalance E/I en autismo no es &#39;más excitación&#39; de forma universal: hay subtipos con exceso de inhibición que también deterioran habilidades sociales -la relación es en forma de campana, no lineal.</li><li>Comparar TEPT contra controles expuestos al mismo trauma sin TEPT -no solo contra sanos- es el diseño que separa biología del trastorno de biología del evento; la mayoría de estudios de trauma no lo hace.</li><li>Un biomarcador EEG candidato en niños (correlación inter-sujeto durante video) difiere entre sexos casi tanto como entre estímulos: si un estudio no reporta por sexo, probablemente esté mal calibrado.</li><li>La esquizofrenia ya tiene evidencia de acoplamiento sangre-cerebro replicado en dos cohortes independientes: dejar de tratarla como enfermedad puramente cortical es ya una obligación basada en evidencia, no una postura teórica.</li><li>El circuito de saliencia/interocepción (ínsula-cíngulo) que explica el catastrofismo respiratorio post-COVID es el mismo que la psiquiatría usa para pánico y ansiedad somática: &#39;es psicológico&#39; no es un diagnóstico, es abandonar el mecanismo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el balance E/I por EEG ya distingue subtipos dentro del TEA con perfiles clínicos y genéticos distintos, ¿deberíamos empezar a fenotipar TEA en consulta con un marcador neurofisiológico barato, junto a la observación conductual?</li><li>¿Cuánto del &#39;efecto trauma&#39; que reportamos en TEPT es en realidad efecto de la exposición y no del trastorno, si no comparamos sistemáticamente contra expuestos-sin-TEPT?</li><li>La disociación sexo-dependiente en biomarcadores EEG pediátricos, ¿obliga a repensar los umbrales diagnósticos actuales de TDAH/TEA que no estratifican por sexo?</li><li>Si un metaanálisis ya muestra que TOC y ansiedad comparten alteraciones somatosensoriales, ¿qué justifica seguir enseñándolos como categorías separadas en la formación para ENAM/Residentado?</li><li>¿Qué tan lejos está la modulación de microestados EEG con tACS de convertirse en una alternativa real -no solo de investigación- para síntomas negativos resistentes en esquizofrenia, dado que la muestra piloto (n=47) todavía es pequeña?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Post/reel IG explicando, con el hallazgo de acoplamiento sangre-cerebro en esquizofrenia (Molecular Psychiatry), por qué &#39;trastorno mental&#39; ya no debería significar &#39;solo el cerebro&#39; para tus seguidores de AMAUTA/USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología dimensional usando el diseño &#39;trauma-expuesto-sin-TEPT&#39; como ejemplo canónico de cómo separar mecanismo del trastorno de mecanismo de la exposición.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de paper propio: explorar subtipos de balance E/I por EEG en una muestra local de TEA/TDAH, aprovechando la línea TDAH/TEA y la meta RENACYT con un marcador de bajo costo.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo o video corto sobre por qué comparar &#39;con trauma sin TEPT&#39; y no solo &#39;sanos&#39; cambia lo que puedes concluir de un estudio -gancho de razonamiento clínico/metodológico para ENAM/Residentado.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección de neurociencia educativa sobre el efecto de sexo en biomarcadores EEG pediátricos, como advertencia práctica para quienes diseñan estudios de TDAH/TEA sin estratificar por sexo.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Psychological Medicine</span><span class="tag ">Journal of Neural Transmission</span><span class="tag ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</span><span class="tag ">Journal of Neuroscience</span><span class="tag ">Brain Imaging and Behavior</span><span class="tag ">bioRxiv</span><span class="tag ">medRxiv</span><span class="tag ">Research Square</span><span class="tag ">Preprints.org</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (PubMed/MEDLINE) · Europe PMC preprints (bioRxiv/medRxiv/Research Square/Preprints.org) · WebSearch fallback (PubMed/Europe PMC). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 16 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
