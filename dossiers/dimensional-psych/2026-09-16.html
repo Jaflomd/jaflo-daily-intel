@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psicopatología Dimensional — 2026-09-16 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#5DCAA5;
+    --accent-dim:rgba(93,202,165,0.12);
+    --accent-soft:rgba(93,202,165,0.07);
+    --accent-border:rgba(93,202,165,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🕸️</span>Psicopatología Dimensional</h1>
+      <div class="sub">16 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">15</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">210</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Biological Psychiatry, 15 sep 2026 · paper · 2026-09-15</div>
+        <h3 class="r3-title">Comorbidity Alters the Genetic Relationship Between Anxiety Disorders and Major Depression</h3>
+        <p class="r3-hook">Usando GWAS específicos por trastorno en UK Biobank (ANX-only vs. MD-only) y replicación en la cohorte noruega MoBa, el grupo del Centre for Precision Psychiatry de Oslo muestra que la correlación genética entre ansiedad y depresión cae de .91 (cuando se incluyen casos comórbidos) a .53 (cuando se excluyen) — buena parte del &#39;factor internalizante compartido&#39; que sostiene el p factor y el bifactor de HiTOP podría reflejar cómo los estudios reclutan casos comórbidos, no una estructura latente genuina. Para Javier esto es munición de contrapeso crítico para el capítulo de estructura dimensional de su libro: no todo lo que parece dimensión compartida lo es, y viene justo de un centro de psiquiatría de precisión, cruzando ese pilar con el dimensional. Úsalo en AMAUTA/USAMEDIC como ejercicio de pensamiento crítico: &#39;antes de citar un rg alto entre ansiedad y depresión, pregunta cómo se definieron los casos&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.biopsych.2026.04.026" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.04.026</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Research Square (preprint), 14 sep 2026 · preprint · 2026-09-14</div>
+        <h3 class="r3-title">Transdiagnostic effects of repetitive 10Hz median nerve electrical stimulation on symptom intensity estimates in ADHD, OCD, and generalised anxiety disorder</h3>
+        <p class="r3-hook">En 50 participantes con TDAH, TOC o ansiedad generalizada (mínimo 15 por grupo), bloques de estimulación rítmica del nervio mediano a 10Hz —la misma frecuencia ya validada para reducir tics en síndrome de Tourette— redujeron la intensidad sintomática autoreportada en tiempo real de forma similar en los tres diagnósticos, apoyando la idea de un circuito de vulnerabilidad compartido en vez de tres trastornos independientes. Para Javier esto conecta de un tirón su línea TDAH/TEA/neurodivergencia con su pilar de neuromodulación y con el marco transdiagnóstico: es una intervención no invasiva, barata y escalable que trata el &#39;nodo circuital&#39;, no la etiqueta DSM. Úsalo como caso de discusión para un posible piloto local, y como gancho de contenido: &#39;el mismo estímulo eléctrico que calma un tic también calma un TOC y un TDAH — ¿coincidencia o circuito compartido?&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.21203/rs.3.rs-10509731/v1" target="_blank" rel="noopener">↗ doi.org/10.21203/rs.3.rs-10509731/v1</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">bioRxiv (preprint), 15 sep 2026 · preprint · 2026-09-15</div>
+        <h3 class="r3-title">A dimensional link between gain-loss economic preferences and psychopathology</h3>
+        <p class="r3-hook">En 1954 participantes que completaron una tarea de decisión económica (recompensa, riesgo e información bajo contextos de ganancia y pérdida) junto a una batería transdiagnóstica de síntomas, un análisis data-driven resume las diferencias individuales en un solo eje latente que contrasta síntomas compulsivo-intrusivos (menor sensibilidad a la recompensa) frente a ansioso-depresivos y de retraimiento social (mayor sensibilidad), sin que una simple &#39;ganancia o pérdida de sensibilidad general&#39; lo explique todo. Para Javier es el ejemplo perfecto de psiquiatría computacional aplicada a su libro de psicopatología dimensional: una tarea conductual objetiva, no un cuestionario, midiendo dimensión — justo el tipo de operacionalización RDoC que su pilar de IA en investigación busca. Úsalo como ejemplo de examen o contenido: &#39;cómo apuestas dice más de tu psicopatología dimensional que tu diagnóstico DSM&#39;.</p>
+        <a class="r3-link" href="https://doi.org/10.64898/2026.09.09.750300" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.750300</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 14 sep 2026 · preprint · 2026-09-14</div>
+          <div class="r10-title">Pleiotropic and Distributed Neuropsychiatric Effects of Neurodevelopmental Copy Number Variants in the All of Us Biobank</div>
+          <div class="r10-line">En el biobanco All of Us, portar variantes de número de copia de riesgo neurodesarrollo se asocia de forma distribuida (no a un solo fenotipo o locus) con fenotipos afectivos, psicóticos, neurodesarrollo y trauma agrupados por dominios RDoC, apoyando un modelo de riesgo genético pleiotrópico y difuso más que categorías discretas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de análisis a nivel de dominio RDoC en biobancos poblacionales (no solo cohortes clínicas) se vuelve el estándar para argumentar genéticamente a favor de la dimensionalidad — material citable para el capítulo de biomarcadores genéticos del libro de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.13.26362959" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.13.26362959</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Behavioral Addictions, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Addictions are linked but distinct: A transdiagnostic network analysis of concurrent disorder risk</div>
+          <div class="r10-line">En 6646 estudiantes canadienses, redes de Markov (pairwise Markov random fields) muestran que las correlaciones entre síntomas de adicción y salud mental se explican sobre todo por factores psicológicos compartidos (motivos de afrontamiento, urgencia impulsiva, falta de soporte social), aunque estos solo explican una fracción moderada de la varianza (R²=.13-.63).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: los &#39;factores psicológicos puente&#39; (no los diagnósticos de adicción específicos) se vuelven el blanco preferido de intervenciones transdiagnósticas breves para trastornos concurrentes — utilizable en el pilar de contenido de Javier sobre tratar el mecanismo, no la sustancia.</div>
+          <a class="r10-link" href="https://doi.org/10.1556/2006.2026.00050" target="_blank" rel="noopener">↗ doi.org/10.1556/2006.2026.00050</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 14 sep 2026 · preprint · 2026-09-14</div>
+          <div class="r10-title">Cumulative Indicators of Circadian Rhythm Disturbance and its Clinical, Functional and Genetic Correlates in the Brisbane Longitudinal Twin Study</div>
+          <div class="r10-line">En 2773 gemelos jóvenes, una mayor carga de disrupción circadiana (hipersomnia, jet lag social, sueño retrasado, preferencia vespertina) se asocia con más distrés, más deterioro funcional y mayor riesgo poligénico específicamente de trastornos del ánimo — no de TDAH, autismo, esquizofrenia o ansiedad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que esta especificidad afectiva del riesgo circadiano matiza la moda de &#39;el sueño como target transdiagnóstico universal&#39; — Javier puede usarlo para afinar (no descartar) su ángulo de contenido sobre sueño, precisando que aplica sobre todo al espectro anímico.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.13.26362400" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.13.26362400</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Comparing the temporal pattern of symptom change across multiple treatments for depression</div>
+          <div class="r10-line">En 549 pacientes de 5 cohortes (psicoterapia, farmacoterapia, TEC), un análisis de red dirigida por dynamic time warping muestra que los síntomas somáticos y la ideación suicida remiten primero y los síntomas de ánimo remiten al final, de forma consistente sin importar el tratamiento.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esta secuencia de remisión síntoma-por-síntoma (no la escala total) se vuelve un marcador clínico práctico de &#39;progreso real&#39; independiente del tratamiento elegido — útil para enseñar razonamiento clínico dimensional en AMAUTA más allá del puntaje agregado del PHQ/HAM-D.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.121944" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121944</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Modeling inter-subject heterogeneity improves multisite rs-fMRI identification of major depressive disorder: An interpretable graph neural network approach</div>
+          <div class="r10-line">En 1586 participantes de 16 centros (dataset REST-meta-MDD), una red neuronal de grafos que modela explícitamente la heterogeneidad entre sujetos (no solo el promedio grupal) mejora la identificación de depresión mayor por fMRI en reposo, señalando regiones prefrontales, cingulares, subcorticales y motoras.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que modelar heterogeneidad inter-sujeto (en vez de buscar &#39;el&#39; patrón cerebral de la depresión) se vuelve el estándar metodológico en neuroimagen psiquiátrica multisitio — alineado con el pilar de psiquiatría de precisión de Javier, que puede citarlo como evidencia técnica de por qué &#39;el biomarcador único&#39; no existe.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122497" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122497</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Affective Disorders, 13 sep 2026 · paper · 2026-09-13</div>
+          <div class="r10-title">Predicting early psychiatric readmission among people with major depressive disorder: A machine learning analysis from the prospective multicentre DEEP READ study</div>
+          <div class="r10-line">En 322 pacientes hospitalizados por depresión mayor en un estudio prospectivo multicéntrico italiano, un modelo de random forest con 22 predictores clínicos rutinarios predice reingreso a 90 días con AUC=.74, destacando intentos de suicidio previos, hospitalizaciones previas y distrés ansioso como predictores principales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: modelos de ML con variables clínicas rutinarias (sin biomarcadores caros) se vuelven la puerta de entrada real de la psiquiatría de precisión a la práctica pública — el tipo de herramienta &#39;de bajo costo, alto ROI&#39; que encaja con la agenda de Javier para sistemas de salud con recursos limitados como el peruano.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jad.2026.122502" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122502</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">BMJ Mental Health, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Changes in incidence of hospital diagnoses of mental disorders among children and adolescents over the past 3 decades</div>
+          <div class="r10-line">En una cohorte poblacional danesa de 193,354 menores diagnosticados entre 1994-2023, la incidencia acumulada de cualquier diagnóstico de trastorno mental antes de los 18 años subió de ~1.3% a ~14.7% en tres décadas, con solo 15-22% de ese aumento explicado por diagnosticar más temprano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de dato poblacional de 30 años se cita cada vez más para separar &#39;aumento real de prevalencia&#39; de &#39;inflación diagnóstica&#39; — Javier puede usarlo para contrastar con la realidad peruana de subdiagnóstico crónico y evitar el mismo argumento genérico de &#39;se diagnostica de más&#39; sin datos locales.</div>
+          <a class="r10-link" href="https://doi.org/10.1136/bmjment-2026-302658" target="_blank" rel="noopener">↗ doi.org/10.1136/bmjment-2026-302658</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Preprints.org (preprint teórico), 15 sep 2026 · preprint · 2026-09-15</div>
+          <div class="r10-title">FIAP®-Digital in Autism: A Roadmap from Construct Validation to Human-Supervised, Equity-Aware AI-Assisted Translational Stratification and Precision Care</div>
+          <div class="r10-line">Artículo de hipótesis y teoría (autor único) que propone un marco de constructos aún no validados (carga biológica, capacidad energética, accesibilidad de ventana neuroevolutiva) para estratificación de precisión en autismo asistida por IA, explícitamente comparado con RDoC y SPARK, y declarado &#39;no clínico hasta demostrarse&#39;.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: la mayoría de estos frameworks propietarios (marca registrada FIAP®) de autor único no sobreviven a validación empírica independiente, pero el ejercicio de comparar explícitamente contra RDoC es útil como mapa de qué constructos digitales de precisión en TEA vale la pena vigilar — tratarlo como vigilancia de campo, no como evidencia, para la línea TEA de Javier.</div>
+          <a class="r10-link" href="https://doi.org/10.20944/preprints202609.1113.v1" target="_blank" rel="noopener">↗ doi.org/10.20944/preprints202609.1113.v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">American Journal of Psychotherapy, 16 sep 2026 · paper · 2026-09-16</div>
+          <div class="r10-title">A Transdiagnostic IPT-Based Intervention for Global Crises</div>
+          <div class="r10-line">Artículo de herramientas clínicas que describe un protocolo transdiagnóstico ultra-breve (5 sesiones) basado en terapia interpersonal más elementos de TCC/DBT, desarrollado en Israel tras el 7 de octubre de 2023 para crisis nacionales (guerra, desastres, pandemias), con experiencia clínica preliminar pero sin datos de eficacia todavía.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que protocolos transdiagnósticos ultra-breves de crisis como este se replican rápido en contextos de desastre/conflicto — relevante para Perú por su historial de emergencias (terremotos, crisis políticas) y adaptable a contenido/capacitación AMAUTA para primera respuesta psicológica.</div>
+          <a class="r10-link" href="https://doi.org/10.1176/appi.psychotherapy.20250086" target="_blank" rel="noopener">↗ doi.org/10.1176/appi.psychotherapy.20250086</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Behavioral Addictions, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">The development of the Metacognitions About Boredom Scale (MABS) and its role in problematic social media use</div>
+          <div class="r10-line">En dos estudios (N=1021 adultos iraníes y N=234 en riesgo), se valida una escala de dos factores (metacogniciones positivas/negativas sobre el aburrimiento) con estructura bifactor confirmada, que predice uso problemático de redes sociales más allá de las metacogniciones generales, con un punto de corte de alta sensibilidad/especificidad (95.3%/97.1%).</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: las creencias sobre el aburrimiento se vuelven un mecanismo transdiagnóstico de moda para explicar comportamientos digitales compulsivos — Javier puede usar el método bifactor de este paper como ejemplo docente en AMAUTA y explorar una adaptación en español para su línea de contenido sobre uso de pantallas.</div>
+          <a class="r10-link" href="https://doi.org/10.1556/2006.2025.00499" target="_blank" rel="noopener">↗ doi.org/10.1556/2006.2025.00499</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>Cuando se excluyen los casos comórbidos, la correlación genética entre ansiedad y depresión cae de .91 a .53: buena parte del &#39;factor internalizante compartido&#39; que citamos como evidencia dimensional podría ser un artefacto de cómo se reclutan los casos en los estudios GWAS, no una estructura latente real.</li><li>La misma estimulación rítmica del nervio mediano a 10Hz que ya reduce tics en Tourette reduce en tiempo real la intensidad sintomática en TDAH, TOC y ansiedad generalizada por igual — un solo protocolo no invasivo tocando un circuito transdiagnóstico compartido.</li><li>En una tarea de decisión económica con 1954 personas, casi todo el mundo invierte su preferencia de riesgo entre ganancias y pérdidas; lo que distingue la psicopatología no es esa inversión sino su magnitud — los síntomas compulsivo-intrusivos aplanan la sensibilidad a la recompensa, los ansioso-depresivos la amplifican.</li><li>En gemelos, la disrupción circadiana se asocia genéticamente con riesgo de trastornos del ánimo pero no con el de TDAH, autismo, esquizofrenia o ansiedad: el sueño roto podría ser un marcador específico del espectro afectivo, no el target transdiagnóstico universal que se vende en redes.</li><li>En Dinamarca la incidencia diagnóstica de trastorno mental infantil pasó de 1.3% a 14.7% en 30 años, y solo 15-22% de ese salto se explica por diagnosticar más temprano — el resto es una mezcla de aumento real, cambio de práctica y mayor conciencia que ningún dataset actual logra separar del todo.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la correlación genética ansiedad-depresión cae de .91 a .53 al excluir comorbilidad, ¿cuánto de la arquitectura internalizante que enseñamos en HiTOP/bifactor depende de cómo los estudios GWAS definen sus casos?</li><li>¿Vale la pena diseñar un piloto local de estimulación rítmica del nervio mediano como intervención transdiagnóstica de bajo costo para TDAH/TOC/ansiedad en Perú, dado que ya es no invasiva y de protocolo breve?</li><li>¿Debería un examen de banco ENAM/Residentado incorporar una tarea conductual de ganancia-pérdida —no solo un cuestionario— como parte de la evaluación dimensional de rasgos compulsivo-intrusivos?</li><li>¿Cómo debería una clínica de psiquiatría de precisión estratificar el riesgo circadiano de un paciente si su correlato genético apunta específicamente al espectro afectivo y no a TDAH/TEA?</li><li>Frente al salto de incidencia diagnóstica pediátrica en Dinamarca (1.3%→14.7% en 30 años), ¿qué fracción de ese aumento esperaríamos replicar en un sistema de salud mental infantil peruano con acceso mucho más limitado, y qué dice eso sobre &#39;sobrediagnóstico&#39; vs. subdiagnóstico histórico?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/hilo: &#39;Tu ansiedad y tu depresión son genéticamente más distintas de lo que crees&#39; usando el hallazgo Oslo/UK Biobank de correlación genética .91→.53 al quitar comorbilidad, con gráfico de dos círculos que se separan.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional usando el estudio de estimulación del nervio mediano transdiagnóstica (ADHD/TOC/GAD) como ejemplo de &#39;intervención basada en circuito compartido, no en diagnóstico&#39; — puente entre teoría de red y neuromodulación aplicada.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel IG: &#39;Cómo apuestas revela tu psicopatología dimensional (no lo que dices en el cuestionario)&#39; usando la tarea de ganancia-pérdida y su eje compulsivo-intrusivo vs. ansioso-depresivo — gancho directo a la línea de psiquiatría computacional.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario o mini-revisión (JAFLO/AMAUTA) contrastando la especificidad afectiva del riesgo circadiano-genético (twin study de Brisbane) con el uso genérico y poco crítico del sueño como &#39;target transdiagnóstico universal&#39; en redes.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Pregunta de banco ENAM/Residentado sobre la brecha entre incidencia diagnóstica real y artefactual en salud mental infantil, usando los datos daneses de 3 décadas como caso base de razonamiento epidemiológico aplicado a un sistema de salud distinto (Perú).</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Biological Psychiatry</span><span class="tag ">Journal of Behavioral Addictions</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">BMJ Mental Health</span><span class="tag ">American Journal of Psychotherapy</span><span class="tag ">medRxiv</span><span class="tag ">bioRxiv</span><span class="tag ">Research Square</span><span class="tag ">Preprints.org</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Consensus MCP (Semantic Scholar/PubMed/Scopus/ArXiv): cuota mensual agotada (500/500) al inicio de la corrida, sin resultados devueltos; se cayó a acceso directo a fuentes primarias. · PubMed/NCBI E-utilities (esearch/esummary/efetch directos vía HTTPS, sin el MCP dedicado que no estaba disponible en este entorno): mindate=2026-09-13, maxdate=2026-09-16, datetype=pdat, sort=pub_date; query base del dominio + queries afinadas HiTOP/RDoC/transdiagnostic/bifactor/p-factor/network analysis/computational psychiatry/precision psychiatry/ADHD-autism-staging-specifier + autores clave (Kotov/Krueger/Conway/Borsboom/Cuthbert/Caspi/Moffitt, sin hits nuevos relevantes por homonimia de apellidos) · Europe PMC REST API (SRC:PPR — medRxiv/bioRxiv/PsyArXiv/Research Square/Preprints.org, orden por fecha de primera publicación; ventana 2026-09-13/16) · WebSearch (fallback sobre pubmed.ncbi.nlm.nih.gov y europepmc.org, más recall amplio en Reddit r/psychiatry-r/clinicalpsychology-r/cogsci y X — sin hallazgos nuevos verificables dentro de la ventana de 48-72h; un resultado de Reddit/JMIR relevante fue descartado por estar fechado en enero 2026, fuera de ventana). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 16 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
