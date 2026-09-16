@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psiquiatría &amp; Educación de Precisión — 2026-09-16 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#1D9E75;
+    --accent-dim:rgba(29,158,117,0.12);
+    --accent-soft:rgba(29,158,117,0.07);
+    --accent-border:rgba(29,158,117,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🧬</span>Psiquiatría &amp; Educación de Precisión</h1>
+      <div class="sub">16 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">67</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">34</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">British Journal of Psychiatry, 14 sep 2026 · paper · 2026-09-14</div>
+        <h3 class="r3-title">Dopamine antagonists and dynamic symptom networks in schizophrenia</h3>
+        <p class="r3-hook">Con datos combinados de 8 ensayos clínicos aleatorizados de paliperidona (2,508 pacientes con trastornos del espectro esquizofrénico), este estudio mostró que 6 semanas de tratamiento antipsicótico no solo bajan la severidad total de síntomas: reorganizan la arquitectura temporal de la red de 20 síntomas, rompiendo ciclos de retroalimentación específicos entre alucinaciones, ánimo y otros dominios. A Javier le importa directamente porque es la prueba empírica más fuerte que ha aparecido en semanas de que su apuesta por network theory no es solo un marco teórico para el libro de psicopatología dimensional: es una propiedad medible y modificable por tratamiento, con datos de ensayos clínicos reales, no simulaciones. Puede usarlo como el caso ancla del capítulo de network theory (&#39;tratar la red, no el puntaje&#39;), y como argumento en AMAUTA/USAMEDIC para enseñar que evaluar respuesta a tratamiento solo con PANSS total pierde información clínicamente relevante sobre qué síntomas se desacoplan primero.</p>
+        <a class="r3-link" href="https://doi.org/10.1192/bjp.2026.10775" target="_blank" rel="noopener">↗ doi.org/10.1192/bjp.2026.10775</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Pharmacogenomics, 15 sep 2026 · review · 2026-09-15</div>
+        <h3 class="r3-title">The influence of pharmacogenetics on the treatment-related outcomes of antidepressants and antipsychotics in Brazil: a systematic review</h3>
+        <p class="r3-hook">Esta revisión sistemática sintetiza 19 estudios brasileños (2,590 participantes) sobre cómo variantes genéticas (CYP2C19, CYP2B6, CYP1A2, DRD1/DRD2, GAD1, HTR2A/HTR1B) modifican la respuesta a antidepresivos y antipsicóticos en una población mestiza latinoamericana, precisamente porque la evidencia farmacogenética estándar viene de poblaciones europeas y no generaliza bien. A Javier le importa porque Perú comparte el mismo problema de subrepresentación genética que motiva este paper: es la evidencia más cercana disponible a su propia población de pacientes, y una plantilla metodológica lista para una réplica peruana con historias clínicas de HVLH. Puede citarlo en su libro como el ejemplo perfecto de por qué las guías de farmacogenética psiquiátrica &#39;importadas&#39; fallan en Latinoamérica (ej. metabolizadores ultrarrápidos CYP2C19 que necesitan terapia combinada para remitir), y usarlo para proponer una línea de investigación RENACYT sobre farmacogenómica en población peruana.</p>
+        <a class="r3-link" href="https://doi.org/10.1080/14622416.2026.2729992" target="_blank" rel="noopener">↗ doi.org/10.1080/14622416.2026.2729992</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Frontiers in Psychiatry, 15 sep 2026 · paper · 2026-09-15</div>
+        <h3 class="r3-title">Multimodal generative AI for pre-practicum mental health support competency development: a human-supervised framework for education–childcare partnerships</h3>
+        <p class="r3-hook">Este paper propone un marco de 5 dominios (mapeo de competencias, simulación multimodal, feedback reflexivo asistido por IA, evaluación de &#39;readiness&#39; y gobernanza de la alianza) para certificar competencias de apoyo en salud mental ANTES de que estudiantes tengan contacto clínico real, usando IA generativa supervisada por humanos en un contexto de alianza educación-cuidado infantil en China. A Javier le importa porque es exactamente el problema que AMAUTA/USAMEDIC enfrenta a diario: cómo preparar a futuros médicos para ENAM/Residentado con simulación de calidad antes de la rotación clínica real, con una capa explícita de supervisión humana que evita el hype de &#39;la IA reemplaza al tutor&#39;, coherente con su exigencia de evidencia proporcional al claim. Puede adaptar el marco de 5 dominios directamente como estructura de un módulo pre-clínico de psiquiatría en AMAUTA: casos simulados con IA + feedback + un &#39;gate&#39; de readiness antes de pasar a pacientes reales.</p>
+        <a class="r3-link" href="https://doi.org/10.3389/fpsyt.2026.1922251" target="_blank" rel="noopener">↗ doi.org/10.3389/fpsyt.2026.1922251</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Bayesian network analysis uncovers physical activity-mood dynamics: Insights from the DiAPAson study</div>
+          <div class="r10-line">En 120 pacientes con esquizofrenia y 113 controles sanos, una semana de EMA por smartphone más actigrafía de muñeca mostró mediante modelos bayesianos que en controles más actividad física predice mejor ánimo horas después, pero ese acoplamiento bidireccional desaparece en esquizofrenia pese a que el ánimo diario sigue siendo peor.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que combinar EMA con actigrafía se vuelve el estándar de medición de desenlace en ensayos de actividad física para trastornos del espectro esquizofrénico en los próximos 2 años; para Javier es evidencia dura de que &#39;haz ejercicio, mejora tu ánimo&#39; es un consejo que deja de funcionar dinámicamente en ciertos diagnósticos, útil para su capítulo de network theory sobre intervenciones genéricas que fallan transdiagnósticamente.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/s0033291726105406" target="_blank" rel="noopener">↗ doi.org/10.1017/s0033291726105406</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Molecular Psychiatry, 14 sep 2026 · paper · 2026-09-14</div>
+          <div class="r10-title">Gut single-microbe landscape in patients with major depressive disorder and bipolar disorder</div>
+          <div class="r10-line">Con una técnica nueva de secuenciación de ARN de microbios individuales (smRNA-seq2), este estudio exploratorio (5 MDD, 5 bipolar, 5 controles; 33,174 células microbianas mapeadas) encontró firmas transcripcionales distintas entre depresión mayor y trastorno bipolar más allá de qué especies bacterianas están presentes.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: smRNA-seq se suma en 3-5 años a los paneles multi-ómicos de psiquiatría de precisión como capa adicional, aunque con n=15 esto es solo prueba de concepto; Javier puede archivarlo como &#39;watch&#39; para el capítulo de biomarcadores de su libro, sin citarlo todavía como evidencia consolidada.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41380-026-03882-z" target="_blank" rel="noopener">↗ doi.org/10.1038/s41380-026-03882-z</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Medical Internet Research, 14 sep 2026 · paper · 2026-09-14</div>
+          <div class="r10-title">Digital Phenotyping of Lifestyle Profiles and Mental Well-Being in German Adults: Prospective Longitudinal Cohort Study</div>
+          <div class="r10-line">En 553 adultos alemanes seguidos 2 semanas con sensores pasivos de smartphone, perfiles de estilo de vida a nivel de persona (no variables sensor por sensor) se asociaron con bienestar mental, y los rasgos Big Five moderaron esa relación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que el clustering centrado en la persona (no correlaciones de un solo sensor) se vuelve la nueva barra metodológica para fenotipado digital; Javier puede usar este diseño como referencia de &#39;cómo hacer bien&#39; el fenotipado digital si empuja un proyecto de sensado pasivo en AMAUTA/HVLH.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/101850" target="_blank" rel="noopener">↗ doi.org/10.2196/101850</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">European Psychiatry, 14 sep 2026 · paper · 2026-09-14</div>
+          <div class="r10-title">Modulating factors for suicide reattempt among adolescents: A network analysis</div>
+          <div class="r10-line">En 287 adolescentes españoles tras un intento de suicidio, el consorcio SURVIVE usó análisis de redes y encontró que dificultades emocionales/conductuales, trauma infantil y síntomas depresivos —no el reintento en sí— son los nodos centrales que predicen un segundo intento a 1 año.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: las guías de prevención de reintento migran de &#39;vigilar la conducta suicida&#39; a &#39;tratar los nodos centrales de la red&#39; (trauma, desregulación emocional); Javier puede usar este giro en su línea de razonamiento clínico para reintento adolescente en Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.1192/j.eurpsy.2026.12213" target="_blank" rel="noopener">↗ doi.org/10.1192/j.eurpsy.2026.12213</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">bioRxiv (preprint), 15 sep 2026 · preprint · 2026-09-15</div>
+          <div class="r10-title">A dimensional link between gain-loss economic preferences and psychopathology</div>
+          <div class="r10-line">En 1,954 personas, una tarea de decisión económica que manipuló recompensa, riesgo e información bajo ganancia y pérdida mostró que el patrón de preferencias (sobre todo el giro de aversión a búsqueda de riesgo en pérdidas) se asocia con dimensiones específicas de un inventario transdiagnóstico de psicopatología.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que tareas de valoración económica multiatributo se vuelven un endofenotipo computacional estándar en baterías HiTOP/RDoC en los próximos años; Javier puede citarlo como evidencia cuantitativa de que rasgos dimensionales de psicopatología se manifiestan en toma de decisiones económicas, no solo en síntomas clínicos clásicos.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.09.750300" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.09.750300</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Frontiers in Psychology, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Adaptive AI-generated feedback in higher education: exploring associations with cognitive flexibility and academic psychological safety among engineering students</div>
+          <div class="r10-line">En estudiantes de ingeniería, un modelo de ecuaciones estructurales (PLS-SEM) mostró que el feedback adaptativo generado por IA mejora la seguridad psicológica académica de los estudiantes a través de un aumento medido en su flexibilidad cognitiva, no de forma directa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que &#39;flexibilidad cognitiva&#39; se consolida como variable mediadora estándar para explicar por qué el feedback de IA funciona en educación superior; Javier puede tomar este diseño de mediación prestado para evaluar el feedback adaptativo de AMAUTA/USAMEDIC en vez de asumir que &#39;más IA&#39; mejora el aprendizaje sin mecanismo demostrado.</div>
+          <a class="r10-link" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13572651/" target="_blank" rel="noopener">↗ www.ncbi.nlm.nih.gov/pmc/articles/PMC13572651</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Preprints.org (preprint), 15 sep 2026 · preprint · 2026-09-15</div>
+          <div class="r10-title">FIAP®-Digital in Autism: A Roadmap from Construct Validation to Human-Supervised, Equity-Aware AI-Assisted Translational Stratification and Precision Care</div>
+          <div class="r10-line">Un nuevo preprint delinea la hoja de ruta de validación (validez de constructo, validación externa, calibración de incertidumbre, equidad) que la arquitectura FIAP®-Digital —IA multimodal para estratificar autismo— tendría que superar antes de usarse clínicamente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: FIAP®-Digital se vuelve en 12-18 meses un caso de estudio de &#39;cómo sí (o cómo no) se valida una IA en TEA&#39;; Javier debería seguirlo como ejemplo metodológico de rigor anti-hype para su línea TDAH/TEA, sin citarlo aún como herramienta lista para uso clínico.</div>
+          <a class="r10-link" href="https://doi.org/10.20944/preprints202609.1113.v1" target="_blank" rel="noopener">↗ doi.org/10.20944/preprints202609.1113.v1</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src hot">Nature Genetics, 14 sep 2026 · paper · 2026-09-14</div>
+          <div class="r10-title">All of Us diversity and scale yield context-dependent improvements in polygenic prediction</div>
+          <div class="r10-line">Con 245,388 genomas del programa All of Us combinados con UK Biobank, este estudio muestra que los scores de riesgo poligénico multiancestría mejoran su precisión en poblaciones subrepresentadas, pero que juntar todas las cohortes no siempre supera entrenar solo con la cohorte diversa.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que este tipo de pipeline multiancestría se vuelve la plantilla obligatoria que cualquier estudio de genética psiquiátrica de precisión debe replicar antes de reclamar generalizabilidad; conecta directo con el problema de subrepresentación que motiva el paper de farmacogenética brasileña de hoy, relevante si Javier empuja PGx/PRS en población peruana mestiza.</div>
+          <a class="r10-link" href="https://doi.org/10.1038/s41588-026-02734-4" target="_blank" rel="noopener">↗ doi.org/10.1038/s41588-026-02734-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">medRxiv (preprint), 14 sep 2026 · preprint · 2026-09-14</div>
+          <div class="r10-title">Pleiotropic and Distributed Neuropsychiatric Effects of Neurodevelopmental Copy Number Variants in the All of Us Biobank</div>
+          <div class="r10-line">Usando el biobanco All of Us y registros clínicos electrónicos, este preprint mapea cómo las variantes de número de copia neurodesarrolladoras (ND-CNVs) producen efectos neuropsiquiátricos distribuidos y no específicos de un solo locus, incluso en una cohorte poblacional no clínica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Predicción Fable: esto refuerza que &#39;un CNV, un diagnóstico&#39; es la excepción y no la regla, evidencia dura para el argumento transdiagnóstico de Javier en su libro y para explicar a residentes por qué la comorbilidad TDAH-TEA es la norma genética esperada, no una anomalía clínica.</div>
+          <a class="r10-link" href="https://doi.org/10.64898/2026.09.13.26362959" target="_blank" rel="noopener">↗ doi.org/10.64898/2026.09.13.26362959</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">PsyArXiv (preprint), 13 sep 2026 · preprint · 2026-09-13</div>
+          <div class="r10-title">Parent-reported strengths in children with ADHD, autism, and AuDHD</div>
+          <div class="r10-line">En 143 niños holandeses con TDAH, autismo o AuDHD (comorbilidad), un análisis cualitativo de reportes parentales identificó fortalezas específicas por diagnóstico, llenando un vacío en investigación casi siempre centrada en déficits.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predice que los perfiles de fortalezas por subgrupo diagnóstico se integran en las próximas guías clínicas de TDAH/TEA como parte estándar de la evaluación; contenido directo y accionable para el ángulo &#39;neurodivergencia&#39; de Javier en Instagram/YouTube y para su libro de psicopatología.</div>
+          <a class="r10-link" href="https://doi.org/10.31234/osf.io/8jwfb_v1" target="_blank" rel="noopener">↗ doi.org/10.31234/osf.io/8jwfb_v1</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>El tratamiento antipsicótico no solo baja el puntaje total de síntomas: reestructura literalmente qué síntomas están conectados entre sí (dato de 2,508 pacientes con paliperidona) — &#39;tratar la red&#39; es medible, no solo metáfora de libro.</li><li>La misma intervención (actividad física) predice mejor ánimo en controles sanos pero pierde ese acoplamiento temporal en esquizofrenia: un consejo de bienestar &#39;universal&#39; deja de funcionar dinámicamente en ciertos diagnósticos.</li><li>Las guías de farmacogenética psiquiátrica basadas en población europea fallan en Brasil (y por extensión en Perú): metabolizadores ultrarrápidos CYP2C19 necesitan terapia combinada para remitir, un dato invisible si solo se leen guías europeas.</li><li>En reintento de suicidio adolescente, el intento previo en sí queda periférico en la red de riesgo: lo central es trauma infantil y desregulación emocional — vigilar &#39;la conducta&#39; puede ser vigilar el síntoma equivocado.</li><li>Las fortalezas parentales reportadas en TDAH/autismo/AuDHD no son genéricas: cada subgrupo diagnóstico tiene un perfil de fortalezas distinto, evidencia de que &#39;neurodivergencia&#39; no es una sola etiqueta con un solo set de virtudes compensatorias.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si el tratamiento antipsicótico reestructura la red de síntomas y no solo su intensidad, ¿deberíamos medir respuesta a tratamiento con métricas de red (centralidad, densidad) en vez de solo escalas totales como PANSS?</li><li>¿Qué tan generalizables son las recomendaciones de farmacogenética psiquiátrica (CYP2D6/CYP2C19) hechas en poblaciones europeas cuando se aplican a pacientes peruanos con ancestría mixta comparable a la brasileña?</li><li>Si el acoplamiento actividad física-ánimo desaparece en esquizofrenia, ¿qué otras recomendaciones de bienestar &#39;universales&#39; (sueño, dieta) fallan igual en poblaciones psiquiátricas específicas sin que nadie lo haya medido dinámicamente?</li><li>¿Debería un módulo de readiness pre-clínico en AMAUTA/USAMEDIC exigir explícitamente supervisión humana estructurada antes de certificar competencia clínica simulada con IA, como propone el framework de 5 dominios de hoy?</li><li>¿Qué cambiaría en la consulta si evaluáramos TDAH/TEA no solo por severidad de síntomas sino también por el perfil de fortalezas específico del subtipo, como hace el estudio holandés de hoy?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrete IG explicando &#39;tratar la red, no el puntaje&#39;: usar el hallazgo de paliperidona reestructurando redes de síntomas en esquizofrenia como gancho visual (red antes/después del tratamiento).</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Propuesta de paper: réplica peruana del estudio de farmacogenética brasileño (CYP2C19/CYP2B6/CYP1A2) en pacientes de HVLH, dado que Perú comparte el problema de infrarrepresentación genética que motiva ese paper y el de All of Us de hoy.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Capítulo del libro de psicopatología dimensional: sección sobre CNVs neurodesarrolladores como evidencia dura de por qué la comorbilidad TDAH-TEA es la regla genética esperada y no una anomalía, citando el preprint de All of Us.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Pilotear en AMAUTA un módulo de práctica simulada con IA + feedback + &#39;gate&#39; de readiness antes de rotación clínica, adaptando el framework de 5 dominios del paper de Frontiers in Psychiatry de hoy.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Serie de contenido &#39;fortalezas, no solo déficits&#39; en TDAH/TEA/AuDHD basada en el estudio holandés de reportes parentales, con perfiles diferenciados por subtipo diagnóstico.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">British Journal of Psychiatry</span><span class="tag ">Pharmacogenomics</span><span class="tag ">Frontiers in Psychiatry</span><span class="tag ">Frontiers in Psychology</span><span class="tag ">Psychological Medicine</span><span class="tag highlight">Molecular Psychiatry</span><span class="tag ">Journal of Medical Internet Research</span><span class="tag ">European Psychiatry</span><span class="tag highlight">Nature Genetics</span><span class="tag ">medRxiv</span><span class="tag ">bioRxiv</span><span class="tag ">PsyArXiv</span><span class="tag ">Preprints.org</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: Europe PMC (agregador PubMed + PMC + preprints medRxiv/bioRxiv/Preprints.org) · PubMed vía WebSearch · Frontiers (verificación directa vía WebSearch). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 16 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
