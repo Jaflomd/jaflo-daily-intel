@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alta Evidencia · Psiquiatría — 2026-09-16 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#EF9F27;
+    --accent-dim:rgba(239,159,39,0.12);
+    --accent-soft:rgba(239,159,39,0.07);
+    --accent-border:rgba(239,159,39,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">⚡</span>Alta Evidencia · Psiquiatría</h1>
+      <div class="sub">16 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">98</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">82</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src ">Journal of Affective Disorders, 15 sep 2026 · paper · 2026-09-15</div>
+        <h3 class="r3-title">Comparing the temporal pattern of symptom change across multiple treatments for depression</h3>
+        <p class="r3-hook">Usando dynamic time warping dirigido sobre series temporales de 549 pacientes (tres cohortes observacionales de TEC más un RCT de farmacoterapia y uno de psicoterapia), este estudio construye una red de síntomas depresivos y encuentra un patrón consistente sin importar la modalidad de tratamiento: los síntomas somáticos y la ideación suicida muestran adelanto temporal (remiten primero), mientras que los síntomas anímicos remiten al final. Le importa a Javier porque es exactamente el tipo de evidencia cuantitativa que sostiene su línea de psiquiatría dimensional y network theory — la depresión tratada como red de síntomas que cambian de forma escalonada, no como un puntaje total que baja de manera uniforme. Puede usarlo en el capítulo de modelos de red de su libro de psicopatología y como caso guiado en AMAUTA para enseñar a un residente a no interpretar &#39;el ánimo no mejora todavía&#39; como fracaso terapéutico si el sueño, el apetito y la ideación suicida sí lo están haciendo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.121944" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.121944</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging, 14 sep 2026 · meta-analysis · 2026-09-14</div>
+        <h3 class="r3-title">Shared functional abnormalities within somatosensory cortex in obsessive-compulsive disorder and anxiety disorders: A comparative meta-analysis</h3>
+        <p class="r3-hook">Meta-análisis coordinado (SDM) de resonancia funcional en reposo que compara directamente OCD (1,429 pacientes, 1,509 controles) con trastornos de ansiedad (15 estudios, 558 pacientes, 561 controles): OCD muestra hiperactividad específica en el circuito cortico-estriado-talámico-cortical (ACC/mPFC, globo pálido derecho, putamen izquierdo), mientras que ambos trastornos comparten una reducción de actividad en el giro poscentral (corteza somatosensorial), sin diferencias en amígdala. Le importa a Javier porque es evidencia cuantitativa directa para su línea HiTOP/RDoC: separa con datos de neuroimagen qué es específico de OCD y qué es un sustrato transdiagnóstico compartido con ansiedad, justo la distinción que su libro de psicopatología necesita para argumentar un modelo dimensional frente a categorías DSM aisladas. Es material listo para un módulo AMAUTA/USAMEDIC sobre cómo leer un meta-análisis comparativo de neuroimagen sin caer en &#39;la amígdala está alterada en todo&#39; cuando aquí, precisamente, no lo estuvo.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.bpsc.2026.09.004" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bpsc.2026.09.004</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Journal of Affective Disorders, 13 sep 2026 · paper · 2026-09-13</div>
+        <h3 class="r3-title">Predicting early psychiatric readmission among people with major depressive disorder: A machine learning analysis from the prospective multicentre DEEP READ study</h3>
+        <p class="r3-hook">El estudio DEEP READ, cohorte prospectiva multicéntrica en 13 provincias italianas (n=322, 15.5% reingresados en 90 días), entrena un Random Forest con 22 predictores rutinarios (intentos suicidas, hospitalizaciones previas, anticonvulsivantes, personalidad clúster B, sexo femenino, distrés ansioso) y logra un AUC=0.74 para predecir reingreso psiquiátrico temprano en depresión mayor, con litio mostrando de forma exploratoria una asociación SHAP negativa con el riesgo. Le importa a Javier porque encaja exactamente en su pilar de psiquiatría de precisión + IA aplicada a investigación: es un modelo interpretable (SHAP), construido con variables que cualquier servicio ya recolecta, no una caja negra inaccesible. Puede usarlo en AMAUTA/USAMEDIC como caso guiado de &#39;cómo leer críticamente un paper de machine learning clínico&#39; — un AUC=0.74 es prometedor pero modesto, y el propio estudio pide validación externa antes de cualquier uso real, la honestidad epistemológica que caracteriza su voz.</p>
+        <a class="r3-link" href="https://doi.org/10.1016/j.jad.2026.122502" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jad.2026.122502</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 15 sep 2026 · rct · 2026-09-15</div>
+          <div class="r10-title">Early-stage trajectories of social-occupational functioning and long-term functional outcome prediction in early psychosis: A 12-year follow-up of the randomized controlled trial on extended early intervention</div>
+          <div class="r10-line">Seguimiento a 12 años de un RCT de intervención temprana extendida en primer episodio psicótico (n=148, 106 completaron) identifica, mediante modelado de mezcla de crecimiento latente, cuatro trayectorias tempranas de funcionamiento social-ocupacional; la trayectoria &#39;persistentemente mala&#39; (&gt;25% de la muestra, con síntomas negativos basales más severos) predice el peor funcionamiento a 12 años.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: argumento longitudinal fuerte para enseñar seguimiento funcional —no solo remisión sintomática— desde el primer episodio psicótico; Javier puede usar esta clasificación de trayectorias en su línea de razonamiento clínico y precisión psiquiátrica para justificar intervención intensiva temprana en quienes muestran la trayectoria de riesgo desde el año 1.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726105741" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105741</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Women&#39;s Mental Health, 14 sep 2026 · meta-analysis · 2026-09-14</div>
+          <div class="r10-title">Isolated physical activity programs during pregnancy and postpartum: Meta-analysis of randomized trials with usual-care controls on depressive and anxiety symptoms</div>
+          <div class="r10-line">MA registrado en PROSPERO (17 RCTs de 10,938 registros cribados) encuentra que programas de actividad física aislada reducen síntomas depresivos tanto en el embarazo (SMD=-0.52) como en el posparto (SMD=-0.33) frente a cuidado usual, con certeza de evidencia baja a muy baja y sin efecto claro sobre ansiedad antenatal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: intervención barata y escalable para su línea de salud mental perinatal en AMAUTA — el matiz clave para enseñar es que la certeza GRADE baja/muy baja no invalida el hallazgo, pero sí impide venderlo como algo más que &#39;un complemento razonable, mejor evidenciado en prevención que en tratamiento activo&#39;.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00737-026-01752-9" target="_blank" rel="noopener">↗ doi.org/10.1007/s00737-026-01752-9</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">The American Journal on Addictions, 16 sep 2026 · meta-analysis · 2026-09-16</div>
+          <div class="r10-title">How common is alcohol use disorder in posttraumatic stress disorder? A systematic review, meta-analysis, and moderator analysis</div>
+          <div class="r10-line">Primer meta-análisis que cuantifica moderadores clínicos y demográficos de la comorbilidad TEPT-trastorno por uso de alcohol (20 estudios, 185,432 personas): prevalencia de por vida de TUA en TEPT = 35.58% (IC95% 24.48-48.48%), más alta en muestras clínicas, hospitalizadas y en veteranos, más baja con mayor proporción de mujeres.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: cifra citable para justificar cribado sistemático de consumo de alcohol en todo paciente con TEPT, sobre todo veteranos y pacientes hospitalizados — material directo para un módulo AMAUTA sobre comorbilidad TEPT-TUA y su impacto en decisiones de tamizaje.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/ajad.70200" target="_blank" rel="noopener">↗ doi.org/10.1111/ajad.70200</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioural Brain Research, 13 sep 2026 · review · 2026-09-13</div>
+          <div class="r10-title">Neuroimaging studies of non-suicidal self-injury in young adults with major depressive disorder</div>
+          <div class="r10-line">SR PRISMA de 24 estudios de neuroimagen (2013-2025, N=2,379, edad media ≤23 años) identifica una firma neural específica de autolesión no suicida en depresión mayor distinta de la MDD sin autolesión: supresión del giro frontal, menor volumen de putamen, hiperconectividad de la red de modo por defecto y supresión de la red frontoparietal.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: evidencia preliminar (transversal, sin validación longitudinal) pero prometedora para su línea de precisión psiquiátrica en adolescentes/adultos jóvenes — si esta firma se replica de forma prospectiva, podría convertirse en marcador de riesgo de autolesión más allá del autorreporte, tema para el capítulo de conducta suicida/autolesiva de su libro.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbr.2026.116316" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbr.2026.116316</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Biological Psychiatry, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Gene-Environment Correlation Across Trauma Subtypes and Developmental Timing: Evidence From the EU-GEI and ALSPAC</div>
+          <div class="r10-line">En dos cohortes grandes (EU-GEI n=1,191; ALSPAC N=8,141, con replicación), los puntajes de riesgo poligénico para TEPT, TDAH, esquizofrenia, depresión, bipolar y uso de cannabis predicen mayor probabilidad de exposición temprana (0-11 años) a abuso emocional, físico, sexual y bullying — el PRS de TEPT triplica (OR=3.37) la probabilidad de abuso emocional temprano.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: hallazgo incómodo pero central para su línea dimensional/TDAH — la correlación gen-ambiente complica la narrativa simple de &#39;el trauma causa el trastorno&#39;; material denso pero valioso para un capítulo avanzado del libro de psicopatología sobre epidemiología genética y adversidad temprana.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.biopsych.2026.03.1000" target="_blank" rel="noopener">↗ doi.org/10.1016/j.biopsych.2026.03.1000</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Archives of Women&#39;s Mental Health, 15 sep 2026 · rct · 2026-09-15</div>
+          <div class="r10-title">Effectiveness of symptom map-based education in the management of premenstrual syndrome: a randomized controlled trial</div>
+          <div class="r10-line">RCT registrado (NCT06585475, n=110, 101 completaron) muestra que una educación estructurada basada en &#39;mapa de síntomas&#39; del síndrome premenstrual reduce dolor (4.21 vs 6.81) y estrés (8.54 vs 12.03) frente a control, con mayor beneficio —incluida mejora de síntomas depresivos asociados— en mujeres con carga sintomática basal más alta.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: intervención psicoeducativa barata y replicable para el pilar de salud mental de la mujer en AMAUTA — el hallazgo de que el beneficio se concentra en quienes parten con más síntomas es justo el tipo de &#39;quién se beneficia más&#39; que encaja con su enfoque de precisión aplicado a intervenciones no farmacológicas.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00737-026-01757-4" target="_blank" rel="noopener">↗ doi.org/10.1007/s00737-026-01757-4</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Psychological Medicine, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Connectome gradient dysfunction in earthquake-induced posttraumatic stress disorder and its association with gene expression and neurotransmitter profiles</div>
+          <div class="r10-line">En 86 pacientes con TEPT postterremoto vs 86 controles expuestos al mismo desastre sin TEPT, el TEPT muestra alteraciones del gradiente conectómico principal (unimodal-transmodal) en redes visual, límbica, atención ventral y frontoparietal, que colocalizan con expresión génica mitocondrial/metabólica y con sistemas de dopamina, opioides, noradrenalina y colinérgico.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: candidato de biomarcador de neuroimagen para TEPT con anclaje molecular, no solo activación aislada — útil para su pilar de precisión psiquiátrica al mostrar cómo vincular gradiente funcional con perfiles de neurotransmisores específicos.</div>
+          <a class="r10-link" href="https://doi.org/10.1017/S0033291726105388" target="_blank" rel="noopener">↗ doi.org/10.1017/S0033291726105388</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Journal of Clinical Endocrinology &amp; Metabolism, 16 sep 2026 · rct · 2026-09-16</div>
+          <div class="r10-title">Insights from changes in NDEV biomarkers of metabolism: effects of PPARγ and GLP1 receptor agonists on brain metabolism</div>
+          <div class="r10-line">Reanálisis de dos ensayos pequeños (pioglitazona N=12 en depresión no remitida, liraglutida N=15 en riesgo genético de Alzheimer) usando vesículas extracelulares derivadas de neuronas (NDEVs) como biomarcador periférico de señalización de insulina en el SNC, encuentra cambios significativos en la vía Akt-mTOR con ambos fármacos, independientes de los cambios en glucosa/insulina periférica.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: prueba de concepto de que se puede medir el efecto cerebral de un fármaco metabólico sin biopsia ni PET, usando sangre periférica — relevante para su interés en biomarcadores aplicados a psiquiatría de precisión, aunque el N pequeño exige tratarlo como hipótesis-generador, no como evidencia definitiva.</div>
+          <a class="r10-link" href="https://doi.org/10.1210/clinem/dgag176" target="_blank" rel="noopener">↗ doi.org/10.1210/clinem/dgag176</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">Behavioural Brain Research, 13 sep 2026 · paper · 2026-09-13</div>
+          <div class="r10-title">Cerebellar metabolic alterations and childhood physical abuse as biomarkers in bipolar disorder with comorbid borderline personality disorder</div>
+          <div class="r10-line">Estudio de espectroscopía por resonancia magnética muestra que pacientes con trastorno bipolar y trastorno límite de personalidad comórbido reportan más abuso físico infantil y tienen un perfil metabólico cerebeloso distinto (mayor NAA/Cr y Cho/Cr en cerebelo derecho) frente a bipolares sin comorbilidad límite, con el abuso físico correlacionado inversamente con Cho/Cr.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: pieza pequeña pero coherente con su línea dimensional — el cerebelo como sitio de convergencia metabólica entre trauma temprano y comorbilidad bipolar-límite es hipótesis-generador para el capítulo de neurobiología del trauma de su libro, pendiente de replicación con muestra mayor.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.bbr.2026.116338" target="_blank" rel="noopener">↗ doi.org/10.1016/j.bbr.2026.116338</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Clinical Psychology, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">What Works in Therapy? Patients&#39; Views on Effective Elements of Schema Therapy Versus Treatment as Usual for Cluster-C Personality Disorders</div>
+          <div class="r10-line">Sub-estudio cualitativo (30 pacientes) anidado en un RCT multicéntrico de terapia de esquemas individual/grupal vs tratamiento habitual especializado para trastornos de personalidad del clúster C encuentra que el modelo de modos y el reescripting de imágenes son percibidos como los elementos más útiles, con pacientes de grupo pidiendo sesiones individuales adicionales y cribado previo de idoneidad.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable dice: información accionable para diseño de servicios más que para eficacia — si Javier o su equipo implementan terapia de esquemas en algún programa, este estudio sugiere ofrecer un componente individual incluso dentro de formato grupal, en vez de asumir &#39;terapia de esquema en grupo&#39; como talla única.</div>
+          <a class="r10-link" href="https://doi.org/10.1002/jclp.70228" target="_blank" rel="noopener">↗ doi.org/10.1002/jclp.70228</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En depresión, los síntomas somáticos y la ideación suicida tienden a mejorar primero —antes que el ánimo— sin importar si el tratamiento es psicoterapia, farmacoterapia o TEC: si a las pocas semanas el ánimo sigue igual pero el sueño, el apetito y la ideación suicida sí mejoraron, eso es progreso real, no fracaso del tratamiento.</li><li>OCD y trastornos de ansiedad comparten una reducción de actividad en la corteza somatosensorial (giro poscentral), pero lo que distingue a OCD es la hiperactividad en el circuito cortico-estriado-talámico-cortical (ACC/putamen/globo pálido) — la amígdala, sorprendentemente, no diferenció a ninguno de los dos grupos en este meta-análisis.</li><li>En un modelo de IA que predice reingreso psiquiátrico en depresión mayor (AUC=0.74), la prescripción de litio se asoció de forma exploratoria con MENOR riesgo de reingreso — justo lo opuesto de lo que uno esperaría si asumiera que &#39;litio recetado&#39; equivale a &#39;caso más grave&#39;.</li><li>El riesgo genético psiquiátrico (PRS) no solo predice cómo reacciona alguien al trauma: predice también la probabilidad de estar expuesto a él. El PRS de TEPT triplica (OR=3.37) la probabilidad de abuso emocional infantil, complicando la idea de que el trauma es puramente un factor &#39;ambiental&#39; independiente de la genética.</li><li>El ejercicio físico aislado (sin componente psicoterapéutico) reduce síntomas depresivos perinatales con mejor evidencia en PREVENCIÓN (SMD=-0.52 antenatal) que en el tratamiento de síntomas ya instalados (SMD=-0.33 posparto): la ventana de mayor beneficio parece estar antes de que aparezcan los síntomas, no después.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si la ideación suicida tiende a mejorar antes que el ánimo en cualquier modalidad de tratamiento, ¿qué cambiaría en tu forma de monitorizar a un paciente si dejaras de esperar que &#39;todo mejore junto&#39;?</li><li>Si OCD y ansiedad comparten un sustrato en corteza somatosensorial pero difieren en el circuito CSTC, ¿qué implicaría esto para decidir cuándo tratar el &#39;núcleo compartido&#39; transdiagnóstico versus el mecanismo específico de OCD?</li><li>Con un modelo de IA que predice reingreso psiquiátrico con AUC=0.74 usando variables ya recolectadas de rutina, ¿qué te haría confiar —o desconfiar— lo suficiente como para usarlo en el alta de un paciente real antes de la validación externa?</li><li>Si el riesgo poligénico psiquiátrico predice también la exposición al trauma —no solo la respuesta a él—, ¿cómo cambia esto la forma en que le explicas a un paciente o a un residente &#39;por qué a mí me pasó esto&#39;?</li><li>Si el beneficio del ejercicio en depresión perinatal es mayor en prevención que en tratamiento de síntomas ya instalados, ¿en qué momento del embarazo empezarías a recomendarlo si tu objetivo es prevenir y no solo tratar?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Carrusel o reel IG explicando &#39;el orden en que mejora la depresión&#39; usando el hallazgo de dynamic time warping (síntomas somáticos y suicidalidad primero, ánimo al final) como gancho de expectativas realistas para pacientes y familias.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Hilo sobre &#39;el gen no solo determina cómo reaccionas al trauma, determina si te va a pasar&#39; usando el estudio de correlación gen-ambiente (EU-GEI/ALSPAC) como gancho contraintuitivo para su línea de psiquiatría genética/dimensional.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología sobre la corteza somatosensorial como sustrato transdiagnóstico compartido entre OCD y trastornos de ansiedad, usando el meta-análisis comparativo SDM como evidencia cuantitativa de un modelo HiTOP/RDoC.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Módulo AMAUTA/USAMEDIC sobre cómo leer (y no sobrevender) un modelo de machine learning clínico, usando el estudio DEEP READ (AUC=0.74, pendiente de validación externa) como caso guiado de &#39;qué es un buen AUC en la vida real&#39;.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Comentario/carta editorial proponiendo el seguimiento longitudinal de trayectorias funcionales —no solo la remisión sintomática— como estándar de outcome en ensayos de intervención temprana en psicosis, a partir del seguimiento a 12 años de Hong Kong.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag ">Psychological Medicine</span><span class="tag ">Biological Psychiatry</span><span class="tag ">Biological Psychiatry: Cognitive Neuroscience and Neuroimaging</span><span class="tag ">Journal of Affective Disorders</span><span class="tag ">Archives of Women&#39;s Mental Health</span><span class="tag ">The American Journal on Addictions</span><span class="tag ">Behavioural Brain Research</span><span class="tag ">The Journal of Clinical Endocrinology &amp; Metabolism</span><span class="tag ">Journal of Clinical Psychology</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed/eutils (esearch/esummary/efetch, ventana 2026-09-13 a 2026-09-16). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 16 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
