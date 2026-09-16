@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Razonamiento Clínico — 2026-09-16 · JAFLO Inteligencia Diaria</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --bg:#0D0F14;--bg2:#13161D;--bg3:#1A1E28;--text:#E8EAF0;--muted:#8B90A0;--dim:#555C70;
+  --radius:14px;--radius-sm:9px;
+    --accent:#378ADD;
+    --accent-dim:rgba(55,138,221,0.12);
+    --accent-soft:rgba(55,138,221,0.07);
+    --accent-border:rgba(55,138,221,0.32);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);text-decoration:none;margin-bottom:14px;transition:color .15s;}
+.back:hover{color:var(--accent);}
+.header{background:linear-gradient(135deg,#0D0F14 0%,#161A23 55%,var(--accent-soft) 100%);border-bottom:1px solid var(--accent-border);padding:30px 48px 26px;position:relative;overflow:hidden;}
+.header::before{content:'';position:absolute;top:-80px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,var(--accent-dim) 0%,transparent 70%);border-radius:50%;}
+.header-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:18px;position:relative;z-index:1;}
+.badge{background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px;}
+h1{font-size:27px;font-weight:800;color:#fff;line-height:1.18;display:flex;align-items:center;gap:11px;}
+h1 .ic{font-size:24px;}
+.sub{font-size:12.5px;color:var(--muted);margin-top:7px;}
+.stats{display:flex;gap:12px;flex-wrap:wrap;}
+.stat{text-align:center;background:var(--bg3);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:11px 17px;min-width:80px;}
+.stat-n{font-size:20px;font-weight:700;color:var(--accent);}
+.stat-l{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.03em;}
+.main{max-width:1080px;margin:0 auto;padding:34px 48px 64px;display:flex;flex-direction:column;gap:38px;}
+.sec-head{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.sec-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-dim);border:1px solid var(--accent-border);}
+.sec-title{font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text);}
+.sec-sub{font-size:11.5px;color:var(--dim);margin-left:2px;}
+.sec-count{margin-left:auto;font-size:10.5px;color:var(--dim);background:var(--bg3);border:1px solid rgba(255,255,255,.05);padding:2px 9px;border-radius:100px;}
+.thin-note{font-size:12px;color:var(--muted);background:var(--bg2);border:1px dashed var(--accent-border);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;}
+/* TOP 3 */
+.r3-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;}
+.r3-card{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px 22px 20px;position:relative;transition:border-color .2s,transform .2s;}
+.r3-card:hover{border-color:var(--accent-border);transform:translateY(-2px);}
+.r3-card:first-child{border-color:var(--accent-border);background:linear-gradient(150deg,var(--accent-soft),var(--bg2) 55%);}
+.r3-rank{position:absolute;top:16px;right:16px;width:27px;height:27px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);color:var(--accent);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.r3-card:first-child .r3-rank{background:var(--accent);color:#08110d;border:none;}
+.r3-src{font-size:9.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding-right:30px;}
+.r3-src.hot{color:var(--accent);}
+.r3-title{font-size:14.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:11px;}
+.r3-hook{font-size:12.5px;color:var(--muted);line-height:1.62;margin-bottom:14px;}
+.r3-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.85;word-break:break-all;}
+.r3-link:hover{opacity:1;text-decoration:underline;}
+/* TOP 10 */
+.r10-list{display:flex;flex-direction:column;gap:10px;}
+.r10-item{background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:var(--radius-sm);padding:15px 18px;display:grid;grid-template-columns:24px 1fr;gap:13px;align-items:start;transition:border-color .15s;}
+.r10-item:hover{border-color:var(--accent-border);}
+.r10-n{font-size:12px;font-weight:700;color:var(--accent);padding-top:2px;}
+.r10-src{font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+.r10-src.hot{color:var(--accent);}
+.r10-title{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.4;}
+.r10-line{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:7px;}
+.r10-pred{font-size:12px;color:var(--text);line-height:1.5;background:var(--accent-soft);border-left:2px solid var(--accent);border-radius:0 6px 6px 0;padding:7px 11px;margin-bottom:8px;}
+.r10-pred span{display:block;font-size:9.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;}
+.r10-link{font-size:10.5px;font-weight:600;color:var(--accent);text-decoration:none;opacity:.7;word-break:break-all;}
+.r10-link:hover{opacity:1;text-decoration:underline;}
+/* PERLAS / PREGUNTAS / IDEAS */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.panel h4{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.plist{list-style:none;display:flex;flex-direction:column;gap:11px;}
+.plist li{font-size:12.8px;color:var(--text);line-height:1.55;padding-left:18px;position:relative;}
+.plist li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--accent);}
+.qlist li::before{border-radius:1px;transform:rotate(45deg);}
+.ideas-panel{background:var(--bg2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px 22px;}
+.ideas-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.idea{display:flex;gap:11px;align-items:baseline;font-size:12.8px;color:var(--text);line-height:1.55;}
+.idea-kind{flex-shrink:0;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--k);background:color-mix(in srgb,var(--k) 14%,transparent);border:1px solid color-mix(in srgb,var(--k) 32%,transparent);padding:2px 9px;border-radius:100px;min-width:74px;text-align:center;}
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:8px;}
+.tag{font-size:11px;font-weight:500;color:var(--muted);background:var(--bg3);border:1px solid rgba(255,255,255,.06);padding:4px 12px;border-radius:100px;}
+.tag.highlight{color:var(--accent);background:var(--accent-dim);border-color:var(--accent-border);}
+/* FOOTER */
+.footer{border-top:1px solid rgba(255,255,255,.05);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-brand{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;}
+.footer-note{font-size:10.5px;color:var(--dim);max-width:640px;text-align:right;}
+@media(max-width:820px){.header,.main,.footer{padding-left:20px;padding-right:20px;}.cols{grid-template-columns:1fr;}.footer-note{text-align:left;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <div style="position:relative;z-index:1;">
+    <a class="back" href="../../index.html">← Galería JAFLO</a>
+  </div>
+  <div class="header-top">
+    <div>
+      <div class="badge">◆ Dossier diario · automatizado</div>
+      <h1><span class="ic">🩺</span>Razonamiento Clínico</h1>
+      <div class="sub">16 de septiembre de 2026 · 2026-W38 · personalizado para Javier</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">40</div><div class="stat-l">encontrados</div></div>
+      <div class="stat"><div class="stat-n">40</div><div class="stat-l">revisados</div></div>
+      <div class="stat"><div class="stat-n">13</div><div class="stat-l">curados</div></div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">🏆</div>
+      <span class="sec-title">Top 3 — lectura obligatoria</span>
+      <span class="sec-sub">resumen extenso · por qué te importa</span>
+      <span class="sec-count">3</span>
+    </div>
+    <div class="r3-grid">
+      <article class="r3-card">
+        <div class="r3-rank">1</div>
+        <div class="r3-src hot">Nature Medicine, 15 sep 2026 · paper · 2026-09-15</div>
+        <h3 class="r3-title">Agentes de IA médica on-premise para decisiones clínicas confiables</h3>
+        <p class="r3-hook">Un equipo alemán construyó y validó un agente clínico de IA completamente on-premise (sin nube) que combina control operacional local con un marco de fiabilidad multi-perspectiva: en dos benchmarks derivados de MIMIC-IV alcanzó 90.04% y 83.8% de exactitud diagnóstica, y encontró que la consistencia conductual del modelo (dar la misma respuesta al repetir el mismo caso) predice mejor si el diagnóstico es correcto (AUC 0.86-0.875) que la confianza interna que el propio modelo declara. Para Javier esto es la evolución directa de la línea de IA local que vio ayer en el estudio de farmacia, pero ahora con el nivel de evidencia de Nature Medicine y una idea aplicable de inmediato a su pilar ai-enhancement: exigirle a cualquier IA de apoyo diagnóstico que use con datos peruanos un umbral de consistencia (no solo de precisión) antes de confiar en su output, resolviendo a la vez la barrera de privacidad de historias clínicas psiquiátricas. Es también el marco técnico que le falta a su discurso de psiquiatría de precisión: &#39;autonomía selectiva&#39; — dejar que la IA decida sola solo en el subconjunto de casos donde su propia consistencia lo garantiza, y derivar el resto a revisión humana.</p>
+        <a class="r3-link" href="https://doi.org/10.1038/s41591-026-04609-x" target="_blank" rel="noopener">↗ doi.org/10.1038/s41591-026-04609-x</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">2</div>
+        <div class="r3-src hot">Academic Medicine, 15 sep 2026 · paper · 2026-09-15</div>
+        <h3 class="r3-title">Cuando el escriba razona: IA ambiental, &#39;impersonación de inferencia&#39; y el desarrollo del juicio clínico de los residentes</h3>
+        <p class="r3-hook">Los autores nombran un fenómeno concreto —&#39;inference impersonation&#39;— en el que los escribas de IA ambiental no transcriben el razonamiento clínico del médico en la sección de Evaluación y Plan, sino que lo GENERAN, de forma indistinguible del texto real, y documentan en un ensayo aleatorizado que médicos expuestos a sugerencias de IA deliberadamente erróneas tras 20 horas de alfabetización en IA bajaron de 85% a 73% en razonamiento diagnóstico. Para Javier, que forma residentes para ENAM y Residentado en AMAUTA/USAMEDIC, esto es una alarma directa: si sus alumnos aprenden a razonar editando borradores de IA en vez de producir su propio razonamiento primero, nunca desarrollan el juicio que la formación busca construir — el automation bias no se resuelve solo con &#39;alfabetización en IA&#39;. La propuesta concreta de los autores (exigir que el residente presente su razonamiento oral ANTES de que se genere la nota, condicionar el acceso al escriba a competencia demostrada) es una política que puede implementar ya en el Competency Lab de AMAUTA como criterio de entrada al uso de herramientas de IA.</p>
+        <a class="r3-link" href="https://doi.org/10.1093/acamed/wvag287" target="_blank" rel="noopener">↗ doi.org/10.1093/acamed/wvag287</a>
+      </article>
+      <article class="r3-card">
+        <div class="r3-rank">3</div>
+        <div class="r3-src ">Diagnosis (Berlin), 16 sep 2026 · paper · 2026-09-16</div>
+        <h3 class="r3-title">Evidencia temprana de un simulador multiagente de IA para práctica de razonamiento clínico (MAESSCR)</h3>
+        <p class="r3-hook">Con 175 estudiantes de segundo año completando tres encuentros clínicos simulados por agentes LLM (uno hace de paciente, otro de examen físico, otro de pruebas diagnósticas), el estudio encuentra que la plataforma siguió el guion en 92% de las transcripciones, pero que los agentes de diagnóstico/manejo interfirieron con el razonamiento independiente del estudiante en 59% de los encuentros, típicamente interpretando un hallazgo antes de que el estudiante tuviera oportunidad de hacerlo él mismo. Para Javier esto es prácticamente un manual de diseño para lo que ya quiere construir en AMAUTA: un simulador de casos con IA para preparación ENAM/Residentado que escale la práctica deliberada de razonamiento clínico sin instructores en vivo, pero con la advertencia empírica exacta de qué NO hacer (dejar que el agente &#39;resuelva&#39; el hallazgo antes de que el residente lo intente). Es el estudio que puede citar para justificar, con datos y no con intuición, por qué cualquier tutor de IA que construya para sus estudiantes debe forzar una pausa de razonamiento independiente antes de revelar cada hallazgo.</p>
+        <a class="r3-link" href="https://doi.org/10.1515/dx-2026-0069" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0069</a>
+      </article></div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">📡</div>
+      <span class="sec-title">Radar — 10 lecturas siguientes</span>
+      <span class="sec-sub">resumen corto + predicción Fable</span>
+      <span class="sec-count">10</span>
+    </div>
+    <div class="r10-list">
+      <div class="r10-item">
+        <span class="r10-n">01</span>
+        <div class="r10-body">
+          <div class="r10-src hot">JMIR Medical Education, 15 sep 2026 · rct · 2026-09-15</div>
+          <div class="r10-title">Enseñanza de ECG de alto riesgo en síndrome coronario agudo: FOAMed (video/podcast) vs. material impreso</div>
+          <div class="r10-line">Ensayo aleatorizado con 103 proveedores de emergencia en Alemania mostró que un módulo FOAMed (video + podcast) mejoró más la interpretación de ECG (55%→65.5%) y la toma de decisión clínica en SCA (45%→68%) que el material impreso equivalente, con tamaños de efecto pequeños pero reales.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier puede replicar este mismo diseño (mismo contenido, dos formatos, medición pre/post objetiva) con material FOAMed en español para AMAUTA/USAMEDIC, en vez de conformarse con encuestas de satisfacción del estudiante.</div>
+          <a class="r10-link" href="https://doi.org/10.2196/87587" target="_blank" rel="noopener">↗ doi.org/10.2196/87587</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">02</span>
+        <div class="r10-body">
+          <div class="r10-src ">Diagnosis (Berlin), 14 sep 2026 · review · 2026-09-14</div>
+          <div class="r10-title">El valor perdurable del examen físico para la excelencia diagnóstica</div>
+          <div class="r10-line">Revisión sostiene, con evidencia, que un examen físico bien hecho sigue reduciendo error diagnóstico y costo incluso en la era de la IA, y propone estrategias modernas (práctica deliberada, integración con tecnología de apoyo) para revitalizarlo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que este paper se vuelve el contrapeso recurrente en el discurso de Javier sobre IA en educación médica: enseñar a AMAUTA a no delegar el examen físico al chatbot ni al escáner.</div>
+          <a class="r10-link" href="https://doi.org/10.1515/dx-2026-0145" target="_blank" rel="noopener">↗ doi.org/10.1515/dx-2026-0145</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">03</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Permanente Journal, 15 sep 2026 · paper · 2026-09-15</div>
+          <div class="r10-title">Retrasos en el diagnóstico de masas cervicales malignas: oportunidades perdidas en la toma de decisión clínica</div>
+          <div class="r10-line">Con 192 pacientes, los antibióticos empíricos prescritos por el médico de atención primaria se asociaron a 20 días de retraso diagnóstico en masas cervicales malignas (p&lt;.001) frente a solo 4 días por pedir imagen, y apenas 18% siguió la ruta diagnóstica más eficiente.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier usa este caso como ejemplo didáctico de cierre prematuro disfrazado de tratamiento — &#39;tratar en vez de reconsiderar&#39; — en su próximo contenido sobre sesgos en atención primaria.</div>
+          <a class="r10-link" href="https://doi.org/10.7812/TPP/25.097" target="_blank" rel="noopener">↗ doi.org/10.7812/TPP/25.097</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">04</span>
+        <div class="r10-body">
+          <div class="r10-src ">The Permanente Journal, 16 sep 2026 · paper · 2026-09-16</div>
+          <div class="r10-title">¿Puede la IA cumplir en sistemas de salud reales? Primeras lecciones de la iniciativa AIM-HI (5 proyectos financiados)</div>
+          <div class="r10-line">Kaiser Permanente sintetiza lecciones tempranas de implementar IA en la práctica real (sepsis, tromboembolismo, retinopatía diabética, amiloidosis cardiaca, asma pediátrico): el cuello de botella no es el modelo, es la integración al flujo clínico, la regulación y la gobernanza.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier va a citar este marco de &#39;implementación, no solo modelo&#39; cuando presente cualquier piloto de IA psiquiátrica a comités o financiadores en el Perú.</div>
+          <a class="r10-link" href="https://doi.org/10.7812/TPP/26.065" target="_blank" rel="noopener">↗ doi.org/10.7812/TPP/26.065</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">05</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the Neurological Sciences, 15 sep 2026 · editorial · 2026-09-15</div>
+          <div class="r10-title">Respuesta a carta al editor: cerrar las brechas de razonamiento clínico es la cura a la neurofobia en la era de la IA</div>
+          <div class="r10-line">Réplica breve que insiste en que la &#39;neurofobia&#39; (evitar razonar en casos neurológicos) se resuelve enseñando razonamiento clínico explícito, no evitando ni prohibiendo la IA en la formación.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier puede tomar prestado el concepto &#39;neurofobia&#39; y adaptarlo a &#39;psicofobia&#39; para explicar por qué los residentes evitan razonar en psiquiatría dimensional y se refugian en categorías DSM.</div>
+          <a class="r10-link" href="https://doi.org/10.1016/j.jns.2026.126063" target="_blank" rel="noopener">↗ doi.org/10.1016/j.jns.2026.126063</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">06</span>
+        <div class="r10-body">
+          <div class="r10-src ">Chinese Medical Journal, 14 sep 2026 · review · 2026-09-14</div>
+          <div class="r10-title">IA en medicina de laboratorio: del machine learning a los grandes modelos de lenguaje</div>
+          <div class="r10-line">Revisión narrativa compara ML clásico, deep learning y LLMs en medicina de laboratorio y concluye que, por ahora, la IA debe posicionarse como capa asistiva con vigilancia humana continua, no como agente autónomo.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier reutiliza el marco &#39;capa asistiva, no agente autónomo, con vigilancia post-despliegue&#39; como plantilla estándar para posicionar cualquier herramienta de IA que proponga en psiquiatría.</div>
+          <a class="r10-link" href="https://doi.org/10.1097/CM9.0000000000004291" target="_blank" rel="noopener">↗ doi.org/10.1097/CM9.0000000000004291</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">07</span>
+        <div class="r10-body">
+          <div class="r10-src ">Medizinische Klinik, Intensivmedizin und Notfallmedizin, 15 sep 2026 · editorial · 2026-09-15</div>
+          <div class="r10-title">Digitalización e IA en medicina intensiva y de emergencias: position paper de la sociedad alemana DGIIN</div>
+          <div class="r10-line">La sociedad alemana de medicina intensiva exige co-desarrollo (clínicos + industria + reguladores) y calificación específica del personal como condición previa para introducir IA en cuidados críticos y emergencias.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que este tipo de position paper institucional, más que un paper aislado de eficacia, es el modelo a seguir si Javier quiere influir en política de IA en salud mental peruana.</div>
+          <a class="r10-link" href="https://doi.org/10.1007/s00063-026-01494-7" target="_blank" rel="noopener">↗ doi.org/10.1007/s00063-026-01494-7</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">08</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of the American Geriatrics Society, 14 sep 2026 · paper · 2026-09-14</div>
+          <div class="r10-title">Herramientas de IA hospitalaria y utilización/costos en adultos mayores con Alzheimer y demencias relacionadas</div>
+          <div class="r10-line">En 340,509 beneficiarios de Medicare con Alzheimer/demencias, los hospitales con más herramientas de IA de predicción de riesgo tuvieron menos hospitalizaciones frecuentes y reingresos a 30 días, sin aumentar el gasto total.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier puede citar este dato (&#39;predicción de riesgo reduce reingreso sin subir el gasto&#39;) como argumento económico concreto para pilotos de IA en su línea de neurodivergencia y psiquiatría de precisión.</div>
+          <a class="r10-link" href="https://doi.org/10.1111/jgs.70704" target="_blank" rel="noopener">↗ doi.org/10.1111/jgs.70704</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">09</span>
+        <div class="r10-body">
+          <div class="r10-src ">IEEE Journal of Biomedical and Health Informatics, 14 sep 2026 · paper · 2026-09-14</div>
+          <div class="r10-title">FairMoE-Health: mixture-of-experts consciente de equidad para predicción clínica multimodal</div>
+          <div class="r10-line">El estudio muestra que los modelos &#39;mixture-of-experts&#39; multimodales enrutan pacientes de forma sesgada por raza/género/seguro porque la disponibilidad de cada modalidad (p. ej. si existe o no una radiografía) ya está correlacionada con esas variables demográficas.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier puede usar este hallazgo como advertencia técnica concreta para cualquier IA multimodal que entrene con datos peruanos incompletos: el sesgo puede entrar por la ausencia de un examen, no solo por su contenido.</div>
+          <a class="r10-link" href="https://doi.org/10.1109/JBHI.2026.3733584" target="_blank" rel="noopener">↗ doi.org/10.1109/JBHI.2026.3733584</a>
+        </div>
+      </div>
+      <div class="r10-item">
+        <span class="r10-n">10</span>
+        <div class="r10-body">
+          <div class="r10-src ">Journal of Minimally Invasive Surgery, 15 sep 2026 · review · 2026-09-15</div>
+          <div class="r10-title">IA centrada en la decisión para cuidado perioperatorio fuera de sala de operaciones: revisión práctica para cirujanos</div>
+          <div class="r10-line">Una revisión reorganiza la literatura de IA quirúrgica no por tipo de algoritmo sino por el punto de decisión clínica que apoya (selección de paciente, planeación, vigilancia posoperatoria), en vez de comparar desempeño de modelos.</div>
+          <div class="r10-pred"><span>Predicción Fable</span>Fable predicts que Javier puede tomar prestado este marco de &#39;organizar por punto de decisión, no por algoritmo&#39; para mapear dónde la IA podría apoyar el razonamiento psiquiátrico: triaje, diferencial, plan, seguimiento.</div>
+          <a class="r10-link" href="https://doi.org/10.7602/jmis.2026.29.3.117" target="_blank" rel="noopener">↗ doi.org/10.7602/jmis.2026.29.3.117</a>
+        </div>
+      </div></div>
+  </section>
+
+  <section>
+    <div class="cols">
+      <div class="panel">
+        <h4>💎 5 perlas del día</h4>
+        <ul class="plist"><li>En el simulador MAESSCR, la IA no dañó el razonamiento del estudiante por equivocarse, sino por acertar demasiado pronto: 59% de las interferencias vino de agentes de diagnóstico/manejo que interpretaron un hallazgo antes de que el estudiante tuviera oportunidad de hacerlo.</li><li>Un programa de 20 horas de &#39;alfabetización en IA&#39; no blindó a los médicos del sesgo de automatización: expuestos a una sugerencia de IA deliberadamente errónea, su razonamiento diagnóstico cayó de 85% a 73% — saber cómo funciona la IA no basta para resistir su sugerencia equivocada.</li><li>En masas cervicales malignas, lo que más retrasó el diagnóstico no fue la falta de una imagen (4 días de retraso), fue el antibiótico empírico recetado por el médico de cabecera (20 días) — tratar puede ser, en la práctica, la forma más silenciosa de cerrar el diferencial antes de tiempo.</li><li>En el agente on-premise de Nature Medicine, la señal más confiable de que un diagnóstico de IA era correcto no fue la confianza que el modelo declaraba de sí mismo, sino si daba la MISMA respuesta al repetir el caso — la consistencia venció a la confianza como predictor de acierto.</li><li>El sesgo demográfico de un modelo multimodal (FairMoE-Health) no viene de que &#39;vea&#39; la raza o el seguro del paciente: viene de qué examen se le pidió o no se le pidió a ese paciente — la ausencia de una radiografía es, estadísticamente, una variable demográfica disfrazada.</li></ul>
+      </div>
+      <div class="panel">
+        <h4>❓ 5 preguntas del día</h4>
+        <ul class="plist qlist"><li>Si 59% de las interferencias de un simulador educativo de IA vino de &#39;revelar el hallazgo antes de tiempo&#39;, ¿cómo cambiaría el diseño de un simulador de casos psiquiátricos para AMAUTA si el agente de hallazgos tuviera que esperar a que el residente formule su hipótesis primero?</li><li>¿Cuánto del sobrediagnóstico categorial que Javier documenta en TDAH/TEA es, en el fondo, el mismo patrón que el estudio de masas cervicales: tratar/medicar en vez de reabrir el diferencial?</li><li>Si la consistencia ante el mismo caso repetido predice mejor la corrección de un modelo de IA que su confianza declarada, ¿debería Javier exigirle ese mismo estándar —repetir el caso y ver si el residente llega a lo mismo— a sus propios alumnos antes de validar su impresión diagnóstica?</li><li>¿Qué pasaría si el Competency Lab de AMAUTA aplicara a sus residentes el mismo estándar que &#39;When the scribe does the reasoning&#39; propone para los escribas de IA: exigir que presenten su razonamiento oral ANTES de que cualquier IA o adjunto les dé la respuesta?</li><li>Si la ausencia de una modalidad de datos (una imagen, un laboratorio) ya introduce sesgo demográfico en un modelo multimodal, ¿qué sesgo estructural esconde un futuro modelo de IA psiquiátrica entrenado con historias clínicas peruanas donde faltan sistemáticamente ciertos exámenes por falta de acceso?</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="sec-ic">💡</div>
+      <span class="sec-title">5 ideas del día</span>
+      <span class="sec-sub">contenido · paper · libro</span>
+    </div>
+    <div class="ideas-panel"><ul class="ideas-list"><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Reel/carrusel IG: &#39;La IA no te falla por decir algo incorrecto, te falla por decir algo correcto demasiado pronto&#39; — usando el dato de MAESSCR (59% de interferencia por revelar el hallazgo antes de tiempo) aplicado a cómo NO usar IA al estudiar para el ENAM.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Diseñar con el Competency Lab de AMAUTA una versión en español de MAESSCR (simulador multiagente LLM para práctica de razonamiento clínico) para preparación ENAM/Residentado, aplicando la lección de diseño del paper: el agente de hallazgos no revela antes de tiempo.</span></li><li class="idea"><span class="idea-kind" style="--k:#A855F7">Libro</span><span>Sección del libro de psicopatología para el mundo sobre &#39;cierre prematuro disfrazado de tratamiento&#39;, usando el caso de masas cervicales (antibiótico empírico = 20 días de retraso) como paralelo del uso reflejo de medicación psiquiátrica sin reabrir el diferencial.</span></li><li class="idea"><span class="idea-kind" style="--k:#60A5FA">Contenido</span><span>Video explicando &#39;inference impersonation&#39; (el escriba de IA que razona en vez de transcribir) como advertencia directa a residentes que usan IA para redactar sus notas de evolución psiquiátrica — gancho para AMAUTA/USAMEDIC.</span></li><li class="idea"><span class="idea-kind" style="--k:#EF9F27">Paper</span><span>Nota técnica/piloto sobre el riesgo de sesgo por &#39;modalidad faltante&#39; (FairMoE-Health) en cualquier modelo de IA psiquiátrica de precisión entrenado con datos peruanos incompletos — conecta con la línea de psiquiatría de precisión y equidad de Javier.</span></li></ul></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><div class="sec-ic">📰</div><span class="sec-title">Activos esta semana</span></div>
+    <div class="tags"><span class="tag highlight">Nature Medicine</span><span class="tag highlight">Academic Medicine</span><span class="tag ">Diagnosis (Berlin)</span><span class="tag highlight">JMIR Medical Education</span><span class="tag ">The Permanente Journal</span><span class="tag ">Journal of the Neurological Sciences</span><span class="tag ">Chinese Medical Journal</span><span class="tag ">Medizinische Klinik, Intensivmedizin und Notfallmedizin</span><span class="tag ">Journal of the American Geriatrics Society</span><span class="tag ">IEEE Journal of Biomedical and Health Informatics</span><span class="tag ">Journal of Minimally Invasive Surgery</span></div>
+  </section>
+</div>
+<div class="footer">
+  <div class="footer-brand">JAFLO · Inteligencia Diaria</div>
+  <div class="footer-note">Fuentes: PubMed E-utilities (esearch/esummary/efetch directo, date_from=2026-09-13, date_to=2026-09-16, datetype=pdat, sort=pub_date; Consensus MCP agotó su cuota mensual y no se usó) · WebSearch (medRxiv, blogs de razonamiento clínico/IA — sin hallazgos nuevos verificables dentro de la ventana de 48-72h que no estuvieran ya en PubMed). Atribución a PubMed y DOIs incluidos por sus términos de uso. Generado 16 de septiembre de 2026.</div>
+</div>
+</body>
+</html>
